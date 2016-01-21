@@ -13,10 +13,10 @@ model PSSTypeII "PSAT PSS TypeII"
   Modelica.Blocks.Interfaces.RealInput vSI "PSS input signal " annotation (Placement(transformation(extent={{-130,-20},{-90,20}})));
   Modelica.Blocks.Interfaces.RealOutput vs "PSS output signal" annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Continuous.Derivative derivative(
-    k=Kw,
     T=Tw,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=0) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
+    y_start=0,
+    k=Kw*Tw) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
     T1=T1,

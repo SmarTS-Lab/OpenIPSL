@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
-
-
 model URST5T "SMIB model example of GENROU with Excitation System URST5T"
   iPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
     Xppd=0.2,
@@ -177,3 +175,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end URST5T;
+

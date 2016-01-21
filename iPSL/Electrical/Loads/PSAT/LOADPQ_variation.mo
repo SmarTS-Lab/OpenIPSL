@@ -1,24 +1,24 @@
 within iPSL.Electrical.Loads.PSAT;
 model LOADPQ_variation "Equations come from the mathematical separation in between reals and imaginary of S=P+jQ=UI*"
   extends BaseClasses.baseLoad;
-  parameter Real t1 "Start time of first load variation (s)";
-  parameter Real t2 "End time of first load variation (s)";
-  parameter Real t3 "Start time of second Load variation (s)";
-  parameter Real t4 "End time of second load variation (s)";
-  parameter Real P2 "First active load variation  (pu)";
-  parameter Real Q2 "First reactive load variation (p)";
-  parameter Real P3 "Second active load variation  (pu)";
-  parameter Real Q3 "Second reactive load variation (pu)";
+  parameter Real t_start_1 "Start time of first load variation (s)" annotation (Dialog(group="Variation 1"));
+  parameter Real t_end_1 "End time of first load variation (s)" annotation (Dialog(group="Variation 1"));
+  parameter Real dP1 "First active load variation  (pu)" annotation (Dialog(group="Variation 1"));
+  parameter Real dQ1 "First reactive load variation (p)" annotation (Dialog(group="Variation 1"));
+  parameter Real t_start_2 "Start time of second Load variation (s)" annotation (Dialog(group="Variation 2"));
+  parameter Real t_end_2 "End time of second load variation (s)" annotation (Dialog(group="Variation 2"));
+  parameter Real dP2 "Second active load variation  (pu)" annotation (Dialog(group="Variation 2"));
+  parameter Real dQ2 "Second reactive load variation (pu)" annotation (Dialog(group="Variation 2"));
 equation
-  if time >= t1 and time <= t2 then
-    P = (P_0 + P2)*CoB;
-    Q = (Q_0 + Q2)*CoB;
-  elseif time >= t3 and time <= t4 then
-    P = (P_0 + P3)*CoB;
-    Q = (Q_0 + Q3)*CoB;
+  if time >= t_start_1 and time <= t_end_1 then
+    P = (P_0 + dP1)/S_b;
+    Q = (Q_0 + dQ1)/S_b;
+  elseif time >= t_start_2 and time <= t_end_2 then
+    P = (P_0 + dP2)/S_b;
+    Q = (Q_0 + dQ2)/S_b;
   else
-    P = P_0*CoB;
-    Q = Q_0*CoB;
+    P = P_0/S_b;
+    Q = Q_0/S_b;
   end if;
   annotation (
     Icon(coordinateSystem(

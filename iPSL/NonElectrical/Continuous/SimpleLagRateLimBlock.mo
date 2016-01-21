@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-model SimpleLagRateLimBlock "First order lag transfer function block with a non windup limiter, rate limits and blocking input"
+block SimpleLagRateLimBlock "First order lag transfer function block with a non windup limiter, rate limits and blocking input"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Modelica.SIunits.Time T "Lag time constant" annotation (Evaluate=false);
@@ -11,6 +11,8 @@ model SimpleLagRateLimBlock "First order lag transfer function block with a non 
   Real x;
   Real rate;
   Modelica.Blocks.Interfaces.RealInput Block annotation (Placement(transformation(extent={{-140,60},{-100,100}}), iconTransformation(extent={{-140,60},{-100,100}})));
+initial equation
+  y = y_start;
 equation
   assert(
     T >= 1e-10,

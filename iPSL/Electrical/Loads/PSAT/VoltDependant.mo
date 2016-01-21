@@ -6,9 +6,9 @@ model VoltDependant "Voltage Dependent Load"
 protected
   Real a "Auxiliary variable, voltage division";
 equation
-  a = v/V_0;
-  P = P_0*CoB*a^alphap;
-  Q = Q_0*CoB*a^alphaq;
+  a = V/V_0;
+  P = P_0/S_b*a^alphap;
+  Q = Q_0/S_b*a^alphaq;
   annotation (Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,

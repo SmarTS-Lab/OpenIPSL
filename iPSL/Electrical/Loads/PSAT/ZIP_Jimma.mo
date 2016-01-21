@@ -16,11 +16,11 @@ protected
 initial equation
   der(x) = 0;
 equation
-  a = v/V_0;
-  der(x) = ((-v/Tf) - x)/Tf;
-  b = x + v/Tf;
-  P = P_0*CoB*(Pz*a^2 + Pi*a + Pp);
-  Q = Q_0*CoB*(Qz*a^2 + Qi*a + Qp + Kv*b);
+  a = V/V_0;
+  der(x) = ((-V/Tf) - x)/Tf;
+  b = x + V/Tf;
+  P = P_0/S_b*(Pz*a^2 + Pi*a + Pp);
+  Q = Q_0/S_b*(Qz*a^2 + Qi*a + Qp + Kv*b);
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

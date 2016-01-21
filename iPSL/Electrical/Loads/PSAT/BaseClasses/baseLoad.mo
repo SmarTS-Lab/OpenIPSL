@@ -15,17 +15,17 @@ partial model baseLoad
         origin={70,100},
         rotation=0),
       visible=true));
-  Real v "Voltage magnitude (pu)";
-  Real anglev "voltage angle (rad)";
+  Real V "Voltage magnitude (pu)";
+  Real Angle_V "voltage angle (rad)";
   Real P "Active power (pu)";
   Real Q "Reactive power (pu)";
 protected
-  parameter Real CoB=Sn/S_b;
+  parameter Real CoB=Sn/S_b "Change of base between Machine and System";
 equation
   P = p.vr*p.ir + p.vi*p.ii;
   Q = p.vi*p.ir - p.vr*p.ii;
-  v = sqrt(p.vr^2 + p.vi^2);
-  anglev = atan2(p.vi, p.vr);
+  V = sqrt(p.vr^2 + p.vi^2);
+  Angle_V = atan2(p.vi, p.vr);
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color={28,108,200}), Text(
           extent={{-62,66},{66,34}},
           lineColor={28,108,200},

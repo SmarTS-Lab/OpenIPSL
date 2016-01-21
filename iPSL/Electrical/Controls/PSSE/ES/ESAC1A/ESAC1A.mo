@@ -159,7 +159,7 @@ initial equation
   VREF = VR0/K_A + V0 - VOTHSG;
 equation
   connect(hV_GATE.p, lV_GATE.n1) annotation (Line(
-      points={{38.75,44},{38.75,41},{38.75,41}},
+      points={{38.75,44},{38.75,41}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VOEL, lV_GATE.n2) annotation (Line(
@@ -211,7 +211,11 @@ equation
         preserveAspectRatio=false,
         extent={{-220,-60},{240,60}},
         grid={2,2}), graphics={
-        Rectangle(extent={{-220,60},{240,-60}}, lineColor={0,0,255}),
+        Rectangle(
+          extent={{-220,60},{240,-60}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
         Text(
           extent={{-26,-32},{26,-54}},
           lineColor={0,0,255},
@@ -245,6 +249,24 @@ equation
           lineColor={0,0,255},
           textString="EFD0")}),
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td>ESAC1A, PSS/E Manual</td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td>Major change - 2016-01-19</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+</tr>
+</table>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

@@ -8,7 +8,7 @@ function SE "Scaled Quadratic Saturation Function (PTI PSS/E) "
   input Real E2;
   output Real sys "Saturated Output";
 protected
-  parameter Real a=sqrt(SE1*E1/(SE2*E2));
+  parameter Real a=if (SE2 <> 0) then sqrt(SE1*E1/(SE2*E2)) else 0;
   parameter Real A=E2 - (E1 - E2)/(a - 1);
   parameter Real B=SE2*E2*(a - 1)^2/(E1 - E2)^2;
 algorithm

@@ -14,11 +14,11 @@ protected
 initial equation
   der(x) = 0;
 equation
-  a = v/V_0;
+  a = V/V_0;
   der(x) = -deltaw/Tf;
-  0 = x + 1/(2*pi*fn)*1/Tf*(anglev - angle_0) - deltaw;
-  P = P_0*CoB*a^alpha_p*(1 + deltaw)^beta_p;
-  Q = Q_0*CoB*a^alpha_q*(1 + deltaw)^beta_q;
+  0 = x + 1/(2*pi*fn)*1/Tf*(Angle_V - angle_0) - deltaw;
+  P = P_0/S_b*a^alpha_p*(1 + deltaw)^beta_p;
+  Q = Q_0/S_b*a^alpha_q*(1 + deltaw)^beta_q;
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

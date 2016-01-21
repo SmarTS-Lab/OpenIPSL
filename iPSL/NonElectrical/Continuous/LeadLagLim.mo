@@ -1,33 +1,34 @@
 within iPSL.NonElectrical.Continuous;
 
 
-class LeadLagLim "Lead-Lag filter with a non-windup limiter"
-  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
-  parameter Real K "Gain" annotation (Evaluate=false);
-  parameter Real T1 "Lead time constant" annotation (Evaluate=false);
-  parameter Real T2 "Lag time constant" annotation (Evaluate=false);
+block LeadLagLim "Lead-Lag filter with a non-windup limiter"
+  extends Modelica.Blocks.Interfaces.SISO;
+  parameter Real K "Gain";
+  parameter Modelica.SIunits.Time T1 "Lead time constant";
+  parameter Modelica.SIunits.Time T2 "Lag time constant";
+  parameter Real outMax "Maximum output value";
+  parameter Real outMin "Minimum output value";
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
-  parameter Real outMax "Maximum output value" annotation (Evaluate=false);
-  parameter Real outMin "Minimum output value" annotation (Evaluate=false);
-  Real s(start=y_start) "State variable";
+
+protected
+  Real x1(start=y_start);
+  Real x2(start=y_start);
+  parameter Modelica.SIunits.Time T2_dummy=if abs(T1 - T2) < Modelica.Constants.eps then 1000 else T2 "Lead time constant";
+public
+  Modelica.Blocks.Sources.RealExpression par1(y=T1) annotation (Placement(transformation(extent={{-80,54},{-60,74}})));
+  Modelica.Blocks.Sources.RealExpression par2(y=T2) annotation (Placement(transformation(extent={{-80,34},{-60,54}})));
 equation
-  assert(
-    abs(T1) >= 1e-10 and abs(T2) >= 1e-10,
-    "Time constants must be greater than zero",
-    AssertionLevel.error);
-  assert(
-    outMax > outMin,
-    "Upper limit must be greater than lower limit",
-    AssertionLevel.error);
-  if y > outMax then
-    der(s) = 0;
-    y = outMax;
-  elseif y < outMin then
-    der(s) = 0;
-    y = outMin;
+  x1 + der(x1)*T2_dummy = u*K;
+  x1 + T1/T2_dummy*(u*K - x1) = x2;
+  when (y >= outMax) and der(x1) < 0 then
+    reinit(x1, outMax);
+  elsewhen (y <= outMin) and der(x1) > 0 then
+    reinit(x1, outMin);
+  end when;
+  if (abs(par1.y - par2.y) < Modelica.Constants.eps) then
+    y = max(min(K*u, outMax), outMin);
   else
-    T2*der(s) = (-s) + K*u;
-    T2*y = ((-s) + K*u)*T1 + T2*s;
+    y = max(min(x2, outMax), outMin);
   end if;
   annotation (
     Icon(graphics={
@@ -58,7 +59,7 @@ equation
           extent={{-106,28},{-46,-32}},
           lineColor={0,0,255},
           textString="K")}),
-    Diagram,
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

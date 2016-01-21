@@ -17,13 +17,13 @@ protected
   Real x(start=-V_0/Tfv);
   Real y(start=0);
 equation
-  a = v/V_0;
-  der(x) = ((-v/Tfv) - x)/Tfv;
-  b = x + v/Tfv;
-  der(y) = -1/Tft*(1/(2*pi*fn*Tft)*(anglev - angle_0) + y);
-  deltaw = y + 1/(2*pi*fn*Tft)*(anglev - angle_0);
-  P = Kpf*deltaw + P_0*CoB*(a^alpha + Tpv*b);
-  Q = Kqf*deltaw + Q_0*CoB*(a^beta + Tqv*b);
+  a = V/V_0;
+  der(x) = ((-V/Tfv) - x)/Tfv;
+  b = x + V/Tfv;
+  der(y) = -1/Tft*(1/(2*pi*fn*Tft)*(Angle_V - angle_0) + y);
+  deltaw = y + 1/(2*pi*fn*Tft)*(Angle_V - angle_0);
+  P = Kpf*deltaw + P_0/S_b*(a^alpha + Tpv*b);
+  Q = Kqf*deltaw + Q_0/S_b*(a^beta + Tqv*b);
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

@@ -1,23 +1,34 @@
 within iPSL.NonElectrical.Continuous;
 
 
-class LeadLag "Lead-Lag filter"
-  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
-  parameter Real K "Gain" annotation (Evaluate=false);
-  parameter Modelica.SIunits.Time T1 "Lead time constant" annotation (Evaluate=false);
-  parameter Modelica.SIunits.Time T2 "Lag time constant" annotation (Evaluate=false);
+block LeadLag "Lead-Lag filter"
+  extends Modelica.Blocks.Interfaces.SISO;
+  parameter Real K "Gain";
+  parameter Modelica.SIunits.Time T1 "Lead time constant";
+  parameter Modelica.SIunits.Time T2 "Lag time constant";
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
+  parameter Real x_start=0 "Start value of state variable" annotation (Dialog(group="Initialization"));
 protected
-  Real s(start=y_start) "State variable";
+  parameter Modelica.SIunits.Time T2_dummy=if abs(T1 - T2) < Modelica.Constants.eps then 1000 else T2 "Lead time constant";
+public
+  Modelica.Blocks.Sources.RealExpression par1(y=T1) annotation (Placement(transformation(extent={{-80,54},{-60,74}})));
+  Modelica.Blocks.Sources.RealExpression par2(y=T2) annotation (Placement(transformation(extent={{-80,34},{-60,54}})));
+  Modelica.Blocks.Continuous.TransferFunction TF(
+    b={K*T1,K},
+    a={T2_dummy,1},
+    y_start=y_start,
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    x_start={x_start}) annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
 equation
-  assert(
-    abs(T1) >= 1e-10 and abs(T2) >= 1e-10,
-    "Time constants must be greater than zero",
-    AssertionLevel.error);
-  T2*der(s) = K*u - s;
-  T2*y = (K*u - s)*T2*T1 + T2*s;
+  if (abs(par1.y - par2.y) < Modelica.Constants.eps) then
+    y = K*u;
+  else
+    y = TF.y;
+  end if;
+
+  connect(TF.u, u) annotation (Line(points={{-10,0},{-120,0}}, color={0,0,127}));
   annotation (
-    Diagram(graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

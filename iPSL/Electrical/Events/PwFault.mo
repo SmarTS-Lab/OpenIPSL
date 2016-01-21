@@ -3,6 +3,7 @@ within iPSL.Electrical.Events;
 
 model PwFault "Transitory short-circuit on a node. Shunt impedance connected only during a specified interval of time.
               Developed by AIA. 2014/12/16"
+
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   parameter Real R "Resistance (pu)";
   parameter Real X "Conductance (pu)";
@@ -14,11 +15,11 @@ equation
   if time < t1 then
     p.ii = 0;
     p.ir = 0;
-  elseif time <= t2 and ground == 0 then
+  elseif time < t2 and ground == 0 then
     p.vr = 1E-10;
     // This is to avoid numerical problems
     p.vi = 0;
-  elseif time <= t2 then
+  elseif time < t2 then
     p.ii = (R*p.vi - X*p.vr)/(X*X + R*R);
     p.ir = (R*p.vr + X*p.vi)/(R*R + X*X);
   else

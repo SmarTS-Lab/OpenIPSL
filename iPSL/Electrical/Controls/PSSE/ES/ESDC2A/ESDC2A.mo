@@ -19,8 +19,6 @@ model ESDC2A
   parameter Real T_E=0.8 "Exciter time constant (s)";
   parameter Real K_F=0.03 "Rate feedback gain (pu)";
   parameter Real T_F1=1 "Rate feedback time constant (s)";
-  parameter Real K_C=0.2 "Rectifier load factor (pu)";
-  parameter Real K_D=0.48 "Exciter demagnetizing factor. p.u";
   parameter Real E_1=5.25 "Exciter saturation point 1 (pu)";
   parameter Real E_2=7 "Exciter saturation point 2 (pu)";
   parameter Real S_EE_1=0.03 "Saturation at E1";
@@ -30,7 +28,7 @@ model ESDC2A
     T=T_F1,
     y_start=0,
     initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{8,-6},{-4,6}})));
-  NonElectrical.Logical.HV_GATE hV_GATE annotation (Placement(transformation(extent={{-20,-40},{2,-20}})));
+  NonElectrical.Logical.HV_GATE hV_GATE annotation (Placement(transformation(extent={{-16,-34},{0,-26}})));
   Modelica.Blocks.Interfaces.RealInput VUEL "UEL output" annotation (Placement(transformation(extent={{-96,-80},{-86,-68}}), iconTransformation(extent={{-100,-36},{-90,-24}})));
   Modelica.Blocks.Interfaces.RealInput VT "sensed VT" annotation (Placement(transformation(
         extent={{-5,-6},{5,6}},
@@ -65,7 +63,7 @@ model ESDC2A
   Modelica.Blocks.Math.Add add1 annotation (Placement(transformation(extent={{12,26},{-2,40}})));
   Modelica.Blocks.Math.Product product annotation (Placement(transformation(extent={{42,36},{28,50}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{54,10},{40,24}})));
-  Modelica.Blocks.Sources.Constant const(k=K_E) annotation (Placement(transformation(extent={{86,18},{74,30}})));
+  Modelica.Blocks.Sources.Constant const(k=K_E0) annotation (Placement(transformation(extent={{86,18},{74,30}})));
   Modelica.Blocks.Math.Add add(k1=-1) annotation (Placement(transformation(extent={{44,-30},{52,-22}})));
   Modelica.Blocks.Continuous.Integrator integrator(
     k=1/T_E,
@@ -75,32 +73,83 @@ model ESDC2A
     K=K_A,
     T=T_A,
     y_start=vr0) annotation (Placement(transformation(extent={{12,-34},{22,-24}})));
-  Modelica.Blocks.Math.Gain gain(k=V_RMIN) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain(k=V_RMIN0) annotation (Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=90,
         origin={13,-47})));
-  Modelica.Blocks.Math.Gain gain1(k=V_RMAX) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain1(k=V_RMAX0) annotation (Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=90,
         origin={29,-47})));
-protected
+  function param_init
+    input Real V_RMAX_init;
+    input Real K_E_init;
+    input Real E_2;
+    input Real S_EE_2;
+    input Real Efd0;
+    input Real SE_Efd0;
+    output Real V_RMAX;
+    output Real K_E;
+  algorithm
+    if (V_RMAX_init == 0) then
+      if (K_E_init <= 0) then
+        V_RMAX := S_EE_2*E_2;
+      else
+        V_RMAX := S_EE_2 + K_E_init;
+      end if;
+    else
+      V_RMAX := V_RMAX_init;
+    end if;
+
+    if (K_E_init == 0) then
+      K_E := V_RMAX/(10*Efd0) - SE_Efd0;
+    else
+      K_E := K_E_init;
+    end if;
+  end param_init;
+
   parameter Real VREF(fixed=false);
   parameter Real vf00(fixed=false) "Initial field voltage";
   parameter Real vr0(fixed=false);
   parameter Real ECOMP0(fixed=false);
+  parameter Real V_RMAX0(fixed=false);
+  parameter Real K_E0(fixed=false);
+  parameter Real V_RMIN0(fixed=false);
+  parameter Real SE_Efd0(fixed=false);
 initial equation
   ECOMP0 = ECOMP;
   vf00 = EFD0;
-  vr0 = vf00*(1 + K_E + SE(
+  SE_Efd0 = iPSL.NonElectrical.Functions.SE(
+    vf00,
+    S_EE_1,
+    S_EE_2,
+    E_1,
+    E_2);
+
+  (V_RMAX0,K_E0) = param_init(
+    V_RMAX,
+    K_E,
+    E_2,
+    S_EE_2,
+    vf00,
+    SE_Efd0);
+  if (V_RMAX == 0) then
+    V_RMIN0 = -V_RMAX0;
+  else
+    V_RMIN0 = V_RMIN;
+  end if;
+
+  vr0 = vf00*(K_E0 + SE(
     vf00,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2));
   VREF = vr0/K_A + ECOMP0;
+
 equation
   connect(VUEL, hV_GATE.n2) annotation (Line(
-      points={{-91,-74},{-21.375,-74},{-21.375,-35}},
+      points={{-91,-74},{-17,-74},{-17,-32}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imSE.VE_IN, EFD) annotation (Line(points={{82.9,48},{98,48},{98,0},{105,0}}, color={0,0,127}));
@@ -108,7 +157,7 @@ equation
   connect(VOTHSG, add3_2.u2) annotation (Line(points={{-95,8},{-88,8},{-88,-7},{-71,-7}}, color={0,0,127}));
   connect(VOEL, add3_2.u3) annotation (Line(points={{-95,-10},{-71,-10},{-71,-11}}, color={0,0,127}));
   connect(add3_1.y, imLeadLag.u) annotation (Line(points={{-39.6,-28},{-35.2,-28}}, color={0,0,127}));
-  connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{-21.4,-28},{-21.375,-28},{-21.375,-25}}, color={0,0,127}));
+  connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{-21.4,-28},{-17,-28}}, color={0,0,127}));
   connect(imDerivativeLag.y, add3_1.u2) annotation (Line(points={{-4.6,0},{-52,0},{-52,-28},{-48.8,-28}}, color={0,0,127}));
   connect(ECOMP, imSimpleLag1.u) annotation (Line(points={{-95,30},{-74.8,30}}, color={0,0,127}));
   connect(imSimpleLag1.y, add3_1.u1) annotation (Line(points={{-65.6,30},{-56,30},{-56,-24.8},{-48.8,-24.8}}, color={0,0,127}));
@@ -123,7 +172,7 @@ equation
   connect(integrator.y, EFD) annotation (Line(points={{82.6,-26},{98,-26},{98,0},{105,0}}, color={0,0,127}));
   connect(imDerivativeLag.u, EFD) annotation (Line(points={{9.2,0},{105,0}}, color={0,0,127}));
   connect(product1.u2, EFD) annotation (Line(points={{55.4,12.8},{98,12.8},{98,0},{105,0}}, color={0,0,127}));
-  connect(hV_GATE.p, simpleLagLimVar.u) annotation (Line(points={{0.625,-30},{4.745,-30},{4.745,-29},{11,-29}}, color={0,0,127}));
+  connect(hV_GATE.p, simpleLagLimVar.u) annotation (Line(points={{-1,-30},{4.745,-30},{4.745,-29},{11,-29}}, color={0,0,127}));
   connect(simpleLagLimVar.y, add.u2) annotation (Line(points={{22.5,-29},{33.25,-29},{33.25,-28.4},{43.2,-28.4}}, color={0,0,127}));
   connect(gain.y, simpleLagLimVar.outMin) annotation (Line(points={{13,-43.7},{13,-39.85},{13,-36}}, color={0,0,127}));
   connect(gain1.y, simpleLagLimVar.outMax) annotation (Line(points={{29,-43.7},{29,-16},{21,-16},{21,-22}}, color={0,0,127}));
@@ -132,7 +181,11 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,40}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,40}}), graphics={
-        Rectangle(extent={{-100,40},{100,-40}}, lineColor={0,0,255}),
+        Rectangle(
+          extent={{-100,40},{100,-40}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
         Text(
           extent={{74,4},{102,-6}},
           lineColor={0,0,255},
@@ -173,7 +226,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Major change - 2015-10-31</td>
+<td>Major change - 2016-01-19</td>
 </tr>
 <tr>
 <td><p>Author</p></td>

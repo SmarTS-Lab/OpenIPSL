@@ -83,12 +83,12 @@ protected
   parameter Real pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0 "Initial mechanical power, machine base";
   parameter Real efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0 "Initial field voltage magnitude";
   parameter Real Epq0=PSIkd0 + (Xpd - Xl)*id0;
-  parameter Real Epd0=PSIkq0 - (Xpd - Xl)*iq0;
+  parameter Real Epd0=PSIkq0 - (Xpq - Xl)*iq0;
   //Initialize remaining states:
   parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d) "d-axis initial rotor flux linkage";
   parameter Real PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q) "q-axis initial rotor flux linkage";
   parameter Real PSId0=PSIppd0 - Xppd*id0;
-  parameter Real PSIq0=PSIppq0 - Xppq*iq0;
+  parameter Real PSIq0=-PSIppq0 - Xppq*iq0;
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;
   parameter Real K2d=(Xpd - Xl)*(Xppd - Xl)/(Xpd - Xppd);

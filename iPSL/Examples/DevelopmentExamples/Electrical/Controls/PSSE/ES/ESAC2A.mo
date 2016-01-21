@@ -149,11 +149,8 @@ equation
       points={{-48.88,8.5},{-44,8.5},{-44,32},{-80,32},{-80,20.5},{-77.72,20.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.EFD, generator.EFD) annotation (Line(
-      points={{-115.75,-35.3067},{-120,-35.3067},{-120,5.5},{-77.72,5.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
+  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-115.75,-35.3067},{-120,-35.3067},{-120,5.5},{-77.72,5.5}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

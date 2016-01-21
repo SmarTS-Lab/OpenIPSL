@@ -13,8 +13,8 @@ model InfiniteBus "Test"
   parameter Real V "Bus voltage magnitude (pu)";
   parameter Real angle "Bus voltage angle (deg)";
 equation
-  p.vr = V*cos(angle);
-  p.vi = V*sin(angle);
+  p.vr = V*cos(angle*Modelica.Constants.pi/180);
+  p.vi = V*sin(angle*Modelica.Constants.pi/180);
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
@@ -36,7 +36,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>2013</p></td>
+<td><p>2015-12-14</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>

@@ -34,8 +34,6 @@ protected
   parameter Real vf00=e1q0 + (Xd - x1d)*id0 "Initialitation";
   parameter Real e1q0=vq0 + Ra*iq0 + x1d*id0 "Initialitation";
   parameter Real e1d0=vd0 + Ra*id0 - x1q*iq0 "Initialitation *";
-protected
-  Real pe(start=pm00) "electric power";
 equation
   der(e1q) = ((-e1q) - (Xd - x1d)*id + vf)/Td10;
   der(e1d) = ((-e1d) + (Xq - x1q)*iq)/Tq10 "differential equations *";

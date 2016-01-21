@@ -3,7 +3,8 @@ within iPSL.Electrical.Buses;
 
 model Bus "Bus model
               2014/03/10"
-  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0)), vi(start=V_0*sin(angle_0))) annotation (Placement(
+
+  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180))) annotation (Placement(
       visible=true,
       transformation(
         origin={1.5559,0.0},
@@ -13,15 +14,13 @@ model Bus "Bus model
         origin={0.0,-0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Real V "Bus voltage magnitude (pu)";
-  Real angle "Bus voltage angle (deg)";
+  Real V(start=V_0) "Bus voltage magnitude (pu)";
+  Real angle(start=angle_0) "Bus voltage angle (deg)";
   parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
   parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-  Real anglevdeg;
 equation
-  anglevdeg = angle/Modelica.Constants.pi*180;
   V = sqrt(p.vr^2 + p.vi^2);
-  angle = atan2(p.vi, p.vr);
+  angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;
   p.ir = 0;
   p.ii = 0;
   annotation (
@@ -62,6 +61,23 @@ equation
         grid={5,5})),
     uses(Modelica(version="3.2.1")),
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>None</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>2015-12-14</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>SmarTS Lab, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+</tr>
+</table>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

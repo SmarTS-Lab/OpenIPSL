@@ -1,4 +1,5 @@
 IntegratorLimVar
+DerivativeLag
 SimpleLag
 SimpleLagLim
 SimpleLagLimVar
@@ -7,3 +8,4 @@ SimpleLagRateLimVar
 SimpleLead
 LeadLag
 LeadLagLim
+RampTrackingFilter

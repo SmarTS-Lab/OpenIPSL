@@ -2,9 +2,10 @@ within iPSL.Electrical.Buses;
 
 
 model BusExt
-  iPSL.Connectors.PwPinExt Ext;
-  parameter Integer nu(min=0) = 0 "Number of inputs" annotation (Dialog(connectorSizing=true), HideResult=true);
-  parameter Integer no(min=0) = 0 "Number of outputs" annotation (Dialog(connectorSizing=true), HideResult=true);
+  iPSL.Connectors.PwPinExt Ext(p(vr(start=vr0), vi(start=vi0)));
+  outer iPSL.Electrical.SystemBase SysData "Must add this line in all models";
+  parameter Integer nu(min=0) = 0 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer no(min=0) = 0 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
   iPSL.Connectors.PwPin u[nu] annotation (Placement(
       visible=true,
       transformation(
@@ -25,10 +26,15 @@ model BusExt
         origin={0,0},
         extent={{-4,-60},{4,60}},
         rotation=0)));
-  Real V "Bus voltage magnitude";
-  Real angle "Bus voltage angle";
+  Real V(start=V_0) "Bus voltage magnitude (pu)";
+  Real angle(start=angle_0) "Bus voltage angle (deg)";
+  parameter Real V_0 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
   parameter Real V_b=130 "Base voltage (kV)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+protected
+  parameter Real vr0=V_0*cos(angle_0*Modelica.Constants.pi/180);
+  parameter Real vi0=V_0*sin(angle_0*Modelica.Constants.pi/180);
 equation
   if nu > 0 then
     for i in 1:nu loop
@@ -41,7 +47,7 @@ equation
     end for;
   end if;
   V = sqrt(Ext.p.vr^2 + Ext.p.vi^2);
-  angle = atan2(Ext.p.vi, Ext.p.vr);
+  angle = atan2(Ext.p.vi, Ext.p.vr)*180/Modelica.Constants.pi;
   annotation (
     Diagram(coordinateSystem(extent={{0,-100},{20,100}})),
     Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false), graphics={Rectangle(
@@ -50,6 +56,23 @@ equation
           fillColor={85,170,255},
           fillPattern=FillPattern.Solid)}),
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>None</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>2015-12-14</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Jan Lavenius & Giuseppe Laera, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+</tr>
+</table>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

@@ -10,9 +10,9 @@ model ZIP "ZIP Load"
 protected
   Real a "Auxiliary variable, voltage division";
 equation
-  a = v/V_0;
-  P = P_0*CoB*(Pz*a^2 + Pi*a + Pp);
-  Q = Q_0*CoB*(Qz*a^2 + Qi*a + Qp);
+  a = V/V_0;
+  P = P_0/S_b*(Pz*a^2 + Pi*a + Pp);
+  Q = Q_0/S_b*(Qz*a^2 + Qi*a + Qp);
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

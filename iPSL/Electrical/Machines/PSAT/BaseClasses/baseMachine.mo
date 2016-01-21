@@ -137,6 +137,8 @@ protected
   parameter Real w_b=2*pi*fn "Base frequency in rad/s";
 protected
   Real pe;
+initial equation
+  w = 1;
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);

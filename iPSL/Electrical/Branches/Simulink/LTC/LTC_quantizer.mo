@@ -76,7 +76,6 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-54,46},{70,-42}}, lineColor={0,0,255}),Line(
           points={{-36,-36},{-26,-36},{-26,-28},{-16,-28},{-16,-18},{-8,-18},{-8,-8},{2,-8},{2,2},{10,2},{10,10},{18,10},{18,18},{26,18},{26,26},{34,26},{34,32},{42,32},{42,38},{50,38},{50,44},{60,44}},
-
           color={0,0,255},
           smooth=Smooth.None)}),
     Documentation(info="<html>

@@ -1,8 +1,8 @@
 within iPSL.NonElectrical.Continuous;
 
 
-model IntegratorLimVar "Integrator with a non windup limiter and variable limits"
-  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+block IntegratorLimVar "Integrator with a non windup limiter and variable limits"
+  extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
   Modelica.Blocks.Interfaces.RealInput outMax
@@ -15,6 +15,8 @@ model IntegratorLimVar "Integrator with a non windup limiter and variable limits
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-80,-140})));
+initial equation
+  y = y_start;
 equation
   assert(
     outMax > outMin,

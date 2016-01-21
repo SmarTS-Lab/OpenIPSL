@@ -13,8 +13,8 @@ model InfiniteBus2
   parameter Real angle "Bus voltage angle (deg)";
   Modelica.Blocks.Interfaces.RealInput V "Bus voltage magnitude (pu)" annotation (Placement(transformation(extent={{-120,-10},{-100,10}}), iconTransformation(extent={{-120,-10},{-100,10}})));
 equation
-  p.vr = V*cos(angle);
-  p.vi = V*sin(angle);
+  p.vr = V*cos(angle*Modelica.Constants.pi/180);
+  p.vi = V*sin(angle*Modelica.Constants.pi/180);
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
@@ -30,6 +30,23 @@ equation
         initialScale=0.1,
         grid={5,5}), graphics),
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>None</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>2015-12-14</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Maxime Baudette, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+</tr>
+</table>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

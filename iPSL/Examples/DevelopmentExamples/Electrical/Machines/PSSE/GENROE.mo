@@ -2,6 +2,7 @@ within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSSE;
 
 
 model GENROE "SMIB system with one load and GENROE model"
+
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,
@@ -46,7 +47,8 @@ model GENROE "SMIB system with one load and GENROE model"
     d_P=0,
     V_0=0.9919935,
     angle_0=-0.5762684,
-    t1=0) annotation (Placement(transformation(extent={{8,-52},{30,-28}})));
+    t1=0,
+    characteristic=2) annotation (Placement(transformation(extent={{8,-52},{30,-28}})));
   iPSL.Electrical.Events.PwFault pwFault(
     t1=2,
     t2=2.15,
@@ -72,7 +74,9 @@ model GENROE "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
+    Xppq=0.2,
+    R_a=0,
+    Xpp=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},

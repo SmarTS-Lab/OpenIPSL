@@ -17,12 +17,12 @@ protected
 equation
   der(xp) = (-xp/Tp) + ps - pt;
   P = xp/Tp + pt;
-  ps = P_0*CoB*(v/V_0)^alpha_s;
-  pt = P_0*CoB*(v/V_0)^alpha_t;
+  ps = P_0/S_b*(V/V_0)^alpha_s;
+  pt = P_0/S_b*(V/V_0)^alpha_t;
   der(xq) = (-xq/Tq) + qs - qt;
   Q = xq/Tq + qt;
-  qs = Q_0*CoB*(v/V_0)^beta_s;
-  qt = Q_0*CoB*(v/V_0)^beta_t;
+  qs = Q_0/S_b*(V/V_0)^beta_s;
+  qt = Q_0/S_b*(V/V_0)^beta_t;
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

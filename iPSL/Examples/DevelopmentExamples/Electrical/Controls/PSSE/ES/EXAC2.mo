@@ -77,7 +77,25 @@ model EXAC2 "SMIB system with one load and GENROE model"
     V_RMIN=2,
     K_L=2,
     K_H=2,
-    V_LR=2) annotation (Placement(transformation(extent={{-36,-42},{-82,-20}})));
+    V_LR=2,
+    VREF=1,
+    K_A=400,
+    T_A=0.02,
+    V_AMAX=9,
+    V_AMIN=-5.34,
+    T_E=0.8,
+    K_F=0.03,
+    T_F=1,
+    K_C=0.2,
+    K_D=0.48,
+    K_E=1,
+    E_1=5.25,
+    E_2=7,
+    S_EE_1=0.03,
+    S_EE_2=0.1,
+    T_R=0.005,
+    T_B=0.005,
+    T_C=0.005) annotation (Placement(transformation(extent={{-36,-42},{-82,-20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-2,-46},{-22,-26}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(

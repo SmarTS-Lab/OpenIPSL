@@ -1,9 +1,7 @@
 within iPSL.NonElectrical.Continuous;
-model SimpleLagLimVar "First order lag transfer function block with a non windup limiter and variable limits"
+block SimpleLagLimVar "First order lag transfer function block with a non windup limiter and variable limits"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
-  parameter Real K "Gain" annotation (Evaluate=false);
-  parameter Modelica.SIunits.Time T "Lag time constant" annotation (Evaluate=false);
-  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
+
   Modelica.Blocks.Interfaces.RealInput outMax
     annotation (Placement(transformation(extent={{98,106},{138,146}}), iconTransformation(
         extent={{-20,-20},{20,20}},
@@ -14,17 +12,26 @@ model SimpleLagLimVar "First order lag transfer function block with a non windup
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-80,-140})));
+  Modelica.Blocks.Sources.RealExpression const(y=T) annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
+
+  Real state(start=y_start);
+  parameter Real K "Gain";
+  parameter Modelica.SIunits.Time T "Lag time constant";
+  parameter Real y_start "Output start value";
+protected
+  parameter Real T_mod=if (T < Modelica.Constants.eps) then 1000 else T;
 equation
-  assert(
-    T >= 1e-10,
-    "Time constant must be greater than 0",
-    AssertionLevel.error);
-  if y >= outMax and (K*u - y)/T > 0 then
-    der(y) = 0;
-  elseif y <= outMin and (K*u - y)/T < 0 then
-    der(y) = 0;
+  T_mod*der(state) = K*u - state;
+  when (state > outMax) and ((K*u - state) < 0) then
+    reinit(state, outMax);
+  elsewhen (state < outMin) and ((K*u - state) > 0) then
+    reinit(state, outMin);
+  end when;
+
+  if abs(const.y) <= Modelica.Constants.eps then
+    y = max(min(u*K, outMax), outMin);
   else
-    T*der(y) = K*u - y;
+    y = max(min(state, outMax), outMin);
   end if;
   annotation (
     Documentation(info="<html>
