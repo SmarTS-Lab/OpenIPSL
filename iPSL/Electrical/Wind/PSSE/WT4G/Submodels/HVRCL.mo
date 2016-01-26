@@ -1,4 +1,4 @@
-within iPSL.Electrical.Wind.PSSE.WT4G;
+within iPSL.Electrical.Wind.PSSE.WT4G.Submodels;
 model HVRCL
   //The 'High Voltage Reactive Current Management' block limits the reactive current injected into the network equations such that the terminal voltage of the machine never exceeds Volim of nominal, as long as the converter is within current limits."
   parameter Real VHVRCR "Threthod voltage for HVRCL";
@@ -7,14 +7,14 @@ model HVRCL
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={15,-19}), iconTransformation(
-        extent={{-9,-9},{9,9}},
+        extent={{-5,-5},{5,5}},
         rotation=90,
-        origin={2,-28})));
-  Modelica.Blocks.Interfaces.RealOutput Iq_HVRCL annotation (Placement(transformation(extent={{42,4},{60,22}}), iconTransformation(extent={{42,4},{60,22}})));
+        origin={0,-35})));
+  Modelica.Blocks.Interfaces.RealOutput Iq_HVRCL annotation (Placement(transformation(extent={{42,4},{60,22}}), iconTransformation(extent={{40,-10},{60,10}})));
   Modelica.Blocks.Interfaces.RealInput Iq annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
         rotation=0,
-        origin={-27,11}), iconTransformation(extent={{-45,9},{-27,27}})));
+        origin={-27,11}), iconTransformation(extent={{-40,-5},{-30,5}})));
 equation
   if Vt > VHVRCR then
     Iq_HVRCL = CurHVRCR;
@@ -22,18 +22,40 @@ equation
     Iq_HVRCL = Iq;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(extent={{-28,42},{40,-20}}, lineColor={0,0,255}),
+    Diagram(coordinateSystem(
+        preserveAspectRatio=true,
+        extent={{-40,-40},{40,40}},
+        grid={1,1}), graphics),
+    Icon(coordinateSystem(
+        preserveAspectRatio=true,
+        extent={{-40,-40},{40,40}},
+        grid={1,1}), graphics={
+        Rectangle(
+          extent={{-40,40},{40,-40}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
         Text(
-          extent={{-20,46},{38,10}},
+          extent={{-20,40},{20,30}},
           lineColor={0,0,255},
           textString="HVRCL "),
         Line(
-          points={{30,14},{8,14},{-14,-12},{-14,-12}},
+          points={{14,30},{-6,30},{-16,10},{-16,10}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None)}),
+          smooth=Smooth.None),
+        Text(
+          extent={{-28,3},{-20,-3}},
+          lineColor={0,0,255},
+          textString="I_q"),
+        Text(
+          extent={{-5,-21},{5,-29}},
+          lineColor={0,0,255},
+          textString="V"),
+        Text(
+          extent={{19,4},{38,-4}},
+          lineColor={0,0,255},
+          textString="I_sorc")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -50,4 +72,3 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end HVRCL;
-

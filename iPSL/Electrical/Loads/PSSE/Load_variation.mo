@@ -5,7 +5,7 @@ model Load_variation "PSS/E Load with variation"
   parameter Real t1 "Time of Load Variation (s)";
   parameter Real d_t "Time duration of load variation (s)";
 protected
-  parameter Real PF=p0/q0;
+  parameter Real PF=if (q0 == 0) then 1 else p0/q0;
   parameter Real d_Q=(p0 + d_P)/PF - q0;
 equation
   if time >= t1 and time <= t1 + d_t then

@@ -114,7 +114,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
         rotation=0,
         origin={-115,-65})));
   Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(extent={{-96,6},{-86,16}})));
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{-96,56},{-86,66}})));
+  Modelica.Blocks.Math.Add add1 annotation (Placement(transformation(extent={{-101,50},{-91,60}})));
   Modelica.Blocks.Math.Add3 add3_1(k1=-1) annotation (Placement(transformation(extent={{-75,26},{-65,36}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=K_A,
@@ -182,10 +182,10 @@ equation
   connect(ECOMP, imSimpleLag.u) annotation (Line(points={{-136.3,6.4},{-126.65,6.4},{-126.65,6},{-116.78,6}}, color={0,0,127}));
   connect(Vref.y, add.u1) annotation (Line(points={{-106.52,26.95},{-101,26.95},{-101,14},{-97,14}}, color={0,0,127}));
   connect(imSimpleLag.y, add.u2) annotation (Line(points={{-105.51,6},{-103,6},{-101,6},{-101,8},{-97,8}}, color={0,0,127}));
-  connect(VOTHSG, add1.u1) annotation (Line(points={{-136.2,73.8},{-111,73.8},{-111,65},{-97,65},{-97,64}}, color={0,0,127}));
-  connect(VUEL1, add1.u2) annotation (Line(points={{-136.1,42.6},{-111,42.6},{-111,58},{-97,58}}, color={0,0,127}));
+  connect(VOTHSG, add1.u1) annotation (Line(points={{-136.2,73.8},{-111,73.8},{-111,65},{-102,65},{-102,58}}, color={0,0,127}));
+  connect(VUEL1, add1.u2) annotation (Line(points={{-136.1,42.6},{-111,42.6},{-111,52},{-102,52}},color={0,0,127}));
   connect(add.y, add3_1.u3) annotation (Line(points={{-85.5,11},{-81,11},{-81,27},{-76,27}}, color={0,0,127}));
-  connect(add1.y, add3_1.u2) annotation (Line(points={{-85.5,61},{-81,61},{-81,31},{-76,31}}, color={0,0,127}));
+  connect(add1.y, add3_1.u2) annotation (Line(points={{-90.5,55},{-81,55},{-81,31},{-76,31}}, color={0,0,127}));
   connect(add3_1.y, imLimited.u) annotation (Line(points={{-64.5,31},{-58.22,31},{-58.22,30.9}}, color={0,0,127}));
   connect(imLimited.y, hV_GATE.n1) annotation (Line(points={{-46.49,30.9},{-41,30.9},{-41,32.1},{-39.9813,32.1}}, color={0,0,127}));
   connect(hV_GATE.p, imLeadLag.u) annotation (Line(points={{-19.4813,26.9},{-19.7013,26.9},{-19.7013,26},{-16,26}}, color={0,0,127}));
@@ -273,7 +273,7 @@ equation
           lineColor={0,0,255},
           textString="ECOMP"),
         Text(
-          extent={{-108,52},{-80,35}},
+          extent={{-108,72},{-80,55}},
           lineColor={0,128,0},
           textString="VOTHSG
 (VOS=1)"),
@@ -309,7 +309,7 @@ equation
           textString="VUEL3
 (UEL=3)"),
         Text(
-          extent={{-109,72},{-78,54}},
+          extent={{-110,52},{-79,34}},
           lineColor={0,128,0},
           textString="VOTHSG2
 (VOS=2)"),
@@ -329,7 +329,7 @@ equation
           extent={{3,20},{-3,-20}},
           lineColor={0,128,0},
           textString="}",
-          origin={-76,55},
+          origin={-75,56},
           rotation=360),
         Text(
           extent={{3,20},{-3,-20}},

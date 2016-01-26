@@ -1,5 +1,5 @@
-within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.PSS;
-model IEEEST "SMIB system with one load and GENROE model"
+within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
+model IEEET2 "SMIB system with one load and GENROE model"
   import iPSL;
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
@@ -72,46 +72,22 @@ model IEEEST "SMIB system with one load and GENROE model"
     angle_0=4.046276,
     Q_0=5.416582,
     Xppq=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-2,-76},{-22,-56}})));
-  iPSL.Electrical.Controls.PSSE.ES.ESST1A.ESST1A eSST1A(
-    V_IMAX=0.3,
-    V_IMIN=-0.3,
-    T_C=2,
-    T_B=10,
-    T_C1=0.08,
-    T_B1=0.083,
-    K_A=300,
-    V_AMAX=7,
-    V_AMIN=-7,
-    V_RMAX=5.2,
-    V_RMIN=-5.2,
-    K_C=0.38,
-    K_F=1,
-    T_F=1,
-    K_LR=1,
-    I_LR=0,
-    T_A=0.1,
-    T_R=0.1) annotation (Placement(transformation(extent={{-38,-80},{-90,-50}})));
-  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-2,-110},{-22,-90}})));
-  Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{0,-140},{-20,-120}})));
-  iPSL.Electrical.Controls.PSSE.PSS.IEEEST.IEEEST iEEEST(
-    A_1=48.7435,
-    A_2=4.7488,
-    A_3=0.0,
-    A_4=0.0,
-    A_5=-85.7761,
-    A_6=0.0459,
-    T_1=0.7361,
-    T_2=1.5868,
-    T_3=0.0,
-    T_4=0.02,
-    T_5=13.8921,
-    T_6=0.1057,
-    K_S=0.0099,
-    L_SMAX=0.1,
-    L_SMIN=-0.1,
-    V_CU=0.0,
-    V_CL=0.0) annotation (Placement(transformation(extent={{-76,-34},{-48,-22}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-2,-40},{-22,-20}})));
+  iPSL.Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2_1(
+    T_R=0.02,
+    K_A=200,
+    T_A=0.001,
+    T_E=0.55,
+    K_F=0.06,
+    T_F1=0.3,
+    T_F2=0.6,
+    E_1=2.85,
+    S_EE_1=0.3,
+    E_2=3.8,
+    S_EE_2=0.6,
+    V_RMIN=-1,
+    K_E=0,
+    V_RMAX=0) annotation (Placement(transformation(extent={{-40,-48},{-72,-22}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -143,19 +119,12 @@ equation
       smooth=Smooth.None));
   connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
-  connect(eSST1A.ECOMP, gENROE.ETERM) annotation (Line(points={{-39.0833,-65},{-34,-65},{-34,20},{-40.4,20}}, color={0,0,127}));
-  connect(const1.y, eSST1A.VUEL2) annotation (Line(points={{-23,-100},{-60.7717,-100},{-60.7717,-79.0438}}, color={0,0,127}));
-  connect(eSST1A.VUEL1, const.y) annotation (Line(points={{-54.2175,-79.0625},{-54.2175,-84},{-28,-84},{-28,-66},{-23,-66}}, color={0,0,127}));
-  connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-67.2175,-79.0531},{-67.2175,-100},{-60.7717,-100},{-60.7717,-79.0438}}, color={0,0,127}));
-  connect(const2.y, eSST1A.VOEL) annotation (Line(points={{-21,-130},{-73.75,-130},{-73.75,-79.0625}}, color={0,0,127}));
-  connect(eSST1A.EFD, gENROE.EFD) annotation (Line(points={{-91.0833,-65.0375},{-96,-65.0375},{-96,0},{-81.6,0}}, color={0,0,127}));
-  connect(eSST1A.VT, gENROE.ETERM) annotation (Line(points={{-39.2458,-69.7344},{-34,-69.7344},{-34,20},{-40.4,20}}, color={0,0,127}));
-  connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-39.0833,-73.4094},{-32,-73.4094},{-32,-4},{-40.4,-4}}, color={0,0,127}));
-  connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-39.0833,-77.1875},{-30,-77.1875},{-30,-8},{-40.4,-8}}, color={0,0,127}));
-  connect(iEEEST.V_CT, gENROE.ETERM) annotation (Line(points={{-75.7667,-25},{-82,-25},{-82,-18},{-34,-18},{-34,20},{-40.4,20}}, color={0,0,127}));
-  connect(iEEEST.V_S, gENROE.PELEC) annotation (Line(points={{-75.7667,-31},{-82,-31},{-82,-42},{-36,-42},{-36,0},{-40.4,0}}, color={0,0,127}));
-  connect(eSST1A.VOTHSG2, const.y) annotation (Line(points={{-39.0833,-56.5625},{-26,-56.5625},{-26,-66},{-23,-66}}, color={0,0,127}));
-  connect(iEEEST.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-46.8333,-28},{-28,-28},{-28,-52.8125},{-39.0833,-52.8125}}, color={0,0,127}));
+  connect(iEEET2_1.EFD, gENROE.EFD) annotation (Line(points={{-73.2,-35},{-92,-35},{-92,0},{-81.6,0}}, color={0,0,127}));
+  connect(iEEET2_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-40.5333,-24.6},{-34,-24.6},{-34,20},{-40.4,20}}, color={0,0,127}));
+  connect(iEEET2_1.EFD0, gENROE.EFD0) annotation (Line(points={{-40.5333,-45.4},{-32,-45.4},{-32,-4},{-40.4,-4}}, color={0,0,127}));
+  connect(iEEET2_1.VOTHSG, const.y) annotation (Line(points={{-40.5333,-29.8},{-31.3333,-29.8},{-31.3333,-30},{-23,-30}}, color={0,0,127}));
+  connect(iEEET2_1.VOEL, const.y) annotation (Line(points={{-40.5333,-35},{-26,-35},{-26,-30},{-23,-30}}, color={0,0,127}));
+  connect(iEEET2_1.VUEL, const.y) annotation (Line(points={{-40.5333,-40.2},{-26,-40.2},{-26,-30},{-23,-30}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -171,4 +140,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end IEEEST;
+end IEEET2;

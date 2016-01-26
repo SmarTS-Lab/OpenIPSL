@@ -1,9 +1,7 @@
-within iPSL.Electrical.Wind.PSSE.WT4G;
-
-
+within iPSL.Electrical.Wind.PSSE.WT4G.Submodels;
 model CCL
   parameter Real Qmax;
-  parameter Integer pqflag;
+  parameter Boolean pqflag;
   parameter Real ImaxTD "Converter current limit";
   parameter Real Iphl "Hard active current limit";
   parameter Real Iqhl "Hard reactive current limit";
@@ -13,33 +11,33 @@ model CCL
         origin={-12,96}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={-52,42})));
+        origin={-50,110})));
   Modelica.Blocks.Interfaces.RealInput IpCMD annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
         origin={134,-20}), iconTransformation(
-        extent={{-9,-9},{9,9}},
+        extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={55,-35})));
+        origin={50,-100})));
   Modelica.Blocks.Interfaces.RealInput IqCMD
     annotation (Placement(transformation(extent={{-146,-30},{-120,-4}}), iconTransformation(
-        extent={{-9,-9},{9,9}},
+        extent={{-10,-10},{10,10}},
         rotation=270,
-        origin={55,35})));
+        origin={50,100})));
   Modelica.Blocks.Interfaces.RealOutput IQmax annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={16,96}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={2,42})));
+        origin={0,110})));
   Modelica.Blocks.Interfaces.RealOutput IPmax annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-2,-84}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
-        origin={-50,-40})));
+        origin={-50,-110})));
   Modelica.Blocks.Math.Min min1 annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=270,
@@ -80,9 +78,9 @@ model CCL
         extent={{-20,-20},{20,20}},
         rotation=270,
         origin={0,78}), iconTransformation(
-        extent={{-9,-9},{9,9}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={-101,5})));
+        origin={-100,0})));
 protected
   Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
@@ -152,14 +150,14 @@ equation
   Available_remain1 = sqrt(ImaxTD^2 - IpCMD^2);
   Available_remain2 = sqrt(ImaxTD^2 - IqCMD^2);
   Iqmax = (Qmax - 1.6)*(Vt - 1) + Qmax;
-  if pqflag == 0 then
-    IQmin = IQmin2;
-    IQmax = IQmax2;
-    IPmax = IPmax2;
-  else
+  if pqflag then
     IQmin = IQmin1;
     IQmax = IQmax1;
     IPmax = IPmax1;
+  else
+    IQmin = IQmin2;
+    IQmax = IQmax2;
+    IPmax = IPmax2;
   end if;
   connect(const1.y, min1.u2) annotation (Line(
       points={{-9,-26.7},{-9,-30},{-48.4,-30},{-48.4,-30.8}},
@@ -234,11 +232,41 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,32},{100,-30}}, lineColor={0,0,255}),Text(
-          extent={{-66,12},{60,-22}},
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
+          extent={{-100,100},{100,-100}},
           lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-76,58},{82,18}},
+          lineColor={244,125,35},
           textString="Converter Current Limit
-")}),
+"),
+        Text(
+          extent={{-86,6},{-46,-6}},
+          lineColor={28,108,200},
+          textString="VTERM"),
+        Text(
+          extent={{-70,96},{-30,84}},
+          lineColor={28,108,200},
+          textString="I_Qmin"),
+        Text(
+          extent={{-18,96},{22,84}},
+          lineColor={28,108,200},
+          textString="I_Qmax"),
+        Text(
+          extent={{32,88},{72,76}},
+          lineColor={28,108,200},
+          textString="I_Qcmd"),
+        Text(
+          extent={{26,-76},{66,-88}},
+          lineColor={28,108,200},
+          textString="I_Pcmd"),
+        Text(
+          extent={{-72,-76},{-32,-88}},
+          lineColor={28,108,200},
+          textString="I_Pmax")}),
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
         Rectangle(
           extent={{-112,96},{-34,-86}},

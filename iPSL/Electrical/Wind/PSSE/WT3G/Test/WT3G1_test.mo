@@ -163,15 +163,13 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-80},{160,100}}), graphics={
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-80},{160,100}}), graphics={Text(
           extent={{-134,98},{-54,74}},
           lineColor={0,0,255},
           textString="100 60HZ
 
 The B in Pwline stands for half charging B in PSSE transmission line",
-          fontSize=10),
-        Text(
+          fontSize=10),Text(
           extent={{144,22},{146,12}},
           lineColor={0,0,255},
           textString=" ** BASE FREQUENCY option setting set to 60.0
@@ -202,9 +200,7 @@ Successfully cleaned Diagram
  NEXT AVAILABLE ADDRESSES ARE:
     CON  STATE    VAR   ICON
      18     10      6      3
-"),
-        Text(
-          extent={{-166,52},{-114,48}},
+"),Text(  extent={{-166,52},{-114,48}},
           lineColor={0,0,255},
           textString=" INITIAL CONDITION LOAD FLOW USED 1 ITERATIONS
 
@@ -213,8 +209,7 @@ Successfully cleaned Diagram
       1 INFINITE BUS230.00 1  1.0000 0.9706   -1.47  -14.70-0.0994  -0.17-0.1469-0.0151
       3 BUS3        34.400 1  1.0020 0.0000    0.00    9.69 0.0000   0.00 0.0967-0.0001
       5 WT3G        0.6000 1  1.0000 0.0000    1.50    0.00 1.0000  -0.00 0.0000 1.0000",
-          horizontalAlignment=TextAlignment.Left),
-        Text(
+          horizontalAlignment=TextAlignment.Left),Text(
           extent={{-166,-78},{-140,-82}},
           lineColor={0,0,255},
           textString="    TIME X- VALUE --X X--------- IDENTIFIER ---------X X- VALUE --X X--------- IDENTIFIER ---------X
@@ -225,8 +220,7 @@ Successfully cleaned Diagram
      9     0.0000     S10                              -0.14698     QINF
     11    9.68810E-02 QSH                                1.0000     V5
     13   -1.25630E-03 A5",
-          horizontalAlignment=TextAlignment.Left),
-        Text(
+          horizontalAlignment=TextAlignment.Left),Text(
           extent={{-24,64},{96,40}},
           lineColor={0,0,255},
           fontSize=18,

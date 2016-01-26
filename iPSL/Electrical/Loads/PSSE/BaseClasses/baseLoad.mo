@@ -4,7 +4,7 @@ within iPSL.Electrical.Loads.PSSE.BaseClasses;
 partial model baseLoad
   import Modelica.Constants.pi;
   extends iPSL.Electrical.Essentials.pfComponent;
-  parameter Complex S_p(re=P_0, im=Q_0) "Original constant power load (pu)";
+  parameter Complex S_p(re=P_0/S_b, im=Q_0/S_b) "Original constant power load (pu)";
   parameter Complex S_i(re=0, im=0) "Original constant current load (pu)";
   parameter Complex S_y(re=0, im=0) "Original constant shunt admittance load (pu)";
   parameter Complex a(re=1, im=0) "Load transfer fraction for constant current load";
