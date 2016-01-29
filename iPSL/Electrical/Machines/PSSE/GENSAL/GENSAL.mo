@@ -74,6 +74,8 @@ initial equation
   der(Epq) = 0;
   der(PSIkd) = 0;
   der(PSIppq) = 0;
+  delta = delta0;
+  w = 0;
 equation
   //Interfacing outputs with the internal variables
   XADIFD = XadIfd;

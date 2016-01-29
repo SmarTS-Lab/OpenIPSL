@@ -72,9 +72,6 @@ protected
   parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, systembase";
   parameter Real p0=P_0/M_b "initial active power generation in pu machinebase";
   parameter Real q0=Q_0/M_b "initial reactive power generation in pu machinebase";
-initial equation
-  der(delta) = 0;
-  der(w) = 0;
 equation
   //Interfacing outputs with the internal variables
   ANGLE = delta;
