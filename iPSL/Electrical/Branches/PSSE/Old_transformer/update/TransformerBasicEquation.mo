@@ -1,6 +1,4 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
-
-
 model TransformerBasicEquation "Basic Two Winding Transformer equation without phaseshift or tap changer"
   iPSL.Connectors.PwPin T "To side" annotation (Placement(transformation(extent={{86,-2},{106,18}}), iconTransformation(extent={{86,-2},{106,18}})));
   iPSL.Connectors.PwPin F "From side" annotation (Placement(transformation(extent={{-92,0},{-72,20}}), iconTransformation(extent={{-92,0},{-72,20}})));
@@ -14,87 +12,75 @@ equation
   -t*(Req*T.ii + Xeq*T.ir) = F.vi - T.vi*t;
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-82,66},{92,-44}}, lineColor={0,0,255})}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
-        Line(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Line(
           points={{-68,16},{78,16},{78,16}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),
-        Rectangle(
+          smooth=Smooth.None),Rectangle(
           extent={{-54,0},{-46,-42}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),
-        Rectangle(
+          fillColor={0,0,255}),Rectangle(
           extent={{-38,0},{-30,-42}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),
-        Rectangle(
+          fillColor={0,0,255}),Rectangle(
           extent={{16,20},{-18,12}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),
-        Rectangle(
+          fillColor={0,0,255}),Rectangle(
           extent={{60,20},{26,12}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),
-        Line(
+          fillColor={0,0,255}),Line(
           points={{-42,16},{-42,4},{-34,4},{-34,-2},{-34,-48},{-50,-48},{-50,4},{-42,4},{-42,4}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-42,-48},{-42,-58},{-54,-58},{-30,-58},{-30,-58}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),
-        Text(
+          smooth=Smooth.None),Text(
           extent={{-76,-10},{-58,-26}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="G"),
-        Text(
+          textString="G"),Text(
           extent={{-26,-12},{-8,-28}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="B"),
-        Text(
+          textString="B"),Text(
           extent={{-12,38},{6,22}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="R"),
-        Text(
+          textString="R"),Text(
           extent={{34,38},{52,22}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString="X")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end TransformerBasicEquation;

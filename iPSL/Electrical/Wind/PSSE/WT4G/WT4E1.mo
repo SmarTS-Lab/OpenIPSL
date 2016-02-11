@@ -289,45 +289,38 @@ protected
     connect(VTERM, imLimited_min.u) annotation (Line(points={{0,-200},{0,-60},{34,-60}}, color={0,0,127}));
     connect(I_PMAX, imLimited_max.limit1) annotation (Line(points={{170,204},{168,204},{168,86},{122,86},{122,18},{128,18}}, color={0,0,127}));
     annotation (Diagram(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=false),graphics={Text(
-            extent={{-88,16},{-84,14}},
-            lineColor={0,0,255},
-            lineThickness=0.5,
-            fillColor={0,0,255},
-            fillPattern=FillPattern.Solid,
-            textString="Speed"), Text(
-            extent={{-80,200},{80,180}},
-            lineColor={255,0,0},
-            pattern=LinePattern.Dash,
-            lineThickness=0.5,
-            fillColor={0,0,255},
-            fillPattern=FillPattern.Solid,
-            textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
-          Rectangle(
-            extent={{-200,200},{200,-200}},
-            lineColor={28,108,200},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid),
-          Text(
-            extent={{-100,160},{100,0}},
-            lineColor={0,140,72},
-            textString="Active Power
-PI"),
-          Text(
-            extent={{-40,180},{40,140}},
-            lineColor={28,108,200},
-            textString="I_PMAX"),
-          Text(
-            extent={{112,20},{192,-20}},
-            lineColor={28,108,200},
-            textString="I_PCMD"),
-          Text(
-            extent={{-40,-140},{40,-180}},
-            lineColor={28,108,200},
-            textString="VTERM"),
-          Text(
-            extent={{-174,20},{-94,-20}},
-            lineColor={28,108,200},
-            textString="PELEC")}));
+              extent={{-88,16},{-84,14}},
+              lineColor={0,0,255},
+              lineThickness=0.5,
+              fillColor={0,0,255},
+              fillPattern=FillPattern.Solid,
+              textString="Speed"),Text(
+              extent={{-80,200},{80,180}},
+              lineColor={255,0,0},
+              pattern=LinePattern.Dash,
+              lineThickness=0.5,
+              fillColor={0,0,255},
+              fillPattern=FillPattern.Solid,
+              textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={Rectangle(
+              extent={{-200,200},{200,-200}},
+              lineColor={28,108,200},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-100,160},{100,0}},
+              lineColor={0,140,72},
+              textString="Active Power
+PI"),Text(    extent={{-40,180},{40,140}},
+              lineColor={28,108,200},
+              textString="I_PMAX"),Text(
+              extent={{112,20},{192,-20}},
+              lineColor={28,108,200},
+              textString="I_PCMD"),Text(
+              extent={{-40,-140},{40,-180}},
+              lineColor={28,108,200},
+              textString="VTERM"),Text(
+              extent={{-174,20},{-94,-20}},
+              lineColor={28,108,200},
+              textString="PELEC")}));
   end ActivePowerController;
 equation
   connect(activePowerController.ipcmd, WIPCMD) annotation (Line(points={{82,-80},{82,-80},{210,-80}}, color={0,0,127}));
@@ -354,30 +347,26 @@ protected
     connect(u, K0.u) annotation (Line(points={{-204,0},{-158,0},{-122,0}}, color={0,0,127}));
     connect(Qcmdn1.y, Q_REF_PF) annotation (Line(points={{-39,0},{10,0},{10,0}}, color={0,0,127}));
     annotation (Diagram(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={Text(
-            extent={{-160,100},{-40,80}},
-            lineColor={255,0,0},
-            pattern=LinePattern.Dash,
-            lineThickness=0.5,
-            fillColor={0,0,255},
-            fillPattern=FillPattern.Solid,
-            textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
-          Rectangle(
-            extent={{-200,100},{0,-100}},
-            lineColor={28,108,200},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid),
-          Text(
-            extent={{-188,6},{-148,-6}},
-            lineColor={28,108,200},
-            textString="P_FAREF"),
-          Text(
-            extent={{-60,6},{-2,-6}},
-            lineColor={28,108,200},
-            textString="Q_REF_PF"),
-          Text(
-            extent={{-160,80},{-40,40}},
-            lineColor={238,46,47},
-            textString="PF Controller")}));
+              extent={{-160,100},{-40,80}},
+              lineColor={255,0,0},
+              pattern=LinePattern.Dash,
+              lineThickness=0.5,
+              fillColor={0,0,255},
+              fillPattern=FillPattern.Solid,
+              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={Rectangle(
+              extent={{-200,100},{0,-100}},
+              lineColor={28,108,200},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-188,6},{-148,-6}},
+              lineColor={28,108,200},
+              textString="P_FAREF"),Text(
+              extent={{-60,6},{-2,-6}},
+              lineColor={28,108,200},
+              textString="Q_REF_PF"),Text(
+              extent={{-160,80},{-40,40}},
+              lineColor={238,46,47},
+              textString="PF Controller")}));
   end pf_Controller;
 equation
   connect(P, PF_Controller.u) annotation (Line(points={{-200,0},{-170,0},{-140,0},{-140,48},{-120.8,48}}, color={0,150,00}));
@@ -450,34 +439,30 @@ protected
     connect(V_REG, add3.u2) annotation (Line(points={{-204,0},{-80,0},{-80,-6},{-62,-6}}, color={0,0,127}));
     connect(K.y, Q_ord) annotation (Line(points={{119,0},{210,0}}, color={0,0,127}));
     annotation (Diagram(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={Rectangle(
-            extent={{-94,48},{124,-42}},
-            lineColor={255,0,0},
-            lineThickness=0.5,
-            pattern=LinePattern.Dash), Text(
-            extent={{-16,46},{46,40}},
-            lineColor={255,0,0},
-            pattern=LinePattern.Dash,
-            lineThickness=0.5,
-            fillColor={0,0,255},
-            fillPattern=FillPattern.Solid,
-            textString="WindControl Emulator")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
-          Rectangle(
-            extent={{-200,200},{200,-200}},
-            lineColor={28,108,200},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid),
-          Text(
-            extent={{-196,14},{-76,-16}},
-            lineColor={28,108,200},
-            textString="V_REG"),
-          Text(
-            extent={{80,14},{200,-16}},
-            lineColor={28,108,200},
-            textString="Q_ORD"),
-          Text(
-            extent={{-172,162},{180,72}},
-            lineColor={180,56,148},
-            textString="WindCONTROL Emulator")}));
+              extent={{-94,48},{124,-42}},
+              lineColor={255,0,0},
+              lineThickness=0.5,
+              pattern=LinePattern.Dash),Text(
+              extent={{-16,46},{46,40}},
+              lineColor={255,0,0},
+              pattern=LinePattern.Dash,
+              lineThickness=0.5,
+              fillColor={0,0,255},
+              fillPattern=FillPattern.Solid,
+              textString="WindControl Emulator")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={Rectangle(
+              extent={{-200,200},{200,-200}},
+              lineColor={28,108,200},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-196,14},{-76,-16}},
+              lineColor={28,108,200},
+              textString="V_REG"),Text(
+              extent={{80,14},{200,-16}},
+              lineColor={28,108,200},
+              textString="Q_ORD"),Text(
+              extent={{-172,162},{180,72}},
+              lineColor={180,56,148},
+              textString="WindCONTROL Emulator")}));
   end windControlEmulator;
 equation
   connect(windControlEmulator1.V_REG, Vcl.u2) annotation (Line(points={{-120.4,160},{-160,160},{-160,-160},{118,-160},{118,52}}, color={255,0,00}));
@@ -493,94 +478,97 @@ equation
   connect(activePowerController.I_PMAX, cCL.IPmax) annotation (Line(points={{60,-60},{60,-40},{160,-40},{160,-32}}, color={0,0,127}));
   connect(cCL.IQmin, K7.outMin) annotation (Line(points={{160,12},{160,12},{160,32},{144,32},{144,46}}, color={0,0,127}));
   connect(K7.outMax, cCL.IQmax) annotation (Line(points={{160,74},{160,80},{170,80},{170,12}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(
+  annotation (
+    Diagram(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-200,-200},{200,200}},
-        initialScale=0.05), graphics={
-        Rectangle(
+        initialScale=0.05), graphics={Rectangle(
           extent={{46,118},{192,24}},
           lineColor={255,0,0},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),
-        Text(
+          pattern=LinePattern.Dash),Text(
           extent={{64,116},{170,108}},
           lineColor={255,0,0},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Reactive Power Control"),
-        Rectangle(
+          textString="Reactive Power Control"),Rectangle(
           extent={{-134,130},{14,-20}},
           lineColor={0,140,72},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),
-        Text(
+          pattern=LinePattern.Dash),Text(
           extent={{-130,128},{-24,120}},
           lineColor={0,140,72},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Reactive Power Reference Switching"),
-        Rectangle(
+          textString="Reactive Power Reference Switching"),Rectangle(
           extent={{104,104},{190,26}},
           lineColor={102,44,145},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),
-        Text(
+          pattern=LinePattern.Dash),Text(
           extent={{92,104},{198,96}},
           lineColor={180,56,148},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Terminal Voltage Control")}), Icon(coordinateSystem(
+          textString="Terminal Voltage Control")}),
+    Icon(coordinateSystem(
         extent={{-200,-200},{200,200}},
         preserveAspectRatio=false,
-        initialScale=0.05), graphics={
-        Rectangle(
+        initialScale=0.05), graphics={Rectangle(
           extent={{-200,200},{200,-200}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           extent={{-70,42},{82,-36}},
           lineColor={28,108,200},
-          textString="WT4E1"),
-        Text(
+          textString="WT4E1"),Text(
           extent={{110,172},{170,142}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V"),
-        Text(
+          textString="V"),Text(
           extent={{110,114},{170,84}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="Q"),
-        Text(
+          textString="Q"),Text(
           extent={{110,56},{170,26}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="P"),
-        Text(
+          textString="P"),Text(
           extent={{82,-42},{194,-74}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="WIPCMD"),
-        Text(
+          textString="WIPCMD"),Text(
           extent={{82,-124},{194,-156}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="WIQCMD")}));
+          textString="WIQCMD")}),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
 end WT4E1;

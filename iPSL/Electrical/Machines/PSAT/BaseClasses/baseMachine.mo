@@ -1,6 +1,4 @@
 within iPSL.Electrical.Machines.PSAT.BaseClasses;
-
-
 partial model baseMachine
   extends iPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
@@ -155,80 +153,67 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
-        grid={1,1}), graphics={
-        Text(
+        grid={1,1}), graphics={Text(
           origin={-81,50.5},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10.5},{10,10.5}},
           fontName="Arial",
           textString="vf",
-          lineColor={28,108,200}),
-        Text(
+          lineColor={28,108,200}),Text(
           origin={-77.3761,-48},
           fillPattern=FillPattern.Solid,
           extent={{-9.6086,-11.4189},{9.6086,11.4189}},
           fontName="Arial",
           textString="pm",
-          lineColor={28,108,200}),
-        Text(
+          lineColor={28,108,200}),Text(
           origin={-80,90},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
           fontName="Arial",
           textString="vf0",
-          lineColor={28,108,200}),
-        Text(
+          lineColor={28,108,200}),Text(
           origin={-80.6294,-89.5811},
           fillPattern=FillPattern.Solid,
           extent={{-15.3706,-13.4189},{15.3706,13.4189}},
           fontName="Arial",
           textString="pm0",
-          lineColor={28,108,200}),
-        Text(
+          lineColor={28,108,200}),Text(
           origin={80.5,60.6367},
           fillPattern=FillPattern.Solid,
           extent={{-23.5,-8.6367},{23.5,8.6367}},
           fontName="Arial",
           lineColor={28,108,200},
-          textString="delta"),
-        Text(
+          textString="delta"),Text(
           origin={90,90.5},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10.5},{10,10.5}},
           textString="w",
           fontName="Arial",
-          lineColor={28,108,200}),
-        Text(
+          lineColor={28,108,200}),Text(
           origin={90,30},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
           textString="v",
           fontName="Arial",
-          lineColor={28,108,200}),
-        Rectangle(
+          lineColor={28,108,200}),Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
-          lineColor={28,108,200}),
-        Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),
-        Line(
+          lineColor={28,108,200}),Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),Line(
           points={{-20,0},{-9,15},{9,-15},{20,0}},
           color={28,108,200},
-          smooth=Smooth.Bezier),
-        Text(
+          smooth=Smooth.Bezier),Text(
           origin={4,-58.0978},
           fillPattern=FillPattern.Solid,
           extent={{-57.2101,-15.0},{57.2101,15.0}},
           textString="%name",
           fontName="Arial",
-          lineColor={28,108,200}),
-        Text(
+          lineColor={28,108,200}),Text(
           origin={90,-31},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
           fontName="Arial",
           lineColor={28,108,200},
-          textString="P"),
-        Text(
+          textString="P"),Text(
           origin={90,-60},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
@@ -239,19 +224,18 @@ equation
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
         grid={1,1})),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end baseMachine;

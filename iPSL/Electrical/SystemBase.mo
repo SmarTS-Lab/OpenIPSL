@@ -1,6 +1,4 @@
 within iPSL.Electrical;
-
-
 model SystemBase "System Base Definition"
   parameter Real S_b=100 "System base in MVA";
   parameter Real fn=50 "System Frequency in Hz";
@@ -12,58 +10,37 @@ model SystemBase "System Base Definition"
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),
         Text(
-          extent={{-90,40},{40,20}},
+          extent={{-80,40},{120,0}},
           lineColor={28,108,200},
           horizontalAlignment=TextAlignment.Left,
-          textString="System Base"),
+          textString="System Base: %S_b MVA"),
         Text(
-          extent={{88,40},{124,20}},
+          extent={{-80,-20},{120,-60}},
           lineColor={28,108,200},
           horizontalAlignment=TextAlignment.Left,
-          textString="MVA"),
+          textString="Frequency: %fn Hz"),
         Text(
-          extent={{20,40},{72,20}},
+          extent={{-80,100},{120,60}},
           lineColor={28,108,200},
-          horizontalAlignment=TextAlignment.Right,
-          textString=DynamicSelect("0.0", String(S_b))),
-        Text(
-          extent={{-90,0},{40,-20}},
-          lineColor={28,108,200},
-          horizontalAlignment=TextAlignment.Left,
-          textString="Frequency"),
-        Text(
-          extent={{40,0},{72,-20}},
-          lineColor={28,108,200},
-          horizontalAlignment=TextAlignment.Right,
-          textString=DynamicSelect("0.0", String(fn))),
-        Text(
-          extent={{88,0},{118,-20}},
-          lineColor={28,108,200},
-          horizontalAlignment=TextAlignment.Left,
-          textString="Hz"),
-        Text(
-          extent={{-42,80},{88,60}},
-          lineColor={28,108,200},
-          horizontalAlignment=TextAlignment.Left,
+          horizontalAlignment=TextAlignment.Center,
           textString="System Data")}),
     defaultComponentName="SysData",
     defaultAttributes="inner",
     missingInnerMessage="
 No 'System Data' component is defined. A default component will be used, and generate a system base of 100 MVA, and a frequency of 50 Hz",
     Diagram(coordinateSystem(extent={{-100,-100},{140,100}})),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end SystemBase;

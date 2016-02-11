@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.TG.GGOV1;
-
-
 model GGOV1 "GE General Governor/Turbine Mode"
   parameter Integer Rselect=1 "Feedback signal for
       governor droop" annotation (Evaluate=true, choices(
@@ -515,90 +513,71 @@ equation
   connect(delay.y, gain1.u) annotation (Line(points={{150,35.4},{150,50.4},{150,50.4}}, color={0,0,127}));
   connect(delay.u, add4.y) annotation (Line(points={{150,3.2},{150,-17.4},{150,-17.4}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{260,220}}), graphics={
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{260,220}}), graphics={Text(
           extent={{-272,-98},{-260,-106}},
           lineColor={255,0,0},
-          textString="s7"),
-        Text(
+          textString="s7"),Text(
           extent={{-188,-8},{-178,-16}},
           lineColor={255,0,0},
-          textString="s8"),
-        Text(
+          textString="s8"),Text(
           extent={{-72,136},{-58,126}},
           lineColor={255,0,0},
-          textString="tlim"),
-        Text(
+          textString="tlim"),Text(
           extent={{-62,110},{-46,102}},
           lineColor={255,0,0},
-          textString="texm"),
-        Text(
+          textString="texm"),Text(
           extent={{-162,108},{-152,100}},
           lineColor={255,0,0},
-          textString="s6"),
-        Text(
+          textString="s6"),Text(
           extent={{-88,-36},{-78,-44}},
           lineColor={255,0,0},
-          textString="s1"),
-        Text(
+          textString="s1"),Text(
           extent={{-68,-122},{-58,-130}},
           lineColor={255,0,0},
-          textString="s2"),
-        Text(
+          textString="s2"),Text(
           extent={{16,132},{26,124}},
           lineColor={255,0,0},
-          textString="s9"),
-        Text(
+          textString="s9"),Text(
           extent={{-28,132},{-18,124}},
           lineColor={255,0,0},
-          textString="s5"),
-        Text(
+          textString="s5"),Text(
           extent={{100,-76},{110,-84}},
           lineColor={255,0,0},
-          textString="s3"),
-        Text(
+          textString="s3"),Text(
           extent={{168,98},{178,90}},
           lineColor={255,0,0},
-          textString="s4"),
-        Text(
+          textString="s4"),Text(
           extent={{-254,-182},{-242,-190}},
           lineColor={255,0,0},
-          textString="s0"),
-        Text(
+          textString="s0"),Text(
           extent={{-306,232},{-158,190}},
           lineColor={0,0,255},
           textString="input should be speed")}),
-    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={
-        Rectangle(extent={{-320,220},{260,-240}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-320,220},{260,-240}}, lineColor={0,0,255}),Text(
           extent={{-306,146},{-216,92}},
           lineColor={0,0,255},
-          textString="SPEED"),
-        Text(
+          textString="SPEED"),Text(
           extent={{-306,-74},{-222,-126}},
           lineColor={0,0,255},
-          textString="PELEC"),
-        Text(
+          textString="PELEC"),Text(
           extent={{-114,64},{92,-64}},
           lineColor={0,0,255},
-          textString="GGOV1"),
-        Text(
+          textString="GGOV1"),Text(
           extent={{172,24},{256,-28}},
           lineColor={0,0,255},
           textString="PMECH")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end GGOV1;

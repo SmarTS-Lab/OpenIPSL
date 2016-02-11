@@ -30,24 +30,13 @@ Each contributor should send an email to info@itesla-ipsl.org with the following
 "I hereby assign copyright of my contributions to the iPSL, to be licensed under the same terms as the rest of the iPSL."
 
 ## License Information:
-The iPSL is a Modelica library for power system simulation using phasor time domain convention
-
-Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)
-
-- RTE: http://www.rte-france.com/
-- AIA: http://www.aia.es/en/energy/
-- KTH: https://www.kth.se/en
+Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)
+- RTE: http://www.rte-france.com
+- [SmarTS Lab](https://github.com/itesla/ipsl/wiki/Our-contributors#smarts-labs-people), research group at KTH: https://www.kth.se/en
+- AIA: http://www.aia.es/en/energy
 - DTU: http://www.dtu.dk/english
 
-The authors can be contacted by email: info@itesla-ipsl.org
+The authors can be contacted by email: [info@itesla-ipsl.org](mailto:info@itesla-ipsl.org)
 
-This package is part of the iTesla Power System Library ("iPSL").
-
-The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or(at your option) any later version.
-
-The iPSL is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public License along with iPSL.  If not, see <http://www.gnu.org/licenses/>.
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0.

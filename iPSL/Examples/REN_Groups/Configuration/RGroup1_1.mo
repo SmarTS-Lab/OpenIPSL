@@ -1,5 +1,5 @@
 within iPSL.Examples.REN_Groups.Configuration;
-model RGroup1_1 "Machine configuration of synchronous machine with regulators: GENSAL, ESST1A, HYGOV, IEEEST; 
+model RGroup1_1 "Machine configuration of synchronous machine with regulators: GENSAL, ESST1A, HYGOV, IEEEST;
   from REN model: Buses XXX
   Configuration from Bus 78292
   Exciter reg_esst1a_8d802d16_f9a2_11e4_b5b1_78acc0ae2875
@@ -97,53 +97,47 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENSAL.XADIFD, eSST1A.XADIFD) annotation (Line(
-      points={{-1.92,-19.3},{-1.92,-38},{-68,-38},{-68,-21.6019},{-69.3196,-21.6019}},
+      points={{-1.92,-19.3},{-1.92,-38},{-68,-38},{-68,-19.5625},{-93.2917,-19.5625}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(p, gENSAL.p) annotation (Line(points={{110,0},{44,0},{44,5},{-1.4,5}}, color={0,0,255}));
-  connect(eSST1A.ECOMP, eSST1A.VT) annotation (Line(points={{-92.7007,-9.325},{-100,-9.325},{-100,-36},{-71.9,-36},{-71.9,-23.1375}}, color={0,0,127}));
-  connect(gENSAL.ETERM, eSST1A.VT) annotation (Line(points={{-1.92,18.5},{0,18.5},{0,-36},{-71.9,-36},{-71.9,-23.1375}}, color={0,0,127}));
-  connect(cte.y, eSST1A.VOTHSG2) annotation (Line(points={{-108.5,-28},{-104,-28},{-104,-4},{-96,-4},{-96,10},{-84.31,10},{-84.31,5.4625}}, color={0,0,127}));
-  connect(cte2.y, eSST1A.VOEL) annotation (Line(points={{-108.5,-64},{-76.6964,-64},{-76.6964,-23.495}}, color={0,0,127}));
-  connect(cte1.y, eSST1A.VUEL2) annotation (Line(points={{-108.5,-48},{-100,-48},{-100,-50},{-85.1114,-50},{-85.1114,-23.2675}}, color={0,0,127}));
-  connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-81.4079,-23.4462},{-81.4079,-30},{-85.1114,-30},{-85.1114,-23.2675}}, color={0,0,127}));
-  connect(eSST1A.VUEL1, eSST1A.VOTHSG2) annotation (Line(points={{-88.9364,-23.3},{-88.9364,-28},{-104,-28},{-104,-4},{-96,-4},{-96,10},{-84.31,10},{-84.31,5.4625}}, color={0,0,127}));
-  connect(gENSAL.EFD0, eSST1A.EFD0) annotation (Line(points={{-1.92,-13.9},{-8,-13.9},{-8,-30},{-54,-30},{-54,5.18625},{-70.6857,5.18625}}, color={0,0,127}));
-  connect(gENSAL.EFD, eSST1A.EFD) annotation (Line(points={{-55.48,-8.5},{-52,-8.5},{-52,-8.9025},{-62.1857,-8.9025}}, color={0,0,127}));
-  connect(iEEEST.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-104.75,-2},{-102,-2},{-102,12},{-79.7929,12},{-79.7929,5.4625}}, color={0,0,127}));
+  connect(eSST1A.ECOMP, eSST1A.VT) annotation (Line(points={{-93.2917,-9},{-100,-9},{-100,-36},{-93.1854,-36},{-93.1854,-13.1031}}, color={0,0,127}));
+  connect(gENSAL.ETERM, eSST1A.VT) annotation (Line(points={{-1.92,18.5},{0,18.5},{0,-36},{-93.1854,-36},{-93.1854,-13.1031}}, color={0,0,127}));
+  connect(cte.y, eSST1A.VOTHSG2) annotation (Line(points={{-108.5,-28},{-104,-28},{-104,-4},{-96,-4},{-96,10},{-93.2917,10},{-93.2917,-1.6875}}, color={0,0,127}));
+  connect(cte2.y, eSST1A.VOEL) annotation (Line(points={{-108.5,-64},{-70.625,-64},{-70.625,-21.1875}}, color={0,0,127}));
+  connect(cte1.y, eSST1A.VUEL2) annotation (Line(points={{-108.5,-48},{-100,-48},{-100,-50},{-79.1108,-50},{-79.1108,-21.1713}}, color={0,0,127}));
+  connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-74.8962,-21.1794},{-74.8962,-30},{-79.1108,-30},{-79.1108,-21.1713}}, color={0,0,127}));
+  connect(eSST1A.VUEL1, eSST1A.VOTHSG2) annotation (Line(points={{-83.3962,-21.1875},{-83.3962,-28},{-104,-28},{-104,-4},{-96,-4},{-96,10},{-93.2917,10},{-93.2917,-1.6875}}, color={0,0,127}));
+  connect(gENSAL.EFD0, eSST1A.EFD0) annotation (Line(points={{-1.92,-13.9},{-8,-13.9},{-8,-30},{-54,-30},{-54,-16.2881},{-93.2917,-16.2881}}, color={0,0,127}));
+  connect(gENSAL.EFD, eSST1A.EFD) annotation (Line(points={{-55.48,-8.5},{-52,-8.5},{-52,-9.0325},{-59.2917,-9.0325}}, color={0,0,127}));
+  connect(iEEEST.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-104.75,-2},{-102,-2},{-102,12},{-93.2917,12},{-93.2917,1.5625}}, color={0,0,127}));
   connect(iEEEST.V_S, gENSAL.PELEC) annotation (Line(points={{-135.75,-7},{-142,-7},{-142,-60},{16,-60},{16,-8.5},{-1.92,-8.5}}, color={0,0,127}));
   connect(iEEEST.V_CT, gENSAL.ETERM) annotation (Line(points={{-135.75,3},{-138,3},{-138,54},{4,54},{4,18.5},{-1.92,18.5}}, color={0,0,127}));
   annotation (
-    Icon(graphics={
-        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
-        Line(
+    Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
-        Text(
+          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},
-          textString="GENSAL & 
+          textString="GENSAL &
 STAB2A &
-SCRX & 
+SCRX &
 HYGOV")}),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end RGroup1_1;
-

@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESST1A;
-
-
 model ESST1A "IEEE Type ST1A Excitation System"
 
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-116.6,21.9},{-107,32}})));
@@ -51,7 +49,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
         rotation=0,
         origin={-115,45})));
   Modelica.Blocks.Interfaces.RealInput VUEL3 "UEL=3"
-    annotation (Placement(transformation(extent={{-141.3,-66},{-131.3,-54}}),iconTransformation(
+    annotation (Placement(transformation(extent={{-141.3,-66},{-131.3,-54}}), iconTransformation(
         extent={{4.95,-5.15},{-4.95,5.15}},
         rotation=270,
         origin={14.85,-74.95})));
@@ -214,146 +212,118 @@ equation
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-120,-80},{120,80}},
-        grid={1,1}), graphics={
-        Text(
+        grid={1,1}), graphics={Text(
           extent={{-52.2,41.6},{-42.2,35.6}},
           lineColor={255,0,0},
-          textString="V"),
-        Text(
+          textString="V"),Text(
           extent={{-42.5,38.3},{-48.5,36.3}},
           lineColor={255,0,0},
-          textString="F"),
-        Text(
+          textString="F"),Text(
           extent={{39.3,34.3},{49.3,28.3}},
           lineColor={255,0,0},
-          textString="V"),
-        Text(
+          textString="V"),Text(
           extent={{49.3,30.3},{43.3,28.3}},
           lineColor={255,0,0},
-          textString="A"),
-        Text(
+          textString="A"),Text(
           extent={{-134.4,86.6},{-119.4,71.3}},
           lineColor={0,0,255},
-          textString="VOTHSG1"),
-        Text(
+          textString="VOTHSG1"),Text(
           extent={{-137.3,55.9},{-125.9,45.4}},
           lineColor={0,0,255},
-          textString="VUEL1"),
-        Text(
+          textString="VUEL1"),Text(
           extent={{-138.1,22.6},{-124.7,7.1}},
           lineColor={0,0,255},
-          textString="ECOMP"),
-        Text(
+          textString="ECOMP"),Text(
           extent={{-137.6,-4.1},{-122.6,-19.4}},
           lineColor={0,0,255},
-          textString="VOTHSG2"),
-        Text(
+          textString="VOTHSG2"),Text(
           extent={{-137.4,-27.8},{-126,-38.3}},
           lineColor={0,0,255},
-          textString="VUEL2"),
-        Text(
+          textString="VUEL2"),Text(
           extent={{-137.8,-48},{-126.4,-58.5}},
           lineColor={0,0,255},
-          textString="VUEL3"),
-        Text(
+          textString="VUEL3"),Text(
           extent={{-15.8,-61.2},{-2.4,-76.7}},
           lineColor={0,0,255},
           textString="EFD0")}),
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-120,-80},{120,80}},
-        grid={1,1}), graphics={
-        Rectangle(extent={{-120,80},{120,-80}},lineColor={0,0,255}),
-        Text(
+        grid={1,1}), graphics={Rectangle(extent={{-120,80},{120,-80}}, lineColor={0,0,255}),Text(
           extent={{-110,-60},{-77,-70}},
           lineColor={0,0,255},
-          textString="XADIFD"),
-        Text(
+          textString="XADIFD"),Text(
           extent={{-109,5},{-74,-5}},
           lineColor={0,0,255},
-          textString="ECOMP"),
-        Text(
+          textString="ECOMP"),Text(
           extent={{-108,72},{-80,55}},
           lineColor={0,128,0},
           textString="VOTHSG
-(VOS=1)"),
-        Text(
+(VOS=1)"),Text(
           extent={{31,-58},{63,-68}},
           lineColor={0,0,255},
-          textString="VOEL"),
-        Text(
+          textString="VOEL"),Text(
           extent={{86,7},{116,-9}},
           lineColor={0,0,255},
-          textString="EFD"),
-        Text(
+          textString="EFD"),Text(
           extent={{-50,30},{50,-30}},
           lineColor={0,0,255},
-          textString="ESST1A"),
-        Text(
+          textString="ESST1A"),Text(
           extent={{-112,-20},{-90,-30}},
           lineColor={0,0,255},
-          textString="VT"),
-        Text(
+          textString="VT"),Text(
           extent={{-27,-54},{1,-68}},
           lineColor={0,128,0},
           textString="VUEL2
-(UEL=2)"),
-        Text(
+(UEL=2)"),Text(
           extent={{-58,-54},{-30,-68}},
           lineColor={0,128,0},
           textString="VUEL1
-(UEL=1)"),
-        Text(
+(UEL=1)"),Text(
           extent={{3,-54},{31,-68}},
           lineColor={0,128,0},
           textString="VUEL3
-(UEL=3)"),
-        Text(
+(UEL=3)"),Text(
           extent={{-110,52},{-79,34}},
           lineColor={0,128,0},
           textString="VOTHSG2
-(VOS=2)"),
-        Text(
+(VOS=2)"),Text(
           extent={{-55,-32},{26,-45}},
           lineColor={0,128,0},
           fontName="Calibri",
           textStyle={TextStyle.Bold,TextStyle.Italic},
-          textString="Alternate UEL inputs"),
-        Text(
+          textString="Alternate UEL inputs"),Text(
           extent={{-71,62},{25,47}},
           lineColor={0,128,0},
           fontName="Calibri",
           textStyle={TextStyle.Bold,TextStyle.Italic},
-          textString="Alternate stabilizer inputs"),
-        Text(
+          textString="Alternate stabilizer inputs"),Text(
           extent={{3,20},{-3,-20}},
           lineColor={0,128,0},
           textString="}",
           origin={-75,56},
-          rotation=360),
-        Text(
+          rotation=360),Text(
           extent={{3,20},{-3,-20}},
           lineColor={0,128,0},
           textString="}",
           origin={-16,-47},
-          rotation=90),
-        Text(
+          rotation=90),Text(
           extent={{-107.8,-39.8},{-84,-50}},
           lineColor={0,0,255},
           textString="EFD0")}),
     Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end ESST1A;
