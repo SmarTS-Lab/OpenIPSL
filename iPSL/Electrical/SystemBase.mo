@@ -1,4 +1,6 @@
 within iPSL.Electrical;
+
+
 model SystemBase "System Base Definition"
   parameter Real S_b=100 "System base in MVA";
   parameter Real fn=50 "System Frequency in Hz";

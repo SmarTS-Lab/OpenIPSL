@@ -14,57 +14,68 @@ equation
   -t*(Req*T.ii + Xeq*T.ir) = F.vi - T.vi*t;
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-82,66},{92,-44}}, lineColor={0,0,255})}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Line(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Line(
           points={{-68,16},{78,16},{78,16}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Rectangle(
+          smooth=Smooth.None),
+        Rectangle(
           extent={{-54,0},{-46,-42}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Rectangle(
+          fillColor={0,0,255}),
+        Rectangle(
           extent={{-38,0},{-30,-42}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Rectangle(
+          fillColor={0,0,255}),
+        Rectangle(
           extent={{16,20},{-18,12}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Rectangle(
+          fillColor={0,0,255}),
+        Rectangle(
           extent={{60,20},{26,12}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Line(
+          fillColor={0,0,255}),
+        Line(
           points={{-42,16},{-42,4},{-34,4},{-34,-2},{-34,-48},{-50,-48},{-50,4},{-42,4},{-42,4}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-42,-48},{-42,-58},{-54,-58},{-30,-58},{-30,-58}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-76,-10},{-58,-26}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="G"),Text(
+          textString="G"),
+        Text(
           extent={{-26,-12},{-8,-28}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="B"),Text(
+          textString="B"),
+        Text(
           extent={{-12,38},{6,22}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="R"),Text(
+          textString="R"),
+        Text(
           extent={{34,38},{52,22}},
           lineColor={0,0,255},
           lineThickness=0.5,

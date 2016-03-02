@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.PSS;
-package STABNI 
+package STABNI
 
 
 annotation (Documentation(revisions="<html>

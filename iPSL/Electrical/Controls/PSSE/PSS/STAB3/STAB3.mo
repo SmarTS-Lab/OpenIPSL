@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.STAB3;
+
+
 model STAB3
   parameter Real T_t "(s)";
   parameter Real T_X1 ">0 (s)";
@@ -40,17 +42,13 @@ equation
   connect(const.y, feedback.u2) annotation (Line(points={{-39,-30},{-30,-30},{-30,-8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,40}})),
-    Icon(coordinateSystem(extent={{-100,-40},{100,40}}, preserveAspectRatio=false), graphics={
-        Rectangle(extent={{-100,40},{100,-40}}, lineColor={28,108,200}),
-        Text(
+    Icon(coordinateSystem(extent={{-100,-40},{100,40}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor={28,108,200}),Text(
           extent={{-70,20},{70,-20}},
           lineColor={28,108,200},
-          textString="STAB3"),
-        Text(
+          textString="STAB3"),Text(
           extent={{-88,10},{-58,-10}},
           lineColor={28,108,200},
-          textString="PELEC"),
-        Text(
+          textString="PELEC"),Text(
           extent={{64,14},{98,-12}},
           lineColor={28,108,200},
           textString="VOTHSG")}),

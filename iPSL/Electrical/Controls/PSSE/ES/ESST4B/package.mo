@@ -2,8 +2,6 @@ within iPSL.Electrical.Controls.PSSE.ES;
 package ESST4B "IEEE Type ST4B Potential or Compounded Source-Controlled Rectifier Exciter"
 
 
-
-
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

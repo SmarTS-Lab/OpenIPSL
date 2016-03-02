@@ -1,5 +1,8 @@
 within iPSL.Electrical.Controls.PSAT.FACTS.STATCOM;
+
+
 model STATCOM "Static Synchronous Compensator model with equation"
+
   iPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
@@ -18,33 +21,39 @@ model STATCOM "Static Synchronous Compensator model with equation"
   parameter Real v_POD=0 "Power oscillation damper signal";
   Real i_SH "STATCOM current (pu)";
   Real v(start=V_0) "Bus voltage magnitude (pu)";
-  Real Q "Injected reactive power (pu)";
+  Real Q(start=Qg) "Injected reactive power (pu)";
+
 protected
   parameter Real Iold=Sn/Vn;
   parameter Real Inew=Sb/Vbus;
   parameter Real i_max=i_Max*Iold/Inew;
   parameter Real i_min=i_Min*Iold/Inew;
-  parameter Real vr0=V_0*cos(angle_0) "Initialitation";
-  parameter Real vi0=V_0*sin(angle_0) "Initialitation";
-  //parameter Real io= Kr*(v_ref+v_POD-V_0) "Initialization";
+  parameter Real vr0=V_0*cos(angle_0/180*pi) "Initialitation";
+  parameter Real vi0=V_0*sin(angle_0/180*pi) "Initialitation";
+  parameter Real uo=v_ref + v_POD - V_0 "Initialization";
   parameter Real io=Qg/V_0 "Initialization";
   parameter Real v_ref=io/Kr + V_0 - v_POD "Initialization";
-initial equation
-  i_SH = io;
+  //parameter Real vmin=v_ref + v_POD - i_max/Kr;
+  //parameter Real vmax=v_ref + v_POD - i_min/Kr;
+  //parameter Real umax=i_max/Kr;
+  //parameter Real umin=i_min/Kr;
+  Real u(start=uo);
+
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=Kr,
+    T=Tr,
+    y_start=io,
+    outMax=i_Max,
+    outMin=i_Min) annotation (Placement(transformation(extent={{-10,-8},{10,12}})));
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   0 = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
-  if i_SH > i_max and der(i_SH) > 0 then
-    der(i_SH) = 0;
-    Q = i_max*v;
-  elseif i_SH < i_min and der(i_SH) < 0 then
-    der(i_SH) = 0;
-    Q = i_min*v;
-  else
-    der(i_SH) = (Kr*(v_ref + v_POD - v) - i_SH)/Tr;
-    Q = i_SH*v;
-  end if;
+  u = v_ref + v_POD - v;
+  Q = i_SH*v;
+  simpleLagLim.u = u;
+  simpleLagLim.y = i_SH;
+
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),

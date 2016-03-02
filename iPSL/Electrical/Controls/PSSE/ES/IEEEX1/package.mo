@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES;
-package IEEEX1 
+package IEEEX1
 
 
 annotation (Documentation(revisions="<html>

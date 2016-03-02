@@ -1,6 +1,7 @@
 within iPSL.Electrical.Loads.Eurostag;
-model PwLoadVoltageDependence "Load with voltage dependence.Developed by AIA. 2014/03/10"
 
+
+model PwLoadVoltageDependence "Load with voltage dependence.Developed by AIA. 2014/03/10"
   iPSL.Connectors.PwPin p(
     vr(start=Vo_real),
     vi(start=Vo_img),
@@ -16,12 +17,10 @@ model PwLoadVoltageDependence "Load with voltage dependence.Developed by AIA. 20
   Real a "auxiliary variable. Voltage division";
   parameter Real alpha=0;
   parameter Real beta=0;
-
 equation
   a = v/vo;
   P*a^alpha = p.vr*p.ir + p.vi*p.ii;
   Q*a^beta = (-p.vr*p.ii) + p.vi*p.ir;
-
   v = sqrt(p.vr^2 + p.vi^2);
   annotation (
     Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-80,0},{-60,20}})),

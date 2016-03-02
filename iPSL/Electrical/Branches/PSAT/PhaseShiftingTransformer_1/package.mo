@@ -1,7 +1,5 @@
 within iPSL.Electrical.Branches.PSAT;
-package PhaseShiftingTransformer_1 
-
-
+package PhaseShiftingTransformer_1
 
 
 annotation (Documentation(revisions="<html>

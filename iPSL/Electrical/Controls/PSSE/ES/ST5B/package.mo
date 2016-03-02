@@ -2,7 +2,6 @@ within iPSL.Electrical.Controls.PSSE.ES;
 package ST5B "IIEEE 421.5 2005 ST5B Excitation System"
 
 
-
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

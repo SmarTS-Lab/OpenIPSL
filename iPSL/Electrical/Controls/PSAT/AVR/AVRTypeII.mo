@@ -1,5 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.AVR;
 model AVRTypeII "PSAT AVR Type 2"
+
   Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage (pu)" annotation (Placement(transformation(extent={{-98,-8},{-78,12}}), iconTransformation(extent={{-98,-28},{-62,8}})));
   Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (Placement(transformation(extent={{74,22},{94,42}}), iconTransformation(extent={{68,8},{102,44}})));
   Modelica.Blocks.Interfaces.RealInput vref "Reference generator terminal voltage (pu)"
@@ -19,27 +20,26 @@ model AVRTypeII "PSAT AVR Type 2"
   parameter Real vref0 "Initialization";
   parameter Real vf0 "Initialization";
   Real Se "Saturated field voltage (pu)";
-  Real vr "Regulator voltage (pu)";
+  Real vm(start=vm0, fixed=true);
 protected
   parameter Real vm0=v0 "Initialization";
   parameter Real vr10=Ka*(vref0 - vm0 - vr20 - vf0*Kf/Tf) "Initialization";
   parameter Real vr20=-vf0*Kf/Tf "Initialization";
   parameter Real e=Modelica.Constants.e;
-  Real vm(start=vm0, fixed=true);
-  Real vr1(start=vr10, fixed=true);
+  Real u;
   Real vr2(start=vr20, fixed=true);
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=Ka,
+    T=Ta,
+    y_start=vr10,
+    outMax=vrmax,
+    outMin=vrmin) annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
 equation
   der(vm) = (v - vm)/Tr;
-  der(vr1) = (Ka*(vref - vm - vr2 - vf*Kf/Tf) - vr1)/Ta;
-  if vr1 >= vrmin and vr1 <= vrmax then
-    vr = vr1;
-  elseif vr1 > vrmax then
-    vr = vrmax;
-  else
-    vr = vrmin;
-  end if;
+  u = vref - vm - vr2 - vf*Kf/Tf;
   der(vr2) = -(vf*Kf/Tf + vr2)/Tf;
-  der(vf) = -(vf*(Ke + Se) - vr)/Te;
+  simpleLagLim.u = u;
+  der(vf) = -(vf*(Ke + Se) - simpleLagLim.y)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),

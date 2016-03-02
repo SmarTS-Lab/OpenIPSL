@@ -1,6 +1,5 @@
 within iPSL.Electrical.Machines.PSAT;
-package FifthOrder 
-
+package FifthOrder
 
 
 annotation (Documentation(revisions="<html>

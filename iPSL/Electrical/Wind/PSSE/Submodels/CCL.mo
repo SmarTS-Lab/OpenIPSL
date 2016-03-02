@@ -1,4 +1,6 @@
 within iPSL.Electrical.Wind.PSSE.Submodels;
+
+
 model CCL
   parameter Real Qmax;
   parameter Boolean pqflag;

@@ -1,10 +1,5 @@
 within iPSL.Electrical.Machines;
-package PSSE 
-
-
-
-
-
+package PSSE
 
 
 annotation (Documentation(revisions="<html>

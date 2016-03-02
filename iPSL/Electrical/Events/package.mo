@@ -1,7 +1,5 @@
 within iPSL.Electrical;
-package Events 
-
-
+package Events
 
 
 annotation (Documentation(revisions="<html>

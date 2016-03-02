@@ -1,5 +1,5 @@
 within iPSL.Electrical.Banks;
-package Simulink 
+package Simulink
 
 
 annotation (Documentation(revisions="<html>

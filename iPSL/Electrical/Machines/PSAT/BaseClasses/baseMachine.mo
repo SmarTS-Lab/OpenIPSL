@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.PSAT.BaseClasses;
+
+
 partial model baseMachine
   extends iPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
@@ -55,7 +57,7 @@ partial model baseMachine
         origin={110,30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealOutput P "Active power (pu)" annotation (Placement(
+  RealOutput P(start=P_0/S_b) "Active power (pu)" annotation (Placement(
       visible=true,
       transformation(
         origin={135.6,56.3277},
@@ -65,7 +67,7 @@ partial model baseMachine
         origin={110,-30.1615},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  RealOutput Q "Reactive power (pu)" annotation (Placement(
+  RealOutput Q(start=Q_0/S_b) "Reactive power (pu)" annotation (Placement(
       visible=true,
       transformation(
         origin={135.6,36.3277},
@@ -115,20 +117,20 @@ partial model baseMachine
         origin={-100,-50},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Real anglev(start=angle_0) " Bus voltage angle";
+  Real anglev(start=angle_0/180*pi) " Bus voltage angle";
   Real vd "d-axis voltage (pu)";
   Real vq "q-axis voltage (pu)";
   Real id "d-axis currrent (pu)";
   Real iq "q-axis current (pu)";
 protected
-  parameter Real vr0=V_0*cos(angle_0) "Initialitation";
-  parameter Real vi0=V_0*sin(angle_0) "Initialitation";
-  parameter Real ir0=(P_0*vr0 + Q_0*vi0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter Real ii0=(P_0*vi0 - Q_0*vr0)/(vr0^2 + vi0^2) "Initialitation";
+  parameter Real vr0=V_0*cos(angle_0/180*pi) "Initialitation";
+  parameter Real vi0=V_0*sin(angle_0/180*pi) "Initialitation";
+  parameter Real ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2) "Initialitation";
+  parameter Real ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2) "Initialitation";
   //Change of base constants
   parameter Real CoB=S_b*Vn/(Sn*V_b);
   parameter Real CoB2=S_b/Sn;
-  parameter Real m=M/CoB2 "Machanical starting time (2H), kWs/kVA";
+  parameter Real m=M/CoB2 "Mechanical starting time (2H), kWs/kVA";
   parameter Real d=D/CoB2 "Damping coefficient";
   parameter Real Ra=ra*CoB "armature resistance, p.u.";
   parameter Real x1d=xd1*CoB "d-axis transient reactance, p.u.";

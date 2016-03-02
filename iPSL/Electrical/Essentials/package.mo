@@ -1,5 +1,5 @@
 within iPSL.Electrical;
-package Essentials 
+package Essentials
 
 
 annotation (Documentation(revisions="<html>

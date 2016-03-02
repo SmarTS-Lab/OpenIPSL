@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.PSSE;
-package GENSAE 
+package GENSAE
 
 
 annotation (Documentation(revisions="<html>

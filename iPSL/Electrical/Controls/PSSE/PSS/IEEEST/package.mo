@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.PSS;
-package IEEEST 
+package IEEEST
 
 
 annotation (Documentation(revisions="<html>

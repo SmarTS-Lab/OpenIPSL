@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.PSSE;
-package GENROU 
+package GENROU
 
 
 annotation (Documentation(info="<html>

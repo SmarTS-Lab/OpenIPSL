@@ -1,5 +1,5 @@
 within iPSL.Electrical.Loads.PSSE;
-package BaseClasses 
+package BaseClasses
 
 
 annotation (Documentation(revisions="<html>

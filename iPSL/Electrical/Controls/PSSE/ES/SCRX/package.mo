@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES;
-package SCRX 
+package SCRX
 
 
 annotation (Documentation(revisions="<html>

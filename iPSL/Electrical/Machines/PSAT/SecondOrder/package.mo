@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.PSAT;
-package SecondOrder 
+package SecondOrder
 
 
 annotation (Documentation(revisions="<html>

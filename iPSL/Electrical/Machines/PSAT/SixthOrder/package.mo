@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.PSAT;
-package SixthOrder 
+package SixthOrder
 
 
 annotation (Documentation(revisions="<html>

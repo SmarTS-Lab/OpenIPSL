@@ -1,9 +1,5 @@
 within iPSL.Electrical.Wind.GE.Type_3;
-package Turbine 
-
-
-
-
+package Turbine
 
 
 annotation (Diagram(coordinateSystem(

@@ -1,16 +1,5 @@
 within iPSL;
-package Electrical 
-
-
-
-
-
-
-
-
-
-
-
+package Electrical
 
 
 annotation (Documentation(revisions="<html>

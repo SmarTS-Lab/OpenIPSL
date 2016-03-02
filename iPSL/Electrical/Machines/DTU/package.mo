@@ -1,7 +1,5 @@
 within iPSL.Electrical.Machines;
-package DTU 
-
-
+package DTU
 
 
 annotation (Documentation(revisions="<html>

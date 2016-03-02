@@ -1,8 +1,5 @@
 within iPSL.Electrical.Controls;
-package PSSE 
-
-
-
+package PSSE
 
 
 annotation (Documentation(info="<html>

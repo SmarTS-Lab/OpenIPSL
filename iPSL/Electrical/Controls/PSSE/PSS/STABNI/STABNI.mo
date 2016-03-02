@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.STABNI;
+
+
 model STABNI
   parameter Real K ">= 0";
   parameter Real T_1 ">0 (s)";
@@ -48,17 +50,13 @@ equation
   connect(limiter.u, imSimpleLag1.y) annotation (Line(points={{58,0},{41,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}})),
-    Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=false), graphics={
-        Rectangle(extent={{-120,40},{120,-40}}, lineColor={28,108,200}),
-        Text(
+    Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={28,108,200}),Text(
           extent={{-64,20},{56,-20}},
           lineColor={28,108,200},
-          textString="STABNI"),
-        Text(
+          textString="STABNI"),Text(
           extent={{-108,8},{-72,-10}},
           lineColor={28,108,200},
-          textString="PELEC"),
-        Text(
+          textString="PELEC"),Text(
           extent={{82,10},{118,-8}},
           lineColor={28,108,200},
           textString="VOTHSG")}),

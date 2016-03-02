@@ -1,6 +1,5 @@
 within iPSL.Electrical.Wind.PSSE;
-package WT3G 
-
+package WT3G
 
 
 annotation (Documentation(revisions="<html>

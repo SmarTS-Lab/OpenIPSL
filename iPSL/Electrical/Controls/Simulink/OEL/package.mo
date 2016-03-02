@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Simulink;
-package OEL 
+package OEL
 
 
 annotation (Documentation(revisions="<html>

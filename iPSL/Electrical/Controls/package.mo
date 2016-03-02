@@ -1,9 +1,5 @@
 within iPSL.Electrical;
-package Controls 
-
-
-
-
+package Controls
 
 
 annotation (Documentation(revisions="<html>

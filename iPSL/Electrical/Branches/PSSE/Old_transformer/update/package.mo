@@ -2,13 +2,6 @@ within iPSL.Electrical.Branches.PSSE.Old_transformer;
 package update "The package contain the new transformer models should be used for futher development of large power system"
 
 
-
-
-
-
-
-
-
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

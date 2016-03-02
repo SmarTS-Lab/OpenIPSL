@@ -1,13 +1,5 @@
 within iPSL.Electrical;
-package Banks 
-
-
-
-
-
-
-
-
+package Banks
 
 
 annotation (Documentation(revisions="<html>
