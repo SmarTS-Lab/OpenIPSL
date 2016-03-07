@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Simulink;
-package PSS 
+package PSS
 
 
 annotation (Documentation(revisions="<html>

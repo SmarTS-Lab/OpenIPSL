@@ -1,8 +1,10 @@
 within iPSL.Electrical.Branches.PSAT;
 model TWTransformerWithFixedTapRatio "Modeled as series reactances without iron losses"
+  outer iPSL.Electrical.SystemBase SysData;
+
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real SystemBase=100;
+  parameter Real SystemBase=SysData.S_b;
   parameter Real Sn=100 "Power rating MVA";
   parameter Real Vbus=400000 "Sending end bus voltage";
   parameter Real Vn1=400000 "Voltage rating of primary winding KV";
@@ -15,7 +17,7 @@ protected
   parameter Real Vb2new=Vbus*Vbus;
   parameter Real Vb2old=Vn1*Vn1;
   parameter Real xT=X*(Vb2old*SystemBase)/(Vb2new*Sn) "Reactance(inductive),p.u";
-  parameter Real rT=R*(Vb2old*SystemBase)/(Vb2new*Sn) "Reactance(capacitive),p.u";
+  parameter Real rT=R*(Vb2old*SystemBase)/(Vb2new*Sn) "Resistance,p.u";
 equation
   rT*p.ir - xT*p.ii = 1/m^2*p.vr - 1/m*n.vr;
   rT*p.ii + xT*p.ir = 1/m^2*p.vi - 1/m*n.vi;

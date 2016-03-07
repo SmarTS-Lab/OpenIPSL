@@ -1,8 +1,5 @@
 within iPSL.Electrical.Wind.GE;
-package Type_3 
-
-
-
+package Type_3
 
 
 annotation (Diagram(coordinateSystem(

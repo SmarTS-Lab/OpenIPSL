@@ -1,4 +1,6 @@
 within iPSL.Electrical.Solar.KTH;
+
+
 model PFmodelmpptCorrected05MW
   parameter Real SystemBase=100 "MVa";
   parameter Real v0=0.99422 "Power flow, node voltage";
@@ -78,10 +80,10 @@ protected
   parameter Real idref0=(p0*B + q0*A)/(A^2 + B^2);
   parameter Real iqref0=((-q0*B) + p0*A)/(A^2 + B^2) "
 
-                          parameter Real vd0=-v0*sin(anglev0) ;
-                          parameter Real vq0=v0*cos(anglev0) ;
-                          parameter Real iqref0=2*(vq0*q0 + p0*vd0)/(vq0^2 + vd0^2) ;
-                          parameter Real idref0=2*(-vd0*q0 + p0*vq0)/(vq0^2 + vd0^2) ";
+                                parameter Real vd0=-v0*sin(anglev0) ;
+                                parameter Real vq0=v0*cos(anglev0) ;
+                                parameter Real iqref0=2*(vq0*q0 + p0*vd0)/(vq0^2 + vd0^2) ;
+                                parameter Real idref0=2*(-vd0*q0 + p0*vq0)/(vq0^2 + vd0^2) ";
   parameter Real xq=2*iqref0*1.02;
   parameter Real xd=2*idref0*1.02;
 equation

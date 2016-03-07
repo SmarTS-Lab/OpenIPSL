@@ -97,16 +97,19 @@ equation
       smooth=Smooth.None));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Text(
           extent={{26,54},{114,2}},
           lineColor={0,0,255},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString="*",
-          textStyle={TextStyle.Bold}),Ellipse(
+          textStyle={TextStyle.Bold}),
+        Ellipse(
           extent={{-74,44},{6,-40}},
           lineColor={0,0,255},
-          lineThickness=0.5),Ellipse(
+          lineThickness=0.5),
+        Ellipse(
           extent={{-10,44},{70,-40}},
           lineColor={0,0,255},
           lineThickness=0.5)}),

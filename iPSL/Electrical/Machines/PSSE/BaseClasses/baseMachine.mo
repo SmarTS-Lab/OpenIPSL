@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.BaseClasses;
+
+
 partial model baseMachine
   import Modelica.Constants.pi;
   import Complex;
@@ -53,8 +55,8 @@ partial model baseMachine
   Real anglev(start=anglev_rad) "Bus voltage angle (deg.)";
   Real I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude (pu)";
   Real anglei(start=atan2(ii0, ir0)) "Terminal current angle (deg.)";
-  Real P(start=p0/S_b) "Active power (p.u. on S_b)";
-  Real Q(start=q0/S_b) "Reactive power (p.u. on S_b)";
+  Real P(start=P_0/S_b) "Active power (p.u. on S_b)";
+  Real Q(start=Q_0/S_b) "Reactive power (p.u. on S_b)";
   Real Te "Electrical torque (pu)";
   Real id "d-axis armature current (pu)";
   Real iq "q-axis armature current (pu)";

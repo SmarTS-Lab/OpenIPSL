@@ -1,8 +1,5 @@
 within iPSL.Electrical.Wind;
-package PSSE 
-
-
-
+package PSSE
 
 
 annotation (Diagram(coordinateSystem(

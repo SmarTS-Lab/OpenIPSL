@@ -1,7 +1,5 @@
 within iPSL.Electrical;
-package Loads 
-
-
+package Loads
 
 
 annotation (Documentation(revisions="<html>

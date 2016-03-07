@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.PSS2B;
+
+
 model PSS2B
   parameter Real T_w1=10 "Washout time constant 1";
   parameter Real T_w2=10 "Washout time constant 2";
@@ -81,11 +83,9 @@ model PSS2B
     startValue=0,
     T_1=T_8,
     T_2=T_9) annotation (Placement(transformation(extent={{-6,4},{14,24}})));
-
 protected
   parameter Real V_S10(fixed=false);
   parameter Real V_S20(fixed=false);
-
 initial equation
   V_S10 = V_S1;
   V_S20 = V_S2;
@@ -101,7 +101,7 @@ equation
   connect(add1.y, gain.u) annotation (Line(points={{51,0},{51,0},{56,0}}, color={0,0,127}));
   connect(gain.y, Leadlag1.u) annotation (Line(points={{79,0},{82.5,0},{86,0}}, color={0,0,127}));
   connect(derivativeLag.y, derivativeLag1.u) annotation (Line(points={{-111,20},{-102,20}}, color={0,0,127}));
-  connect(derivativeLag3.u, derivativeLag2.y) annotation (Line(points={{-102,-20},{-111,-20}},color={0,0,127}));
+  connect(derivativeLag3.u, derivativeLag2.y) annotation (Line(points={{-102,-20},{-111,-20}}, color={0,0,127}));
   connect(derivativeLag1.y, SimpleLag1.u) annotation (Line(points={{-79,20},{-79,20},{-70,20}}, color={0,0,127}));
   connect(derivativeLag3.y, SimpleLag2.u) annotation (Line(points={{-79,-20},{-70,-20}}, color={0,0,127}));
   connect(derivativeLag2.u, limiter2.y) annotation (Line(points={{-134,-20},{-145,-20}}, color={0,0,127}));
@@ -111,21 +111,16 @@ equation
   connect(add1.u2, add.u2) annotation (Line(points={{28,-6},{20,-6},{20,-20},{-44,-20},{-44,8},{-38,8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{180,40}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{180,40}}), graphics={
-        Rectangle(extent={{-180,40},{180,-40}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{180,40}}), graphics={Rectangle(extent={{-180,40},{180,-40}}, lineColor={0,0,255}),Text(
           extent={{-34,14},{32,-16}},
           lineColor={0,0,255},
-          textString="PSS2B"),
-        Text(
+          textString="PSS2B"),Text(
           extent={{-172,26},{-132,12}},
           lineColor={0,0,255},
-          textString="V_S1"),
-        Text(
+          textString="V_S1"),Text(
           extent={{130,14},{176,-16}},
           lineColor={0,0,255},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-174,-14},{-134,-28}},
           lineColor={0,0,255},
           textString="V_S2")}),

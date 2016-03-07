@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.FACTS.TCSC;
+
+
 model TCSCAlpha
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-119,-10},{-99,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
@@ -75,76 +77,60 @@ equation
   p.ir - G*p.vr + B*p.vi = (y + b)*(p.vi - n.vi);
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-4,46},{-4,34}},
           lineColor={0,0,255},
           fillColor={175,175,175},
-          fillPattern=FillPattern.Solid),
-        Rectangle(
+          fillPattern=FillPattern.Solid),Rectangle(
           extent={{6,46},{6,34}},
           lineColor={0,0,255},
           fillColor={175,175,175},
-          fillPattern=FillPattern.Solid),
-        Line(
+          fillPattern=FillPattern.Solid),Line(
           points={{-60,40},{-20,40},{-4,40}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-60,40},{-60,-40},{-22,-40},{-22,-40}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Polygon(
+          smooth=Smooth.None),Polygon(
           points={{4,-16},{18,-20},{4,-24},{4,-24},{4,-16}},
           lineColor={0,0,255},
           smooth=Smooth.None,
           fillColor={175,175,175},
-          fillPattern=FillPattern.Solid),
-        Polygon(
+          fillPattern=FillPattern.Solid),Polygon(
           points={{-7,4},{7,0},{-7,-4},{-7,-4},{-7,4}},
           lineColor={0,0,255},
           smooth=Smooth.None,
           fillColor={175,175,175},
           fillPattern=FillPattern.Solid,
           origin={9,-58},
-          rotation=180),
-        Line(
+          rotation=180),Line(
           points={{18,-16},{18,-24}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{2,-54},{2,-62}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-22,-20},{-22,-58},{-22,-56}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-22,-58},{2,-58},{2,-58}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-22,-20},{4,-20},{4,-20}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{18,-20},{40,-20},{40,-58},{16,-58},{16,-58}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{6,40},{60,40},{60,-40},{40,-40}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-100,0},{-62,0},{-60,0},{-60,0}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{60,0},{100,0},{100,0}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Text(
+          smooth=Smooth.None),Text(
           extent={{-18,68},{16,60}},
           lineColor={0,0,255},
           fillColor={175,175,175},

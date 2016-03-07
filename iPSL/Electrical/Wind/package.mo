@@ -1,9 +1,5 @@
 within iPSL.Electrical;
-package Wind 
-
-
-
-
+package Wind
 
 
 annotation (Diagram(coordinateSystem(

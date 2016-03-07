@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.PSSE;
-package GENROE 
+package GENROE
 
 
 annotation (Documentation(revisions="<html>

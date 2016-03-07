@@ -1,13 +1,5 @@
 within iPSL.Electrical.Loads;
-package PSAT 
-
-
-
-
-
-
-
-
+package PSAT
 
 
 annotation (Documentation(revisions="<html>

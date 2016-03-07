@@ -1,6 +1,5 @@
 within iPSL.Electrical.Wind.GE.Type_3;
-package Electrical_Control 
-
+package Electrical_Control
 
 
 annotation (Diagram(coordinateSystem(

@@ -1,8 +1,5 @@
 within iPSL.Electrical.Controls;
-package Eurostag 
-
-
-
+package Eurostag
 
 
 annotation (Documentation(revisions="<html>

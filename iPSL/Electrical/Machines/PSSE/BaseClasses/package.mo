@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.PSSE;
-package BaseClasses 
+package BaseClasses
 
 
 annotation (Documentation(revisions="<html>

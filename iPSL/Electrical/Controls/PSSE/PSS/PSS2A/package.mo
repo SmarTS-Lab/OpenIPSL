@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.PSS;
-package PSS2A 
+package PSS2A
 
 
 annotation (Documentation(revisions="<html>

@@ -1,6 +1,5 @@
 within iPSL.Electrical.Controls.PSAT.FACTS;
-package STATCOM 
-
+package STATCOM
 
 
 annotation (Documentation(revisions="<html>

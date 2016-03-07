@@ -1,6 +1,5 @@
 within iPSL.Electrical.Controls.PSSE;
-package OEL 
-
+package OEL
 
 
 annotation (Documentation(revisions="<html>

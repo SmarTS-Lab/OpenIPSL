@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES;
-package ESDC1A 
+package ESDC1A
 
 
 annotation (Documentation(info="<html>

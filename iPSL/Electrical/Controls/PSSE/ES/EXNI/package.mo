@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES;
-package EXNI 
+package EXNI
 
 
 annotation (Documentation(revisions="<html>

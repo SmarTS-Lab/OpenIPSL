@@ -1,6 +1,5 @@
 within iPSL.Electrical.Controls.Simulink;
-package ES 
-
+package ES
 
 
 annotation (Documentation(revisions="<html>

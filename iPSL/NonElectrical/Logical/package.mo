@@ -1,10 +1,5 @@
 within iPSL.NonElectrical;
-package Logical 
-
-
-
-
-
+package Logical
 
 
 annotation (Documentation(revisions="<html>

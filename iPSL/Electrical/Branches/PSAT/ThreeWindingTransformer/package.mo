@@ -1,8 +1,5 @@
 within iPSL.Electrical.Branches.PSAT;
-package ThreeWindingTransformer 
-
-
-
+package ThreeWindingTransformer
 
 
 annotation (Documentation(revisions="<html>

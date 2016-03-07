@@ -1,8 +1,9 @@
 within iPSL.Electrical.Buses;
 model InternalBus "Bus for change base"
+  outer iPSL.Electrical.SystemBase SysData;
   constant Real pi=Modelica.Constants.pi;
-  parameter Real M_b=120 "System base power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=1000 "System base power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real M_b=120 "Machine base power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=SysData.S_b "System base power rating (MVA)" annotation (Dialog(group="Power flow data"));
   iPSL.Connectors.PwPin p "Machine base" annotation (Placement(transformation(extent={{-32,-4},{-12,16}}), iconTransformation(extent={{-32,-4},{-12,16}})));
   iPSL.Connectors.PwPin n "System base" annotation (Placement(transformation(extent={{8,-4},{28,16}}), iconTransformation(extent={{8,-4},{28,16}})));
 protected

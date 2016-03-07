@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.PSS2A;
+
+
 model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real T_w1=10 "Washout 1 time constant";
   parameter Real T_w2=10 "Washout 2 time constant";
@@ -87,21 +89,16 @@ equation
   connect(derivativeLag3.y, SimpleLag2.u) annotation (Line(points={{-99,-20},{-82,-20}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={
-        Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),Text(
           extent={{-34,16},{32,-14}},
           lineColor={0,0,255},
-          textString="PSS2A"),
-        Text(
+          textString="PSS2A"),Text(
           extent={{-170,30},{-142,10}},
           lineColor={0,0,255},
-          textString="V_S1"),
-        Text(
+          textString="V_S1"),Text(
           extent={{-170,-10},{-142,-30}},
           lineColor={0,0,255},
-          textString="V_S2"),
-        Text(
+          textString="V_S2"),Text(
           extent={{140,10},{196,-10}},
           lineColor={0,0,255},
           textString="VOTHSG")}),

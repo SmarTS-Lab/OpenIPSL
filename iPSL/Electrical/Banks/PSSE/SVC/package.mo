@@ -1,5 +1,5 @@
 within iPSL.Electrical.Banks.PSSE;
-package SVC 
+package SVC
 
 
 annotation (Documentation(revisions="<html>

@@ -1,9 +1,5 @@
 within iPSL.Electrical;
-package Buses 
-
-
-
-
+package Buses
 
 
 annotation (Documentation(revisions="<html>

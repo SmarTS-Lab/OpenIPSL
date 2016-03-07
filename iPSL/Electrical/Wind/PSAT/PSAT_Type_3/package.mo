@@ -1,10 +1,5 @@
 within iPSL.Electrical.Wind.PSAT;
-package PSAT_Type_3 
-
-
-
-
-
+package PSAT_Type_3
 
 
 annotation (Diagram(coordinateSystem(

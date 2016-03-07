@@ -1,9 +1,5 @@
 within iPSL.Electrical.Branches.Simulink;
-package LTC 
-
-
-
-
+package LTC
 
 
 annotation (Documentation(revisions="<html>

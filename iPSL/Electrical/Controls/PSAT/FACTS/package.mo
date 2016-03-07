@@ -1,6 +1,5 @@
 within iPSL.Electrical.Controls.PSAT;
-package FACTS 
-
+package FACTS
 
 
 annotation (Documentation(revisions="<html>

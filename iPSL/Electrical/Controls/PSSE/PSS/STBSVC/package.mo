@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.PSS;
-package STBSVC 
+package STBSVC
 
 
 annotation (Documentation(revisions="<html>

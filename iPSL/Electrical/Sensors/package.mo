@@ -1,10 +1,5 @@
 within iPSL.Electrical;
-package Sensors 
-
-
-
-
-
+package Sensors
 
 
 annotation (Documentation(revisions="<html>
