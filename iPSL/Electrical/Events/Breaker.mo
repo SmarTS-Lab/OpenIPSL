@@ -6,13 +6,30 @@ model Breaker
 
   Connectors.PwPin s annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
   Connectors.PwPin r annotation (Placement(transformation(extent={{40,-10},{60,10}}), iconTransformation(extent={{40,-10},{60,10}})));
+  Complex vs(re=s.vr, im=s.vi);
+  Complex vr(re=r.vr, im=r.vi);
+  Complex is(re=s.ir, im=s.ii);
+  Complex ir(re=r.ir, im=r.ii);
+
+equation
+  if time < t_o then
+    vs = vr;
+    is = -ir;
+  elseif (time > t_o + t_rc) and rc_enabled then
+    vs = vr;
+    is = -ir;
+  else
+    is = Complex(0, 0);
+    ir = Complex(0, 0);
+  end if;
+
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-40,-40},{40,40}}), graphics={Rectangle(
           extent={{-40,40},{40,-40}},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          pattern=LinePattern.None), Ellipse(
+          pattern=LinePattern.None),Ellipse(
           extent={{-40,40},{40,-42}},
           lineColor={28,108,200},
           fillColor={255,255,255},
@@ -51,21 +68,4 @@ model Breaker
 </tr>
 </table>
 </html>"));
-  Complex vs(re=s.vr, im=s.vi);
-  Complex vr(re=r.vr, im=r.vi);
-  Complex is(re=s.ir, im=s.ii);
-  Complex ir(re=r.ir, im=r.ii);
-
-equation
-  if time < t_o then
-    vs = vr;
-    is = -ir;
-  elseif (time > t_o + t_rc) and rc_enabled then
-    vs = vr;
-    is = -ir;
-  else
-    is = Complex(0, 0);
-    ir = Complex(0, 0);
-  end if;
-
 end Breaker;

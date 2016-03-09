@@ -1,33 +1,14 @@
 within SevenBus;
 model Network
   import SevenBus;
-  parameter Real V_FPAND=1.06959;
-  parameter Real angle_FPAND=0.0173;
-  parameter Real V_FSSV=1.0696;
-  parameter Real angle_FSSV=0.09350001;
-  parameter Real V_FSBIS=1.06958;
-  parameter Real angle_FSBIS=-0.0035;
-  parameter Real V_FTDPRA=1.06959;
-  parameter Real angle_FTDPRA=-0.0174;
-  parameter Real V_FTILL=1.06957;
-  parameter Real angle_FTILL=0.0034;
-  parameter Real V_FVALDI=1.0696;
-  parameter Real angle_FVALDI=0.0311;
-  parameter Real V_FVERGE=1.0696;
-  parameter Real angle_FVERGE=0;
-  parameter Real V_FSSVG=0.9898801;
-  parameter Real angle_FSSVG=7.309099;
-  parameter Real V_FVALDIG=1.00595;
-  parameter Real angle_FVALDIG=2.5534;
-  parameter Real V_FVERGEG=0.9803;
-  parameter Real angle_FVERGEG=-0.001;
+
   SevenBus.Generators.G1 GEN1(
     M_b=1078,
     V_b=24,
-    V_0=V_FSSVG,
-    angle_0=angle_FSSVG,
-    P_0=962.2,
-    Q_0=124.763) annotation (Placement(transformation(extent={{-280,-110},{-260,-90}})));
+    V_0=PF_results.voltages.V21,
+    angle_0=PF_results.voltages.A21,
+    P_0=PF_results.machines.P21_1,
+    Q_0=PF_results.machines.Q21_1) annotation (Placement(transformation(extent={{-280,-110},{-260,-90}})));
   iPSL.Electrical.Branches.PwLine pwLine(
     R=6e-006,
     X=0.000692,
@@ -60,16 +41,16 @@ model Network
     B=0) annotation (Placement(transformation(extent={{-30,-130},{-10,-110}})));
   iPSL.Electrical.Loads.PSSE.Load load(
     V_b=380,
-    P_0=480,
-    Q_0=4.8,
-    V_0=V_FTILL,
-    angle_0=angle_FTILL) annotation (Placement(transformation(extent={{-98,-146},{-88,-136}})));
+    V_0=PF_results.voltages.V5,
+    angle_0=PF_results.voltages.A5,
+    P_0=PF_results.loads.PL5_1,
+    Q_0=PF_results.loads.QL5_1) annotation (Placement(transformation(extent={{-98,-146},{-88,-136}})));
   iPSL.Electrical.Loads.PSSE.Load load1(
     V_b=380,
-    P_0=240,
-    Q_0=2.4,
-    V_0=V_FSBIS,
-    angle_0=angle_FSBIS) annotation (Placement(transformation(extent={{60,-146},{70,-136}})));
+    V_0=PF_results.voltages.V3,
+    angle_0=PF_results.voltages.A3,
+    P_0=PF_results.loads.PL3_1,
+    Q_0=PF_results.loads.QL3_1) annotation (Placement(transformation(extent={{60,-146},{70,-136}})));
   iPSL.Electrical.Branches.PwLine pwLine6(
     R=6e-006,
     X=0.000692,
@@ -82,46 +63,46 @@ model Network
     B=0) annotation (Placement(transformation(extent={{-162,-58},{-142,-38}})));
   iPSL.Electrical.Buses.BusExt FSSV(
     nu=5,
-    V_0=V_FSSV,
-    angle_0=angle_FSSV,
     V_b=380,
-    no=1) annotation (Placement(transformation(extent={{-200,-136},{-198,-62}})));
+    no=1,
+    V_0=PF_results.voltages.V2,
+    angle_0=PF_results.voltages.A2) annotation (Placement(transformation(extent={{-200,-136},{-198,-62}})));
   iPSL.Electrical.Buses.BusExt FTILL(
     no=2,
     nu=4,
-    V_0=V_FTILL,
-    angle_0=angle_FTILL,
-    V_b=380) annotation (Placement(transformation(extent={{-100,-130},{-98,-90}})));
+    V_b=380,
+    V_0=PF_results.voltages.V5,
+    angle_0=PF_results.voltages.A5) annotation (Placement(transformation(extent={{-100,-130},{-98,-90}})));
   iPSL.Electrical.Buses.BusExt FSBIS(
     no=2,
     nu=3,
-    V_0=V_FSBIS,
-    angle_0=angle_FSBIS,
-    V_b=380) annotation (Placement(transformation(extent={{58,-130},{60,-90}})));
+    V_b=380,
+    V_0=PF_results.voltages.V3,
+    angle_0=PF_results.voltages.A3) annotation (Placement(transformation(extent={{58,-130},{60,-90}})));
   iPSL.Electrical.Buses.BusExt FVERGE(
     nu=4,
-    V_0=V_FVERGE,
-    angle_0=angle_FVERGE,
     V_b=380,
-    no=1) annotation (Placement(transformation(
+    no=1,
+    V_0=PF_results.voltages.V7,
+    angle_0=PF_results.voltages.A7) annotation (Placement(transformation(
         extent={{-1,-39},{1,39}},
         rotation=-90,
         origin={1,123})));
   iPSL.Electrical.Buses.BusExt FPAND(
     nu=4,
     no=2,
-    V_0=V_FPAND,
-    angle_0=angle_FPAND,
-    V_b=380) annotation (Placement(transformation(
+    V_b=380,
+    V_0=PF_results.voltages.V1,
+    angle_0=PF_results.voltages.A1) annotation (Placement(transformation(
         extent={{-1,-39},{1,39}},
         rotation=0,
         origin={-99,19})));
   iPSL.Electrical.Buses.BusExt FTDPRA(
     nu=2,
     no=4,
-    V_0=V_FTDPRA,
-    angle_0=angle_FTDPRA,
-    V_b=380) annotation (Placement(transformation(
+    V_b=380,
+    V_0=PF_results.voltages.V4,
+    angle_0=PF_results.voltages.A4) annotation (Placement(transformation(
         extent={{-1,-39},{1,39}},
         rotation=0,
         origin={99,19})));
@@ -147,22 +128,22 @@ model Network
     B=0) annotation (Placement(transformation(extent={{40,60},{60,80}})));
   iPSL.Electrical.Loads.PSSE.Load load2(
     V_b=380,
-    P_0=240,
-    Q_0=2.4,
-    V_0=V_FPAND,
-    angle_0=angle_FPAND) annotation (Placement(transformation(extent={{-96,-46},{-86,-36}})));
+    V_0=PF_results.voltages.V1,
+    angle_0=PF_results.voltages.A1,
+    P_0=PF_results.loads.PL1_1,
+    Q_0=PF_results.loads.QL1_1) annotation (Placement(transformation(extent={{-96,-46},{-86,-36}})));
   iPSL.Electrical.Loads.PSSE.Load load3(
     V_b=380,
-    P_0=480,
-    Q_0=4.8,
-    V_0=V_FTDPRA,
-    angle_0=angle_FTDPRA) annotation (Placement(transformation(extent={{84,-46},{94,-36}})));
+    V_0=PF_results.voltages.V4,
+    angle_0=PF_results.voltages.A4,
+    P_0=PF_results.loads.PL4_1,
+    Q_0=PF_results.loads.QL4_1) annotation (Placement(transformation(extent={{84,-46},{94,-36}})));
   iPSL.Electrical.Buses.BusExt FVALDI(
     no=5,
-    V_0=V_FVALDI,
-    angle_0=angle_FVALDI,
     V_b=380,
-    nu=1) annotation (Placement(transformation(extent={{198,-136},{200,-62}})));
+    nu=1,
+    V_0=PF_results.voltages.V6,
+    angle_0=PF_results.voltages.A6) annotation (Placement(transformation(extent={{198,-136},{200,-62}})));
   iPSL.Electrical.Branches.PwLine pwLine12(
     R=6e-006,
     X=0.000692,
@@ -177,8 +158,6 @@ model Network
   iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     G=0,
     B=0,
-    t1=1,
-    t2=1,
     R=0.00001,
     X=0.00069,
     CZ=1,
@@ -187,21 +166,23 @@ model Network
     VB1=380,
     VNOM2=380,
     VB2=380,
-    ANG1=0) annotation (Placement(transformation(extent={{-12,-8},{8,8}})));
+    ANG1=0,
+    t1=PF_results.trafos.t1_1_4,
+    t2=PF_results.trafos.t2_1_4) annotation (Placement(transformation(extent={{-12,-8},{8,8}})));
   SevenBus.Generators.G2 GEN2(
     V_b=20,
-    V_0=V_FVALDIG,
-    angle_0=angle_FVALDIG,
     M_b=1710,
-    P_0=480.428,
-    Q_0=27.609) annotation (Placement(transformation(extent={{280,-110},{260,-90}})));
+    V_0=PF_results.voltages.V61,
+    angle_0=PF_results.voltages.A61,
+    P_0=PF_results.machines.P61_1,
+    Q_0=PF_results.machines.Q61_1) annotation (Placement(transformation(extent={{280,-110},{260,-90}})));
   SevenBus.Generators.G3 GEN3(
     M_b=1211,
     V_b=24,
-    V_0=V_FVERGEG,
-    angle_0=angle_FVERGEG,
-    P_0=-0.05358902,
-    Q_0=7.038) annotation (Placement(transformation(
+    V_0=PF_results.voltages.V71,
+    angle_0=PF_results.voltages.A71,
+    P_0=PF_results.machines.P71_1,
+    Q_0=PF_results.machines.Q71_1) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={0,190})));
@@ -217,14 +198,14 @@ model Network
     VB2=380,
     VB1=24,
     ANG1=0,
-    VNOM2=415,
     CZ=2,
     R=0.0025,
     X=0.137,
-    t1=1,
     VNOM1=24,
     t2=415/380,
-    S_n=1080) annotation (Placement(transformation(
+    S_n=1080,
+    t1=PF_results.trafos.t1_2_21,
+    VNOM2=PF_results.trafos.t2_2_21) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
         rotation=180,
         origin={-230,-100})));
@@ -238,11 +219,11 @@ model Network
     CZ=2,
     R=0.0029,
     X=0.1583,
-    t1=1,
     VNOM1=20,
-    t2=405/380,
     S_n=1710,
-    ANG1=0) annotation (Placement(transformation(
+    ANG1=0,
+    t1=PF_results.trafos.t1_6_61,
+    t2=PF_results.trafos.t2_6_61) annotation (Placement(transformation(
         extent={{-6,-4},{6,4}},
         rotation=180,
         origin={230,-100})));
@@ -256,14 +237,15 @@ model Network
     CZ=2,
     R=0.0025,
     X=0.1362,
-    t1=1,
     VNOM1=24,
-    t2=415/380,
     S_n=1080,
-    ANG1=0) annotation (Placement(transformation(
+    ANG1=0,
+    t1=PF_results.trafos.t1_7_71,
+    t2=PF_results.trafos.t2_7_71) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
         rotation=90,
         origin={0,150})));
+  SevenBus.Data.PF_results PF_results annotation (Placement(transformation(extent={{-256,148},{-236,168}})));
 equation
   connect(pwLine.n, FTILL.o[1]) annotation (Line(points={{-142.333,-100},{-100,-100},{-100,-116}}, color={0,0,255}));
   connect(pwLine1.n, FTILL.o[2]) annotation (Line(points={{-142.333,-120},{-100,-120},{-100,-104}}, color={0,0,255}));
@@ -286,7 +268,7 @@ equation
   connect(pwLine8.n, FVERGE.u[1]) annotation (Line(points={{-38.3333,90},{-20,90},{-20,122},{-17.55,122},{-17.55,121}}, color={0,0,255}));
   connect(pwLine9.n, FVERGE.u[2]) annotation (Line(points={{-38.3333,70},{-2,70},{-2,122},{-5.85,122},{-5.85,121}}, color={0,0,255}));
   connect(pwLine11.n, FTDPRA.o[1]) annotation (Line(points={{61.6667,70},{64,70},{64,1.45},{98,1.45}}, color={0,0,255}));
-  connect(pwLine10.n, FTDPRA.o[2]) annotation (Line(points={{61.6667,90},{80,90},{80,28},{98,28},{98,13.15},{98,13.15}}, color={0,0,255}));
+  connect(pwLine10.n, FTDPRA.o[2]) annotation (Line(points={{61.6667,90},{80,90},{80,28},{98,28},{98,13.15}}, color={0,0,255}));
   connect(pwLine11.p, FVERGE.u[3]) annotation (Line(points={{38.3333,70},{2,70},{2,122},{6,122},{5.85,122},{5.85,121}}, color={0,0,255}));
   connect(pwLine10.p, FVERGE.u[4]) annotation (Line(points={{38.3333,90},{20,90},{20,122},{17.55,122},{17.55,121}}, color={0,0,255}));
   connect(load2.p, FPAND.u[3]) annotation (Line(points={{-91,-35.5},{-91,-4},{-98,-4},{-98,24.85}}, color={0,0,255}));

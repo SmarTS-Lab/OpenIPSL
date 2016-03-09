@@ -1,6 +1,6 @@
 within SevenBus;
 package Generators 
-  
+
 
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
