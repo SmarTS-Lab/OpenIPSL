@@ -2,8 +2,8 @@ within iPSL.Electrical.Loads.PSAT;
 model LOADPQ "Constant PQ Load"
   extends BaseClasses.baseLoad;
 equation
-  P = P_0*Sn/S_b;
-  Q = Q_0*Sn/S_b;
+  P = P_0/S_b;
+  Q = Q_0/S_b;
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

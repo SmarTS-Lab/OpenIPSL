@@ -1,5 +1,6 @@
 within iPSL.Examples.FACTS;
 model TCSC_Alpha_Test
+
   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
@@ -36,14 +37,15 @@ model TCSC_Alpha_Test
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
-    t1=2,
-    t2=10,
-    t3=12,
-    t4=20,
-    P2=0.01,
-    P3=-0.01,
-    Q2=0.01,
-    Q3=-0.01) annotation (Placement(transformation(extent={{94,-10},{114,10}})));
+    t_start_1=2,
+    t_end_1=10,
+    dP1=0.01,
+    dQ1=0.01,
+    t_start_2=12,
+    t_end_2=20,
+    dP2=-0.01,
+    dQ2=-0.01)
+              annotation (Placement(transformation(extent={{94,-10},{114,10}})));
   iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCAlpha tCSCAlpha annotation (Placement(transformation(extent={{18,-10},{38,10}})));
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-120,60},{-96,80}})));
 equation
@@ -56,7 +58,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine1.n, lOADPQ.p) annotation (Line(
-      points={{73,0},{88,0},{88,11},{104,11}},
+      points={{77.6667,0},{88,0},{88,11},{104,11}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(add3_1.y, Gen1.vf) annotation (Line(
@@ -72,7 +74,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(tCSCAlpha.n, pwLine1.p) annotation (Line(
-      points={{39,0},{59,0}},
+      points={{39,0},{54.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Gen1.p, tCSCAlpha.p) annotation (Line(

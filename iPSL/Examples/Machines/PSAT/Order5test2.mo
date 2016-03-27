@@ -1,37 +1,33 @@
 within iPSL.Examples.Machines.PSAT;
-model Order6test2
+model Order5test2
   import iPSL;
   extends iPSL.Examples.BaseTest;
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_1(
-    Sn=100,
-    V_0=1,
-    angle_0=0,
+  iPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type1 order5Type1_Inputs_Outputs(
+    Sn=370,
+    Vn=200,
     ra=0.001,
     xd1=0.302,
     M=10,
     D=0,
     V_b=400,
-    Vn=20,
+    V_0=1,
+    angle_0=0,
+    P_0=16.0352698692006,
+    Q_0=11.859436505981,
     xd=1.9,
     xq=1.7,
     xq1=0.5,
-    xd2=0.204,
-    xq2=0.3,
     Td10=8,
     Tq10=0.8,
-    Td20=0.04,
-    Tq20=0.02,
-    Taa=2e-3,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981)
-         annotation (Placement(transformation(extent={{-61,-20},{-21,20}})));
+    Tq20=0.02)
+         annotation (Placement(transformation(extent={{-32,-10},{-12,10}})));
 equation
-  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-57,22},
-          {-57,25},{-71,25},{-71,10},{-61,10}},                                                                             color={0,0,127}));
-  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-61,-10},
-          {-71,-10},{-71,-25},{-57,-25},{-57,-22}},                                                                          color={0,0,127}));
-  connect(order6Type2_1.p, bus.p) annotation (Line(points={{-19,0.09928},{-10,
-          0.09928},{-10,0},{0,0}}, color={0,0,255}));
+  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0) annotation (Line(points={{-32,5},
+          {-37,5},{-37,15},{-30,15},{-30,11}},                                                                                                    color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0) annotation (Line(points={{-32,-5},
+          {-37,-5},{-37,-15},{-30,-15},{-30,-11}},                                                                                                color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.p, bus.p) annotation (Line(points={{-11,
+          0.04964},{-6,0.04964},{-6,0},{0,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
@@ -54,8 +50,5 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"),
-    Icon(coordinateSystem(
-        preserveAspectRatio=false,
-        grid={1,1},
-        initialScale=0.1)));
-end Order6test2;
+    Icon(coordinateSystem(extent={{-100,-50},{100,100}})));
+end Order5test2;
