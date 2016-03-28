@@ -6,14 +6,14 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     X=0.2,
     G=0,
     B=0) annotation (Placement(transformation(extent={{40,20},{60,40}})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine3(
+  iPSL.Electrical.Branches.PwLine pwLine3(
     t2=100,
     R=0.0005,
     X=0.1,
     G=0,
     B=0,
     t1=100) annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine4(
+  iPSL.Electrical.Branches.PwLine pwLine4(
     t2=100,
     t1=100,
     R=0.0005,
@@ -97,14 +97,20 @@ equation
   connect(gENROE.p, BUS01.p) annotation (Line(points={{-56.3,0},{-40,0}}, color={0,0,255}));
   connect(BUS01.p, twoWindingTransformer.p) annotation (Line(points={{-40,0},{-27,0}}, color={0,0,255}));
   connect(twoWindingTransformer.n, BUS02.p) annotation (Line(points={{-13,0},{0,0}}, color={0,0,255}));
-  connect(pwLine1.p, BUS02.p) annotation (Line(points={{43,30},{4,30},{4,0},{0,0}}, color={0,0,255}));
-  connect(pwLine3.p, BUS02.p) annotation (Line(points={{23,-30},{4,-30},{4,0},{0,0}}, color={0,0,255}));
+  connect(pwLine1.p, BUS02.p) annotation (Line(points={{38.3333,30},{4,30},{4,0},
+          {0,0}},                                                                   color={0,0,255}));
+  connect(pwLine3.p, BUS02.p) annotation (Line(points={{18.3333,-30},{4,-30},{4,
+          0},{0,0}},                                                                  color={0,0,255}));
   connect(constantLoad.p, BUS02.p) annotation (Line(points={{2,-39.4},{2,0},{0,0}}, color={0,0,255}));
-  connect(pwLine3.n, BUS03.p) annotation (Line(points={{37,-30},{43.5,-30},{50,-30}}, color={0,0,255}));
-  connect(BUS03.p, pwLine4.p) annotation (Line(points={{50,-30},{63,-30}}, color={0,0,255}));
+  connect(pwLine3.n, BUS03.p) annotation (Line(points={{41.6667,-30},{41.6667,
+          -30},{50,-30}},                                                             color={0,0,255}));
+  connect(BUS03.p, pwLine4.p) annotation (Line(points={{50,-30},{58.3333,-30}},
+                                                                           color={0,0,255}));
   connect(BUS1.p, gENCLS.p) annotation (Line(points={{90,0},{104.8,0},{104.8,-0.180432}}, color={0,0,255}));
-  connect(pwLine1.n, BUS1.p) annotation (Line(points={{57,30},{86,30},{86,0},{90,0}}, color={0,0,255}));
-  connect(pwLine4.n, BUS1.p) annotation (Line(points={{77,-30},{86,-30},{86,0},{90,0}}, color={0,0,255}));
+  connect(pwLine1.n, BUS1.p) annotation (Line(points={{61.6667,30},{86,30},{86,
+          0},{90,0}},                                                                 color={0,0,255}));
+  connect(pwLine4.n, BUS1.p) annotation (Line(points={{81.6667,-30},{86,-30},{
+          86,0},{90,0}},                                                                color={0,0,255}));
   connect(pwFault.p, BUS03.p) annotation (Line(points={{54,-51},{54,-30},{50,-30}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
