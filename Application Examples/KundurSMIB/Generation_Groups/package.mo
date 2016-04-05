@@ -1,5 +1,5 @@
 within KundurSMIB;
-package Generation_Groups
+package Generation_Groups 
 
 
 annotation (Documentation(revisions="<html>

@@ -1,5 +1,6 @@
 within iPSL.Examples.Solar.PSAT;
 model testIrradation
+
   Modelica.Blocks.Sources.Constant const(k=25)
     annotation (Placement(visible=true, transformation(
         origin={-59.5887,-17.0499},
@@ -26,7 +27,7 @@ model testIrradation
         origin={83.1777,5.4501},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle=0, V=1)
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle_0=0, V_0=1)
     annotation (Placement(visible=true, transformation(
         origin={117.9874,-1.1504},
         extent={{10.0,-10.0},{-10.0,10.0}},
@@ -70,7 +71,8 @@ equation
   connect(const1.y, add1.u1) annotation (Line(
       visible=true,
       origin={-71.3029,21.9375},
-      points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,-1.0127}},
+      points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,
+          -1.0127}},
       color={0,0,127}));
   connect(add2.y, add1.u2) annotation (Line(
       visible=true,
@@ -81,40 +83,44 @@ equation
     annotation (Line(
       visible=true,
       origin={-95.2638,-5.1548},
-      points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,-5.17496}},
+      points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,
+          -5.17496}},
       color={0,0,127}));
   connect(add2.u2, step2.y)
     annotation (Line(
       visible=true,
       origin={-101.2558,-21.885},
-      points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,-8.115}},
+      points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,
+          -8.115}},
       color={0,0,127}));
   connect(pwLine13.n, pwLine14.p) annotation (Line(
       visible=true,
       origin={68.1427,2.7263},
-      points={{-12.1051,-2.7239},{2.035,-2.7238},{2.035,2.7238},{8.035,2.7238}}));
+      points={{-7.43843,-2.7239},{2.035,-2.7239},{2.035,2.7238},{3.36833,2.7238}}));
   connect(pwLine14.n, pwLine15.n) annotation (Line(
       visible=true,
       origin={90.2103,-4.5499},
-      points={{-0.0326,10},{-0.0326,-5},{0.0649,-5}}));
+      points={{4.63407,10},{4.63407,-5},{4.73157,-5}}));
   connect(pwLine14.p, pwLine15.p) annotation (Line(
       visible=true,
       origin={76.2102,-4.5499},
-      points={{-0.0325,10.0},{-0.0325,-5.0},{0.065,-5.0}}));
+      points={{-4.69917,10},{-4.69917,-5},{-4.60167,-5}}));
   connect(infiniteBus8.p, pwLine14.n) annotation (Line(
       visible=true,
       origin={97.3801,2.1498},
-      points={{9.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3002},{-7.2024,3.3003}}));
+      points={{31.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3003},{-2.53573,
+          3.3003}}));
   connect(const.y, PFmodel1.T)
     annotation (Line(
       visible=true,
       origin={-30.4532,-10.8808},
-      points={{-25.3969,-6.1691},{7.4657,-6.1691},{7.4657,6.1691},{10.4657,6.1691}},
+      points={{-25.3969,-6.1691},{7.4657,-6.1691},{7.4657,6.1691},{10.4657,
+          6.1691}},
       color={0,0,127}));
   connect(PFmodel1.pwPin1, pwLine13.p) annotation (Line(
       visible=true,
       origin={32.2688,0.1454},
-      points={{-29.2563,0.1429},{9.7437,0.1429},{9.7437,-0.143},{9.7688,-0.143}}));
+      points={{-29.2563,0.1429},{9.7437,0.1429},{9.7437,-0.143},{5.10213,-0.143}}));
   connect(add1.y, PFmodel1.E) annotation (Line(
       visible=true,
       origin={-26.9875,10.1066},

@@ -1,5 +1,6 @@
 within iPSL.Examples.Branches.PSAT;
 model PhaseShiftingTransformer_Test
+
   iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03) annotation (Placement(transformation(extent={{34,-44},{54,-24}})));
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.01,
@@ -20,14 +21,15 @@ model PhaseShiftingTransformer_Test
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.02,
     Q_0=0.01,
-    t1=5,
-    t2=7.99,
-    t3=8,
-    t4=12,
-    Q2=0.01,
-    Q3=-0.01,
-    P2=0.02,
-    P3=-0.02) annotation (Placement(transformation(extent={{110,-10},{130,10}})));
+    t_start_1=5,
+    t_end_1=7.99,
+    t_start_2=8,
+    t_end_2=12,
+    dQ1=0.01,
+    dP1=0.02,
+    dP2=-0.02,
+    dQ2=-0.01)
+              annotation (Placement(transformation(extent={{110,-10},{130,10}})));
   Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2)
     annotation (Placement(visible=true, transformation(
         origin={-135.783,37.4652},
@@ -70,11 +72,11 @@ model PhaseShiftingTransformer_Test
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-40,60},{2,80}})));
 equation
   connect(pwLine.n, pwLine1.n) annotation (Line(
-      points={{-7,10},{10,10},{10,-10},{-5,-10}},
+      points={{-2.33333,10},{10,10},{10,-10},{-0.333333,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine.p, pwLine1.p) annotation (Line(
-      points={{-21,10},{-26,10},{-26,-10},{-19,-10}},
+      points={{-25.6667,10},{-26,10},{-26,-10},{-23.6667,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.pk, pSTransformer.u) annotation (Line(
@@ -82,15 +84,17 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pSTransformer.n, pwLine2.n) annotation (Line(
-      points={{75,-12},{92,-12},{92,10},{69,10}},
+      points={{75,-12},{92,-12},{92,10},{73.6667,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(sine1.y, add2.u1) annotation (Line(
-      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{-120.693,34.4558}},
+      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{
+          -120.693,34.4558}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine2.y, add2.u2) annotation (Line(
-      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{-120.693,26.8684}},
+      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{
+          -120.693,26.8684}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add2.y, add.u1) annotation (Line(
@@ -122,11 +126,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(B2.p, pwLine1.p) annotation (Line(
-      points={{-32,0},{-26,0},{-26,-10},{-19,-10}},
+      points={{-32,0},{-26,0},{-26,-10},{-23.6667,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B3.p, pwLine1.n) annotation (Line(
-      points={{24,0},{10,0},{10,-10},{-5,-10}},
+      points={{24,0},{10,0},{10,-10},{-0.333333,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B3.p, lOADPQ2.p) annotation (Line(
@@ -134,7 +138,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.p, lOADPQ2.p) annotation (Line(
-      points={{55,10},{40,10},{40,0},{44,0},{44,-23}},
+      points={{50.3333,10},{40,10},{40,0},{44,0},{44,-23}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.p, lOADPQ2.p) annotation (Line(
@@ -146,7 +150,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(B4.p, pwLine2.n) annotation (Line(
-      points={{98,0},{92,0},{92,10},{69,10}},
+      points={{98,0},{92,0},{92,10},{73.6667,10}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (

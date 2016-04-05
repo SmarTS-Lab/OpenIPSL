@@ -311,7 +311,25 @@ equation
           lineColor={0,0,255},
           textString="ActivePowerPN")}),
     Diagram(graphics),
-    Documentation(revisions="<html>
+     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>None</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p></p>2016-03-14</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>RTE-AIA</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>modelica@aia.es<a href=\"mailto:modelica@aia.es\"></a></p></td>
+</tr>
+</table>
+</html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

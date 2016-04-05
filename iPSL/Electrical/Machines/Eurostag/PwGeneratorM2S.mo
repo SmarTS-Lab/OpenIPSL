@@ -5,7 +5,7 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
                    2014/03/10"
   iPSL.Connectors.PwPin sortie annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
   Modelica.Blocks.Interfaces.RealInput pin_EFD annotation (Placement(transformation(extent={{-61,-40},{-41,-20}}), iconTransformation(extent={{-61,-40},{-41,-20}})));
-  Modelica.Blocks.Interfaces.RealInput pin_OMEGA annotation (Placement(transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={{-61,20},{-41,40}})));
+  Modelica.Blocks.Interfaces.RealOutput pin_OMEGA annotation (Placement(transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={{-61,20},{-41,40}})));
   Modelica.Blocks.Interfaces.RealInput pin_CM annotation (Placement(transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent={{-61,-10},{-41,10}})));
   Modelica.Blocks.Interfaces.RealInput omegaRef;
   // EXTERNAL TO INTERNAL COMPUTATION
@@ -326,7 +326,25 @@ equation
           lineColor={0,0,255},
           textString="ActivePowerPN")}),
     Diagram(graphics),
-    Documentation(revisions="<html>
+   Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>None</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p></p>2016-03-14</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>RTE-AIA</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>modelica@aia.es<a href=\"mailto:modelica@aia.es\"></a></p></td>
+</tr>
+</table>
+</html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

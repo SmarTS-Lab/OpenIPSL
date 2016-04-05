@@ -1,8 +1,7 @@
 within TwoAreas.Groups.PSSE.AVR;
 model G4
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends TwoAreas.Support.Generator;
 
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   iPSL.Electrical.Machines.PSSE.GENROU.GENROU gENSAL(
     Tpd0=8,
     Tppd0=0.03,
@@ -42,33 +41,26 @@ model G4
     E_2=2,
     S_EE_1=0.0164,
     S_EE_2=0.0481) annotation (Placement(transformation(extent={{-32,-16},{0,-2}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-52,8},{-44,16}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-62,2},{-54,10}})));
 equation
 
   connect(gENSAL.p, pwPin) annotation (Line(points={{46,0},{42,0},{70,0}}, color={0,0,255}));
   connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{4.4,9},{2,9},{2,14},{-8,14},{-8,32},{50,32},{50,-5.4},{45.6,-5.4}}, color={0,0,127}));
   connect(eSDC1A.EFD, gENSAL.EFD) annotation (Line(points={{0.888889,-9},{0.888889,-9},{2,-9},{4.4,-9}}, color={0,0,127}));
   connect(eSDC1A.EFD0, gENSAL.EFD0) annotation (Line(points={{-19.5556,-14.95},{-19.5556,-22},{50,-22},{50,-12.6},{45.6,-12.6}}, color={0,0,127}));
-  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-43.6,12},{-38,12},{-38,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
-  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-10.75},{-38,-10.75},{-38,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
-  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-7.25},{-38,-7.25},{-38,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
-  connect(eSDC1A.ECOMP, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-3.925},{-38,-3.925},{-38,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
+  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-53.6,6},{-44,6},{-44,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
+  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-10.75},{-44,-10.75},{-44,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
+  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-7.25},{-44,-7.25},{-44,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
+  connect(gENSAL.ETERM, eSDC1A.ECOMP) annotation (Line(points={{45.6,9},{52,9},{52,-24},{-38,-24},{-38,-3.925},{-31.1111,-3.925}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
-        extent={{-60,-60},{60,60}},
+        extent={{-100,-100},{100,100}},
         initialScale=0.1)),
     Icon(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-60,-60},{60,60}},
-        initialScale=0.1), graphics={
-        Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-        Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-        Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-        Text(
-          extent={{-24,-22},{18,-52}},
-          lineColor={28,108,200},
-          textString="G4")}),
+        preserveAspectRatio=false,
+        extent={{-100,-100},{100,100}},
+        initialScale=0.1)),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

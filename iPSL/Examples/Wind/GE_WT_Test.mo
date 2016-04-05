@@ -1,10 +1,11 @@
 within iPSL.Examples.Wind;
 model GE_WT_Test
+
   iPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(visible=true, transformation(
         origin={75.0,1.7487},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infBus2(angle=-0.000216626610049175, V=1.05999999985841)
+  iPSL.Electrical.Buses.InfiniteBus infBus2(angle_0=-0.000216626610049175, V_0=1.05999999985841)
     annotation (Placement(visible=true, transformation(
         origin={-42.5798,1.9703},
         extent={{-10.0,-10.0},{10.0,10.0}},
@@ -65,22 +66,22 @@ equation
   connect(infBus2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={-30.0532,1.8477},
-      points={{-1.5266,0.1226},{-1.5266,-0.0614},{3.0532,-0.0614}},
+      points={{-23.5266,0.1226},{-23.5266,-0.0614},{-1.61347,-0.0614}},
       color={0,0,255}));
   connect(pwLine1.n, pwFault1.p) annotation (Line(
       visible=true,
       origin={-11.6324,11.3764},
-      points={{-1.3676,-9.5901},{-1.3676,3.6236},{-3.82487,3.6236}},
+      points={{3.29907,-9.5901},{3.29907,3.6236},{-3.82487,3.6236}},
       color={0,0,255}));
   connect(pwLine1.n, pwLine2.p) annotation (Line(
       visible=true,
       origin={-11.5629,1.694},
-      points={{-1.4371,0.0923},{-1.4371,-0.0462},{2.8741,-0.0462}},
+      points={{3.22957,0.0923},{3.22957,-0.0462},{-1.79257,-0.0462}},
       color={0,0,255}));
   connect(pwLine2.n, pwLine3.p) annotation (Line(
       visible=true,
       origin={6.8642,1.7091},
-      points={{-1.553,-0.0613},{-1.553,0.0307},{3.1061,0.0307}},
+      points={{3.11367,-0.0613},{3.11367,0.0307},{-1.56057,0.0307}},
       color={0,0,255}));
   connect(windGenerator1.Vw, GE_WT_init1.Wind_Speed)
     annotation (Line(
@@ -91,17 +92,17 @@ equation
   connect(pwLine5.n, GE_WT_init1.pwPin1) annotation (Line(
       visible=true,
       origin={61.3531,1.7782},
-      points={{-1.3234,0.0591},{-1.3234,-0.0295},{2.6469,-0.0295}},
+      points={{3.34327,0.0591},{3.34327,-0.0295},{2.6469,-0.0295}},
       color={0,0,255}));
   connect(pwLine4.n, pwLine5.p) annotation (Line(
       visible=true,
       origin={43.3432,1.7878},
-      points={{-1.3432,-0.099},{-1.3432,0.0495},{2.6865,0.0495}},
+      points={{3.32347,-0.099},{3.32347,0.0495},{-1.98017,0.0495}},
       color={0,0,255}));
   connect(pwLine3.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={25.3135,1.7058},
-      points={{-1.3432,0.034},{-1.3432,-0.017},{2.6865,-0.017}},
+      points={{3.32347,0.034},{3.32347,-0.017},{-1.98017,-0.017}},
       color={0,0,255}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},

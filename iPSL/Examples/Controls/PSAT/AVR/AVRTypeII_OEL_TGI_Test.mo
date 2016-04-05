@@ -1,68 +1,6 @@
 within iPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeII_OEL_TGI_Test
-  iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
-        origin={122.283,26},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine2Openings pwLinewithOpening1(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1,
-    t1=8,
-    t2=8.1) annotation (Placement(visible=true, transformation(
-        origin={79,16},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine4(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={79,31},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine3(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={84,-19},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
-        origin={124,-19},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine2(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={44,26},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine1(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={44,-4},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Events.PwFaultPQ pwFault(
-    X=0.001,
-    t1=3,
-    R=0.3,
-    t2=3.1) annotation (Placement(transformation(extent={{115,-52},{135,-32}})));
+
   iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
     Sn=Sn,
     Vn=Vn,
@@ -119,46 +57,6 @@ model AVRTypeII_OEL_TGI_Test
   parameter Real p0=0.160352698692006 "Power flow, node active power";
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-80,-80},{-56,-60}})));
 equation
-  connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
-      visible=true,
-      origin={101.213,29},
-      points={{-15.213,2},{3.0708,2},{3.0708,8},{21.07,8}}));
-  connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
-      visible=true,
-      origin={86,23.5},
-      points={{0,-7.5},{0,7.5}}));
-  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(
-      visible=true,
-      origin={72,23.5},
-      points={{0,7.5},{0,-7.5}}));
-  connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
-      visible=true,
-      origin={107.5,-18.5},
-      points={{-16.5,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
-  connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{51,26},{64,26},{64,31},{72,31}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{51,-4},{64,-4},{64,-19},{77,-19}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{51,26},{51,-4}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation (Line(
-      points={{113.333,-42},{104,-42},{104,-19},{91,-19}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(order6Type2_Inputs_Outputs.p, pwLine2.p) annotation (Line(
-      points={{16,27.1936},{27,27.1936},{27,26},{37,26}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{37,-4},{37,26}},
-      color={0,0,255},
-      smooth=Smooth.None));
   connect(oXL.v, order6Type2_Inputs_Outputs.v) annotation (Line(
       points={{78.72,108.4},{96,108.4},{96,40},{30,40},{30,38.7},{16,38.7}},
       color={0,0,127},
@@ -176,7 +74,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.P, oXL.p) annotation (Line(
-      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,101.4}},
+      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,
+          101.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGTypeI.w, order6Type2_Inputs_Outputs.w) annotation (Line(

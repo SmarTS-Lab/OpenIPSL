@@ -2,6 +2,7 @@ within iPSL.Examples.Branches.PSAT;
 
 
 model ThreeWindingTransformer_Test
+
   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
@@ -48,28 +49,30 @@ model ThreeWindingTransformer_Test
     M=10) annotation (Placement(transformation(extent={{-20,0},{0,20}})));
   Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
-    t1=5,
-    t2=8,
-    t3=8,
-    t4=12,
-    P2=0,
-    P3=0,
     P_0=0.04,
     Q_0=0.02,
-    Q2=0.01,
-    Q3=-0.01) annotation (Placement(transformation(extent={{115,15},{135,35}})));
+    dP1=0,
+    dQ1=0.01,
+    dP2=0,
+    dQ2=-0.01,
+    t_start_1=5,
+    t_end_1=8,
+    t_start_2=8,
+    t_end_2=12)
+              annotation (Placement(transformation(extent={{115,15},{135,35}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.04,
     Q_0=0.04,
-    t1=0,
-    t2=0,
-    t3=0,
-    t4=0,
-    P2=0,
-    Q2=0,
-    P3=0,
-    Q3=0) annotation (Placement(transformation(extent={{115,-20},{135,0}})));
-  iPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
+    t_start_1=0,
+    t_end_1=0,
+    dP1=0,
+    dQ1=0,
+    t_start_2=0,
+    t_end_2=0,
+    dP2=0,
+    dQ2=0)    annotation (Placement(transformation(extent={{115,-20},{135,0}})));
+  iPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer
+                                                                                threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
   iPSL.Electrical.Buses.Bus Bus1 annotation (Placement(transformation(extent={{10,0},{30,20}})));
   iPSL.Electrical.Buses.Bus Bus2 annotation (Placement(transformation(extent={{50,0},{70,20}})));
   iPSL.Electrical.Buses.Bus Bus3 annotation (Placement(transformation(extent={{95,15},{115,35}})));
@@ -105,11 +108,11 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
-      points={{47,20},{55,20},{55,0},{47,0}},
+      points={{51.6667,20},{55,20},{55,0},{51.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine4.p, pwLine3.p) annotation (Line(
-      points={{33,20},{25,20},{25,0},{33,0}},
+      points={{28.3333,20},{25,20},{25,0},{28.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Gen1.p, Bus1.p) annotation (Line(
@@ -117,11 +120,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(Bus1.p, pwLine3.p) annotation (Line(
-      points={{20,10},{25,10},{25,0},{33,0}},
+      points={{20,10},{25,10},{25,0},{28.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Bus2.p, pwLine3.n) annotation (Line(
-      points={{60,10},{55,10},{55,0},{47,0}},
+      points={{60,10},{55,10},{55,0},{51.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Bus2.p, threeWindingTransformer.b1) annotation (Line(

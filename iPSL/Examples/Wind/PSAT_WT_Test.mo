@@ -1,5 +1,6 @@
 within iPSL.Examples.Wind;
 model PSAT_WT_Test
+
   iPSL.Electrical.Wind.PSAT.PSAT_Type_3.PSAT_WT dfig_Turbine1(
     V_b=1,
     angle_0=0.00161587015139445,
@@ -31,7 +32,7 @@ model PSAT_WT_Test
         origin={25.0,40.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus1(V=1, angle=0)
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus1(V_0=1, angle_0=0)
     annotation (Placement(visible=true, transformation(
         origin={-28.2108,15.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
@@ -40,7 +41,7 @@ equation
   connect(infiniteBus1.p, pwLine5.p) annotation (Line(
       visible=true,
       origin={-8.8299,15.0},
-      points={{-8.3809,0.0},{8.3809,0.0}},
+      points={{-30.3809,0},{3.71423,0}},
       color={0,0,255}));
   connect(windGenerator1.Vw, dfig_Turbine1.Wind_Speed)
     annotation (Line(
@@ -51,7 +52,7 @@ equation
   connect(pwLine5.n, dfig_Turbine1.pin) annotation (Line(
       visible=true,
       origin={24.6013,15.0},
-      points={{-11.0503,0},{11.0502,0}},
+      points={{-6.38363,0},{11.0502,0}},
       color={0,0,255}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},

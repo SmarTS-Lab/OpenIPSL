@@ -1,8 +1,7 @@
 within TwoAreas.Groups.PSSE.AVR;
 model G2
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends TwoAreas.Support.Generator;
 
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   iPSL.Electrical.Machines.PSSE.GENROU.GENROU g2(
     Tpd0=8,
     Tppd0=0.03,
@@ -52,23 +51,16 @@ equation
   connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-47.6,8},{-42,8},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
   connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-11.25},{-42,-11.25},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
   connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-6.75},{-42,-6.75},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
-  connect(eSDC1A.ECOMP, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-2.475},{-42,-2.475},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
+  connect(g2.ETERM, eSDC1A.ECOMP) annotation (Line(points={{47.6,9},{58,9},{58,-26},{-40,-26},{-40,-2.475},{-37.0556,-2.475}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
-        extent={{-60,-60},{60,60}},
+        extent={{-100,-100},{100,100}},
         initialScale=0.1)),
     Icon(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-60,-60},{60,60}},
-        initialScale=0.1), graphics={
-        Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-        Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-        Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-        Text(
-          extent={{-20,-22},{16,-52}},
-          lineColor={28,108,200},
-          textString="G2")}),
+        preserveAspectRatio=false,
+        extent={{-100,-100},{100,100}},
+        initialScale=0.1)),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

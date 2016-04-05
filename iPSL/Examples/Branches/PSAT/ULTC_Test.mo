@@ -1,5 +1,6 @@
 within iPSL.Examples.Branches.PSAT;
 model ULTC_Test
+
   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
@@ -48,14 +49,15 @@ model ULTC_Test
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
-    t1=5,
-    t2=8,
-    t3=8,
-    t4=12,
-    P2=0,
-    P3=0,
-    Q3=-0.05,
-    Q2=0.05) annotation (Placement(transformation(extent={{115,-10},{135,10}})));
+    t_start_1=5,
+    t_end_1=8,
+    dP1=0,
+    dQ1=0.05,
+    t_start_2=8,
+    t_end_2=12,
+    dP2=0,
+    dQ2=-0.05)
+              annotation (Placement(transformation(extent={{115,-10},{135,10}})));
   iPSL.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-5,-10},{15,10}})));
   iPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{45,-10},{65,10}})));
@@ -71,7 +73,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
-      points={{37,10},{45,10},{45,-10},{37,-10}},
+      points={{41.6667,10},{45,10},{45,-10},{41.6667,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(sine1.y, add2.u1) annotation (Line(
@@ -83,7 +85,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine4.p, pwLine3.p) annotation (Line(
-      points={{23,10},{15,10},{15,-10},{23,-10}},
+      points={{18.3333,10},{15,10},{15,-10},{18.3333,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order2_Inputs_Outputs.vf0, add.u2) annotation (Line(
@@ -95,11 +97,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1.p, pwLine3.p) annotation (Line(
-      points={{5,0},{15,0},{15,-10},{23,-10}},
+      points={{5,0},{15,0},{15,-10},{18.3333,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B2.p, pwLine3.n) annotation (Line(
-      points={{55,0},{45,0},{45,-10},{37,-10}},
+      points={{55,0},{45,0},{45,-10},{41.6667,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(uLTC_VoltageControl.n, B3.p) annotation (Line(

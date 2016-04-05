@@ -1,5 +1,6 @@
 within iPSL.Examples.Controls.PSAT.TG;
 model TGTypeIV_test
+
   iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 Generator(
     P_0=0.16041,
     Q_0=0.12012,
@@ -77,7 +78,7 @@ model TGTypeIV_test
         origin={26.863,-12.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (Placement(transformation(
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={77,-11})));
@@ -86,21 +87,24 @@ equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={79.076,17.3286},
-      points={{-17.213,-2},{-14.642,-2},{0.071,-2},{0.071,8}}));
+      points={{-12.5463,-2},{-12.5463,-2},{0.071,-2},{0.071,8}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={39.1134,16.8286},
-      points={{-6.25,-2.5},{4.75,-2.5},{4.75,-1.5},{8.7496,-1.5}}));
+      points={{-1.58333,-2.5},{4.75,-2.5},{4.75,-1.5},{4.08293,-1.5}}));
   connect(Generator.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={11.2254,11.7135},
-      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{7.638,2.6151}}));
+      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,
+          2.6151}}));
   connect(Generator.vf0, Generator.vf) annotation (Line(
-      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,10.9366}},
+      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,
+          10.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.w, tGModel4_1.w) annotation (Line(
-      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},{-84.34,-4.2}},
+      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},
+          {-84.34,-4.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel4_1.Pm, Generator.pm) annotation (Line(
@@ -108,19 +112,19 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{19.863,-12.6714},{16,-12.6714},{16,14.3286},{18.8634,14.3286}},
+      points={{15.1963,-12.6714},{16,-12.6714},{16,14.3286},{14.1967,14.3286}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{32.8634,14.3286},{38,14.3286},{38,-12.6714},{33.863,-12.6714}},
+      points={{37.5301,14.3286},{38,14.3286},{38,-12.6714},{38.5297,-12.6714}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{33.863,-12.6714},{44,-12.6714},{44,-12},{44.5,-12}},
+      points={{38.5297,-12.6714},{44,-12.6714},{44,-12},{39.8333,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, infiniteBus.p) annotation (Line(
-      points={{58.5,-12},{72,-12},{72,-11},{71.5,-11}},
+      points={{63.1667,-12},{72,-12},{72,-11},{82.5,-11}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(

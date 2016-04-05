@@ -1,9 +1,7 @@
 within TwoAreas.Groups.PSSE;
 package No_Controls
   model G1
-    extends iPSL.Electrical.Essentials.pfComponent;
-
-    iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
+    extends TwoAreas.Support.Generator;
     iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
       Tpd0=8,
       Tppd0=0.03,
@@ -30,26 +28,34 @@ package No_Controls
     connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{26,-8.6},{26,-20},{-18,-20},{-18,-5},{-15.6,-5}}, color={0,0,127}));
     connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-18,13},{-18,30},{24,30},{24,-1.4},{25.6,-1.4}}, color={0,0,127}));
     connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
-    annotation (Diagram(coordinateSystem(
+    annotation (
+      Diagram(coordinateSystem(
           preserveAspectRatio=false,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1)), Icon(coordinateSystem(
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Icon(coordinateSystem(
           preserveAspectRatio=true,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-20,-24},{16,-54}},
-            lineColor={28,108,200},
-            textString="%name")}));
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
   end G1;
 
   model G2
-    extends iPSL.Electrical.Essentials.pfComponent;
+    extends TwoAreas.Support.Generator;
 
-    iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
     iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
       Tpd0=8,
       Tppd0=0.03,
@@ -76,24 +82,33 @@ package No_Controls
     connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-15.6,-5},{-26,-5},{-26,-30},{26,-30},{26,-8.6},{25.6,-8.6}}, color={0,0,127}));
     connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-26,13},{-26,34},{28,34},{28,-1.4},{25.6,-1.4}}, color={0,0,127}));
     connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{44,4},{44,0},{70,0}}, color={0,0,255}));
-    annotation (Diagram(coordinateSystem(
+    annotation (
+      Diagram(coordinateSystem(
           preserveAspectRatio=false,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1)), Icon(coordinateSystem(
-          preserveAspectRatio=true,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-20,-22},{16,-52}},
-            lineColor={28,108,200},
-            textString="G2")}));
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Icon(coordinateSystem(
+          preserveAspectRatio=false,
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
   end G2;
 
   model G3
-    extends iPSL.Electrical.Essentials.pfComponent;
+    extends TwoAreas.Support.Generator;
 
     iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
       Tpd0=8,
@@ -117,32 +132,38 @@ package No_Controls
       Q_0=Q_0,
       angle_0=angle_0) annotation (Placement(transformation(extent={{-30,-30},{30,36}})));
 
-    iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
-
   equation
     connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-29.4,19.5},{-40,19.5},{-40,44},{30,44},{30,-6.9},{32.4,-6.9}}, color={0,0,127}));
     connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{32.4,-20.1},{38,-20.1},{38,-40},{-38,-40},{-38,0},{-38,-13.5},{-29.4,-13.5}}, color={0,0,127}));
     connect(gENSAL.p, pwPin) annotation (Line(points={{33,3},{46.5,3},{46.5,0},{70,0}}, color={0,0,255}));
-    annotation (Diagram(coordinateSystem(
+    annotation (
+      Diagram(coordinateSystem(
           preserveAspectRatio=false,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1)), Icon(coordinateSystem(
-          preserveAspectRatio=true,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-22,-24},{18,-54}},
-            lineColor={28,108,200},
-            textString="G3")}));
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Icon(coordinateSystem(
+          preserveAspectRatio=false,
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
   end G3;
 
   model G4
-    extends iPSL.Electrical.Essentials.pfComponent;
+    extends TwoAreas.Support.Generator;
 
-    iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
     iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
       Tpd0=8,
       Tppd0=0.03,
@@ -169,19 +190,42 @@ package No_Controls
     connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
     connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{34,-8.6},{34,-20},{-24,-20},{-24,-5},{-15.6,-5}}, color={0,0,127}));
     connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-14,13},{-14,12},{-24,12},{-24,30},{34,30},{34,-1.4},{25.6,-1.4}}, color={0,0,127}));
-    annotation (Diagram(coordinateSystem(
+    annotation (
+      Diagram(coordinateSystem(
           preserveAspectRatio=false,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1)), Icon(coordinateSystem(
-          preserveAspectRatio=true,
-          extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-24,-22},{18,-52}},
-            lineColor={28,108,200},
-            textString="G4")}));
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Icon(coordinateSystem(
+          preserveAspectRatio=false,
+          extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+      Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
   end G4;
+  annotation (Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
 end No_Controls;
