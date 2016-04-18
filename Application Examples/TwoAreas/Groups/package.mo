@@ -1,5 +1,5 @@
 within TwoAreas;
-package Groups
+package Groups 
 
 
 annotation (Documentation(revisions="<html>

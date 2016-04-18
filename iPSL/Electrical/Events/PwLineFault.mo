@@ -13,19 +13,19 @@ model PwLineFault "Transitory short-circuit on a line at the point of location f
   parameter Real Xfault "Fault reactance";
   parameter Real time_1 "Start time of the fault";
   parameter Real time_2 "End time of the fault";
-  parameter Real Vo_real1 "Initial real voltage at Sending node";
-  parameter Real Vo_img1 "Initial imaginary voltage at Sending node";
-  parameter Real Vo_real2 "Initial real voltage at Receiving node";
-  parameter Real Vo_img2 "Initial imaginay voltage at Receiving node";
+  parameter Real V1_0 "Initial voltage magnitude at Sending node";
+  parameter Real angle1_0 "Initial  voltage angle Sending node";
+  parameter Real V2_0 "Initial voltage magnitude Receiving node";
+  parameter Real angle2_0 "Initial voltage angle at Receiving node";
   parameter Complex Z(re=R1, im=X1);
   parameter Complex Y(re=G1, im=B1);
-  parameter Complex V1(re=Vo_real1, im=Vo_img1);
-  parameter Complex V2(re=Vo_real2, im=Vo_img2);
+  parameter Complex V1(re=V1_0*cos(angle1_0*Modelica.Constants.pi/180), im=V1_0*sin(angle1_0*Modelica.Constants.pi/180));
+  parameter Complex V2(re=V2_0*cos(angle2_0*Modelica.Constants.pi/180), im=V2_0*sin(angle2_0*Modelica.Constants.pi/180));
   parameter Complex V0fict=((1 - k)*V1 + k*V2)/(1 + k*(1 - k)*Z*Y);
   parameter Real V0fict_real=V0fict.re;
   parameter Real V0fict_img=V0fict.im;
   // FICTITIOUS BUS
-  iPSL.Electrical.Buses.Bus FICT(V_0=V0fict_real^2 + V0fict_img^2, angle_0=atan2(V0fict_real^2, V0fict_img)) annotation (Placement(transformation));
+  iPSL.Electrical.Buses.Bus FICT(V_0=sqrt(V0fict_real^2 + V0fict_img^2), angle_0=atan2(V0fict_img,V0fict_real)) annotation (Placement(transformation));
   // THE ORIGINAL LINE IS SEPARATED IN TWO PARTS
   iPSL.Electrical.Branches.PwLine_2 Line_1(
     R=k*R1,

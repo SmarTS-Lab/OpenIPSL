@@ -1,19 +1,20 @@
 within iPSL.Electrical.Loads.Eurostag;
-
-
-model PwLoadVoltageDependence "Load with voltage dependence.Developed by AIA. 2014/03/10"
+model PwLoadVoltageDependence 
+  "Load with voltage dependence.Developed by AIA. 2014/03/10"
+  extends iPSL.Electrical.Essentials.pfComponent;
   iPSL.Connectors.PwPin p(
-    vr(start=Vo_real),
-    vi(start=Vo_img),
+    vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)),
+    vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)),
     ir(start=1),
-    ii(start=0)) annotation (Placement(transformation(extent={{-80,0},{-60,20}}), iconTransformation(extent={{-80,0},{-60,20}})));
-  parameter Real P "Active Power p.u.";
-  parameter Real Q "Reactive Power in p.u.";
-  parameter Real Vo_real=1 "Initial voltage at node in p.u. (Real part)";
-  parameter Real Vo_img=0 "Initial voltage at node in p.u. (Imaginary part)";
-  parameter Real vo=sqrt(Vo_real^2 + Vo_img^2);
-  parameter Real omega0=1;
-  Real v(start=vo);
+    ii(start=0)) annotation (Placement(transformation(extent={{-80,0},{-60,
+            20}}), iconTransformation(extent={{-80,0},{-60,20}})));
+  parameter Real P = P_0/S_b "Active Power p.u.";
+  parameter Real Q = P_0/S_b "Reactive Power in p.u.";
+ // parameter Real V_0 = 1 "Initial magnitud voltage at node in p.u. ";
+ // parameter Real angle_0 = 0 "Initial voltageangle at node in deg. ";
+  parameter Real vo = V_0;
+  parameter Real omega0 = 1;
+  Real v(start = vo);
   Real a "auxiliary variable. Voltage division";
   parameter Real alpha=0;
   parameter Real beta=0;

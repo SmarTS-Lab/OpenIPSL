@@ -1,8 +1,7 @@
 within TwoAreas.Groups.PSSE.AVR;
 model G1
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends TwoAreas.Support.Generator;
 
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   iPSL.Electrical.Machines.PSSE.GENROU.GENROU g1(
     Tpd0=8,
     Tppd0=0.03,
@@ -33,34 +32,27 @@ model G1
     T_E=0.01,
     E_MIN=0,
     E_MAX=4,
-    Ec0=1) annotation (Placement(transformation(extent={{-42,-18},{-8,0}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-56,18},{-46,28}})));
+    Ec0=V_0) annotation (Placement(transformation(extent={{-42,-18},{-8,0}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-68,-2},{-58,8}})));
 equation
 
   connect(g1.PMECH, g1.PMECH0) annotation (Line(points={{-1.6,9},{-6,9},{-12,9},{-12,10},{-12,26},{44,26},{44,-5.4},{39.6,-5.4}}, color={0,0,127}));
   connect(g1.p, pwPin) annotation (Line(points={{40,0},{40,0},{70,0}}, color={0,0,255}));
   connect(sEXS.EFD, g1.EFD) annotation (Line(points={{-6.98,-9},{-6.98,-9},{-1.6,-9}}, color={0,0,127}));
   connect(sEXS.EFD0, g1.EFD0) annotation (Line(points={{-40.98,-14.625},{-46,-14.625},{-46,-26},{46,-26},{46,-12.6},{39.6,-12.6}}, color={0,0,127}));
-  connect(sEXS.VOEL, const.y) annotation (Line(points={{-40.98,-9},{-40.98,-9.5},{-45.5,-9.5},{-45.5,23}}, color={0,0,127}));
-  connect(sEXS.VOTHSG, const.y) annotation (Line(points={{-40.98,-5.625},{-40.98,-6.1875},{-45.5,-6.1875},{-45.5,23}}, color={0,0,127}));
-  connect(sEXS.ECOMP, const.y) annotation (Line(points={{-40.98,-3.375},{-40.98,-3.3125},{-45.5,-3.3125},{-45.5,23}}, color={0,0,127}));
-  connect(sEXS.VUEL, const.y) annotation (Line(points={{-40.98,-12.375},{-40.98,-12.1875},{-45.5,-12.1875},{-45.5,23}}, color={0,0,127}));
+  connect(sEXS.VOEL, const.y) annotation (Line(points={{-40.98,-9},{-40.98,-9.5},{-57.5,-9.5},{-57.5,3}}, color={0,0,127}));
+  connect(sEXS.VOTHSG, const.y) annotation (Line(points={{-40.98,-5.625},{-40.98,-6.1875},{-57.5,-6.1875},{-57.5,3}}, color={0,0,127}));
+  connect(sEXS.VUEL, const.y) annotation (Line(points={{-40.98,-12.375},{-40.98,-12.1875},{-57.5,-12.1875},{-57.5,3}}, color={0,0,127}));
+  connect(g1.ETERM, sEXS.ECOMP) annotation (Line(points={{39.6,9},{50,9},{50,-30},{-50,-30},{-50,-3.375},{-40.98,-3.375}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
-        extent={{-60,-60},{60,60}},
+        extent={{-100,-100},{100,100}},
         initialScale=0.1)),
     Icon(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-60,-60},{60,60}},
-        initialScale=0.1), graphics={
-        Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-        Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-        Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-        Text(
-          extent={{-20,-24},{16,-54}},
-          lineColor={28,108,200},
-          textString="%name")}),
+        preserveAspectRatio=false,
+        extent={{-100,-100},{100,100}},
+        initialScale=0.1)),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
