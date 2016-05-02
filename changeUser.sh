@@ -1,4 +1,3 @@
 #!/bin/bash
-ls
 useradd smartslab
-su smartslab
+sudo -u smartslab -H sh -c "python /OpenIPSL/runTests.py"
