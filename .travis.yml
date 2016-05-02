@@ -9,7 +9,7 @@ install:
   - docker pull smartslab/ci_openipsl
 
 script:
-  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl cd /OpenIPSL && ls
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl /bin/sh -c 'cd /OpenIPSL; ls'
   - python runTests.py
 
 branches:
