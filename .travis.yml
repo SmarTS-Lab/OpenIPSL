@@ -7,11 +7,12 @@ services: docker
 
 install:
   - docker pull smartslab/ci_openipsl
-  - docker run -d smartslab/ci_openipsl
 
 script:
+  - docker run -d smartslab/ci_openipsl
+  - dir
+  - pwd
   - python runTests.py
-  - docker ps -a
 
 branches:
   only:
