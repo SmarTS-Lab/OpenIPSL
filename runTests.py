@@ -24,12 +24,16 @@ for test in test_list:
     if omc.sendExpression("isModel(%s)" % (test)):
         passMsg = omc.sendExpression("checkModel(%s)" % (test))
         failMsg = omc.sendExpression("getErrorString()")
-        if not failMsg:
+        if "completed successfully." in passMsg:
             print passMsg
             nPassed += 1
         else:
             print "Model %s failed to check!" % (test)
             nFailed += 1
 
-if nPassed:
+print "============================= Check Summary =============================="
+print "Number of models that passed the check is: %s" % nPassed
+print "Number of models that failed the check is: %s" % nFailed
+
+if nFailed:
     sys.exit(1)
