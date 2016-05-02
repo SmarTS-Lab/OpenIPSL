@@ -1,8 +1,8 @@
 within KundurSMIB.Generation_Groups;
 model Generator
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
 
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 machine(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
     V_b=V_b,
     ra=0.003,
@@ -24,11 +24,12 @@ model Generator
     angle_0=angle_0,
     Sn=2220,
     Taa=0) annotation (Placement(transformation(extent={{14,-30},{74,30}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   connect(machine.pm0, machine.pm) annotation (Line(points={{20,-33},{20,-33},{20,-40},{0,-40},{0,-15},{14,-15}}, color={0,0,127}));
   connect(machine.p, pwPin) annotation (Line(points={{77,0.14892},{78.5,0.14892},{78.5,0},{110,0}}, color={0,0,255}));
-  connect(machine.vf0, machine.vf) annotation (Line(points={{20,33},{20,48},{-8,48},{-8,15},{14,15}}, color={0,0,127}));
+  connect(machine.vf0, machine.vf) annotation (Line(points={{20,33},{20,48},{-8,
+          48},{-8,15},{14,15}},                                                                       color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Ellipse(

@@ -1,9 +1,9 @@
 within IEEE14.Generation_Groups;
 model GroupBus2
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=2.718126892405429 "Initial field voltage";
   parameter Real vref0=1.181847826013889 "Reference voltage AVR";
-  iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII aVR1TypeII1(
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII aVR1TypeII1(
     Ta=0.02,
     Tf=1,
     Ke=1,
@@ -17,7 +17,7 @@ model GroupBus2
     vref0=vref0,
     vf0=vf0) annotation (Placement(transformation(extent={{-50,0},{0,38}})));
   Modelica.Blocks.Sources.Constant const1(k=1.181847826013889) annotation (Placement(transformation(extent={{-94,24},{-68,50}})));
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn3(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 Syn3(
     Sn=60,
     Vn=69,
     V_b=V_b,
@@ -38,9 +38,10 @@ model GroupBus2
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{20,-36},{86,34}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{122,-10},{142,10}}), iconTransformation(extent={{122,-10},{142,10}})));
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{122,-10},{142,10}}), iconTransformation(extent={{122,-10},{142,10}})));
 equation
-  connect(aVR1TypeII1.vf, Syn3.vf) annotation (Line(points={{-3.75,23.94},{-2.65,23.94},{-2.65,16.5},{20,16.5}}, color={0,0,127}));
+  connect(aVR1TypeII1.vf, Syn3.vf) annotation (Line(points={{-3.75,23.94},{
+          -2.65,23.94},{-2.65,16.5},{20,16.5}},                                                                  color={0,0,127}));
   connect(Syn3.v, aVR1TypeII1.v) annotation (Line(points={{89.3,9.5},{116,9.5},{116,-88},{-82,-88},{-82,-84},{-82,14},{-82,17.1},{-45,17.1}}, color={0,0,127}));
   connect(const1.y, aVR1TypeII1.vref) annotation (Line(points={{-66.7,37},{-54,37},{-54,29.26},{-45,29.26}}, color={0,0,127}));
   connect(Syn3.p, pwPin) annotation (Line(points={{89.3,-0.82626},{110.65,-0.82626},{110.65,0},{132,0}}, color={0,0,255}));
@@ -74,7 +75,7 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
+<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;OpenIPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
 <li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
@@ -83,9 +84,9 @@ equation
 <li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
 </ul>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;OpenIPSL&QUOT;) .</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the OpenIPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end GroupBus2;

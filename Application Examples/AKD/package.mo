@@ -1,11 +1,11 @@
 within ;
-package AKD
+package AKD 
 
 
 annotation (uses(
     Modelica(version="3.2.1"),
     Complex(version="3.2.1"),
-    iPSL(version="0.8.1")), Documentation(revisions="<html>
+    OpenIPSL(version="0.8.1")), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

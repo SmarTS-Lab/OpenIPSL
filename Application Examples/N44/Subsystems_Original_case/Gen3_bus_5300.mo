@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen3_bus_5300 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tppd0=0.05 "T''do (> 0)",
     Tppq0=0.15 "T''qo (> 0)",
     D=0 "Speed Damping",
@@ -22,7 +23,7 @@ model Gen3_bus_5300 "Configuration of synchronous generator with regulators: GEN
     S10=0.1,
     S12=0.3,
     R_a=0) annotation (Placement(transformation(extent={{-64,-24},{-2,40}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",
     r=0.4 "Temporary droop, p.u",
     VELM=0.2 "Gate open/close velosiy limit, p.u/sec",
@@ -35,7 +36,7 @@ model Gen3_bus_5300 "Configuration of synchronous generator with regulators: GEN
     A_t=1.1,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-62,62},{10,90}})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=61 "K",
     V_c0=PSSE_data.voltages.V5300,
     V_0=PSSE_data.voltages.V5300,
@@ -47,7 +48,7 @@ model Gen3_bus_5300 "Configuration of synchronous generator with regulators: GEN
     r_cr_fd=0,
     C_SWITCH=true) annotation (Placement(transformation(extent={{22,-82},{80,-34}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-22,-70},{-10,-58}})));
-  iPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
     H_LIM=0.03,
     K_2=1,
     T_2=4.5,
@@ -56,23 +57,32 @@ model Gen3_bus_5300 "Configuration of synchronous generator with regulators: GEN
     K_4=0.55,
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-66,-54},{-20,-34}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 
   connect(gENSAL.p, p) annotation (Line(points={{1.1,8},{82,8},{82,0},{110,0}}, color={0,0,255}));
-  connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-17.9091,-44},{-17.9091,-43.84},{22.2417,-43.84}}, color={0,0,127}));
-  connect(cte.y, sCRX.VOEL) annotation (Line(points={{-9.4,-64},{-6,-64},{-2,-64},{-2,-49.6},{22.2417,-49.6}}, color={0,0,127}));
-  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{80.9667,-57.76},{84,-57.76},{84,-86},{-78,-86},{-78,-8},{-63.38,-8}}, color={0,0,127}));
-  connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.48,-8},{10,-8},{10,-30},{-72,-30},{-72,-44},{-65.3727,-44}}, color={0,0,127}));
-  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.48,-20.8},{8,-20.8},{8,-61.12},{21.7583,-61.12}}, color={0,0,127}));
-  connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.48,-14.4},{12,-14.4},{12,-77.44},{22.2417,-77.44}}, color={0,0,127}));
+  connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-17.9091,-44},{
+          -17.9091,-43.84},{22.2417,-43.84}},                                                                      color={0,0,127}));
+  connect(cte.y, sCRX.VOEL) annotation (Line(points={{-9.4,-64},{-6,-64},{-2,
+          -64},{-2,-49.6},{22.2417,-49.6}},                                                                    color={0,0,127}));
+  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{80.9667,-57.76},{84,
+          -57.76},{84,-86},{-78,-86},{-78,-8},{-63.38,-8}},                                                                     color={0,0,127}));
+  connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.48,-8},{10,-8},
+          {10,-30},{-72,-30},{-72,-44},{-65.3727,-44}},                                                                        color={0,0,127}));
+  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.48,-20.8},{8,
+          -20.8},{8,-61.12},{21.7583,-61.12}},                                                                      color={0,0,127}));
+  connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.48,-14.4},{12,
+          -14.4},{12,-77.44},{22.2417,-77.44}},                                                                   color={0,0,127}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{11.8,76},{18,76},{18,46},{-76,46},{-76,24},{-63.38,24}}, color={0,0,127}));
   connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{0.48,36.8},{24,36.8},{24,92},{-66,92},{-66,83},{-61.1,83}}, color={0,0,127}));
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{0.48,-1.6},{32,-1.6},{32,96},{-78,96},{-78,69},{-61.1,69}}, color={0,0,127}));
-  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.48,24},{16,24},{16,-37.12},{22.2417,-37.12}}, color={0,0,127}));
-  connect(sCRX.ETERM, sCRX.ECOMP) annotation (Line(points={{21.7583,-69.04},{16,-69.04},{16,-37.12},{22.2417,-37.12}}, color={0,0,127}));
-  connect(sCRX.VUEL, cte.y) annotation (Line(points={{22.2417,-55.84},{-2,-55.84},{-2,-64},{-9.4,-64}}, color={0,0,127}));
+  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.48,24},{16,24},
+          {16,-37.12},{22.2417,-37.12}},                                                                      color={0,0,127}));
+  connect(sCRX.ETERM, sCRX.ECOMP) annotation (Line(points={{21.7583,-69.04},{16,
+          -69.04},{16,-37.12},{22.2417,-37.12}},                                                                       color={0,0,127}));
+  connect(sCRX.VUEL, cte.y) annotation (Line(points={{22.2417,-55.84},{-2,
+          -55.84},{-2,-64},{-9.4,-64}},                                                                 color={0,0,127}));
   annotation (
     Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

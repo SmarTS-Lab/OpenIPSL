@@ -1,7 +1,7 @@
 within IEEE9;
 model IEEE_9_Buses_Statcom
   import Modelica.Constants.pi;
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     kT=16.5/230,
     x=0.0576,
     r=0,
@@ -10,7 +10,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-66})));
-  iPSL.Electrical.Branches.PwLine line_6_4(
+  OpenIPSL.Electrical.Branches.PwLine line_6_4(
     R=0.017,
     X=0.092,
     G=0,
@@ -18,7 +18,7 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6},{9,6}},
         rotation=90,
         origin={86,-21})));
-  iPSL.Electrical.Branches.PwLine line_4_5(
+  OpenIPSL.Electrical.Branches.PwLine line_4_5(
     G=0,
     R=0.01,
     X=0.085,
@@ -26,7 +26,7 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6},{9,6}},
         rotation=90,
         origin={-72,-21})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ(
     V_b=230,
     V_0=0.997968971576412,
     angle_0=-0.069547629203294*180/pi,
@@ -35,7 +35,7 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-99,-9})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant PQ1(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant PQ1(
     V_b=230,
     V_0=1.014662489636656,
     angle_0=-0.064300235023830*180/pi,
@@ -44,7 +44,7 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={109,-13})));
-  iPSL.Electrical.Branches.PwLine line_9_6(
+  OpenIPSL.Electrical.Branches.PwLine line_9_6(
     G=0,
     R=0.039,
     X=0.170,
@@ -52,7 +52,7 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6},{9,6}},
         rotation=90,
         origin={86,57})));
-  iPSL.Electrical.Branches.PwLine line_5_7(
+  OpenIPSL.Electrical.Branches.PwLine line_5_7(
     G=0,
     R=0.032,
     X=0.161,
@@ -60,7 +60,7 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6},{9,6}},
         rotation=90,
         origin={-72,53})));
-  iPSL.Electrical.Branches.PwLine line_8_9(
+  OpenIPSL.Electrical.Branches.PwLine line_8_9(
     G=0,
     R=0.0119,
     X=0.1008,
@@ -68,7 +68,7 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6.00001},{9.00001,6.00001}},
         rotation=0,
         origin={35,90})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
     r=0,
     kT=13.8/230,
     x=0.0586,
@@ -77,7 +77,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={102,90})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
     r=0,
     kT=18/230,
     x=0.0625,
@@ -87,7 +87,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-102,90})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ1(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ1(
     V_0=1.025,
     angle_0=0.011660880329004*180/pi,
     V_b=230,
@@ -96,7 +96,7 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-9,65})));
-  iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(
+  OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(
     Qg=0.128730182132440,
     Tr=0.1,
     Sn=100,
@@ -112,31 +112,31 @@ model IEEE_9_Buses_Statcom
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={12,66})));
-  iPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
-  iPSL.Electrical.Buses.Bus B7 annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
-  iPSL.Electrical.Buses.Bus B8(V_0=1.025) annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
+  OpenIPSL.Electrical.Buses.Bus B7 annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
+  OpenIPSL.Electrical.Buses.Bus B8(V_0=1.025) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={0,90})));
-  iPSL.Electrical.Buses.Bus B9 annotation (Placement(transformation(extent={{70,80},{90,100}})));
-  iPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{110,80},{130,100}})));
-  iPSL.Electrical.Buses.Bus B6 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B9 annotation (Placement(transformation(extent={{70,80},{90,100}})));
+  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{110,80},{130,100}})));
+  OpenIPSL.Electrical.Buses.Bus B6 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={86,20})));
-  iPSL.Electrical.Buses.Bus B5 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B5 annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=90,
         origin={-72,20})));
-  iPSL.Electrical.Buses.Bus B4 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B4 annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-46})));
-  iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-86})));
-  iPSL.Electrical.Branches.PwLine ine_7_8(
+  OpenIPSL.Electrical.Branches.PwLine ine_7_8(
     R=0.0085,
     X=0.072,
     G=0,
@@ -174,8 +174,8 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-106})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{80,-120},{180,-80}})));
-  iPSL.Electrical.Events.PwFault pwFault2(
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{80,-120},{180,-80}})));
+  OpenIPSL.Electrical.Events.PwFault pwFault2(
     X=0.01,
     R=0.01,
     t1=3,
@@ -237,8 +237,10 @@ equation
   connect(gen3.pwPin, B1.p) annotation (Line(points={{0,-95},{0,-86}}, color={0,0,255}));
   connect(line_8_9.n, B9.p) annotation (Line(points={{45.5,90},{45.5,90},{80,90}}, color={0,0,255}));
   connect(B8.p, line_8_9.p) annotation (Line(points={{0,90},{24.5,90}}, color={0,0,255}));
-  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},{24.5,90}}, color={0,0,255}));
-  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,75.1667}}, color={0,0,255}));
+  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},
+          {24.5,90}},                                                                      color={0,0,255}));
+  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,
+          75.1667}},                                                                color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
     Icon(coordinateSystem(extent={{-180,-120},{180,120}})),

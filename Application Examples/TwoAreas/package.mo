@@ -1,9 +1,11 @@
 within ;
 package TwoAreas "2 areas test system from Klein, Rogers, and Kundur"
+
+
 annotation (uses(
     PowerSystems(version="0.5"),
     Modelica(version="3.2.1"),
-    iPSL(version="0.8.1")), Documentation(revisions="<html>
+    OpenIPSL(version="0.8.1")), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

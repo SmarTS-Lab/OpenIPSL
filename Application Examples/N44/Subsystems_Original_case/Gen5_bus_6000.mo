@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen5_bus_6000 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
   Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tppd0=0.05 "T''do (> 0)",
     Tppq0=0.15 "T''qo (> 0)",
     D=0 "Speed Damping",
@@ -22,7 +23,7 @@ model Gen5_bus_6000 "Configuration of synchronous generator with regulators: GEN
     S12=0.3,
     R_a=0,
     V_0=PSSE_data.voltages.V6000) annotation (Placement(transformation(extent={{-58,-16},{0,32}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",
     VELM=0.2 "Gate open/close velosiy limit, p.u/sec",
     r=0.3,
@@ -35,7 +36,7 @@ model Gen5_bus_6000 "Configuration of synchronous generator with regulators: GEN
     A_t=1.1,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-58,48},{2,78}})));
-  iPSL.Electrical.Controls.PSSE.ES.SEXS.SEXS sEXS(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
     K=20,
     Ec0=PSSE_data.voltages.V6000,
     T_AT_B=1,
@@ -44,7 +45,7 @@ model Gen5_bus_6000 "Configuration of synchronous generator with regulators: GEN
     E_MIN=-4,
     E_MAX=4) annotation (Placement(transformation(extent={{24,-66},{86,-26}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-23,-51},{-13,-41}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 

@@ -9,77 +9,77 @@ model Network
     angle_0=PF_results.voltages.A21,
     P_0=PF_results.machines.P21_1,
     Q_0=PF_results.machines.Q21_1) annotation (Placement(transformation(extent={{-280,-110},{-260,-90}})));
-  iPSL.Electrical.Branches.PwLine pwLine(
+  OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-164,-110},{-144,-90}})));
-  iPSL.Electrical.Branches.PwLine pwLine1(
+  OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-164,-130},{-144,-110}})));
-  iPSL.Electrical.Branches.PwLine pwLine2(
+  OpenIPSL.Electrical.Branches.PwLine pwLine2(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{110,-110},{130,-90}})));
-  iPSL.Electrical.Branches.PwLine pwLine3(
+  OpenIPSL.Electrical.Branches.PwLine pwLine3(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{110,-130},{130,-110}})));
-  iPSL.Electrical.Branches.PwLine pwLine4(
+  OpenIPSL.Electrical.Branches.PwLine pwLine4(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-30,-110},{-10,-90}})));
-  iPSL.Electrical.Branches.PwLine pwLine5(
+  OpenIPSL.Electrical.Branches.PwLine pwLine5(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-30,-130},{-10,-110}})));
-  iPSL.Electrical.Loads.PSSE.Load load(
+  OpenIPSL.Electrical.Loads.PSSE.Load load(
     V_b=380,
     V_0=PF_results.voltages.V5,
     angle_0=PF_results.voltages.A5,
     P_0=PF_results.loads.PL5_1,
     Q_0=PF_results.loads.QL5_1) annotation (Placement(transformation(extent={{-98,-146},{-88,-136}})));
-  iPSL.Electrical.Loads.PSSE.Load load1(
+  OpenIPSL.Electrical.Loads.PSSE.Load load1(
     V_b=380,
     V_0=PF_results.voltages.V3,
     angle_0=PF_results.voltages.A3,
     P_0=PF_results.loads.PL3_1,
     Q_0=PF_results.loads.QL3_1) annotation (Placement(transformation(extent={{60,-146},{70,-136}})));
-  iPSL.Electrical.Branches.PwLine pwLine6(
+  OpenIPSL.Electrical.Branches.PwLine pwLine6(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-162,-38},{-142,-18}})));
-  iPSL.Electrical.Branches.PwLine pwLine7(
+  OpenIPSL.Electrical.Branches.PwLine pwLine7(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-162,-58},{-142,-38}})));
-  iPSL.Electrical.Buses.BusExt FSSV(
+  OpenIPSL.Electrical.Buses.BusExt FSSV(
     nu=5,
     V_b=380,
     no=1,
     V_0=PF_results.voltages.V2,
     angle_0=PF_results.voltages.A2) annotation (Placement(transformation(extent={{-200,-136},{-198,-62}})));
-  iPSL.Electrical.Buses.BusExt FTILL(
+  OpenIPSL.Electrical.Buses.BusExt FTILL(
     no=2,
     nu=4,
     V_b=380,
     V_0=PF_results.voltages.V5,
     angle_0=PF_results.voltages.A5) annotation (Placement(transformation(extent={{-100,-130},{-98,-90}})));
-  iPSL.Electrical.Buses.BusExt FSBIS(
+  OpenIPSL.Electrical.Buses.BusExt FSBIS(
     no=2,
     nu=3,
     V_b=380,
     V_0=PF_results.voltages.V3,
     angle_0=PF_results.voltages.A3) annotation (Placement(transformation(extent={{58,-130},{60,-90}})));
-  iPSL.Electrical.Buses.BusExt FVERGE(
+  OpenIPSL.Electrical.Buses.BusExt FVERGE(
     nu=4,
     V_b=380,
     no=1,
@@ -88,7 +88,7 @@ model Network
         extent={{-1,-39},{1,39}},
         rotation=-90,
         origin={1,123})));
-  iPSL.Electrical.Buses.BusExt FPAND(
+  OpenIPSL.Electrical.Buses.BusExt FPAND(
     nu=4,
     no=2,
     V_b=380,
@@ -97,7 +97,7 @@ model Network
         extent={{-1,-39},{1,39}},
         rotation=0,
         origin={-99,19})));
-  iPSL.Electrical.Buses.BusExt FTDPRA(
+  OpenIPSL.Electrical.Buses.BusExt FTDPRA(
     nu=2,
     no=4,
     V_b=380,
@@ -106,56 +106,56 @@ model Network
         extent={{-1,-39},{1,39}},
         rotation=0,
         origin={99,19})));
-  iPSL.Electrical.Branches.PwLine pwLine8(
+  OpenIPSL.Electrical.Branches.PwLine pwLine8(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-60,80},{-40,100}})));
-  iPSL.Electrical.Branches.PwLine pwLine9(
+  OpenIPSL.Electrical.Branches.PwLine pwLine9(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-60,60},{-40,80}})));
-  iPSL.Electrical.Branches.PwLine pwLine10(
+  OpenIPSL.Electrical.Branches.PwLine pwLine10(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{40,80},{60,100}})));
-  iPSL.Electrical.Branches.PwLine pwLine11(
+  OpenIPSL.Electrical.Branches.PwLine pwLine11(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{40,60},{60,80}})));
-  iPSL.Electrical.Loads.PSSE.Load load2(
+  OpenIPSL.Electrical.Loads.PSSE.Load load2(
     V_b=380,
     V_0=PF_results.voltages.V1,
     angle_0=PF_results.voltages.A1,
     P_0=PF_results.loads.PL1_1,
     Q_0=PF_results.loads.QL1_1) annotation (Placement(transformation(extent={{-96,-46},{-86,-36}})));
-  iPSL.Electrical.Loads.PSSE.Load load3(
+  OpenIPSL.Electrical.Loads.PSSE.Load load3(
     V_b=380,
     V_0=PF_results.voltages.V4,
     angle_0=PF_results.voltages.A4,
     P_0=PF_results.loads.PL4_1,
     Q_0=PF_results.loads.QL4_1) annotation (Placement(transformation(extent={{84,-46},{94,-36}})));
-  iPSL.Electrical.Buses.BusExt FVALDI(
+  OpenIPSL.Electrical.Buses.BusExt FVALDI(
     no=5,
     V_b=380,
     nu=1,
     V_0=PF_results.voltages.V6,
     angle_0=PF_results.voltages.A6) annotation (Placement(transformation(extent={{198,-136},{200,-62}})));
-  iPSL.Electrical.Branches.PwLine pwLine12(
+  OpenIPSL.Electrical.Branches.PwLine pwLine12(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{140,-40},{160,-20}})));
-  iPSL.Electrical.Branches.PwLine pwLine13(
+  OpenIPSL.Electrical.Branches.PwLine pwLine13(
     R=6e-006,
     X=0.000692,
     G=0,
     B=0) annotation (Placement(transformation(extent={{140,-60},{160,-40}})));
-  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-180,120},{-92,160}})));
-  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
+  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-180,120},{-92,160}})));
+  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     G=0,
     B=0,
     R=0.00001,
@@ -186,12 +186,12 @@ model Network
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={0,190})));
-  iPSL.Electrical.Events.PwFault pwFault(
+  OpenIPSL.Electrical.Events.PwFault pwFault(
     R=0.1,
     X=0.1,
     t1=1,
     t2=1.2) annotation (Placement(transformation(extent={{-76,-148},{-64,-136}})));
-  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer1(
+  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer1(
     G=0,
     B=0,
     CW=1,
@@ -209,7 +209,7 @@ model Network
         extent={{6,-4},{-6,4}},
         rotation=180,
         origin={-230,-100})));
-  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer2(
+  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer2(
     G=0,
     B=0,
     CW=1,
@@ -227,7 +227,7 @@ model Network
         extent={{-6,-4},{6,4}},
         rotation=180,
         origin={230,-100})));
-  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer3(
+  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer3(
     G=0,
     B=0,
     CW=1,
@@ -289,32 +289,25 @@ equation
   connect(twoWindingTransformer1.p, GEN1.pwPin) annotation (Line(points={{-237,-100},{-259,-100}}, color={0,0,255}));
   connect(twoWindingTransformer1.n, FSSV.o[1]) annotation (Line(points={{-223,-100},{-200,-100},{-200,-99}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(extent={{-280,-200},{280,180}}, preserveAspectRatio=false), graphics={
-        Text(
+    Diagram(coordinateSystem(extent={{-280,-200},{280,180}}, preserveAspectRatio=false), graphics={Text(
           extent={{-222,-50},{-198,-60}},
           lineColor={28,108,200},
-          textString="FSSV"),
-        Text(
+          textString="FSSV"),Text(
           extent={{204,-50},{236,-60}},
           lineColor={28,108,200},
-          textString="FVALDI"),
-        Text(
+          textString="FVALDI"),Text(
           extent={{100,70},{138,60}},
           lineColor={28,108,200},
-          textString="FTDPRA"),
-        Text(
+          textString="FTDPRA"),Text(
           extent={{-132,70},{-102,60}},
           lineColor={28,108,200},
-          textString="FPAND"),
-        Text(
+          textString="FPAND"),Text(
           extent={{46,126},{84,116}},
           lineColor={28,108,200},
-          textString="FVERGE"),
-        Text(
+          textString="FVERGE"),Text(
           extent={{44,-76},{74,-86}},
           lineColor={28,108,200},
-          textString="FSBIS"),
-        Text(
+          textString="FSBIS"),Text(
           extent={{-114,-78},{-84,-88}},
           lineColor={28,108,200},
           textString="FTILL5")}),

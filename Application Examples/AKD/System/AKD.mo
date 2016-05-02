@@ -124,22 +124,22 @@ model AKD
     angle_0=PF_data.voltages.A58573,
     P_0=PF_data.powers.P58573,
     Q_0=PF_data.powers.Q58573) annotation (Placement(transformation(extent={{82,4},{60,26}})));
-  iPSL.Electrical.Branches.PwLine line_58553_58563(
+  OpenIPSL.Electrical.Branches.PwLine line_58553_58563(
     R=0.19224,
     X=0.78070,
     G=0,
     B=0.00257*0.5) annotation (Placement(transformation(extent={{-36,-10},{-24,-2}})));
-  iPSL.Electrical.Branches.PwLine line_58563_58573(
+  OpenIPSL.Electrical.Branches.PwLine line_58563_58573(
     R=0.37478,
     X=1.52958,
     G=0,
     B=0.00408*0.5) annotation (Placement(transformation(extent={{24,-16},{36,-8}})));
-  iPSL.Electrical.Branches.PwLine line_58553_58583(
+  OpenIPSL.Electrical.Branches.PwLine line_58553_58583(
     R=0.22669,
     X=1.30550,
     B=0.00526*0.5,
     G=0) annotation (Placement(transformation(extent={{-36,16},{-24,24}})));
-  iPSL.Electrical.Branches.PwLine line_58573_58583(
+  OpenIPSL.Electrical.Branches.PwLine line_58573_58583(
     R=0.25195,
     X=1.30183,
     G=0,
@@ -164,7 +164,7 @@ model AKD
     angle_0=PF_data.voltages.A58653,
     P_0=PF_data.powers.P58653,
     Q_0=PF_data.powers.Q58653) annotation (Placement(transformation(extent={{120,-11},{98,11}})));
-  iPSL.Electrical.Branches.PwLine line_58573_58653(
+  OpenIPSL.Electrical.Branches.PwLine line_58573_58653(
     G=0,
     R=0.49047,
     X=2.01225,
@@ -172,49 +172,49 @@ model AKD
         extent={{-7,-4.5},{7,4.5}},
         rotation=0,
         origin={69,-0.5})));
-  iPSL.Electrical.Buses.BusExt bus_58583(
+  OpenIPSL.Electrical.Buses.BusExt bus_58583(
     no=2,
     nu=1,
     V_0=PF_data.voltages.V58583,
     angle_0=PF_data.voltages.A58583) annotation (Placement(transformation(extent={{-2,30},{0,50}})));
-  iPSL.Electrical.Buses.BusExt bus_58553(
+  OpenIPSL.Electrical.Buses.BusExt bus_58553(
     no=1,
     nu=2,
     V_0=PF_data.voltages.V58553,
     angle_0=PF_data.voltages.A58553) annotation (Placement(transformation(extent={{-62,-2},{-60,18}})));
-  iPSL.Electrical.Buses.BusExt bus_58563(
+  OpenIPSL.Electrical.Buses.BusExt bus_58563(
     nu=3,
     no=2,
     V_0=PF_data.voltages.V58563,
     angle_0=PF_data.voltages.A58563) annotation (Placement(transformation(extent={{-2,-50},{0,4}})));
-  iPSL.Electrical.Buses.BusExt bus_58567(
+  OpenIPSL.Electrical.Buses.BusExt bus_58567(
     no=1,
     V_0=PF_data.voltages.V58567,
     angle_0=PF_data.voltages.A58567,
     nu=1) annotation (Placement(transformation(extent={{-70,-45},{-68,-25}})));
-  iPSL.Electrical.Buses.BusExt bus_58566(
+  OpenIPSL.Electrical.Buses.BusExt bus_58566(
     nu=1,
     V_0=PF_data.voltages.V58566,
     angle_0=PF_data.voltages.A58566,
     no=1) annotation (Placement(transformation(extent={{69,-45},{71,-25}})));
-  iPSL.Electrical.Buses.BusExt bus_58573(
+  OpenIPSL.Electrical.Buses.BusExt bus_58573(
     no=2,
     nu=2,
     V_0=PF_data.voltages.V58573,
     angle_0=PF_data.voltages.A58573) annotation (Placement(transformation(extent={{50,-12},{52,24}})));
-  iPSL.Electrical.Buses.BusExt bus_58653(
+  OpenIPSL.Electrical.Buses.BusExt bus_58653(
     no=1,
     nu=1,
     V_0=PF_data.voltages.V58653,
     angle_0=PF_data.voltages.A58653) annotation (Placement(transformation(extent={{88,-12},{90,10}})));
 
-  iPSL.Electrical.Banks.PwShuntB shunt_58553_58563(B=-0.0005) annotation (Placement(transformation(extent={{-46,-22},{-38,-14}})));
-  iPSL.Electrical.Banks.PwShuntB shunt_58563_58553(B=0.0005) annotation (Placement(transformation(extent={{-22,-22},{-14,-14}})));
-  iPSL.Electrical.Banks.PwShuntB shunt_58563_58573(B=0.0005) annotation (Placement(transformation(extent={{16,-22},{24,-14}})));
-  iPSL.Electrical.Banks.PwShuntB shunt_58573_58563(B=-0.0005) annotation (Placement(transformation(extent={{38,-22},{46,-14}})));
+  OpenIPSL.Electrical.Banks.PwShuntB shunt_58553_58563(B=-0.0005) annotation (Placement(transformation(extent={{-46,-22},{-38,-14}})));
+  OpenIPSL.Electrical.Banks.PwShuntB shunt_58563_58553(B=0.0005) annotation (Placement(transformation(extent={{-22,-22},{-14,-14}})));
+  OpenIPSL.Electrical.Banks.PwShuntB shunt_58563_58573(B=0.0005) annotation (Placement(transformation(extent={{16,-22},{24,-14}})));
+  OpenIPSL.Electrical.Banks.PwShuntB shunt_58573_58563(B=-0.0005) annotation (Placement(transformation(extent={{38,-22},{46,-14}})));
   Data.PF_data PF_data annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{72,60},{110,80}})));
-  iPSL.Electrical.Loads.PSSE.Load Load_58563(
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{72,60},{110,80}})));
+  OpenIPSL.Electrical.Loads.PSSE.Load Load_58563(
     V_b=130,
     P_0=8.29,
     Q_0=0,
@@ -278,7 +278,7 @@ model AKD
     angle_0=PF_data.voltages.A58566,
     P_0=PF_data.powers.P58566,
     Q_0=PF_data.powers.Q58566) annotation (Placement(transformation(extent={{112,-46},{90,-24}})));
-  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
+  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     R=0.027500,
     X=0.989170,
     G=0,
@@ -286,7 +286,7 @@ model AKD
     t1=1,
     t2=1,
     ANG1=150) annotation (Placement(transformation(extent={{-30,-38},{-42,-30}})));
-  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer1(
+  OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer1(
     G=0,
     B=0,
     t1=1,

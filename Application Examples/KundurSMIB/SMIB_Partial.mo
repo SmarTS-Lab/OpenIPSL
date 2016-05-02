@@ -1,30 +1,31 @@
 within KundurSMIB;
 partial model SMIB_Partial "PArtial model containing the network elements"
   import Modelica.Constants.pi;
-  iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
-  iPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
-  iPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(
+  OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
+  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
+  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(
     Sn=2220,
     x=0.15,
     r=0,
     V_b=400,
     Vn=400) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  iPSL.Electrical.Branches.PwLine line_1(
+  OpenIPSL.Electrical.Branches.PwLine line_1(
     R=0,
     G=0,
     B=0,
     X=0.5) annotation (Placement(transformation(extent={{10,14},{28,26}})));
-  iPSL.Electrical.Buses.InfiniteBus infinite_bus(angle_0=0, V_0=0.900810000000000) annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infinite_bus(angle_0=0, V_0=0.900810000000000)
+    annotation (Placement(transformation(
         extent={{10,10},{-10,-10}},
         rotation=180,
         origin={110,0})));
-  iPSL.Electrical.Events.PwFault fault(
+  OpenIPSL.Electrical.Events.PwFault fault(
     R=0,
     t1=0.5,
     t2=0.57,
     X=1e-5) annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
-  iPSL.Electrical.Branches.PwLine line_2(
+  OpenIPSL.Electrical.Branches.PwLine line_2(
     R=0,
     G=0,
     B=0,
@@ -32,7 +33,7 @@ partial model SMIB_Partial "PArtial model containing the network elements"
     t1=0.57,
     t2=100,
     opening=1) annotation (Placement(transformation(extent={{10,-26},{28,-14}})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-86,100}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-86,100}})));
 protected
   parameter Real S_b=SysData.S_b;
 equation
@@ -52,7 +53,7 @@ equation
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Example 1: Single-machine infinite bus model*"), Text(
+          textString="Example 1: Single-machine infinite bus model*"),Text(
           extent={{-164,-88},{54,-106}},
           lineColor={0,0,0},
           lineThickness=1,
