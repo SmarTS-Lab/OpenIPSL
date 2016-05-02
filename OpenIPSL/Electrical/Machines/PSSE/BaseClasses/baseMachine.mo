@@ -62,20 +62,14 @@ partial model baseMachine
   Real uq "q-axis terminal voltage (pu)";
 protected
   parameter Real w_b=2*pi*fn "System base speed (rad/s)";
-  parameter Real anglev_rad=angle_0*pi/180
-    "initial value of bus voltage angle in rad";
+  parameter Real anglev_rad=angle_0*pi/180 "initial value of bus voltage angle in rad";
   parameter Real CoB=M_b/S_b;
-  parameter Real vr0=V_0*cos(anglev_rad)
-    "Real component of initial terminal voltage";
-  parameter Real vi0=V_0*sin(anglev_rad)
-    "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current, systembase";
-  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current, systembase";
+  parameter Real vr0=V_0*cos(anglev_rad) "Real component of initial terminal voltage";
+  parameter Real vi0=V_0*sin(anglev_rad) "Imaginary component of intitial terminal voltage";
+  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, systembase";
+  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, systembase";
   parameter Real p0=P_0/M_b "initial active power generation in pu machinebase";
-  parameter Real q0=Q_0/M_b
-    "initial reactive power generation in pu machinebase";
+  parameter Real q0=Q_0/M_b "initial reactive power generation in pu machinebase";
 equation
   //Interfacing outputs with the internal variables
   ANGLE = delta;
@@ -94,38 +88,57 @@ equation
   der(delta) = w_b*w;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
+    Icon(graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{66,98},{96,82}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{64,78},{96,62}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="ISORCE"),Text(
+          textString="ISORCE"),
+        Text(
           extent={{66,56},{96,42}},
           lineColor={0,0,255},
-          textString="ETERM"),Text(
+          textString="ETERM"),
+        Text(
           extent={{66,38},{96,22}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="ANGLE"),Text(
+          textString="ANGLE"),
+        Text(
           extent={{62,-24},{96,-36}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PMECH0"),Text(
+          textString="PMECH0"),
+        Text(
           extent={{66,-46},{96,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PELEC"),Text(
+          textString="PELEC"),
+        Text(
           extent={{66,-66},{100,-76}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{62,-86},{98,-96}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="XADIFD0")}),
+          textString="XADIFD0"),
+        Text(
+          extent={{-84,56},{-44,46}},
+          lineColor={0,0,255},
+          lineThickness=0.5,
+          textString="PMECH0"),
+        Text(
+          extent={{-88,-46},{-58,-56}},
+          lineColor={0,0,255},
+          lineThickness=0.5,
+          textString="EFD")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

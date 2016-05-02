@@ -1,0 +1,17 @@
+language: bash
+python:
+  - "2.7"
+
+services: docker
+
+install:
+  - docker pull ubuntu:latest
+  - docker run -d ubuntu:latest
+
+script:
+  - python print_stuff.py
+  - docker ps -a
+
+branches:
+  only:
+    - master

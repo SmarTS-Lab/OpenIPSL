@@ -38,31 +38,23 @@ protected
   parameter Real c1=R_a*K "CONSTANT";
   parameter Real c2=X_d*K "CONSTANT";
   parameter Real c3=X_d*K " CONSTANT";
-  parameter Real p0=P_0/M_b
-    "initial value of bus active power in p.u. machinebase";
-  parameter Real q0=Q_0/M_b
-    "initial value of bus reactive power in p.u. machinebase";
+  parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
+  parameter Real q0=Q_0/M_b "initial value of bus reactive power in p.u. machinebase";
   parameter Real v0=V_0;
   parameter Real K=1/(R_a*R_a + X_d*X_d) "CONSTANT";
   parameter Real vr0=v0*cos(anglev_rad) "Initialitation";
   parameter Real vi0=v0*sin(anglev_rad) "Initialitation";
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialitation";
   parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter Real delta0=atan2(vi0 + R_a*ii0 + X_d*ir0, vr0 + R_a*ir0 - X_d*ii0)
-    "Initialitation";
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
-    "Initialitation";
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
-    "Initialitation";
+  parameter Real delta0=atan2(vi0 + R_a*ii0 + X_d*ir0, vr0 + R_a*ir0 - X_d*ii0) "Initialitation";
+  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0) "Initialitation";
+  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0) "Initialitation";
+  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0) "Initialitation";
+  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0) "Initialitation";
   parameter Real vf0=vq0 + R_a*iq0 + X_d*id0 "Initialitation";
   //Real deltaminusanglev=delta - anglev;
   parameter Real pm0=(vq0 + R_a*iq0)*iq0 + (vd0 + R_a*id0)*id0 "Initialitation";
-  parameter Real CoB=M_b/S_b
-    "Constant to change from system base to machine base";
+  parameter Real CoB=M_b/S_b "Constant to change from system base to machine base";
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
