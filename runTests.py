@@ -8,6 +8,7 @@ test_list = ["iPSL.Examples.Machines.PSSE.GENSAL"]
 
 omc = OMCSession()
 omc.sendExpression("loadModel(Modelica)")
+omc.sendExpression("getClassNames()")
 
 stopTime = 10
 outputInterval = 0.001
