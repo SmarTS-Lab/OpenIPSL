@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SEXS "Simplified excitation system model"
+  extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real Ec0;
   parameter Real T_AT_B;
   parameter Real T_B;
@@ -7,93 +8,46 @@ model SEXS "Simplified excitation system model"
   parameter Real T_E;
   parameter Real E_MIN;
   parameter Real E_MAX;
-  Modelica.Blocks.Interfaces.RealInput ECOMP annotation (Placement(transformation(extent={{-102,-4},{-92,8}}), iconTransformation(extent={{-100,44},{-88,56}})));
-  Modelica.Blocks.Interfaces.RealOutput EFD annotation (Placement(transformation(extent={{100,-6},{112,6}}), iconTransformation(extent={{100,-6},{112,6}})));
   Modelica.Blocks.Math.Add3 V_erro(
     k3=1,
     k1=1,
-    k2=-1) annotation (Placement(transformation(extent={{-52,-6},{-36,10}})));
-  Modelica.Blocks.Interfaces.RealInput VOTHSG(start=0) "PSS output Upss" annotation (Placement(transformation(extent={{-102,-14},{-92,-4}}), iconTransformation(extent={{-100,24},{-88,36}})));
-  Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-102,-24},{-92,-14}}), iconTransformation(extent={{-100,-6},{-88,6}})));
-  Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(extent={{-102,-34},{-92,-24}}), iconTransformation(extent={{-100,-36},{-88,-24}})));
-  Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(transformation(extent={{-102,10},{-92,24}}), iconTransformation(extent={{-100,-56},{-88,-44}})));
-  OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
-    K=1,
-    T2=T_B,
-    y_start=Efd0/K,
-    T1=T_AT_B*T_B) annotation (Placement(transformation(extent={{-26,-8},{-6,12}})));
-  Modelica.Blocks.Sources.Constant const(k=VREF) annotation (Placement(transformation(extent={{-92,40},{-72,60}})));
-  Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-82,-28},{-62,-8}})));
+    k2=1) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=K,
     T=T_E,
     y_start=Efd0,
     outMax=E_MAX,
-    outMin=E_MIN) annotation (Placement(transformation(extent={{20,-8},{40,12}})));
-protected
-  parameter Real Efd0(fixed=false);
-  //
-  parameter Real VREF(fixed=false);
-  //=Efd0/KA+VT0+Vs.a0 "Reference terminal voltage (pu)";
-initial algorithm
-  Efd0 := EFD0;
-  VREF := Efd0/K + Ec0 - add3_1.y;
+    outMin=E_MIN) annotation (Placement(transformation(extent={{120,-10},{140,10}})));
+  Modelica.Blocks.Math.Add DiffV1 annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-100,-50})));
+
+  NonElectrical.Continuous.LeadLag leadLag(
+    K=1,
+    T1=T_AT_B*T_B,
+    T2=T_B,
+    y_start=Efd0/K,
+    x_start=Efd0/K) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+initial equation
+  V_REF = Efd0/K + ECOMP0;
+
 equation
-  connect(ECOMP, V_erro.u2) annotation (Line(
-      points={{-97,2},{-53.6,2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(V_erro.y, imLeadLag.u) annotation (Line(points={{-35.2,2},{-28,2}}, color={0,0,127}));
-  connect(const.y, V_erro.u1) annotation (Line(points={{-71,50},{-62,50},{-62,8.4},{-53.6,8.4}}, color={0,0,127}));
-  connect(VOTHSG, add3_1.u1) annotation (Line(points={{-97,-9},{-87.5,-9},{-87.5,-10},{-84,-10}}, color={0,0,127}));
-  connect(VOEL, add3_1.u2) annotation (Line(points={{-97,-19},{-86.5,-19},{-86.5,-18},{-84,-18}}, color={0,0,127}));
-  connect(VUEL, add3_1.u3) annotation (Line(points={{-97,-29},{-86.5,-29},{-86.5,-26},{-84,-26}}, color={0,0,127}));
-  connect(add3_1.y, V_erro.u3) annotation (Line(points={{-61,-18},{-58,-18},{-58,-4.4},{-53.6,-4.4}}, color={0,0,127}));
-  connect(imLeadLag.y, simpleLagLim.u) annotation (Line(points={{-5,2},{6.5,2},{18,2}}, color={0,0,127}));
-  connect(simpleLagLim.y, EFD) annotation (Line(points={{41,2},{106,2},{106,0}}, color={0,0,127}));
+  connect(simpleLagLim.y, EFD) annotation (Line(points={{141,0},{210,0}}, color={0,0,127}));
+  connect(DiffV1.u1, VUEL) annotation (Line(points={{-106,-62},{-106,-80},{-130,-80},{-130,-200}}, color={0,0,127}));
+  connect(DiffV1.u2, VOEL) annotation (Line(points={{-94,-62},{-94,-80},{-70,-80},{-70,-200}}, color={0,0,127}));
+  connect(DiffV1.y, V_erro.u3) annotation (Line(points={{-100,-39},{-100,-20},{-52,-20},{-52,-8},{-42,-8}}, color={0,0,127}));
+  connect(DiffV.y, V_erro.u2) annotation (Line(points={{-99,0},{-42,0}}, color={0,0,127}));
+  connect(V_erro.u1, VOTHSG) annotation (Line(points={{-42,8},{-52,8},{-52,90},{-200,90}}, color={0,0,127}));
+  connect(ECOMP, DiffV.u2) annotation (Line(points={{-200,0},{-166,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
+  connect(leadLag.y, simpleLagLim.u) annotation (Line(points={{61,0},{118,0}}, color={0,0,127}));
+  connect(leadLag.u, V_erro.y) annotation (Line(points={{38,0},{-19,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,80}}), graphics={Text(
-          extent={{-92,26},{-80,16}},
-          lineColor={0,0,255},
-          textString="Efd0"),Text(
-          extent={{-94,4},{-76,-14}},
-          lineColor={0,0,255},
-          textString="VOTHSG "),Text(
-          extent={{-98,-12},{-72,-18}},
-          lineColor={0,0,255},
-          textString=" VOEL"),Text(
-          extent={{-100,-22},{-70,-28}},
-          lineColor={0,0,255},
-          textString=" VUEL "),Text(
-          extent={{-94,10},{-76,-2}},
-          lineColor={0,0,255},
-          textString="Ecomp
-             "),Text(
-          extent={{-58,22},{-48,12}},
-          lineColor={0,0,255},
-          textString="Vref")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,80}}), graphics={Text(
-          extent={{-22,10},{24,-12}},
-          lineColor={0,0,255},
-          textString="SEXS"),Rectangle(extent={{-100,80},{100,-80}}, lineColor={0,0,255}),Text(
-          extent={{-84,38},{-54,20}},
-          lineColor={0,0,255},
-          textString="VOTHSG "),Text(
-          extent={{76,6},{98,-6}},
-          lineColor={0,0,255},
-          textString="EFD"),Text(
-          extent={{-96,-26},{-50,-36}},
-          lineColor={0,0,255},
-          textString=" VUEL "),Text(
-          extent={{-98,4},{-50,-6}},
-          lineColor={0,0,255},
-          textString=" VOEL"),Text(
-          extent={{-86,-38},{-62,-64}},
-          lineColor={0,0,255},
-          textString="EFD0"),Text(
-          extent={{-84,54},{-56,44}},
-          lineColor={0,0,255},
-          textString="ECOMP")}),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
+          extent={{-100,160},{100,100}},
+          lineColor={28,108,200},
+          textString="SEXS")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

@@ -1,6 +1,5 @@
 within OpenIPSL.Examples.Controls.PSSE.PSS;
-model STABNI
-  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model STABNI "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL generator(
     Xppd=0.2,
@@ -20,15 +19,12 @@ model STABNI
     Xq=0.76000,
     Xpd=0.29700,
     S10=0.18600,
-    S12=0.802)
-    annotation (Placement(transformation(extent={{-98,-14},{-70,12}})));
+    S12=0.802) annotation (Placement(transformation(extent={{-98,-14},{-70,12}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(VELM=0.02, G_MAX=0.415) annotation (Placement(transformation(
         extent={{-19,-14},{19,14}},
         rotation=180,
         origin={-75,28})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX SCRX(
-    V_0=1,
-    V_c0=1,
     T_AT_B=0.01,
     T_B=10,
     K=100,
@@ -46,26 +42,25 @@ model STABNI
         origin={-60,-36})));
 equation
   connect(SCRX.VUEL, const.y) annotation (Line(
-      points={{-68.15,-33.04},{-63.67,-33.04},{-63.67,-36},{-62.2,-36}},
+      points={{-74.3,-18.4444},{-63.67,-18.4444},{-63.67,-36},{-62.2,-36}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(SCRX.VOEL, const.y) annotation (Line(
-      points={{-68.15,-37.2},{-63.67,-37.2},{-63.67,-36},{-62.2,-36}},
+      points={{-79.7,-18.4444},{-63.67,-18.4444},{-63.67,-36},{-62.2,-36}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, SCRX.EFD0) annotation (Line(
-      points={{-68.88,-10.1},{-66,-10.1},{-66,-18.64},{-68.15,-18.64}},
+      points={{-68.88,-10.1},{-66,-10.1},{-66,-24.6667},{-68,-24.6667}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-68.88,-4.9},{-58,-4.9},{-58,8},{-48,8},{-48,35},{-56.475,35}}, color={0,0,127}));
   connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-68.88,10.7},{-56,10.7},{-52,10.7},{-52,22},{-52,21},{-56.475,21}}, color={0,0,127}));
-  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-68.88,-12.7},{-62,-12.7},{-62,-29.52},{-67.85,-29.52}}, color={0,0,127}));
-  connect(SCRX.ECOMP, SCRX.ETERM) annotation (Line(points={{-68.15,-45.52},{-52,-45.52},{-52,-24.24},{-67.85,-24.24}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ETERM) annotation (Line(points={{-68.88,5.5},{-52,5.5},{-52,-24.24},{-67.85,-24.24}}, color={0,0,127}));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-68.15,-41.04},{-64,-41.04},{-64,-38},{-63.67,-37.2},{-63.67,-36},{-62.2,-36}}, color={0,0,127}));
+  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-68.88,-12.7},{-62,-12.7},{-62,-30},{-68,-30}}, color={0,0,127}));
+  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-68,-44.2222},{-64,-44.2222},{-64,-38},{-64,-37.2},{-64,-36},{-62.2,-36}}, color={0,0,127}));
   connect(generator.PMECH, HYGOV.PMECH0) annotation (Line(points={{-97.72,5.5},{-110,5.5},{-110,14},{-48,14},{-48,35},{-56.475,35}}, color={0,0,127}));
-  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-104.6,-31.76},{-110,-31.76},{-110,-7.5},{-97.72,-7.5}}, color={0,0,127}));
+  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-104.9,-36.2222},{-110,-36.2222},{-110,-7.5},{-97.72,-7.5}}, color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-68.6,-1},{-53.3,-1},{-53.3,0},{-40,0}}, color={0,0,255}));
+  connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-68,-36.2222},{-66,-36.2222},{-66,5.5},{-68.88,5.5}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{100,80}})),
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),

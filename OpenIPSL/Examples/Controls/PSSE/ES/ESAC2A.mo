@@ -22,8 +22,7 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7)
-    annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
+    Tpq0=0.7) annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,
@@ -37,38 +36,40 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-41,-61})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.ESAC2A eSAC2A
-    annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
+  OpenIPSL.Electrical.Controls.PSSE.ES.ESAC2A eSAC2A(
+    V_RMAX=4,
+    V_RMIN=-4,
+    V_FEMAX=10) annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
 equation
   connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
-      points={{-71.025,-60.0333},{-60,-60.0333},{-60,-9.5},{-78.88,-9.5}},
+      points={{-74,-61.0556},{-60,-61.0556},{-60,-9.5},{-78.88,-9.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const.y, eSAC2A.VOTHSG) annotation (Line(
-      points={{-46.4,-26},{-63.25,-26},{-63.25,-26.6067},{-71.375,-26.6067}},
+      points={{-46.4,-26},{-63.25,-26},{-63.25,-32.9444},{-74,-32.9444}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, eSAC2A.XADIFD) annotation (Line(
-      points={{-78.88,-12.5},{-56,-12.5},{-56,-39.4867},{-71.025,-39.4867}},
+      points={{-78.88,-12.5},{-56,-12.5},{-56,-53.3889},{-74,-53.3889}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.VOEL, const4.y) annotation (Line(
-      points={{-71.375,-45.9267},{-58.6875,-45.9267},{-58.6875,-45},{-46.5,-45}},
+      points={{-96.75,-70},{-58.6875,-70},{-58.6875,-45},{-46.5,-45}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const5.y, eSAC2A.VUEL) annotation (Line(
-      points={{-46.5,-61},{-54,-61},{-54,-52.3667},{-71.375,-52.3667}},
+      points={{-46.5,-61},{-54,-61},{-54,-70},{-86.25,-70}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PELEC, eSAC2A.ECOMP) annotation (Line(
-      points={{-78.88,-6.5},{-64,-6.5},{-64,-33.0467},{-71.375,-33.0467}},
+      points={{-78.88,-6.5},{-64,-6.5},{-64,-44.4444},{-74,-44.4444}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-78.88,-3.5},{-74,-3.5},{-74,20},{-110,20},{-110,8.5},{-107.72,8.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-47.3067},{-150,-47.3067},{-150,-6.5},{-107.72,-6.5}}, color={0,0,127}));
+  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-44.4444},{-150,-44.4444},{-150,-6.5},{-107.72,-6.5}}, color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-78.6,1},{-58.3,1},{-58.3,0},{-40,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->

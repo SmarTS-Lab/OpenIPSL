@@ -17,22 +17,15 @@ block SimpleLagLimVar "First order lag transfer function block with a non windup
   parameter Real y_start "Output start value";
 
   parameter Real T_mod=if T < Modelica.Constants.eps then 1000 else T;
-
   Real state;
-  Boolean switch(start=true, fixed=true);
 initial equation
   state = y_start;
 equation
-  if (abs(y - outMax) < Modelica.Constants.eps and u - y > 0) or (abs(y - outMin) < Modelica.Constants.eps and u - y < 0) then
-    der(state) = 0;
-    switch = false;
-  else
-    T_mod*der(state) = u - y;
-    switch = true;
-  end if;
 
-  when (switch) then
-    reinit(state, pre(y));
+  T_mod*der(state) = u - y;
+
+  when (abs(y - outMax) <= Modelica.Constants.eps and (u - y < 0)) or (abs(y - outMin) <= Modelica.Constants.eps and (u - y) > 0) then
+    reinit(state, y);
   end when;
 
   if abs(const.y) <= Modelica.Constants.eps then
@@ -74,16 +67,21 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),
+        Text(
           extent={{-20,68},{20,8}},
           lineColor={0,0,255},
-          textString="K"),Line(
+          textString="K"),
+        Line(
           points={{-80,0},{78,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-70,-20},{70,-80}},
           lineColor={0,0,255},
-          textString="1 + Ts"),Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
+          textString="1 + Ts"),
+        Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
     Diagram);
 end SimpleLagLimVar;

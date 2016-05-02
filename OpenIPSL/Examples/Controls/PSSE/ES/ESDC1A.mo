@@ -21,8 +21,7 @@ model ESDC1A "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-28,-46},{-38,-36}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-28,-60},{-38,-50}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESDC1A eSDC1A(
@@ -40,8 +39,7 @@ model ESDC1A "SMIB system with one load and GENROE model"
     K_E=0,
     T_E=0.5,
     K_F=0.07,
-    V_RMAX=0)
-    annotation (Placement(transformation(extent={{-60,-50},{-100,-36}})));
+    V_RMAX=0) annotation (Placement(transformation(extent={{-60,-50},{-100,-36}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
   connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-101.111,-43},{-106,-43},{-106,-10},{-99.6,-10}}, color={0,0,127}));

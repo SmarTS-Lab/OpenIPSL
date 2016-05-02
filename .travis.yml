@@ -1,15 +1,16 @@
 language: bash
+branches: TravisCI
 python:
   - "2.7"
 
 services: docker
 
 install:
-  - docker pull ubuntu:latest
-  - docker run -d ubuntu:latest
+  - docker pull smartslab/ci_openipsl
+  - docker run -d smartslab/ci_openipsl
 
 script:
-  - python print_stuff.py
+  - python runTests.py
   - docker ps -a
 
 branches:

@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
-model EXAC1 "SMIB system with one load and GENROE model"
+model EXNI "SMIB system with one load and GENROE model"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
@@ -23,34 +23,17 @@ model EXAC1 "SMIB system with one load and GENROE model"
     Q_0=5.416582,
     Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.EXAC1 eXAC1_1(
-    K_A=400,
-    T_A=0.02,
-    V_RMAX=9,
-    V_RMIN=-5.43,
-    T_E=0.8,
-    K_F=0.03,
-    T_F=1,
-    K_C=0.2,
-    K_D=0.48,
-    K_E=1,
-    E_1=5.25,
-    E_2=7,
-    S_EE_1=0.03,
-    S_EE_2=0.1,
-    T_R=0.004,
-    T_B=0.004,
-    T_C=0.004) annotation (Placement(transformation(extent={{-60,-50},{-98,-24}})));
+  Electrical.Controls.PSSE.ES.EXNI eXNI annotation (Placement(transformation(extent={{-64,-54},{-94,-26}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
-  connect(eXAC1_1.EFD, gENROE.EFD) annotation (Line(points={{-98.95,-37},{-110,-37},{-110,-10},{-99.6,-10}}, color={0,0,127}));
-  connect(eXAC1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-60.95,-27.25},{-56,-27.25},{-56,-18},{-58.4,-18}}, color={0,0,127}));
-  connect(eXAC1_1.VOTHSG, const.y) annotation (Line(points={{-60.95,-30.5},{-48,-30.5},{-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.VUEL, const.y) annotation (Line(points={{-61.14,-41.875},{-48,-42},{-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.VOEL, const.y) annotation (Line(points={{-60.95,-45.125},{-48,-44},{-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-60.95,-37},{-52,-37},{-52,10},{-58.4,10}}, color={0,0,127}));
-  connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-60.95,-48.2125},{-54,-48.2125},{-54,-14},{-58.4,-14}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p) annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
+  connect(eXNI.VOTHSG, const.y) annotation (Line(points={{-64,-31.4444},{-60,-31.4444},{-60,-32},{-41,-32},{-41,-46}}, color={0,0,127}));
+  connect(eXNI.ECOMP, gENROE.ETERM) annotation (Line(points={{-64,-38.4444},{-60,-38.4444},{-60,-38},{-52,-38},{-52,10},{-58.4,10}}, color={0,0,127}));
+  connect(eXNI.XADIFD, gENROE.XADIFD) annotation (Line(points={{-64,-43.8889},{-60,-43.8889},{-60,-44},{-60,-18},{-58.4,-18}}, color={0,0,127}));
+  connect(eXNI.EFD0, gENROE.EFD0) annotation (Line(points={{-64,-48.5556},{-60,-48.5556},{-60,-48},{-56,-48},{-56,-14},{-58.4,-14}}, color={0,0,127}));
+  connect(eXNI.VUEL, const.y) annotation (Line(points={{-69.25,-54},{-70,-54},{-70,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
+  connect(eXNI.VOEL, const.y) annotation (Line(points={{-73.75,-54},{-74,-54},{-74,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
+  connect(eXNI.EFD, gENROE.EFD) annotation (Line(points={{-94.75,-38.4444},{-110,-38.4444},{-110,-10},{-99.6,-10}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -65,4 +48,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end EXAC1;
+end EXNI;

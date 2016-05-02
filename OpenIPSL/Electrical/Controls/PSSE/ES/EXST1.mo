@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model EXST1 "IEEE Type AC2A Excitation System"
+  extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_R=0.02;
   parameter Real V_IMAX=0.2;
   parameter Real V_IMIN=0;
@@ -16,136 +17,79 @@ model EXST1 "IEEE Type AC2A Excitation System"
     K=1,
     T1=T_C,
     T2=T_B,
-    y_start=Efd0/K_A) annotation (Placement(transformation(extent={{116,-32},{140,-8}})));
-  NonElectrical.Continuous.SimpleLag Vm(
-    y_start=Vm0,
-    K=1,
-    T=T_R) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={8,-24})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP annotation (Placement(transformation(extent={{-136,48},{-98,86}}), iconTransformation(extent={{-132,52},{-98,86}})));
-  Modelica.Blocks.Sources.Constant V_REF(k=VREF) annotation (Placement(transformation(extent={{4,8},{16,20}})));
-  Modelica.Blocks.Interfaces.RealInput XADIFD
-    annotation (Placement(transformation(
-        extent={{-19,-19},{19,19}},
-        rotation=0,
-        origin={-119,-69}), iconTransformation(extent={{-17,-17},{17,17}}, origin={-115,-9})));
-  Modelica.Blocks.Interfaces.RealOutput EFD annotation (Placement(transformation(extent={{280,-50},{300,-30}}), iconTransformation(extent={{280,-50},{300,-30}})));
-  Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(transformation(
-        extent={{-17,-17},{17,17}},
-        rotation=0,
-        origin={-119,-179}), iconTransformation(
-        extent={{-17,-17},{17,17}},
-        origin={-39,-165},
-        rotation=90)));
-  Modelica.Blocks.Interfaces.RealInput ETERM
-    annotation (Placement(transformation(
-        extent={{-19,-19},{19,19}},
-        rotation=0,
-        origin={-117,31}), iconTransformation(extent={{-17,-17},{17,17}}, origin={-115,33})));
-  Modelica.Blocks.Math.Add VERR(k1=-1, k2=1) annotation (Placement(transformation(
-        extent={{-6,6},{6,-6}},
-        rotation=0,
-        origin={34,-20})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_IMAX, uMin=V_IMIN) annotation (Placement(transformation(extent={{78,-30},{98,-10}})));
+    y_start=Efd0/K_A,
+    x_start=Efd0/K_A) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_IMAX, uMin=V_IMIN) annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   NonElectrical.Continuous.SimpleLag Vm1(
     y_start=Efd0,
     K=1,
     T=T_A) annotation (Placement(transformation(
-        extent={{-16,-14},{16,14}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={192,-20})));
+        origin={130,0})));
   Modelica.Blocks.Math.Gain K_a(k=K_A) annotation (Placement(transformation(
-        extent={{-4,-4},{4,4}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={154,-20})));
-  Modelica.Blocks.Interfaces.RealInput VOTHSG annotation (Placement(transformation(extent={{-138,-52},{-98,-12}}), iconTransformation(extent={{-132,-68},{-98,-34}})));
-  Modelica.Blocks.Interfaces.RealInput VOEL
-    "Input from voltage over excitation limiter"
-    annotation (Placement(transformation(extent={{-138,-110},{-98,-70}}), iconTransformation(extent={{-132,-104},{-98,-70}})));
-  Modelica.Blocks.Interfaces.RealInput VUEL
-    "Input from voltage under excitation limiter"
-    annotation (Placement(transformation(extent={{-140,-158},{-100,-118}}), iconTransformation(extent={{-132,-142},{-98,-108}})));
+        origin={90,0})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
     T=T_F,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{142,-90},{122,-70}})));
-  Modelica.Blocks.Math.Add3 add3_2 annotation (Placement(transformation(extent={{-60,-100},{-40,-80}})));
-  Modelica.Blocks.Math.Add3 add3_1(k3=-1) annotation (Placement(transformation(extent={{48,-30},{68,-10}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{92,-70},{72,-50}})));
+
 protected
-  parameter Real VREF(fixed=false);
-  parameter Real Vm0(fixed=false);
-  parameter Real Efd0(fixed=false);
-protected
-  Modelica.Blocks.Interfaces.RealOutput EFD1 annotation (Placement(transformation(extent={{230,-30},{250,-10}}), iconTransformation(extent={{302,-64},{322,-44}})));
+  Modelica.Blocks.Interfaces.RealOutput EFD1 annotation (Placement(transformation(extent={{180,-10},{200,10}}), iconTransformation(extent={{302,-64},{322,-44}})));
+public
+  NonElectrical.Continuous.SimpleLag TransducerDelay(
+    K=1,
+    T=T_R,
+    y_start=ECOMP0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
+  Modelica.Blocks.Math.Add3 add3_2 annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+  Modelica.Blocks.Math.Add Limiters annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-100,-150})));
+  Modelica.Blocks.Interfaces.RealInput XADIFD
+    annotation (Placement(transformation(
+        extent={{-20,-20},{20,20}},
+        rotation=0,
+        origin={-200,-70}), iconTransformation(extent={{-10,-10},{10,10}}, origin={-200,-70})));
+  Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
 initial equation
-  Vm0 = ECOMP;
-  Efd0 = EFD0;
-  VREF = Efd0/K_A + Vm0;
+
+  V_REF = Efd0/K_A + ECOMP0;
 equation
-  if EFD > ETERM*V_RMAX - K_C*XADIFD then
-    EFD = ETERM*V_RMAX - K_C*XADIFD;
-  elseif EFD < ETERM*V_RMIN - K_C*XADIFD then
-    EFD = ETERM*V_RMIN - K_C*XADIFD;
+  if EFD > ECOMP*V_RMAX - K_C*XADIFD then
+    EFD = ECOMP*V_RMAX - K_C*XADIFD;
+  elseif EFD < ECOMP*V_RMIN - K_C*XADIFD then
+    EFD = ECOMP*V_RMIN - K_C*XADIFD;
   else
     EFD = EFD1;
   end if;
-  connect(V_REF.y, VERR.u2) annotation (Line(
-      points={{16.6,14},{24,14},{24,-16.4},{26.8,-16.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vm.y, VERR.u1) annotation (Line(points={{19,-24},{26.8,-24},{26.8,-23.6}}, color={0,0,127}));
-  connect(ECOMP, Vm.u) annotation (Line(points={{-117,67},{-40,67},{-40,-24},{-4,-24}}, color={0,0,127}));
-  connect(imLeadLag.y, K_a.u) annotation (Line(points={{141.2,-20},{149.2,-20}}, color={0,0,127}));
-  connect(imLeadLag.u, limiter.y) annotation (Line(points={{113.6,-20},{99,-20}}, color={0,0,127}));
-  connect(VOEL, add3_2.u2) annotation (Line(points={{-118,-90},{-90,-90},{-62,-90}}, color={0,0,127}));
-  connect(VOTHSG, add3_2.u1) annotation (Line(points={{-118,-32},{-78,-32},{-78,-82},{-62,-82}}, color={0,0,127}));
-  connect(VUEL, add3_2.u3) annotation (Line(points={{-120,-138},{-80,-138},{-80,-98},{-62,-98}}, color={0,0,127}));
-  connect(add3_1.y, limiter.u) annotation (Line(points={{69,-20},{76,-20}}, color={0,0,127}));
-  connect(VERR.y, add3_1.u2) annotation (Line(points={{40.6,-20},{46,-20}}, color={0,0,127}));
-  connect(imDerivativeLag.y, add3_1.u3) annotation (Line(points={{121,-80},{84,-80},{46,-80},{46,-28}}, color={0,0,127}));
-  connect(add3_2.y, add3_1.u1) annotation (Line(points={{-39,-90},{42,-90},{42,-12},{46,-12}}, color={0,0,127}));
-  connect(K_a.y, Vm1.u) annotation (Line(points={{158.4,-20},{172.8,-20}}, color={0,0,127}));
-  connect(Vm1.y, EFD1) annotation (Line(points={{209.6,-20},{240,-20}}, color={0,0,127}));
-  connect(imDerivativeLag.u, EFD1) annotation (Line(points={{144,-80},{220,-80},{220,-20},{240,-20}}, color={0,0,127}));
+  connect(imLeadLag.y, K_a.u) annotation (Line(points={{61,0},{70,0},{78,0}}, color={0,0,127}));
+  connect(imLeadLag.u, limiter.y) annotation (Line(points={{38,0},{30,0},{21,0}}, color={0,0,127}));
+  connect(K_a.y, Vm1.u) annotation (Line(points={{101,0},{118,0}}, color={0,0,127}));
+  connect(Vm1.y, EFD1) annotation (Line(points={{141,0},{170,0},{190,0}}, color={0,0,127}));
+  connect(imDerivativeLag.u, EFD1) annotation (Line(points={{94,-60},{170,-60},{170,0},{190,0}}, color={0,0,127}));
+  connect(ECOMP, TransducerDelay.u) annotation (Line(points={{-200,0},{-186,0},{-172,0}}, color={0,0,127}));
+  connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
+  connect(VOTHSG, add3_2.u1) annotation (Line(points={{-200,90},{-148,90},{-90,90},{-90,8},{-82,8}}, color={0,0,127}));
+  connect(DiffV.y, add3_2.u2) annotation (Line(points={{-99,0},{-90.5,0},{-82,0}}, color={0,0,127}));
+  connect(VUEL, Limiters.u1) annotation (Line(points={{-130,-200},{-130,-172},{-106,-172},{-106,-162}}, color={0,0,127}));
+  connect(Limiters.u2, VOEL) annotation (Line(points={{-94,-162},{-94,-174},{-70,-174},{-70,-200}}, color={0,0,127}));
+  connect(Limiters.y, add3_2.u3) annotation (Line(points={{-100,-139},{-100,-139},{-100,-20},{-90,-20},{-90,-8},{-82,-8}}, color={0,0,127}));
+  connect(feedback.y, limiter.u) annotation (Line(points={{-21,0},{-11.5,0},{-2,0}}, color={0,0,127}));
+  connect(feedback.u1, add3_2.y) annotation (Line(points={{-38,0},{-59,0},{-59,0}}, color={0,0,127}));
+  connect(feedback.u2, imDerivativeLag.y) annotation (Line(points={{-30,-8},{-30,-8},{-30,-60},{71,-60}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-200},{300,100}}), graphics={Text(
-          extent={{50,-2},{56,-12}},
-          lineColor={255,0,0},
-          textString="VS"),Text(
-          extent={{24,0},{38,-16}},
-          lineColor={255,0,0},
-          textString="VERR")}),
-    Icon(coordinateSystem(extent={{-120,-200},{300,100}}, preserveAspectRatio=true), graphics={Text(
-          extent={{28,-18},{188,-60}},
-          lineColor={0,0,255},
-          textString="EXST1"),Rectangle(extent={{-100,82},{280,-160}}, lineColor={0,0,255}),Text(
-          extent={{-90,100},{-30,38}},
-          lineColor={0,0,255},
-          textString="ECOMP"),Text(
-          extent={{-88,24},{-28,-40}},
-          lineColor={0,0,255},
-          textString="XADIFD"),Text(
-          extent={{-44,-124},{18,-146}},
-          lineColor={0,0,255},
-          textString="EFD0"),Text(
-          extent={{-90,46},{-32,20}},
-          lineColor={0,0,255},
-          textString="ETERM"),Text(
-          extent={{-92,-18},{-26,-82}},
-          lineColor={0,0,255},
-          textString="VOTHSG"),Text(
-          extent={{-94,-52},{-48,-116}},
-          lineColor={0,0,255},
-          textString="VOEL"),Text(
-          extent={{-94,-94},{-46,-156}},
-          lineColor={0,0,255},
-          textString="VUEL"),Text(
-          extent={{238,-10},{274,-74}},
-          lineColor={0,0,255},
-          textString="EFD")}),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Icon(coordinateSystem(
+        extent={{-200,-200},{200,160}},
+        preserveAspectRatio=true,
+        initialScale=0.1), graphics={Text(
+          extent={{-186,-62},{-112,-82}},
+          lineColor={28,108,200},
+          textString="XADIFD")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -159,5 +103,24 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>", info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td>PSS/E Manual</td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td>2016-04-29</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Tin Rabuzin,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+</tr>
+</table>
 </html>"));
 end EXST1;
