@@ -1,5 +1,4 @@
 language: bash
-branches: TravisCI
 python:
   - "2.7"
 
@@ -10,7 +9,6 @@ install:
 
 script:
   - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl sh /OpenIPSL/changeUser.sh
-  - whoami
 
 branches:
   only:
