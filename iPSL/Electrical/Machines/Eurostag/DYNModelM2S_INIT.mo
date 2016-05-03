@@ -1,8 +1,8 @@
 within iPSL.Electrical.Machines.Eurostag;
 model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
                   Developed by RTE and adapted by AIA. 2014/03/10"
-  Modelica.Blocks.Interfaces.RealInput pin_CM;
-  Modelica.Blocks.Interfaces.RealInput pin_EFD;
+  Modelica.Blocks.Interfaces.RealOutput pin_CM;
+  Modelica.Blocks.Interfaces.RealOutput pin_EFD;
   Modelica.Blocks.Interfaces.RealOutput pin_LAMBDAF;
   Modelica.Blocks.Interfaces.RealOutput pin_LAMBDAD;
   Modelica.Blocks.Interfaces.RealOutput pin_LAMBDAQ1;
@@ -39,22 +39,22 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   parameter Real TPQ0 "Quadrat trans. time const";
   parameter Real TSQ0 "Quadrat subtrans. time const";
   parameter Real IENR;
-  parameter Real SNREF(fixed=false);
-  parameter Real SN(fixed=false);
+  parameter Real SNREF;
+  parameter Real SN;
   //  puissance apparente nominale (SNOMG)
-  parameter Real PN(fixed=false);
+  parameter Real PN;
   parameter Real PNALT;
-  parameter Real sNTfo(fixed=false);
-  parameter Real ur0(fixed=false);
-  parameter Real ui0(fixed=false);
-  parameter Real p0(fixed=false);
-  parameter Real q0(fixed=false);
-  parameter Real uNResTfo(fixed=false);
-  parameter Real uNomNw(fixed=false);
-  parameter Real uNMacTfo(fixed=false);
-  parameter Real uBMac(fixed=false);
-  parameter Real rTfoIn(fixed=false);
-  parameter Real xTfoIn(fixed=false);
+  parameter Real sNTfo;
+  parameter Real ur0;
+  parameter Real ui0;
+  parameter Real p0;
+  parameter Real q0;
+  parameter Real uNResTfo;
+  parameter Real uNomNw;
+  parameter Real uNMacTfo;
+  parameter Real uBMac;
+  parameter Real rTfoIn;
+  parameter Real xTfoIn;
   parameter Real nDSat;
   //(fixed = false);
   parameter Real nQSat;
@@ -63,10 +63,10 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   //(fixed = false);
   parameter Real mQSatIn;
   //(fixed = false);
-  parameter Real rStatIn(fixed=false);
-  parameter Real lStatIn(fixed=false);
-  parameter Real omega_0(fixed=false);
-  parameter Real pPuWLMDV(fixed=false);
+  parameter Real rStatIn;
+  parameter Real lStatIn;
+  parameter Real omega_0;
+  parameter Real pPuWLMDV;
   parameter Real ONE=1;
   parameter Real mrc=0;
   parameter Real PI=3.14159265;
