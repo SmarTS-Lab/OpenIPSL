@@ -1,10 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
 model RotatingExciterLimited
-  extends RotatingExciterBase(redeclare Modelica.Blocks.Continuous.LimIntegrator sISO(
-      k=1/T_E,
-      y_start=Efd0,
-      outMin=0,
-      outMax=Modelica.Constants.inf,
+  extends RotatingExciterBase(redeclare replaceable
+      Modelica.Blocks.Continuous.LimIntegrator sISO(k=1/T_E, y_start=Efd0,
+      outMin=0, utMax=Modelica.Constants.inf,
       initType=Modelica.Blocks.Types.Init.InitialOutput));
   annotation (Icon(graphics={Text(
           extent={{-56,56},{52,44}},

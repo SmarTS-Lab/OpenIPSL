@@ -1,10 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
 model RotatingExciter
-  extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.RotatingExciterBase(redeclare Modelica.Blocks.Continuous.Integrator sISO(
-      k=1/T_E,
-      initType=Modelica.Blocks.Types.Init.InitialOutput,
-      y_start=Efd0));
-
+  extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.RotatingExciterBase(
+  redeclare replaceable Modelica.Blocks.Continuous.Integrator sISO(k=1/T_E,
+      initType=Modelica.Blocks.Types.Init.InitialOutput, y_start=Efd0));
   annotation (Icon(coordinateSystem(initialScale=0.05, extent={{-80,-80},{80,80}}), graphics={
         Rectangle(
           extent={{-80,80},{80,-80}},
