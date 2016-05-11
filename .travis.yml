@@ -8,4 +8,6 @@ install:
   - docker pull smartslab/ci_openipsl
 
 script:
+  - sh CI/downloadReference.sh
+  - sudo chown -R 1000 $(pwd)
   - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl sh /OpenIPSL/CI/changeUser.sh
