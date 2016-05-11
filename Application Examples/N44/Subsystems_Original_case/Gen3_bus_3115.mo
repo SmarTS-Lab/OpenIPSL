@@ -38,8 +38,6 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     q_NL=0.1) annotation (Placement(transformation(extent={{-44,56},{20,86}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=31,
-    V_c0=PSSE_data.voltages.V3115,
-    V_0=PSSE_data.voltages.V3115,
     T_AT_B=0.25385,
     T_B=13,
     T_E=0.05,
@@ -73,7 +71,6 @@ equation
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{18.48,-0.9},{42,-0.9},{42,94},{-58,94},{-58,63.5},{-43.2,63.5}}, color={0,0,127}));
   connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{18.48,25.5},{32,25.5},{32,-35.51},{36.225,-35.51}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{36.225,-56.57},{16,-56.57},{16,-64},{-0.5,-64}}, color={0,0,127}));
-  connect(sCRX.ETERM, gENSAL.ETERM) annotation (Line(points={{35.775,-71.42},{32,-71.42},{32,25.5},{18.48,25.5}}, color={0,0,127}));
   annotation (
     Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

@@ -79,7 +79,6 @@ equation
       points={{90.45,0},{110,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwPin, pwPin) annotation (Line(points={{110,0},{110,0},{110,0}}, color={0,0,255}));
   connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{89.76,-21.5},{
           99,-21.5},{99,-86},{-116,-86},{-116,78},{-32.1545,78}},                                                                     color={0,0,127}));
   connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{31.8182,78},{

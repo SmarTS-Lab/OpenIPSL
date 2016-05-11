@@ -43,8 +43,6 @@ model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GEN
 
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=10 "K",
-    V_c0=PSSE_data.voltages.V8500,
-    V_0=PSSE_data.voltages.V8500,
     T_AT_B=0,
     T_B=0.04,
     T_E=0.04,
@@ -87,8 +85,6 @@ equation
           30.5},{22,-25.965},{25.2292,-25.965}},                                                                    color={0,0,127}));
   connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{80.9167,-52.195},{86,
           -52.195},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}},                                                                      color={0,0,127}));
-  connect(sCRX.ETERM, gENROU.ETERM) annotation (Line(points={{24.7708,-66.53},{
-          22,-66.53},{22,30.5},{6.32,30.5}},                                                                      color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{25.2292,-49.755},{14,
           -49.755},{14,-50},{4,-50},{4,-56},{-10.5,-56}},                                                                  color={0,0,127}));
   annotation (

@@ -14,55 +14,66 @@ equation
   end if;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-60,-60},{60,60}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-60,-60},{60,60}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-60,-60},{60,60}}), graphics={
+        Rectangle(
           extent={{-60,60},{60,-60}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(
+          fillPattern=FillPattern.Solid),
+        Line(
           points={{-42,0},{36,0},{38,0},{40,0}},
           color={0,0,255},
           thickness=0.5,
           smooth=Smooth.None,
-          arrow={Arrow.None,Arrow.Open}),Line(
+          arrow={Arrow.None,Arrow.Open}),
+        Line(
           points={{0,-30},{0,36}},
           color={0,0,255},
           thickness=0.5,
           smooth=Smooth.None,
-          arrow={Arrow.None,Arrow.Open}),Line(
+          arrow={Arrow.None,Arrow.Open}),
+        Line(
           points={{0,12},{34,12}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{22,22},{38,12}},
           lineColor={0,0,0},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textStyle={TextStyle.Italic},
-          textString="r"),Text(
+          textString="r"),
+        Text(
           extent={{-12,16},{4,6}},
           lineColor={0,0,0},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString="f",
-          textStyle={TextStyle.Italic}),Text(
+          textStyle={TextStyle.Italic}),
+        Text(
           extent={{-2,0},{12,-8}},
           lineColor={0,0,0},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="0"),Text(
+          textString="0"),
+        Text(
           extent={{-26,8},{-12,0}},
           lineColor={0,0,0},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="-0.1"),Line(
+          textString="-0.1"),
+        Line(
           points={{-20,-20},{-2,-20},{0,-20}},
           color={0,0,255},
           pattern=LinePattern.Dot,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-2,-16},{12,-24}},
           lineColor={0,0,0},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="-1"),Line(
+          textString="-1"),
+        Line(
           points={{-34,-20},{-20,-20},{-20,0},{0,0},{0,12},{32,22}},
           color={0,0,0},
           thickness=0.5,

@@ -1,7 +1,9 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESAC1A
   import OpenIPSL.NonElectrical.Functions.SE;
+  import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
+
   Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -75,17 +77,10 @@ public
   BaseClasses.RectifierCommutationVoltageDrop rectifierCommutationVoltageDrop(K_C=K_C) annotation (Placement(transformation(extent={{160,30},{180,50}})));
 initial equation
   Ifd0 = XADIFD;
-  // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
-  if Ifd0 <= 0 then
-    VE0 = Efd0;
-  elseif K_C*Ifd0/(Efd0 + 0.577*K_C*Ifd0) <= 0.433 then
-    VE0 = Efd0 + 0.577*K_C*Ifd0;
-  elseif K_C*Ifd0/sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75) > 0.433 and K_C*Ifd0/sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75) < 0.75 then
-    VE0 = sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75);
-  else
-    VE0 = (Efd0 + 1.732*K_C*Ifd0)/1.732;
-  end if;
-  // Case IN>0 not checked because it will be resolved in the next iteration
+  VE0 = invFEX(
+    K_C=K_C,
+    Efd0=Efd0,
+    Ifd0=Ifd0);
   VFE0 = VE0*(SE(
     VE0,
     S_EE_1,
@@ -113,7 +108,7 @@ equation
   connect(rectifierCommutationVoltageDrop.EFD, EFD) annotation (Line(points={{181,40},{190,40},{190,0},{210,0}}, color={0,0,127}));
   connect(hV_GATE.p, lV_GATE.n2) annotation (Line(points={{42.5,40},{50,40},{50,43},{56.5,43}}, color={0,0,127}));
   connect(VOEL, lV_GATE.n1) annotation (Line(points={{-70,-200},{-70,-200},{-70,-60},{50,-60},{50,37},{56.5,37}}, color={0,0,127}));
-  connect(lV_GATE.p, limiter1.u) annotation (Line(points={{80.5,40},{92,40},{92,40}}, color={0,0,127}));
+  connect(lV_GATE.p, limiter1.u) annotation (Line(points={{80.5,40},{92,40}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
