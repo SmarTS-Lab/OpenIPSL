@@ -1,13 +1,11 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT3G;
 model WT3E1
-  parameter Integer VARFLG
-    "0 constant Q; 1 Reactive control; -1 Constant PF control"
+  parameter Integer VARFLG "0 constant Q; 1 Reactive control; -1 Constant PF control"
     annotation (choices(
       choice=0 "Constant Q",
       choice=1 "Reactive power control",
       choice=-1 "Constant PF control"));
-  parameter Integer VLRFLG
-    "0 Bypass V control; 1 WT3G1 Eqcmd limits;2 WT3G2 Eqcmd limits"
+  parameter Integer VLRFLG "0 Bypass V control; 1 WT3G1 Eqcmd limits;2 WT3G2 Eqcmd limits"
     annotation (choices(
       choice=0 "Disable terminal voltage control",
       choice=1 "Enable terminal voltage control ",
@@ -41,15 +39,14 @@ model WT3E1
   parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
   parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
   parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-  parameter Real Pmin=0.74000
-    "  Minimum power for operating at P100 speed (pu)";
+  parameter Real Pmin=0.74000 "  Minimum power for operating at P100 speed (pu)";
   parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
-protected
+  parameter Real Vref " Remote bus ref voltage";
   parameter Real v0;
   parameter Real p0;
   parameter Real q0;
+protected
   parameter Real PFA_ref(fixed=false) "PF angle reference if PFAFLG=1";
-  parameter Real Vref " Remote bus ref voltage";
   //parameter Real Qord "MVAR order from MVAR emulator";
   parameter Real Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
   parameter Real sp0=Speed(
@@ -185,7 +182,8 @@ public
   pf_Controller pf_Controller1(
     Tp=Tp,
     p0=p0,
-    PFA_ref=PFA_ref) annotation (Placement(transformation(rotation=0, extent={{-114,20},{-74,60}})));
+    PFA_ref=PFA_ref,
+    q0=q0) annotation (Placement(transformation(rotation=0, extent={{-114,20},{-74,60}})));
   ActivePowerControl activePowerControl(
     TFP=TFP,
     Kpp=Kpp,
@@ -266,6 +264,7 @@ protected
     parameter Real Tp=0.50000E-01 " Pelec filter in fast PF controller";
     parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
     parameter Real p0;
+    parameter Real q0;
     Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(rotation=0, extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_REF_PF annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   equation
@@ -281,20 +280,24 @@ protected
               lineThickness=0.5,
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
-              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={Rectangle(
-              extent={{-200,100},{0,-100}},
-              lineColor={28,108,200},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid),Text(
-              extent={{-188,6},{-148,-6}},
-              lineColor={28,108,200},
-              textString="P_FAREF"),Text(
-              extent={{-60,6},{-2,-6}},
-              lineColor={28,108,200},
-              textString="Q_REF_PF"),Text(
-              extent={{-160,80},{-40,40}},
-              lineColor={238,46,47},
-              textString="PF Controller")}));
+              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
+          Rectangle(
+            extent={{-200,100},{0,-100}},
+            lineColor={28,108,200},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid),
+          Text(
+            extent={{-188,6},{-148,-6}},
+            lineColor={28,108,200},
+            textString="P_FAREF"),
+          Text(
+            extent={{-60,6},{-2,-6}},
+            lineColor={28,108,200},
+            textString="Q_REF_PF"),
+          Text(
+            extent={{-160,80},{-40,40}},
+            lineColor={238,46,47},
+            textString="PF Controller")}));
   end pf_Controller;
 equation
   connect(PELEC, pf_Controller1.u) annotation (Line(points={{-200,40},{-140,40},{-114.8,40}}, color={0,0,127}));
@@ -347,8 +350,7 @@ protected
     parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
     parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
     parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-    parameter Real Pmin=0.74000
-      "  Minimum power for operating at P100 speed (pu)";
+    parameter Real Pmin=0.74000 "  Minimum power for operating at P100 speed (pu)";
     parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
     parameter Real k20;
     parameter Real k30;
@@ -399,13 +401,13 @@ protected
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
               textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-100},{200,100}}, preserveAspectRatio=true), graphics={Rectangle(
-              extent={{-200,100},{200,-100}},
-              lineColor={28,108,200},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid),Text(
-              extent={{-64,72},{76,32}},
-              lineColor={0,140,72},
-              textString="Active Power
+            extent={{-200,100},{200,-100}},
+            lineColor={28,108,200},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid), Text(
+            extent={{-64,72},{76,32}},
+            lineColor={0,140,72},
+            textString="Active Power
 PI")}));
   end ActivePowerControl;
 equation
@@ -431,8 +433,7 @@ protected
     Modelica.Blocks.Math.Gain XC(k=Xc) "Line drop compensation reactance (pu)" annotation (Placement(transformation(extent={{-180,-30},{-160,-10}})));
     Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{-48,-10},{-28,10}})));
     Modelica.Blocks.Sources.Constant VARL(k=Vref) annotation (Placement(transformation(extent={{-98,40},{-78,60}})));
-    Modelica.Blocks.Math.Gain portion(k=1/Fn)
-      "Line drop compensation reactance (pu)"                                         annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
+    Modelica.Blocks.Math.Gain portion(k=1/Fn) "Line drop compensation reactance (pu)" annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
     NonElectrical.Continuous.SimpleLag K1(
       y_start=k10,
       K=KIV,
@@ -444,8 +445,7 @@ protected
       T=Tv,
       y_start=k80,
       K=1) annotation (Placement(transformation(extent={{22,20},{42,40}})));
-    parameter Real Tfv=0.15000
-      "Filter time constant in voltage regulator (sec)";
+    parameter Real Tfv=0.15000 "Filter time constant in voltage regulator (sec)";
     parameter Real Kpv=18.000 "  Proportional gain in voltage regulator (pu)";
     parameter Real KIV=5.0000 "  Integrator gain in voltage regulator (pu)";
     parameter Real Xc=0.0000 "  Line drop compensation reactance (pu)";
@@ -501,23 +501,28 @@ protected
               extent={{18,26},{38,22}},
               lineColor={255,0,0},
               textString="K+1
-")}), Icon(coordinateSystem(extent={{-200,-80},{200,80}}, preserveAspectRatio=true), graphics={Rectangle(
-              extent={{-200,80},{200,-80}},
-              lineColor={28,108,200},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid),Text(
-              extent={{-120,80},{122,50}},
-              lineColor={180,56,148},
-              textString="Reactive Power Control"),Text(
-              extent={{-176,50},{-116,30}},
-              lineColor={28,108,200},
-              textString="ITERM"),Text(
-              extent={{130,10},{194,-10}},
-              lineColor={28,108,200},
-              textString="Q_ORD"),Text(
-              extent={{-176,-32},{-116,-52}},
-              lineColor={28,108,200},
-              textString="VTERM")}));
+")}), Icon(coordinateSystem(extent={{-200,-80},{200,80}}, preserveAspectRatio=true), graphics={
+          Rectangle(
+            extent={{-200,80},{200,-80}},
+            lineColor={28,108,200},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid),
+          Text(
+            extent={{-120,80},{122,50}},
+            lineColor={180,56,148},
+            textString="Reactive Power Control"),
+          Text(
+            extent={{-176,50},{-116,30}},
+            lineColor={28,108,200},
+            textString="ITERM"),
+          Text(
+            extent={{130,10},{194,-10}},
+            lineColor={28,108,200},
+            textString="Q_ORD"),
+          Text(
+            extent={{-176,-32},{-116,-52}},
+            lineColor={28,108,200},
+            textString="VTERM")}));
   end ReactivePowerControl;
 equation
   connect(ITERM, reactivePowerControl.ITERM) annotation (Line(points={{-200,98},{-102.55,98}}, color={0,0,127}));
@@ -532,72 +537,92 @@ equation
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-200,-140},{200,140}},
-        initialScale=0.05), graphics={Line(
+        initialScale=0.05), graphics={
+        Line(
           points={{162,34},{172,40}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{130,12},{130,40}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{130,12},{162,12}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{162,12},{162,32}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{160,66},{184,56}},
           lineColor={255,0,0},
-          textString="VLTFLG"),Line(
+          textString="VLTFLG"),
+        Line(
           points={{172,40},{186,40}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{160,32},{170,28}},
           lineColor={255,0,0},
-          textString="0"),Text(
+          textString="0"),
+        Text(
           extent={{70,32},{80,26}},
           lineColor={0,0,255},
-          textString="Vterm"),Line(
+          textString="Vterm"),
+        Line(
           points={{-20,92},{-20,52}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-32,54},{-20,46}},
           color={255,0,0},
           smooth=Smooth.None,
           pattern=LinePattern.Dot,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-30,36},{-20,32}},
           lineColor={255,0,0},
-          textString="-1"),Text(
+          textString="-1"),
+        Text(
           extent={{-20,62},{-10,58}},
           lineColor={255,0,0},
-          textString="1"),Text(
+          textString="1"),
+        Text(
           extent={{2,34},{12,30}},
           lineColor={255,0,0},
-          textString="0"),Line(
+          textString="0"),
+        Line(
           points={{-10,36},{-10,12}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-4,40},{4,40}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-14,46},{-4,40}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-54,64},{-32,56}},
           lineColor={255,0,0},
-          textString="VARFLG"),Line(
+          textString="VARFLG"),
+        Line(
           points={{-44,92},{-20,92}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-64,40},{-20,40}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{162,44},{168,56}},
           color={255,0,0},
           smooth=Smooth.None,

@@ -38,24 +38,19 @@ model Gen2_bus_5600 "Configuration of synchronous generator with regulators: GEN
     q_NL=0.1) annotation (Placement(transformation(extent={{-60,48},{2,76}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=61,
-    V_c0=PSSE_data.voltages.V5600,
     T_AT_B=0.25385,
     T_B=13,
     T_E=0.05,
     E_MIN=0,
     E_MAX=4,
     r_cr_fd=0,
-    V_0=PSSE_data.voltages.V5600,
     C_SWITCH=true) annotation (Placement(transformation(extent={{26,-90},{84,-28}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-17,-53},{-7,-43}})));
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,86},{98,98}})));
 equation
 
-  connect(p, p) annotation (Line(
-      points={{110,0},{104,0},{104,0},{110,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
+
   connect(gENSAL.p, p) annotation (Line(points={{3.1,3},{54.55,3},{54.55,0},{110,0}}, color={0,0,255}));
   connect(cte.y, sCRX.VOEL) annotation (Line(points={{-6.5,-48},{26.2417,-48},{
           26.2417,-48.15}},                                                                      color={0,0,127}));
@@ -74,8 +69,6 @@ equation
           -40.71},{4,-48},{-6.5,-48}},                                                                  color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2417,-56.21},{4,-56.21},
           {4,-48},{-6.5,-48}},                                                                        color={0,0,127}));
-  connect(sCRX.ETERM, gENSAL.ETERM) annotation (Line(points={{25.7583,-73.26},{
-          22,-73.26},{22,18.5},{2.48,18.5}},                                                                      color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

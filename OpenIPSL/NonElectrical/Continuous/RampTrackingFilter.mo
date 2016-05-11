@@ -111,9 +111,9 @@ equation
     LL_8.y = LL_out;
   end if;
   if not M == 0 then
-    connect(SL_out, y);
+    SL_out=y;
   else
-    connect(u, y);
+    u=y;
   end if;
   if M == 1 then
     SL_1.y = SL_out;

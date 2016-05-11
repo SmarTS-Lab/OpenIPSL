@@ -122,7 +122,8 @@ public
   pf_Controller PF_Controller(
     Tp=Tp,
     PFA_ref=PFA_ref,
-    p0=p0) annotation (Placement(transformation(rotation=0, extent={{-120,28},{-80,68}})));
+    p0=p0,
+    q0=q0) annotation (Placement(transformation(rotation=0, extent={{-120,28},{-80,68}})));
   windControlEmulator windControlEmulator1(
     Tfv=Tfv,
     Kpv=Kpv,
@@ -344,6 +345,7 @@ protected
     parameter Real Tp=0.50000E-01 " Pelec filter in fast PF controller";
     parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
     parameter Real p0;
+    parameter Real q0;
     Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(rotation=0, extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_REF_PF annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   equation
@@ -353,13 +355,13 @@ protected
     connect(u, K0.u) annotation (Line(points={{-204,0},{-158,0},{-122,0}}, color={0,0,127}));
     connect(Qcmdn1.y, Q_REF_PF) annotation (Line(points={{-39,0},{10,0},{10,0}}, color={0,0,127}));
     annotation (Diagram(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={Text(
-              extent={{-160,100},{-40,80}},
-              lineColor={255,0,0},
-              pattern=LinePattern.Dash,
-              lineThickness=0.5,
-              fillColor={0,0,255},
-              fillPattern=FillPattern.Solid,
-              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
+            extent={{-160,100},{-40,80}},
+            lineColor={255,0,0},
+            pattern=LinePattern.Dash,
+            lineThickness=0.5,
+            fillColor={0,0,255},
+            fillPattern=FillPattern.Solid,
+            textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
           Rectangle(
             extent={{-200,100},{0,-100}},
             lineColor={28,108,200},

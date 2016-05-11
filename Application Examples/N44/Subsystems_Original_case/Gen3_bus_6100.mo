@@ -38,8 +38,6 @@ model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GEN
     q_NL=0.1) annotation (Placement(transformation(extent={{-58,68},{-8,90}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=61 "K",
-    V_c0=PSSE_data.voltages.V6100,
-    V_0=PSSE_data.voltages.V6100,
     T_AT_B=0.25385,
     T_B=13,
     T_E=0.05,
@@ -81,8 +79,6 @@ equation
           {14,-26.99},{20.2333,-26.99}},                                                                      color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{20.2333,-44.93},{0,-44.93},
           {0,-56},{-18.5,-56}},                                                                        color={0,0,127}));
-  connect(sCRX.ETERM, gENSAL.ETERM) annotation (Line(points={{19.7667,-57.58},{
-          14,-57.58},{14,37},{0.56,37}},                                                                      color={0,0,127}));
   annotation (
     Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

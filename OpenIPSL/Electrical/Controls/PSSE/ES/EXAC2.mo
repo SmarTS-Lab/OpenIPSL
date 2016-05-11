@@ -1,6 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model EXAC2
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
+  import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
+
   import OpenIPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Interfaces.RealInput XADIFD "Field current"
     annotation (Placement(transformation(
@@ -96,15 +98,10 @@ public
 initial equation
   Ifd0 = XADIFD;
   // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
-  if Ifd0 <= 0 then
-    VE0 = Efd0;
-  elseif K_C*Ifd0/(Efd0 + 0.577*K_C*Ifd0) <= 0.433 then
-    VE0 = Efd0 + 0.577*K_C*Ifd0;
-  elseif K_C*Ifd0/sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75) > 0.433 and K_C*Ifd0/sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75) < 0.75 then
-    VE0 = sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75);
-  else
-    VE0 = (Efd0 + 1.732*K_C*Ifd0)/1.732;
-  end if;
+  VE0 = invFEX(
+    K_C=K_C,
+    Efd0=Efd0,
+    Ifd0=Ifd0);
   // Case IN>0 not checked because it will be resolved in the next iteration
   VFE0 = VE0*(SE(
     VE0,

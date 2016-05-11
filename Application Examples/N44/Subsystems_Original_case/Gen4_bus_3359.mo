@@ -43,8 +43,6 @@ model Gen4_bus_3359 "Configuration of synchronous generator with regulators: GEN
 
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=165,
-    V_c0=PSSE_data.voltages.V3359,
-    V_0=PSSE_data.voltages.A3359,
     T_AT_B=0.2,
     T_B=10,
     T_E=0.04,
@@ -92,8 +90,6 @@ equation
           -14.1},{22,-86.635},{31.2292,-86.635}},                                                                   color={0,0,127}));
   connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.2292,-47.775},{10,
           -47.775},{10,-58},{0.5,-58}},                                                                  color={0,0,127}));
-  connect(sCRX.ETERM, gENROU.ETERM) annotation (Line(points={{30.7708,-74.91},{
-          26,-74.91},{26,25.5},{8.48,25.5}},                                                                      color={0,0,127}));
   annotation (
     Icon(graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

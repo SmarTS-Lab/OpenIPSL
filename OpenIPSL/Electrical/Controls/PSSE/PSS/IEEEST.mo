@@ -1,11 +1,11 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model IEEEST "IEEE Stabilizing Model with single Input"
-  parameter Real A_1 "Filter Coefficient";
-  parameter Real A_2 "Filter Coefficient";
-  parameter Real A_3 "Filter Coefficient";
-  parameter Real A_4 "Filter Coefficient";
-  parameter Real A_5 "Filter Coefficient";
-  parameter Real A_6 "Filter Coefficient";
+  parameter Real A_1=0 "Filter Coefficient";
+  parameter Real A_2=0 "Filter Coefficient";
+  parameter Real A_3=0 "Filter Coefficient";
+  parameter Real A_4=0 "Filter Coefficient";
+  parameter Real A_5=0 "Filter Coefficient";
+  parameter Real A_6=0 "Filter Coefficient";
   parameter Real T_1=0 "Lead Time Constant";
   parameter Real T_2=0 "Lag Time Constant";
   parameter Real T_3=0 "Lead Time Constant";
@@ -39,8 +39,7 @@ model IEEEST "IEEE Stabilizing Model with single Input"
   Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
     annotation (Placement(transformation(extent={{-125,-5},{-115,5}}, rotation=0), iconTransformation(extent={{-128,-30},{-108,-10}})));
   Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN) annotation (Placement(transformation(extent={{100,-5},{110,5}})));
-  Modelica.Blocks.Interfaces.RealInput V_CT
-    "Compensated machine terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput V_CT "Compensated machine terminal voltage (pu)"
     annotation (Placement(transformation(extent={{-125,30},{-115,40}}, rotation=0), iconTransformation(extent={{-128,10},{-108,30}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     T=T_6,
@@ -58,9 +57,9 @@ protected
   parameter Integer n1=if (A_1 == 0 and A_2 == 0) then 4 elseif (A_2 == 0) then 2 else 3;
   parameter Integer n2=if (A_3 == 0 and A_4 == 0) then 4 elseif (A_4 == 0) then 2 else 3;
   parameter Integer n3=if (A_6 == 0 and A_5 == 0) then 1 elseif (A_6 == 0) then 2 else 3;
-  parameter Real a1[n1](fixed=false);
-  parameter Real a2[n2](fixed=false);
-  parameter Real b[n3](fixed=false);
+  parameter Real a1[n1](each fixed=false);
+  parameter Real a2[n2](each fixed=false);
+  parameter Real b[n3](each fixed=false);
 
   Modelica.Blocks.Continuous.TransferFunction Filter2_1(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
@@ -169,16 +168,21 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-120,-40},{120,40}},
-        grid={1,1}), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),Text(
+        grid={1,1}), graphics={
+        Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-46,40},{54,-44}},
           lineColor={0,0,255},
-          textString="IEEEST"),Text(
+          textString="IEEEST"),
+        Text(
           extent={{-106,-10},{-84,-30}},
           lineColor={0,0,255},
-          textString="V_S"),Text(
+          textString="V_S"),
+        Text(
           extent={{84,14},{118,-16}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-106,32},{-78,8}},
           lineColor={0,0,255},
           textString="V_CT")}),

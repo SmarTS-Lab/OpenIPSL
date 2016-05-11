@@ -89,7 +89,6 @@ model G3
 equation
   connect(gENROU.p, pwPin) annotation (Line(points={{33,0},{72,0},{110,0}}, color={0,0,255}));
   connect(gENROU.ETERM, sT5B.ECOMP) annotation (Line(points={{32.4,15},{44,15},{44,-48},{29,-48}}, color={0,0,127}));
-  connect(sT5B.ETERM, sT5B.ECOMP) annotation (Line(points={{29,-56},{44,-56},{44,-48},{29,-48}}, color={0,0,127}));
   connect(sT5B.XADIFD, gENROU.XADIFD) annotation (Line(points={{29,-64},{38,-64},{38,-27},{32.4,-27}}, color={0,0,127}));
   connect(sT5B.EFD0, gENROU.EFD0) annotation (Line(points={{29,-72},{40,-72},{40,-21},{32.4,-21}}, color={0,0,127}));
   connect(gENROU.SPEED, pSS2B.V_S1) annotation (Line(points={{32.4,27},{66,27},{66,-94},{56,-94}}, color={0,0,127}));

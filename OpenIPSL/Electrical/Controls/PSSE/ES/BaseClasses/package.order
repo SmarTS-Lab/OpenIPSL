@@ -8,3 +8,4 @@ RotatingExciterWithDemagnetizationVarLim
 RectifierCommutationVoltageDrop
 calculate_dc_exciter_params
 RotatingExciterBase
+invFEX

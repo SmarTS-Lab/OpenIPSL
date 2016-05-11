@@ -38,8 +38,6 @@ model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GEN
     q_NL=0.1) annotation (Placement(transformation(extent={{-58,58},{0,90}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=31,
-    V_c0=PSSE_data.voltages.V3245,
-    V_0=PSSE_data.voltages.V3245,
     T_AT_B=0.25385,
     T_B=13,
     T_E=0.05,
@@ -52,10 +50,7 @@ model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GEN
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 
-  connect(p, p) annotation (Line(
-      points={{110,0},{104,0},{104,0},{110,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
+
   connect(gENSAL.p, p) annotation (Line(points={{4.15,11},{44,11},{44,0},{110,0}}, color={0,0,255}));
   connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{85.9,-54.71},{94,-54.71},{94,-92},{-74,-92},{-74,-6.5},{-61.37,-6.5}}, color={0,0,127}));
   connect(cte.y, sCRX.VOTHSG) annotation (Line(points={{-16.5,-52},{6,-52},{6,-37.89},{31.225,-37.89}}, color={0,0,127}));
@@ -67,7 +62,6 @@ equation
   connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{3.52,28.5},{26,28.5},{26,-29.77},{31.225,-29.77}}, color={0,0,127}));
   connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.225,-44.85},{6,-44.85},{6,-52},{-16.5,-52}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{31.225,-52.39},{7.6125,-52.39},{7.6125,-52},{-16.5,-52}}, color={0,0,127}));
-  connect(sCRX.ETERM, gENSAL.ETERM) annotation (Line(points={{30.775,-68.34},{26,-68.34},{26,28.5},{3.52,28.5}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
