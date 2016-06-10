@@ -39,8 +39,10 @@ protected
 protected
   parameter Real Vb2new=Vbus*Vbus;
   parameter Real Vb2old=Vn*Vn;
-  parameter Real xL=x_L*(Vb2old*SystemBase)/(Vb2new*Sn) "Reactance(inductive),p.u";
-  parameter Real xC=x_C*(Vb2old*SystemBase)/(Vb2new*Sn) "Reactance(capacitive),p.u";
+  parameter Real xL=x_L*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Reactance(inductive),p.u";
+  parameter Real xC=x_C*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Reactance(capacitive),p.u";
   parameter Real X=XL*(Vb2old*SystemBase)/(Vb2new*Sn) "Line Reactance,p.u";
   parameter Real kx=sqrt(xC/xL);
   parameter Real XL2=(1 - Cp)*XL;

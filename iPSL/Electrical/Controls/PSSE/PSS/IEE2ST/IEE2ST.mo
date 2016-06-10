@@ -49,7 +49,8 @@ model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
     T1=T_9,
     T2=T_10,
     y_start=0) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
-  Modelica.Blocks.Interfaces.RealInput VCT "Compensated machine terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput VCT
+    "Compensated machine terminal voltage (pu)"
     annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=90,

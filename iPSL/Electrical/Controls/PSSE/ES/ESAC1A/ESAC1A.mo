@@ -8,9 +8,11 @@ model ESAC1A
         extent={{-5,-6},{5,6}},
         rotation=90,
         origin={-0.5,-54.9})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-220,24},{-210,36}}), iconTransformation(extent={{-220,24},{-210,36}})));
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Input, generator terminal voltage"                                          annotation (Placement(transformation(extent={{-220,24},{-210,36}}), iconTransformation(extent={{-220,24},{-210,36}})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG "Upss" annotation (Placement(transformation(extent={{-220,-36},{-210,-24}}), iconTransformation(extent={{-220,-36},{-210,-24}})));
-  Modelica.Blocks.Interfaces.RealInput VOEL "value from the Over Excitation Limiter" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput VOEL
+    "value from the Over Excitation Limiter"                                         annotation (Placement(transformation(
         extent={{-5,-6},{5,6}},
         rotation=270,
         origin={43,62}), iconTransformation(

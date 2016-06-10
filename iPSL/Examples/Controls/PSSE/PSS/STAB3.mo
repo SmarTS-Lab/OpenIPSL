@@ -1,5 +1,6 @@
 within iPSL.Examples.Controls.PSSE.PSS;
-model STAB3 "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model STAB3
+  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   extends iPSL.Examples.SMIBpartial;
   iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
     Xppd=0.2,

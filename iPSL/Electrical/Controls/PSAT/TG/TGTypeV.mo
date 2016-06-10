@@ -1,5 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.TG;
-model TGTypeV "Hydro Turbine (Nonlinear model) and Governor (PI controller combined with servomotor)- control scheme Type 5"
+model TGTypeV
+  "Hydro Turbine (Nonlinear model) and Governor (PI controller combined with servomotor)- control scheme Type 5"
   parameter Real Tg "Servomotor droop (pu)";
   parameter Real gmax "Maximum gate opening (pu)";
   parameter Real gmin "Minimum gate opening (pu)";

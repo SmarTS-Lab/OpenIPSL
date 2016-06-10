@@ -15,10 +15,13 @@ model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
   Modelica.Blocks.Interfaces.RealInput VOTHSG "PSS output Upss" annotation (Placement(transformation(extent={{-100,-10},{-94,-2}}), iconTransformation(extent={{-112,-22},{-102,-12}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-100,-18},{-94,-10}}), iconTransformation(extent={{-112,-34},{-102,-24}})));
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(extent={{-100,-26},{-94,-18}}), iconTransformation(extent={{-112,-46},{-102,-36}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP(start=Ec0) "Input, generator terminal voltage"
+  Modelica.Blocks.Interfaces.RealInput ECOMP(start=Ec0)
+    "Input, generator terminal voltage"
     annotation (Placement(transformation(extent={{-100,6},{-92,14}}), iconTransformation(extent={{-112,8},{-102,18}})));
-  Modelica.Blocks.Interfaces.RealInput EFD0 "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-100,-36},{-94,-28}}), iconTransformation(extent={{-112,-8},{-102,2}})));
-  Modelica.Blocks.Interfaces.RealInput ETERM(start=Et0) "Ternimal voltage of generator bus"
+  Modelica.Blocks.Interfaces.RealInput EFD0 "Input, generator terminal voltage"
+                                                                                annotation (Placement(transformation(extent={{-100,-36},{-94,-28}}), iconTransformation(extent={{-112,-8},{-102,2}})));
+  Modelica.Blocks.Interfaces.RealInput ETERM(start=Et0)
+    "Ternimal voltage of generator bus"
     annotation (Placement(transformation(extent={{-104,40},{-94,50}}), iconTransformation(extent={{-100,34},{-90,44}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(transformation(extent={{-100,-56},{-90,-44}}), iconTransformation(extent={{-100,-72},{-90,-62}})));
   iPSL.NonElectrical.Logical.NegCurLogic negCurLogic(RC_rfd=r_cr_fd, nstartvalue=Efd0) annotation (Placement(transformation(extent={{70,-18},{110,20}})));

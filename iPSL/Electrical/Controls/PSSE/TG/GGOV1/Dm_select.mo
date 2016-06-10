@@ -1,5 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.TG.GGOV1;
-block Dm_select "Output the minimum and the maximum element of the input vector"
+block Dm_select
+  "Output the minimum and the maximum element of the input vector"
   parameter Real Dm;
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{100,-12},{120,8}}, rotation=0)));
   Modelica.Blocks.Interfaces.RealInput speed

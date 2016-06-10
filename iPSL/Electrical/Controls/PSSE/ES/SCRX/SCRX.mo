@@ -1,6 +1,7 @@
 within iPSL.Electrical.Controls.PSSE.ES.SCRX;
 model SCRX "Bus Fed or Solid Fed Static Exciter"
-  parameter Real V_c0 "Magnitude of the compensated generator terminal voltage" annotation (Dialog(group="Power flow data"));
+  parameter Real V_c0 "Magnitude of the compensated generator terminal voltage"
+                                                                                annotation (Dialog(group="Power flow data"));
   parameter Real V_0 "Magnitude of the generator terminal voltage" annotation (Dialog(group="Power flow data"));
   parameter Real T_AT_B;
   parameter Real T_B;
@@ -27,7 +28,8 @@ model SCRX "Bus Fed or Solid Fed Static Exciter"
     T2=T_B) annotation (Placement(transformation(extent={{-28,-10},{-8,10}})));
   iPSL.NonElectrical.Logical.NegCurLogic negCurLogic(nstartvalue=efd0, RC_rfd=r_cr_fd) annotation (Placement(transformation(extent={{66,-22},{110,22}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(transformation(extent={{-114,-48},{-104,-36}}), iconTransformation(extent={{-126,-38},{-116,-28}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Ternimal voltage of generator bus" annotation (Placement(transformation(extent={{-114,22},{-104,32}}), iconTransformation(extent={{-124,62},{-114,72}})));
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Ternimal voltage of generator bus"                                          annotation (Placement(transformation(extent={{-114,22},{-104,32}}), iconTransformation(extent={{-124,62},{-114,72}})));
   Modelica.Blocks.Sources.Constant const(k=VREF) annotation (Placement(transformation(extent={{-100,40},{-80,60}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-86,-30},{-66,-10}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(

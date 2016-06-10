@@ -13,7 +13,8 @@ model HYGOV
   parameter Real D_turb=0.2 "Turbine damping";
   parameter Real q_NL=0.08 "Water flow at no load";
   Modelica.Blocks.Sources.Constant n_ref(k=nref) annotation (Placement(transformation(extent={{-178,14},{-166,26}})));
-  Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
+  Modelica.Blocks.Interfaces.RealInput SPEED
+    "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-206,-10},{-192,4}}), iconTransformation(extent={{-84,24},{-72,36}})));
   iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
     K=1,
@@ -33,7 +34,8 @@ model HYGOV
     K=1,
     T=T_g,
     y_start=g0) "servo_motor" annotation (Placement(transformation(extent={{-40,0},{-28,12}})));
-  Modelica.Blocks.Interfaces.RealInput PMECH0 "Initial turbine mechanical power (pu)"
+  Modelica.Blocks.Interfaces.RealInput PMECH0
+    "Initial turbine mechanical power (pu)"
     annotation (Placement(transformation(extent={{-84,-62},{-76,-52}}), iconTransformation(extent={{-84,-36},{-72,-24}})));
   Modelica.Blocks.Nonlinear.Limiter Velocity_Limiter(uMin=-VELM, uMax=VELM) annotation (Placement(transformation(extent={{-86,0},{-74,12}})));
   Modelica.Blocks.Continuous.LimIntegrator Position_Limiter(

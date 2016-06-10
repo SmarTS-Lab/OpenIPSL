@@ -5,7 +5,8 @@ model OEL "OverExcitation Limiter"
   parameter Real f "OEL parameter";
   parameter Real L1 "OEL parameter";
   parameter Real init_OEL_Timer=L1 "Initial output value";
-  Modelica.Blocks.Sources.Constant ifd_lim_value(k=ifd_lim) "Limitation of filed current" annotation (Placement(transformation(extent={{-98,-28},{-80,-10}})));
+  Modelica.Blocks.Sources.Constant ifd_lim_value(k=ifd_lim)
+    "Limitation of filed current"                                                         annotation (Placement(transformation(extent={{-98,-28},{-80,-10}})));
   iPSL.NonElectrical.Nonlinear.SaturationBlockTan block_1_1(r=r, f=f) annotation (Placement(transformation(extent={{-42,-16},{18,38}})));
   Modelica.Blocks.Continuous.LimIntegrator Timer(
     k=1,

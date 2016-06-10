@@ -1,5 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.TG;
-model TGTypeVI "Hydro Turbine (Nonlinear model) and Governor (PID controller combined with servomotor)- control scheme Type 6"
+model TGTypeVI
+  "Hydro Turbine (Nonlinear model) and Governor (PID controller combined with servomotor)- control scheme Type 6"
   parameter Real gmax "Maximum gate opening (pu)";
   parameter Real gmin "Minimum gate opening (pu)";
   parameter Real vmax "Maximum gate opening rate (pu)";

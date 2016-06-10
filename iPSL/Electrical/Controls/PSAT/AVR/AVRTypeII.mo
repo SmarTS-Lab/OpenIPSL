@@ -3,7 +3,8 @@ model AVRTypeII "PSAT AVR Type 2"
 
   Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage (pu)" annotation (Placement(transformation(extent={{-98,-8},{-78,12}}), iconTransformation(extent={{-98,-28},{-62,8}})));
   Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (Placement(transformation(extent={{74,22},{94,42}}), iconTransformation(extent={{68,8},{102,44}})));
-  Modelica.Blocks.Interfaces.RealInput vref "Reference generator terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput vref
+    "Reference generator terminal voltage (pu)"
     annotation (Placement(transformation(extent={{-96,40},{-76,60}}), iconTransformation(extent={{-98,36},{-62,72}})));
   parameter Real vrmin "Minimum regulator voltage (pu)";
   parameter Real vrmax "Maximum regulator voltage (p.u..)";

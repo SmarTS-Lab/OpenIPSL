@@ -3,7 +3,8 @@ model EXAC1
   import iPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-108,-86},{-94,-72}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (Placement(transformation(extent={{-108,38},{-94,52}}), iconTransformation(extent={{-100,54},{-90,66}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Compensated generator terminal voltage"
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Compensated generator terminal voltage"
     annotation (Placement(transformation(extent={{-104,14},{-94,26}}), iconTransformation(extent={{-100,-6},{-90,6}})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG "PSS output signal" annotation (Placement(transformation(extent={{-122,-26},{-112,-14}}), iconTransformation(extent={{-100,34},{-90,46}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-122,-46},{-112,-34}}), iconTransformation(extent={{-100,-56},{-90,-44}})));

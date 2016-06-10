@@ -1,15 +1,19 @@
 within iPSL.Electrical.Controls.PSSE.TG;
 model IEESGO "IEEE Standard Model for Turbine-Governor"
-  input Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
+  input Modelica.Blocks.Interfaces.RealInput SPEED
+    "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-140,-2},{-128,10}}), iconTransformation(extent={{-160,22},{-144,38}})));
-  input Modelica.Blocks.Interfaces.RealInput PMECH0 "Initial value of turbine mechanical power (pu)"
+  input Modelica.Blocks.Interfaces.RealInput PMECH0
+    "Initial value of turbine mechanical power (pu)"
     annotation (Placement(transformation(extent={{-140,24},{-128,36}}), iconTransformation(extent={{-160,-48},{-144,-32}})));
   parameter Real T_1=0.2 "Controller lag (s)";
   parameter Real T_2=0 "Controller lead compensation (s)";
   parameter Real T_3=0.5 "Governor lag (s)";
-  parameter Real T_4=0.12 "Delay due to steam inlet volumes associated with steam chest and inlet piping (s)";
+  parameter Real T_4=0.12
+    "Delay due to steam inlet volumes associated with steam chest and inlet piping (s)";
   parameter Real T_5=5 "Reheater delay including hot and cold leads (s)";
-  parameter Real T_6=0.5 "Delay due to IP-LP turbine, crossover pipes, and LP end hoods (s)";
+  parameter Real T_6=0.5
+    "Delay due to IP-LP turbine, crossover pipes, and LP end hoods (s)";
   parameter Real K_1=20 "1/p.u. regulation ";
   parameter Real K_2=0.59 "Fraction ";
   parameter Real K_3=0.43 "Fraction ";
@@ -36,7 +40,8 @@ model IEESGO "IEEE Standard Model for Turbine-Governor"
     K=K_3,
     T=T_6,
     y_start=p0*K_2*K_3) annotation (Placement(transformation(extent={{46,-66},{66,-46}})));
-  output Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
+  output Modelica.Blocks.Interfaces.RealOutput PMECH
+    "Turbine mechanical power (pu)"
     annotation (Placement(transformation(extent={{146,-22},{156,-10}}), iconTransformation(extent={{160,-10},{180,10}})));
   Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(extent={{-44,14},{-24,34}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=P_MAX, uMin=P_MIN) annotation (Placement(transformation(extent={{-14,14},{6,34}})));

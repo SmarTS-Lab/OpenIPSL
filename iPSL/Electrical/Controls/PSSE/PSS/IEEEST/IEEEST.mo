@@ -39,7 +39,8 @@ model IEEEST "IEEE Stabilizing Model with single Input"
   Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
     annotation (Placement(transformation(extent={{-125,-5},{-115,5}}, rotation=0), iconTransformation(extent={{-128,-30},{-108,-10}})));
   Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN) annotation (Placement(transformation(extent={{100,-5},{110,5}})));
-  Modelica.Blocks.Interfaces.RealInput V_CT "Compensated machine terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput V_CT
+    "Compensated machine terminal voltage (pu)"
     annotation (Placement(transformation(extent={{-125,30},{-115,40}}, rotation=0), iconTransformation(extent={{-128,10},{-108,30}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     T=T_6,

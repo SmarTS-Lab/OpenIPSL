@@ -2,7 +2,8 @@ within iPSL.Electrical.Controls.PSSE.ES.ESST1A;
 model ESST1A "IEEE Type ST1A Excitation System"
 
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-116.6,21.9},{-107,32}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage"
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Input, generator terminal voltage"
     annotation (Placement(transformation(extent={{-141.3,0.4},{-131.3,12.4}}),iconTransformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
@@ -149,7 +150,8 @@ model ESST1A "IEEE Type ST1A Excitation System"
   Modelica.Blocks.Nonlinear.VariableLimiter variableLimiter annotation (Placement(transformation(extent={{117,0},{129,12}})));
 protected
   parameter Real VREF(fixed=false) "Reference terminal voltage (pu)";
-  parameter Real Efd0(fixed=false) "Initial value of the excitation voltage as a parameter";
+  parameter Real Efd0(fixed=false)
+    "Initial value of the excitation voltage as a parameter";
   parameter Real IFD0(fixed=false);
   parameter Real VA0(fixed=false);
   parameter Real ECOMP0(fixed=false);

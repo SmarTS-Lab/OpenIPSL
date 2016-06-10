@@ -3,13 +3,16 @@ model EXAC2 "IEEE Type AC2 Excitation System"
   import iPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-130,-10},{-116,4}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD "Machine field current (pu)" annotation (Placement(transformation(extent={{-166,34},{-154,46}}), iconTransformation(extent={{-164,34},{-154,46}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Voltage regultor compensated voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Voltage regultor compensated voltage (pu)"
     annotation (Placement(transformation(extent={{-164,14},{-152,26}}), iconTransformation(extent={{-164,14},{-152,26}})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG "Stabilizer signal (pu)" annotation (Placement(transformation(extent={{-164,-26},{-152,-14}}), iconTransformation(extent={{-164,-26},{-152,-14}})));
-  Modelica.Blocks.Interfaces.RealInput VOEL "Maximum excitation limiter signal (pu)"
+  Modelica.Blocks.Interfaces.RealInput VOEL
+    "Maximum excitation limiter signal (pu)"
     annotation (Placement(transformation(extent={{-164,-66},{-152,-54}}), iconTransformation(extent={{-164,-66},{-152,-54}})));
   NonElectrical.Nonlinear.FEX fEX annotation (Placement(transformation(extent={{80,48},{64,64}})));
-  Modelica.Blocks.Interfaces.RealOutput EFD "Generator main field voltage (pu)" annotation (Placement(transformation(extent={{160,-6},{170,6}})));
+  Modelica.Blocks.Interfaces.RealOutput EFD "Generator main field voltage (pu)"
+                                                                                annotation (Placement(transformation(extent={{160,-6},{170,6}})));
   parameter Real VREF=1 "Reference terminal voltage (pu)";
   parameter Real T_R=0 "Voltage input time constant (s)";
   parameter Real T_B=0 "AVR lead-lag time constant (s)";
@@ -46,7 +49,8 @@ model EXAC2 "IEEE Type AC2 Excitation System"
     K=1,
     T=T_R,
     y_start=EC0) annotation (Placement(transformation(extent={{-132,-40},{-116,-24}})));
-  Modelica.Blocks.Interfaces.RealInput VUEL "Minimum excitation limiter signal (pu)"
+  Modelica.Blocks.Interfaces.RealInput VUEL
+    "Minimum excitation limiter signal (pu)"
     annotation (Placement(transformation(extent={{-164,-46},{-152,-34}}), iconTransformation(extent={{-164,-46},{-152,-34}})));
   NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
@@ -70,7 +74,8 @@ model EXAC2 "IEEE Type AC2 Excitation System"
         extent={{-9,-9},{9,9}},
         rotation=270,
         origin={-17,55})));
-  Modelica.Blocks.Interfaces.RealInput EFD0 "Initial value of generator main field voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput EFD0
+    "Initial value of generator main field voltage (pu)"
     annotation (Placement(transformation(extent={{-164,54},{-152,66}}), iconTransformation(extent={{-164,54},{-152,66}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-120,-62},{-108,-50}})));
   Modelica.Blocks.Math.Add3 add3_2(k2=-1) annotation (Placement(transformation(extent={{-94,-38},{-84,-28}})));

@@ -16,7 +16,8 @@ model AVRTypeI "PSAT Exciter Type 1"
   parameter Real vf0=1.046883400898693 "Initialization";
   parameter Real vm0=v0 "Initialization";
   parameter Real vr10=K0*(1 - T2/T1)*(vref0 - vm0) "Initialization";
-  parameter Real vr20=1/K0*(1 - T4/T3)*(vr10 + K0*(vref0 - vm0)*T2/T1) "Initialization";
+  parameter Real vr20=1/K0*(1 - T4/T3)*(vr10 + K0*(vref0 - vm0)*T2/T1)
+    "Initialization";
   parameter Real e=Modelica.Constants.e;
   Real Se;
   Real vm(start=vm0, fixed=true);

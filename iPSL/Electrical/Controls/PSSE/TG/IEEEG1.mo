@@ -1,6 +1,7 @@
 within iPSL.Electrical.Controls.PSSE.TG;
 model IEEEG1
-  Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal (pu)"
+  Modelica.Blocks.Interfaces.RealInput SPEED_HP
+    "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-172,2},{-162,14}}), iconTransformation(extent={{-162,-16},{-132,16}})));
   iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
@@ -55,8 +56,10 @@ model IEEEG1
         extent={{-6,-6},{6,6}},
         rotation=-90,
         origin={130,-16})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH_HP "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH_LP "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH_HP
+    "Turbine mechanical power (pu)"                                              annotation (Placement(transformation(extent={{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH_LP
+    "Turbine mechanical power (pu)"                                              annotation (Placement(transformation(extent={{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
   parameter Real P0 "Power reference of the governor";
   parameter Real K=20 "Governor gain, 1/R (pu)";
   parameter Real T_1=1e-8 "Control time constant (s)";

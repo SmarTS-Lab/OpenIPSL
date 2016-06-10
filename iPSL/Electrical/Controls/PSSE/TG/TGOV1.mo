@@ -1,7 +1,8 @@
 within iPSL.Electrical.Controls.PSSE.TG;
 model TGOV1 "Steam Turbine-Governor"
 
-  Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
+  Modelica.Blocks.Interfaces.RealInput SPEED
+    "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-85,-20},{-75,-8}}), iconTransformation(extent={{-80,20},{-60,40}})));
   iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     T1=T_2,

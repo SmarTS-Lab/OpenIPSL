@@ -1,5 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.ES.ST5B;
-model SelectLogic "Selection of voltage signal depending on the Excitation limiters"
+model SelectLogic
+  "Selection of voltage signal depending on the Excitation limiters"
   Modelica.Blocks.Interfaces.RealInput V1 annotation (Placement(transformation(extent={{-138,40},{-98,80}})));
   Modelica.Blocks.Interfaces.RealInput V2 annotation (Placement(transformation(extent={{-138,-20},{-98,20}})));
   Modelica.Blocks.Interfaces.RealInput V3 annotation (Placement(transformation(extent={{-138,-80},{-98,-40}})));

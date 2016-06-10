@@ -1,7 +1,8 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESDC1A;
 model ESDC1A
   import iPSL.NonElectrical.Functions.SE;
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-80,23},{-70,35}}), iconTransformation(extent={{-80,23},{-70,35}})));
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Input, generator terminal voltage"                                          annotation (Placement(transformation(extent={{-80,23},{-70,35}}), iconTransformation(extent={{-80,23},{-70,35}})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG "Upss" annotation (Placement(transformation(extent={{-80,4},{-70,16}}), iconTransformation(extent={{-80,4},{-70,16}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-80,-16},{-70,-4}}), iconTransformation(extent={{-80,-16},{-70,-4}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Output,excitation voltage" annotation (Placement(transformation(extent={{100,-6},{110,6}}), iconTransformation(extent={{100,-6},{110,6}})));

@@ -29,7 +29,8 @@ model IEEEX1
         rotation=180,
         origin={70,37})));
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(extent={{-133,22},{-127,28}}), iconTransformation(extent={{-130,40},{-120,50}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Compensated generator terminal voltage "
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Compensated generator terminal voltage "
     annotation (Placement(transformation(extent={{-133,-11},{-127,-5}}), iconTransformation(extent={{-130,-5},{-120,5}})));
   Modelica.Blocks.Interfaces.RealInput EFD0 "Input, generator terminal voltage"
     annotation (Placement(transformation(extent={{-133,-31},{-127,-25}}), iconTransformation(extent={{-130,-50},{-120,-40}})));
