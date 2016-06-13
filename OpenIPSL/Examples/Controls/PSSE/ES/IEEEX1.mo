@@ -25,7 +25,7 @@ model IEEEX1 "SMIB system with one load and GENROE model"
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-20,-52},{-40,-32}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.IEEEX1 iEEEX1_1(
     T_R=0.04,
-    KA=75,
+    K_A=75,
     T_A=0.05,
     T_B=1,
     T_C=1,

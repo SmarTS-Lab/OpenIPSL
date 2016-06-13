@@ -23,7 +23,7 @@ model IEEEX1
     K=1,
     y_start=VR0/K_A,
     x_start=V_REF - ECOMP0) annotation (Placement(transformation(extent={{0,-10},{20,10}})));
-  Modelica.Blocks.Math.Add3 V_Erro1(k3=1) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+  Modelica.Blocks.Math.Add3 V_Erro1(k3=-1) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
     T=T_F1,
