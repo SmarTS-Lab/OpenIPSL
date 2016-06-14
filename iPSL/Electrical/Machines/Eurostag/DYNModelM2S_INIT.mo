@@ -44,17 +44,18 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   //  puissance apparente nominale (SNOMG)
   parameter Real PN;
   parameter Real PNALT;
-  parameter Real sNTfo;
+  parameter Real sNTfo = if transformerIncluded then 100 else 0;
   parameter Real ur0;
   parameter Real ui0;
   parameter Real p0;
   parameter Real q0;
-  parameter Real uNResTfo;
-  parameter Real uNomNw;
-  parameter Real uNMacTfo;
-  parameter Real uBMac;
-  parameter Real rTfoIn;
-  parameter Real xTfoIn;
+   parameter Boolean transformerIncluded = false;
+  parameter Real uNResTfo = if  transformerIncluded then 24   else 0;
+  parameter Real uNomNw = if  transformerIncluded then 24  else 0;
+  parameter Real uNMacTfo = if  transformerIncluded then 400 else 0;
+  parameter Real uBMac = if  transformerIncluded then 400 else 0;
+  parameter Real rTfoIn = if  transformerIncluded then 0  else 0;
+  parameter Real xTfoIn = if  transformerIncluded then 0.136 else 0;
   parameter Real nDSat;
   //(fixed = false);
   parameter Real nQSat;
@@ -135,8 +136,8 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   // YXTI
   // per unitage complementaire, calcul de rrTfo (puingc.f)
   // ------------------------------------------------------
-  parameter Real ri=if rTfoIn > 0. or xTfoIn > 0. then uNResTfo/uNomNw/(uNMacTfo/uBMac) else 1.;
-  parameter Real rs=if rTfoIn > 0. or xTfoIn > 0. then (uNResTfo/uNomNw)^2*SNREF/sNTfo else 1.;
+  parameter Real ri=if  transformerIncluded then uNResTfo/uNomNw/(uNMacTfo/uBMac) else 1.;
+  parameter Real rs=if  transformerIncluded then (uNResTfo/uNomNw)^2*SNREF/sNTfo else 1.;
   parameter Real mSalNom=mD0Nom - mQ0Nom;
   parameter Real xQNom0=mQ0Nom + lQINom;
   parameter Real tetaNomNum0=uiNom + omegaNom*(xTfoNom + xQNom0)*irNom + (rTfoNom + rStatNom)*iiNom;
@@ -353,7 +354,7 @@ equation
   end if;
   // per unitage de parametres (park2.f)
   // -----------------------------------
-  ONE*yScale = if rTfoIn > 0. or xTfoIn > 0. then SNREF/SN*rrTfo*rrTfo else SNREF/SN;
+  ONE*yScale = if  transformerIncluded then SNREF/SN*rrTfo*rrTfo else SNREF/SN;
   // YSCALE
   rStat = rStatIn*yScale;
   // YI = RESARM * yScale;

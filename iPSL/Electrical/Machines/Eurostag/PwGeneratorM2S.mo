@@ -3,6 +3,7 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
                    The model corresponds to Eurostag's full model for M2S machine
                    (defined by external parameters). Developed by RTE and adapted by AIA.
                    2014/03/10"
+
   iPSL.Connectors.PwPin sortie annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
   Modelica.Blocks.Interfaces.RealInput pin_EFD annotation (Placement(transformation(extent={{-61,-40},{-41,-20}}), iconTransformation(extent={{-61,-40},{-41,-20}})));
   Modelica.Blocks.Interfaces.RealOutput pin_OMEGA annotation (Placement(transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={{-61,20},{-41,40}})));
@@ -24,43 +25,51 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
     tppQO_=TSQ0,
     tX_=TX,
     IENR=IENR);
-  Real cm(start=init_cm);
-  Real efd(start=init_efd);
+   Real cm(start = init_cm);
+  Real efd(start = init_efd);
   Real ur;
   //(start = ur0);
   Real ui;
-  //(start=ui0);
-  Real lambdaf(start=init_lambdaf);
-  Real lambdad(start=init_lambdad);
-  Real lambdaad(start=init_lambdaad);
-  Real lambdaaq(start=init_lambdaaq);
-  Real lambdaq1(start=init_lambdaq1);
-  Real lambdaq2(start=init_lambdaq2);
-  Real id(start=init_id);
-  Real iq(start=init_iq);
-  Real theta(start=init_theta);
-  Real omega(start=init_omega);
-  Real E;
-  Real Mds;
-  Real Mqs;
-  Real Md;
-  Real Mq;
-  Real Mi;
-  Real LMD;
-  Real LMQ;
+  Real lambdaf(start = init_lambdaf);
+  Real lambdad(start = init_lambdad);
+  Real lambdaad(start = init_lambdaad);
+  Real lambdaaq(start = init_lambdaaq);
+  Real lambdaq1(start = init_lambdaq1);
+  Real lambdaq2(start = init_lambdaq2);
+  Real id(start = init_id);
+  Real iq(start = init_iq);
+  Real theta(start = init_theta);
+  Real omega(start = init_omega);
+  Real E(start=init_E);
+  Real Mds(start = init_Mds);
+  Real Mqs(start = init_Mqs);
+  Real Md(start = init_Md);
+  Real Mq(start = init_Mq);
+  Real Mi(start = init_Mi);
+  Real LMD(start = init_LMD);
+  Real LMQ(start = init_LMQ);
   //INITIAL VALUES
-  parameter Real init_lambdaf=0;
-  parameter Real init_lambdad=0;
-  parameter Real init_lambdaad=0;
-  parameter Real init_lambdaaq=0;
-  parameter Real init_lambdaq1=0;
-  parameter Real init_lambdaq2=0;
-  parameter Real init_id=0;
-  parameter Real init_iq=0;
-  parameter Real init_theta=0;
-  parameter Real init_omega=1;
-  parameter Real init_cm=0;
-  parameter Real init_efd=0;
+  parameter Real init_lambdaf;
+  parameter Real init_lambdad;
+  parameter Real init_lambdaad;
+  parameter Real init_lambdaaq;
+  parameter Real init_lambdaq1;
+  parameter Real init_lambdaq2;
+  parameter Real init_id;
+  parameter Real init_iq;
+  parameter Real init_theta;
+  parameter Real init_omega;
+  parameter Real init_cm;
+  parameter Real init_efd;
+  parameter Real init_E = sqrt(init_lambdaad*init_lambdaad + init_lambdaaq*init_lambdaaq);
+  parameter Real init_Mds = if Saturated then Md0/(1 + md/rtfo^snd*init_E^snd) else Md0;
+  parameter Real init_Mqs = if Saturated then  Mq0/(1 + mq/rtfo^snq*init_E^snq) else Mq0;
+  parameter Real init_Mi = init_Mds*init_lambdaad*init_lambdaad/(init_E*init_E) + init_Mqs*init_lambdaaq*init_lambdaaq/(init_E*init_E);
+  parameter Real init_Md = init_Mi + Mdif*init_lambdaaq*init_lambdaaq/(init_E*init_E);
+  parameter Real init_Mq = init_Mi - Mdif*init_lambdaad*init_lambdaad/(init_E*init_E);
+  parameter Real init_LMD = 1.0/(1.0/init_Md + Sdet);
+  parameter Real init_LMQ = 1.0/(1.0/init_Mq + Slq);
+
   // GENERAL PARAMETERS
   parameter Real omega0=2*3.14159265*50 "Nominal network angular frequency";
   parameter Real SNREF=100 "MVA system base";
@@ -71,18 +80,19 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real HIn=6.3 "Constant of inertia";
   parameter Real IENR=3 "number of windings";
   // PARAMETERS COMING FROM LF
-  //   parameter Real ur0 = 1
-  //     "Initial real voltage component p.u. in the SNREF base";
-  //   parameter Real ui0 = 0
-  //     "Initial imaginary voltage component p.u. in the SNREF base";
-  //   parameter Real ir0 = 1;
-  //   parameter Real ii0 = 0;
-  parameter Real p0_0=0 "Initial active power";
-  parameter Real q0_0=0 "Initial active power";
+ //    parameter Real ur0 = 1
+   // "Initial real voltage component p.u. in the SNREF base";
+   //  parameter Real ui0 = 0
+   // "Initial imaginary voltage component p.u. in the SNREF base";
+    //   parameter Real ir0 = 1;
+    //   parameter Real ii0 = 0;
+ // parameter Real p0_0=0 "Initial active power";
+ // parameter Real q0_0=0 "Initial active power";
   // EXTERNAL PARAMETERS (GIVEN) per-unit in the machine SN base.
   parameter Real rStatIn=0 "Stator resistance p.u. in the machine SN base";
   parameter Real lStatIn=0 "Stator leakage p.u. in the machine SN base";
-  parameter Real WLMDVPu=0 "d axis mutual inductance corresponding to magnetic condition taken for setting the voltage regulator";
+  parameter Real WLMDVPu=0
+    "d axis mutual inductance corresponding to magnetic condition taken for setting the voltage regulator";
   parameter Real XD=0 "Direct reactance";
   parameter Real XPD=0 "Direct trans. reactance";
   parameter Real XSD=0 "Direct subtrans. reactance";
@@ -102,24 +112,36 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real snd=6 "Coefficient nd of the saturation curve";
   parameter Real snq=6 "Coefficient nq of the saturation curve";
   // INTERNAL PARAMETERS (COMPUTED) per-unit in the machine SN base.
-  parameter Real mCanPu=extern.mrc "CANAY's inductance p.u. in the machine SN base";
-  parameter Real rDPu=extern.rD "d axis damper winding resistance p.u. in the machine SN base";
-  parameter Real lDPu=extern.lD "d axis damper winding leakage p.u. in the machine SN base";
-  parameter Real rRotIn=extern.rf "Rotor resistance p.u. in the machine SN base";
+  parameter Real mCanPu=extern.mrc
+    "CANAY's inductance p.u. in the machine SN base";
+  parameter Real rDPu=extern.rD
+    "d axis damper winding resistance p.u. in the machine SN base";
+  parameter Real lDPu=extern.lD
+    "d axis damper winding leakage p.u. in the machine SN base";
+  parameter Real rRotIn=extern.rf
+    "Rotor resistance p.u. in the machine SN base";
   parameter Real lRotIn=extern.lf "Rotor leakage p.u. in the machine SN base";
-  parameter Real mQ0Pu=extern.mQ0Pu_ "q axis mutual inductance p.u. in the machine SN base";
-  parameter Real mD0Pu=extern.mD0Pu_ "d axis mutual inductance p.u. in the machine SN base";
-  parameter Real rQ1Pu=extern.rQ1 "q axis damper 1 winding resistance p.u. in the machine SN base";
-  parameter Real lQ1Pu=extern.lQ1 "q axis damper 1 winding leakeage p.u. in the machine SN base";
-  parameter Real rQ2Pu=extern.rQ2 "q axis damper 2 winding resistance p.u. in the machine SN base";
-  parameter Real lQ2Pu=extern.lQ2 "q axis damper 2 winding leakeage p.u. in the machine SN base";
+  parameter Real mQ0Pu=extern.mQ0Pu_
+    "q axis mutual inductance p.u. in the machine SN base";
+  parameter Real mD0Pu=extern.mD0Pu_
+    "d axis mutual inductance p.u. in the machine SN base";
+  parameter Real rQ1Pu=extern.rQ1
+    "q axis damper 1 winding resistance p.u. in the machine SN base";
+  parameter Real lQ1Pu=extern.lQ1
+    "q axis damper 1 winding leakeage p.u. in the machine SN base";
+  parameter Real rQ2Pu=extern.rQ2
+    "q axis damper 2 winding resistance p.u. in the machine SN base";
+  parameter Real lQ2Pu=extern.lQ2
+    "q axis damper 2 winding leakeage p.u. in the machine SN base";
   parameter Real U1N=24 "nominal voltage machine side";
   parameter Real V1=24 "base voltage machine side";
   parameter Real U2N=400 "nominal voltage machine side";
   parameter Real V2=380 "base voltage machine side";
   parameter Boolean transformerIncluded=false;
-  parameter Real RTfoPu=if transformerIncluded then 0.000185 else 0 "Machine transoformer resistance p.u. in the SNTfo base";
-  parameter Real XTfoPu=if transformerIncluded then 0.00769 else 0 "Machine transoformer resistance p.u. in the SNTfo base";
+  parameter Real RTfoPu=if transformerIncluded then 0.000185 else 0
+    "Machine transoformer resistance p.u. in the SNTfo base";
+  parameter Real XTfoPu=if transformerIncluded then 0.00769 else 0
+    "Machine transoformer resistance p.u. in the SNTfo base";
   // CALCULATION AND PER-UNITING OF PARAMETERS.
   //parameter Real yscale=SNREF/SN;
   parameter Real yscale=if RT > 0.0 or XT > 0.0 then SNREF/SN*rtfo*rtfo else SNREF/SN;
@@ -135,14 +157,17 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real rQ2=rQ2Pu*yscale "q axis damper 2 winding resistance";
   parameter Real lQ1=lQ1Pu*yscale "q axis damper 1 winding leakeage";
   parameter Real lQ2=lQ2Pu*yscale "q axis damper 2 winding leakeage";
-  parameter Real RT=RTfoPu*SNREF/SNtfo*rtfo*rtfo "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
-  parameter Real XT=XTfoPu*SNREF/SNtfo*rtfo*rtfo "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
+  parameter Real RT=RTfoPu*SNREF/SNtfo*rtfo*rtfo
+    "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
+  parameter Real XT=XTfoPu*SNREF/SNtfo*rtfo*rtfo
+    "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
   parameter Real Md0=mD0Pu*yscale "d axis mutual inductance";
   parameter Real Mq0=mQ0Pu*yscale "q axis mutual inductance";
   parameter Real Mdv=WLMDVPu*yscale;
   parameter Real D=DIn*SN/SNREF "Mechanical damping coefficient";
   parameter Real H=HIn*SN/SNREF "Constant of inertia";
-  parameter Real rtfo=if transformerIncluded then U2N/V2/(U1N/V1) else 1 "Transformer ratio";
+  parameter Real rtfo=if transformerIncluded then U2N/V2/(U1N/V1) else 1
+    "Transformer ratio";
   parameter Real DET=lf*lD + mrc*lf + mrc*lD;
   parameter Real Mdif=Md0 - Mq0;
   parameter Real Sdet=lf/DET + lD/DET;
@@ -215,7 +240,7 @@ equation
   der(lambdad) = lambdaf*Coef21 - lambdad*Coef22 + lambdaad*Coef23;
   der(lambdaq1) = (-lambdaq1*Coef31) + lambdaaq*Coef32;
   der(lambdaq2) = (-lambdaq2*Coef41) + lambdaaq*Coef42;
-  der(omega) = cm*Coef51 + (omegaRef - omega)*Coef52 + lambdaad*iq*Coef53 - lambdaaq*id*Coef53;
+  der(omega) =cm*Coef51 + (omegaRef - omega)*Coef52 + lambdaad*iq*Coef53 - lambdaaq*id*Coef53;
   der(theta) = (omega - omegaRef)*omega0;
   E = sqrt(lambdaad*lambdaad + lambdaaq*lambdaaq);
   if Saturated then
@@ -245,8 +270,7 @@ equation
   sortie.vr = ur;
   sortie.vi = ui;
   //Terminal Voltage
-  pin_TerminalVoltage = sqrt((sortie.vr - RT*sortie.ir + XT*sortie.ii)*(sortie.vr - RT*sortie.ir + XT*sortie.ii) + (sortie.vi - RT*sortie.ii - XT*sortie.ir)*(sortie.vi - RT*sortie.ii - XT*sortie.ir))
-    *1/rtfo;
+  pin_TerminalVoltage =sqrt((sortie.vr - RT*sortie.ir + XT*sortie.ii)*(sortie.vr - RT*sortie.ir + XT*sortie.ii) + (sortie.vi - RT*sortie.ii - XT*sortie.ir)*(sortie.vi - RT*sortie.ii - XT*sortie.ir))*1/rtfo;
   //TerminalVoltage = sqrt(sortie.vr*sortie.vr+sortie.vi*sortie.vi);
   //ActivePower PN-base
   pin_ActivePowerPN = (sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii))*SNREF/PN;

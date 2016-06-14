@@ -1,5 +1,5 @@
 within iPSL.Electrical;
-package Branches 
+package Branches
 
 
 annotation (Documentation(revisions="<html>

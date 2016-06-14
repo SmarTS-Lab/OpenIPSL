@@ -1,5 +1,6 @@
 within ;
 package iPSL "iTesla Power System Library"
+extends Modelica.Icons.Package;
 
 
 annotation (
