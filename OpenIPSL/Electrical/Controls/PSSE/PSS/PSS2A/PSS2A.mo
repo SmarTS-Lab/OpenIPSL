@@ -11,7 +11,8 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real T_8=0.5 "Ramp-tracking filter time constant";
   parameter Real T_9=0.1 "Ramp-tracking filter time constant";
   parameter Real K_S1=20 "PSS gain";
-  parameter Real T_1=0.15 "Leadlag1 time constant (data from IEEE std, not representive, need to be tuned following system parameters)";
+  parameter Real T_1=0.15
+    "Leadlag1 time constant (data from IEEE std, not representive, need to be tuned following system parameters)";
   parameter Real T_2=0.025 "Leadlag1 time constant";
   parameter Real T_3=0.15 "Leadlag2 time constant";
   parameter Real T_4=0.025 "Leadlag2 time constant";

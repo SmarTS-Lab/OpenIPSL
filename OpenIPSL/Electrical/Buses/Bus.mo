@@ -16,6 +16,10 @@ model Bus "Bus model
   Real angle(start=angle_0) "Bus voltage angle (deg)";
   parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
   parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
+    "Initial voltage at node in p.u. (Real part)";
+  parameter Real Vo_img = V_0*sin(angle_0*Modelica.Constants.pi/180)
+    "Initial voltage at node in p.u. (Imaginary part)";
 equation
   V = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;

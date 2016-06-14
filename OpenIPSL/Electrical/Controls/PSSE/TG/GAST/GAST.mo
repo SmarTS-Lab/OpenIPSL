@@ -9,7 +9,8 @@ model GAST "Gas Turbine-Governor"
   parameter Real V_MAX "Upper limits of input signals";
   parameter Real V_MIN "Lower limits of input signals";
   parameter Real D_turb "Gain value multiplied with input signal";
-  Modelica.Blocks.Interfaces.RealInput SPEED "Machine electrical power (pu on M_b)" annotation (Placement(transformation(extent={{-120,30},{-80,70}}), iconTransformation(extent={{-120,30},{-80,70}})));
+  Modelica.Blocks.Interfaces.RealInput SPEED
+    "Machine electrical power (pu on M_b)"                                          annotation (Placement(transformation(extent={{-120,30},{-80,70}}), iconTransformation(extent={{-120,30},{-80,70}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Math.Add add(k1=-1) annotation (Placement(transformation(extent={{-78,-22},{-68,-12}})));
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(

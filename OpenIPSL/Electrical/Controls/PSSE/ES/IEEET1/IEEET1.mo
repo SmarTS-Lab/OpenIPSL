@@ -29,7 +29,8 @@ model IEEET1 "IEEE Type 1 excitation system"
         origin={54,38})));
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(extent={{-106,-30},{-100,-24}}), iconTransformation(extent={{-146,-10},{-126,10}})));
   Modelica.Blocks.Interfaces.RealInput EC "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-106,0},{-100,6}}), iconTransformation(extent={{-146,-50},{-126,-30}})));
-  Modelica.Blocks.Interfaces.RealInput EFD0 "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-108,20},{-102,26}}), iconTransformation(extent={{-146,-90},{-126,-70}})));
+  Modelica.Blocks.Interfaces.RealInput EFD0 "Input, generator terminal voltage"
+                                                                                annotation (Placement(transformation(extent={{-108,20},{-102,26}}), iconTransformation(extent={{-146,-90},{-126,-70}})));
   Modelica.Blocks.Math.Add3 sum2(k2=-1) annotation (Placement(transformation(extent={{-48,-2},{-38,8}})));
   Modelica.Blocks.Math.Add sum3(k2=-1) annotation (Placement(transformation(extent={{-32,-8},{-22,2}})));
   Modelica.Blocks.Math.Gain KE_EFD(k=KE0) annotation (Placement(transformation(

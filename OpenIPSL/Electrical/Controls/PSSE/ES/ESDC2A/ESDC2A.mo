@@ -2,7 +2,8 @@ within OpenIPSL.Electrical.Controls.PSSE.ES.ESDC2A;
 model ESDC2A
   import OpenIPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-92,12},{-80,24}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-100,24},{-90,36}}), iconTransformation(extent={{-100,24},{-90,36}})));
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Input, generator terminal voltage"                                          annotation (Placement(transformation(extent={{-100,24},{-90,36}}), iconTransformation(extent={{-100,24},{-90,36}})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG "Upss" annotation (Placement(transformation(extent={{-100,2},{-90,14}}), iconTransformation(extent={{-100,2},{-90,14}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-100,-16},{-90,-4}}), iconTransformation(extent={{-100,-16},{-90,-4}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Output,excitation voltage" annotation (Placement(transformation(extent={{100,-6},{110,6}}), iconTransformation(extent={{100,-6},{110,6}})));

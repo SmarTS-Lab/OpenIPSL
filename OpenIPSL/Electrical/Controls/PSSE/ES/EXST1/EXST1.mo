@@ -61,9 +61,11 @@ model EXST1 "IEEE Type AC2A Excitation System"
         rotation=0,
         origin={154,-20})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG annotation (Placement(transformation(extent={{-138,-52},{-98,-12}}), iconTransformation(extent={{-132,-68},{-98,-34}})));
-  Modelica.Blocks.Interfaces.RealInput VOEL "Input from voltage over excitation limiter"
+  Modelica.Blocks.Interfaces.RealInput VOEL
+    "Input from voltage over excitation limiter"
     annotation (Placement(transformation(extent={{-138,-110},{-98,-70}}), iconTransformation(extent={{-132,-104},{-98,-70}})));
-  Modelica.Blocks.Interfaces.RealInput VUEL "Input from voltage under excitation limiter"
+  Modelica.Blocks.Interfaces.RealInput VUEL
+    "Input from voltage under excitation limiter"
     annotation (Placement(transformation(extent={{-140,-158},{-100,-118}}), iconTransformation(extent={{-132,-142},{-98,-108}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,

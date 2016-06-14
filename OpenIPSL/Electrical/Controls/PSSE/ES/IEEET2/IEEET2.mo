@@ -19,7 +19,8 @@ model IEEET2 "IEEE Type 2 excitation system"
   Modelica.Blocks.Interfaces.RealInput VOTHSG "PSS output Upss" annotation (Placement(transformation(extent={{-110,-20},{-104,-12}}), iconTransformation(extent={{-126,30},{-106,50}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-110,-28},{-104,-20}}), iconTransformation(extent={{-126,-10},{-106,10}})));
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-96,14},{-84,26}})));
-  Modelica.Blocks.Interfaces.RealOutput EFD(start=Efd0) "Output,excitation voltage" annotation (Placement(transformation(extent={{100,-6},{110,6}}), iconTransformation(extent={{120,-10},{138,10}})));
+  Modelica.Blocks.Interfaces.RealOutput EFD(start=Efd0)
+    "Output,excitation voltage"                                                     annotation (Placement(transformation(extent={{100,-6},{110,6}}), iconTransformation(extent={{120,-10},{138,10}})));
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(extent={{-112,-38},{-106,-30}}), iconTransformation(extent={{-126,-50},{-106,-30}})));
 
   function param_init
@@ -74,7 +75,8 @@ model IEEET2 "IEEE Type 2 excitation system"
         extent={{-8,-9},{8,9}},
         rotation=180,
         origin={78,41})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput ECOMP
+    "Input, generator terminal voltage"                                          annotation (Placement(
       visible=true,
       transformation(
         origin={-114,2},
