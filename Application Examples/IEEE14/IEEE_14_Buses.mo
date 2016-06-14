@@ -2,63 +2,63 @@ within IEEE14;
 model IEEE_14_Buses
   import Modelica.Constants.pi;
 
-  iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={-135,-31})));
-  iPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={-60,-128})));
-  iPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={44,-122})));
-  iPSL.Electrical.Buses.Bus B4 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B4 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={32,-32})));
-  iPSL.Electrical.Buses.Bus B5 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B5 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={-24,-40})));
-  iPSL.Electrical.Buses.Bus B6 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B6 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={-47,19})));
-  iPSL.Electrical.Buses.Bus B7 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B7 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={91,1})));
-  iPSL.Electrical.Buses.Bus B8 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B8 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=180,
         origin={149,-37})));
-  iPSL.Electrical.Buses.Bus B9 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B9 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={86,44})));
-  iPSL.Electrical.Buses.Bus B10 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B10 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={16,110})));
-  iPSL.Electrical.Buses.Bus B11 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B11 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={16,40})));
-  iPSL.Electrical.Buses.Bus B12 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B12 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={-128,68})));
-  iPSL.Electrical.Buses.Bus B13 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B13 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={-64,110})));
-  iPSL.Electrical.Buses.Bus B14 annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B14 annotation (Placement(transformation(
         extent={{-15,-15},{15,15}},
         rotation=90,
         origin={104,108})));
-  iPSL.Electrical.Branches.PwLine L1(
+  OpenIPSL.Electrical.Branches.PwLine L1(
     R=0.05695,
     X=0.17388,
     G=0,
@@ -66,7 +66,7 @@ model IEEE_14_Buses
         extent={{-8.99999,-5.99999},{8.99999,6.00002}},
         rotation=90,
         origin={-60,-77})));
-  iPSL.Electrical.Branches.PwLine L7(
+  OpenIPSL.Electrical.Branches.PwLine L7(
     G=0,
     R=0.05403,
     X=0.22304,
@@ -74,7 +74,7 @@ model IEEE_14_Buses
         extent={{-10,-6.99999},{10,6.99999}},
         rotation=0,
         origin={-84,-53})));
-  iPSL.Electrical.Branches.PwLine L3(
+  OpenIPSL.Electrical.Branches.PwLine L3(
     G=0,
     R=0.01938,
     X=0.05917,
@@ -82,7 +82,7 @@ model IEEE_14_Buses
         extent={{-10,-6.99995},{10,6.99998}},
         rotation=270,
         origin={-135,-96})));
-  iPSL.Electrical.Branches.PwLine L6(
+  OpenIPSL.Electrical.Branches.PwLine L6(
     G=0,
     R=0.06701,
     X=0.17103,
@@ -90,7 +90,7 @@ model IEEE_14_Buses
         extent={{-8.99998,-6},{8.99999,5.99996}},
         rotation=90,
         origin={44,-65})));
-  iPSL.Electrical.Branches.PwLine L8(
+  OpenIPSL.Electrical.Branches.PwLine L8(
     G=0,
     R=0.01335,
     X=0.04211,
@@ -98,7 +98,7 @@ model IEEE_14_Buses
         extent={{-10,-6.99999},{10,6.99999}},
         rotation=0,
         origin={2,-53})));
-  iPSL.Electrical.Branches.PwLine L13(
+  OpenIPSL.Electrical.Branches.PwLine L13(
     G=0,
     R=0.09498,
     X=0.1989,
@@ -106,7 +106,7 @@ model IEEE_14_Buses
         extent={{-10,-6.00002},{10,6.00001}},
         rotation=0,
         origin={-2,26})));
-  iPSL.Electrical.Branches.PwLine L10(
+  OpenIPSL.Electrical.Branches.PwLine L10(
     G=0,
     R=0.12291,
     X=0.25581,
@@ -114,7 +114,7 @@ model IEEE_14_Buses
         extent={{-8.99999,-6},{9.00002,5.99999}},
         rotation=90,
         origin={-128,47})));
-  iPSL.Electrical.Branches.PwLine L12(
+  OpenIPSL.Electrical.Branches.PwLine L12(
     G=0,
     R=0.06615,
     X=0.13027,
@@ -122,7 +122,7 @@ model IEEE_14_Buses
         extent={{-9.00001,-6.00001},{9.00001,6.00001}},
         rotation=90,
         origin={-64,63})));
-  iPSL.Electrical.Branches.PwLine L14(
+  OpenIPSL.Electrical.Branches.PwLine L14(
     G=0,
     B=0,
     R=0.08205,
@@ -130,7 +130,7 @@ model IEEE_14_Buses
         extent={{-8.5,-6},{8.5,6}},
         rotation=90,
         origin={16,66.5})));
-  iPSL.Electrical.Branches.PwLine L15(
+  OpenIPSL.Electrical.Branches.PwLine L15(
     G=0,
     B=0,
     R=0.03181,
@@ -138,7 +138,7 @@ model IEEE_14_Buses
         extent={{-8.99999,-6},{8.99999,5.99998}},
         rotation=90,
         origin={52,69})));
-  iPSL.Electrical.Branches.PwLine L16(
+  OpenIPSL.Electrical.Branches.PwLine L16(
     G=0,
     B=0,
     R=0.12711,
@@ -146,7 +146,7 @@ model IEEE_14_Buses
         extent={{-9.5,-6.0002},{9.49997,6.00018}},
         rotation=90,
         origin={104,75.5})));
-  iPSL.Electrical.Branches.PwLine L17(
+  OpenIPSL.Electrical.Branches.PwLine L17(
     G=0,
     B=0,
     R=0.17093,
@@ -154,7 +154,7 @@ model IEEE_14_Buses
         extent={{-9.5,-6.00021},{9.5,6.00022}},
         rotation=180,
         origin={44.5,97.9998})));
-  iPSL.Electrical.Branches.PwLine L2(
+  OpenIPSL.Electrical.Branches.PwLine L2(
     G=0,
     B=0,
     R=0,
@@ -162,7 +162,7 @@ model IEEE_14_Buses
         extent={{-9.5,-6.50002},{9.5,6.50002}},
         rotation=90,
         origin={91.5,19.5})));
-  iPSL.Electrical.Branches.PwLine L5(
+  OpenIPSL.Electrical.Branches.PwLine L5(
     G=0,
     R=0.04699,
     X=0.19797,
@@ -170,7 +170,7 @@ model IEEE_14_Buses
         extent={{-8.99998,-5.99999},{8.99998,5.99999}},
         rotation=180,
         origin={13,-108})));
-  iPSL.Electrical.Branches.PwLine L11(
+  OpenIPSL.Electrical.Branches.PwLine L11(
     G=0,
     B=0,
     R=0.22092,
@@ -178,7 +178,7 @@ model IEEE_14_Buses
         extent={{-8.99999,-5.99999},{8.99999,5.99999}},
         rotation=90,
         origin={-88,79})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ2(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ2(
     V_b=69,
     P_0=1.4*0.076*SysData.S_b,
     Q_0=1.4*0.016*SysData.S_b,
@@ -187,7 +187,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-41,-15})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ3(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ3(
     V_0=1.045,
     V_b=69,
     P_0=1.4*0.217*SysData.S_b,
@@ -196,7 +196,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-28,-118})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ12(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ12(
     V_0=1.01,
     V_b=69,
     P_0=1.4*0.942*SysData.S_b,
@@ -205,7 +205,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={71,-101})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ9(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ9(
     V_b=13.8,
     P_0=1.4*0.295*SysData.S_b,
     Q_0=1.4*0.166*SysData.S_b,
@@ -214,7 +214,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={138,62})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ6(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ6(
     V_b=13.8,
     P_0=1.4*0.149*SysData.S_b,
     Q_0=1.4*0.05*SysData.S_b,
@@ -223,7 +223,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={104,132})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ8(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ8(
     V_b=13.8,
     P_0=1.4*0.09*SysData.S_b,
     Q_0=1.4*0.058*SysData.S_b,
@@ -232,7 +232,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={17,131})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ11(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ11(
     V_b=13.8,
     P_0=1.4*0.135*SysData.S_b,
     Q_0=1.4*0.058*SysData.S_b,
@@ -241,7 +241,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-62,132})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ7(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ7(
     V_b=13.8,
     P_0=1.4*0.061*SysData.S_b,
     Q_0=1.4*0.016*SysData.S_b,
@@ -250,7 +250,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-143,99})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ10(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ10(
     P_0=1.4*0.035*SysData.S_b,
     Q_0=1.4*0.018*SysData.S_b,
     V_b=13.8,
@@ -259,7 +259,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={38,50})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ4(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ4(
     P_0=1.4*0.112*SysData.S_b,
     Q_0=1.4*0.075*SysData.S_b,
     V_0=1.07,
@@ -268,7 +268,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-39,73})));
-  iPSL.Electrical.Loads.PSAT.VoltDependant lPQ5(
+  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ5(
     V_b=69,
     P_0=1.4*0.478*SysData.S_b,
     Q_0=1.4*0.04*SysData.S_b,
@@ -277,7 +277,7 @@ model IEEE_14_Buses
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={7,-11})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     fn=60,
     kT=18/13.8,
     x=0.17615,
@@ -287,7 +287,7 @@ model IEEE_14_Buses
         extent={{-14,-14},{14,14}},
         rotation=180,
         origin={119,-38})));
-  iPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio(
+  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio(
     fn=60,
     kT=69/13.8,
     R=0,
@@ -298,7 +298,7 @@ model IEEE_14_Buses
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={-18,-6})));
-  iPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio1(
+  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio1(
     fn=60,
     kT=69/13.8,
     R=0,
@@ -309,7 +309,7 @@ model IEEE_14_Buses
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={44,16})));
-  iPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio2(
+  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio2(
     fn=60,
     kT=69/13.8,
     R=0,
@@ -347,7 +347,7 @@ model IEEE_14_Buses
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={172,-36})));
-  iPSL.Electrical.Branches.PwLine pwLinewithOpeningSending(
+  OpenIPSL.Electrical.Branches.PwLine pwLinewithOpeningSending(
     R=0.05811,
     X=0.17632,
     G=0,
@@ -355,8 +355,8 @@ model IEEE_14_Buses
     t2=25,
     t1=20,
     opening=2) annotation (Placement(transformation(extent={{-2,-82},{16,-69}})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-194,126},{-128,154}})));
-  iPSL.Electrical.Events.PwFault pwFault2(
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-194,126},{-128,154}})));
+  OpenIPSL.Electrical.Events.PwFault pwFault2(
     X=1e-5,
     t1=1,
     R=0,
@@ -485,7 +485,7 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
+<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;OpenIPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
 <li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
@@ -494,10 +494,10 @@ equation
 <li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
 </ul>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;OpenIPSL&QUOT;) .</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the OpenIPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
     experiment(
       StopTime=10,

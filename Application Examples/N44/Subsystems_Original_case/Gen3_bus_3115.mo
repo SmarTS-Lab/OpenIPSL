@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     D=0 "Speed Damping",
     Tpd0=7.57,
     Tppd0=0.045,
@@ -22,7 +23,7 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     S10=0.10239,
     S12=0.2742,
     R_a=0) annotation (Placement(transformation(extent={{-46,-24},{16,42}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",
     r=0.4 "Temporary droop, p.u",
     VELM=0.1,
@@ -35,10 +36,8 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     A_t=1.0577,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-44,56},{20,86}})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=31,
-    V_c0=PSSE_data.voltages.V3115,
-    V_0=PSSE_data.voltages.V3115,
     T_AT_B=0.25385,
     T_B=13,
     T_E=0.05,
@@ -47,7 +46,7 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     r_cr_fd=0,
     C_SWITCH=true) annotation (Placement(transformation(extent={{36,-86},{90,-32}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-11,-69},{-1,-59}})));
-  iPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
     H_LIM=0.04,
     K_2=1,
     T_2=4.5,
@@ -56,7 +55,7 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     K_4=0.087,
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-48,-54},{7,-33}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,88},{96,98}})));
 equation
 
@@ -72,7 +71,6 @@ equation
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{18.48,-0.9},{42,-0.9},{42,94},{-58,94},{-58,63.5},{-43.2,63.5}}, color={0,0,127}));
   connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{18.48,25.5},{32,25.5},{32,-35.51},{36.225,-35.51}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{36.225,-56.57},{16,-56.57},{16,-64},{-0.5,-64}}, color={0,0,127}));
-  connect(sCRX.ETERM, gENSAL.ETERM) annotation (Line(points={{35.775,-71.42},{32,-71.42},{32,25.5},{18.48,25.5}}, color={0,0,127}));
   annotation (
     Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

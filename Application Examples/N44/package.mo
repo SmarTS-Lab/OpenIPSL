@@ -1,12 +1,12 @@
 within ;
-package N44
+package N44 
 
 
 
 
 annotation (uses(
     Modelica(version="3.2.1"),
-    iPSL(version="0.8.1"),
+    OpenIPSL(version="0.8.1"),
     Complex(version="3.2.1")), Documentation(info="<html>
 </html>", revisions="<html>
 <!--DISCLAIMER-->

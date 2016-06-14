@@ -2,7 +2,7 @@ within TwoAreas.Groups.PSSE;
 package No_Controls
   model G1
     extends TwoAreas.Support.Generator;
-    iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+    OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
       Tppd0=0.03,
       Tppq0=0.05,
@@ -56,7 +56,7 @@ package No_Controls
   model G2
     extends TwoAreas.Support.Generator;
 
-    iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+    OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
       Tppd0=0.03,
       Tppq0=0.05,
@@ -110,7 +110,7 @@ package No_Controls
   model G3
     extends TwoAreas.Support.Generator;
 
-    iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+    OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
       Tppd0=0.03,
       Tppq0=0.05,
@@ -164,7 +164,7 @@ package No_Controls
   model G4
     extends TwoAreas.Support.Generator;
 
-    iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+    OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
       Tppd0=0.03,
       Tppq0=0.05,

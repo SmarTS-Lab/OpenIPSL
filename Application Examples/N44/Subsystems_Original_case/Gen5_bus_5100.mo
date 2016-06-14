@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
   Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tpd0=4.9629 "T'do (> 0)",
     Tppd0=0.05 "T''do (> 0)",
     Tppq0=0.15 "T''qo (> 0)",
@@ -22,7 +23,7 @@ model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GEN
     S10=0.1,
     S12=0.3,
     R_a=0) annotation (Placement(transformation(extent={{-68,-20},{-6,30}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",
     r=0.4 "Temporary droop, p.u",
     VELM=0.2 "Gate open/close velosiy limit, p.u/sec",
@@ -35,7 +36,7 @@ model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GEN
     A_t=1.1,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-62,46},{-10,74}})));
-  iPSL.Electrical.Controls.PSSE.ES.SEXS.SEXS sEXS(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
     K=200,
     T_AT_B=0.05,
     T_B=100,
@@ -44,7 +45,7 @@ model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GEN
     E_MAX=4,
     Ec0=PSSE_data.voltages.V5100) annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-33,-65},{-23,-55}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 

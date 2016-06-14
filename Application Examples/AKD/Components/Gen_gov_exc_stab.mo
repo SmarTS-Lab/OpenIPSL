@@ -1,6 +1,6 @@
 within AKD.Components;
 model Gen_gov_exc_stab
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Tpd0 "d-axis transient open-circuit time constant (s)" annotation (Dialog(group="Machine parameters"));
   parameter Real Tppd0 "d-axis sub-transient open-circuit time constant (s)" annotation (Dialog(group="Machine parameters"));
@@ -58,7 +58,7 @@ model Gen_gov_exc_stab
   parameter Real L_SMIN=-0.1 "Output Limits";
   parameter Real V_CU=999 "Output Limits";
   parameter Real V_CL=-999 "Output Limits";
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     V_b=V_b,
     V_0=V_0,
     angle_0=angle_0,
@@ -79,8 +79,8 @@ model Gen_gov_exc_stab
     S10=S10,
     S12=S12,
     R_a=R_a) annotation (Placement(transformation(extent={{-39,-6},{25,58}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{80,16},{100,36}}), iconTransformation(extent={{60,-10},{80,10}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{80,16},{100,36}}), iconTransformation(extent={{60,-10},{80,10}})));
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=R,
     r=r,
     T_r=T_r,
@@ -93,7 +93,7 @@ model Gen_gov_exc_stab
     A_t=A_t,
     D_turb=D_turb,
     q_NL=q_NL) annotation (Placement(transformation(extent={{26,72},{-30,94}})));
-  iPSL.Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2_1(
+  OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2 iEEET2_1(
     T_R=T_R,
     K_A=K_A,
     T_A=T_A,
@@ -108,7 +108,7 @@ model Gen_gov_exc_stab
     S_EE_1=S_EE_1,
     E_2=E_2,
     S_EE_2=S_EE_2) annotation (Placement(transformation(extent={{-20,-74},{-88,-18}})));
-  iPSL.Electrical.Controls.PSSE.PSS.IEEEST.IEEEST iEEEST(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.IEEEST iEEEST(
     A_1=A_1,
     A_2=A_2,
     A_3=A_3,
@@ -134,13 +134,18 @@ equation
   connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{27.56,54.8},{50,54.8},{50,88.5},{25.3,88.5}}, color={0,0,127}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-31.4,83},{-52,83},{-52,42},{-38.36,42}}, color={0,0,127}));
   connect(iEEET2_1.EFD, gENSAL.EFD) annotation (Line(points={{-90.55,-46},{-96,-46},{-96,10},{-38.36,10}}, color={0,0,127}));
-  connect(iEEEST.VOTHSG, iEEET2_1.VOTHSG) annotation (Line(points={{15,-35},{-5.625,-35},{-5.625,-34.8},{-21.1333,-34.8}}, color={0,0,127}));
-  connect(gENSAL.ETERM, iEEET2_1.ECOMP) annotation (Line(points={{27.56,42},{46,42},{46,-18},{-10,-18},{-10,-23.6},{-21.1333,-23.6}}, color={0,0,127}));
+  connect(iEEEST.VOTHSG, iEEET2_1.VOTHSG) annotation (Line(points={{15,-35},{
+          -5.625,-35},{-5.625,-34.8},{-21.1333,-34.8}},                                                                    color={0,0,127}));
+  connect(gENSAL.ETERM, iEEET2_1.ECOMP) annotation (Line(points={{27.56,42},{46,
+          42},{46,-18},{-10,-18},{-10,-23.6},{-21.1333,-23.6}},                                                                       color={0,0,127}));
   connect(gENSAL.PELEC, iEEEST.V_S) annotation (Line(points={{27.56,10},{62,10},{98,10},{98,-42},{89.4,-42}}, color={0,0,127}));
   connect(const1.y, iEEEST.V_CT) annotation (Line(points={{86.6,-8},{94,-8},{94,-28},{89.4,-28}}, color={0,0,127}));
-  connect(const.y, iEEET2_1.VOEL) annotation (Line(points={{-12.6,-52},{-16,-52},{-16,-46},{-21.1333,-46}}, color={0,0,127}));
-  connect(iEEET2_1.VUEL, iEEET2_1.VOEL) annotation (Line(points={{-21.1333,-57.2},{-16,-57.2},{-16,-46},{-21.1333,-46}}, color={0,0,127}));
-  connect(gENSAL.EFD0, iEEET2_1.EFD0) annotation (Line(points={{27.56,3.6},{38,3.6},{38,-14},{6,-14},{6,-68.4},{-21.1333,-68.4}}, color={0,0,127}));
+  connect(const.y, iEEET2_1.VOEL) annotation (Line(points={{-12.6,-52},{-16,-52},
+          {-16,-46},{-21.1333,-46}},                                                                        color={0,0,127}));
+  connect(iEEET2_1.VUEL, iEEET2_1.VOEL) annotation (Line(points={{-21.1333,
+          -57.2},{-16,-57.2},{-16,-46},{-21.1333,-46}},                                                                  color={0,0,127}));
+  connect(gENSAL.EFD0, iEEET2_1.EFD0) annotation (Line(points={{27.56,3.6},{38,
+          3.6},{38,-14},{6,-14},{6,-68.4},{-21.1333,-68.4}},                                                                      color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,0,255}), Text(

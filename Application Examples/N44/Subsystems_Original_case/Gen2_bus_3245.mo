@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
   Nordic 44 model: Buses 3245, 3249, 5600"
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tpd0=5.0 "T'do (> 0)",
     Tppd0=0.06 "T''do (> 0)",
     Tppq0=0.1 "T''qo (> 0)",
@@ -22,7 +23,7 @@ model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GEN
     S10=0.10239,
     S12=0.2742,
     R_a=0) annotation (Placement(transformation(extent={{-62,-24},{1,46}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",
     r=0.4 "Temporary droop, p.u",
     VELM=0.1 "Gate open/close velosiy limit, p.u/sec",
@@ -35,10 +36,8 @@ model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GEN
     A_t=1.01,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-58,58},{0,90}})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=31,
-    V_c0=PSSE_data.voltages.V3245,
-    V_0=PSSE_data.voltages.V3245,
     T_AT_B=0.25385,
     T_B=13,
     T_E=0.05,
@@ -47,14 +46,11 @@ model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GEN
     r_cr_fd=0,
     C_SWITCH=true) annotation (Placement(transformation(extent={{31,-84},{85,-26}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-27,-57},{-17,-47}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 
-  connect(p, p) annotation (Line(
-      points={{110,0},{104,0},{104,0},{110,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
+
   connect(gENSAL.p, p) annotation (Line(points={{4.15,11},{44,11},{44,0},{110,0}}, color={0,0,255}));
   connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{85.9,-54.71},{94,-54.71},{94,-92},{-74,-92},{-74,-6.5},{-61.37,-6.5}}, color={0,0,127}));
   connect(cte.y, sCRX.VOTHSG) annotation (Line(points={{-16.5,-52},{6,-52},{6,-37.89},{31.225,-37.89}}, color={0,0,127}));
@@ -66,7 +62,6 @@ equation
   connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{3.52,28.5},{26,28.5},{26,-29.77},{31.225,-29.77}}, color={0,0,127}));
   connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.225,-44.85},{6,-44.85},{6,-52},{-16.5,-52}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{31.225,-52.39},{7.6125,-52.39},{7.6125,-52},{-16.5,-52}}, color={0,0,127}));
-  connect(sCRX.ETERM, gENSAL.ETERM) annotation (Line(points={{30.775,-68.34},{26,-68.34},{26,28.5},{3.52,28.5}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

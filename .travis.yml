@@ -1,0 +1,11 @@
+language: bash
+python:
+  - "2.7"
+
+services: docker
+
+install:
+  - docker pull smartslab/ci_openipsl
+
+script:
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl sh /OpenIPSL/CI/changeUser.sh

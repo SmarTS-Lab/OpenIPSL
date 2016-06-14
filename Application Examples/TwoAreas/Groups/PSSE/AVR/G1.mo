@@ -2,7 +2,7 @@ within TwoAreas.Groups.PSSE.AVR;
 model G1
   extends TwoAreas.Support.Generator;
 
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU g1(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU g1(
     Tpd0=8,
     Tppd0=0.03,
     Tppq0=0.05,
@@ -25,7 +25,7 @@ model G1
     Q_0=Q_0,
     Xpq=0.55,
     Tpq0=0.4) annotation (Placement(transformation(extent={{-2,-18},{38,18}})));
-  iPSL.Electrical.Controls.PSSE.ES.SEXS.SEXS sEXS(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
     T_AT_B=1,
     T_B=1,
     K=200,
