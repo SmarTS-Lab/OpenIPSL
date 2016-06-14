@@ -1,5 +1,7 @@
 within iPSL.Electrical.Buses;
-model InfiniteBus "Test"
+model InfiniteBus "PSAT Infinite Bus"
+  extends iPSL.Electrical.Essentials.pfComponent;
+
   iPSL.Connectors.PwPin p annotation (Placement(
       visible=true,
       transformation(
@@ -7,23 +9,33 @@ model InfiniteBus "Test"
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0),
       iconTransformation(
-        origin={110.0,-0.0},
+        origin={-110,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  parameter Real V "Bus voltage magnitude (pu)";
-  parameter Real angle "Bus voltage angle (deg)";
+  Real P "Active Power absorbed by the Infinite bus (MW)";
+  Real Q "Reactive Power absorbed by the Infinite bus (MVAr)";
 equation
-  p.vr = V*cos(angle*Modelica.Constants.pi/180);
-  p.vi = V*sin(angle*Modelica.Constants.pi/180);
+  p.vr = V_0*cos(angle_0*Modelica.Constants.pi/180);
+  p.vi = V_0*sin(angle_0*Modelica.Constants.pi/180);
+  P = (p.vr*p.ir - p.vi*p.ii)*S_b;
+  Q = (p.vr*p.ii - p.vi*p.ir)*S_b;
   annotation (
     Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=false,
         initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}})}),
+          extent={{-100,-100},{100,100}},
+          lineColor={0,0,0},
+          fillPattern=FillPattern.Solid),Line(points={{34,86},{82,86},{74,92}}, color={0,0,0}),Text(
+          extent={{14,84},{102,38}},
+          lineColor={238,46,47},
+          textString=DynamicSelect("0.0", String(P, significantDigits=2))),Line(points={{32,-54},{80,-54},{72,-48}}, color={0,0,0}),Text(
+          extent={{12,-54},{100,-100}},
+          lineColor={0,255,0},
+          textString=DynamicSelect("0.0", String(Q, significantDigits=2))),Line(points={{40,-48},{40,-60}}, color={0,0,0}),Line(points={{80,-54},{72,-60}}, color={0,0,0}),Line(points={{82,86},{74,80}},
+          color={0,0,0})}),
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
@@ -47,19 +59,18 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end InfiniteBus;
-

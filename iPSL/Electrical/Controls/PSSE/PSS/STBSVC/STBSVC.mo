@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.PSS.STBSVC;
-
-
 model STBSVC "WECC Supplementary Signal for Static var Compensator"
   parameter Real K_S1 ">0";
   parameter Real T_S7 "(s)";
@@ -62,37 +60,31 @@ equation
   connect(add.y, imDerivativeLag.u) annotation (Line(points={{9,0},{12.5,0},{16,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{120,100}})),
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}}, preserveAspectRatio=true), graphics={
-        Rectangle(extent={{-120,100},{120,-100}}, lineColor={28,108,200}),
-        Text(
+    Icon(coordinateSystem(extent={{-120,-100},{120,100}}, preserveAspectRatio=true), graphics={Rectangle(extent={{-120,100},{120,-100}}, lineColor={28,108,200}),Text(
           extent={{-112,58},{-66,44}},
           lineColor={28,108,200},
-          textString="V_S1"),
-        Text(
+          textString="V_S1"),Text(
           extent={{-120,-42},{-58,-56}},
           lineColor={28,108,200},
-          textString="V_S2"),
-        Text(
+          textString="V_S2"),Text(
           extent={{70,10},{118,-6}},
           lineColor={28,108,200},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-62,30},{66,-32}},
           lineColor={28,108,200},
           textString="STBSVC")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end STBSVC;

@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.EXST1;
-
-
 model EXST1 "IEEE Type AC2A Excitation System"
   parameter Real T_R=0.02;
   parameter Real V_IMAX=0.2;
@@ -118,57 +116,46 @@ equation
           extent={{24,0},{38,-16}},
           lineColor={255,0,0},
           textString="VERR")}),
-    Icon(coordinateSystem(extent={{-120,-200},{300,100}}, preserveAspectRatio=true), graphics={
-        Text(
+    Icon(coordinateSystem(extent={{-120,-200},{300,100}}, preserveAspectRatio=true), graphics={Text(
           extent={{28,-18},{188,-60}},
           lineColor={0,0,255},
-          textString="EXST1"),
-        Rectangle(extent={{-100,82},{280,-160}}, lineColor={0,0,255}),
-        Text(
+          textString="EXST1"),Rectangle(extent={{-100,82},{280,-160}}, lineColor={0,0,255}),Text(
           extent={{-90,100},{-30,38}},
           lineColor={0,0,255},
-          textString="ECOMP"),
-        Text(
+          textString="ECOMP"),Text(
           extent={{-88,24},{-28,-40}},
           lineColor={0,0,255},
-          textString="XADIFD"),
-        Text(
+          textString="XADIFD"),Text(
           extent={{-44,-124},{18,-146}},
           lineColor={0,0,255},
-          textString="EFD0"),
-        Text(
+          textString="EFD0"),Text(
           extent={{-90,46},{-32,20}},
           lineColor={0,0,255},
-          textString="ETERM"),
-        Text(
+          textString="ETERM"),Text(
           extent={{-92,-18},{-26,-82}},
           lineColor={0,0,255},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-94,-52},{-48,-116}},
           lineColor={0,0,255},
-          textString="VOEL"),
-        Text(
+          textString="VOEL"),Text(
           extent={{-94,-94},{-46,-156}},
           lineColor={0,0,255},
-          textString="VUEL"),
-        Text(
+          textString="VUEL"),Text(
           extent={{238,-10},{274,-74}},
           lineColor={0,0,255},
           textString="EFD")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end EXST1;

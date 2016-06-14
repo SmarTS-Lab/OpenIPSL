@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.SCRX;
-
-
 model SCRX "Bus Fed or Solid Fed Static Exciter"
   parameter Real V_c0 "Magnitude of the compensated generator terminal voltage" annotation (Dialog(group="Power flow data"));
   parameter Real V_0 "Magnitude of the generator terminal voltage" annotation (Dialog(group="Power flow data"));
@@ -82,75 +80,57 @@ equation
   connect(switch1.y, negCurLogic.Vd) annotation (Line(points={{84.6,26},{90,26},{90,12},{68,12},{68,11},{62.3333,11}}, color={0,0,127}));
   annotation (
     Placement(transformation(extent={{-114,44},{-102,58}}), iconTransformation(extent={{-100,-50},{-90,-40}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-120},{120,80}}), graphics={
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-120},{120,80}}), graphics={Text(
           extent={{-110,38},{-92,26}},
           lineColor={0,0,255},
           textString="Ecomp
-             "),
-        Text(
+             "),Text(
           extent={{-104,14},{-92,6}},
           lineColor={0,0,255},
-          textString="Et"),
-        Text(
+          textString="Et"),Text(
           extent={{-106,6},{-86,-16}},
           lineColor={0,0,255},
-          textString="VOTHSG "),
-        Text(
+          textString="VOTHSG "),Text(
           extent={{-108,-12},{-82,-18}},
           lineColor={0,0,255},
-          textString=" VOEL"),
-        Text(
+          textString=" VOEL"),Text(
           extent={{-110,-22},{-80,-28}},
           lineColor={0,0,255},
-          textString=" VUEL "),
-        Text(
+          textString=" VUEL "),Text(
           extent={{-102,26},{-90,12}},
           lineColor={0,0,255},
-          textString="Efd0"),
-        Text(
+          textString="Efd0"),Text(
           extent={{-102,-34},{-84,-42}},
           lineColor={0,0,255},
-          textString="XadIfd"),
-        Text(
+          textString="XadIfd"),Text(
           extent={{106,14},{122,6}},
           lineColor={0,0,255},
           textString="Efd")}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-120,-120},{120,80}}), graphics={
-        Rectangle(extent={{-120,80},{120,-120}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-120,-120},{120,80}}), graphics={Rectangle(extent={{-120,80},{120,-120}}, lineColor={0,0,255}),Text(
           extent={{-114,-48},{-70,-66}},
           lineColor={0,0,255},
-          textString="ETERM"),
-        Text(
+          textString="ETERM"),Text(
           extent={{-114,62},{-62,32}},
           lineColor={0,0,255},
-          textString="VOTHSG "),
-        Text(
+          textString="VOTHSG "),Text(
           extent={{90,4},{122,-10}},
           lineColor={0,0,255},
-          textString="EFD"),
-        Text(
+          textString="EFD"),Text(
           extent={{-52,26},{60,-56}},
           lineColor={0,0,255},
-          textString="SCRX"),
-        Text(
+          textString="SCRX"),Text(
           extent={{-114,-2},{-80,-16}},
           lineColor={0,0,255},
-          textString=" VUEL "),
-        Text(
+          textString=" VUEL "),Text(
           extent={{-118,26},{-74,12}},
           lineColor={0,0,255},
-          textString=" VOEL"),
-        Text(
+          textString=" VOEL"),Text(
           extent={{-112,-82},{-88,-106}},
           lineColor={0,0,255},
-          textString="Efd0"),
-        Text(
+          textString="Efd0"),Text(
           extent={{-112,-24},{-72,-42}},
           lineColor={0,0,255},
-          textString="XADIFD"),
-        Text(
+          textString="XADIFD"),Text(
           extent={{-114,86},{-72,58}},
           lineColor={0,0,255},
           textString="ECOMP")}),
@@ -173,18 +153,18 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end SCRX;

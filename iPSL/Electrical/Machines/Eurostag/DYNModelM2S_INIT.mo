@@ -1,10 +1,8 @@
 within iPSL.Electrical.Machines.Eurostag;
-
-
 model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
                   Developed by RTE and adapted by AIA. 2014/03/10"
-  Modelica.Blocks.Interfaces.RealInput pin_CM;
-  Modelica.Blocks.Interfaces.RealInput pin_EFD;
+  Modelica.Blocks.Interfaces.RealOutput pin_CM;
+  Modelica.Blocks.Interfaces.RealOutput pin_EFD;
   Modelica.Blocks.Interfaces.RealOutput pin_LAMBDAF;
   Modelica.Blocks.Interfaces.RealOutput pin_LAMBDAD;
   Modelica.Blocks.Interfaces.RealOutput pin_LAMBDAQ1;
@@ -41,22 +39,23 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   parameter Real TPQ0 "Quadrat trans. time const";
   parameter Real TSQ0 "Quadrat subtrans. time const";
   parameter Real IENR;
-  parameter Real SNREF(fixed=false);
-  parameter Real SN(fixed=false);
+  parameter Real SNREF;
+  parameter Real SN;
   //  puissance apparente nominale (SNOMG)
-  parameter Real PN(fixed=false);
+  parameter Real PN;
   parameter Real PNALT;
-  parameter Real sNTfo(fixed=false);
-  parameter Real ur0(fixed=false);
-  parameter Real ui0(fixed=false);
-  parameter Real p0(fixed=false);
-  parameter Real q0(fixed=false);
-  parameter Real uNResTfo(fixed=false);
-  parameter Real uNomNw(fixed=false);
-  parameter Real uNMacTfo(fixed=false);
-  parameter Real uBMac(fixed=false);
-  parameter Real rTfoIn(fixed=false);
-  parameter Real xTfoIn(fixed=false);
+  parameter Real sNTfo = if transformerIncluded then 100 else 0;
+  parameter Real ur0;
+  parameter Real ui0;
+  parameter Real p0;
+  parameter Real q0;
+   parameter Boolean transformerIncluded = false;
+  parameter Real uNResTfo = if  transformerIncluded then 24   else 0;
+  parameter Real uNomNw = if  transformerIncluded then 24  else 0;
+  parameter Real uNMacTfo = if  transformerIncluded then 400 else 0;
+  parameter Real uBMac = if  transformerIncluded then 400 else 0;
+  parameter Real rTfoIn = if  transformerIncluded then 0  else 0;
+  parameter Real xTfoIn = if  transformerIncluded then 0.136 else 0;
   parameter Real nDSat;
   //(fixed = false);
   parameter Real nQSat;
@@ -65,10 +64,10 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   //(fixed = false);
   parameter Real mQSatIn;
   //(fixed = false);
-  parameter Real rStatIn(fixed=false);
-  parameter Real lStatIn(fixed=false);
-  parameter Real omega_0(fixed=false);
-  parameter Real pPuWLMDV(fixed=false);
+  parameter Real rStatIn;
+  parameter Real lStatIn;
+  parameter Real omega_0;
+  parameter Real pPuWLMDV;
   parameter Real ONE=1;
   parameter Real mrc=0;
   parameter Real PI=3.14159265;
@@ -137,8 +136,8 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   // YXTI
   // per unitage complementaire, calcul de rrTfo (puingc.f)
   // ------------------------------------------------------
-  parameter Real ri=if rTfoIn > 0. or xTfoIn > 0. then uNResTfo/uNomNw/(uNMacTfo/uBMac) else 1.;
-  parameter Real rs=if rTfoIn > 0. or xTfoIn > 0. then (uNResTfo/uNomNw)^2*SNREF/sNTfo else 1.;
+  parameter Real ri=if  transformerIncluded then uNResTfo/uNomNw/(uNMacTfo/uBMac) else 1.;
+  parameter Real rs=if  transformerIncluded then (uNResTfo/uNomNw)^2*SNREF/sNTfo else 1.;
   parameter Real mSalNom=mD0Nom - mQ0Nom;
   parameter Real xQNom0=mQ0Nom + lQINom;
   parameter Real tetaNomNum0=uiNom + omegaNom*(xTfoNom + xQNom0)*irNom + (rTfoNom + rStatNom)*iiNom;
@@ -355,7 +354,7 @@ equation
   end if;
   // per unitage de parametres (park2.f)
   // -----------------------------------
-  ONE*yScale = if rTfoIn > 0. or xTfoIn > 0. then SNREF/SN*rrTfo*rrTfo else SNREF/SN;
+  ONE*yScale = if  transformerIncluded then SNREF/SN*rrTfo*rrTfo else SNREF/SN;
   // YSCALE
   rStat = rStatIn*yScale;
   // YI = RESARM * yScale;
@@ -488,19 +487,18 @@ equation
   else
     pin_FieldCurrent = -mDV/rrTfo*((lD + mrc)*pin_LAMBDAF - mrc*pin_LAMBDAD - lD*pin_LAMBDAAD)/(mrc*(lRot + lD) + lRot*lD);
   end if;
-  annotation (Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+  annotation (Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end DYNModelM2S_INIT;

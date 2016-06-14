@@ -2,6 +2,7 @@ within iPSL.Electrical.Controls.PSAT.FACTS.STATCOM;
 
 
 model STATCOM "Static Synchronous Compensator model with equation"
+
   iPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
@@ -20,33 +21,39 @@ model STATCOM "Static Synchronous Compensator model with equation"
   parameter Real v_POD=0 "Power oscillation damper signal";
   Real i_SH "STATCOM current (pu)";
   Real v(start=V_0) "Bus voltage magnitude (pu)";
-  Real Q "Injected reactive power (pu)";
+  Real Q(start=Qg) "Injected reactive power (pu)";
+
 protected
   parameter Real Iold=Sn/Vn;
   parameter Real Inew=Sb/Vbus;
   parameter Real i_max=i_Max*Iold/Inew;
   parameter Real i_min=i_Min*Iold/Inew;
-  parameter Real vr0=V_0*cos(angle_0) "Initialitation";
-  parameter Real vi0=V_0*sin(angle_0) "Initialitation";
-  //parameter Real io= Kr*(v_ref+v_POD-V_0) "Initialization";
+  parameter Real vr0=V_0*cos(angle_0/180*pi) "Initialitation";
+  parameter Real vi0=V_0*sin(angle_0/180*pi) "Initialitation";
+  parameter Real uo=v_ref + v_POD - V_0 "Initialization";
   parameter Real io=Qg/V_0 "Initialization";
   parameter Real v_ref=io/Kr + V_0 - v_POD "Initialization";
-initial equation
-  i_SH = io;
+  //parameter Real vmin=v_ref + v_POD - i_max/Kr;
+  //parameter Real vmax=v_ref + v_POD - i_min/Kr;
+  //parameter Real umax=i_max/Kr;
+  //parameter Real umin=i_min/Kr;
+  Real u(start=uo);
+
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=Kr,
+    T=Tr,
+    y_start=io,
+    outMax=i_Max,
+    outMin=i_Min) annotation (Placement(transformation(extent={{-10,-8},{10,12}})));
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   0 = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
-  if i_SH > i_max and der(i_SH) > 0 then
-    der(i_SH) = 0;
-    Q = i_max*v;
-  elseif i_SH < i_min and der(i_SH) < 0 then
-    der(i_SH) = 0;
-    Q = i_min*v;
-  else
-    der(i_SH) = (Kr*(v_ref + v_POD - v) - i_SH)/Tr;
-    Q = i_SH*v;
-  end if;
+  u = v_ref + v_POD - v;
+  Q = i_SH*v;
+  simpleLagLim.u = u;
+  simpleLagLim.y = i_SH;
+
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
@@ -96,7 +103,7 @@ equation
           textString="%Name")}),
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
-<table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
+<table cellspacing=\"2\" cellpadding=\"0\" border=\"1\"><tr>
 <td><p>Reference</p></td>
 <td><p>PSAT Manual 2.1.8</p></td>
 </tr>
@@ -113,18 +120,18 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end STATCOM;

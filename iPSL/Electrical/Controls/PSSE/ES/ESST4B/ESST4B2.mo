@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESST4B;
-
-
 model ESST4B2 " IEEE type ST4B potential or compounded
 source-controlled rectifier exciter "
   parameter Real T_R=0.3;
@@ -231,54 +229,41 @@ equation
   connect(gain2.u, VB.u1) annotation (Line(points={{36.6,-131},{20,-131},{20,-100},{72,-100},{72,-74},{81.2,-73.64},{81.2,-74.8},{144.6,-74.8}}, color={0,0,127}));
   connect(IFD, division.u1) annotation (Line(points={{-119,-141},{-26.5,-141},{-26.5,-139.2},{66.6,-139.2}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-180},{340,100}}), graphics={
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-180},{340,100}}), graphics={Text(
           extent={{70,26},{94,12}},
           lineColor={255,0,0},
-          textString="VR"),
-        Text(
+          textString="VR"),Text(
           extent={{44,-6},{50,-16}},
           lineColor={255,0,0},
-          textString="VH"),
-        Text(
+          textString="VH"),Text(
           extent={{116,-140},{142,-148}},
           lineColor={255,0,0},
-          textString="FEX"),
-        Text(
+          textString="FEX"),Text(
           extent={{66,-52},{90,-66}},
           lineColor={255,0,0},
-          textString="VE"),
-        Text(
+          textString="VE"),Text(
           extent={{210,-54},{234,-68}},
           lineColor={255,0,0},
           textString="VB")}),
-    Icon(coordinateSystem(extent={{-100,-180},{340,100}}, preserveAspectRatio=true), graphics={
-        Text(
+    Icon(coordinateSystem(extent={{-100,-180},{340,100}}, preserveAspectRatio=true), graphics={Text(
           extent={{-18,-10},{190,-106}},
           lineColor={0,0,255},
-          textString="ESST4B"),
-        Rectangle(extent={{-98,62},{228,-178}}, lineColor={0,0,255}),
-        Text(
+          textString="ESST4B"),Rectangle(extent={{-98,62},{228,-178}}, lineColor={0,0,255}),Text(
           extent={{-88,8},{-22,-72}},
           lineColor={0,0,255},
-          textString="ECOMP"),
-        Text(
+          textString="ECOMP"),Text(
           extent={{-90,52},{-18,-32}},
           lineColor={0,0,255},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-88,-88},{-38,-146}},
           lineColor={0,0,255},
-          textString="XadIfd"),
-        Text(
+          textString="XadIfd"),Text(
           extent={{-92,-150},{-34,-174}},
           lineColor={0,0,255},
-          textString="EFD0"),
-        Text(
+          textString="EFD0"),Text(
           extent={{-84,-46},{-34,-104}},
           lineColor={0,0,255},
-          textString="VUEL"),
-        Text(
+          textString="VUEL"),Text(
           extent={{-60,76},{-10,18}},
           lineColor={0,0,255},
           textString="GenT")}),
@@ -301,18 +286,18 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end ESST4B2;
