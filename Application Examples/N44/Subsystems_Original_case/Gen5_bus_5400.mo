@@ -38,7 +38,6 @@ model Gen5_bus_5400 "Configuration of synchronous generator with regulators: GEN
     q_NL=0.1) annotation (Placement(transformation(extent={{-60,50},{0,76}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
     K=200,
-    Ec0=PSSE_data.voltages.V5400,
     T_AT_B=0.05,
     T_B=100,
     T_E=0.5,
@@ -51,14 +50,14 @@ equation
 
   connect(gENSAL.p, p) annotation (Line(points={{3.2,9},{54,9},{54,0},{110,0}}, color={0,0,255}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.5,63},{10,63},{10,50},{10,40},{-74,40},{-74,22.5},{-63.36,22.5}}, color={0,0,127}));
-  connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{88.16,-52.5},{94,-52.5},{94,-86},{-74,-86},{-74,-4.5},{-63.36,-4.5}}, color={0,0,127}));
-  connect(cte.y, sEXS.VOEL) annotation (Line(points={{-8.5,-52},{16.16,-52},{16.16,-52.5}}, color={0,0,127}));
-  connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.56,-9.9},{6,-9.9},{6,-67.1875},{16.16,-67.1875}}, color={0,0,127}));
-  connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.56,22.5},{10,22.5},{10,-37.8125},{16.16,-37.8125}}, color={0,0,127}));
+  connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.8,-49.8889},{94,-49.8889},{94,-86},{-74,-86},{-74,-4.5},{-63.36,-4.5}}, color={0,0,127}));
+  connect(cte.y, sEXS.VOEL) annotation (Line(points={{-8.5,-52},{37.4,-52},{37.4,-76}}, color={0,0,127}));
+  connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.56,-9.9},{6,-9.9},{6,-66.8611},{14,-66.8611}}, color={0,0,127}));
+  connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.56,22.5},{10,22.5},{10,-49.8889},{14,-49.8889}}, color={0,0,127}));
   connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.56,33.3},{16,33.3},{16,80},{-66,80},{-66,69.5},{-59.25,69.5}}, color={0,0,127}));
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.56,0.9},{24,0.9},{24,88},{-70,88},{-70,56.5},{-59.25,56.5}}, color={0,0,127}));
-  connect(sEXS.VUEL, cte.y) annotation (Line(points={{16.16,-61.3125},{-2,-61.3125},{-2,-52},{-8.5,-52}}, color={0,0,127}));
-  connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{16.16,-43.6875},{-2,-43.6875},{-2,-52},{-8.5,-52}}, color={0,0,127}));
+  connect(sEXS.VUEL, cte.y) annotation (Line(points={{26.6,-76},{-2,-76},{-2,-52},{-8.5,-52}}, color={0,0,127}));
+  connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{14,-38.1389},{-2,-38.1389},{-2,-52},{-8.5,-52}}, color={0,0,127}));
   annotation (
     Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

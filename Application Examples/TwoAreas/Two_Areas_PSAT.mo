@@ -154,41 +154,26 @@ model Two_Areas_PSAT
 equation
   connect(g1.pwPin, bus1.p) annotation (Line(points={{-201.4,30},{-201.4,30},{-180,30}}, color={0,0,255}));
   connect(g2.pwPin, bus2.p) annotation (Line(points={{-201.4,0},{-201.4,0},{-180,0}}, color={0,0,255}));
-  connect(Line6_7.n, bus7.p) annotation (Line(points={{-68.3333,30},{-68.3333,
-          30},{-60,30}},                                                                     color={0,0,255}));
-  connect(Line6_7.p, bus6.p) annotation (Line(points={{-91.6667,30},{-91.6667,
-          30},{-100,30}},                                                                     color={0,0,255}));
-  connect(Line5_6.n, bus6.p) annotation (Line(points={{-108.333,30},{-108.333,
-          30},{-100,30}},                                                                     color={0,0,255}));
-  connect(Line5_6.p, bus5.p) annotation (Line(points={{-131.667,30},{-131.667,
-          30},{-140,30}},                                                                     color={0,0,255}));
-  connect(Line8_9_2.n, bus9.p) annotation (Line(points={{41.6667,20},{54,20},{
-          54,30},{60,30}},                                                                     color={0,0,255}));
-  connect(Line8_9_1.n, bus9.p) annotation (Line(points={{41.6667,40},{54,40},{
-          54,30},{60,30}},                                                                     color={0,0,255}));
-  connect(Line8_9_2.p, bus8.p) annotation (Line(points={{18.3333,20},{6,20},{6,
-          30},{0,30}},                                                                      color={0,0,255}));
-  connect(Line8_9_1.p, bus8.p) annotation (Line(points={{18.3333,40},{6,40},{6,
-          30},{0,30}},                                                                      color={0,0,255}));
-  connect(Line7_8_2.n, bus8.p) annotation (Line(points={{-18.3333,20},{-6,20},{
-          -6,22},{-6,30},{0,30}},                                                                      color={0,0,255}));
-  connect(Line7_8_1.n, bus8.p) annotation (Line(points={{-18.3333,40},{-6,40},{
-          -6,30},{0,30}},                                                                      color={0,0,255}));
-  connect(Line7_8_1.p, bus7.p) annotation (Line(points={{-41.6667,40},{-54,40},
-          {-54,30},{-60,30}},                                                                      color={0,0,255}));
-  connect(Line7_8_2.p, bus7.p) annotation (Line(points={{-41.6667,20},{-54,20},
-          {-54,30},{-60,30}},                                                                      color={0,0,255}));
+  connect(Line6_7.n, bus7.p) annotation (Line(points={{-68.3333,30},{-68.3333,30},{-60,30}}, color={0,0,255}));
+  connect(Line6_7.p, bus6.p) annotation (Line(points={{-91.6667,30},{-91.6667,30},{-100,30}}, color={0,0,255}));
+  connect(Line5_6.n, bus6.p) annotation (Line(points={{-108.333,30},{-108.333,30},{-100,30}}, color={0,0,255}));
+  connect(Line5_6.p, bus5.p) annotation (Line(points={{-131.667,30},{-131.667,30},{-140,30}}, color={0,0,255}));
+  connect(Line8_9_2.n, bus9.p) annotation (Line(points={{41.6667,20},{54,20},{54,30},{60,30}}, color={0,0,255}));
+  connect(Line8_9_1.n, bus9.p) annotation (Line(points={{41.6667,40},{54,40},{54,30},{60,30}}, color={0,0,255}));
+  connect(Line8_9_2.p, bus8.p) annotation (Line(points={{18.3333,20},{6,20},{6,30},{0,30}}, color={0,0,255}));
+  connect(Line8_9_1.p, bus8.p) annotation (Line(points={{18.3333,40},{6,40},{6,30},{0,30}}, color={0,0,255}));
+  connect(Line7_8_2.n, bus8.p) annotation (Line(points={{-18.3333,20},{-6,20},{-6,22},{-6,30},{0,30}}, color={0,0,255}));
+  connect(Line7_8_1.n, bus8.p) annotation (Line(points={{-18.3333,40},{-6,40},{-6,30},{0,30}}, color={0,0,255}));
+  connect(Line7_8_1.p, bus7.p) annotation (Line(points={{-41.6667,40},{-54,40},{-54,30},{-60,30}}, color={0,0,255}));
+  connect(Line7_8_2.p, bus7.p) annotation (Line(points={{-41.6667,20},{-54,20},{-54,30},{-60,30}}, color={0,0,255}));
   connect(bus9.p, Line9_10.p) annotation (Line(points={{60,30},{68.3333,30}}, color={0,0,255}));
-  connect(Line9_10.n, bus10.p) annotation (Line(points={{91.6667,30},{91.6667,
-          30},{100,30}},                                                                     color={0,0,255}));
+  connect(Line9_10.n, bus10.p) annotation (Line(points={{91.6667,30},{91.6667,30},{100,30}}, color={0,0,255}));
   connect(bus10.p, Line10_11.p) annotation (Line(points={{100,30},{108.333,30}}, color={0,0,255}));
-  connect(Line10_11.n, bus11.p) annotation (Line(points={{131.667,30},{131.667,
-          30},{140,30}},                                                                      color={0,0,255}));
+  connect(Line10_11.n, bus11.p) annotation (Line(points={{131.667,30},{131.667,30},{140,30}}, color={0,0,255}));
   connect(g4.pwPin, bus4.p) annotation (Line(points={{201.4,-10},{201.4,-10},{180,-10}}, color={0,0,255}));
   connect(g3.pwPin, bus3.p) annotation (Line(points={{201.4,30},{180,30}}, color={0,0,255}));
   connect(Load7.p, bus7.p) annotation (Line(points={{-64,-4.8},{-64,-4.8},{-64,0},{-64,28},{-64,30},{-60,30}}, color={0,0,255}));
-  connect(Load9.p, Line9_10.p) annotation (Line(points={{67,-2.7},{67,-2.7},{67,
-          30},{68.3333,30}},                                                                       color={0,0,255}));
+  connect(Load9.p, Line9_10.p) annotation (Line(points={{67,-2.7},{67,-2.7},{67,30},{68.3333,30}}, color={0,0,255}));
   connect(pwFault.p, bus8.p) annotation (Line(points={{2,-4.33333},{2,30},{0,30}}, color={0,0,255}));
   connect(bus1.p, trafo1.p) annotation (Line(points={{-180,30},{-171,30}}, color={0,0,255}));
   connect(bus5.p, trafo1.n) annotation (Line(points={{-140,30},{-149,30}}, color={0,0,255}));

@@ -42,23 +42,22 @@ model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GEN
     T_B=100,
     T_E=0.5,
     E_MIN=0,
-    E_MAX=4,
-    Ec0=PSSE_data.voltages.V5100) annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
+    E_MAX=4) annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-33,-65},{-23,-55}})));
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 
-  connect(cte.y, sEXS.VOEL) annotation (Line(points={{-22.5,-60},{18.1,-60},{18.1,-60.5}}, color={0,0,127}));
-  connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{88.1,-60.5},{94,-60.5},{94,-92},{-78,-92},{-78,-7.5},{-67.38,-7.5}}, color={0,0,127}));
+  connect(cte.y, sEXS.VOEL) annotation (Line(points={{-22.5,-60},{38.75,-60},{38.75,-88}}, color={0,0,127}));
+  connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.75,-57.4444},{94,-57.4444},{94,-92},{-78,-92},{-78,-7.5},{-67.38,-7.5}}, color={0,0,127}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.7,60},{0,60},{0,38},{-76,38},{-76,17.5},{-67.38,17.5}}, color={0,0,127}));
   connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-3.52,27.5},{4,27.5},{4,76},{-70,76},{-70,67},{-61.35,67}}, color={0,0,127}));
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-3.52,-2.5},{12,-2.5},{12,84},{-76,84},{-76,53},{-61.35,53}}, color={0,0,127}));
-  connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.5},{4,-12.5},{4,-77.6875},{18.1,-77.6875}}, color={0,0,127}));
-  connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,17.5},{8,17.5},{8,-43.3125},{18.1,-43.3125}}, color={0,0,127}));
+  connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.5},{4,-12.5},{4,-77.3056},{16,-77.3056}}, color={0,0,127}));
+  connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,17.5},{8,17.5},{8,-57.4444},{16,-57.4444}}, color={0,0,127}));
   connect(gENSAL.p, p) annotation (Line(points={{-2.9,5},{46,5},{46,0},{110,0}}, color={0,0,255}));
-  connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{18.1,-50.1875},{-4,-50.1875},{-4,-60},{-22.5,-60}}, color={0,0,127}));
-  connect(sEXS.VUEL, cte.y) annotation (Line(points={{18.1,-70.8125},{-4,-70.8125},{-4,-60},{-22.5,-60}}, color={0,0,127}));
+  connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{16,-43.6944},{-4,-43.6944},{-4,-60},{-22.5,-60}}, color={0,0,127}));
+  connect(sEXS.VUEL, cte.y) annotation (Line(points={{28.25,-88},{-4,-88},{-4,-60},{-22.5,-60}}, color={0,0,127}));
   annotation (
     Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

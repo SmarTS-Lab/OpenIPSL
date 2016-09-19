@@ -50,25 +50,17 @@ model Gen2_bus_5600 "Configuration of synchronous generator with regulators: GEN
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,86},{98,98}})));
 equation
 
-
   connect(gENSAL.p, p) annotation (Line(points={{3.1,3},{54.55,3},{54.55,0},{110,0}}, color={0,0,255}));
-  connect(cte.y, sCRX.VOEL) annotation (Line(points={{-6.5,-48},{26.2417,-48},{
-          26.2417,-48.15}},                                                                      color={0,0,127}));
-  connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{2.48,-18.7},{10,
-          -18.7},{10,-84.11},{26.2417,-84.11}},                                                                   color={0,0,127}));
-  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{2.48,-24.9},{14,
-          -24.9},{14,-63.03},{25.7583,-63.03}},                                                                       color={0,0,127}));
-  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{2.48,18.5},{22,
-          18.5},{22,-32.03},{26.2417,-32.03}},                                                                    color={0,0,127}));
-  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{84.9667,-58.69},{92,
-          -58.69},{92,-94},{-72,-94},{-72,-12.5},{-61.38,-12.5}},                                                                     color={0,0,127}));
+  connect(cte.y, sCRX.VOEL) annotation (Line(points={{-6.5,-48},{26.2417,-48},{26.2417,-48.15}}, color={0,0,127}));
+  connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{2.48,-18.7},{10,-18.7},{10,-84.11},{26.2417,-84.11}}, color={0,0,127}));
+  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{2.48,-24.9},{14,-24.9},{14,-63.03},{25.7583,-63.03}}, color={0,0,127}));
+  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{2.48,18.5},{22,18.5},{22,-32.03},{26.2417,-32.03}}, color={0,0,127}));
+  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{84.9667,-58.69},{92,-58.69},{92,-94},{-72,-94},{-72,-12.5},{-61.38,-12.5}}, color={0,0,127}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{3.55,62},{8,62},{8,60},{8,40},{-68,40},{-68,18.5},{-61.38,18.5}}, color={0,0,127}));
   connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.48,30.9},{12,30.9},{12,82},{-66,82},{-66,69},{-59.225,69}}, color={0,0,127}));
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.48,-6.3},{18,-6.3},{18,88},{-72,88},{-72,55},{-59.225,55}}, color={0,0,127}));
-  connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26.2417,-40.71},{4,
-          -40.71},{4,-48},{-6.5,-48}},                                                                  color={0,0,127}));
-  connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2417,-56.21},{4,-56.21},
-          {4,-48},{-6.5,-48}},                                                                        color={0,0,127}));
+  connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26.2417,-40.71},{4,-40.71},{4,-48},{-6.5,-48}}, color={0,0,127}));
+  connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2417,-56.21},{4,-56.21},{4,-48},{-6.5,-48}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

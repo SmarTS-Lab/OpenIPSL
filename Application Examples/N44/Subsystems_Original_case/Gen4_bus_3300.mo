@@ -67,29 +67,18 @@ model Gen4_bus_3300 "Configuration of synchronous generator with regulators: GEN
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 
-  connect(cte.y, sCRX.VUEL) annotation (Line(points={{-8.45,-59.5},{24.775,
-          -59.5},{24.775,-58.93},{34.2333,-58.93}},                                                                  color={0,0,127}));
-  connect(sCRX.VOEL, cte.y) annotation (Line(points={{34.2333,-52.95},{-2,
-          -52.95},{-2,-54},{-2,-59.5},{-8.45,-59.5}},                                                                 color={0,0,127}));
-  connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-30.0455,-47.5},
-          {1.97725,-47.5},{1.97725,-47.43},{34.2333,-47.43}},                                                                       color={0,0,127}));
-  connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.56,40.5},{20,
-          40.5},{20,92},{-60,92},{-60,82.8571},{-52.6,82.8571}},                                                                      color={0,0,127}));
-  connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.56,-1.5},{
-          20,-1.5},{20,-28},{-70,-28},{-70,70.8571},{-52.6,70.8571}},                                                                     color={0,0,127}));
-  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{90.9333,-60.77},{96,
-          -60.77},{96,-90},{-90,-90},{-90,-8.5},{-57.36,-8.5}},                                                                     color={0,0,127}));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.75,77.7143},{
-          12,77.7143},{12,50},{-66,50},{-66,26.5},{-57.36,26.5}},                                                                      color={0,0,127}));
-  connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.56,26.5},{28,
-          26.5},{28,-40.99},{34.2333,-40.99}},                                                                    color={0,0,127}));
-  connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.56,-15.5},{16,
-          -15.5},{16,-80},{26,-80},{26,-79.63},{34.2333,-79.63}},                                                                   color={0,0,127}));
-  connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.56,-22.5},{12,
-          -22.5},{12,-63.99},{33.7667,-63.99}},                                                                       color={0,0,127}));
+  connect(cte.y, sCRX.VUEL) annotation (Line(points={{-8.45,-59.5},{24.775,-59.5},{24.775,-58.93},{34.2333,-58.93}}, color={0,0,127}));
+  connect(sCRX.VOEL, cte.y) annotation (Line(points={{34.2333,-52.95},{-2,-52.95},{-2,-54},{-2,-59.5},{-8.45,-59.5}}, color={0,0,127}));
+  connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-30.0455,-47.5},{1.97725,-47.5},{1.97725,-47.43},{34.2333,-47.43}}, color={0,0,127}));
+  connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.56,40.5},{20,40.5},{20,92},{-60,92},{-60,82.8571},{-52.6,82.8571}}, color={0,0,127}));
+  connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.56,-1.5},{20,-1.5},{20,-28},{-70,-28},{-70,70.8571},{-52.6,70.8571}}, color={0,0,127}));
+  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{90.9333,-60.77},{96,-60.77},{96,-90},{-90,-90},{-90,-8.5},{-57.36,-8.5}}, color={0,0,127}));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.75,77.7143},{12,77.7143},{12,50},{-66,50},{-66,26.5},{-57.36,26.5}}, color={0,0,127}));
+  connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.56,26.5},{28,26.5},{28,-40.99},{34.2333,-40.99}}, color={0,0,127}));
+  connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.56,-15.5},{16,-15.5},{16,-80},{26,-80},{26,-79.63},{34.2333,-79.63}}, color={0,0,127}));
+  connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.56,-22.5},{12,-22.5},{12,-63.99},{33.7667,-63.99}}, color={0,0,127}));
   connect(gENROU.p, pwPin) annotation (Line(points={{9.2,9},{76,9},{76,0},{110,0}}, color={0,0,255}));
-  connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.56,-8.5},{34,
-          -8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}},                                                                      color={0,0,127}));
+  connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.56,-8.5},{34,-8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}}, color={0,0,127}));
   annotation (
     Icon(graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},

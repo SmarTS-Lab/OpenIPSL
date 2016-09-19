@@ -46,18 +46,12 @@ equation
 
   connect(gENSAL.p, pwPin) annotation (Line(points={{46,0},{42,0},{70,0}}, color={0,0,255}));
   connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{4.4,9},{2,9},{2,14},{-8,14},{-8,32},{50,32},{50,-5.4},{45.6,-5.4}}, color={0,0,127}));
-  connect(eSDC1A.EFD, gENSAL.EFD) annotation (Line(points={{0.888889,-9},{
-          0.888889,-9},{2,-9},{4.4,-9}},                                                                 color={0,0,127}));
-  connect(eSDC1A.EFD0, gENSAL.EFD0) annotation (Line(points={{-19.5556,-14.95},
-          {-19.5556,-22},{50,-22},{50,-12.6},{45.6,-12.6}},                                                                      color={0,0,127}));
-  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-53.6,6},{-44,6},{-44,
-          -14.25},{-31.1111,-14.25}},                                                                       color={0,0,127}));
-  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-10.75},
-          {-44,-10.75},{-44,-14.25},{-31.1111,-14.25}},                                                                      color={0,0,127}));
-  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-7.25},
-          {-44,-7.25},{-44,-14.25},{-31.1111,-14.25}},                                                                       color={0,0,127}));
-  connect(gENSAL.ETERM, eSDC1A.ECOMP) annotation (Line(points={{45.6,9},{52,9},
-          {52,-24},{-38,-24},{-38,-3.925},{-31.1111,-3.925}},                                                                      color={0,0,127}));
+  connect(eSDC1A.EFD, gENSAL.EFD) annotation (Line(points={{0.888889,-9},{0.888889,-9},{2,-9},{4.4,-9}}, color={0,0,127}));
+  connect(eSDC1A.EFD0, gENSAL.EFD0) annotation (Line(points={{-19.5556,-14.95},{-19.5556,-22},{50,-22},{50,-12.6},{45.6,-12.6}}, color={0,0,127}));
+  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-53.6,6},{-44,6},{-44,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
+  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-10.75},{-44,-10.75},{-44,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
+  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-31.1111,-7.25},{-44,-7.25},{-44,-14.25},{-31.1111,-14.25}}, color={0,0,127}));
+  connect(gENSAL.ETERM, eSDC1A.ECOMP) annotation (Line(points={{45.6,9},{52,9},{52,-24},{-38,-24},{-38,-3.925},{-31.1111,-3.925}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,

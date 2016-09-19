@@ -50,7 +50,6 @@ model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GEN
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 
-
   connect(gENSAL.p, p) annotation (Line(points={{4.15,11},{44,11},{44,0},{110,0}}, color={0,0,255}));
   connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{85.9,-54.71},{94,-54.71},{94,-92},{-74,-92},{-74,-6.5},{-61.37,-6.5}}, color={0,0,127}));
   connect(cte.y, sCRX.VOTHSG) annotation (Line(points={{-16.5,-52},{6,-52},{6,-37.89},{31.225,-37.89}}, color={0,0,127}));
