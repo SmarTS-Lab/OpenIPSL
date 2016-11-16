@@ -1,11 +1,13 @@
 within ;
-package N44 
+package N44 "Library of Nordic 44 models"
+
 
 
 annotation (uses(
     Modelica(version="3.2.1"),
     OpenIPSL(version="0.8.1"),
     Complex(version="3.2.1")), Documentation(info="<html>
+This package contains both original and modified Nordic 44 models.
 </html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
