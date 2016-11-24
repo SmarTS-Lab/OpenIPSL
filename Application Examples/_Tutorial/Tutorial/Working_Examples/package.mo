@@ -2,6 +2,7 @@ within Tutorial;
 package Working_Examples 
 extends Modelica.Icons.Package;
 
+
 annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Polygon(
         origin={8.0,14.0},
         lineColor={78,138,73},

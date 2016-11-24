@@ -2,7 +2,7 @@ within Tutorial.Example_3.Generation_Groups;
 
 
 model Gen3
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
+  extends Tutorial.Support.Generator_Example;
   parameter Real vf0=1.079018784709528;
   parameter Real vref0=1.095077501312303;
   parameter Real height_3 annotation (Dialog(group="AVR Disturbance"));
@@ -78,13 +78,7 @@ equation
   connect(gen.pm0, gen.pm) annotation (Line(points={{20,3},{20,0},{14,0},{14,9},{18,9}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor={28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},
-          {60,20}}, color={28,108,200}),Text(
-          extent={{-34,-32},{38,-52}},
-          lineColor={28,108,200},
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-          textString="%name"),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{62,106},{134,68}},
           lineColor={238,46,47},
           fillColor={0,0,255},

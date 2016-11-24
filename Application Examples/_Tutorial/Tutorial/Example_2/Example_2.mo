@@ -43,7 +43,7 @@ model Example_2
     X=0.041891891891892) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{60,-100},{120,-60}})));
 equation
-  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0}}, color={0,0,255}));
+  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-99,0},{-80,0}}, color={0,0,255}));
   connect(B1.p, Transformer.p) annotation (Line(points={{-80,0},{-70,0},{-61,0}}, color={0,0,255}));
   connect(Transformer.n, B2.p) annotation (Line(points={{-39,0},{-20,0}}, color={0,0,255}));
   connect(B2.p, Line_1.p) annotation (Line(points={{-20,0},{-14,0},{-14,0},{-10,0},{-10,20},{8.33333,20}}, color={0,0,255}));

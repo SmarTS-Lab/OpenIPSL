@@ -1,8 +1,9 @@
 within Tutorial.Example_1.Generator;
-partial model Step_3
+model Step_3
+  extends Tutorial.Support.Generator_Example;
+
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
-    V_b=400,
     ra=0.003,
     xd=1.81,
     xq=1.76,
@@ -17,11 +18,12 @@ partial model Step_3
     Taa=0.002,
     M=7,
     D=0,
-    P_0=19.979999999936396,
-    Q_0=9.679249699065775,
-    V_0=1,
-    angle_0=0.494677176989154,
-    Sn=2220) annotation (Placement(transformation(extent={{8,-30},{68,30}})));
+    Sn=2220,
+    V_b=V_b,
+    V_0=V_0,
+    angle_0=angle_0,
+    P_0=P_0,
+    Q_0=Q_0) annotation (Placement(visible=true, transformation(extent={{16,-70},{76,-10}}, rotation=0)));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
     vfmin=-6.40,
@@ -29,27 +31,47 @@ partial model Step_3
     T2=1,
     T1=1,
     Te=0.0001,
-    Tr=0.015) annotation (Placement(transformation(extent={{-52,-6},{-12,34}})));
-  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(transformation(extent={{-100,-4},{-80,16}})));
-protected
-  OpenIPSL.Connectors.PwPin terminal annotation (Placement(transformation(extent={{90,-10},{110,10}}), iconTransformation(extent={{90,-10},{110,10}})));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
-          extent={{80,20},{120,-20}},
-          lineColor={255,0,0},
-          lineThickness=1),Text(
+    Tr=0.015) annotation (Placement(visible=true, transformation(extent={{-54,-46},{-14,-6}}, rotation=0)));
+  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(visible=true, transformation(extent={{-98,-44},{-78,-24}}, rotation=0)));
+equation
+  connect(pss_off.y, avr.vs) annotation (Line(points={{-77,-34},{-58,-34}}, color={0,0,127}));
+  connect(avr.v, machine.v) annotation (Line(points={{-58,-16},{-70,-16},{-70,6},{86,6},{86,-31},{82.5,-31},{79,-31}}, color={0,0,127}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{-12,-26},{16,-26},{16,-25}}, color={0,0,127}));
+  connect(machine.pm, machine.pm0) annotation (Line(points={{16,-55},{6,-55},{-4,-55},{-4,-80},{22,-80},{22,-76.5},{22,-73}}, color={0,0,127}));
+  connect(avr.vf0, machine.vf0) annotation (Line(points={{-34,-2},{-34,4},{22,4},{22,-7}}, color={0,0,127}));
+  connect(machine.p, pwPin) annotation (Line(points={{79,-39.8511},{79,-40.9256},{110,-40.9256},{110,0}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=false,
+        initialScale=0.1,
+        grid={2,2}), graphics={Text(
+          fillPattern=FillPattern.Solid,
+          lineThickness=1,
           extent={{-92,104},{98,86}},
-          lineColor={0,0,0},
-          lineThickness=1,
-          fillPattern=FillPattern.Solid,
+          textString="Step 4: Connecting model's signals",
           fontSize=15,
-          textStyle={TextStyle.Bold},
-          textString="Step 3: Power terminal of the generator model"),Text(
-          extent={{50,34},{152,18}},
-          lineColor={0,0,0},
-          lineThickness=1,
+          textStyle={TextStyle.Bold}),Text(
+          origin={0,-8},
           fillPattern=FillPattern.Solid,
-          fontSize=12,
-          textString="Connectors.PwPin")}), Documentation(revisions="<html>
+          lineThickness=1,
+          extent={{-94,60},{36,54}},
+          fontSize=10,
+          horizontalAlignment=TextAlignment.Left,
+          lineColor={0,0,0},
+          textString="1. Machine's terminal voltage to AVR's input signal
+
+2. AVR's output field voltage to machine's input field voltage
+
+3. Initially calculated mechanical power to input signal of the machine's
+mechanical power
+
+4. Machine's power terminal to the generator model power terminal
+
+5. Constant pss_off to the PSS input at the AVR
+
+6. Initial generator field voltage to initial AVR field voltage
+
+7. Generator pin to External pin")}), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
@@ -77,4 +99,3 @@ protected
 </html>
 "));
 end Step_3;
-

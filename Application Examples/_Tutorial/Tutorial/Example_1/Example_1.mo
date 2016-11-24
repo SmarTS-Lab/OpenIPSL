@@ -7,7 +7,6 @@ model Example_1
   OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
   Generator.Generator G1(
     angle_0=0.494677176989154,
-    V_b=400,
     V_0=1,
     P_0=1997.9999999936396,
     Q_0=967.9249699065775) annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
@@ -45,7 +44,7 @@ model Example_1
     X=0.93*100/2220) annotation (Placement(transformation(extent={{14,-24},{26,-16}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{40,-100},{120,-60}})));
 equation
-  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0}}, color={0,0,255}));
+  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-99,0},{-80,0}}, color={0,0,255}));
   connect(B1.p, transformer.p) annotation (Line(points={{-80,0},{-70,0},{-61,0}}, color={0,0,255}));
   connect(transformer.n, B2.p) annotation (Line(points={{-39,0},{-20,0}}, color={0,0,255}));
   connect(B2.p, line_1.p) annotation (Line(points={{-20,0},{-14,0},{-10,0},{-10,20},{13,20}}, color={0,0,255}));

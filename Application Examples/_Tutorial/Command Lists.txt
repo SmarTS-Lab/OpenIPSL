@@ -1,0 +1,21 @@
+# Example 1
+
+linearize(Tutorial.Example_1.Example_1,stopTime=0.0)
+
+
+loadFile("linear_Tutorial.Example_1.Example_1.mo")
+
+(a) := getParameterValue(linear_Tutorial_Example__1_Example__1,"A")
+
+(eval,evec) := Modelica.Math.Matrices.eigenValues(A);
+
+# Example 2
+
+linearize(Tutorial.Example_2.Example_2,stopTime=0.0)
+
+
+loadFile("linear_Tutorial.Example_2.Example_2.mo")
+
+(a) := getParameterValue(linear_Tutorial_Example__2_Example__2,"A")
+
+(eval,evec) := Modelica.Math.Matrices.eigenValues(A);

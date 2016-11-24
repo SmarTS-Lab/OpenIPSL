@@ -1,6 +1,6 @@
 within Tutorial.Example_2.Generator;
 partial model Step_1
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
+  extends Tutorial.Support.Generator_Example;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
     vfmin=-6.40,
@@ -31,7 +31,6 @@ partial model Step_1
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{40,-20},{80,20}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(
     vsmax=0.2,
     vsmin=-0.2,
@@ -42,41 +41,29 @@ partial model Step_1
     T3=1,
     T4=1) annotation (Placement(transformation(extent={{-40,-4},{-20,16}})));
 equation
-  connect(avr.vf, machine.vf) annotation (Line(points={{21,10},{30,10},{30,10},{40,10}}, color={0,0,127}));
-  connect(machine.p, pwPin) annotation (Line(points={{82,0.09928},{92,0.09928},{92,0},{110,0}}, color={0,0,255}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{21,10},{30,10},{40,10}}, color={0,0,127}));
   connect(machine.pm, machine.pm0) annotation (Line(points={{40,-10},{34,-10},{34,-28},{44,-28},{44,-22}}, color={0,0,127}));
-  annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(
-          extent={{-100,100},{100,-100}},
-          lineColor={0,0,0},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(
-          points={{-48,2},{-20,56},{2,4},{24,-28},{48,22}},
-          color={0,0,0},
-          smooth=Smooth.Bezier),Text(
-          extent={{-52,-18},{56,-66}},
-          lineColor={0,0,0},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid,
-          textString="%name")}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+  connect(machine.p, pwPin) annotation (Line(points={{82,0.09928},{96,0.09928},{96,0},{110,0}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           extent={{-46,20},{-14,-8}},
           lineColor={255,0,0},
-          lineThickness=1),Text(
+          lineThickness=1),
+        Text(
           extent={{-92,102},{98,84}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Step 1: Adding PSS to the generator model"),Text(
+          textString="Step 1: Adding PSS to the generator model"),
+        Text(
           extent={{-76,32},{28,24}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=12,
-          textString="Electrical.Controls.PSAT.PSS.PSSTypeII")}),
-    Documentation(revisions="<html>
+          textString="Electrical.Controls.PSAT.PSS.PSSTypeII")}), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
