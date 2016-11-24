@@ -1,4 +1,6 @@
 within PSAT_Systems.ThreeArea.BaseClasses;
+
+
 partial model BaseNetwork
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_2(
     Sn=900,
@@ -15,7 +17,6 @@ partial model BaseNetwork
     Td10=8,
     xq=1.7,
     V_b=1000) annotation (Placement(transformation(extent={{152,-10},{132,10}})));
-
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2(
     Sn=900,
     V_0=1.050000000000000,
@@ -260,7 +261,7 @@ equation
   connect(pwLine1to6.p, B900.p) annotation (Line(points={{27.5,0},{23.75,0},{20,0}}, color={0,0,255}));
   connect(pwLine1to5.p, B900.p) annotation (Line(points={{45.5,20},{24,20},{24,0},{20,0}}, color={0,0,255}));
   connect(pwLine1to12.n, B700.p) annotation (Line(points={{-83.5,60.5833},{-83.5,80},{-80,80}}, color={0,0,255}));
-  connect(pwLine1to2.n, B400.p) annotation (Line(points={{-47.5,0},{-47.5,0},{0,0}},color={0,0,255}));
+  connect(pwLine1to2.n, B400.p) annotation (Line(points={{-47.5,0},{-47.5,0},{0,0}}, color={0,0,255}));
   connect(pwLine1to1.n, B200.p) annotation (Line(points={{-84,-34.5},{-84,-37.25},{-84,-40}}, color={0,0,255}));
   connect(order2.p, B100.p) annotation (Line(points={{-84.0496,-69},{-84.0496,-64.5},{-84,-64.5},{-84,-60}}, color={0,0,255}));
   connect(order2.pm0, order2.pm) annotation (Line(points={{-73,-88},{-70,-88},{-70,-92},{-78,-92},{-78,-90},{-79,-90}}, color={0,0,127}));
@@ -275,6 +276,18 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -286,7 +299,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

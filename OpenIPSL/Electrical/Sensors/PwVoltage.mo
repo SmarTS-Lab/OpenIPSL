@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Sensors;
-class PwVoltage "Voltage sensor"
 
+
+class PwVoltage "Voltage sensor"
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Interfaces.RealOutput vr annotation (Placement(transformation(extent={{39,20},{59,40}}), iconTransformation(extent={{39,20},{59,40}})));
   Modelica.Blocks.Interfaces.RealOutput vi annotation (Placement(transformation(extent={{39,-10},{59,10}}), iconTransformation(extent={{39,-10},{59,10}})));
@@ -12,34 +13,38 @@ equation
   vi = p.vi;
   v = sqrt(p.vr*p.vr + p.vi*p.vi);
   annotation (
-    Icon(graphics={
-        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-        Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),
-        Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),
-        Text(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
           extent={{-26,-12},{-6,-28}},
           lineColor={0,0,255},
           textString="U",
-          textStyle={TextStyle.Bold}),
-        Line(
+          textStyle={TextStyle.Bold}),Line(
           points={{0,0},{10,10}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Text(
+          smooth=Smooth.None),Text(
           extent={{52,44},{60,38}},
           lineColor={0,0,255},
-          textString="vr"),
-        Text(
+          textString="vr"),Text(
           extent={{52,14},{60,8}},
           lineColor={0,0,255},
-          textString="vi"),
-        Text(
+          textString="vi"),Text(
           extent={{52,-16},{60,-22}},
           lineColor={0,0,255},
           textString="v")}),
     Diagram(graphics),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -51,5 +56,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end PwVoltage;

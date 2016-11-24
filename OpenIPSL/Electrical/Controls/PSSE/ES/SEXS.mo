@@ -21,7 +21,6 @@ model SEXS "Simplified excitation system model"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-50})));
-
   NonElectrical.Continuous.LeadLag leadLag(
     K=1,
     T1=T_AT_B*T_B,
@@ -30,7 +29,6 @@ model SEXS "Simplified excitation system model"
     x_start=Efd0/K) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
 initial equation
   V_REF = Efd0/K + ECOMP0;
-
 equation
   connect(simpleLagLim.y, EFD) annotation (Line(points={{141,0},{210,0}}, color={0,0,127}));
   connect(DiffV1.u1, VUEL) annotation (Line(points={{-106,-62},{-106,-80},{-130,-80},{-130,-200}}, color={0,0,127}));
@@ -68,6 +66,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -79,5 +89,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end SEXS;
+

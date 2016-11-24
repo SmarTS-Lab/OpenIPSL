@@ -1,9 +1,9 @@
 within N44.Base_Case.Generators;
+
+
 model Gen5_bus_6500 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
   Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-
-public
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tppd0=0.05 "T''do (> 0)",
     Tppq0=0.15 "T''qo (> 0)",
@@ -48,7 +48,6 @@ public
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-40,-59},{-30,-49}})));
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-12.65,75},{0,75},{0,46},{-82,46},{-82,26},{-69.4,26}}, color={0,0,127}));
   connect(gENSAL.p, p) annotation (Line(points={{-7,10},{72,10},{72,0},{110,0}}, color={0,0,255}));
   connect(cte.y, sEXS.VOEL) annotation (Line(points={{-29.5,-54},{0,-54},{0,-78},{30.05,-78}}, color={0,0,127}));
@@ -58,9 +57,38 @@ equation
   connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.85,-51.3333},{86,-51.3333},{86,-56},{86,-92},{-82,-92},{-82,-6},{-69.4,-6}}, color={0,0,127}));
   connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-7.6,26},{2,26},{2,-51.3333},{6,-51.3333}}, color={0,0,127}));
   connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{6,-39.3333},{-18,-39.3333},{-18,-54},{-29.5,-54}}, color={0,0,127}));
-  connect(sEXS.VUEL, cte.y) annotation (Line(points={{18.95,-78},{-18,-78},{-18,-54},{-29.5,-54}},color={0,0,127}));
-  annotation (Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+  connect(sEXS.VUEL, cte.y) annotation (Line(points={{18.95,-78},{-18,-78},{-18,-54},{-29.5,-54}}, color={0,0,127}));
+  annotation (
+    Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          smooth=Smooth.Bezier)}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen5_bus_6500;

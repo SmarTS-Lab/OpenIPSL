@@ -2,7 +2,6 @@ within N44.Base_Case.Generators;
 model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
   Nordic 44 model: Buses 3300, 3359, 8500"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Tppd0=0.05 "d-axis sub-transient open-circuit time constant s",
     Tpq0=1 "q-axis transient open-circuit time constant s",
@@ -41,7 +40,6 @@ model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GEN
         extent={{-25.5,-10.5},{25.5,10.5}},
         rotation=0,
         origin={-23.5,69.5})));
-
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=10 "K",
     T_AT_B=0,
@@ -66,7 +64,6 @@ model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GEN
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-21,-61},{-11,-51}})));
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-32.1818,-42.5},{-4.0909,-42.5},{-4.0909,-33.8611},{25,-33.8611}}, color={0,0,127}));
   connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-56},{4,-56},{4,-83},{42.875,-83}}, color={0,0,127}));
   connect(gENROU.p, pwPin) annotation (Line(points={{6.9,15},{62,15},{62,0},{110,0}}, color={0,0,255}));
@@ -77,10 +74,40 @@ equation
   connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},{12,-12.9},{12,-60.9722},{25,-60.9722}}, color={0,0,127}));
   connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.32,-6.7},{16,-6.7},{16,-71.1389},{25,-71.1389}}, color={0,0,127}));
   connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{6.32,30.5},{22,30.5},{22,-49.1111},{25,-49.1111}}, color={0,0,127}));
-  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{81.375,-49.1111},{86,-49.1111},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}},color={0,0,127}));
+  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{81.375,-49.1111},{86,-49.1111},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{34.625,-83},{14,-83},{14,-50},{4,-50},{4,-56},{-10.5,-56}}, color={0,0,127}));
-  annotation (Icon(graphics={Line(
+  annotation (
+    Icon(graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier), Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen4_bus_8500;
+

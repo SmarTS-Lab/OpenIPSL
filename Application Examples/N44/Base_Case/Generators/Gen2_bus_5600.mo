@@ -1,4 +1,6 @@
 within N44.Base_Case.Generators;
+
+
 model Gen2_bus_5600 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
   Nordic 44 model: Buses 3245, 3249, 5600"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
@@ -48,7 +50,6 @@ model Gen2_bus_5600 "Configuration of synchronous generator with regulators: GEN
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-17,-53},{-7,-43}})));
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(p, p) annotation (Line(
       points={{110,0},{104,0},{104,0},{110,0}},
       color={0,0,255},
@@ -64,9 +65,37 @@ equation
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.48,-6.3},{18,-6.3},{18,88},{-72,88},{-72,55},{-59.225,55}}, color={0,0,127}));
   connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26,-40.0556},{4,-40.0556},{4,-48},{-6.5,-48}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{36.15,-90},{4,-90},{4,-48},{-6.5,-48}}, color={0,0,127}));
-
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          smooth=Smooth.Bezier)}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen2_bus_5600;

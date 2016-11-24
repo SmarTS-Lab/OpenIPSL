@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
+
+
 model lim_exc_s1
   extends Modelica.Blocks.Interfaces.BlockIcon;
   parameter Real xiqmin=1;
@@ -24,8 +26,7 @@ model lim_exc_s1
         origin={0.0,0.0},
         extent={{-140.0,-80.0},{-100.0,-40.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput y
-    "Output: saturated excitation voltage"                                       annotation (Placement(transformation(extent={{100,-10},{120,10}}, rotation=0)));
+  Modelica.Blocks.Interfaces.RealOutput y "Output: saturated excitation voltage" annotation (Placement(transformation(extent={{100,-10},{120,10}}, rotation=0)));
   Modelica.Blocks.Interfaces.RealInput Vref "Reference Voltage " annotation (Placement(
       visible=true,
       transformation(
@@ -74,6 +75,18 @@ All vectors have the same number of elements.
 </p>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -85,7 +98,8 @@ All vectors have the same number of elements.
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"),
+</html>
+"),
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},

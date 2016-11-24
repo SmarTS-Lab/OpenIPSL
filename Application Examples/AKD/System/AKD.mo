@@ -1,4 +1,6 @@
 within AKD.System;
+
+
 model AKD
   constant Real pi=Modelica.Constants.pi;
   Components.Gen_no_contr gen58553(
@@ -207,7 +209,6 @@ model AKD
     nu=1,
     V_0=PF_data.voltages.V58653,
     angle_0=PF_data.voltages.A58653) annotation (Placement(transformation(extent={{88,-12},{90,10}})));
-
   OpenIPSL.Electrical.Banks.PwShuntB shunt_58553_58563(B=-0.0005) annotation (Placement(transformation(extent={{-46,-22},{-38,-14}})));
   OpenIPSL.Electrical.Banks.PwShuntB shunt_58563_58553(B=0.0005) annotation (Placement(transformation(extent={{-22,-22},{-14,-14}})));
   OpenIPSL.Electrical.Banks.PwShuntB shunt_58563_58573(B=0.0005) annotation (Placement(transformation(extent={{16,-22},{24,-14}})));
@@ -369,38 +370,31 @@ equation
   connect(twoWindingTransformer1.n, bus_58566.o[1]) annotation (Line(points={{47,-34},{69,-34},{69,-35}}, color={0,0,255}));
   connect(twoWindingTransformer1.p, bus_58563.u[3]) annotation (Line(points={{33,-34},{0,-34},{0,-12.2}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{120,100}}), graphics={
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{120,100}}), graphics={Text(
           extent={{-12,56},{8,50}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58583"),
-        Text(
+          textString="bus 58583"),Text(
           extent={{-72,24},{-52,18}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58553"),
-        Text(
+          textString="bus 58553"),Text(
           extent={{-79,-45},{-59,-51}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58567"),
-        Text(
+          textString="bus 58567"),Text(
           extent={{60,-46},{80,-52}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58566"),
-        Text(
+          textString="bus 58566"),Text(
           extent={{-11,-51},{9,-57}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58563"),
-        Text(
+          textString="bus 58563"),Text(
           extent={{40,30},{60,24}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58573"),
-        Text(
+          textString="bus 58573"),Text(
           extent={{80,16},{100,10}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
@@ -408,6 +402,18 @@ equation
     Icon(coordinateSystem(extent={{-100,-100},{120,100}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -419,5 +425,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end AKD;

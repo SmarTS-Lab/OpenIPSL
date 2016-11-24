@@ -34,7 +34,6 @@ model FifthOrder_AVRI "ABC system with 5th-order machines Type II (Syn2) and AVR
     vf0=1.095878696492499,
     v(start=1.095878696492499)) annotation (Placement(transformation(extent={{166,0},{156,10}})));
 equation
-
   connect(order3_2.vf, Exc2.vf) annotation (Line(points={{152,5},{154,5},{154,5.1},{155.5,5.1}}, color={0,0,127}));
   connect(Exc2.v, order3_2.v) annotation (Line(points={{167.2,3.2},{170,3.2},{170,14},{128,14},{128,3},{131,3}}, color={0,0,127}));
   connect(vref1.y, Exc2.vref) annotation (Line(points={{173.7,23},{172,23},{172,7.8},{167.1,7.8}}, color={0,0,127}));
@@ -52,6 +51,18 @@ equation
     __Dymola_experimentSetupOutput,
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -63,7 +74,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -84,3 +96,4 @@ equation
 </table>
 </html>"));
 end FifthOrder_AVRI;
+

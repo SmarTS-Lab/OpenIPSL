@@ -1,7 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model IEEEG1
-  Modelica.Blocks.Interfaces.RealInput SPEED_HP
-    "Machine speed deviation from nominal (pu)"
+  Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-172,2},{-162,14}}), iconTransformation(extent={{-162,-16},{-132,16}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
@@ -56,10 +55,8 @@ model IEEEG1
         extent={{-6,-6},{6,6}},
         rotation=-90,
         origin={130,-16})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH_HP
-    "Turbine mechanical power (pu)"                                              annotation (Placement(transformation(extent={{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH_LP
-    "Turbine mechanical power (pu)"                                              annotation (Placement(transformation(extent={{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH_HP "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH_LP "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
   parameter Real P0 "Power reference of the governor";
   parameter Real K=20 "Governor gain, 1/R (pu)";
   parameter Real T_1=1e-8 "Control time constant (s)";
@@ -171,6 +168,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -182,5 +191,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end IEEEG1;
+

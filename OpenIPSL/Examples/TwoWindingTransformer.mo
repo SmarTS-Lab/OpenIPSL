@@ -1,7 +1,6 @@
 within OpenIPSL.Examples;
 model TwoWindingTransformer "SMIB system with one load and GENROE model"
   extends Modelica.Icons.Example;
-
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=0.001,
     X=0.2,
@@ -95,7 +94,6 @@ equation
   connect(twoWindingTransformer.n, BUS02.p) annotation (Line(points={{-13,0},{0,0}}, color={0,0,255}));
   connect(pwLine1.p, BUS02.p) annotation (Line(points={{38.3333,30},{4,30},{4,0},{0,0}}, color={0,0,255}));
   connect(pwLine3.p, BUS02.p) annotation (Line(points={{18.3333,-30},{4,-30},{4,0},{0,0}}, color={0,0,255}));
-
   connect(constantLoad.p, BUS02.p) annotation (Line(points={{2,-39.4},{2,0},{0,0}}, color={0,0,255}));
   connect(pwLine3.n, BUS03.p) annotation (Line(points={{41.6667,-30},{41.6667,-30},{50,-30}}, color={0,0,255}));
   connect(BUS03.p, pwLine4.p) annotation (Line(points={{50,-30},{58.3333,-30}}, color={0,0,255}));
@@ -105,6 +103,18 @@ equation
   connect(pwFault.p, BUS03.p) annotation (Line(points={{54,-51},{54,-30},{50,-30}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -116,5 +126,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end TwoWindingTransformer;
+

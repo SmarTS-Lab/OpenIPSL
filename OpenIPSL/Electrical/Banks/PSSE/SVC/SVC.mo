@@ -1,7 +1,8 @@
 within OpenIPSL.Electrical.Banks.PSSE.SVC;
+
+
 model SVC "On bus 10106 & 10114"
-  OpenIPSL.Connectors.PwPin VIB
-    "Voltage signal connected to stepdown transformer (pu)"                             annotation (Placement(transformation(extent={{-98,-4},{-86,8}})));
+  OpenIPSL.Connectors.PwPin VIB "Voltage signal connected to stepdown transformer (pu)" annotation (Placement(transformation(extent={{-98,-4},{-86,8}})));
   Modelica.Blocks.Sources.Constant imSetPoint(k=Vref) annotation (Placement(transformation(extent={{-76,20},{-64,32}})));
   Modelica.Blocks.Sources.Constant imSetPoint1(k=Bref) annotation (Placement(transformation(extent={{-52,20},{-38,34}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
@@ -41,10 +42,8 @@ model SVC "On bus 10106 & 10114"
   parameter Real init_SVC_Leadlag "Initial value";
   parameter Real init_SVC_Lag "Initial value";
   parameter Real OtherSignals;
-  parameter Real Mvar_C=100
-    "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
-  parameter Real Mvar_R=-50
-    "Total compensation capacity of shunt reactor, MVar";
+  parameter Real Mvar_C=100 "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
+  parameter Real Mvar_R=-50 "Total compensation capacity of shunt reactor, MVar";
   Modelica.Blocks.Sources.Constant imSetPoint2(k=OtherSignals) annotation (Placement(transformation(extent={{-52,-18},{-40,-6}})));
   OpenIPSL.Electrical.Sensors.PwVoltage pwVoltage annotation (Placement(transformation(extent={{-90,-14},{-58,20}})));
   Modelica.Blocks.Math.Add add(k1=1, k2=-1) annotation (Placement(transformation(extent={{-58,0},{-46,12}})));
@@ -107,6 +106,18 @@ equation
           textString="SVC")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -118,5 +129,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end SVC;

@@ -1,6 +1,5 @@
 within N44.Base_Case;
 model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
-
   OpenIPSL.Electrical.Buses.BusExt bus_7020(
     no=1,
     nu=1,
@@ -78,64 +77,55 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     Q_0=PF_results.machines.Q7000_1,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-82},{-286,-76}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-82},{-286,-76}})));
   Generators.Gen1_bus_7000 G2_bus7000(
     P_0=PF_results.machines.P7000_2,
     Q_0=PF_results.machines.Q7000_2,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-90},{-286,-84}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-90},{-286,-84}})));
   Generators.Gen1_bus_7000 G3_bus7000(
     P_0=PF_results.machines.P7000_3,
     Q_0=PF_results.machines.Q7000_3,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-98},{-286,-92}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-98},{-286,-92}})));
   Generators.Gen1_bus_7000 G4_bus7000(
     P_0=PF_results.machines.P7000_4,
     Q_0=PF_results.machines.Q7000_4,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-106},{-286,-100}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-106},{-286,-100}})));
   Generators.Gen1_bus_7000 G5_bus7000(
     P_0=PF_results.machines.P7000_5,
     Q_0=PF_results.machines.Q7000_5,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-114},{-286,-108}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-114},{-286,-108}})));
   Generators.Gen1_bus_7000 G6_bus7000(
     P_0=PF_results.machines.P7000_6,
     Q_0=PF_results.machines.Q7000_6,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-122},{-286,-116}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-122},{-286,-116}})));
   Generators.Gen1_bus_7000 G7_bus7000(
     P_0=PF_results.machines.P7000_7,
     Q_0=PF_results.machines.Q7000_7,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-130},{-286,-124}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-130},{-286,-124}})));
   Generators.Gen1_bus_7000 G8_bus7000(
     P_0=PF_results.machines.P7000_8,
     Q_0=PF_results.machines.Q7000_8,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-138},{-286,-132}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-138},{-286,-132}})));
   Generators.Gen1_bus_7000 G9_bus7000(
     P_0=PF_results.machines.P7000_9,
     Q_0=PF_results.machines.Q7000_9,
     V_b=420,
     V_0=PF_results.voltages.V7000,
-    angle_0=PF_results.voltages.A7000)
-    annotation (Placement(transformation(extent={{-292,-146},{-286,-140}})));
+    angle_0=PF_results.voltages.A7000) annotation (Placement(transformation(extent={{-292,-146},{-286,-140}})));
   OpenIPSL.Electrical.Buses.BusExt bus_7010(
     no=1,
     nu=1,
@@ -157,22 +147,19 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.machines.P7100_1,
-    Q_0=PF_results.machines.Q7100_1)
-    annotation (Placement(transformation(extent={{-266,-14},{-260,-8}})));
+    Q_0=PF_results.machines.Q7100_1) annotation (Placement(transformation(extent={{-266,-14},{-260,-8}})));
   Generators.Gen3_bus_7100 G2_bus7100(
     V_b=420,
     V_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.machines.P7100_2,
-    Q_0=PF_results.machines.Q7100_2)
-    annotation (Placement(transformation(extent={{-266,-20},{-260,-14}})));
+    Q_0=PF_results.machines.Q7100_2) annotation (Placement(transformation(extent={{-266,-20},{-260,-14}})));
   Generators.Gen3_bus_7100 G3_bus7100(
     V_b=420,
     V_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.machines.P7100_3,
-    Q_0=PF_results.machines.Q7100_3)
-    annotation (Placement(transformation(extent={{-266,-26},{-260,-20}})));
+    Q_0=PF_results.machines.Q7100_3) annotation (Placement(transformation(extent={{-266,-26},{-260,-20}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7100(
     V_b=420,
     V_0=PF_results.voltages.V7100,
@@ -250,22 +237,19 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_1,
-    Q_0=PF_results.machines.Q3115_1)
-    annotation (Placement(transformation(extent={{-248,12},{-242,18}})));
+    Q_0=PF_results.machines.Q3115_1) annotation (Placement(transformation(extent={{-248,12},{-242,18}})));
   Generators.Gen3_bus_3115 G2_bus3115(
     V_b=420,
     V_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_2,
-    Q_0=PF_results.machines.Q3115_2)
-    annotation (Placement(transformation(extent={{-248,4},{-242,10}})));
+    Q_0=PF_results.machines.Q3115_2) annotation (Placement(transformation(extent={{-248,4},{-242,10}})));
   Generators.Gen3_bus_3115 G3_bus3115(
     V_b=420,
     V_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_3,
-    Q_0=PF_results.machines.Q3115_3)
-    annotation (Placement(transformation(extent={{-248,-4},{-242,2}})));
+    Q_0=PF_results.machines.Q3115_3) annotation (Placement(transformation(extent={{-248,-4},{-242,2}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3115(
     V_b=420,
     V_0=PF_results.voltages.V3115,
@@ -343,22 +327,19 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.machines.P3000_1,
-    Q_0=PF_results.machines.Q3000_1)
-    annotation (Placement(transformation(extent={{-280,64},{-274,70}})));
+    Q_0=PF_results.machines.Q3000_1) annotation (Placement(transformation(extent={{-280,64},{-274,70}})));
   Generators.Gen1_bus_3000 G2_bus3000(
     V_b=420,
     V_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.machines.P3000_2,
-    Q_0=PF_results.machines.Q3000_2)
-    annotation (Placement(transformation(extent={{-280,56},{-274,62}})));
+    Q_0=PF_results.machines.Q3000_2) annotation (Placement(transformation(extent={{-280,56},{-274,62}})));
   Generators.Gen1_bus_3000 G3_bus3000(
     V_b=420,
     V_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.machines.P3000_3,
-    Q_0=PF_results.machines.Q3000_3)
-    annotation (Placement(transformation(extent={{-280,48},{-274,54}})));
+    Q_0=PF_results.machines.Q3000_3) annotation (Placement(transformation(extent={{-280,48},{-274,54}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3000(
     V_b=420,
     V_0=PF_results.voltages.V3000,
@@ -465,15 +446,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_3,
-    Q_0=PF_results.machines.Q3300_3)
-    annotation (Placement(transformation(extent={{-202,92},{-208,86}})));
+    Q_0=PF_results.machines.Q3300_3) annotation (Placement(transformation(extent={{-202,92},{-208,86}})));
   Generators.Gen4_bus_3300 G1_bus3300(
     V_b=420,
     V_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_1,
-    Q_0=PF_results.machines.Q3300_1)
-    annotation (Placement(transformation(extent={{-236,89},{-230,95}})));
+    Q_0=PF_results.machines.Q3300_1) annotation (Placement(transformation(extent={{-236,89},{-230,95}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3300(
     V_b=420,
     V_0=PF_results.voltages.V3300,
@@ -595,15 +574,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_1,
-    Q_0=PF_results.machines.Q8500_1)
-    annotation (Placement(transformation(extent={{-218,138},{-212,144}})));
+    Q_0=PF_results.machines.Q8500_1) annotation (Placement(transformation(extent={{-218,138},{-212,144}})));
   Generators.Gen4_bus_8500 G2_bus8500(
     V_b=420,
     V_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_2,
-    Q_0=PF_results.machines.Q8500_2)
-    annotation (Placement(transformation(extent={{-218,130},{-212,136}})));
+    Q_0=PF_results.machines.Q8500_2) annotation (Placement(transformation(extent={{-218,130},{-212,136}})));
   OpenIPSL.Electrical.Branches.PwLine line_8500_8700(
     R=0.000000,
     X=0.010000,
@@ -617,8 +594,7 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_3,
-    Q_0=PF_results.machines.Q8500_3)
-    annotation (Placement(transformation(extent={{-176,166},{-182,160}})));
+    Q_0=PF_results.machines.Q8500_3) annotation (Placement(transformation(extent={{-176,166},{-182,160}})));
   OpenIPSL.Electrical.Branches.PwLine line_8500_8600(
     R=0.000000,
     X=0.010000,
@@ -656,22 +632,19 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_4,
-    Q_0=PF_results.machines.Q8500_4)
-    annotation (Placement(transformation(extent={{-178,158},{-184,152}})));
+    Q_0=PF_results.machines.Q8500_4) annotation (Placement(transformation(extent={{-178,158},{-184,152}})));
   Generators.Gen4_bus_8500 G5_bus8500(
     V_b=420,
     V_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_5,
-    Q_0=PF_results.machines.Q8500_5)
-    annotation (Placement(transformation(extent={{-178,150},{-184,144}})));
+    Q_0=PF_results.machines.Q8500_5) annotation (Placement(transformation(extent={{-178,150},{-184,144}})));
   Generators.Gen4_bus_8500 G6_bus8500(
     V_b=420,
     V_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_6,
-    Q_0=PF_results.machines.Q8500_6)
-    annotation (Placement(transformation(extent={{-178,142},{-184,136}})));
+    Q_0=PF_results.machines.Q8500_6) annotation (Placement(transformation(extent={{-178,142},{-184,136}})));
   OpenIPSL.Electrical.Buses.BusExt bus_8700(
     no=1,
     nu=1,
@@ -829,50 +802,43 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_1,
-    Q_0=PF_results.machines.Q3249_1)
-    annotation (Placement(transformation(extent={{-198,-20},{-192,-14}})));
+    Q_0=PF_results.machines.Q3249_1) annotation (Placement(transformation(extent={{-198,-20},{-192,-14}})));
   Generators.Gen2_bus_3249 G2_bus3249(
     V_b=420,
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_2,
-    Q_0=PF_results.machines.Q3249_2)
-    annotation (Placement(transformation(extent={{-198,-28},{-192,-22}})));
+    Q_0=PF_results.machines.Q3249_2) annotation (Placement(transformation(extent={{-198,-28},{-192,-22}})));
   Generators.Gen2_bus_3249 G3_bus3249(
     V_b=420,
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_3,
-    Q_0=PF_results.machines.Q3249_3)
-    annotation (Placement(transformation(extent={{-198,-36},{-192,-30}})));
+    Q_0=PF_results.machines.Q3249_3) annotation (Placement(transformation(extent={{-198,-36},{-192,-30}})));
   Generators.Gen2_bus_3249 G4_bus3249(
     V_b=420,
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_4,
-    Q_0=PF_results.machines.Q3249_4)
-    annotation (Placement(transformation(extent={{-158,-16},{-164,-22}})));
+    Q_0=PF_results.machines.Q3249_4) annotation (Placement(transformation(extent={{-158,-16},{-164,-22}})));
   Generators.Gen2_bus_3249 G5_bus3249(
     V_b=420,
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_5,
-    Q_0=PF_results.machines.Q3249_5)
-    annotation (Placement(transformation(extent={{-158,-24},{-164,-30}})));
+    Q_0=PF_results.machines.Q3249_5) annotation (Placement(transformation(extent={{-158,-24},{-164,-30}})));
   Generators.Gen2_bus_3249 G6_bus3249(
     V_b=420,
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_6,
-    Q_0=PF_results.machines.Q3249_6)
-    annotation (Placement(transformation(extent={{-158,-32},{-164,-38}})));
+    Q_0=PF_results.machines.Q3249_6) annotation (Placement(transformation(extent={{-158,-32},{-164,-38}})));
   Generators.Gen2_bus_3249 G7_bus3249(
     V_b=420,
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_7,
-    Q_0=PF_results.machines.Q3249_7)
-    annotation (Placement(transformation(extent={{-158,-42},{-164,-48}})));
+    Q_0=PF_results.machines.Q3249_7) annotation (Placement(transformation(extent={{-158,-42},{-164,-48}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3701(
     nu=1,
     V_0=PF_results.voltages.V3701,
@@ -890,8 +856,7 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V3245,
     angle_0=PF_results.voltages.A3245,
     P_0=PF_results.machines.P3245_1,
-    Q_0=PF_results.machines.Q3245_1)
-    annotation (Placement(transformation(extent={{-194,-62},{-200,-68}})));
+    Q_0=PF_results.machines.Q3245_1) annotation (Placement(transformation(extent={{-194,-62},{-200,-68}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3244(
     nu=1,
     V_0=PF_results.voltages.V3244,
@@ -925,15 +890,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_1,
-    Q_0=PF_results.machines.Q6700_1)
-    annotation (Placement(transformation(extent={{-98,-98},{-92,-92}})));
+    Q_0=PF_results.machines.Q6700_1) annotation (Placement(transformation(extent={{-98,-98},{-92,-92}})));
   Generators.Gen3_bus_6700 G2_bus6700(
     V_b=300,
     V_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_2,
-    Q_0=PF_results.machines.Q6700_2)
-    annotation (Placement(transformation(extent={{-58,-78},{-64,-84}})));
+    Q_0=PF_results.machines.Q6700_2) annotation (Placement(transformation(extent={{-58,-78},{-64,-84}})));
   OpenIPSL.Electrical.Branches.PwLine line_3701_6700(
     R=0.250000,
     X=2.000000,
@@ -1007,29 +970,25 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_1,
-    Q_0=PF_results.machines.Q6500_1)
-    annotation (Placement(transformation(extent={{2,-90},{-4,-96}})));
+    Q_0=PF_results.machines.Q6500_1) annotation (Placement(transformation(extent={{2,-90},{-4,-96}})));
   Generators.Gen5_bus_6500 G2_bus6500(
     V_b=300,
     V_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_2,
-    Q_0=PF_results.machines.Q6500_2)
-    annotation (Placement(transformation(extent={{2,-98},{-4,-104}})));
+    Q_0=PF_results.machines.Q6500_2) annotation (Placement(transformation(extent={{2,-98},{-4,-104}})));
   Generators.Gen5_bus_6500 G3_bus6500(
     V_b=300,
     V_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_3,
-    Q_0=PF_results.machines.Q6500_3)
-    annotation (Placement(transformation(extent={{2,-106},{-4,-112}})));
+    Q_0=PF_results.machines.Q6500_3) annotation (Placement(transformation(extent={{2,-106},{-4,-112}})));
   Generators.Gen5_bus_6500 G4_bus6500(
     V_b=300,
     V_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_4,
-    Q_0=PF_results.machines.Q6500_4)
-    annotation (Placement(transformation(extent={{2,-114},{-4,-120}})));
+    Q_0=PF_results.machines.Q6500_4) annotation (Placement(transformation(extent={{2,-114},{-4,-120}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5100(
     nu=2,
     no=4,
@@ -1049,8 +1008,7 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V5100,
     angle_0=PF_results.voltages.A5100,
     P_0=PF_results.machines.P5100_1,
-    Q_0=PF_results.machines.Q5100_1)
-    annotation (Placement(transformation(extent={{2,-68},{8,-62}})));
+    Q_0=PF_results.machines.Q5100_1) annotation (Placement(transformation(extent={{2,-68},{8,-62}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5100(
     V_b=300,
     V_0=PF_results.voltages.V5100,
@@ -1096,43 +1054,37 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_1,
-    Q_0=PF_results.machines.Q3359_1)
-    annotation (Placement(transformation(extent={{-92,110},{-98,104}})));
+    Q_0=PF_results.machines.Q3359_1) annotation (Placement(transformation(extent={{-92,110},{-98,104}})));
   Generators.Gen4_bus_3359 G2_bus3359(
     V_b=420,
     V_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_2,
-    Q_0=PF_results.machines.Q3359_2)
-    annotation (Placement(transformation(extent={{-92,102},{-98,96}})));
+    Q_0=PF_results.machines.Q3359_2) annotation (Placement(transformation(extent={{-92,102},{-98,96}})));
   Generators.Gen4_bus_3359 G3_bus3359(
     V_b=420,
     V_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_3,
-    Q_0=PF_results.machines.Q3359_3)
-    annotation (Placement(transformation(extent={{-92,94},{-98,88}})));
+    Q_0=PF_results.machines.Q3359_3) annotation (Placement(transformation(extent={{-92,94},{-98,88}})));
   Generators.Gen4_bus_3359 G4_bus3359(
     V_b=420,
     V_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_4,
-    Q_0=PF_results.machines.Q3359_4)
-    annotation (Placement(transformation(extent={{-92,86},{-98,80}})));
+    Q_0=PF_results.machines.Q3359_4) annotation (Placement(transformation(extent={{-92,86},{-98,80}})));
   Generators.Gen4_bus_3359 G5_bus3359(
     V_b=420,
     V_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_5,
-    Q_0=PF_results.machines.Q3359_5)
-    annotation (Placement(transformation(extent={{-92,78},{-98,72}})));
+    Q_0=PF_results.machines.Q3359_5) annotation (Placement(transformation(extent={{-92,78},{-98,72}})));
   Generators.Gen4_bus_3359 G6_bus3359(
     V_b=420,
     V_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_6,
-    Q_0=PF_results.machines.Q3359_6)
-    annotation (Placement(transformation(extent={{-92,70},{-98,64}})));
+    Q_0=PF_results.machines.Q3359_6) annotation (Placement(transformation(extent={{-92,70},{-98,64}})));
   OpenIPSL.Electrical.Branches.PwLine line_5101_5103(
     R=0.010000,
     X=0.140000,
@@ -1278,15 +1230,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_1,
-    Q_0=PF_results.machines.Q5300_1)
-    annotation (Placement(transformation(extent={{220,64},{226,70}})));
+    Q_0=PF_results.machines.Q5300_1) annotation (Placement(transformation(extent={{220,64},{226,70}})));
   Generators.Gen3_bus_5300 G2_bus5300(
     V_b=300,
     V_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_2,
-    Q_0=PF_results.machines.Q5300_2)
-    annotation (Placement(transformation(extent={{262,84},{256,78}})));
+    Q_0=PF_results.machines.Q5300_2) annotation (Placement(transformation(extent={{262,84},{256,78}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5300(
     V_b=300,
     V_0=PF_results.voltages.V5300,
@@ -1336,36 +1286,31 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_1,
-    Q_0=PF_results.machines.Q6100_1)
-    annotation (Placement(transformation(extent={{262,42},{268,48}})));
+    Q_0=PF_results.machines.Q6100_1) annotation (Placement(transformation(extent={{262,42},{268,48}})));
   Generators.Gen3_bus_6100 G2_bus6100(
     V_b=300,
     V_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_2,
-    Q_0=PF_results.machines.Q6100_2)
-    annotation (Placement(transformation(extent={{296,64},{290,58}})));
+    Q_0=PF_results.machines.Q6100_2) annotation (Placement(transformation(extent={{296,64},{290,58}})));
   Generators.Gen3_bus_6100 G4_bus6100(
     V_b=300,
     V_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_4,
-    Q_0=PF_results.machines.Q6100_4)
-    annotation (Placement(transformation(extent={{296,48},{290,42}})));
+    Q_0=PF_results.machines.Q6100_4) annotation (Placement(transformation(extent={{296,48},{290,42}})));
   Generators.Gen3_bus_6100 G5_bus6100(
     V_b=300,
     V_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_5,
-    Q_0=PF_results.machines.Q6100_5)
-    annotation (Placement(transformation(extent={{296,40},{290,34}})));
+    Q_0=PF_results.machines.Q6100_5) annotation (Placement(transformation(extent={{296,40},{290,34}})));
   Generators.Gen3_bus_6100 G3_bus6100(
     V_b=300,
     V_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_3,
-    Q_0=PF_results.machines.Q6100_3)
-    annotation (Placement(transformation(extent={{296,56},{290,50}})));
+    Q_0=PF_results.machines.Q6100_3) annotation (Placement(transformation(extent={{296,56},{290,50}})));
   OpenIPSL.Electrical.Branches.PwLine line_6000_6100(
     R=0.034000,
     X=0.420000,
@@ -1385,8 +1330,7 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_1,
-    Q_0=PF_results.machines.Q6000_1)
-    annotation (Placement(transformation(extent={{219,-2},{227,6}})));
+    Q_0=PF_results.machines.Q6000_1) annotation (Placement(transformation(extent={{219,-2},{227,6}})));
   OpenIPSL.Electrical.Branches.PwLine line_5400_6000(
     R=0.033000,
     X=0.360000,
@@ -1486,15 +1430,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_1,
-    Q_0=PF_results.machines.Q5600_1)
-    annotation (Placement(transformation(extent={{298,-48},{292,-54}})));
+    Q_0=PF_results.machines.Q5600_1) annotation (Placement(transformation(extent={{298,-48},{292,-54}})));
   Generators.Gen2_bus_5600 G2_bus5600(
     V_b=300,
     V_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_2,
-    Q_0=PF_results.machines.Q5600_2)
-    annotation (Placement(transformation(extent={{298,-56},{292,-62}})));
+    Q_0=PF_results.machines.Q5600_2) annotation (Placement(transformation(extent={{298,-56},{292,-62}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5603(
     nu=2,
     no=2,
@@ -1550,8 +1492,7 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V5500,
     angle_0=PF_results.voltages.A5500,
     P_0=PF_results.machines.P5500_1,
-    Q_0=PF_results.machines.Q5500_1)
-    annotation (Placement(transformation(extent={{96,-71},{90,-77}})));
+    Q_0=PF_results.machines.Q5500_1) annotation (Placement(transformation(extent={{96,-71},{90,-77}})));
   OpenIPSL.Electrical.Branches.PwLine line_5400_5500(
     R=0.009000,
     G=0,
@@ -1633,15 +1574,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V5400,
     angle_0=PF_results.voltages.A5400,
     P_0=PF_results.machines.P5400_1,
-    Q_0=PF_results.machines.Q5400_1)
-    annotation (Placement(transformation(extent={{162,-60},{168,-54}})));
+    Q_0=PF_results.machines.Q5400_1) annotation (Placement(transformation(extent={{162,-60},{168,-54}})));
   Generators.Gen5_bus_5400 G2_bus5400(
     V_b=300,
     V_0=PF_results.voltages.V5400,
     angle_0=PF_results.voltages.A5400,
     P_0=PF_results.machines.P5400_2,
-    Q_0=PF_results.machines.Q5400_2)
-    annotation (Placement(transformation(extent={{202,-50},{196,-56}})));
+    Q_0=PF_results.machines.Q5400_2) annotation (Placement(transformation(extent={{202,-50},{196,-56}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5400(
     V_b=300,
     V_0=PF_results.voltages.V5400,
@@ -1724,134 +1663,115 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     V_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_4,
-    Q_0=PF_results.machines.Q3115_4)
-    annotation (Placement(transformation(extent={{-246,34},{-240,40}})));
+    Q_0=PF_results.machines.Q3115_4) annotation (Placement(transformation(extent={{-246,34},{-240,40}})));
   Generators.Gen3_bus_3115 G5_add_bus3115(
     V_b=420,
     V_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_5,
-    Q_0=PF_results.machines.Q3115_5)
-    annotation (Placement(transformation(extent={{-246,26},{-240,32}})));
+    Q_0=PF_results.machines.Q3115_5) annotation (Placement(transformation(extent={{-246,26},{-240,32}})));
   Generators.Gen2_bus_3249 G8_add_bus3249(
     V_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     V_b=420,
     P_0=PF_results.machines.P3249_8,
-    Q_0=PF_results.machines.Q3249_8)
-    annotation (Placement(transformation(extent={{-158,0},{-164,-6}})));
+    Q_0=PF_results.machines.Q3249_8) annotation (Placement(transformation(extent={{-158,0},{-164,-6}})));
   Generators.Gen4_bus_3300 G4_add_bus3300(
     V_b=420,
     V_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_4,
-    Q_0=PF_results.machines.Q3300_4)
-    annotation (Placement(transformation(extent={{-236,118},{-230,124}})));
+    Q_0=PF_results.machines.Q3300_4) annotation (Placement(transformation(extent={{-236,118},{-230,124}})));
   Generators.Gen4_bus_3300 G5_add_bus3300(
     V_b=420,
     V_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_5,
-    Q_0=PF_results.machines.Q3300_5)
-    annotation (Placement(transformation(extent={{-236,110},{-230,116}})));
+    Q_0=PF_results.machines.Q3300_5) annotation (Placement(transformation(extent={{-236,110},{-230,116}})));
   Generators.Gen4_bus_3300 G6_add_bus3300(
     V_b=420,
     V_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_6,
-    Q_0=PF_results.machines.Q3300_6)
-    annotation (Placement(transformation(extent={{-236,102},{-230,108}})));
+    Q_0=PF_results.machines.Q3300_6) annotation (Placement(transformation(extent={{-236,102},{-230,108}})));
   Generators.Gen5_bus_5100 G2_add_bus5100(
     V_b=300,
     V_0=PF_results.voltages.V5100,
     angle_0=PF_results.voltages.A5100,
     P_0=PF_results.machines.P5100_2,
-    Q_0=PF_results.machines.Q5100_2)
-    annotation (Placement(transformation(extent={{2,-58},{8,-52}})));
+    Q_0=PF_results.machines.Q5100_2) annotation (Placement(transformation(extent={{2,-58},{8,-52}})));
   Generators.Gen3_bus_5300 G3_add_bus5300(
     V_b=300,
     V_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_3,
-    Q_0=PF_results.machines.Q5300_3)
-    annotation (Placement(transformation(extent={{262,92},{256,86}})));
+    Q_0=PF_results.machines.Q5300_3) annotation (Placement(transformation(extent={{262,92},{256,86}})));
   Generators.Gen3_bus_5300 G4_add_bus5300(
     V_b=300,
     V_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_4,
-    Q_0=PF_results.machines.Q5300_4)
-    annotation (Placement(transformation(extent={{262,100},{256,94}})));
+    Q_0=PF_results.machines.Q5300_4) annotation (Placement(transformation(extent={{262,100},{256,94}})));
   Generators.Gen3_bus_5300 G5_add_bus5300(
     V_b=300,
     V_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_5,
-    Q_0=PF_results.machines.Q5300_5)
-    annotation (Placement(transformation(extent={{262,108},{256,102}})));
+    Q_0=PF_results.machines.Q5300_5) annotation (Placement(transformation(extent={{262,108},{256,102}})));
   Generators.Gen3_bus_5300 G6_add_bus5300(
     V_b=300,
     V_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_6,
-    Q_0=PF_results.machines.Q5300_6)
-    annotation (Placement(transformation(extent={{262,116},{256,110}})));
+    Q_0=PF_results.machines.Q5300_6) annotation (Placement(transformation(extent={{262,116},{256,110}})));
   Generators.Gen5_bus_5500 G2_add_bus5500(
     V_b=300,
     V_0=PF_results.voltages.V5500,
     angle_0=PF_results.voltages.A5500,
     P_0=PF_results.machines.P5500_2,
-    Q_0=PF_results.machines.Q5500_2)
-    annotation (Placement(transformation(extent={{96,-53},{90,-59}})));
+    Q_0=PF_results.machines.Q5500_2) annotation (Placement(transformation(extent={{96,-53},{90,-59}})));
   Generators.Gen2_bus_5600 G3_add_bus5600(
     V_b=300,
     V_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_3,
-    Q_0=PF_results.machines.Q5600_3)
-    annotation (Placement(transformation(extent={{298,-40},{292,-46}})));
+    Q_0=PF_results.machines.Q5600_3) annotation (Placement(transformation(extent={{298,-40},{292,-46}})));
   Generators.Gen2_bus_5600 G4_add_bus5600(
     V_b=300,
     V_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_4,
-    Q_0=PF_results.machines.Q5600_4)
-    annotation (Placement(transformation(extent={{298,-32},{292,-38}})));
+    Q_0=PF_results.machines.Q5600_4) annotation (Placement(transformation(extent={{298,-32},{292,-38}})));
   Generators.Gen5_bus_6000 G2_add_bus6000(
     V_b=300,
     V_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_2,
-    Q_0=PF_results.machines.Q6000_2)
-    annotation (Placement(transformation(extent={{265,32},{257,24}})));
+    Q_0=PF_results.machines.Q6000_2) annotation (Placement(transformation(extent={{265,32},{257,24}})));
   Generators.Gen5_bus_6000 G3_add_bus6000(
     V_b=300,
     V_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_3,
-    Q_0=PF_results.machines.Q6000_3)
-    annotation (Placement(transformation(extent={{265,22},{257,14}})));
+    Q_0=PF_results.machines.Q6000_3) annotation (Placement(transformation(extent={{265,22},{257,14}})));
   Generators.Gen5_bus_6000 G4_add_bus6000(
     V_b=300,
     V_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_4,
-    Q_0=PF_results.machines.Q6000_4)
-    annotation (Placement(transformation(extent={{265,12},{257,4}})));
+    Q_0=PF_results.machines.Q6000_4) annotation (Placement(transformation(extent={{265,12},{257,4}})));
   Generators.Gen3_bus_6700 G4_add_bus6700(
     V_b=300,
     V_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_4,
-    Q_0=PF_results.machines.Q6700_4)
-    annotation (Placement(transformation(extent={{-58,-62},{-64,-68}})));
+    Q_0=PF_results.machines.Q6700_4) annotation (Placement(transformation(extent={{-58,-62},{-64,-68}})));
   Generators.Gen3_bus_6700 G3_add_bus6700(
     V_b=300,
     V_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_3,
-    Q_0=PF_results.machines.Q6700_3)
-    annotation (Placement(transformation(extent={{-58,-70},{-64,-76}})));
+    Q_0=PF_results.machines.Q6700_3) annotation (Placement(transformation(extent={{-58,-70},{-64,-76}})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     R=0.005,
     X=0.02,
@@ -1963,72 +1883,58 @@ equation
       points={{-285.7,-143},{-274.075,-143},{-274.075,-92.25},{-272,-92.25}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G8_bus7000.pwPin, bus_7000.o[2]) annotation (Line(
       points={{-285.7,-135},{-275.075,-135},{-275.075,-89.55},{-272,-89.55}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G7_bus7000.pwPin, bus_7000.o[3]) annotation (Line(
       points={{-285.7,-127},{-276.075,-127},{-276.075,-86.85},{-272,-86.85}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G6_bus7000.pwPin, bus_7000.o[4]) annotation (Line(
       points={{-285.7,-119},{-277.075,-119},{-277.075,-84.15},{-272,-84.15}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G5_bus7000.pwPin, bus_7000.o[5]) annotation (Line(
       points={{-285.7,-111},{-278.075,-111},{-278.075,-81.45},{-272,-81.45}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G4_bus7000.pwPin, bus_7000.o[6]) annotation (Line(
       points={{-285.7,-103},{-279.075,-103},{-279.075,-78.75},{-272,-78.75}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G3_bus7000.pwPin, bus_7000.o[7]) annotation (Line(
       points={{-285.7,-95},{-280.075,-95},{-280.075,-76.05},{-272,-76.05}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G2_bus7000.pwPin, bus_7000.o[8]) annotation (Line(
       points={{-285.7,-87},{-281.075,-87},{-281.075,-73.35},{-272,-73.35}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G1_bus7000.pwPin, bus_7000.o[9]) annotation (Line(
       points={{-285.7,-79},{-281.075,-79},{-281.075,-70.65},{-272,-70.65}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load5_bus7000.p, bus_7000.o[10]) annotation (Line(
       points={{-285.8,-60},{-283.9,-60},{-283.9,-67.95},{-272,-67.95}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load4_bus7000.p, bus_7000.o[11]) annotation (Line(
       points={{-283.8,-54},{-282.9,-54},{-282.9,-65.25},{-272,-65.25}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load3_bus7000.p, bus_7000.o[12]) annotation (Line(
       points={{-283.8,-48},{-281.9,-48},{-281.9,-62.55},{-272,-62.55}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load2_bus7000.p, bus_7000.o[13]) annotation (Line(
       points={{-283.8,-42},{-280.9,-42},{-280.9,-59.85},{-272,-59.85}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load1_bus7000.p, bus_7000.o[14]) annotation (Line(
       points={{-283.8,-36},{-279.9,-36},{-279.9,-57.15},{-272,-57.15}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load1_bus7020.p, bus_7020.o[1]) annotation (Line(
       points={{-286.325,-15.75},{-283.9,-15.75},{-283.9,-15},{-282,-15}},
       color={0,0,255},
@@ -2050,8 +1956,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_7000_7010.n, bus_7000.o[16]) annotation (Line(
-      points={{-275,-6.83333},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,
-          -51.75}},
+      points={{-275,-6.83333},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,-51.75}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_7000_7100_3.n, bus_7000.u[1]) annotation (Line(
@@ -2063,35 +1968,29 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_7000_7100_1.n, bus_7000.u[3]) annotation (Line(
-      points={{-260,-52.8333},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,
-          -66.6}},
+      points={{-260,-52.8333},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,-66.6}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_7000_7100_3.p, bus_7100.o[1]) annotation (Line(
       points={{-254,-63.1667},{-254,-42.975},{-252,-42.975}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_7000_7100_2.p, bus_7100.o[2]) annotation (Line(
       points={{-257,-51.1667},{-257,-40.125},{-252,-40.125}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_7000_7100_1.p, bus_7100.o[3]) annotation (Line(
       points={{-260,-41.1667},{-260,-37.275},{-252,-37.275}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load2_bus7100.p, bus_7100.o[4]) annotation (Line(
       points={{-261.8,-35},{-254.9,-35},{-254.9,-34.425},{-252,-34.425}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load1_bus7100.p, bus_7100.o[5]) annotation (Line(
       points={{-261.8,-30},{-257.9,-30},{-257.9,-31.575},{-252,-31.575}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(bus_7100.u[1], line_3249_7100.n) annotation (Line(
       points={{-250,-40.6},{-244,-40.6},{-244,-45},{-236.833,-45}},
       color={0,0,255},
@@ -2100,17 +1999,14 @@ equation
       points={{-270.325,32.25},{-264,32.25},{-264,50.8571},{-258,50.8571}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load2_bus3000.p, bus_3000.o[2]) annotation (Line(
       points={{-270.325,39.25},{-266,39.25},{-266,52.5714},{-258,52.5714}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load1_bus3000.p, bus_3000.o[3]) annotation (Line(
       points={{-270.325,45.25},{-268,45.25},{-268,54.2857},{-258,54.2857}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G3_bus3000.pwPin, bus_3000.o[4]) annotation (Line(
       points={{-273.7,51},{-270,51},{-270,56},{-258,56}},
       color={0,0,255},
@@ -2123,7 +2019,6 @@ equation
       points={{-273.7,67},{-265.075,67},{-265.075,59.4286},{-258,59.4286}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3000_3020.n, bus_3000.o[7]) annotation (Line(
       points={{-263.167,79},{-262,79},{-262,61.1429},{-258,61.1429}},
       color={0,0,255},
@@ -2176,12 +2071,10 @@ equation
       points={{-208.3,89},{-212.94,89},{-212.94,93.2},{-218,93.2}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G2_bus3300.pwPin, bus_3300.u[2]) annotation (Line(
       points={{-208.3,97},{-212.94,97},{-212.94,95.6},{-218,95.6}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3200_3300.p, bus_3300.u[3]) annotation (Line(
       points={{-202.833,103},{-209.25,103},{-209.25,98},{-218,98}},
       color={0,0,255},
@@ -2206,22 +2099,18 @@ equation
       points={{-207,113.167},{-207,108},{-211,108},{-211,100.4},{-218,100.4}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3300_8500_1.n, bus_3300.u[5]) annotation (Line(
       points={{-211,113.167},{-211,110},{-214,110},{-214,102.8},{-218,102.8}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3300_8500_2.p, bus_8500.o[1]) annotation (Line(
       points={{-207,124.833},{-207,126},{-202,126},{-202,133.8},{-198,133.8}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3300_8500_1.p, bus_8500.o[2]) annotation (Line(
       points={{-211,124.833},{-211,128},{-204,128},{-204,136.6},{-198,136.6}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G2_bus8500.pwPin, bus_8500.o[3]) annotation (Line(
       points={{-211.7,133},{-206,133},{-206,139.4},{-198,139.4}},
       color={0,0,255},
@@ -2234,17 +2123,14 @@ equation
       points={{-211.8,148},{-208,148},{-208,145},{-198,145}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load2_bus8500.p, bus_8500.o[6]) annotation (Line(
       points={{-210.325,156.25},{-210,156.25},{-210,147.8},{-198,147.8}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load1_bus8500.p, bus_8500.o[7]) annotation (Line(
       points={{-210.325,162.25},{-206,162.25},{-206,150.6},{-198,150.6}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_8500_8700.n, bus_8500.o[8]) annotation (Line(
       points={{-209.167,167},{-204,167},{-204,153.4},{-198,153.4}},
       color={0,0,255},
@@ -2253,7 +2139,6 @@ equation
       points={{-189,126.833},{-189,126},{-194,126},{-194,133.975},{-196,133.975}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3359_8500_1.p, bus_8500.u[2]) annotation (Line(
       points={{-166.833,129},{-192,129},{-192,137.125},{-196,137.125}},
       color={0,0,255},
@@ -2302,7 +2187,6 @@ equation
       points={{-189,115.167},{-189,106},{-180,106},{-180,102.8},{-178,102.8}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3200_3359.p, bus_3200.u[1]) annotation (Line(
       points={{-158.833,99},{-166.25,99},{-166.25,98},{-176,98}},
       color={0,0,255},
@@ -2327,12 +2211,10 @@ equation
       points={{-136.325,74.25},{-133.9,74.25},{-133.9,75.2667},{-124,75.2667}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load3_bus3359.p, bus_3359.o[4]) annotation (Line(
       points={{-134.325,78.25},{-129.9,78.25},{-129.9,79.1333},{-124,79.1333}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load2_bus3359.p, bus_3359.o[5]) annotation (Line(
       points={{-132.325,82.25},{-130.9,82.25},{-130.9,83},{-124,83}},
       color={0,0,255},
@@ -2341,22 +2223,17 @@ equation
       points={{-130.325,86.75},{-129.9,86.75},{-129.9,86.8667},{-124,86.8667}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3200_3359.n, bus_3359.o[7]) annotation (Line(
-      points={{-147.167,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
-          90.7333}},
+      points={{-147.167,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_1.n, bus_3359.o[8]) annotation (Line(
-      points={{-155.167,129},{-137,129},{-137,106},{-127,106},{-127,94.6},{-124,
-          94.6}},
+      points={{-155.167,129},{-137,129},{-137,106},{-127,106},{-127,94.6},{-124,94.6}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3359_8500_2.n, bus_3359.o[9])
     annotation (Line(
-      points={{-155.167,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{
-          -124,98.4667}},
+      points={{-155.167,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{-124,98.4667}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3360.p, bus_3360.u[1]) annotation (Line(
@@ -2371,7 +2248,6 @@ equation
       points={{-196.167,34},{-196,34},{-196,40},{-184,40},{-184,43},{-178,43}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load_bus3100.p, bus_3100.o[3]) annotation (Line(
       points={{-194.325,47.25},{-186.9,47.25},{-186.9,45},{-178,45}},
       color={0,0,255},
@@ -2380,17 +2256,14 @@ equation
       points={{-193,71.1667},{-193,52},{-184,52},{-184,47},{-178,47}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(line_3100_3200_2.n, bus_3100.o[5])
-    annotation (Line(
-      points={{-187,71.1667},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},
-          {-178,49}},
+  connect(line_3100_3200_2.n, bus_3100.o[5]) annotation (Line(
+      points={{-187,71.1667},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},{-178,49}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3100_3200_1.n, bus_3100.o[6]) annotation (Line(
       points={{-181,71.1667},{-181,62},{-180,62},{-180,50},{-178,50},{-178,51}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3115_6701.n, bus_6701.o[1]) annotation (Line(
       points={{-204,-41.8333},{-204,-60},{-172,-60},{-172,-87},{-146,-87}},
       color={0,0,255},
@@ -2412,20 +2285,17 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3244_6500.p, bus_6500.o[1]) annotation (Line(
-      points={{-105.167,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,
-          -111}},
+      points={{-105.167,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,-111}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load3_bus6500.p, bus_6500.o[2]) annotation (Line(
       points={{-30.325,-111.75},{-25.9,-111.75},{-25.9,-106.6},{-20,-106.6}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load2_bus6500.p, bus_6500.o[3]) annotation (Line(
       points={{-30.325,-103.75},{-25.9,-103.75},{-25.9,-102.2},{-20,-102.2}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load1_bus6500.p, bus_6500.o[4]) annotation (Line(
       points={{-30.325,-97.75},{-25.9,-97.75},{-25.9,-97.8},{-20,-97.8}},
       color={0,0,255},
@@ -2438,7 +2308,6 @@ equation
       points={{-45.1667,-85},{-38.75,-85},{-38.75,-89},{-20,-89}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(bus_5100.u[1], line_5100_5500.n) annotation (Line(
       points={{24,-67},{32,-67},{32,-65},{35.1667,-65}},
       color={0,0,255},
@@ -2475,7 +2344,6 @@ equation
       points={{-98.3,107},{-112.94,107},{-112.94,94.6},{-122,94.6}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3359_5101_2.p, bus_5101.o[1]) annotation (Line(
       points={{-59.1667,11},{15.25,11},{15.25,5},{22,5}},
       color={0,0,255},
@@ -2584,7 +2452,6 @@ equation
       points={{274,34.8333},{274,40},{278,40},{278,43.2},{280,43.2}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_5600_5603.n, bus_5600.o[1]) annotation (Line(
       points={{260.833,-53},{272,-53},{272,-48.5},{280,-48.5}},
       color={0,0,255},
@@ -2625,7 +2492,6 @@ equation
       points={{119.833,-89},{168,-89},{168,-100},{196,-100},{196,-79},{220,-79}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(Load2_bus5500.p, bus_5500.o[1]) annotation (Line(
       points={{65.675,-83.75},{71.1,-83.75},{71.1,-81.2},{76,-81.2}},
       color={0,0,255},
@@ -2718,7 +2584,6 @@ equation
       points={{249.167,-53},{241.75,-53},{241.75,-73},{222,-73}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G3_bus7100.p, bus_7100.o[6]) annotation (Line(
       points={{-259.7,-23},{-257,-23},{-257,-28.725},{-252,-28.725}},
       color={0,0,255},
@@ -2731,7 +2596,6 @@ equation
       points={{-259.7,-11},{-254,-11},{-254,-24},{-252,-24},{-252,-23.025}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G7_bus3249.p, bus_3249.u[1]) annotation (Line(
       points={{-164.3,-45},{-169.15,-45},{-169.15,-37.5},{-174,-37.5}},
       color={0,0,255},
@@ -2820,7 +2684,6 @@ equation
       points={{-244.833,-26},{-244.833,-26.5},{-250,-26.5},{-250,-33}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G4_bus6500.p, bus_6500.u[1]) annotation (Line(
       points={{-4.3,-117},{-12,-117},{-12,-110.56},{-18,-110.56}},
       color={0,0,255},
@@ -2909,42 +2772,34 @@ equation
       points={{-191.7,-33},{-183.85,-33},{-183.85,-32.9429},{-176,-32.9429}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G2_bus3249.p, bus_3249.o[3]) annotation (Line(
       points={{-191.7,-25},{-183.85,-25},{-183.85,-27.9714},{-176,-27.9714}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(G1_bus3249.p, bus_3249.o[4]) annotation (Line(
       points={{-191.7,-17},{-183.85,-17},{-183.85,-23},{-176,-23}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3249.p, bus_3249.o[5])
     annotation (Line(
-      points={{-188.325,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{
-          -180,-14},{-180,-18.0286},{-176,-18.0286}},
+      points={{-188.325,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{-180,-14},{-180,-18.0286},{-176,-18.0286}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(line_3115_3249.p, bus_3249.o[6])
-    annotation (Line(
-      points={{-201.167,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
-          -13.0571}},
+  connect(line_3115_3249.p, bus_3249.o[6]) annotation (Line(
+      points={{-201.167,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3100_3249.n, bus_3249.o[7]) annotation (Line(
       points={{-189,9.16667},{-189,0},{-180,0},{-180,-8.08571},{-176,-8.08571}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_3000_3245_2.n, bus_3245.o[1])
     annotation (Line(
-      points={{-252,9.16667},{-252,-8},{-242,-8},{-242,-22},{-230,-22},{-230,
-          -40},{-218,-40},{-218,-76},{-208,-76}},
+      points={{-252,9.16667},{-252,-8},{-242,-8},{-242,-22},{-230,-22},{-230,-40},{-218,-40},{-218,-76},{-208,-76}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3000_3245_1.n, bus_3245.o[2]) annotation (Line(
-      points={{-228.167,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,
-          -72}},
+      points={{-228.167,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,-72}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3115_3245.n, bus_3245.o[3]) annotation (Line(
@@ -2979,7 +2834,6 @@ equation
       points={{-200.3,-65},{-202,-65},{-202,-75},{-206,-75}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(line_5402_6001.n, bus_6001.u[1]) annotation (Line(
       points={{188,8.83333},{188,18},{184,18}},
       color={0,0,255},
@@ -2989,14 +2843,12 @@ equation
   connect(Exch_bus7100.p, bus_7100.u[3]) annotation (Line(points={{-246,-15.2},{-246,-25.4},{-250,-25.4}}, color={0,0,255}));
   connect(Exch1_bus6701.p, bus_6701.o[2]) annotation (Line(points={{-154.325,-75.75},{-150,-75.75},{-150,-81},{-146,-81}}, color={0,0,255}));
   connect(Exch2_bus6701.p, bus_6701.u[1]) annotation (Line(points={{-136.175,-75.75},{-140,-75.75},{-140,-87},{-144,-87}}, color={0,0,255}));
-  connect(line_3115_7100.n, bus_3115.o[1]) annotation (Line(points={{-233.167,
-          -26},{-232,-26},{-232,-7.175},{-228,-7.175}},                                                                     color={0,0,255}));
+  connect(line_3115_7100.n, bus_3115.o[1]) annotation (Line(points={{-233.167,-26},{-232,-26},{-232,-7.175},{-228,-7.175}}, color={0,0,255}));
   connect(Load_bus3115.p, bus_3115.o[2]) annotation (Line(points={{-236.25,-8.5},{-234,-8.5},{-234,-3.125},{-228,-3.125}}, color={0,0,255}));
   connect(G3_bus3115.p, bus_3115.o[3]) annotation (Line(points={{-241.7,-1},{-234.85,-1},{-234.85,0.925},{-228,0.925}}, color={0,0,255}));
   connect(G2_bus3115.p, bus_3115.o[4]) annotation (Line(points={{-241.7,7},{-234.85,7},{-234.85,4.975},{-228,4.975}}, color={0,0,255}));
   connect(G1_bus3115.p, bus_3115.o[5]) annotation (Line(points={{-241.7,15},{-234.85,15},{-234.85,9.025},{-228,9.025}}, color={0,0,255}));
-  connect(line_3000_3115.n, bus_3115.o[6]) annotation (Line(points={{-237.167,
-          21},{-233.75,21},{-233.75,13.075},{-228,13.075}},                                                                     color={0,0,255}));
+  connect(line_3000_3115.n, bus_3115.o[6]) annotation (Line(points={{-237.167,21},{-233.75,21},{-233.75,13.075},{-228,13.075}}, color={0,0,255}));
   connect(G5_add_bus3115.p, bus_3115.o[7]) annotation (Line(points={{-239.7,29},{-232,29},{-232,17.125},{-228,17.125}}, color={0,0,255}));
   connect(G4_add_bus3115.p, bus_3115.o[8]) annotation (Line(points={{-239.7,37},{-230,37},{-230,21.175},{-228,21.175}}, color={0,0,255}));
   connect(G8_add_bus3249.p, bus_3249.u[5]) annotation (Line(points={{-164.3,-3},{-168,-3},{-168,-14.3},{-174,-14.3}}, color={0,0,255}));
@@ -3011,16 +2863,14 @@ equation
   connect(G2_add_bus5500.p, bus_5500.u[4]) annotation (Line(points={{89.7,-56},{84,-56},{84,-66.8},{78,-66.8}}, color={0,0,255}));
   connect(G3_add_bus5600.p, bus_5600.u[4]) annotation (Line(points={{291.7,-43},{286.85,-43},{282,-43}}, color={0,0,255}));
   connect(G4_add_bus5600.p, bus_5600.u[5]) annotation (Line(points={{291.7,-35},{288,-35},{288,-41},{282,-41}}, color={0,0,255}));
-  connect(line_5600_5601.n, bus_5600.u[6]) annotation (Line(points={{285,
-          -20.8333},{285,-39},{282,-39}},                                                                color={0,0,255}));
+  connect(line_5600_5601.n, bus_5600.u[6]) annotation (Line(points={{285,-20.8333},{285,-39},{282,-39}}, color={0,0,255}));
   connect(G4_add_bus6000.p, bus_6000.u[3]) annotation (Line(points={{256.6,8},{254,8},{254,2},{242,2}}, color={0,0,255}));
   connect(G3_add_bus6000.p, bus_6000.u[4]) annotation (Line(points={{256.6,18},{252,18},{252,4.4},{242,4.4}}, color={0,0,255}));
   connect(G2_add_bus6000.p, bus_6000.u[5]) annotation (Line(points={{256.6,28},{248,28},{248,6.8},{242,6.8}}, color={0,0,255}));
   connect(G3_add_bus6700.p, bus_6700.u[4]) annotation (Line(points={{-64.3,-73},{-66,-73},{-68,-73},{-68,-74},{-68,-81.6},{-76,-81.6}}, color={0,0,255}));
   connect(G4_add_bus6700.p, bus_6700.u[5]) annotation (Line(points={{-64.3,-65},{-68,-65},{-70,-65},{-70,-66},{-70,-79.2},{-76,-79.2}}, color={0,0,255}));
   connect(twoWindingTransformer.n, bus_3360.o[1]) annotation (Line(points={{-101,140},{-98.5,140},{-96,140}}, color={0,0,255}));
-  connect(twoWindingTransformer.p, bus_3359.u[9]) annotation (Line(points={{-115,
-          140},{-118,140},{-118,98.4667},{-122,98.4667}},                                                                        color={0,0,255}));
+  connect(twoWindingTransformer.p, bus_3359.u[9]) annotation (Line(points={{-115,140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
   connect(twoWindingTransformer1.n, bus_3249.u[6]) annotation (Line(points={{-147,-12},{-174,-12},{-174,-8.5}}, color={0,0,255}));
   connect(twoWindingTransformer1.p, bus_3701.o[1]) annotation (Line(points={{-133,-12},{-126,-12},{-126,-60},{-118,-60}}, color={0,0,255}));
   connect(twoWindingTransformer2.n, bus_3245.u[2]) annotation (Line(points={{-197,-80},{-202,-80},{-202,-69},{-206,-69}}, color={0,0,255}));
@@ -3043,229 +2893,228 @@ equation
   connect(twoWindingTransformer10.n, bus_6001.u[2]) annotation (Line(points={{223,32},{190,32},{190,22},{184,22}}, color={0,0,255}));
   connect(twoWindingTransformer11.n, bus_6001.u[3]) annotation (Line(points={{205,14},{198,14},{198,26},{184,26}}, color={0,0,255}));
   connect(twoWindingTransformer11.p, bus_6000.o[3]) annotation (Line(points={{219,14},{234,14},{234,6},{240,6}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-300,-220},{300,220}}), graphics={
-        Text(
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-300,-220},{300,220}}), graphics={Text(
           extent={{-278,12},{-290,16}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-7010"), Text(
+7010"),Text(
           extent={{-266,-110},{-254,-114}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-7000"), Text(
+7000"),Text(
           extent={{-280,-10},{-292,-6}},
           lineColor={0,128,0},
           textString="bus 7020",
-          textStyle={TextStyle.Bold}),
-        Text(
+          textStyle={TextStyle.Bold}),Text(
           extent={{-256,-54},{-244,-58}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-7100"), Text(
+7100"),Text(
           extent={{-232,42},{-220,38}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3115"), Text(
+3115"),Text(
           extent={{-264,44},{-252,40}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3000"), Text(
+3000"),Text(
           extent={{-288,98},{-276,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3020"), Text(
+3020"),Text(
           extent={{-224,84},{-212,80}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3300"), Text(
+3300"),Text(
           extent={{-184,114},{-172,110}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3200"), Text(
+3200"),Text(
           extent={{-182,34},{-170,30}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3100"), Text(
+3100"),Text(
           extent={{-202,172},{-190,168}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-8500"), Text(
+8500"),Text(
           extent={{-242,154},{-230,150}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-8700"), Text(
+8700"),Text(
           extent={{-166,154},{-154,150}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-8600"), Text(
+8600"),Text(
           extent={{-128,118},{-116,114}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3359"), Text(
+3359"),Text(
           extent={{-100,156},{-88,152}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3360"), Text(
+3360"),Text(
           extent={{-182,-54},{-170,-58}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3249"), Text(
+3249"),Text(
           extent={{-124,-42},{-112,-46}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3701"), Text(
+3701"),Text(
           extent={{-212,-84},{-200,-88}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3245"), Text(
+3245"),Text(
           extent={{-182,-112},{-170,-116}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3244"), Text(
+3244"),Text(
           extent={{-150,-96},{-138,-100}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6701"), Text(
+6701"),Text(
           extent={{-82,-96},{-70,-100}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6700"), Text(
+6700"),Text(
           extent={{-24,-124},{-12,-128}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6500"), Text(
+6500"),Text(
           extent={{18,-76},{30,-80}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5100"), Text(
+5100"),Text(
           extent={{18,26},{30,22}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5101"), Text(
+5101"),Text(
           extent={{74,66},{86,62}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5103"), Text(
+5103"),Text(
           extent={{116,98},{128,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5304"), Text(
+5304"),Text(
           extent={{118,0},{130,-4}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5102"), Text(
+5102"),Text(
           extent={{158,138},{170,134}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5305"), Text(
+5305"),Text(
           extent={{196,98},{208,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5301"), Text(
+5301"),Text(
           extent={{236,98},{248,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5300"), Text(
+5300"),Text(
           extent={{276,66},{288,62}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6100"), Text(
+6100"),Text(
           extent={{234,18},{246,14}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6000"), Text(
+6000"),Text(
           extent={{178,38},{190,34}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6001"), Text(
+6001"),Text(
           extent={{274,26},{286,22}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5601"), Text(
+5601"),Text(
           extent={{276,-58},{288,-62}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5600"), Text(
+5600"),Text(
           extent={{276,-108},{288,-112}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5620"), Text(
+5620"),Text(
           extent={{238,-120},{250,-124}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5610"), Text(
+5610"),Text(
           extent={{214,-88},{226,-92}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5603"), Text(
+5603"),Text(
           extent={{178,-88},{190,-92}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5602"), Text(
+5602"),Text(
           extent={{72,-92},{84,-96}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5500"), Text(
+5500"),Text(
           extent={{76,-28},{88,-32}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5501"), Text(
+5501"),Text(
           extent={{118,-46},{130,-50}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5401"), Text(
+5401"),Text(
           extent={{176,-30},{188,-34}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5400"), Text(
+5400"),Text(
           extent={{190,8},{202,4}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
 5402")}),
-      Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio=false)),
+    Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio=false)),
     Documentation(info="<html>
 <h4>Changes compared to the original case (Real data period: April, May, June and July): </h4>
 <ol>
@@ -3618,5 +3467,32 @@ equation
 </table>
  </li>
 </ol>
-</html>"));
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Nordic44_Base_Case;
+

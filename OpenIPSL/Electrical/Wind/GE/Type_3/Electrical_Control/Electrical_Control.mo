@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
+
+
 model Electrical_Control
   import Modelica.Constants.inf;
   parameter Real qmax=1;
@@ -9,8 +11,7 @@ model Electrical_Control
   parameter Real KVi=1;
   parameter Real xiqmax=1;
   parameter Real xiqmin=1;
-  Modelica.Blocks.Interfaces.RealInput Qgen
-    "Reactive Power produced by the Generator"                                         annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Qgen "Reactive Power produced by the Generator" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-148.0,42.372},
@@ -151,7 +152,6 @@ equation
       origin={-86.5355,-18.5464},
       points={{136.0474,84.9551},{119.0414,84.5771},{119.0414,68.9244},{-10.9824,68.9244},{-10.9824,-35.1262},{-108.1222,-35.1262},{-108.1222,-78.2155},{-143.4645,-78.2155},{-143.4645,-81.4536}},
       color={0,0,127}));
-
   connect(lim_exc_s12.y, Efd) annotation (Line(
       visible=true,
       origin={164.128,72.1493},
@@ -174,7 +174,6 @@ equation
       origin={-127.081,-18.8882},
       points={{101.0304,86.2156},{91.9292,85.8376},{91.9292,68.8882},{29.1852,68.8882},{29.1852,-35.5403},{-67.9547,-35.5403},{-67.9547,-78.6296},{-102.919,-78.6296},{-102.919,-81.1118}},
       color={0,0,127}));
-
   connect(Qgen, add1.u1) annotation (Line(
       visible=true,
       origin={-180.5,101.186},
@@ -256,6 +255,18 @@ equation
           fontName="Arial")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -267,5 +278,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end Electrical_Control;

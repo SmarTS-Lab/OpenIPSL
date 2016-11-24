@@ -44,13 +44,6 @@ model EXAC1
     y_start=VR0/K_A,
     x_start=VR0/K_A) annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   Modelica.Blocks.Math.Add3 add3_1(k3=-1) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-protected
-  parameter Real VR0(fixed=false);
-  parameter Real Ifd0(fixed=false);
-  parameter Real VE0(fixed=false);
-  parameter Real VFE0(fixed=false);
-
-public
   BaseClasses.RectifierCommutationVoltageDrop rectifierCommutationVoltageDrop(K_C=K_C) annotation (Placement(transformation(extent={{140,-10},{160,10}})));
   BaseClasses.RotatingExciterWithDemagnetizationLimited rotatingExciterWithDemagnetizationLimited(
     T_E=T_E,
@@ -69,6 +62,11 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-90})));
+protected
+  parameter Real VR0(fixed=false);
+  parameter Real Ifd0(fixed=false);
+  parameter Real VE0(fixed=false);
+  parameter Real VFE0(fixed=false);
 initial equation
   Ifd0 = XADIFD;
   // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
@@ -85,7 +83,6 @@ initial equation
     E_2) + K_E) + Ifd0*K_D;
   VR0 = VFE0;
   V_REF = VR0/K_A + ECOMP0;
-
 equation
   connect(leadLag.y, imLimitedSimpleLag.u) annotation (Line(points={{21,0},{58,0}}, color={0,0,127}));
   connect(add3_1.y, leadLag.u) annotation (Line(points={{-39,0},{-22,0},{-2,0}}, color={0,0,127}));
@@ -108,7 +105,7 @@ equation
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
           extent={{-184,-62},{-114,-82}},
           lineColor={28,108,200},
-          textString="XADIFD"), Text(
+          textString="XADIFD"),Text(
           extent={{-120,158},{140,98}},
           lineColor={28,108,200},
           textString="EXAC1")}),
@@ -133,6 +130,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -144,5 +153,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end EXAC1;
+

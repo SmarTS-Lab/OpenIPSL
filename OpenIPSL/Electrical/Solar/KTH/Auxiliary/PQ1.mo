@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
+
+
 model PQ1
   OpenIPSL.Connectors.PwPin p annotation (Placement(
       visible=true,
@@ -14,8 +16,7 @@ model PQ1
   parameter Real Sn=10;
   parameter Real CoB=Sn/SystemBase;
   parameter Real v0=1.00018548610126 "voltage magnitude after power flow, pu";
-  parameter Real anglev0=-0.0000253046024029618
-    "voltage angle after power flow";
+  parameter Real anglev0=-0.0000253046024029618 "voltage angle after power flow";
   parameter Real P0=0.4 "active power,pu";
   parameter Real Q0=0.3 "reactive power,pu";
   parameter Real Pref=P0*CoB;
@@ -25,8 +26,7 @@ model PQ1
   parameter Real Td=15 "d-axis inverter time constant";
   parameter Real Tq=15 "q-axis inverter time constant";
   parameter Real idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-  parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2)
-    "Initialitation";
+  parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
   Real idref1(start=idref);
   Real iqref1(start=iqref);
   Real v;
@@ -56,10 +56,8 @@ equation
   der(iq) = (iqref1 - iq)/Tq;
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
-  p.ir = -iq
-    "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-  p.ii = id
-    "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+  p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+  p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
   p.vr = vq;
   p.vi = -vd;
   annotation (
@@ -103,6 +101,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -114,5 +124,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end PQ1;

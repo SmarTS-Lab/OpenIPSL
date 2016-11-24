@@ -1,4 +1,6 @@
 within IEEE9;
+
+
 model IEEE_9_Buses
   import Modelica.Constants.pi;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
@@ -177,7 +179,6 @@ model IEEE_9_Buses
     t2=35,
     opening=1) annotation (Placement(transformation(extent={{-50,84},{-32,96}})));
 equation
-
   connect(line_5_7.n, B7.p) annotation (Line(
       points={{-72,63.5},{-72,90},{-80,90}},
       color={0,0,255},
@@ -206,7 +207,6 @@ equation
       points={{0,-77},{0,-86}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(B2.p, gen1.pwPin) annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
   connect(B2.p, twoWindingTransformer2.p) annotation (Line(points={{-120,90},{-110,90},{-113,90}}, color={0,0,255}));
   connect(twoWindingTransformer2.n, B7.p) annotation (Line(points={{-91,90},{-91,90},{-80,90}}, color={0,0,255}));
@@ -246,7 +246,33 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"),
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"),
     experiment(
       StopTime=20,
       Interval=0.001,

@@ -66,7 +66,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-98.9,-32.2222},{-104,-32.2222},{-104,-5},{-89.8,-5}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-69.2,5},{-44,5},{-44,-32.2222},{-62,-32.2222}},color={0,0,127}));
+  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-69.2,5},{-44,5},{-44,-32.2222},{-62,-32.2222}}, color={0,0,127}));
   connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-69.2,-9},{-52,-9},{-52,-26},{-62,-26}}, color={0,0,127}));
   connect(iEESGO.SPEED, generator.SPEED) annotation (Line(points={{-64.8,35},{-62,35},{-62,9},{-69.2,9}}, color={0,0,127}));
   connect(iEESGO.PMECH, generator.PMECH) annotation (Line(points={{-97,32},{-104,32},{-104,5},{-89.8,5}}, color={0,0,127}));
@@ -77,6 +77,18 @@ equation
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -88,5 +100,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end IEESGO;
+

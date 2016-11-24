@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Wind.PSSE.Submodels;
+
+
 model CCL
   parameter Real Qmax;
   parameter Boolean pqflag;
@@ -132,16 +134,14 @@ protected
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-50,-40})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain1
-    "sqrt(ImaxTD^2 - IpCMD^2)"                                                      annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain1 "sqrt(ImaxTD^2 - IpCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
         origin={76,-18}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain2
-    "sqrt(ImaxTD^2 - IqCMD^2)"                                                      annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain2 "sqrt(ImaxTD^2 - IqCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-90,-20}), iconTransformation(
@@ -280,6 +280,18 @@ equation
           textString="sqrt(ImaxTD^2 - IqCMD^2)")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -291,5 +303,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end CCL;

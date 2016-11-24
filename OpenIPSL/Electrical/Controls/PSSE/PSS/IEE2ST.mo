@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
+
+
 model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
   parameter Real K_1;
   parameter Real K_2;
@@ -49,8 +51,7 @@ model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
     T1=T_9,
     T2=T_10,
     y_start=0) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
-  Modelica.Blocks.Interfaces.RealInput VCT
-    "Compensated machine terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput VCT "Compensated machine terminal voltage (pu)"
     annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
@@ -134,6 +135,18 @@ IEE2ST, PSSE Manual
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -145,5 +158,6 @@ IEE2ST, PSSE Manual
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end IEE2ST;

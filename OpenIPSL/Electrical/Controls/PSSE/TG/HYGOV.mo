@@ -13,8 +13,7 @@ model HYGOV
   parameter Real D_turb=0.2 "Turbine damping";
   parameter Real q_NL=0.08 "Water flow at no load";
   Modelica.Blocks.Sources.Constant n_ref(k=nref) annotation (Placement(transformation(extent={{-178,14},{-166,26}})));
-  Modelica.Blocks.Interfaces.RealInput SPEED
-    "Machine speed deviation from nominal (pu)"
+  Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-206,-10},{-192,4}}), iconTransformation(extent={{-84,24},{-72,36}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
     K=1,
@@ -34,8 +33,7 @@ model HYGOV
     K=1,
     T=T_g,
     y_start=g0) "servo_motor" annotation (Placement(transformation(extent={{-40,0},{-28,12}})));
-  Modelica.Blocks.Interfaces.RealInput PMECH0
-    "Initial turbine mechanical power (pu)"
+  Modelica.Blocks.Interfaces.RealInput PMECH0 "Initial turbine mechanical power (pu)"
     annotation (Placement(transformation(extent={{-84,-62},{-76,-52}}), iconTransformation(extent={{-84,-36},{-72,-24}})));
   Modelica.Blocks.Nonlinear.Limiter Velocity_Limiter(uMin=-VELM, uMax=VELM) annotation (Placement(transformation(extent={{-86,0},{-74,12}})));
   Modelica.Blocks.Continuous.LimIntegrator Position_Limiter(
@@ -56,6 +54,11 @@ model HYGOV
   Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{82,-4},{94,8}})));
   Modelica.Blocks.Math.Add add4(k2=-1) annotation (Placement(transformation(extent={{152,-6},{164,6}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{58,-30},{70,-18}})));
+  Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{108,-2},{120,10}})));
+  NonElectrical.Continuous.SimpleLead simpleLead(
+    K=r*T_r,
+    T=T_r,
+    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
 protected
   parameter Real h0=1 "water head initial value";
   // Real T_w(start=T_w);//=1.25 "Water time constant, s";
@@ -69,12 +72,6 @@ protected
   parameter Real nref(fixed=false);
   //=R*c0 "speed reference";
   parameter Real P_m0(fixed=false);
-public
-  Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{108,-2},{120,10}})));
-  NonElectrical.Continuous.SimpleLead simpleLead(
-    K=r*T_r,
-    T=T_r,
-    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
 initial algorithm
   P_m0 := PMECH0;
   q0 := P_m0/(A_t*h0) + q_NL;
@@ -153,6 +150,18 @@ equation
           textString="PMECH")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -164,5 +173,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end HYGOV;
+

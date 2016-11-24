@@ -15,3 +15,4 @@ dymosim.lib
 *.bak-mo
 docs/.idea/
 docs/_build/
+/Support/.idea

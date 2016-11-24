@@ -1,7 +1,8 @@
 within OpenIPSL.Electrical.Buses;
+
+
 model BusExt
-  outer OpenIPSL.Electrical.SystemBase SysData
-    "Must add this line in all models";
+  outer OpenIPSL.Electrical.SystemBase SysData "Must add this line in all models";
   parameter Integer nu(min=1) = 1 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
   parameter Integer no(min=1) = 1 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
   OpenIPSL.Connectors.PwPin u[nu] annotation (Placement(
@@ -44,7 +45,7 @@ equation
       connect(o[1], o[i]);
     end for;
   end if;
-  connect(o[no],u[nu]);
+  connect(o[no], u[nu]);
   V = sqrt(o[1].vr^2 + o[1].vi^2);
   angle = atan2(o[1].vi, o[1].vr)*180/Modelica.Constants.pi;
   annotation (
@@ -74,6 +75,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -85,5 +98,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end BusExt;

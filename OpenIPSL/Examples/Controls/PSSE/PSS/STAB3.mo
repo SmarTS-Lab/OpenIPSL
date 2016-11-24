@@ -54,7 +54,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-76.88,-10.7},{-70,-10.7},{-70,-28},{-76,-28}}, color={0,0,127}));
-  connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-76,-34.2222},{-66,-34.2222},{-66,7.5},{-76.88,7.5}},color={0,0,127}));
+  connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-76,-34.2222},{-66,-34.2222},{-66,7.5},{-76.88,7.5}}, color={0,0,127}));
   connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-76.88,12.7},{-58,12.7},{-58,23},{-64.475,23}}, color={0,0,127}));
   connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-76.88,-2.9},{-64,-2.9},{-64,10},{-48,10},{-48,37},{-64.475,37}}, color={0,0,127}));
   connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-102.95,30},{-112,30},{-112,7.5},{-105.72,7.5}}, color={0,0,127}));
@@ -66,6 +66,18 @@ equation
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -77,5 +89,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end STAB3;
+

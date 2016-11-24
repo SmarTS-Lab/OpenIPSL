@@ -1,4 +1,6 @@
 within SevenBus.Generators;
+
+
 model G1
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
@@ -93,19 +95,13 @@ equation
   connect(sT5B.EFD0, gENROU.EFD0) annotation (Line(points={{29,-72},{40,-72},{40,-21},{32.4,-21}}, color={0,0,127}));
   connect(gENROU.SPEED, pSS2B.V_S1) annotation (Line(points={{32.4,27},{66,27},{66,-90},{56,-90}}, color={0,0,127}));
   connect(gENROU.PELEC, pSS2B.V_S2) annotation (Line(points={{32.4,-15},{72,-15},{72,-94},{56,-94}}, color={0,0,127}));
-  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-67.4,-86},{13,-86},{13,
-          -74.6667}},                                                                      color={0,0,127}));
-  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-67.4,-54},{-60,-54},{
-          -60,-80},{5,-80},{5,-74.6667}},                                                                    color={0,0,127}));
-  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{19.4,-92},{-3,
-          -92},{-3,-74.6667}},                                                                    color={0,0,127}));
+  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-67.4,-86},{13,-86},{13,-74.6667}}, color={0,0,127}));
+  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-67.4,-54},{-60,-54},{-60,-80},{5,-80},{5,-74.6667}}, color={0,0,127}));
+  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{19.4,-92},{-3,-92},{-3,-74.6667}}, color={0,0,127}));
   connect(gENROU.EFD, sT5B.EFD) annotation (Line(points={{-29.4,-15},{-40,-15},{-40,-60},{-31,-60}}, color={0,0,127}));
-  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{24.6,75.2857},{
-          32.4,75.2857},{32.4,27}},                                                                      color={0,0,127}));
-  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{24.6,64.2857},
-          {52,64.2857},{52,-9},{32.4,-9}},                                                                       color={0,0,127}));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-31.75,70.5714},
-          {-40,70.5714},{-40,15},{-29.4,15}},                                                                       color={0,0,127}));
+  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{24.6,75.2857},{32.4,75.2857},{32.4,27}}, color={0,0,127}));
+  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{24.6,64.2857},{52,64.2857},{52,-9},{32.4,-9}}, color={0,0,127}));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-31.75,70.5714},{-40,70.5714},{-40,15},{-29.4,15}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Icon(graphics={
@@ -126,6 +122,18 @@ equation
           textString="%name")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -137,5 +145,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end G1;

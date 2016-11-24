@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT3G;
+
+
 model WT3E1
   parameter Integer VARFLG "0 constant Q; 1 Reactive control; -1 Constant PF control"
     annotation (choices(
@@ -45,6 +47,102 @@ model WT3E1
   parameter Real v0;
   parameter Real p0;
   parameter Real q0;
+  Modelica.Blocks.Interfaces.RealInput PELEC
+    annotation (Placement(transformation(extent={{-210,30},{-190,50}}), iconTransformation(
+        extent={{10,-10},{-10,10}},
+        rotation=180,
+        origin={-190,-120})));
+  Modelica.Blocks.Interfaces.RealInput VTERM(start=v0)
+    annotation (Placement(transformation(extent={{-210,-110},{-190,-90}}), iconTransformation(
+        extent={{10,-10},{-10,10}},
+        rotation=180,
+        origin={-190,-40})));
+  Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(transformation(extent={{180,-70},{200,-50}}), iconTransformation(extent={{-200,40},{-220,60}})));
+  Modelica.Blocks.Nonlinear.Limiter Qord(uMin=QMN, uMax=QMX) annotation (Placement(transformation(extent={{12,30},{32,50}})));
+  Modelica.Blocks.Interfaces.RealInput Qelec annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=270,
+        origin={50,140}), iconTransformation(
+        extent={{10,-10},{-10,10}},
+        rotation=180,
+        origin={-190,-80})));
+  Modelica.Blocks.Math.Feedback feedback1 annotation (Placement(transformation(extent={{40,50},{60,30}})));
+  Modelica.Blocks.Continuous.LimIntegrator K6(
+    outMin=VMINCL,
+    outMax=VMAXCL,
+    k=Kqi,
+    y_start=k60,
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{70,30},{90,50}})));
+  Modelica.Blocks.Math.Feedback Vcl annotation (Placement(transformation(extent={{100,30},{120,50}})));
+  Modelica.Blocks.Interfaces.RealOutput WEQCMD annotation (Placement(transformation(extent={{180,32},{198,50}}), iconTransformation(extent={{-200,80},{-220,100}})));
+  Modelica.Blocks.Interfaces.RealOutput WPCMND
+    annotation (Placement(transformation(extent={{180,-102},{200,-82}}), iconTransformation(
+        extent={{-10,-10},{10,10}},
+        rotation=270,
+        origin={-150,-150})));
+  Modelica.Blocks.Continuous.LimIntegrator K7(
+    k=Kqv,
+    y_start=k70,
+    outMax=1 + XIQmax,
+    outMin=XIQmin - 1) annotation (Placement(transformation(extent={{138,30},{158,50}})));
+  Modelica.Blocks.Interfaces.RealInput ITERM "magenitute of terminal current"
+    annotation (Placement(transformation(extent={{-210,88},{-190,108}}), iconTransformation(
+        extent={{10,-10},{-10,10}},
+        rotation=180,
+        origin={-190,0})));
+  Modelica.Blocks.Sources.Constant Qcmd0(k=Qref) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-10,-2})));
+  Modelica.Blocks.Interfaces.RealInput WEQCMD0
+    annotation (Placement(transformation(extent={{-140,120},{-120,140}}), iconTransformation(
+        extent={{-10,-10},{10,10}},
+        rotation=270,
+        origin={-110,130})));
+  Modelica.Blocks.Interfaces.RealInput WIPCMD0
+    annotation (Placement(transformation(extent={{-180,120},{-160,140}}), iconTransformation(
+        extent={{-10,-10},{10,10}},
+        rotation=270,
+        origin={-150,130})));
+  pf_Controller pf_Controller1(
+    Tp=Tp,
+    p0=p0,
+    PFA_ref=PFA_ref,
+    q0=q0) annotation (Placement(transformation(rotation=0, extent={{-114,20},{-74,60}})));
+  ActivePowerControl activePowerControl(
+    TFP=TFP,
+    Kpp=Kpp,
+    KIP=KIP,
+    PMX=PMX,
+    PMN=PMN,
+    IPMAX=IPMAX,
+    RPMX=RPMX,
+    RPMN=RPMN,
+    T_Power=T_Power,
+    k20=k20,
+    k30=k30,
+    k50=k50,
+    wPmin=wPmin,
+    wP20=wP20,
+    wP40=wP40,
+    wP60=wP60,
+    Pmin=Pmin,
+    wP100=wP100) annotation (Placement(transformation(rotation=0, extent={{-40,-80},{40,-40}})));
+  ReactivePowerControl reactivePowerControl(
+    Tfv=Tfv,
+    Kpv=Kpv,
+    KIV=KIV,
+    Xc=Xc,
+    QMX=QMX,
+    QMN=QMN,
+    TRV=TRV,
+    Tv=Tv,
+    Fn=Fn,
+    Vref=Vref,
+    k0=k0,
+    k10=k10,
+    k40=k40,
+    k80=k80) annotation (Placement(transformation(rotation=0, extent={{-104,80},{-46,104}})));
 protected
   parameter Real PFA_ref(fixed=false) "PF angle reference if PFAFLG=1";
   //parameter Real Qord "MVAR order from MVAR emulator";
@@ -114,110 +212,12 @@ protected
     end if;
     y := K*(x - x0) + y0 - 1;
   end Speed;
-public
-  Modelica.Blocks.Interfaces.RealInput PELEC
-    annotation (Placement(transformation(extent={{-210,30},{-190,50}}), iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,-120})));
-  Modelica.Blocks.Interfaces.RealInput VTERM(start=v0)
-    annotation (Placement(transformation(extent={{-210,-110},{-190,-90}}),iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,-40})));
-  Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(transformation(extent={{180,-70},{200,-50}}), iconTransformation(extent={{-200,40},{-220,60}})));
-  Modelica.Blocks.Nonlinear.Limiter Qord(uMin=QMN, uMax=QMX) annotation (Placement(transformation(extent={{12,30},{32,50}})));
-  Modelica.Blocks.Interfaces.RealInput Qelec annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={50,140}), iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,-80})));
-  Modelica.Blocks.Math.Feedback feedback1 annotation (Placement(transformation(extent={{40,50},{60,30}})));
-  Modelica.Blocks.Continuous.LimIntegrator K6(
-    outMin=VMINCL,
-    outMax=VMAXCL,
-    k=Kqi,
-    y_start=k60,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{70,30},{90,50}})));
-  Modelica.Blocks.Math.Feedback Vcl annotation (Placement(transformation(extent={{100,30},{120,50}})));
-  Modelica.Blocks.Interfaces.RealOutput WEQCMD annotation (Placement(transformation(extent={{180,32},{198,50}}), iconTransformation(extent={{-200,80},{-220,100}})));
-  Modelica.Blocks.Interfaces.RealOutput WPCMND
-    annotation (Placement(transformation(extent={{180,-102},{200,-82}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={-150,-150})));
-  Modelica.Blocks.Continuous.LimIntegrator K7(
-    k=Kqv,
-    y_start=k70,
-    outMax=1 + XIQmax,
-    outMin=XIQmin - 1) annotation (Placement(transformation(extent={{138,30},{158,50}})));
-  Modelica.Blocks.Interfaces.RealInput ITERM "magenitute of terminal current"
-    annotation (Placement(transformation(extent={{-210,88},{-190,108}}),iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,0})));
-  Modelica.Blocks.Sources.Constant Qcmd0(k=Qref) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-10,-2})));
-  Modelica.Blocks.Interfaces.RealInput WEQCMD0
-    annotation (Placement(transformation(extent={{-140,120},{-120,140}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={-110,130})));
-  Modelica.Blocks.Interfaces.RealInput WIPCMD0
-    annotation (Placement(transformation(extent={{-180,120},{-160,140}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={-150,130})));
 protected
   Modelica.Blocks.Interfaces.RealInput SPEED=sp0
     annotation (Placement(transformation(extent={{-210,-60},{-190,-40}}), iconTransformation(
         extent={{-12,-12},{12,12}},
         rotation=90,
         origin={80,-92})));
-public
-  pf_Controller pf_Controller1(
-    Tp=Tp,
-    p0=p0,
-    PFA_ref=PFA_ref,
-    q0=q0) annotation (Placement(transformation(rotation=0, extent={{-114,20},{-74,60}})));
-  ActivePowerControl activePowerControl(
-    TFP=TFP,
-    Kpp=Kpp,
-    KIP=KIP,
-    PMX=PMX,
-    PMN=PMN,
-    IPMAX=IPMAX,
-    RPMX=RPMX,
-    RPMN=RPMN,
-    T_Power=T_Power,
-    k20=k20,
-    k30=k30,
-    k50=k50,
-    wPmin=wPmin,
-    wP20=wP20,
-    wP40=wP40,
-    wP60=wP60,
-    Pmin=Pmin,
-    wP100=wP100) annotation (Placement(transformation(rotation=0, extent={{-40,-80},{40,-40}})));
-  ReactivePowerControl reactivePowerControl(
-    Tfv=Tfv,
-    Kpv=Kpv,
-    KIV=KIV,
-    Xc=Xc,
-    QMX=QMX,
-    QMN=QMN,
-    TRV=TRV,
-    Tv=Tv,
-    Fn=Fn,
-    Vref=Vref,
-    k0=k0,
-    k10=k10,
-    k40=k40,
-    k80=k80) annotation (Placement(transformation(rotation=0, extent={{-104,80},{-46,104}})));
 initial equation
   PFA_ref = atan2(q0, p0);
   k40 = v0;
@@ -253,7 +253,6 @@ equation
   connect(Qord.y, feedback1.u1) annotation (Line(points={{33,40},{33,40},{42,40}}, color={0,0,127}));
 protected
   model pf_Controller
-
     Modelica.Blocks.Math.Tan tan1 annotation (Placement(transformation(extent={{-120,40},{-100,60}})));
     Modelica.Blocks.Math.Product Qcmdn1 annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
     Modelica.Blocks.Sources.Constant VAR2(k=PFA_ref) annotation (Placement(transformation(extent={{-160,40},{-140,60}})));
@@ -280,30 +279,25 @@ protected
               lineThickness=0.5,
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
-              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
-          Rectangle(
-            extent={{-200,100},{0,-100}},
-            lineColor={28,108,200},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid),
-          Text(
-            extent={{-188,6},{-148,-6}},
-            lineColor={28,108,200},
-            textString="P_FAREF"),
-          Text(
-            extent={{-60,6},{-2,-6}},
-            lineColor={28,108,200},
-            textString="Q_REF_PF"),
-          Text(
-            extent={{-160,80},{-40,40}},
-            lineColor={238,46,47},
-            textString="PF Controller")}));
+              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={Rectangle(
+              extent={{-200,100},{0,-100}},
+              lineColor={28,108,200},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-188,6},{-148,-6}},
+              lineColor={28,108,200},
+              textString="P_FAREF"),Text(
+              extent={{-60,6},{-2,-6}},
+              lineColor={28,108,200},
+              textString="Q_REF_PF"),Text(
+              extent={{-160,80},{-40,40}},
+              lineColor={238,46,47},
+              textString="PF Controller")}));
   end pf_Controller;
 equation
   connect(PELEC, pf_Controller1.u) annotation (Line(points={{-200,40},{-140,40},{-114.8,40}}, color={0,0,127}));
 protected
   model ActivePowerControl
-
     NonElectrical.Continuous.SimpleLag K5(
       K=1,
       T=T_Power,
@@ -401,13 +395,13 @@ protected
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
               textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-100},{200,100}}, preserveAspectRatio=true), graphics={Rectangle(
-            extent={{-200,100},{200,-100}},
-            lineColor={28,108,200},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid), Text(
-            extent={{-64,72},{76,32}},
-            lineColor={0,140,72},
-            textString="Active Power
+              extent={{-200,100},{200,-100}},
+              lineColor={28,108,200},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-64,72},{76,32}},
+              lineColor={0,140,72},
+              textString="Active Power
 PI")}));
   end ActivePowerControl;
 equation
@@ -417,7 +411,6 @@ equation
   connect(PELEC, activePowerControl.PELEC) annotation (Line(points={{-200,40},{-140,40},{-140,-60},{-38,-60}}, color={0,0,127}));
 protected
   model ReactivePowerControl
-
     NonElectrical.Continuous.SimpleLag K4(
       K=1,
       T=TRV,
@@ -501,28 +494,23 @@ protected
               extent={{18,26},{38,22}},
               lineColor={255,0,0},
               textString="K+1
-")}), Icon(coordinateSystem(extent={{-200,-80},{200,80}}, preserveAspectRatio=true), graphics={
-          Rectangle(
-            extent={{-200,80},{200,-80}},
-            lineColor={28,108,200},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid),
-          Text(
-            extent={{-120,80},{122,50}},
-            lineColor={180,56,148},
-            textString="Reactive Power Control"),
-          Text(
-            extent={{-176,50},{-116,30}},
-            lineColor={28,108,200},
-            textString="ITERM"),
-          Text(
-            extent={{130,10},{194,-10}},
-            lineColor={28,108,200},
-            textString="Q_ORD"),
-          Text(
-            extent={{-176,-32},{-116,-52}},
-            lineColor={28,108,200},
-            textString="VTERM")}));
+")}), Icon(coordinateSystem(extent={{-200,-80},{200,80}}, preserveAspectRatio=true), graphics={Rectangle(
+              extent={{-200,80},{200,-80}},
+              lineColor={28,108,200},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-120,80},{122,50}},
+              lineColor={180,56,148},
+              textString="Reactive Power Control"),Text(
+              extent={{-176,50},{-116,30}},
+              lineColor={28,108,200},
+              textString="ITERM"),Text(
+              extent={{130,10},{194,-10}},
+              lineColor={28,108,200},
+              textString="Q_ORD"),Text(
+              extent={{-176,-32},{-116,-52}},
+              lineColor={28,108,200},
+              textString="VTERM")}));
   end ReactivePowerControl;
 equation
   connect(ITERM, reactivePowerControl.ITERM) annotation (Line(points={{-200,98},{-102.55,98}}, color={0,0,127}));
@@ -537,92 +525,72 @@ equation
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-200,-140},{200,140}},
-        initialScale=0.05), graphics={
-        Line(
+        initialScale=0.05), graphics={Line(
           points={{162,34},{172,40}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{130,12},{130,40}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{130,12},{162,12}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{162,12},{162,32}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Text(
+          smooth=Smooth.None),Text(
           extent={{160,66},{184,56}},
           lineColor={255,0,0},
-          textString="VLTFLG"),
-        Line(
+          textString="VLTFLG"),Line(
           points={{172,40},{186,40}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Text(
+          smooth=Smooth.None),Text(
           extent={{160,32},{170,28}},
           lineColor={255,0,0},
-          textString="0"),
-        Text(
+          textString="0"),Text(
           extent={{70,32},{80,26}},
           lineColor={0,0,255},
-          textString="Vterm"),
-        Line(
+          textString="Vterm"),Line(
           points={{-20,92},{-20,52}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),
-        Line(
+          thickness=0.5),Line(
           points={{-32,54},{-20,46}},
           color={255,0,0},
           smooth=Smooth.None,
           pattern=LinePattern.Dot,
-          thickness=0.5),
-        Text(
+          thickness=0.5),Text(
           extent={{-30,36},{-20,32}},
           lineColor={255,0,0},
-          textString="-1"),
-        Text(
+          textString="-1"),Text(
           extent={{-20,62},{-10,58}},
           lineColor={255,0,0},
-          textString="1"),
-        Text(
+          textString="1"),Text(
           extent={{2,34},{12,30}},
           lineColor={255,0,0},
-          textString="0"),
-        Line(
+          textString="0"),Line(
           points={{-10,36},{-10,12}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),
-        Line(
+          thickness=0.5),Line(
           points={{-4,40},{4,40}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),
-        Line(
+          thickness=0.5),Line(
           points={{-14,46},{-4,40}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),
-        Text(
+          thickness=0.5),Text(
           extent={{-54,64},{-32,56}},
           lineColor={255,0,0},
-          textString="VARFLG"),
-        Line(
+          textString="VARFLG"),Line(
           points={{-44,92},{-20,92}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),
-        Line(
+          thickness=0.5),Line(
           points={{-64,40},{-20,40}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),
-        Line(
+          thickness=0.5),Line(
           points={{162,44},{168,56}},
           color={255,0,0},
           smooth=Smooth.None,
@@ -641,6 +609,18 @@ equation
           textString="WT3E1")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -652,5 +632,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end WT3E1;

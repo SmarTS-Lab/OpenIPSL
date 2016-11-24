@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
-model AVRtypeIII
 
+
+model AVRtypeIII
   parameter Real vfmax=5;
   parameter Real vfmin=-5;
   parameter Real K0=20 "regulator gain";
@@ -8,7 +9,6 @@ model AVRtypeIII
   parameter Real T1=0.45 "Regulator zero";
   parameter Real Te=0.1 "Field circuit time constant";
   parameter Real Tr=0.0015 "Measurement time constant";
-
   Real vm;
   Real vr;
   Real vf1;
@@ -69,33 +69,28 @@ equation
         preserveAspectRatio=false,
         initialScale=0.1,
         grid={10,10}),
-      graphics={
-        Rectangle(
+      graphics={Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),
-        Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
           visible=true,
           origin={1.5941,2.9728},
           fillPattern=FillPattern.Solid,
           extent={{-31.5941,-24.9719},{31.5941,24.9719}},
           textString="AVRtypeIII",
-          fontName="Arial"),
-        Text(
+          fontName="Arial"),Text(
           visible=true,
           origin={-77.3525,52.4473},
           fillPattern=FillPattern.Solid,
           extent={{-17.3525,-17.5527},{17.3525,17.5527}},
           textString="v",
-          fontName="Arial"),
-        Text(
+          fontName="Arial"),Text(
           origin={-74.7671,-32.7013},
           fillPattern=FillPattern.Solid,
           extent={{-11.7427,-9.8104},{11.7427,9.8104}},
           fontName="Arial",
           textString="vs",
-          lineColor={0,0,0}),
-        Text(
+          lineColor={0,0,0}),Text(
           origin={-2.3525,77.4473},
           extent={{-12.3525,-12.5527},{12.3525,12.5527}},
           fontName="Arial",
@@ -107,6 +102,18 @@ equation
       textString="vf",
       fontName="Arial"), Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -118,7 +125,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

@@ -1,7 +1,8 @@
 within TwoAreas.Groups.PSSE.AVR;
+
+
 model G2
   extends TwoAreas.Support.Generator;
-
   OpenIPSL.Electrical.Machines.PSSE.GENROU g2(
     Tpd0=8,
     Tppd0=0.03,
@@ -43,7 +44,6 @@ model G2
     S_EE_2=0.0481) annotation (Placement(transformation(extent={{-38,-18},{-4,0}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-56,4},{-48,12}})));
 equation
-
   connect(g2.PMECH, g2.PMECH0) annotation (Line(points={{6.4,9},{-2,9},{-2,32},{52,32},{52,-5.4},{47.6,-5.4}}, color={0,0,127}));
   connect(g2.p, pwPin) annotation (Line(points={{48,0},{44,0},{70,0}}, color={0,0,255}));
   connect(g2.EFD, eSDC1A.EFD) annotation (Line(points={{6.4,-9},{-3.05556,-9}}, color={0,0,127}));
@@ -63,6 +63,18 @@ equation
         initialScale=0.1)),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -74,7 +86,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

@@ -1,4 +1,6 @@
 within N44.Base_Case.Generators;
+
+
 model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
    Nordic 44 model: Buses 3000, 7000"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
@@ -40,7 +42,6 @@ model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GEN
         extent={{-36.5,-12.5},{36.5,12.5}},
         rotation=0,
         origin={-48.5,19.5})));
-
   OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2 iEEET2(
     T_R=0,
     K_A=729,
@@ -68,10 +69,8 @@ model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GEN
     K_4=0.55,
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-33,62},{29,94}})));
-
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-114.5,-51},{-103,-39}})));
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-
 equation
   connect(gENROU.p, pwPin) annotation (Line(
       points={{90.45,0},{110,0}},
@@ -79,25 +78,54 @@ equation
       smooth=Smooth.None));
   connect(pwPin, pwPin) annotation (Line(points={{110,0},{110,0},{110,0}}, color={0,0,255}));
   connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{89.76,-21.5},{99,-21.5},{99,-86},{-116,-86},{-116,78},{-32.1545,78}}, color={0,0,127}));
-  connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{31.8182,78},{38,78},{38,72},{38,55},{-107,55},{-107,-23.0278},{-88,-23.0278}},color={0,0,127}));
+  connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{31.8182,78},{38,78},{38,72},{38,55},{-107,55},{-107,-23.0278},{-88,-23.0278}}, color={0,0,127}));
   connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{89.76,38.7},{95,38.7},{95,46},{-94,46},{-94,26.6429},{-83.175,26.6429}}, color={0,0,127}));
   connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-9.71875,21.2857},{1.6406,21.2857},{1.6406,21.5},{18.69,21.5}}, color={0,0,127}));
   connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{89.76,-12.9},{107,-12.9},{107,-89},{-94,-89},{-94,14.1429},{-83.175,14.1429}}, color={0,0,127}));
-  connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{89.76,21.5},{99,21.5},{99,50},{-99,50},{-99,-39.7778},{-88,-39.7778}},color={0,0,127}));
-  connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{89.76,-30.1},{96,-30.1},{96,-82},{-92,-82},{-92,-63.9722},{-88,-63.9722}},color={0,0,127}));
+  connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{89.76,21.5},{99,21.5},{99,50},{-99,50},{-99,-39.7778},{-88,-39.7778}}, color={0,0,127}));
+  connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{89.76,-30.1},{96,-30.1},{96,-82},{-92,-82},{-92,-63.9722},{-88,-63.9722}}, color={0,0,127}));
   connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{-6,-39.7778},{6,-39.7778},{6,-21.5},{18.69,-21.5}}, color={0,0,127}));
   connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-74,-77},{-96,-77},{-96,-45},{-102.425,-45}}, color={0,0,127}));
   connect(iEEET2.VOEL, cte.y) annotation (Line(points={{-62,-77},{-96,-77},{-96,-45},{-102.425,-45}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(
+  annotation (
+    Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={1,1})), Icon(coordinateSystem(
+        grid={1,1})),
+    Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
         grid={1,1}), graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier), Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}));
+          smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen1_bus_3000;

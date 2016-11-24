@@ -49,18 +49,15 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     k=K_S*T_5) annotation (Placement(transformation(extent={{80,-5},{90,5}})));
 protected
   Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal" annotation (Placement(transformation(extent={{113,-5},{123,5}}, rotation=0), iconTransformation(extent={{32,-8},{36,-4}})));
-
   parameter Real V_S0(fixed=false);
   parameter Boolean bypass_filter2(fixed=false);
   parameter Boolean bypass_filter1(fixed=false);
-
-  parameter Integer n1=if (A_1 == 0 and A_2 == 0) then 4 elseif (A_2 == 0) then 2 else 3;
-  parameter Integer n2=if (A_3 == 0 and A_4 == 0) then 4 elseif (A_4 == 0) then 2 else 3;
-  parameter Integer n3=if (A_6 == 0 and A_5 == 0) then 1 elseif (A_6 == 0) then 2 else 3;
+  parameter Integer n1=if A_1 == 0 and A_2 == 0 then 4 elseif A_2 == 0 then 2 else 3;
+  parameter Integer n2=if A_3 == 0 and A_4 == 0 then 4 elseif A_4 == 0 then 2 else 3;
+  parameter Integer n3=if A_6 == 0 and A_5 == 0 then 1 elseif A_6 == 0 then 2 else 3;
   parameter Real a1[n1](each fixed=false);
   parameter Real a2[n2](each fixed=false);
   parameter Real b[n3](each fixed=false);
-
   Modelica.Blocks.Continuous.TransferFunction Filter2_1(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=V_S0,
@@ -84,35 +81,33 @@ protected
   Modelica.Blocks.MathBoolean.And and1(nu=2) annotation (Placement(transformation(extent={{-30,-13},{-20,-3}})));
   Modelica.Blocks.Logical.Switch swith_filter4 annotation (Placement(transformation(extent={{-6,-5},{4,5}})));
 initial equation
-  if (n3 == 1) then
+  if n3 == 1 then
     b = {1};
-  elseif (n3 == 2) then
+  elseif n3 == 2 then
     b = {A_5,1};
   else
     b = {A_6,A_5,1};
   end if;
-  if (n1 == 4) then
+  if n1 == 4 then
     a1 = {1,1,1,1};
     bypass_filter1 = true;
-  elseif (n1 == 3) then
+  elseif n1 == 3 then
     a1 = {A_2,A_1,1};
     bypass_filter1 = false;
   else
     a1 = {A_1,1};
     bypass_filter1 = false;
   end if;
-
-  if (n2 == 4) then
+  if n2 == 4 then
     a2 = {1,1,1,1};
     bypass_filter2 = true;
-  elseif (n2 == 3) then
+  elseif n2 == 3 then
     a2 = {A_4,A_3,1};
     bypass_filter2 = false;
   else
     a2 = {A_3,1};
     bypass_filter2 = false;
   end if;
-
   V_S0 = V_S;
 equation
   if V_CU == 0 and not V_CL == 0 then
@@ -168,21 +163,16 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-120,-40},{120,40}},
-        grid={1,1}), graphics={
-        Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),
-        Text(
+        grid={1,1}), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),Text(
           extent={{-46,40},{54,-44}},
           lineColor={0,0,255},
-          textString="IEEEST"),
-        Text(
+          textString="IEEEST"),Text(
           extent={{-106,-10},{-84,-30}},
           lineColor={0,0,255},
-          textString="V_S"),
-        Text(
+          textString="V_S"),Text(
           extent={{84,14},{118,-16}},
           lineColor={0,0,255},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-106,32},{-78,8}},
           lineColor={0,0,255},
           textString="V_CT")}),
@@ -207,6 +197,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -218,5 +220,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end IEEEST;
+

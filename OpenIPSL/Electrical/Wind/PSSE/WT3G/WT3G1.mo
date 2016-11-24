@@ -1,9 +1,7 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT3G;
 model WT3G1
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-
   constant Real pi=Modelica.Constants.pi;
-
   parameter Real X_eq "Equivalent reactance for current injection (pu)";
   parameter Real K_pll "PLL first integrator gain";
   parameter Real K_ipll "PLL second integrator gain";
@@ -11,37 +9,6 @@ model WT3G1
   parameter Real P_rated "Turbine MW rating, not used in the equation";
   parameter Complex Zs(re=0, im=X_eq) "Equivalent impedance (ZSORCE)" annotation (Dialog(group="Power flow data"));
   parameter Real M_b=100 "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
-
-protected
-  parameter Real wbase=2*pi*fn "System base speed";
-  parameter Real p0=P_0/M_b
-    "initial value of bus active power in p.u. machinebase";
-  parameter Real q0=Q_0/M_b
-    "initial value of bus reactive power in p.u. machinebase";
-  parameter Real v0=V_0;
-  parameter Real vr0=v0*cos(anglev_rad)
-    "Real component of initial terminal voltage";
-  parameter Real vi0=v0*sin(anglev_rad)
-    "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current, mbase";
-  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current, mbase";
-  parameter Real Isr0=ir0 + vi0/X_eq "Sorce current re mbase";
-  parameter Real Isi0=ii0 - vr0/X_eq "Sorce current im mbase";
-  parameter Real CoB=M_b/S_b;
-  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current, sbase";
-  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current, sbase";
-  parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
-  parameter Real Iy0=Isr0*sin(-anglev_rad) + cos(-anglev_rad)*Isi0;
-  parameter Real Eqcmd0=-Iy0*X_eq;
-  parameter Real Ipcmd0=Ix0;
-  parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
-  parameter Real VX0=cos(anglev_rad)*vr0 + sin(anglev_rad)*vi0;
-  parameter Real VY0=(-sin(anglev_rad)*vr0) + cos(anglev_rad)*vi0;
-public
   Real VT(start=V_0) "Bus voltage magnitude";
   Real anglev(start=anglev_rad) "Bus voltage angle";
   Real VY(start=0) "y-axis terminal voltage";
@@ -72,7 +39,7 @@ public
     y_start=Ix0) annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
   Modelica.Blocks.Math.Gain imGain(k=-1/X_eq) annotation (Placement(transformation(extent={{-20,70},{0,90}})));
   Modelica.Blocks.Interfaces.RealOutput Iy(start=Iy0) annotation (Placement(transformation(extent={{20,70},{40,90}}), iconTransformation(extent={{100,-100},{120,-80}})));
-  Modelica.Blocks.Interfaces.RealOutput Ix(start=Ix0) annotation (Placement(transformation(extent={{20,30},{40,50}}),iconTransformation(extent={{100,-70},{120,-50}})));
+  Modelica.Blocks.Interfaces.RealOutput Ix(start=Ix0) annotation (Placement(transformation(extent={{20,30},{40,50}}), iconTransformation(extent={{100,-70},{120,-50}})));
   Modelica.Blocks.Interfaces.RealOutput Iterm(start=Iy0) annotation (Placement(transformation(extent={{98,60},{118,80}}), iconTransformation(extent={{-100,-40},{-120,-20}})));
   Modelica.Blocks.Interfaces.RealInput Eqcmd(start=Eqcmd0)
     annotation (Placement(transformation(extent={{-110,70},{-90,90}}), iconTransformation(
@@ -92,7 +59,7 @@ public
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={110,-30})));
-  Modelica.Blocks.Interfaces.RealOutput V=VT annotation (Placement(transformation(extent={{100,20},{120,40}}),iconTransformation(extent={{-100,-80},{-120,-60}})));
+  Modelica.Blocks.Interfaces.RealOutput V=VT annotation (Placement(transformation(extent={{100,20},{120,40}}), iconTransformation(extent={{-100,-80},{-120,-60}})));
   Modelica.Blocks.Interfaces.RealOutput P "On machine base"
     annotation (Placement(transformation(extent={{100,-40},{120,-20}}), iconTransformation(
         extent={{-10,-10},{10,10}},
@@ -118,7 +85,28 @@ public
         rotation=90,
         origin={-50,110})));
 protected
-  Modelica.Blocks.Interfaces.RealInput Vy annotation (Placement(transformation(extent={{-110,-30},{-90,-10}}),iconTransformation(extent={{-118,-40},{-96,-18}})));
+  parameter Real wbase=2*pi*fn "System base speed";
+  parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
+  parameter Real q0=Q_0/M_b "initial value of bus reactive power in p.u. machinebase";
+  parameter Real v0=V_0;
+  parameter Real vr0=v0*cos(anglev_rad) "Real component of initial terminal voltage";
+  parameter Real vi0=v0*sin(anglev_rad) "Imaginary component of intitial terminal voltage";
+  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, mbase";
+  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, mbase";
+  parameter Real Isr0=ir0 + vi0/X_eq "Sorce current re mbase";
+  parameter Real Isi0=ii0 - vr0/X_eq "Sorce current im mbase";
+  parameter Real CoB=M_b/S_b;
+  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, sbase";
+  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, sbase";
+  parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
+  parameter Real Iy0=Isr0*sin(-anglev_rad) + cos(-anglev_rad)*Isi0;
+  parameter Real Eqcmd0=-Iy0*X_eq;
+  parameter Real Ipcmd0=Ix0;
+  parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
+  parameter Real VX0=cos(anglev_rad)*vr0 + sin(anglev_rad)*vi0;
+  parameter Real VY0=(-sin(anglev_rad)*vr0) + cos(anglev_rad)*vi0;
+protected
+  Modelica.Blocks.Interfaces.RealInput Vy annotation (Placement(transformation(extent={{-110,-30},{-90,-10}}), iconTransformation(extent={{-118,-40},{-96,-18}})));
 initial equation
   delta = anglev_rad;
 equation
@@ -147,7 +135,7 @@ equation
   connect(imIntegrator1.y, add.u1) annotation (Line(points={{-19,10},{-16,10},{-16,-14},{-12,-14}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
@@ -223,6 +211,18 @@ equation
           textString="Ipcmd0")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -234,5 +234,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end WT3G1;
+

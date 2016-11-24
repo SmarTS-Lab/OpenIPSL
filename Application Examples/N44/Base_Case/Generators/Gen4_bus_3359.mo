@@ -40,7 +40,6 @@ model Gen4_bus_3359 "Configuration of synchronous generator with regulators: GEN
         extent={{-30,-13},{30,13}},
         rotation=0,
         origin={-22,71})));
-
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=165,
     T_AT_B=0.2,
@@ -65,22 +64,50 @@ model Gen4_bus_3359 "Configuration of synchronous generator with regulators: GEN
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-10,-63},{0,-53}})));
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(gENROU.p, pwPin) annotation (Line(points={{9.1,9},{66,9},{66,0},{110,0}}, color={0,0,255}));
   connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{9.875,72.8571},{20,72.8571},{20,46},{-66,46},{-66,25.5},{-55.38,25.5}}, color={0,0,127}));
   connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.48,38.7},{24,38.7},{24,88},{-56,88},{-56,78.4286},{-50.5,78.4286}}, color={0,0,127}));
   connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.48,-0.9},{30,-0.9},{30,92},{-60,92},{-60,65.4286},{-50.5,65.4286}}, color={0,0,127}));
   connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-16.0455,-48.5},{8,-48.5},{8,-39.0278},{31,-39.0278}}, color={0,0,127}));
   connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.48,-7.5},{18,-7.5},{18,-32},{-68,-32},{-68,-48.5},{-60.4136,-48.5}}, color={0,0,127}));
-  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{87.375,-55.7778},{92,-55.7778},{92,-96},{-80,-96},{-80,-7.5},{-55.38,-7.5}},color={0,0,127}));
+  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{87.375,-55.7778},{92,-55.7778},{92,-96},{-80,-96},{-80,-7.5},{-55.38,-7.5}}, color={0,0,127}));
   connect(cte.y, sCRX.VUEL) annotation (Line(points={{0.5,-58},{16,-58},{16,-93},{40.625,-93}}, color={0,0,127}));
   connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.48,-20.7},{14,-20.7},{14,-68.8056},{31,-68.8056}}, color={0,0,127}));
   connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.48,25.5},{26,25.5},{26,-55.7778},{31,-55.7778}}, color={0,0,127}));
   connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.48,-14.1},{22,-14.1},{22,-79.9722},{31,-79.9722}}, color={0,0,127}));
   connect(sCRX.VOEL, cte.y) annotation (Line(points={{48.875,-93},{10,-93},{10,-58},{0.5,-58}}, color={0,0,127}));
-
-  annotation (Icon(graphics={Line(
+  annotation (
+    Icon(graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier), Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen4_bus_3359;
+

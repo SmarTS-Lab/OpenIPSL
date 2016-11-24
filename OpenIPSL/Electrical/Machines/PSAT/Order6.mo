@@ -28,22 +28,15 @@ model Order6
   Real e2d(start=e2d0) "d-axis sub-transient voltage";
 protected
   parameter Real Xd=xd*CoB "d-axis reactance, p.u.";
-  parameter Real x2d=xd2*CoB
-    "d-axis sub-transient reactance, p.u.(only for V.2,VI,VIII)";
+  parameter Real x2d=xd2*CoB "d-axis sub-transient reactance, p.u.(only for V.2,VI,VIII)";
   parameter Real Xq=xq*CoB "q-axis reactance, p.u.";
   parameter Real x1q=xq1*CoB "q-axis reactance, p.u.";
-  parameter Real x2q=xq2*CoB
-    "q-axis sub-trasient reactance, p.u.(only for V.2,VI,VIII)";
-  parameter Real delta0=atan2(vi0 + Ra*ii0 + Xq*ir0, vr0 + Ra*ir0 - Xq*ii0)
-    "Initialitation";
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
-    "Initialitation";
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
-    "Initialitation";
+  parameter Real x2q=xq2*CoB "q-axis sub-trasient reactance, p.u.(only for V.2,VI,VIII)";
+  parameter Real delta0=atan2(vi0 + Ra*ii0 + Xq*ir0, vr0 + Ra*ir0 - Xq*ii0) "Initialitation";
+  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0) "Initialitation";
+  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0) "Initialitation";
+  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0) "Initialitation";
+  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0) "Initialitation";
   parameter Real pm00=(vq0 + Ra*iq0)*iq0 + (vd0 + Ra*id0)*id0 "Initialitation";
   parameter Real e2q0=vq0 + Ra*iq0 + x2d*id0 "Initialitation";
   parameter Real e2d0=vd0 + Ra*id0 - x2q*iq0 "Initialitation";
@@ -56,8 +49,7 @@ equation
   der(e1q) = ((-e1q) - (Xd - x1d - Td20/Td10*x2d/x1d*(Xd - x1d))*id + (1 - Taa/Td10)*vf)/Td10;
   der(e1d) = ((-e1d) + (Xq - x1q - Tq20/Tq10*x2q/x1q*(Xq - x1q))*iq)/Tq10;
   der(e2d) = ((-e2d) + e1d + (x1q - x2q + Tq20/Tq10*x2q/x1q*(Xq - x1q))*iq)/Tq20;
-  der(e2q) = ((-e2q) + e1q - (x1d - x2d + Td20/Td10*x2d/x1d*(Xd - x1d))*id + Taa/Td10*vf)/Td20
-    "differential equations";
+  der(e2q) = ((-e2q) + e1q - (x1d - x2d + Td20/Td10*x2d/x1d*(Xd - x1d))*id + Taa/Td10*vf)/Td20 "differential equations";
   e2q = vq + Ra*iq + x2d*id;
   e2d = vd + Ra*id - x2q*iq;
   pm0 = pm00;
@@ -103,6 +95,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -114,5 +118,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end Order6;
+

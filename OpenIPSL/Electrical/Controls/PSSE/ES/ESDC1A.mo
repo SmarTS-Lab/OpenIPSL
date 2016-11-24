@@ -37,7 +37,6 @@ model ESDC1A
     y_start=V_R0,
     outMax=V_RMAX0,
     outMin=V_RMIN0) annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-public
   BaseClasses.RotatingExciterLimited rotatingExciterLimited(
     T_E=T_E,
     E_1=E_1,
@@ -58,14 +57,12 @@ protected
   parameter Real V_RMIN0(fixed=false);
   parameter Real SE_Efd0(fixed=false);
 initial equation
-
   SE_Efd0 = OpenIPSL.NonElectrical.Functions.SE(
     Efd0,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2);
-
   (V_RMAX0,V_RMIN0,K_E0) = calculate_dc_exciter_params(
     V_RMAX,
     V_RMIN,
@@ -74,10 +71,8 @@ initial equation
     S_EE_2,
     Efd0,
     SE_Efd0);
-
   V_R0 = Efd0*(K_E0 + SE_Efd0);
   V_REF = V_R0/K_A + ECOMP0;
-
 equation
   connect(add3_1.y, imLeadLag.u) annotation (Line(points={{-39,0},{-36,0},{-22,0}}, color={0,0,127}));
   connect(hV_GATE.p, simpleLagLim.u) annotation (Line(points={{60.625,0},{60.625,0},{78,0}}, color={0,0,127}));
@@ -127,6 +122,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -138,5 +145,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end ESDC1A;
+

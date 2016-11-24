@@ -3,7 +3,6 @@ model IEEET1 "IEEE Type 1 excitation system"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
-
   parameter Real T_R=1 "Voltage input time constant (s)";
   parameter Real K_A=40 "AVR gain";
   parameter Real T_A=0.04 "AVR time constant (s)";
@@ -31,14 +30,6 @@ model IEEET1 "IEEE Type 1 excitation system"
     y_start=VR0,
     outMax=V_RMAX,
     outMin=V_RMIN) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
-protected
-  parameter Real VRMAX0(fixed=false) "Maximum AVR output (pu)";
-  parameter Real VRMIN0(fixed=false) "Minimum AVR output (pu)";
-  parameter Real KE0(fixed=false) "Exciter field gain, s";
-  parameter Real SE_Efd0(fixed=false);
-  parameter Real VR0(fixed=false);
-
-public
   BaseClasses.RotatingExciter rotatingExciter(
     T_E=T_E,
     E_1=E_1,
@@ -55,6 +46,12 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-130})));
+protected
+  parameter Real VRMAX0(fixed=false) "Maximum AVR output (pu)";
+  parameter Real VRMIN0(fixed=false) "Minimum AVR output (pu)";
+  parameter Real KE0(fixed=false) "Exciter field gain, s";
+  parameter Real SE_Efd0(fixed=false);
+  parameter Real VR0(fixed=false);
 initial equation
   SE_Efd0 = SE(
     Efd0,
@@ -73,7 +70,6 @@ initial equation
   VRMIN0 = -VRMAX0;
   VR0 = Efd0*(KE0 + SE_Efd0);
   V_REF = VR0/K_A + ECOMP0;
-
 equation
   connect(sum3.u2, derivativeLag.y) annotation (Line(points={{-22,-6},{-34,-6},{-34,-28},{-34,-50},{59,-50}}, color={0,0,127}));
   connect(sum3.y, simpleLagLim.u) annotation (Line(points={{1,0},{58,0}}, color={0,0,127}));
@@ -96,6 +92,18 @@ equation
           textString="IEEET1")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -107,7 +115,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -128,3 +137,4 @@ equation
 </table>
 </html>"));
 end IEEET1;
+

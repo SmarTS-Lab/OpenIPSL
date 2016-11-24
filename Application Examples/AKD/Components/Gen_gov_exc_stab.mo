@@ -1,4 +1,6 @@
 within AKD.Components;
+
+
 model Gen_gov_exc_stab
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
@@ -134,27 +136,34 @@ equation
   connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{27.56,54.8},{50,54.8},{50,88.5},{25.3,88.5}}, color={0,0,127}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-31.4,83},{-52,83},{-52,42},{-38.36,42}}, color={0,0,127}));
   connect(iEEET2_1.EFD, gENSAL.EFD) annotation (Line(points={{-90.55,-46},{-96,-46},{-96,10},{-38.36,10}}, color={0,0,127}));
-  connect(iEEEST.VOTHSG, iEEET2_1.VOTHSG) annotation (Line(points={{15,-35},{
-          -5.625,-35},{-5.625,-34.8},{-21.1333,-34.8}},                                                                    color={0,0,127}));
-  connect(gENSAL.ETERM, iEEET2_1.ECOMP) annotation (Line(points={{27.56,42},{46,
-          42},{46,-18},{-10,-18},{-10,-23.6},{-21.1333,-23.6}},                                                                       color={0,0,127}));
+  connect(iEEEST.VOTHSG, iEEET2_1.VOTHSG) annotation (Line(points={{15,-35},{-5.625,-35},{-5.625,-34.8},{-21.1333,-34.8}}, color={0,0,127}));
+  connect(gENSAL.ETERM, iEEET2_1.ECOMP) annotation (Line(points={{27.56,42},{46,42},{46,-18},{-10,-18},{-10,-23.6},{-21.1333,-23.6}}, color={0,0,127}));
   connect(gENSAL.PELEC, iEEEST.V_S) annotation (Line(points={{27.56,10},{62,10},{98,10},{98,-42},{89.4,-42}}, color={0,0,127}));
   connect(const1.y, iEEEST.V_CT) annotation (Line(points={{86.6,-8},{94,-8},{94,-28},{89.4,-28}}, color={0,0,127}));
-  connect(const.y, iEEET2_1.VOEL) annotation (Line(points={{-12.6,-52},{-16,-52},
-          {-16,-46},{-21.1333,-46}},                                                                        color={0,0,127}));
-  connect(iEEET2_1.VUEL, iEEET2_1.VOEL) annotation (Line(points={{-21.1333,
-          -57.2},{-16,-57.2},{-16,-46},{-21.1333,-46}},                                                                  color={0,0,127}));
-  connect(gENSAL.EFD0, iEEET2_1.EFD0) annotation (Line(points={{27.56,3.6},{38,
-          3.6},{38,-14},{6,-14},{6,-68.4},{-21.1333,-68.4}},                                                                      color={0,0,127}));
+  connect(const.y, iEEET2_1.VOEL) annotation (Line(points={{-12.6,-52},{-16,-52},{-16,-46},{-21.1333,-46}}, color={0,0,127}));
+  connect(iEEET2_1.VUEL, iEEET2_1.VOEL) annotation (Line(points={{-21.1333,-57.2},{-16,-57.2},{-16,-46},{-21.1333,-46}}, color={0,0,127}));
+  connect(gENSAL.EFD0, iEEET2_1.EFD0) annotation (Line(points={{27.56,3.6},{38,3.6},{38,-14},{6,-14},{6,-68.4},{-21.1333,-68.4}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,0,255}), Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Text(
           extent={{-34,24},{32,-28}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString="GEN")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -166,5 +175,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end Gen_gov_exc_stab;

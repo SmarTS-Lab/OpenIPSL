@@ -60,20 +60,18 @@ model ESST4B " IEEE type ST4B potential or compounded
   Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{140,-10},{160,10}})));
   Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMin=-Modelica.Constants.inf, uMax=V_BMAX) annotation (Placement(transformation(extent={{100,-120},{120,-100}})));
   OpenIPSL.Connectors.PwPin Gen_terminal annotation (Placement(transformation(extent={{-180,120},{-160,140}}), iconTransformation(extent={{-180,120},{-160,140}})));
-  OpenIPSL.Connectors.PwPin Bus annotation (Placement(transformation(extent={{160,120},{180,140}}),iconTransformation(extent={{160,120},{180,140}})));
+  OpenIPSL.Connectors.PwPin Bus annotation (Placement(transformation(extent={{160,120},{180,140}}), iconTransformation(extent={{160,120},{180,140}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,
     T=T_R,
     y_start=ECOMP0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
   BaseClasses.RectifierCommutationVoltageDrop rectifierCommutationVoltageDrop(K_C=K_C) annotation (Placement(transformation(extent={{40,-120},{60,-100}})));
-
 protected
   Modelica.Blocks.Interfaces.RealOutput VE annotation (Placement(transformation(extent={{10,-120},{30,-100}})));
   Complex V_T;
   Complex I_T;
   parameter Complex K_P_comp=K_P*cos(THETAP) + j*K_P*sin(THETAP);
-
   parameter Real Ifd0(fixed=false);
   parameter Real IN0(fixed=false);
   parameter Real VB0(fixed=false);
@@ -98,12 +96,10 @@ initial equation
   VA0 = Efd0/VB0;
   VR0 = Efd0*K_G;
   V_REF = ECOMP;
-
 equation
   VE = 'abs'(K_P_comp*V_T + j*(K_I + K_P_comp*X_L)*I_T);
   V_T = Gen_terminal.vr + j*Gen_terminal.vi;
-  I_T = (Gen_terminal.ir - Bus.ir) + j*(Gen_terminal.ii - Bus.ii);
-
+  I_T = Gen_terminal.ir - Bus.ir + j*(Gen_terminal.ii - Bus.ii);
   connect(add.y, limiter.u) annotation (Line(
       points={{11,0},{18,0}},
       color={0,0,127},
@@ -149,7 +145,7 @@ equation
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
           extent={{-146,158},{-96,100}},
           lineColor={0,0,255},
-          textString="GenT"), Text(
+          textString="GenT"),Text(
           extent={{-186,-60},{-116,-80}},
           lineColor={28,108,200},
           textString="XADIFD")}),
@@ -174,6 +170,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -185,5 +193,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end ESST4B;
+

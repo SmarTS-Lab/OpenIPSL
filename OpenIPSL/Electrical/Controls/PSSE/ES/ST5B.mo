@@ -1,7 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ST5B "IEEE 421.5 2005 ST5B Excitation System"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-
   parameter Real T_R=0.025 "Regulator input filter time constant (s)";
   parameter Real T_C1=0.1 "Lead time constant of first lead-lag block (voltage regulator channel) (s)";
   parameter Real T_B1=0.2 "Lag time constant of first lead-lag block (voltage regulator channel) (s)";
@@ -93,9 +92,6 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={104,-70})));
-protected
-  parameter Real VR0(fixed=false);
-public
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,
     T=T_R,
@@ -105,10 +101,11 @@ public
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={130,-140}), iconTransformation(extent={{-10,-10},{10,10}}, origin={-200,-60})));
+protected
+  parameter Real VR0(fixed=false);
 initial equation
   VR0 = Efd0 + K_C*XADIFD;
   V_REF = VR0/K_R + ECOMP;
-
 equation
   connect(VERR1.y, imLimitedLeadLag.u) annotation (Line(points={{1,0},{1,0},{18,0}}, color={0,0,127}));
   connect(imLimitedLeadLag.y, imLimitedLeadLag2.u) annotation (Line(points={{41,0},{41,0},{48,0}}, color={0,0,127}));
@@ -146,12 +143,24 @@ equation
         grid={2,2}), graphics={Text(
           extent={{-60,154},{62,110}},
           lineColor={28,108,200},
-          textString="ST5B"), Text(
+          textString="ST5B"),Text(
           extent={{-184,-52},{-114,-72}},
           lineColor={28,108,200},
           textString="XADIFD")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -163,7 +172,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -184,3 +194,4 @@ equation
 </table>
 </html>"));
 end ST5B;
+

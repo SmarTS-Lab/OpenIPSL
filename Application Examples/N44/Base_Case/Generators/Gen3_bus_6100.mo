@@ -1,4 +1,6 @@
 within N44.Base_Case.Generators;
+
+
 model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
@@ -57,9 +59,8 @@ model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GEN
     T_5=0.01) annotation (Placement(transformation(extent={{-60,-46},{-22,-20}})));
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(gENSAL.p, p) annotation (Line(points={{1.2,22},{30,22},{30,20},{64,20},{64,0},{110,0}}, color={0,0,255}));
-  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{77.4,-44.4444},{82,-44.4444},{82,-80},{-76,-80},{-76,7},{-65.36,7}},color={0,0,127}));
+  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{77.4,-44.4444},{82,-44.4444},{82,-80},{-76,-80},{-76,7},{-65.36,7}}, color={0,0,127}));
   connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-20.2727,-33},{-0.13635,-33},{-0.13635,-32.9444},{20,-32.9444}}, color={0,0,127}));
   connect(cte.y, sCRX.VOEL) annotation (Line(points={{-18.5,-56},{0,-56},{0,-70},{38.2,-70}}, color={0,0,127}));
   connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.56,7},{12,7},{12,-18},{-68,-18},{-68,-33},{-59.4818,-33}}, color={0,0,127}));
@@ -70,9 +71,37 @@ equation
   connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.56,1},{10,1},{10,-61.0556},{20,-61.0556}}, color={0,0,127}));
   connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.56,37},{14,37},{14,-44.4444},{20,-44.4444}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{29.8,-70},{0,-70},{0,-56},{-18.5,-56}}, color={0,0,127}));
-
-  annotation (Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+  annotation (
+    Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          smooth=Smooth.Bezier)}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen3_bus_6100;

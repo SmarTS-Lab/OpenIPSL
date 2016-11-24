@@ -1,6 +1,5 @@
 within TwoAreas;
 model Two_Areas_PSAT
-
   import Modelica.Constants.pi;
   parameter Real r=0.0001;
   parameter Real x=0.001;
@@ -47,7 +46,6 @@ model Two_Areas_PSAT
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,-10})));
-
   OpenIPSL.Electrical.Branches.PwLine Line6_7(
     R=r*10,
     X=x*10,
@@ -58,7 +56,6 @@ model Two_Areas_PSAT
     X=x*25,
     G=0,
     B=b*25) annotation (Placement(transformation(extent={{-130,20},{-110,40}})));
-
   OpenIPSL.Electrical.Branches.PwLine Line7_8_1(
     R=r*110,
     X=x*110,
@@ -79,19 +76,16 @@ model Two_Areas_PSAT
     X=x*110,
     G=0,
     B=b*110/2) annotation (Placement(transformation(extent={{20,30},{40,50}})));
-
   OpenIPSL.Electrical.Branches.PwLine Line9_10(
     R=r*10,
     X=x*10,
     G=0,
     B=b*10) annotation (Placement(transformation(extent={{70,20},{90,40}})));
-
   OpenIPSL.Electrical.Branches.PwLine Line10_11(
     R=r*25,
     X=x*25,
     G=0,
     B=b*25) annotation (Placement(transformation(extent={{110,20},{130,40}})));
-
   OpenIPSL.Electrical.Events.PwFault pwFault(
     R=0,
     t1=1,
@@ -100,7 +94,6 @@ model Two_Areas_PSAT
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={2,-16})));
-
   OpenIPSL.Electrical.Loads.PSAT.ZIP Load7(
     Pz=0,
     Pi=1,
@@ -150,7 +143,6 @@ model Two_Areas_PSAT
     V_b=20,
     Vn=20) annotation (Placement(transformation(extent={{170,-20},{150,0}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-220,46},{-170,60}})));
-
 equation
   connect(g1.pwPin, bus1.p) annotation (Line(points={{-201.4,30},{-201.4,30},{-180,30}}, color={0,0,255}));
   connect(g2.pwPin, bus2.p) annotation (Line(points={{-201.4,0},{-201.4,0},{-180,0}}, color={0,0,255}));
@@ -192,6 +184,18 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
     Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -203,7 +207,8 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -231,3 +236,4 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
 end Two_Areas_PSAT;
+

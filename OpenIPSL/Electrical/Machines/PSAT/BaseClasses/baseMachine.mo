@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT.BaseClasses;
+
+
 partial model baseMachine
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
@@ -123,10 +125,8 @@ partial model baseMachine
 protected
   parameter Real vr0=V_0*cos(angle_0/180*pi) "Initialitation";
   parameter Real vi0=V_0*sin(angle_0/180*pi) "Initialitation";
-  parameter Real ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2)
-    "Initialitation";
-  parameter Real ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2)
-    "Initialitation";
+  parameter Real ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2) "Initialitation";
+  parameter Real ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2) "Initialitation";
   //Change of base constants
   parameter Real CoB=S_b*Vn/(Sn*V_b);
   parameter Real CoB2=S_b/Sn;
@@ -228,6 +228,18 @@ equation
         grid={1,1})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -239,5 +251,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end baseMachine;

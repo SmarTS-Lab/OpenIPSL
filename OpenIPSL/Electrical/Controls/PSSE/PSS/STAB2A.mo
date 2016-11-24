@@ -11,8 +11,7 @@ model STAB2A "Models STAB2A, STAB3, and STAB4 are special representations of spe
   parameter Real K_5=1;
   parameter Real T_5=1;
   parameter Real H_LIM=5;
-  input Modelica.Blocks.Interfaces.RealInput PELEC
-    "Machine electrical power (pu)"                                                annotation (Placement(transformation(extent={{-109,-6},{-98,10}}), iconTransformation(extent={{-107,-10},{-87,10}})));
+  input Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)" annotation (Placement(transformation(extent={{-109,-6},{-98,10}}), iconTransformation(extent={{-107,-10},{-87,10}})));
   output Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal" annotation (Placement(transformation(extent={{120,-10},{140,10}}), iconTransformation(extent={{120,-10},{140,10}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction(
     b={-K_2*T_2,0},
@@ -119,6 +118,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -130,5 +141,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end STAB2A;
+

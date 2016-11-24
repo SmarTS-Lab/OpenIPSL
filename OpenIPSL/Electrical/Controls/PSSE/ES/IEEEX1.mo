@@ -37,14 +37,6 @@ model IEEEX1
     y_start=VR0,
     outMax=V_RMAX0,
     outMin=V_RMIN0) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
-
-protected
-  parameter Real SE_Efd0(fixed=false);
-  parameter Real VR0(fixed=false);
-  parameter Real V_RMAX0(fixed=false);
-  parameter Real K_E0(fixed=false);
-  parameter Real V_RMIN0(fixed=false);
-public
   BaseClasses.RotatingExciter rotatingExciter(
     T_E=T_E,
     E_1=E_1,
@@ -57,15 +49,19 @@ public
     K=1,
     T=T_R,
     y_start=ECOMP0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
+protected
+  parameter Real SE_Efd0(fixed=false);
+  parameter Real VR0(fixed=false);
+  parameter Real V_RMAX0(fixed=false);
+  parameter Real K_E0(fixed=false);
+  parameter Real V_RMIN0(fixed=false);
 initial equation
-
   SE_Efd0 = OpenIPSL.NonElectrical.Functions.SE(
     EFD0,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2);
-
   (V_RMAX0,V_RMIN0,K_E0) = calculate_dc_exciter_params(
     V_RMAX,
     V_RMIN,
@@ -74,10 +70,8 @@ initial equation
     S_EE_2,
     Efd0,
     SE_Efd0);
-
   VR0 = Efd0*(K_E0 + SE_Efd0);
   V_REF = VR0/K_A + ECOMP0;
-
 equation
   connect(V_Erro1.y, LL.u) annotation (Line(points={{-19,0},{-2,0}}, color={0,0,127}));
   connect(LL.y, SL.u) annotation (Line(points={{21,0},{58,0}}, color={0,0,127}));
@@ -106,6 +100,18 @@ equation
           textString="IEEEX1")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -117,7 +123,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -138,3 +145,4 @@ equation
 </table>
 </html>"));
 end IEEEX1;
+

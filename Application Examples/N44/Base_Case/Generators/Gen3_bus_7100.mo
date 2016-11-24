@@ -1,4 +1,6 @@
 within N44.Base_Case.Generators;
+
+
 model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
@@ -57,12 +59,11 @@ model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GEN
     T_5=0.01) annotation (Placement(transformation(extent={{-58,-50},{-12,-30}})));
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(gENSAL.p, p) annotation (Line(points={{7,6},{56,6},{56,0},{110,0}}, color={0,0,255}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.25,61},{10,61},{10,36},{-64,36},{-64,19},{-55.4,19}}, color={0,0,127}));
   connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{6.4,29.4},{16,29.4},{16,80},{-58,80},{-58,66.5},{-49.375,66.5}}, color={0,0,127}));
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{6.4,-1.8},{22,-1.8},{22,88},{-68,88},{-68,55.5},{-49.375,55.5}}, color={0,0,127}));
-  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{87.4,-54.4444},{94,-54.4444},{94,-86},{-76,-86},{-76,-7},{-55.4,-7}},color={0,0,127}));
+  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{87.4,-54.4444},{94,-54.4444},{94,-86},{-76,-86},{-76,-7},{-55.4,-7}}, color={0,0,127}));
   connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.4,-7},{12,-7},{12,-26},{-64,-26},{-64,-40},{-57.3727,-40}}, color={0,0,127}));
   connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-9.90909,-40},{4,-40},{4,-42.9444},{30,-42.9444}}, color={0,0,127}));
   connect(cte.y, sCRX.VOEL) annotation (Line(points={{3.5,-54},{6,-54},{6,-80},{48.2,-80}}, color={0,0,127}));
@@ -70,9 +71,37 @@ equation
   connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{6.4,-12.2},{18,-12.2},{18,-71.0556},{30,-71.0556}}, color={0,0,127}));
   connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{6.4,19},{24,19},{24,-54.4444},{30,-54.4444}}, color={0,0,127}));
   connect(sCRX.VUEL, cte.y) annotation (Line(points={{39.8,-80},{6,-80},{6,-54},{3.5,-54}}, color={0,0,127}));
-
-  annotation (Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+  annotation (
+    Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          smooth=Smooth.Bezier)}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen3_bus_7100;

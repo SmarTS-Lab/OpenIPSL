@@ -39,7 +39,7 @@ model SCRX "SMIB model example of GENROU with Excitation System EXST1"
     r_cr_fd=0,
     T_E=0.005) annotation (Placement(transformation(extent={{-74,-58},{-108,-30}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-111.6,10},{-116,10},{-116,26},{-62,26},{-62,-6},{-70.4,-6}},color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-111.6,10},{-116,10},{-116,26},{-62,26},{-62,-6},{-70.4,-6}}, color={0,0,127}));
   connect(sCRX.EFD, gENROE.EFD) annotation (Line(points={{-108.85,-42.4444},{-116,-42.4444},{-116,-10},{-111.6,-10}}, color={0,0,127}));
   connect(gENROE.ETERM, sCRX.ECOMP) annotation (Line(points={{-70.4,10},{-66,10},{-66,-42.4444},{-74,-42.4444}}, color={0,0,127}));
   connect(const.y, sCRX.VOTHSG) annotation (Line(points={{-56.4,-36},{-74,-36},{-74,-35.4444}}, color={0,0,127}));
@@ -52,6 +52,18 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{120,100}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -63,6 +75,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"),
+</html>
+"),
     Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
 end SCRX;
+

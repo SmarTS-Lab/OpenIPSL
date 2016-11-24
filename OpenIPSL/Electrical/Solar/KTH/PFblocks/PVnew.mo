@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
+
+
 model PVnew
   OpenIPSL.Electrical.Solar.KTH.Auxiliary.PVarray PVarray1(
     Estc=Estc,
@@ -93,10 +95,8 @@ model PVnew
   parameter Real Tdelay=0.05;
   parameter Real Imp=4.58 "Current at maximum power";
   parameter Real Vmp=35 "Voltage at maximum power";
-  parameter Real Iscref=5
-    "Module short-circuit current reference at reference temp and irradiance";
-  parameter Real Vocref=43.8
-    "Module open-circuit voltage reference at reference temp and irradiance";
+  parameter Real Iscref=5 "Module short-circuit current reference at reference temp and irradiance";
+  parameter Real Vocref=43.8 "Module open-circuit voltage reference at reference temp and irradiance";
   parameter Real Kv=-0.0039 "temperature correction factor for the voltage";
   parameter Real Ki=0.0004 "temperature correction factor for the current";
   parameter Real Tstc=25 "Temperature at the standard test conditions";
@@ -236,6 +236,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -247,5 +259,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end PVnew;

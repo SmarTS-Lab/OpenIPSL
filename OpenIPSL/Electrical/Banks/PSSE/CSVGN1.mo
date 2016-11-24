@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Banks.PSSE;
+
+
 model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   constant Real pi=Modelica.Constants.pi;
   parameter Real K;
@@ -14,8 +16,7 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   parameter Real MBASE=100 "MVAr range of SVC";
   parameter Real SBASE=100;
   parameter Real ra=0 "amature resistance";
-  parameter Real x1d=1
-    "d-axis transient reactance, p.u., should be set to 9999";
+  parameter Real x1d=1 "d-axis transient reactance, p.u., should be set to 9999";
   parameter Real v0 "init. voltage at terminal bus";
   parameter Real anglev0 "init voltage angle in degree";
   parameter Real Vc0 "init. voltage at controlled bus";
@@ -63,16 +64,11 @@ protected
   parameter Real vi0=v0*sin(anglev_rad) "Initialitation";
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialitation";
   parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter Real delta0=atan2(vi0 + ra*ii0 + x1d*ir0, vr0 + ra*ir0 - x1d*ii0)
-    "Initialitation";
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
-    "Initialitation";
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
-    "Initialitation";
+  parameter Real delta0=atan2(vi0 + ra*ii0 + x1d*ir0, vr0 + ra*ir0 - x1d*ii0) "Initialitation";
+  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0) "Initialitation";
+  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0) "Initialitation";
+  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0) "Initialitation";
+  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0) "Initialitation";
   parameter Real k50(fixed=false);
   parameter Real k30(fixed=false);
   parameter Real k0(fixed=false);
@@ -123,6 +119,18 @@ equation
           textString="CSVGN1")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -134,5 +142,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end CSVGN1;

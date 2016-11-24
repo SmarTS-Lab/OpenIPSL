@@ -6,7 +6,7 @@ model ESAC2A
   Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
-        origin={200,-110}),iconTransformation(
+        origin={200,-110}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-200,-70})));
@@ -55,15 +55,6 @@ model ESAC2A
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0,
     x_start=VFE0) annotation (Placement(transformation(extent={{40,-10},{20,10}})));
-
-protected
-  parameter Real VR0(fixed=false);
-  parameter Real Efd0(fixed=false);
-  parameter Real Ifd0(fixed=false);
-  parameter Real VE0(fixed=false);
-  parameter Real VFE0(fixed=false);
-
-public
   BaseClasses.RotatingExciterWithDemagnetizationVarLim rotatingExciterWithDemagnetization(
     T_E=T_E,
     K_E=K_E,
@@ -92,6 +83,12 @@ public
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={110,80})));
+protected
+  parameter Real VR0(fixed=false);
+  parameter Real Efd0(fixed=false);
+  parameter Real Ifd0(fixed=false);
+  parameter Real VE0(fixed=false);
+  parameter Real VFE0(fixed=false);
 initial equation
   Ifd0 = XADIFD;
   // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
@@ -108,7 +105,6 @@ initial equation
     E_2) + K_E) + Ifd0*K_D;
   VR0 = VFE0;
   V_REF = VR0/K_A + ECOMP0;
-
 equation
   connect(imLeadLag.y, simpleLagLim.u) annotation (Line(points={{-31,40},{-18,40}}, color={0,0,127}));
   connect(limiter1.y, rotatingExciterWithDemagnetization.I_C) annotation (Line(points={{115,40},{122.75,40}}, color={0,0,127}));
@@ -142,7 +138,7 @@ equation
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
           extent={{-186,-60},{-116,-80}},
           lineColor={28,108,200},
-          textString="XADIFD"), Text(
+          textString="XADIFD"),Text(
           extent={{-100,152},{100,92}},
           lineColor={28,108,200},
           textString="ESAC1A")}),
@@ -167,6 +163,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -178,5 +186,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end ESAC2A;
+

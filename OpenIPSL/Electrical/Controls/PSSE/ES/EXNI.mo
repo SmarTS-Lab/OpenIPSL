@@ -30,13 +30,6 @@ model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
   Modelica.Blocks.Math.Product product annotation (Placement(transformation(extent={{50,30},{70,50}})));
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{94,-14},{114,6}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=SWITCH) annotation (Placement(transformation(extent={{48,60},{68,80}})));
-protected
-  parameter Real VR0(fixed=false);
-  NonElectrical.Continuous.SimpleLag VR(
-    K=K_A,
-    T=T_A,
-    y_start=VR0) annotation (Placement(transformation(extent={{-12,-10},{8,10}})));
-public
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,
     T=T_R,
@@ -45,6 +38,12 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-150})));
+protected
+  parameter Real VR0(fixed=false);
+  NonElectrical.Continuous.SimpleLag VR(
+    K=K_A,
+    T=T_A,
+    y_start=VR0) annotation (Placement(transformation(extent={{-12,-10},{8,10}})));
 initial equation
   if SWITCH then
     VR0 = Efd0;
@@ -53,7 +52,6 @@ initial equation
     VR0 = Efd0/ECOMP0;
     V_REF = VR0/K_A + ECOMP0;
   end if;
-
 equation
   connect(simpleLag1.u, derivativeLag.y) annotation (Line(points={{2,-50},{2,-50},{13,-50}}, color={0,0,127}));
   connect(add.y, VR.u) annotation (Line(points={{-19,0},{-19,0},{-14,0}}, color={0,0,127}));
@@ -80,6 +78,18 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-200,-200},{200,160}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -91,7 +101,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -116,3 +127,4 @@ equation
           lineColor={28,108,200},
           textString="XADIFD")}));
 end EXNI;
+

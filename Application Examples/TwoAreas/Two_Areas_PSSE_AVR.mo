@@ -1,6 +1,5 @@
 within TwoAreas;
 model Two_Areas_PSSE_AVR
-
   parameter Real r=0.0001;
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
@@ -42,7 +41,6 @@ model Two_Areas_PSSE_AVR
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,-10})));
-
   OpenIPSL.Electrical.Branches.PwLine Line6_7(
     R=r*10,
     X=x*10,
@@ -53,7 +51,6 @@ model Two_Areas_PSSE_AVR
     X=x*25,
     G=0,
     B=b*25) annotation (Placement(transformation(extent={{-130,20},{-110,40}})));
-
   OpenIPSL.Electrical.Branches.PwLine Line7_8_1(
     R=r*110,
     X=x*110,
@@ -74,19 +71,16 @@ model Two_Areas_PSSE_AVR
     X=x*110,
     G=0,
     B=b*110) annotation (Placement(transformation(extent={{20,30},{40,50}})));
-
   OpenIPSL.Electrical.Branches.PwLine Line9_10(
     R=r*10,
     X=x*10,
     G=0,
     B=b*10) annotation (Placement(transformation(extent={{70,20},{90,40}})));
-
   OpenIPSL.Electrical.Branches.PwLine Line10_11(
     R=r*25,
     X=x*25,
     G=0,
     B=b*25) annotation (Placement(transformation(extent={{110,20},{130,40}})));
-
   OpenIPSL.Electrical.Events.PwFault pwFault(
     X=0,
     R=0,
@@ -95,7 +89,6 @@ model Two_Areas_PSSE_AVR
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={2,-16})));
-
   OpenIPSL.Electrical.Loads.PSSE.Load Load7(
     PQBRAK=0.7,
     V_0=PF_results.voltages.V7,
@@ -170,6 +163,18 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
     Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -181,7 +186,8 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>", info="<html>
+</html>
+", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -203,3 +209,4 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
 </html>"),
     experiment(StopTime=10, Tolerance=0.001));
 end Two_Areas_PSSE_AVR;
+

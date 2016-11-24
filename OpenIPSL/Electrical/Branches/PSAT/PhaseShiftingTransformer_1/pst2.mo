@@ -19,10 +19,8 @@ model pst2 "Angle part of PST"
   parameter Real m=0.98 "Transformer fixed tap  ratio, p.u./p.u.";
   parameter Real alpha0=0.002062339234360 "Initial angle, from power flow";
   parameter Real pmes0=0.01 "from power flow";
-  parameter Real vm0=1.007257703014177
-    "Receiving end bus voltage, from power flow";
-  parameter Real anglevm0=-0.009372077496959
-    "Receiving end bus angle, from power flow";
+  parameter Real vm0=1.007257703014177 "Receiving end bus voltage, from power flow";
+  parameter Real anglevm0=-0.009372077496959 "Receiving end bus angle, from power flow";
   Real vk;
   Real vm(start=vm0) "Voltage at secondary p.u.";
   Real anglevk "Angle at primary";
@@ -35,10 +33,8 @@ model pst2 "Angle part of PST"
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Reactance, p.u.";
+  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Resistance, p.u.";
+  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Reactance, p.u.";
   parameter Real pref=p_ref*(Sn/SystemBase);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";
@@ -78,6 +74,18 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -89,5 +97,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end pst2;
+

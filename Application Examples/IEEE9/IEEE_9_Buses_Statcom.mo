@@ -184,7 +184,6 @@ model IEEE_9_Buses_Statcom
         rotation=270,
         origin={59,67})));
 equation
-
   connect(line_5_7.n, B7.p) annotation (Line(
       points={{-72,63.5},{-72,90},{-80,90}},
       color={0,0,255},
@@ -221,7 +220,6 @@ equation
       points={{0,-77},{0,-86}},
       color={0,0,255},
       smooth=Smooth.None));
-
   connect(B7.p, ine_7_8.p) annotation (Line(points={{-80,90},{-64,90},{-49.5,90}}, color={0,0,255}));
   connect(ine_7_8.n, B8.p) annotation (Line(points={{-28.5,90},{-28.5,90},{0,90}}, color={0,0,255}));
   connect(B2.p, gen1.pwPin) annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
@@ -237,10 +235,8 @@ equation
   connect(gen3.pwPin, B1.p) annotation (Line(points={{0,-95},{0,-86}}, color={0,0,255}));
   connect(line_8_9.n, B9.p) annotation (Line(points={{45.5,90},{45.5,90},{80,90}}, color={0,0,255}));
   connect(B8.p, line_8_9.p) annotation (Line(points={{0,90},{24.5,90}}, color={0,0,255}));
-  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},
-          {24.5,90}},                                                                      color={0,0,255}));
-  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,
-          75.1667}},                                                                color={0,0,255}));
+  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},{24.5,90}}, color={0,0,255}));
+  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,75.1667}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
     Icon(coordinateSystem(extent={{-180,-120},{180,120}})),
@@ -262,7 +258,33 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"),
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"),
     experiment(
       StopTime=20,
       Interval=0.001,
@@ -271,3 +293,4 @@ equation
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
 end IEEE_9_Buses_Statcom;
+

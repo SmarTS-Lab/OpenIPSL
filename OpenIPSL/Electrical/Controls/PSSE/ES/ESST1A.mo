@@ -1,7 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESST1A "IEEE Type ST1A Excitation System"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-
   parameter Real T_R=0 "Voltage input time constant (s)" annotation (Dialog(group="Excitation system parameters"));
   parameter Real V_IMAX annotation (Dialog(group="Excitation system parameters"));
   parameter Real V_IMIN annotation (Dialog(group="Excitation system parameters"));
@@ -114,7 +113,6 @@ model ESST1A "IEEE Type ST1A Excitation System"
         rotation=90,
         origin={190,-70})));
   Modelica.Blocks.Nonlinear.VariableLimiter variableLimiter annotation (Placement(transformation(extent={{178,-10},{198,10}})));
-public
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,
     T=T_R,
@@ -127,12 +125,11 @@ initial equation
   IFD0 = XADIFD;
   VA0 = Efd0 + K_LR*(IFD0 - I_LR);
   V_REF = VA0/K_A + ECOMP0;
-
 equation
   connect(add3_1.y, imLimited.u) annotation (Line(points={{-71,0},{-66,0}}, color={0,0,127}));
   connect(imLeadLag.y, imLeadLag1.u) annotation (Line(points={{13,0},{13,0.5},{20,0.5}}, color={0,0,127}));
   connect(simpleLagLim.u, imLeadLag1.y) annotation (Line(points={{48,0},{43,0},{43,0.5}}, color={0,0,127}));
-  connect(Vref1.y, add2.u1) annotation (Line(points={{21,-140},{34,-140},{34,-132}},color={0,0,127}));
+  connect(Vref1.y, add2.u1) annotation (Line(points={{21,-140},{34,-140},{34,-132}}, color={0,0,127}));
   connect(add2.u2, XADIFD) annotation (Line(points={{46,-132},{46,-159.55},{162.25,-159.55}}, color={0,0,127}));
   connect(imGain1.y, variableLimiter.limit2) annotation (Line(points={{136,-19},{136,-8},{176,-8}}, color={0,0,127}));
   connect(add3_1.u1, imDerivativeLag.y) annotation (Line(points={{-94,8},{-98,8},{-98,70},{-1,70}}, color={0,0,127}));
@@ -171,44 +168,34 @@ equation
     Icon(coordinateSystem(
         extent={{-200,-200},{200,160}},
         grid={2,2},
-        initialScale=0.1), graphics={
-        Text(
+        initialScale=0.1), graphics={Text(
           extent={{-162,112},{-134,95}},
           lineColor={0,128,0},
-          textString="(VOS=1)"),
-        Text(
+          textString="(VOS=1)"),Text(
           extent={{-23,-160},{5,-174}},
           lineColor={0,128,0},
-          textString="(UEL=2)"),
-        Text(
+          textString="(UEL=2)"),Text(
           extent={{-144,-160},{-116,-174}},
           lineColor={0,128,0},
-          textString="(UEL=1)"),
-        Text(
+          textString="(UEL=1)"),Text(
           extent={{33,-160},{61,-174}},
           lineColor={0,128,0},
-          textString="(UEL=3)"),
-        Text(
+          textString="(UEL=3)"),Text(
           extent={{-190,140},{-108,120}},
           lineColor={28,108,200},
-          textString="VOTHSG2"),
-        Text(
+          textString="VOTHSG2"),Text(
           extent={{-162,152},{-134,135}},
           lineColor={0,128,0},
-          textString="(VOS=2)"),
-        Text(
+          textString="(VOS=2)"),Text(
           extent={{-184,60},{-156,40}},
           lineColor={28,108,200},
-          textString="VT"),
-        Text(
+          textString="VT"),Text(
           extent={{-184,-62},{-114,-82}},
           lineColor={28,108,200},
-          textString="XADIFD"),
-        Text(
+          textString="XADIFD"),Text(
           extent={{-36,-170},{16,-190}},
           lineColor={28,108,200},
-          textString="VUEL"),
-        Text(
+          textString="VUEL"),Text(
           extent={{24,-170},{76,-190}},
           lineColor={28,108,200},
           textString="VUEL")}),
@@ -233,6 +220,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -244,5 +243,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end ESST1A;
+

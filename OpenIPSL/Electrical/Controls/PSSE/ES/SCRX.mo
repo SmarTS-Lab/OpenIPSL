@@ -1,7 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SCRX "Bus Fed or Solid Fed Static Exciter"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-
   parameter Real T_AT_B;
   parameter Real T_B;
   parameter Real K;
@@ -26,9 +25,6 @@ model SCRX "Bus Fed or Solid Fed Static Exciter"
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{72,18},{84,30}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=C_SWITCH) annotation (Placement(transformation(extent={{40,46},{52,58}})));
   Modelica.Blocks.Math.Product product annotation (Placement(transformation(extent={{42,14},{54,26}})));
-protected
-  parameter Real VR0(fixed=false);
-public
   Modelica.Blocks.Math.Add DiffV1(k2=-1) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -38,6 +34,8 @@ public
         extent={{-20,-20},{20,20}},
         rotation=0,
         origin={-200,-70}), iconTransformation(extent={{-10,-10},{10,10}}, origin={-200,-70})));
+protected
+  parameter Real VR0(fixed=false);
 initial equation
   if not C_SWITCH then
     VR0 = Efd0/ECOMP0;
@@ -46,7 +44,6 @@ initial equation
     VR0 = Efd0;
     V_REF = VR0/K + ECOMP0;
   end if;
-
 equation
   connect(V_erro.y, imLeadLag.u) annotation (Line(points={{-39,0},{-39,0},{-22,0}}, color={0,0,127}));
   connect(imLeadLag.y, simpleLagLim.u) annotation (Line(points={{1,0},{8,0}}, color={0,0,127}));
@@ -73,7 +70,7 @@ equation
         initialScale=0.1), graphics={Text(
           extent={{-186,-62},{-116,-82}},
           lineColor={28,108,200},
-          textString="XADIFD"), Text(
+          textString="XADIFD"),Text(
           extent={{-100,156},{100,96}},
           lineColor={28,108,200},
           textString="SCRX")}),
@@ -98,6 +95,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -109,5 +118,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end SCRX;
+

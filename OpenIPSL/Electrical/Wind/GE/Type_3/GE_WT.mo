@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3;
+
+
 model GE_WT
   import Modelica.Constants.pi;
   import Modelica.Constants.eps;
@@ -21,19 +23,14 @@ model GE_WT
   parameter Real pirat=10.0 "maximum variation rate of pitch angle";
   parameter Real pwmax=1.12 "Maximal power taken from the wind";
   parameter Real pwmin=0.1 "Minimal power taken from the wind";
-  parameter Real pwrat=0.45
-    "maximum variation rate of power taken from the wind";
+  parameter Real pwrat=0.45 "maximum variation rate of power taken from the wind";
   parameter Real Kptrq=3.0 "Gain Torque Controller";
   parameter Real Kitrq=0.6 "Gain of integrator of Torque Controller";
   parameter Real Tpc=0.05 "Time Constant Torque controller";
-  parameter Real KQi=0.1
-    "Gain constant of first PI in DFIG electrical control model";
-  parameter Real KVi=40
-    "Gain constant of second PI in DFIG electrical control model";
-  parameter Real xiqmax=0.4
-    "Up saturation of second PI in DFIG electrical control model";
-  parameter Real xiqmin=-0.5
-    "Down saturation of second PI in DFIG electrical control model";
+  parameter Real KQi=0.1 "Gain constant of first PI in DFIG electrical control model";
+  parameter Real KVi=40 "Gain constant of second PI in DFIG electrical control model";
+  parameter Real xiqmax=0.4 "Up saturation of second PI in DFIG electrical control model";
+  parameter Real xiqmin=-0.5 "Down saturation of second PI in DFIG electrical control model";
   parameter Real Kpllp=30;
   parameter Real Xpp=0.8;
   parameter Real qmax=0.312;
@@ -432,6 +429,18 @@ equation
 </table>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -443,5 +452,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end GE_WT;

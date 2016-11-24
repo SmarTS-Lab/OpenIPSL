@@ -1,15 +1,15 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1;
+
+
 model GGOV1 "GE General Governor/Turbine Mode"
   parameter Integer Rselect=1 "Feedback signal for
-      governor droop" annotation (Evaluate=true, choices(
+            governor droop" annotation (Evaluate=true, choices(
       choice=1 "Electrical power",
       choice=0 "None (isochronous governor)",
       choice=-1 "Governor output (requested stroke)",
       choice=-2 "Fuel valve stroke (true stoke)"));
   parameter Integer Flag=1 "Switch for fuel source
-      characteristic" annotation (Evaluate=true, choices(choice=0
-        "Fuel flow independent of speed",                                                           choice=1
-        "Fuel flow proportional to speed"));
+            characteristic" annotation (Evaluate=true, choices(choice=0 "Fuel flow independent of speed", choice=1 "Fuel flow proportional to speed"));
   parameter Real R "Permanent droop (pu)";
   parameter Real T_pelec "Electrical power transducer time constant (s)";
   parameter Real maxerr "Maximum value for speed error signal";
@@ -72,8 +72,7 @@ model GGOV1 "GE General Governor/Turbine Mode"
   Modelica.Blocks.Math.Add3 add3_2(k1=-1, k3=-1) annotation (Placement(transformation(extent={{-198,-80},{-186,-68}})));
   Modelica.Blocks.Math.Gain Acceleration(k=Ka*DELT) annotation (Placement(transformation(extent={{-116,0},{-92,24}})));
   Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-54,-2},{-36,16}})));
-  Modelica.Blocks.Interfaces.RealInput SPEED
-    "Machine speed deviation from nominal (pu)"
+  Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-346,102},{-310,138}}), iconTransformation(extent={{-346,102},{-310,138}})));
   Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)"
     annotation (Placement(transformation(extent={{-348,-118},{-310,-80}}), iconTransformation(extent={{-348,-118},{-310,-80}})));
@@ -98,8 +97,7 @@ model GGOV1 "GE General Governor/Turbine Mode"
         extent={{-8,-8},{8,8}},
         rotation=90,
         origin={-246,-98})));
-  Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset)
-    "Supervisory Load Controller Setpoint,"                                                  annotation (Placement(transformation(extent={{-276,-148},{-260,-132}})));
+  Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset) "Supervisory Load Controller Setpoint," annotation (Placement(transformation(extent={{-276,-148},{-260,-132}})));
   Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
@@ -144,8 +142,7 @@ model GGOV1 "GE General Governor/Turbine Mode"
         extent={{-8,-8},{8,8}},
         rotation=90,
         origin={150,60})));
-  Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime=Teng)
-    "Transport lag time"                                                          annotation (Placement(transformation(
+  Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime=Teng) "Transport lag time" annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={150,20})));
@@ -573,6 +570,18 @@ equation
           textString="PMECH")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -584,5 +593,6 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end GGOV1;

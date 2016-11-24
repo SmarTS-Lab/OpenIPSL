@@ -1,8 +1,7 @@
 within OpenIPSL.Electrical.Banks;
 model PwShunt "Thyristor controlled Shunt reactor/capacitor"
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
-  Modelica.Blocks.Interfaces.RealInput Q
-    "Reactive power produced by the shunt (pu)"                                      annotation (Placement(transformation(extent={{-62,-2},{-42,18}}), iconTransformation(extent={{-40,0},{-58,18}})));
+  Modelica.Blocks.Interfaces.RealInput Q "Reactive power produced by the shunt (pu)" annotation (Placement(transformation(extent={{-62,-2},{-42,18}}), iconTransformation(extent={{-40,0},{-58,18}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real fn=50 "Frequency rating, Hz";
   Real C "Capacitance in p.u";
@@ -111,6 +110,18 @@ equation
           textString="Q")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -122,5 +133,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end PwShunt;
+

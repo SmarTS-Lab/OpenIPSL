@@ -71,9 +71,9 @@ equation
       smooth=Smooth.None));
   connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-75.2,-3},{-52,-3},{-52,45},{-62.475,45}}, color={0,0,127}));
   connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-75.2,9},{-58,9},{-58,31},{-62.475,31}}, color={0,0,127}));
-  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-100.95,38},{-110,38},{-110,5},{-95.8,5}},color={0,0,127}));
+  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-100.95,38},{-110,38},{-110,5},{-95.8,5}}, color={0,0,127}));
   connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-104.9,-32.2222},{-110,-32.2222},{-110,-5},{-95.8,-5}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-75.2,5},{-50,5},{-50,-32.2222},{-68,-32.2222}},color={0,0,127}));
+  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-75.2,5},{-50,5},{-50,-32.2222},{-68,-32.2222}}, color={0,0,127}));
   connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-75.2,-9},{-58,-9},{-58,-26},{-68,-26}}, color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-75,0},{-58,0},{-40,0}}, color={0,0,255}));
   annotation (
@@ -81,6 +81,18 @@ equation
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
@@ -92,5 +104,7 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>
+"));
 end HYGOV;
+

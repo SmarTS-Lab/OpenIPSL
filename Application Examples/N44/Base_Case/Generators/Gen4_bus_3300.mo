@@ -40,7 +40,6 @@ model Gen4_bus_3300 "Configuration of synchronous generator with regulators: GEN
         extent={{-28,-12},{28,12}},
         rotation=0,
         origin={-26,76})));
-
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=10 "K",
     T_AT_B=0,
@@ -65,22 +64,50 @@ model Gen4_bus_3300 "Configuration of synchronous generator with regulators: GEN
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-20,-65},{-9,-54}})));
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(cte.y, sCRX.VUEL) annotation (Line(points={{-8.45,-59.5},{24.775,-59.5},{24.775,-84},{43.8,-84}}, color={0,0,127}));
   connect(sCRX.VOEL, cte.y) annotation (Line(points={{52.2,-84},{-2,-84},{-2,-54},{-2,-59.5},{-8.45,-59.5}}, color={0,0,127}));
   connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-30.0455,-47.5},{1.97725,-47.5},{1.97725,-46.9444},{34,-46.9444}}, color={0,0,127}));
   connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.56,40.5},{20,40.5},{20,92},{-60,92},{-60,82.8571},{-52.6,82.8571}}, color={0,0,127}));
   connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.56,-1.5},{20,-1.5},{20,-28},{-70,-28},{-70,70.8571},{-52.6,70.8571}}, color={0,0,127}));
-  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{91.4,-58.4444},{96,-58.4444},{96,-90},{-90,-90},{-90,-8.5},{-57.36,-8.5}},color={0,0,127}));
+  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{91.4,-58.4444},{96,-58.4444},{96,-90},{-90,-90},{-90,-8.5},{-57.36,-8.5}}, color={0,0,127}));
   connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.75,77.7143},{12,77.7143},{12,50},{-66,50},{-66,26.5},{-57.36,26.5}}, color={0,0,127}));
   connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.56,26.5},{28,26.5},{28,-58.4444},{34,-58.4444}}, color={0,0,127}));
   connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.56,-15.5},{16,-15.5},{16,-80},{26,-80},{26,-75.0556},{34,-75.0556}}, color={0,0,127}));
   connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.56,-22.5},{12,-22.5},{12,-67.3889},{34,-67.3889}}, color={0,0,127}));
   connect(gENROU.p, pwPin) annotation (Line(points={{9.2,9},{76,9},{76,0},{110,0}}, color={0,0,255}));
   connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.56,-8.5},{34,-8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}}, color={0,0,127}));
-
-  annotation (Icon(graphics={Line(
+  annotation (
+    Icon(graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier), Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end Gen4_bus_3300;
+
