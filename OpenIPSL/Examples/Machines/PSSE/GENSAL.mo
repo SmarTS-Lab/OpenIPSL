@@ -25,7 +25,8 @@ equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-108,10},{-108,26},{-50,26},{-50,-6},{-58.4,-6}}, color={0,0,127}));
   connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-99.6,-10},{-108,-10},{-108,-30},{-50,-30},{-50,-14},{-58.4,-14}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p) annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})),                                                                     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
