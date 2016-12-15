@@ -96,11 +96,6 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
     K=1,
     T=T_R,
     y_start=ECOMP0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
-  Modelica.Blocks.Interfaces.RealInput XADIFD
-    annotation (Placement(transformation(
-        extent={{-20,-20},{20,20}},
-        rotation=90,
-        origin={130,-140}), iconTransformation(extent={{-10,-10},{10,10}}, origin={-200,-60})));
 protected
   parameter Real VR0(fixed=false);
 initial equation
@@ -131,7 +126,8 @@ equation
   connect(high.u, TransducerDelay.u) annotation (Line(points={{94,-30},{-178,-30},{-178,0},{-172,0}}, color={0,0,127}));
   connect(low.u, TransducerDelay.u) annotation (Line(points={{92,-70},{80,-70},{80,-30},{-178,-30},{-178,0},{-172,0}}, color={0,0,127}));
   connect(VOTHSG, VERR1.u1) annotation (Line(points={{-200,90},{-26,90},{-26,-6},{-22,-6}}, color={0,0,127}));
-  connect(XADIFD, K_c.u) annotation (Line(points={{130,-140},{130,-104}}, color={0,0,127}));
+  connect(XADIFD, K_c.u) annotation (Line(points={{80,-200},{80,-200},{80,-124},
+          {80,-120},{130,-120},{130,-104}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
