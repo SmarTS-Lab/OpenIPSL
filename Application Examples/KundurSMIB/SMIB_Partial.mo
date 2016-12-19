@@ -1,7 +1,5 @@
 within KundurSMIB;
-
-
-partial model SMIB_Partial "PArtial model containing the network elements"
+partial model SMIB_Partial "Partial model containing the network elements"
   import Modelica.Constants.pi;
   OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
   OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));

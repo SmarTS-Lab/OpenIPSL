@@ -1,10 +1,13 @@
 within ;
 package PSAT_Systems "Different test systems from PSAT"
+
+
+
+
 annotation (uses(
     Modelica(version="3.2.1"),
-    OpenIPSL(version="0.8.1"),
-    Modelica_Synchronous(version="0.92"),
-    PowerSystems(version="0.6")), Documentation(revisions="<html>
+    OpenIPSL(version="1.0.0"),
+    Modelica_Synchronous(version="0.92")), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>

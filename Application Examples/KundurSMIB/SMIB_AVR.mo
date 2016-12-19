@@ -75,4 +75,3 @@ equation
 </table>
 </html>"));
 end SMIB_AVR;
-

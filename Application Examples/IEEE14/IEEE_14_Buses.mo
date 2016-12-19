@@ -532,4 +532,3 @@ equation
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
 end IEEE_14_Buses;
-

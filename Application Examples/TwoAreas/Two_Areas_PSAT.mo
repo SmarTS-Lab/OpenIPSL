@@ -236,4 +236,3 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
 end Two_Areas_PSAT;
-

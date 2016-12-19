@@ -1,9 +1,13 @@
 within ;
 package OpenIPSL "Open-Instance Power System Library"
+
+
+
+
 annotation (
   uses(Modelica(version="3.2.1"), Complex(version="3.2.1")),
-  version="0.8.1",
-  conversion(noneFromVersion="0.8"),
+  version="1.0.0",
+  conversion(noneFromVersion={"0.8","0.8.1"}),
   Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>

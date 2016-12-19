@@ -16,8 +16,8 @@ model InfiniteBus "PSAT Infinite Bus"
 equation
   p.vr = V_0*cos(angle_0*Modelica.Constants.pi/180);
   p.vi = V_0*sin(angle_0*Modelica.Constants.pi/180);
-  P = (p.vr*p.ir - p.vi*p.ii)*S_b;
-  Q = (p.vr*p.ii - p.vi*p.ir)*S_b;
+  P = -(p.vr*p.ir + p.vi*p.ii)*S_b;
+  Q = -(p.vr*p.ii - p.vi*p.ir)*S_b;
   annotation (
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
@@ -86,4 +86,3 @@ equation
 </html>
 "));
 end InfiniteBus;
-

@@ -1,6 +1,4 @@
 within KundurSMIB.Generation_Groups;
-
-
 model Generator
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(

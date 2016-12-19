@@ -1,8 +1,18 @@
 within Tutorial.Example_1.Generator;
 partial model Step_2
+  extends Tutorial.Support.Generator_Example;
+
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
+    vfmax=7,
+    vfmin=-6.40,
+    K0=200,
+    T2=1,
+    T1=1,
+    Te=0.0001,
+    Tr=0.015) annotation (Placement(transformation(extent={{-52,-6},{-12,34}})));
+  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(transformation(extent={{-100,-4},{-80,16}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
-    V_b=400,
     ra=0.003,
     xd=1.81,
     xq=1.76,
@@ -17,20 +27,12 @@ partial model Step_2
     Taa=0.002,
     M=7,
     D=0,
-    P_0=19.979999999936396,
-    Q_0=9.679249699065775,
-    V_0=1,
-    angle_0=0.494677176989154,
-    Sn=2220) annotation (Placement(transformation(extent={{20,-30},{80,30}})));
-  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
-    vfmax=7,
-    vfmin=-6.40,
-    K0=200,
-    T2=1,
-    T1=1,
-    Te=0.0001,
-    Tr=0.015) annotation (Placement(transformation(extent={{-52,-6},{-12,34}})));
-  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(transformation(extent={{-100,-4},{-80,16}})));
+    Sn=2220,
+    V_b=V_b,
+    V_0=V_0,
+    angle_0=angle_0,
+    P_0=P_0,
+    Q_0=Q_0) annotation (Placement(transformation(extent={{20,-30},{80,30}})));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-64,42},{-2,-12}},
           lineColor={255,0,0},
