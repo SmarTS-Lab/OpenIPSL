@@ -33,34 +33,29 @@ partial model Step_2
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{20,-30},{80,30}})));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-64,42},{-2,-12}},
           lineColor={255,0,0},
-          lineThickness=1),
-        Text(
+          lineThickness=1),Text(
           extent={{-96,104},{94,86}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Step 2: AVR model and parameters"),
-        Text(
+          textString="Step 2: AVR model and parameters"),Text(
           extent={{-82,56},{20,40}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=12,
-          textString="Electrical.Controls.PSAT.AVR.AVRtypeIII"),
-        Text(
+          textString="Electrical.Controls.PSAT.AVR.AVRtypeIII"),Text(
           extent={{-138,-14},{-36,-30}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=12,
-          textString="Modelica.Blocks.Sources.Constant"),
-        Rectangle(
+          textString="Modelica.Blocks.Sources.Constant"),Rectangle(
           extent={{-108,24},{-74,-12}},
           lineColor={255,0,0},
           lineThickness=1)}), Documentation(revisions="<html>

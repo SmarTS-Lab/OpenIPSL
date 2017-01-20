@@ -1,6 +1,4 @@
 within IEEE9;
-
-
 model IEEE_9_Buses
   import Modelica.Constants.pi;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(

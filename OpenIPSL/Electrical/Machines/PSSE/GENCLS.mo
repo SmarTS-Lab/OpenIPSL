@@ -1,6 +1,8 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENCLS
   import Modelica.Constants.pi;
+  import Modelica.Constants.eps;
+
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Connectors.PwPin p(
     vr(start=vr0),
@@ -58,14 +60,14 @@ protected
 equation
 
   //Swing equation
-  //der(delta) = omega*2*pi*50;
-  //der(omega) = (P_0/S_b - P - D*omega)/(2*H);
-  // Swing equation was ommited becase it causes derivative by zero in examples
-  // where the inertia constant is zero (in PSS/E setting to zero is equivalent
-  // to removing the swing equation
-
-  der(delta) = 0;
-  omega = 0;
+  //in PSS/E setting to zero is equivalent to removing the swing equation
+  if abs(H) > eps then
+    der(delta) = omega*2*pi*50;
+    der(omega) = (P_0/S_b - P - D*omega)/(2*H);
+  else
+    der(delta) = 0;
+    omega = 0;
+  end if;
 
   // d-q voltage and current equations
   der(eq) = 0 "Classical model assumes constant emf";

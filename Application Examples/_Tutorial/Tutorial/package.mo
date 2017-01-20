@@ -1,5 +1,10 @@
 within ;
 package Tutorial 
+
+
+
+
+
 annotation (
   Icon(graphics={
       Rectangle(
@@ -45,5 +50,5 @@ annotation (
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
 "),
-  uses(Modelica(version="3.2.1"), OpenIPSL(version="0.8.1")));
+  uses(Modelica(version="3.2.1"), OpenIPSL(version="1.0.0")));
 end Tutorial;

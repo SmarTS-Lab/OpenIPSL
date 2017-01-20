@@ -2,6 +2,7 @@ within OpenIPSL.Examples;
 package Loads 
 extends Modelica.Icons.ExamplesPackage;
 
+
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>

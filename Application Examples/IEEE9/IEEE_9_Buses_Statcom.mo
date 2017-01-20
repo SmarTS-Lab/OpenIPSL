@@ -293,4 +293,3 @@ equation
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
 end IEEE_9_Buses_Statcom;
-

@@ -2,6 +2,7 @@ within OpenIPSL.Examples.Wind;
 package PSSE 
 extends Modelica.Icons.ExamplesPackage;
 
+
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>

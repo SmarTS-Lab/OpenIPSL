@@ -1,7 +1,10 @@
 within ;
 package IEEE14 
+
+
+
 annotation (
-  uses(Modelica(version="3.2.1"), OpenIPSL(version="0.8.1")),
+  uses(Modelica(version="3.2.1"), OpenIPSL(version="1.0.0")),
   Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

@@ -1,6 +1,4 @@
 within SevenBus;
-
-
 package Data
   record SevenBus_voltages
     extends Modelica.Icons.Record;

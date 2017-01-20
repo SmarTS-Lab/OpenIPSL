@@ -209,4 +209,3 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
 </html>"),
     experiment(StopTime=10, Tolerance=0.001));
 end Two_Areas_PSSE_AVR;
-

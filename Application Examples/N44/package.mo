@@ -1,8 +1,11 @@
 within ;
 package N44 "Library of Nordic 44 models"
+
+
+
 annotation (uses(
     Modelica(version="3.2.1"),
-    OpenIPSL(version="0.8.1"),
+    OpenIPSL(version="1.0.0"),
     Complex(version="3.2.1")), Documentation(info="<html>
 This package contains both original and modified Nordic 44 models.
 </html>", revisions="<html>

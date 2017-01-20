@@ -1,6 +1,13 @@
 within ;
 package TwoAreas "2 areas test system from Klein, Rogers, and Kundur"
-annotation (uses(Modelica(version="3.2.1"), OpenIPSL(version="0.8.1")), Documentation(revisions="<html>
+
+
+
+
+
+
+
+annotation (uses(Modelica(version="3.2.1"), OpenIPSL(version="1.0.0")), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
