@@ -111,7 +111,7 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
         origin={0.0,77.9903},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=-90)));
-  OpenIPSL.Connectors.PwPin pin annotation (Placement(
+  OpenIPSL.Interfaces.PwPin pin annotation (Placement(
       visible=true,
       transformation(
         origin={-101.9875,-70.0},
@@ -314,4 +314,3 @@ equation
 </html>
 "));
 end PSAT_WT;
-

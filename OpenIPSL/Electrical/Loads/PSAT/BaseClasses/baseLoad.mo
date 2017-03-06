@@ -1,11 +1,9 @@
 within OpenIPSL.Electrical.Loads.PSAT.BaseClasses;
-
-
 partial model baseLoad
   import Modelica.Constants.pi;
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real Sn=S_b "Power rating (MVA)";
-  OpenIPSL.Connectors.PwPin p annotation (Placement(
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(
       transformation(
         extent={{-56.0,-10.0},{-36.0,10.0}},
         origin={0.0,0.0},

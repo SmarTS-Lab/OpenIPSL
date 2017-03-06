@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
-
-
 model TGTypeIII "Hydro Turbine (Linear model) and Governor (Standard model)- control scheme Type 3"
   parameter Real P_0 "Active power (pu)" annotation (Dialog(group="Power flow data"));
   parameter Real wref=1 "Reference speed (pu)";

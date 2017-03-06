@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Branches.Simulink.LTC;
-
-
 model LTC_deadband
   Modelica.Blocks.Interfaces.RealOutput signal annotation (Placement(transformation(extent={{56,-2},{76,18}}), iconTransformation(extent={{56,-2},{76,18}})));
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-68,0},{-48,20}}), iconTransformation(extent={{-70,-2},{-50,18}})));

@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Nonlinear;
-
-
 model FEX "FEX=f(IN)"
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-70,-10},{-50,10}}), iconTransformation(extent={{-110,-10},{-90,10}})));
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{58,-10},{78,10}}), iconTransformation(extent={{100,-10},{120,10}})));

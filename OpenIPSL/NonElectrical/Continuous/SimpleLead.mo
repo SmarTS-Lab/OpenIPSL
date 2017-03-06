@@ -51,4 +51,3 @@ equation
 </html>
 "));
 end SimpleLead;
-

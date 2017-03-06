@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.FACTS;
-
-
 model StatcomCode_Test
   import Modelica.Constants.pi;
   extends Modelica.Icons.Example;

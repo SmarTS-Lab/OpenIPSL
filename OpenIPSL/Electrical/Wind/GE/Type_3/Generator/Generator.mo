@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Generator;
-
-
 model Generator
   import Modelica.Constants.pi;
   parameter Real freq=50;
@@ -62,7 +60,7 @@ model Generator
         origin={-2.0,-134.0},
         extent={{102.0,54.0},{62.0,94.0}},
         rotation=0)));
-  OpenIPSL.Connectors.PwPin p annotation (Placement(
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(
       visible=true,
       transformation(
         origin={-158.1542,-62.9104},

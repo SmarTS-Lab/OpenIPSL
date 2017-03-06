@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Continuous;
-
-
 block LeadLagLim "Lead-Lag filter with a non-windup limiter"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain";

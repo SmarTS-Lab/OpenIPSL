@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
-
-
 model MPPT
   Modelica.Blocks.Interfaces.RealOutput Vdref(start=700) annotation (Placement(
       visible=true,

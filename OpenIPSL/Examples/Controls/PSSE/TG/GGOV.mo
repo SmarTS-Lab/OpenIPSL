@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
-
-
 model GGOV "three phase to ground fault test of GGOV"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROU generator(

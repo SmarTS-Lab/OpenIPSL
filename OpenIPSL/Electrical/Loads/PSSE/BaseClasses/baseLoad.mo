@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Loads.PSSE.BaseClasses;
-
-
 partial model baseLoad
   import Modelica.Constants.pi;
   import Modelica.ComplexMath.j;
@@ -12,7 +10,7 @@ partial model baseLoad
   parameter Complex b=0 + j*1 "Load transfer fraction for constant shunt admittance load";
   parameter Real PQBRAK=0.7 "Constant power characteristic threshold";
   parameter Integer characteristic=1 annotation (choices(choice=1, choice=2));
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),

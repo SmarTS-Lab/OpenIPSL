@@ -1,10 +1,7 @@
 within OpenIPSL.Electrical.Machines.PSAT.BaseClasses;
-
-
 partial model baseMachine
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
-  import Modelica.Blocks.Interfaces.*;
   parameter Real Sn "Power rating (MVA)" annotation (Dialog(group="Machine parameters"));
   parameter Real Vn "Voltage rating (kV)" annotation (Dialog(group="Machine parameters"));
   parameter Real ra "Armature resistance (pu)" annotation (Dialog(group="Machine parameters"));
@@ -13,109 +10,72 @@ partial model baseMachine
   parameter Real D "Damping coefficient" annotation (Dialog(group="Machine parameters"));
   //Initialization
   //Initialization of currents and voltages
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
     ii(start=ii0)) annotation (Placement(
       visible=true,
       transformation(
-        origin={2.2777,10.4683},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110,0.4964},
+        origin={100,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  RealOutput delta "Rotor angle (deg)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput delta "Rotor angle (deg)" annotation (Placement(
       visible=true,
       transformation(
-        origin={161.0916,-52.0898},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={110,60},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealOutput w(start=1) "Rotor speed (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput w(start=1) "Rotor speed (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={160.1093,-96.8871},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={110,90},
-        extent={{-10.0,-10.0},{10.0,10.0}},
+        extent={{-9.99999,-9.99999},{9.99998,9.99998}},
         rotation=0)));
-  RealOutput v(start=V_0, fixed=true) "Generator terminal voltage (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput v(start=V_0, fixed=true) "Generator terminal voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={146.6,6.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={110,30},
+        extent={{-9.99997,-10},{9.99998,10}},
+        rotation=0)));
+  Modelica.Blocks.Interfaces.RealOutput P(start=P_0/S_b) "Active power (pu)" annotation (Placement(
+      visible=true,
+      transformation(
+        origin={110,-30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealOutput P(start=P_0/S_b) "Active power (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput Q(start=Q_0/S_b) "Reactive power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={135.6,56.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110,-30.1615},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  RealOutput Q(start=Q_0/S_b) "Reactive power (pu)" annotation (Placement(
-      visible=true,
-      transformation(
-        origin={135.6,36.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={110,-60},
         extent={{-10,-10},{10,10}},
+        rotation=0),
+      iconTransform));
+  Modelica.Blocks.Interfaces.RealInput vf "Field voltage (pu)" annotation (Placement(
+      visible=true,
+      transformation(
+        origin={-120,50},
+        extent={{-20.0001,-20},{19.9998,20}},
         rotation=0)));
-  RealInput vf "Field voltage (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput vf0 "Initial field voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={-159.127,67.3695},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
-      iconTransformation(
-        origin={-100,50},
-        extent={{-10,-9.99999},{9.99996,9.99998}},
-        rotation=0)));
-  RealOutput vf0 "Initial field voltage (pu)" annotation (Placement(
+        origin={-90,110},
+        extent={{-9.99997,-9.99997},{10,10}},
+        rotation=90),
+      iconTransform));
+  Modelica.Blocks.Interfaces.RealOutput pm0 "Initial mechanical power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={159.127,97.5816},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={-80,110},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=90)));
-  RealOutput pm0 "Initial mechanical power (pu)" annotation (Placement(
-      visible=true,
-      transformation(
-        origin={160.6004,66.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={-80,-110},
+        origin={-90,-110},
         extent={{-10,-10},{10,10}},
-        rotation=270)));
-  RealInput pm "Mechanical power (pu)" annotation (Placement(
+        rotation=270),
+      iconTransform));
+  Modelica.Blocks.Interfaces.RealInput pm "Mechanical power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={-164.0384,-42.7137},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
-      iconTransformation(
-        origin={-100,-50},
-        extent={{-10,-10},{10,10}},
+        origin={-120.019,-50.3569},
+        extent={{-19.981,-19.6431},{19.9811,19.6431}},
         rotation=0)));
   Real anglev(start=angle_0/180*pi) " Bus voltage angle";
   Real vd "d-axis voltage (pu)";
@@ -153,9 +113,8 @@ equation
   pe = (vq + Ra*iq)*iq + (vd + Ra*id)*id;
   annotation (
     Icon(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        grid={1,1}), graphics={Text(
+        extent={{-100,-100},{100,100}}, initialScale=0.1),
+                     graphics={Text(
           origin={-81,50.5},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10.5},{10,10.5}},
@@ -221,36 +180,5 @@ equation
           extent={{-10,-10},{10,10}},
           fontName="Arial",
           lineColor={28,108,200},
-          textString="Q")}),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        grid={1,1})),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+          textString="Q")}));
 end baseMachine;

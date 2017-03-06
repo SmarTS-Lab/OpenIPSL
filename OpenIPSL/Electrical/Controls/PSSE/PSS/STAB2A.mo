@@ -144,4 +144,3 @@ equation
 </html>
 "));
 end STAB2A;
-

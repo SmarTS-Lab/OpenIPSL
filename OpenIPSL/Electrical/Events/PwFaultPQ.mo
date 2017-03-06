@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Events;
 model PwFaultPQ
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-40,-10},{-20,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-40,-10},{-20,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   parameter Real R "Resistance (pu)";
   parameter Real X "Reactance (pu)";
   parameter Real t1 "Start time of the fault (s)";
@@ -79,4 +79,3 @@ equation
 </html>
 "));
 end PwFaultPQ;
-

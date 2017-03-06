@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSAT.AVR;
-
-
 model AVRTypeI_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order6 Syn1(

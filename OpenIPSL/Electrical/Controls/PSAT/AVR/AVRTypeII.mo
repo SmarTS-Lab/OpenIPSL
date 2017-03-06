@@ -1,11 +1,15 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
-
-
 model AVRTypeII "PSAT AVR Type 2"
-  Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage (pu)" annotation (Placement(transformation(extent={{-98,-8},{-78,12}}), iconTransformation(extent={{-98,-28},{-62,8}})));
-  Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (Placement(transformation(extent={{74,22},{94,42}}), iconTransformation(extent={{68,8},{102,44}})));
+  Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage (pu)" annotation (Placement(transformation(extent={{-140,
+            -80},{-100,-40}}),                                                                                                                iconTransformation(extent={{-140,
+            -80},{-100,-40}})));
+  Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (Placement(transformation(extent={{100,-10},
+            {120,10}}),                                                                                                         iconTransformation(extent={{100,-10},
+            {120,10}})));
   Modelica.Blocks.Interfaces.RealInput vref "Reference generator terminal voltage (pu)"
-    annotation (Placement(transformation(extent={{-96,40},{-76,60}}), iconTransformation(extent={{-98,36},{-62,72}})));
+    annotation (Placement(transformation(extent={{-140,40},{-100,80}}),
+                                                                      iconTransformation(extent={{-140,40},
+            {-100,80}})));
   parameter Real vrmin "Minimum regulator voltage (pu)";
   parameter Real vrmax "Maximum regulator voltage (p.u..)";
   parameter Real Ka "Amplifier gain (p.u/p.u)";
@@ -43,18 +47,21 @@ equation
   der(vf) = -(vf*(Ke + Se) - simpleLagLim.y)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,70},{70,-28}}, lineColor={0,0,255}),Text(
-          extent={{-56,68},{-24,46}},
+    Diagram(coordinateSystem(                           extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+    Icon(coordinateSystem(                           extent={{-100,-100},{100,100}},
+          initialScale=0.1),                                                          graphics={Rectangle(extent={{
+              -100,100},{100,-100}},                                                                                                  lineColor={0,0,255}),Text(
+          extent={{-90,80},{-50,40}},
           lineColor={0,0,255},
           textString="vref"),Text(
-          extent={{-64,2},{-32,-20}},
+          extent={{-100,-40},{-60,-70}},
           lineColor={0,0,255},
           textString="v"),Text(
-          extent={{40,40},{72,18}},
+          extent={{60,20},{100,-20}},
           lineColor={0,0,255},
           textString="vf"),Text(
-          extent={{-36,44},{40,-16}},
+          extent={{-40,40},{40,-40}},
           lineColor={0,0,255},
           textString="AVR2")}),
     Documentation(info="<html>

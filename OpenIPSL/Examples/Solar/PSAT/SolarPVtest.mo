@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Solar.PSAT;
-
-
 model SolarPVtest
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(

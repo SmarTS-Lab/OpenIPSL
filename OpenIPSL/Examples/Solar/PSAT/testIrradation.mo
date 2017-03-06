@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Solar.PSAT;
-
-
 model testIrradation
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Constant const(k=25)

@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
-
-
 model TGOV1 "SMIB system with one load and GENROE model"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(

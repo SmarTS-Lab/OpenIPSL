@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Logical;
-
-
 model Relay4
   Modelica.Blocks.Interfaces.RealInput in1 annotation (Placement(transformation(
         extent={{-5,-6},{5,6}},

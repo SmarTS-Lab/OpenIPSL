@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH;
-
-
 model PFmodelmpptCorrected05MW
   parameter Real SystemBase=100 "MVa";
   parameter Real v0=0.99422 "Power flow, node voltage";
@@ -55,7 +53,7 @@ model PFmodelmpptCorrected05MW
         origin={110.0,5.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Connectors.PwPin pwPin1(vi(start=v0*sin(anglev0)), vr(start=v0*cos(anglev0))) annotation (Placement(
+  OpenIPSL.Interfaces.PwPin pwPin1(vi(start=v0*sin(anglev0)), vr(start=v0*cos(anglev0))) annotation (Placement(
       visible=true,
       transformation(
         origin={145.0,3.4396},

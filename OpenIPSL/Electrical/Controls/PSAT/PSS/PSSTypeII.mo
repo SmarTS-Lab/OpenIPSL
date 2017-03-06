@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSAT.PSS;
-
-
 model PSSTypeII "PSAT PSS TypeII"
   parameter Real vsmax "Max stabilizer output signal (pu)";
   parameter Real vsmin "Min stabilizer output signal (pu)";

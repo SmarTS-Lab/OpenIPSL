@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Branches.PSAT;
 model ULTC_VoltageControl "Under Load Tap Changer, continous model, secondary voltage control"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Vbus1=400000 "Sending end Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
   parameter Real Vbus2=100000 "Receiving end Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
@@ -126,4 +126,3 @@ equation
 </html>
 "));
 end ULTC_VoltageControl;
-

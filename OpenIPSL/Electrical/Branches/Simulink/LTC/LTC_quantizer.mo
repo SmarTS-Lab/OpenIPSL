@@ -125,4 +125,3 @@ equation
 </html>
 "));
 end LTC_quantizer;
-

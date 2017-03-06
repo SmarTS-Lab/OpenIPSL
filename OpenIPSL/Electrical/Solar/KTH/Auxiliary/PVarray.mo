@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
-
-
 model PVarray
   Modelica.Blocks.Interfaces.RealInput V1(start=Vmp) "Voltage" annotation (Placement(
       visible=true,

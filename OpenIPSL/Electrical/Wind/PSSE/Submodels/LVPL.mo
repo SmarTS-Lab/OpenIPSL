@@ -87,4 +87,3 @@ equation
 </html>
 "));
 end LVPL;
-

@@ -1,9 +1,7 @@
 within OpenIPSL.Electrical.FACTS.PSAT;
-
-
 model TCSCReactance
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-119,-8},{-99,12}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-119,-8},{-99,12}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Vbus=400000 "Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));

@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
-
-
 model SimpleLagg
   Modelica.Blocks.Interfaces.RealInput yi annotation (Placement(
       visible=true,

@@ -67,4 +67,3 @@ equation
 </html>
 "));
 end Load_switch;
-

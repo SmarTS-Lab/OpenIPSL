@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
-
-
 model DCBusBar
   parameter Real Pnen=0.5 "MW rated power";
   parameter Real UdcN=1 "kV Nominal DC voltage";

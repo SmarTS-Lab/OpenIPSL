@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
-
-
 model EXNI "SMIB system with one load and GENROE model"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(

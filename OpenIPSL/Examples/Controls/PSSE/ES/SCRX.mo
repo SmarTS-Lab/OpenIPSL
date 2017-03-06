@@ -78,4 +78,3 @@ equation
 </html>
 "), Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
 end SCRX;
-

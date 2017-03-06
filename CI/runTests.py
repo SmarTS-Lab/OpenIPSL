@@ -60,13 +60,13 @@ passLib = ci.runCheck("OpenIPSL","/OpenIPSL/package.mo")
 # Libs in Application Examples
 notPassAppEx = 0
 appExamples = {
-"KundurSMIB":"/Application Examples/KundurSMIB/package.mo",
-"TwoAreas":"/Application Examples/TwoAreas/package.mo",
-"SevenBus":"/Application Examples/SevenBus/package.mo",
-"IEEE9":"/Application Examples/IEEE9/package.mo",
-"IEEE14":"/Application Examples/IEEE14/package.mo",
-"AKD":"/Application Examples/AKD/package.mo",
-"N44":"/Application Examples/N44/package.mo",
+"KundurSMIB":"/ApplicationExamples/KundurSMIB/package.mo",
+"TwoAreas":"/ApplicationExamples/TwoAreas/package.mo",
+"SevenBus":"/ApplicationExamples/SevenBus/package.mo",
+"IEEE9":"/ApplicationExamples/IEEE9/package.mo",
+"IEEE14":"/ApplicationExamples/IEEE14/package.mo",
+"AKD":"/ApplicationExamples/AKD/package.mo",
+"N44":"/ApplicationExamples/N44/package.mo",
 }
 
 for package in appExamples.keys():

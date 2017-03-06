@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Wind;
-
-
 model GE_WT_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(visible=true, transformation(

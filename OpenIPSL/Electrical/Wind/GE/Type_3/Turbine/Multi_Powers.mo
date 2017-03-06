@@ -46,8 +46,7 @@ explicitly defined via parameters n1, n2, n3 and n4.
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
-"),
-    Icon(coordinateSystem(
+"), Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
         grid={1,1}), graphics={Line(points={{8,0},{102,0}}, color={0,0,127}),Line(points={{-100,90},{-60,90},{-3,4}}, color={0,0,127}),Line(points={{-100,30},{-60,30},{-9,0}}, color={0,0,127}),Line(
@@ -66,4 +65,3 @@ explicitly defined via parameters n1, n2, n3 and n4.
           fillPattern=FillPattern.Solid,
           lineColor={0,0,255}),Line(points={{-100,30},{-60,30},{-9,0}}, color={0,0,255}),Line(points={{-99,-30},{-59,-30},{-10,-5}}, color={0,0,255})}));
 end Multi_Powers;
-
