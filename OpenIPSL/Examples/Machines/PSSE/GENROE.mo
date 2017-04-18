@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Machines.PSSE;
+within OpenIPSL.MakingAHugeMistageExamples.Machines.PSSE;
 model GENROE
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
