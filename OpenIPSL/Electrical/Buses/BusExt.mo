@@ -1,8 +1,8 @@
 within OpenIPSL.Electrical.Buses;
 model BusExt
   outer OpenIPSL.Electrical.SystemBase SysData "Must add this line in all models";
-  parameter Integer nu(min=1) = 1 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
-  parameter Integer no(min=1) = 1 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer nu(min=0) = 0 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer no(min=0) = 0 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
   OpenIPSL.Interfaces.PwPin u[nu] annotation (Placement(
       visible=true,
       transformation(
