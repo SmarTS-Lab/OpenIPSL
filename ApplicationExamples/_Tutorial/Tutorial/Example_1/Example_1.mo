@@ -67,9 +67,8 @@ equation
           {82,1.33227e-15},{90,1.33227e-15}}, color={0,0,255}));
   connect(line_2.n, B3.p) annotation (Line(points={{39,-20},{60,-20},{
           60,0},{70,0}}, color={0,0,255}));
-  connect(fault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,
-          -50},{10,0},{-10,0}},
-                           color={0,0,255}));
+  connect(fault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,-50},{10,0},
+          {-10,0}},        color={0,0,255}));
   connect(line_2.p, B2.p) annotation (Line(points={{21,-20},{10,-20},{
           10,0},{-10,0}}, color={0,0,255}));
   connect(line_1.p, B2.p) annotation (Line(points={{21,20},{10,20},{10,

@@ -30,13 +30,13 @@ partial model baseMachine
       visible=true,
       transformation(
         origin={110,90},
-        extent={{-9.99999,-9.99999},{9.99998,9.99998}},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
   Modelica.Blocks.Interfaces.RealOutput v(start=V_0, fixed=true) "Generator terminal voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
         origin={110,30},
-        extent={{-9.99997,-10},{9.99998,10}},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
   Modelica.Blocks.Interfaces.RealOutput P(start=P_0/S_b) "Active power (pu)" annotation (Placement(
       visible=true,
@@ -47,35 +47,32 @@ partial model baseMachine
   Modelica.Blocks.Interfaces.RealOutput Q(start=Q_0/S_b) "Reactive power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={110,-60},
+        origin={110,-70},
         extent={{-10,-10},{10,10}},
-        rotation=0),
-      iconTransform));
+        rotation=0)));
   Modelica.Blocks.Interfaces.RealInput vf "Field voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
         origin={-120,50},
-        extent={{-20.0001,-20},{19.9998,20}},
+        extent={{-20,-20},{20,20}},
         rotation=0)));
   Modelica.Blocks.Interfaces.RealOutput vf0 "Initial field voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={-90,110},
-        extent={{-9.99997,-9.99997},{10,10}},
-        rotation=90),
-      iconTransform));
+        origin={-80,110},
+        extent={{-10,-10},{10,10}},
+        rotation=90)));
   Modelica.Blocks.Interfaces.RealOutput pm0 "Initial mechanical power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={-90,-110},
+        origin={-80,-110},
         extent={{-10,-10},{10,10}},
-        rotation=270),
-      iconTransform));
+        rotation=270)));
   Modelica.Blocks.Interfaces.RealInput pm "Mechanical power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={-120.019,-50.3569},
-        extent={{-19.981,-19.6431},{19.9811,19.6431}},
+        origin={-120,-50},
+        extent={{-20,-20},{20,20}},
         rotation=0)));
   Real anglev(start=angle_0/180*pi) " Bus voltage angle";
   Real vd "d-axis voltage (pu)";
@@ -115,70 +112,50 @@ equation
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}}, initialScale=0.1),
                      graphics={Text(
-          origin={-81,50.5},
-          fillPattern=FillPattern.Solid,
-          extent={{-10,-10.5},{10,10.5}},
-          fontName="Arial",
-          textString="vf",
-          lineColor={28,108,200}),Text(
-          origin={-77.3761,-48},
-          fillPattern=FillPattern.Solid,
-          extent={{-9.6086,-11.4189},{9.6086,11.4189}},
-          fontName="Arial",
-          textString="pm",
-          lineColor={28,108,200}),Text(
-          origin={-80,90},
-          fillPattern=FillPattern.Solid,
+          origin={-80,50},
           extent={{-10,-10},{10,10}},
-          fontName="Arial",
-          textString="vf0",
-          lineColor={28,108,200}),Text(
-          origin={-80.6294,-89.5811},
-          fillPattern=FillPattern.Solid,
-          extent={{-15.3706,-13.4189},{15.3706,13.4189}},
-          fontName="Arial",
-          textString="pm0",
-          lineColor={28,108,200}),Text(
-          origin={80.5,60.6367},
-          fillPattern=FillPattern.Solid,
-          extent={{-23.5,-8.6367},{23.5,8.6367}},
-          fontName="Arial",
+          lineColor={28,108,200},
+          textString="vf"),       Text(
+          origin={-80,-50},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="pm"),       Text(
+          origin={-80,90},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="vf0"),      Text(
+          origin={-80,-90},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="pm0"),      Text(
+          origin={85,60},
+          extent={{-15,-10},{15,10}},
           lineColor={28,108,200},
           textString="delta"),Text(
-          origin={90,90.5},
-          fillPattern=FillPattern.Solid,
-          extent={{-10,-10.5},{10,10.5}},
-          textString="w",
-          fontName="Arial",
-          lineColor={28,108,200}),Text(
-          origin={90,30},
-          fillPattern=FillPattern.Solid,
+          origin={90,90},
           extent={{-10,-10},{10,10}},
-          textString="v",
-          fontName="Arial",
-          lineColor={28,108,200}),Rectangle(
+          lineColor={28,108,200},
+          textString="w"),        Text(
+          origin={90,30},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="v"),        Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
           lineColor={28,108,200}),Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),Line(
           points={{-20,0},{-9,15},{9,-15},{20,0}},
           color={28,108,200},
           smooth=Smooth.Bezier),Text(
-          origin={4,-58.0978},
-          fillPattern=FillPattern.Solid,
-          extent={{-57.2101,-15.0},{57.2101,15.0}},
-          textString="%name",
-          fontName="Arial",
-          lineColor={28,108,200}),Text(
+          origin={0,-60},
+          extent={{-60,-20},{60,20}},
+          lineColor={28,108,200},
+          textString="%name"),    Text(
           origin={90,-31},
-          fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
-          fontName="Arial",
           lineColor={28,108,200},
           textString="P"),Text(
-          origin={90,-60},
-          fillPattern=FillPattern.Solid,
+          origin={90,-70},
           extent={{-10,-10},{10,10}},
-          fontName="Arial",
           lineColor={28,108,200},
           textString="Q")}));
 end baseMachine;

@@ -67,9 +67,8 @@ equation
           {60,20},{39,20}}, color={0,0,255}));
   connect(B2.p, line_2.p) annotation (Line(points={{-10,0},{10,0},{10,
           -20},{21,-20}}, color={0,0,255}));
-  connect(fault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,
-          -50},{10,0},{-10,0}},
-                           color={0,0,255}));
+  connect(fault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,-50},{10,0},
+          {-10,0}},        color={0,0,255}));
   annotation (
     Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
     Diagram(coordinateSystem(

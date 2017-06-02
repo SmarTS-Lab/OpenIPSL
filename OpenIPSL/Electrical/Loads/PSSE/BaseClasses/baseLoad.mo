@@ -14,13 +14,14 @@ partial model baseLoad
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-10,100},{10,120}})));
-  Real angle(start=anglev_rad) "Bus voltage angle (rad)";
+    ii(start=ii0)) annotation (Placement(transformation(extent={{-10,90},
+            {10,110}})));
+  Modelica.SIunits.Angle angle(start=anglev_rad) "Bus voltage angle";
   Real v(start=V_0) "Bus voltage magnitude (pu)";
   Real P "Active power consumption (pu)";
   Real Q "Reactive power consumption (pu)";
 protected
-  parameter Real anglev_rad=angle_0*pi/180;
+  parameter Modelica.SIunits.Angle anglev_rad=angle_0*pi/180;
   parameter Real p0=(S_i.re*V_0 + S_y.re*V_0^2 + S_p.re)/S_b "pu";
   parameter Real q0=(S_i.im*V_0 + S_y.im*V_0^2 + S_p.im)/S_b "pu";
   parameter Real vr0=V_0*cos(anglev_rad) "Initialitation";
@@ -75,38 +76,11 @@ equation
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
         initialScale=0.1), graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color={28,108,200}),Text(
-          extent={{-62,66},{66,34}},
+          extent={{-60,80},{60,40}},
           lineColor={28,108,200},
-          textString="%P_0+j%Q_0")}),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        initialScale=0.1)),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+          textString="%P_0+j%Q_0"),
+        Text(
+          extent={{-150,-110},{150,-150}},
+          lineColor={0,0,255},
+          textString="%name")}));
 end baseLoad;

@@ -7,7 +7,7 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   parameter Real T3;
   parameter Real T4;
   parameter Real T5;
-  parameter Real RMIN=0 "Reactor minmum MVAr ouput";
+  parameter Real RMIN=0 "Reactor minmum MVAr output";
   parameter Real VMAX;
   parameter Real VMIN;
   parameter Real CBASE=100 "Capacitor MVAr output";

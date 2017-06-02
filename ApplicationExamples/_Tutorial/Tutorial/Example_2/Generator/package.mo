@@ -1,4 +1,4 @@
 within Tutorial.Example_2;
-package Generator
+package Generator 
 
 end Generator;

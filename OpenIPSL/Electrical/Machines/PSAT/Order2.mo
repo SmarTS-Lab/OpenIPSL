@@ -53,10 +53,8 @@ equation
         extent={{-100,-100},{100,100}},
         initialScale=0.1),
                        graphics={Text(
-          origin={4,61.9022},
-          fillPattern=FillPattern.Solid,
-          extent={{-57.2101,-15.0},{57.2101,15.0}},
-          fontName="Arial",
+          origin={0,60},
+          extent={{-60,-20},{60,20}},
           lineColor={28,108,200},
           textString="Order II")}));
 end Order2;

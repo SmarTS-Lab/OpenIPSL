@@ -59,7 +59,7 @@ protected
   parameter Real a=abs_PSIpp0 + abs_PSIpp0*dsat*(Xq - Xl)/(Xd - Xl);
   parameter Real b=(It.re^2 + It.im^2)^0.5*(Xpp - Xq);
   //Initializion rotor angle position
-  parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a)) + ang_PSIpp0 "intial rotor angle in radians";
+  parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a)) + ang_PSIpp0 "initial rotor angle in radians";
   parameter Complex DQ_dq=cos(delta0) - j*sin(delta0) "Parks transformation, from stator to rotor reference frame";
   parameter Complex PSIpp0_dq=real(PSIpp0*DQ_dq) + j*imag(PSIpp0*DQ_dq) "Flux linkage in rotor reference frame";
   parameter Complex I_dq=real(It*DQ_dq) - j*imag(It*DQ_dq);

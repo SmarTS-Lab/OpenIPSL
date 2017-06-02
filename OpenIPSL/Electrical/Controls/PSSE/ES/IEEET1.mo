@@ -67,9 +67,9 @@ initial equation
     S_EE_2,
     Efd0,
     SE_Efd0);
-  VRMIN0 = -VRMAX0;
   VR0 = Efd0*(KE0 + SE_Efd0);
   V_REF = VR0/K_A + ECOMP0;
+
 equation
   connect(sum3.u2, derivativeLag.y) annotation (Line(points={{-22,-6},{-34,-6},{-34,-28},{-34,-50},{59,-50}}, color={0,0,127}));
   connect(sum3.y, simpleLagLim.u) annotation (Line(points={{1,0},{58,0}}, color={0,0,127}));

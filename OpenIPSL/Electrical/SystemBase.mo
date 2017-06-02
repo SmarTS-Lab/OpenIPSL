@@ -26,5 +26,6 @@ record SystemBase "System Base Definition"
 No 'System Data' component is defined. A default component will be used, and generate a system base of 100 MVA, and a frequency of 50 Hz",
     Diagram(coordinateSystem(extent={{-120,-100},{120,100}},
         preserveAspectRatio=false,
-        initialScale=0.1)));
+        initialScale=0.1)),
+    defaultComponentPrefixes = "inner");
 end SystemBase;

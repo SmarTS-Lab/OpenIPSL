@@ -56,10 +56,8 @@ equation
           visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          origin={-6,61.9022},
-          fillPattern=FillPattern.Solid,
-          extent={{-57.2101,-15.0},{57.2101,15.0}},
-          fontName="Arial",
+          origin={0,60},
+          extent={{-60,-20},{60,20}},
           lineColor={28,108,200},
           textString="Order IV - Typ 2")}),
     Documentation(info="<html>

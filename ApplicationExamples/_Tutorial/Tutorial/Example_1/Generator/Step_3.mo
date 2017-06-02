@@ -33,7 +33,7 @@ model Step_3
     Te=0.0001,
     Tr=0.015) annotation (Placement(visible=true, transformation(extent={{-54,-46},{-14,-6}}, rotation=0)));
   Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(visible=true, transformation(extent={{-98,-46},
-            {-78,-26}},                                                                                                          rotation=0)));
+            {-78,-26}},                                                                                                    rotation=0)));
 equation
   connect(pss_off.y, avr.vs) annotation (Line(points={{-77,-36},{-52.3333,
           -36},{-52.3333,-36}},                                             color={0,0,127}));
