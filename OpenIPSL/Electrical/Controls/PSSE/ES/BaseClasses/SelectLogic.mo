@@ -62,4 +62,3 @@ Logic"),Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255})}),
 </html>
 "));
 end SelectLogic;
-

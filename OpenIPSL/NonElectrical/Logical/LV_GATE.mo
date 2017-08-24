@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Logical;
-
-
 model LV_GATE
   Modelica.Blocks.Interfaces.RealInput n1 annotation (Placement(transformation(extent={{-86,-2},{-46,38}}), iconTransformation(extent={{-100,10},{-80,30}})));
   Modelica.Blocks.Interfaces.RealInput n2 annotation (Placement(transformation(extent={{-86,-50},{-46,-10}}), iconTransformation(extent={{-100,-30},{-80,-10}})));

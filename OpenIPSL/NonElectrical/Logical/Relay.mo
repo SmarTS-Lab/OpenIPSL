@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Logical;
-
-
 model Relay "Relay"
   Modelica.Blocks.Interfaces.RealInput u1 annotation (Placement(transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={{-60,20},{-40,40}})));
   Modelica.Blocks.Interfaces.RealInput u2 annotation (Placement(transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));

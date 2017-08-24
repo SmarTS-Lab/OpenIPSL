@@ -82,12 +82,12 @@ source-controlled rectifier exciter "
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{146,-36},{160,-22}})));
   Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMin=-Modelica.Constants.inf, uMax=V_BMAX) annotation (Placement(transformation(extent={{176,-40},{198,-18}})));
   Sensors.PwVoltageCurrent pwVoltageCurrent annotation (Placement(transformation(extent={{-98,-68},{-34,32}})));
-  OpenIPSL.Connectors.PwPin Gen_terminal(
+  OpenIPSL.Interfaces.PwPin Gen_terminal(
     vr(start=Vr0),
     vi(start=Vi0),
     ir(start=Ir0),
     ii(start=Ii0)) annotation (Placement(transformation(extent={{-94,88},{-74,108}}), iconTransformation(extent={{-94,38},{-74,58}})));
-  OpenIPSL.Connectors.PwPin Bus annotation (Placement(transformation(extent={{204,88},{224,108}}), iconTransformation(extent={{204,38},{224,58}})));
+  OpenIPSL.Interfaces.PwPin Bus annotation (Placement(transformation(extent={{204,88},{224,108}}), iconTransformation(extent={{204,38},{224,58}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-46,46},{-26,66}})));
   Modelica.Blocks.Math.Add add3(k1=-1) annotation (Placement(transformation(extent={{-58,8},{-44,22}})));
   Modelica.Blocks.Math.Gain gain2(k=K_C) annotation (Placement(transformation(

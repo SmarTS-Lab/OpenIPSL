@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.CGMES.ES;
-
-
 model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
   extends OpenIPSL.Examples.SMIBpartial;
   Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
@@ -79,6 +77,5 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
-"),
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
+"), Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
 end ExcSEXS;

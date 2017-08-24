@@ -1,10 +1,7 @@
 within OpenIPSL.Electrical.Machines.PSAT.BaseClasses;
-
-
 partial model baseMachine
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
-  import Modelica.Blocks.Interfaces.*;
   parameter Real Sn "Power rating (MVA)" annotation (Dialog(group="Machine parameters"));
   parameter Real Vn "Voltage rating (kV)" annotation (Dialog(group="Machine parameters"));
   parameter Real ra "Armature resistance (pu)" annotation (Dialog(group="Machine parameters"));
@@ -13,109 +10,69 @@ partial model baseMachine
   parameter Real D "Damping coefficient" annotation (Dialog(group="Machine parameters"));
   //Initialization
   //Initialization of currents and voltages
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
     ii(start=ii0)) annotation (Placement(
       visible=true,
       transformation(
-        origin={2.2777,10.4683},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110,0.4964},
+        origin={100,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  RealOutput delta "Rotor angle (deg)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput delta "Rotor angle (deg)" annotation (Placement(
       visible=true,
       transformation(
-        origin={161.0916,-52.0898},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={110,60},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealOutput w(start=1) "Rotor speed (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput w(start=1) "Rotor speed (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={160.1093,-96.8871},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={110,90},
-        extent={{-10.0,-10.0},{10.0,10.0}},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealOutput v(start=V_0, fixed=true) "Generator terminal voltage (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput v(start=V_0, fixed=true) "Generator terminal voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={146.6,6.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={110,30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealOutput P(start=P_0/S_b) "Active power (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput P(start=P_0/S_b) "Active power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={135.6,56.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110,-30.1615},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  RealOutput Q(start=Q_0/S_b) "Reactive power (pu)" annotation (Placement(
-      visible=true,
-      transformation(
-        origin={135.6,36.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110,-60},
+        origin={110,-30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealInput vf "Field voltage (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput Q(start=Q_0/S_b) "Reactive power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={-159.127,67.3695},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
-      iconTransformation(
-        origin={-100,50},
-        extent={{-10,-9.99999},{9.99996,9.99998}},
+        origin={110,-70},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
-  RealOutput vf0 "Initial field voltage (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput vf "Field voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={159.127,97.5816},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
+        origin={-120,50},
+        extent={{-20,-20},{20,20}},
+        rotation=0)));
+  Modelica.Blocks.Interfaces.RealOutput vf0 "Initial field voltage (pu)" annotation (Placement(
+      visible=true,
+      transformation(
         origin={-80,110},
-        extent={{-10.0,-10.0},{10.0,10.0}},
+        extent={{-10,-10},{10,10}},
         rotation=90)));
-  RealOutput pm0 "Initial mechanical power (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput pm0 "Initial mechanical power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={160.6004,66.3277},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
         origin={-80,-110},
         extent={{-10,-10},{10,10}},
         rotation=270)));
-  RealInput pm "Mechanical power (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput pm "Mechanical power (pu)" annotation (Placement(
       visible=true,
       transformation(
-        origin={-164.0384,-42.7137},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
-      iconTransformation(
-        origin={-100,-50},
-        extent={{-10,-10},{10,10}},
+        origin={-120,-50},
+        extent={{-20,-20},{20,20}},
         rotation=0)));
   Real anglev(start=angle_0/180*pi) " Bus voltage angle";
   Real vd "d-axis voltage (pu)";
@@ -153,104 +110,52 @@ equation
   pe = (vq + Ra*iq)*iq + (vd + Ra*id)*id;
   annotation (
     Icon(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        grid={1,1}), graphics={Text(
-          origin={-81,50.5},
-          fillPattern=FillPattern.Solid,
-          extent={{-10,-10.5},{10,10.5}},
-          fontName="Arial",
-          textString="vf",
-          lineColor={28,108,200}),Text(
-          origin={-77.3761,-48},
-          fillPattern=FillPattern.Solid,
-          extent={{-9.6086,-11.4189},{9.6086,11.4189}},
-          fontName="Arial",
-          textString="pm",
-          lineColor={28,108,200}),Text(
-          origin={-80,90},
-          fillPattern=FillPattern.Solid,
+        extent={{-100,-100},{100,100}}, initialScale=0.1),
+                     graphics={Text(
+          origin={-80,50},
           extent={{-10,-10},{10,10}},
-          fontName="Arial",
-          textString="vf0",
-          lineColor={28,108,200}),Text(
-          origin={-80.6294,-89.5811},
-          fillPattern=FillPattern.Solid,
-          extent={{-15.3706,-13.4189},{15.3706,13.4189}},
-          fontName="Arial",
-          textString="pm0",
-          lineColor={28,108,200}),Text(
-          origin={80.5,60.6367},
-          fillPattern=FillPattern.Solid,
-          extent={{-23.5,-8.6367},{23.5,8.6367}},
-          fontName="Arial",
+          lineColor={28,108,200},
+          textString="vf"),       Text(
+          origin={-80,-50},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="pm"),       Text(
+          origin={-80,90},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="vf0"),      Text(
+          origin={-80,-90},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="pm0"),      Text(
+          origin={85,60},
+          extent={{-15,-10},{15,10}},
           lineColor={28,108,200},
           textString="delta"),Text(
-          origin={90,90.5},
-          fillPattern=FillPattern.Solid,
-          extent={{-10,-10.5},{10,10.5}},
-          textString="w",
-          fontName="Arial",
-          lineColor={28,108,200}),Text(
-          origin={90,30},
-          fillPattern=FillPattern.Solid,
+          origin={90,90},
           extent={{-10,-10},{10,10}},
-          textString="v",
-          fontName="Arial",
-          lineColor={28,108,200}),Rectangle(
+          lineColor={28,108,200},
+          textString="w"),        Text(
+          origin={90,30},
+          extent={{-10,-10},{10,10}},
+          lineColor={28,108,200},
+          textString="v"),        Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
           lineColor={28,108,200}),Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),Line(
           points={{-20,0},{-9,15},{9,-15},{20,0}},
           color={28,108,200},
           smooth=Smooth.Bezier),Text(
-          origin={4,-58.0978},
-          fillPattern=FillPattern.Solid,
-          extent={{-57.2101,-15.0},{57.2101,15.0}},
-          textString="%name",
-          fontName="Arial",
-          lineColor={28,108,200}),Text(
+          origin={0,-60},
+          extent={{-60,-20},{60,20}},
+          lineColor={28,108,200},
+          textString="%name"),    Text(
           origin={90,-31},
-          fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
-          fontName="Arial",
           lineColor={28,108,200},
           textString="P"),Text(
-          origin={90,-60},
-          fillPattern=FillPattern.Solid,
+          origin={90,-70},
           extent={{-10,-10},{10,10}},
-          fontName="Arial",
           lineColor={28,108,200},
-          textString="Q")}),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        grid={1,1})),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+          textString="Q")}));
 end baseMachine;

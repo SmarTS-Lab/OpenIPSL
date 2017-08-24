@@ -194,4 +194,3 @@ equation
 </html>
 "));
 end IEEEG1;
-

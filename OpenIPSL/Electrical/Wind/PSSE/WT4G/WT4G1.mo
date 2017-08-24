@@ -17,7 +17,7 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   parameter Real T_LVPL "Voltage sensor for LVACR time constant";
   // Variables
   Complex Is "Equivalent internal current source";
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir1),
@@ -255,4 +255,3 @@ specified at PSSE model dialog")}),
 </html>
 "));
 end WT4G1;
-

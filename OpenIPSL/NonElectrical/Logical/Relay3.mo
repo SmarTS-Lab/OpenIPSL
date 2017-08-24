@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Logical;
-
-
 model Relay3 "input dependent output"
   input Modelica.Blocks.Interfaces.RealInput u1 annotation (Placement(transformation(extent={{-54,-40},{-41,-26}}), iconTransformation(extent={{-56,-38},{-40,-22}})));
   input Modelica.Blocks.Interfaces.RealInput u2 annotation (Placement(transformation(extent={{-54,26},{-41,40}}), iconTransformation(extent={{-56,22},{-40,38}})));

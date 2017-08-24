@@ -214,4 +214,3 @@ equation
 </html>
 "));
 end Wind_Power_Model;
-

@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSSE.PSS;
-
-
 model PSS2B "SMIB system with one load and GENROE model"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(

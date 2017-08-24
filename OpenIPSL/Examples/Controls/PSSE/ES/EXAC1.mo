@@ -79,4 +79,3 @@ equation
 </html>
 "));
 end EXAC1;
-

@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
-
-
 model TGTypeI_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(

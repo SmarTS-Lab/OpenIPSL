@@ -86,4 +86,3 @@ equation
 </html>
 "));
 end ExponentialRecovery;
-

@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.FACTS;
-
-
 model TCSC_Alpha_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(

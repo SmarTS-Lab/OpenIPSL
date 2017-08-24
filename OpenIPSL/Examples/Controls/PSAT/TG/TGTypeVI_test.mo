@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
-
-
 model TGTypeVI_test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeVI tGModel6_1(

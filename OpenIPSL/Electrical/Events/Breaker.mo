@@ -1,12 +1,10 @@
 within OpenIPSL.Electrical.Events;
-
-
 model Breaker
   parameter Real t_o=Modelica.Constants.inf "Opening time (s)";
   parameter Boolean rc_enabled=false "Enable reclosure";
   parameter Real t_rc=Modelica.Constants.inf "Reclosing time (s)";
-  Connectors.PwPin s annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
-  Connectors.PwPin r annotation (Placement(transformation(extent={{40,-10},{60,10}}), iconTransformation(extent={{40,-10},{60,10}})));
+  Interfaces.PwPin s annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
+  Interfaces.PwPin r annotation (Placement(transformation(extent={{40,-10},{60,10}}), iconTransformation(extent={{40,-10},{60,10}})));
   Complex vs(re=s.vr, im=s.vi);
   Complex vr(re=r.vr, im=r.vi);
   Complex is(re=s.ir, im=s.ii);

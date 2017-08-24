@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1;
-
-
 block Dm_select "Output the minimum and the maximum element of the input vector"
   parameter Real Dm;
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{100,-12},{120,8}}, rotation=0)));
@@ -53,6 +51,5 @@ provide both values as output.
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
-"),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics));
+"), Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics));
 end Dm_select;

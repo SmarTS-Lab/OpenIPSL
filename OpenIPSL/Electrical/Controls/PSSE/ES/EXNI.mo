@@ -127,4 +127,3 @@ equation
           lineColor={28,108,200},
           textString="XADIFD")}));
 end EXNI;
-

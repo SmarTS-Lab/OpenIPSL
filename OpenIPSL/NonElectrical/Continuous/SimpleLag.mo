@@ -77,4 +77,3 @@ equation
 </html>
 "));
 end SimpleLag;
-

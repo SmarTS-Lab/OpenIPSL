@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
-
-
 model PQ1
-  OpenIPSL.Connectors.PwPin p annotation (Placement(
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(
       visible=true,
       transformation(
         origin={55.0,22.7992},

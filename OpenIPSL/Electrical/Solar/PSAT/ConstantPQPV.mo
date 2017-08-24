@@ -1,9 +1,7 @@
 within OpenIPSL.Electrical.Solar.PSAT;
-
-
 model ConstantPQPV
   model PQ1 "Constant PQ Generator, Solar Photo-Voltaic Generator"
-    OpenIPSL.Connectors.PwPin p annotation (Placement(
+    OpenIPSL.Interfaces.PwPin p annotation (Placement(
         visible=true,
         transformation(
           origin={55.0,22.7992},
@@ -122,7 +120,7 @@ model ConstantPQPV
   end PQ1;
 
   model PV1 "Constant PV Generator, Solar Photo-Voltaic Generator"
-    OpenIPSL.Connectors.PwPin p annotation (Placement(
+    OpenIPSL.Interfaces.PwPin p annotation (Placement(
         visible=true,
         transformation(
           origin={55.0,22.7992},

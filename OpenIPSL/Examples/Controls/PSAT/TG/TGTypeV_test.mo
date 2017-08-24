@@ -186,4 +186,3 @@ equation
 </html>
 "));
 end TGTypeV_test;
-

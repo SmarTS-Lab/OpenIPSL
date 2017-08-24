@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
-
-
 model Electrical_Control
   import Modelica.Constants.inf;
   parameter Real qmax=1;

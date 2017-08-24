@@ -88,4 +88,3 @@ equation
 </html>
 "));
 end RotatingExciterBase;
-

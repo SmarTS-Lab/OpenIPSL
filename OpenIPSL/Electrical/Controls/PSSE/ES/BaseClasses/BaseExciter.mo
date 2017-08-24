@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
-
-
 partial model BaseExciter
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},

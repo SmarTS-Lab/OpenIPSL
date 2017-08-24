@@ -39,4 +39,3 @@ model RotatingExciterLimited
 </html>
 "));
 end RotatingExciterLimited;
-

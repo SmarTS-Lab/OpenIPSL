@@ -27,8 +27,8 @@ model pst2 "Angle part of PST"
   Real anglevm;
   Real alpha;
   Real pmes;
-  OpenIPSL.Connectors.PwPin p annotation (Placement(visible=true, transformation(extent={{-120,-8},{-100,12}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-8},{120,12}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(visible=true, transformation(extent={{-120,-8},{-100,12}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-8},{120,12}})));
   Modelica.Blocks.Interfaces.RealInput pk annotation (Placement(transformation(extent={{-142,-62},{-102,-22}})));
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
@@ -100,4 +100,3 @@ equation
 </html>
 "));
 end pst2;
-

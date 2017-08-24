@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Branches.Simulink.LTC;
-
-
 model LTC_lookup
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-76,-2},{-56,18}}), iconTransformation(extent={{-92,-20},{-56,18}})));
   Modelica.Blocks.Interfaces.RealOutput out annotation (Placement(transformation(extent={{62,-12},{82,8}}), iconTransformation(extent={{62,-16},{92,18}})));

@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Nonlinear;
-
-
 model SaturationBlockTan "Block 1 in the OEL to decide the input signal of MIN Gate"
   parameter Real r "Exiciter parameter";
   parameter Real f "Exiciter parameter";

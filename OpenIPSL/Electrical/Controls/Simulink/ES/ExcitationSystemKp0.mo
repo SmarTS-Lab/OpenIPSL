@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.Simulink.ES;
-
-
 model ExcitationSystemKp0 "Excitation system without PSS included"
   parameter Real V0=1 "Reference value of terminal voltage";
   parameter Real L2=4 "Exciter parameter";

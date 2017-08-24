@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.CGMES.ES;
-
-
 model ExcSEXS "Simplified Excitation System Model from CGMES definition"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B "Ta/Tb - gain reduction ratio of lag-lead element (TaTb).  Typical Value = 0.1";

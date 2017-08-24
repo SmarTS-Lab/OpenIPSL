@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Branches.PSAT;
-
-
 model ThreeWindingTransformer_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine3(

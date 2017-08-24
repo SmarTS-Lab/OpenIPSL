@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.Simulink.TG;
-
-
 model Governor "Speed governor model for hydro turbines"
   Modelica.Blocks.Interfaces.RealInput Omega "Rotor speed in p.u" annotation (Placement(transformation(extent={{-96,26},{-86,38}}), iconTransformation(extent={{-14,30},{-4,40}})));
   Modelica.Blocks.Sources.Constant Omega_n(k=1) "Nominal rotor speed in p.u" annotation (Placement(transformation(extent={{-94,6},{-82,18}})));

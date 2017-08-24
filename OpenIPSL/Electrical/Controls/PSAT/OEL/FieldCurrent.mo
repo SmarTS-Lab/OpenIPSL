@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSAT.OEL;
-
-
 model FieldCurrent
   Modelica.Blocks.Interfaces.RealInput v "generator terminal voltage" annotation (Placement(transformation(extent={{-82,32},{-62,52}}), iconTransformation(extent={{-82,32},{-50,66}})));
   Modelica.Blocks.Interfaces.RealInput p "active power " annotation (Placement(transformation(extent={{-82,-4},{-62,16}}), iconTransformation(extent={{-82,-10},{-48,24}})));

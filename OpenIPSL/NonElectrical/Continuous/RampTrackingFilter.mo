@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Continuous;
-
-
 model RampTrackingFilter "Ramp-tracking filter"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real T_1;

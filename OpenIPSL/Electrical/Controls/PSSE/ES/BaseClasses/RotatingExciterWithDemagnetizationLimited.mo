@@ -39,4 +39,3 @@ model RotatingExciterWithDemagnetizationLimited
 </html>
 "));
 end RotatingExciterWithDemagnetizationLimited;
-

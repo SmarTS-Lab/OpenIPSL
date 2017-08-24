@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.Simulink.PSS;
-
-
 model PSS "Power system stabilizer"
   parameter Real Kp "Washout gain";
   parameter Real Tw "Washout time constant";
