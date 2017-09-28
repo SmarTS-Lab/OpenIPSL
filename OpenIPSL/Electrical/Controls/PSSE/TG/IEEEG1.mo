@@ -1,7 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model IEEEG1
-  Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal (pu)"
-    annotation (Placement(transformation(extent={{-172,2},{-162,14}}), iconTransformation(extent={{-162,-16},{-132,16}})));
+
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
     T1=T_2,
@@ -95,7 +94,6 @@ model IEEEG1
   Modelica.Blocks.Math.Add add4 annotation (Placement(transformation(extent={{138,-48},{150,-36}})));
   Modelica.Blocks.Math.Add add5 annotation (Placement(transformation(extent={{138,52},{150,64}})));
 equation
-  connect(SPEED_HP, imLeadLag.u) annotation (Line(points={{-167,8},{-145.6,8}}, color={0,0,127}));
   connect(Pref.y, add3_1.u1) annotation (Line(points={{-127.2,42},{-122,42},{-122,14.4},{-113.6,14.4}}, color={0,0,127}));
   connect(add3_1.u2, imLeadLag.y) annotation (Line(points={{-113.6,8},{-113.6,8},{-127.2,8}}, color={0,0,127}));
   connect(add3_1.y, gain.u) annotation (Line(points={{-95.2,8},{-91.6,8}}, color={0,0,127}));

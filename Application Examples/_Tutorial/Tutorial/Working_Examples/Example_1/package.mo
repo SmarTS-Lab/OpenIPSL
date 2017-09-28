@@ -1,9 +1,14 @@
-within OpenIPSL.Examples.Controls;
-package CGMES 
-extends Modelica.Icons.ExamplesPackage;
+within Tutorial.Working_Examples;
+package Example_1 
+extends Modelica.Icons.Package;
 
-
-annotation (Documentation(revisions="<html>
+annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Polygon(
+        origin={8.0,14.0},
+        lineColor={78,138,73},
+        fillColor={78,138,73},
+        pattern=LinePattern.None,
+        fillPattern=FillPattern.Solid,
+        points={{-58.0,46.0},{42.0,-14.0},{-58.0,-74.0},{-58.0,46.0}})}), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
@@ -30,4 +35,4 @@ annotation (Documentation(revisions="<html>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
 "));
-end CGMES;
+end Example_1;

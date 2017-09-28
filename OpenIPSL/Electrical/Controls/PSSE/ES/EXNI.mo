@@ -13,7 +13,6 @@ model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
   parameter Real T_F2=0.70000 "Rate feedback time constant (s)";
   parameter Boolean SWITCH=false;
   parameter Real r_cr_fd=10;
-  Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(transformation(extent={{100,-40},{120,-20}}), iconTransformation(extent={{-210,-80},{-190,-60}})));
   OpenIPSL.NonElectrical.Logical.NegCurLogic negCurLogic(RC_rfd=r_cr_fd, nstartvalue=Efd0) annotation (Placement(transformation(extent={{140,-14},{182,14}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   Modelica.Blocks.Continuous.Derivative derivativeLag(
@@ -61,7 +60,6 @@ equation
   connect(product.y, switch1.u3) annotation (Line(points={{71,40},{80,40},{80,-12},{92,-12}}, color={0,0,127}));
   connect(booleanConstant.y, switch1.u2) annotation (Line(points={{69,70},{84,70},{84,-4},{92,-4}}, color={255,0,255}));
   connect(negCurLogic.Efd, EFD) annotation (Line(points={{185.5,0},{210,0}}, color={0,0,127}));
-  connect(negCurLogic.XadIfd, XADIFD) annotation (Line(points={{136.5,-7},{124,-7},{124,-30},{110,-30}}, color={0,0,127}));
   connect(ECOMP, TransducerDelay.u) annotation (Line(points={{-200,0},{-186,0},{-172,0}}, color={0,0,127}));
   connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
   connect(DiffV.y, add3_1.u2) annotation (Line(points={{-99,0},{-82,0},{-82,0}}, color={0,0,127}));
@@ -74,6 +72,9 @@ equation
   connect(switch1.y, negCurLogic.Vd) annotation (Line(points={{115,-4},{120,-4},{120,7},{136.5,7}}, color={0,0,127}));
   connect(switch1.u1, limiter.y) annotation (Line(points={{92,4},{64,4},{64,0},{37,0}}, color={0,0,127}));
   connect(product.u1, TransducerDelay.u) annotation (Line(points={{48,46},{-140,46},{-140,24},{-178,24},{-178,0},{-172,0}}, color={0,0,127}));
+  connect(XADIFD, negCurLogic.XadIfd) annotation (Line(points={{80,-200},{80,
+          -200},{80,-54},{120,-54},{120,-7},{128,-7},{136.5,-7}}, color={0,0,
+          127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-200,-200},{200,160}})),
     Documentation(revisions="<html>
