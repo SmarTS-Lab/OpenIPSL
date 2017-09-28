@@ -1,5 +1,4 @@
 within TwoAreas.Groups.PSSE.AVR;
-
 model G2
   extends TwoAreas.Support.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g2(
@@ -40,17 +39,27 @@ model G2
     E_1=1,
     E_2=2,
     S_EE_1=0.0164,
-    S_EE_2=0.0481) annotation (Placement(transformation(extent={{-38,-18},{-4,0}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-56,4},{-48,12}})));
+    S_EE_2=0.0481)
+    annotation (Placement(transformation(extent={{-38,-18},{-4,0}})));
+  Modelica.Blocks.Sources.Constant const(k=0)
+    annotation (Placement(transformation(extent={{-56,4},{-48,12}})));
 equation
-  connect(g2.PMECH, g2.PMECH0) annotation (Line(points={{6.4,9},{-2,9},{-2,32},{52,32},{52,-5.4},{47.6,-5.4}}, color={0,0,127}));
-  connect(g2.p, pwPin) annotation (Line(points={{48,0},{44,0},{70,0}}, color={0,0,255}));
-  connect(g2.EFD, eSDC1A.EFD) annotation (Line(points={{6.4,-9},{-3.05556,-9}}, color={0,0,127}));
-  connect(eSDC1A.EFD0, g2.EFD0) annotation (Line(points={{-24.7778,-16.65},{-24.7778,-24},{56,-24},{56,-12.6},{47.6,-12.6}}, color={0,0,127}));
-  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-47.6,8},{-42,8},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
-  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-11.25},{-42,-11.25},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
-  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-6.75},{-42,-6.75},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
-  connect(g2.ETERM, eSDC1A.ECOMP) annotation (Line(points={{47.6,9},{58,9},{58,-26},{-40,-26},{-40,-2.475},{-37.0556,-2.475}}, color={0,0,127}));
+  connect(g2.PMECH, g2.PMECH0) annotation (Line(points={{6.4,9},{-2,9},{-2,32},
+          {52,32},{52,-5.4},{47.6,-5.4}}, color={0,0,127}));
+  connect(g2.p, pwPin)
+    annotation (Line(points={{48,0},{44,0},{70,0}}, color={0,0,255}));
+  connect(g2.EFD, eSDC1A.EFD)
+    annotation (Line(points={{6.4,-9},{-3.05556,-9}}, color={0,0,127}));
+  connect(eSDC1A.EFD0, g2.EFD0) annotation (Line(points={{-24.7778,-16.65},{-24.7778,
+          -24},{56,-24},{56,-12.6},{47.6,-12.6}}, color={0,0,127}));
+  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-47.6,8},{-42,8},{-42,
+          -15.75},{-37.0556,-15.75}}, color={0,0,127}));
+  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-11.25},
+          {-42,-11.25},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
+  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-6.75},
+          {-42,-6.75},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
+  connect(g2.ETERM, eSDC1A.ECOMP) annotation (Line(points={{47.6,9},{58,9},{58,
+          -26},{-40,-26},{-40,-2.475},{-37.0556,-2.475}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
@@ -60,33 +69,7 @@ equation
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
         initialScale=0.1)),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-", info="<html>
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

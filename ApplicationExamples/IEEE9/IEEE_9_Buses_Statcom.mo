@@ -68,7 +68,8 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6.00001},{9.00001,6.00001}},
         rotation=0,
         origin={35,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+    twoWindingTransformer1(
     r=0,
     kT=13.8/230,
     x=0.0586,
@@ -77,7 +78,8 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={102,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+    twoWindingTransformer2(
     r=0,
     kT=18/230,
     x=0.0625,
@@ -112,14 +114,19 @@ model IEEE_9_Buses_Statcom
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={12,66})));
-  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
-  OpenIPSL.Electrical.Buses.Bus B7 annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
-  OpenIPSL.Electrical.Buses.Bus B8(V_0=1.025) annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B2
+    annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
+  OpenIPSL.Electrical.Buses.Bus B7
+    annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
+  OpenIPSL.Electrical.Buses.Bus B8(V_0=1.025) annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={0,90})));
-  OpenIPSL.Electrical.Buses.Bus B9 annotation (Placement(transformation(extent={{70,80},{90,100}})));
-  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{110,80},{130,100}})));
+  OpenIPSL.Electrical.Buses.Bus B9
+    annotation (Placement(transformation(extent={{70,80},{90,100}})));
+  OpenIPSL.Electrical.Buses.Bus B3
+    annotation (Placement(transformation(extent={{110,80},{130,100}})));
   OpenIPSL.Electrical.Buses.Bus B6 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
@@ -143,7 +150,8 @@ model IEEE_9_Buses_Statcom
     B=0.0745,
     t2=110,
     t1=30,
-    opening=1) annotation (Placement(transformation(extent={{-48,84},{-30,96}})));
+    opening=1)
+    annotation (Placement(transformation(extent={{-48,84},{-30,96}})));
   Generation_Groups.Gen1 gen1(
     V_b=18,
     V_0=1.025,
@@ -152,7 +160,8 @@ model IEEE_9_Buses_Statcom
     angle_0=0.160490018910725*180/pi,
     P_0=1.63*SysData.S_b,
     Q_0=0.001552891584958*SysData.S_b,
-    refdisturb_1=false) annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
+    refdisturb_1=false)
+    annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
   Generation_Groups.Gen2 gen2(
     V_b=13.8,
     V_0=1.025,
@@ -161,7 +170,8 @@ model IEEE_9_Buses_Statcom
     refdisturb_2=false,
     P_0=0.85*SysData.S_b,
     Q_0=-0.163501111031896*SysData.S_b,
-    angle_0=0.080629575357894*180/pi) annotation (Placement(transformation(extent={{160,80},{140,100}})));
+    angle_0=0.080629575357894*180/pi)
+    annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
     V_0=1.040000000000000,
     angle_0=0,
@@ -174,7 +184,8 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-106})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{80,-120},{180,-80}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
+    annotation (Placement(transformation(extent={{80,-120},{180,-80}})));
   OpenIPSL.Electrical.Events.PwFault pwFault2(
     X=0.01,
     R=0.01,
@@ -185,7 +196,7 @@ model IEEE_9_Buses_Statcom
         origin={59,67})));
 equation
   connect(line_5_7.n, B7.p) annotation (Line(
-      points={{-72,63.5},{-72,90},{-80,90}},
+      points={{-72,61.1},{-72,90},{-80,90}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(twoWindingTransformer1.n, B9.p) annotation (Line(
@@ -193,7 +204,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_9_6.n, B9.p) annotation (Line(
-      points={{86,67.5},{86,90},{80,90}},
+      points={{86,65.1},{86,90},{80,90}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(twoWindingTransformer1.p, B3.p) annotation (Line(
@@ -201,44 +212,62 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_6_4.n, B6.p) annotation (Line(
-      points={{86,-10.5},{86,20}},
+      points={{86,-12.9},{86,20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B6.p, line_9_6.p) annotation (Line(
-      points={{86,20},{86,46.5}},
+      points={{86,20},{86,48.9}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_4_5.n, B5.p) annotation (Line(
-      points={{-72,-10.5},{-72,20}},
+      points={{-72,-12.9},{-72,20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_5_7.p, B5.p) annotation (Line(
-      points={{-72,42.5},{-72,20}},
+      points={{-72,44.9},{-72,20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(twoWindingTransformer.p, B1.p) annotation (Line(
       points={{0,-77},{0,-86}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(B7.p, ine_7_8.p) annotation (Line(points={{-80,90},{-64,90},{-49.5,90}}, color={0,0,255}));
-  connect(ine_7_8.n, B8.p) annotation (Line(points={{-28.5,90},{-28.5,90},{0,90}}, color={0,0,255}));
-  connect(B2.p, gen1.pwPin) annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
-  connect(B2.p, twoWindingTransformer2.p) annotation (Line(points={{-120,90},{-110,90},{-113,90}}, color={0,0,255}));
-  connect(twoWindingTransformer2.n, B7.p) annotation (Line(points={{-91,90},{-91,90},{-80,90}}, color={0,0,255}));
-  connect(gen2.pwPin, B3.p) annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
-  connect(lOADPQ.p, B5.p) annotation (Line(points={{-99,-1.3},{-99,4},{-72,4},{-72,20}}, color={0,0,255}));
-  connect(line_4_5.p, B4.p) annotation (Line(points={{-72,-31.5},{-72,-31.5},{-72,-42},{0,-42},{0,-46}}, color={0,0,255}));
-  connect(line_6_4.p, B4.p) annotation (Line(points={{86,-31.5},{86,-42},{0,-42},{0,-46}}, color={0,0,255}));
-  connect(PQ1.p, B6.p) annotation (Line(points={{109,-5.3},{109,0},{86,0},{86,20}}, color={0,0,255}));
-  connect(lOADPQ1.p, B8.p) annotation (Line(points={{-9,72.7},{-9,90},{0,90}}, color={0,0,255}));
-  connect(B4.p, twoWindingTransformer.n) annotation (Line(points={{0,-46},{0,-55}}, color={0,0,255}));
-  connect(gen3.pwPin, B1.p) annotation (Line(points={{0,-95},{0,-86}}, color={0,0,255}));
-  connect(line_8_9.n, B9.p) annotation (Line(points={{45.5,90},{45.5,90},{80,90}}, color={0,0,255}));
-  connect(B8.p, line_8_9.p) annotation (Line(points={{0,90},{24.5,90}}, color={0,0,255}));
-  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},{24.5,90}}, color={0,0,255}));
-  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,75.1667}}, color={0,0,255}));
+  connect(B7.p, ine_7_8.p) annotation (Line(points={{-80,90},{-47.1,90},{-47.1,
+          90}}, color={0,0,255}));
+  connect(ine_7_8.n, B8.p)
+    annotation (Line(points={{-30.9,90},{-30.9,90},{0,90}}, color={0,0,255}));
+  connect(B2.p, gen1.pwPin)
+    annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
+  connect(B2.p, twoWindingTransformer2.p)
+    annotation (Line(points={{-120,90},{-110,90},{-113,90}}, color={0,0,255}));
+  connect(twoWindingTransformer2.n, B7.p)
+    annotation (Line(points={{-91,90},{-91,90},{-80,90}}, color={0,0,255}));
+  connect(gen2.pwPin, B3.p)
+    annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
+  connect(lOADPQ.p, B5.p) annotation (Line(points={{-99,-2},{-99,4},{-72,4},{
+          -72,20}}, color={0,0,255}));
+  connect(line_4_5.p, B4.p) annotation (Line(points={{-72,-29.1},{-72,-29.1},{
+          -72,-42},{0,-42},{0,-46}}, color={0,0,255}));
+  connect(line_6_4.p, B4.p) annotation (Line(points={{86,-29.1},{86,-42},{0,-42},
+          {0,-46}}, color={0,0,255}));
+  connect(PQ1.p, B6.p) annotation (Line(points={{109,-6},{109,0},{86,0},{86,20}},
+        color={0,0,255}));
+  connect(lOADPQ1.p, B8.p)
+    annotation (Line(points={{-9,72},{-9,90},{0,90}}, color={0,0,255}));
+  connect(B4.p, twoWindingTransformer.n)
+    annotation (Line(points={{0,-46},{0,-55}}, color={0,0,255}));
+  connect(gen3.pwPin, B1.p)
+    annotation (Line(points={{0,-95},{0,-86}}, color={0,0,255}));
+  connect(line_8_9.n, B9.p)
+    annotation (Line(points={{43.1,90},{43.1,90},{80,90}}, color={0,0,255}));
+  connect(B8.p, line_8_9.p)
+    annotation (Line(points={{0,90},{26.9,90}}, color={0,0,255}));
+  connect(sTATCOM3_1.p, line_8_9.p)
+    annotation (Line(points={{12,72.6},{12,90},{26.9,90}}, color={0,0,255}));
+  connect(B9.p, pwFault2.p)
+    annotation (Line(points={{80,90},{59,90},{59,75.1667}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
+            180,120}})),
     Icon(coordinateSystem(extent={{-180,-120},{180,120}})),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
@@ -258,33 +287,7 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"),
+</html>"),
     experiment(
       StopTime=20,
       Interval=0.001,

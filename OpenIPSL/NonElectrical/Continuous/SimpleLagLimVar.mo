@@ -1,17 +1,19 @@
 within OpenIPSL.NonElectrical.Continuous;
-block SimpleLagLimVar "First order lag transfer function block with a non windup limiter and variable limits"
+block SimpleLagLimVar
+  "First order lag transfer function block with a non windup limiter and variable limits"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
-  Modelica.Blocks.Interfaces.RealInput outMax
-    annotation (Placement(transformation(extent={{98,106},{138,146}}), iconTransformation(
+  Modelica.Blocks.Interfaces.RealInput outMax annotation (Placement(
+        transformation(extent={{98,106},{138,146}}), iconTransformation(
         extent={{-20,-20},{20,20}},
         rotation=-90,
         origin={80,140})));
-  Modelica.Blocks.Interfaces.RealInput outMin
-    annotation (Placement(transformation(extent={{-90,-6},{-50,34}}), iconTransformation(
+  Modelica.Blocks.Interfaces.RealInput outMin annotation (Placement(
+        transformation(extent={{-90,-6},{-50,34}}), iconTransformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-80,-140})));
-  Modelica.Blocks.Sources.RealExpression const(y=T) annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
+  Modelica.Blocks.Sources.RealExpression const(y=T)
+    annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
   parameter Real K "Gain";
   parameter Modelica.SIunits.Time T "Lag time constant";
   parameter Real y_start "Output start value";
@@ -21,7 +23,8 @@ initial equation
   state = y_start;
 equation
   T_mod*der(state) = u - y;
-  when abs(y - outMax) <= Modelica.Constants.eps and u - y < 0 or abs(y - outMin) <= Modelica.Constants.eps and u - y > 0 then
+  when abs(y - outMax) <= Modelica.Constants.eps and u - y < 0 or abs(y -
+      outMin) <= Modelica.Constants.eps and u - y > 0 then
     reinit(state, y);
   end when;
   if abs(const.y) <= Modelica.Constants.eps then
@@ -49,33 +52,10 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),Text(
+</html>"),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics={Line(points={{40,100},{60,140},{100,140}}, color=
+          {0,0,0}),Text(
           extent={{-20,68},{20,8}},
           lineColor={0,0,255},
           textString="K"),Line(
@@ -85,6 +65,7 @@ equation
           thickness=0.5),Text(
           extent={{-70,-20},{70,-80}},
           lineColor={0,0,255},
-          textString="1 + Ts"),Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
+          textString="1 + Ts"),Line(points={{-100,-140},{-60,-140},{-40,-100}},
+          color={0,0,0})}),
     Diagram);
 end SimpleLagLimVar;

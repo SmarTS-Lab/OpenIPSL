@@ -1,5 +1,4 @@
 within PSAT_Systems.ThreeArea.BaseClasses;
-
 partial model BaseNetwork
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_2(
     Sn=900,
@@ -15,7 +14,8 @@ partial model BaseNetwork
     D=2,
     Td10=8,
     xq=1.7,
-    V_b=1000) annotation (Placement(transformation(extent={{152,-10},{132,10}})));
+    V_b=1000)
+    annotation (Placement(transformation(extent={{152,-10},{132,10}})));
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2(
     Sn=900,
     V_0=1.050000000000000,
@@ -62,12 +62,18 @@ partial model BaseNetwork
         extent={{-8,-8},{8,8}},
         rotation=0,
         origin={-100,80})));
-  OpenIPSL.Electrical.Buses.Bus B900 annotation (Placement(transformation(extent={{12,-8},{28,8}})));
-  OpenIPSL.Electrical.Buses.Bus B1000 annotation (Placement(transformation(extent={{72,-8},{88,8}})));
-  OpenIPSL.Electrical.Buses.Bus B1100 annotation (Placement(transformation(extent={{92,-8},{108,8}})));
-  OpenIPSL.Electrical.Buses.Bus B1200 annotation (Placement(transformation(extent={{112,-8},{128,8}})));
-  OpenIPSL.Electrical.Buses.Bus B1300 annotation (Placement(transformation(extent={{32,-8},{48,8}})));
-  OpenIPSL.Electrical.Buses.Bus B1400 annotation (Placement(transformation(extent={{52,-8},{68,8}})));
+  OpenIPSL.Electrical.Buses.Bus B900
+    annotation (Placement(transformation(extent={{12,-8},{28,8}})));
+  OpenIPSL.Electrical.Buses.Bus B1000
+    annotation (Placement(transformation(extent={{72,-8},{88,8}})));
+  OpenIPSL.Electrical.Buses.Bus B1100
+    annotation (Placement(transformation(extent={{92,-8},{108,8}})));
+  OpenIPSL.Electrical.Buses.Bus B1200
+    annotation (Placement(transformation(extent={{112,-8},{128,8}})));
+  OpenIPSL.Electrical.Buses.Bus B1300
+    annotation (Placement(transformation(extent={{32,-8},{48,8}})));
+  OpenIPSL.Electrical.Buses.Bus B1400
+    annotation (Placement(transformation(extent={{52,-8},{68,8}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1to4(
     R=0,
     G=0,
@@ -169,7 +175,8 @@ partial model BaseNetwork
         extent={{-4,-4},{4,4}},
         rotation=-90,
         origin={84,-24})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-180,100},{-120,120}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-180,100},{-120,120}})));
 equation
   connect(pwLine1to4.n, B100.p) annotation (Line(
       points={{-84.5,-54.5833},{-84,-54.5833},{-84,-60}},
@@ -255,51 +262,42 @@ equation
       points={{52.5,0},{60,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwFault.p, pwLine1to9.p) annotation (Line(points={{84,-19.3333},{84,0},{85.5,0}}, color={0,0,255}));
-  connect(pwLine1to5.n, B1000.p) annotation (Line(points={{52.5,20},{76,20},{76,0},{80,0}}, color={0,0,255}));
-  connect(pwLine1to6.p, B900.p) annotation (Line(points={{27.5,0},{23.75,0},{20,0}}, color={0,0,255}));
-  connect(pwLine1to5.p, B900.p) annotation (Line(points={{45.5,20},{24,20},{24,0},{20,0}}, color={0,0,255}));
-  connect(pwLine1to12.n, B700.p) annotation (Line(points={{-83.5,60.5833},{-83.5,80},{-80,80}}, color={0,0,255}));
-  connect(pwLine1to2.n, B400.p) annotation (Line(points={{-47.5,0},{-47.5,0},{0,0}}, color={0,0,255}));
-  connect(pwLine1to1.n, B200.p) annotation (Line(points={{-84,-34.5},{-84,-37.25},{-84,-40}}, color={0,0,255}));
-  connect(order2.p, B100.p) annotation (Line(points={{-84.0496,-69},{-84.0496,-64.5},{-84,-64.5},{-84,-60}}, color={0,0,255}));
-  connect(order2.pm0, order2.pm) annotation (Line(points={{-73,-88},{-70,-88},{-70,-92},{-78,-92},{-78,-90},{-79,-90}}, color={0,0,127}));
-  connect(order2.vf0, order2.vf) annotation (Line(points={{-95,-88},{-96,-88},{-96,-92},{-89,-92},{-89,-90}}, color={0,0,127}));
-  connect(pwLine1to14.n, B500.p) annotation (Line(points={{-53.5,8.99998},{-84,8.99998},{-84,20}}, color={0,0,255}));
-  connect(pwLine1to14.p, B400.p) annotation (Line(points={{-46.5,8.99998},{-4,8.99998},{-4,0},{0,0}}, color={0,0,255}));
-  connect(pwLine1to2.p, B300.p) annotation (Line(points={{-54.5,0},{-84,0},{-84,-20}}, color={0,0,255}));
-  connect(B1200.p, order3_2.p) annotation (Line(points={{120,0},{131,0},{131,0.04964}}, color={0,0,255}));
-  connect(order3_2.pm0, order3_2.pm) annotation (Line(points={{150,-11},{150,-14},{156,-14},{156,-5},{152,-5}}, color={0,0,127}));
+  connect(pwFault.p, pwLine1to9.p)
+    annotation (Line(points={{84,-19.3333},{84,0},{85.5,0}}, color={0,0,255}));
+  connect(pwLine1to5.n, B1000.p) annotation (Line(points={{52.5,20},{76,20},{76,
+          0},{80,0}}, color={0,0,255}));
+  connect(pwLine1to6.p, B900.p)
+    annotation (Line(points={{27.5,0},{23.75,0},{20,0}}, color={0,0,255}));
+  connect(pwLine1to5.p, B900.p) annotation (Line(points={{45.5,20},{24,20},{24,
+          0},{20,0}}, color={0,0,255}));
+  connect(pwLine1to12.n, B700.p) annotation (Line(points={{-83.5,60.5833},{-83.5,
+          80},{-80,80}}, color={0,0,255}));
+  connect(pwLine1to2.n, B400.p)
+    annotation (Line(points={{-47.5,0},{-47.5,0},{0,0}}, color={0,0,255}));
+  connect(pwLine1to1.n, B200.p) annotation (Line(points={{-84,-34.5},{-84,-37.25},
+          {-84,-40}}, color={0,0,255}));
+  connect(order2.p, B100.p) annotation (Line(points={{-84.0496,-69},{-84.0496,-64.5},
+          {-84,-64.5},{-84,-60}}, color={0,0,255}));
+  connect(order2.pm0, order2.pm) annotation (Line(points={{-73,-88},{-70,-88},{
+          -70,-92},{-78,-92},{-78,-90},{-79,-90}}, color={0,0,127}));
+  connect(order2.vf0, order2.vf) annotation (Line(points={{-95,-88},{-96,-88},{
+          -96,-92},{-89,-92},{-89,-90}}, color={0,0,127}));
+  connect(pwLine1to14.n, B500.p) annotation (Line(points={{-53.5,8.99998},{-84,
+          8.99998},{-84,20}}, color={0,0,255}));
+  connect(pwLine1to14.p, B400.p) annotation (Line(points={{-46.5,8.99998},{-4,
+          8.99998},{-4,0},{0,0}}, color={0,0,255}));
+  connect(pwLine1to2.p, B300.p)
+    annotation (Line(points={{-54.5,0},{-84,0},{-84,-20}}, color={0,0,255}));
+  connect(B1200.p, order3_2.p)
+    annotation (Line(points={{120,0},{131,0},{131,0.04964}}, color={0,0,255}));
+  connect(order3_2.pm0, order3_2.pm) annotation (Line(points={{150,-11},{150,-14},
+          {156,-14},{156,-5},{152,-5}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-", info="<html>
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,
+            120}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
+            180,120}})),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

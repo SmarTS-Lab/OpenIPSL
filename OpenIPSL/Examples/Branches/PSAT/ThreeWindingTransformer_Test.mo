@@ -17,12 +17,13 @@ model ThreeWindingTransformer_Test
         origin={40,20},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
+      Placement(visible=true, transformation(
         origin={-107.783,15.4652},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
+        transformation(
         origin={-79.1062,14.6621},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
@@ -45,7 +46,8 @@ model ThreeWindingTransformer_Test
     ra=0.001,
     xd1=0.302,
     M=10) annotation (Placement(transformation(extent={{-20,0},{0,20}})));
-  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
+  Modelica.Blocks.Math.Add add
+    annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     t_start_1=5,
     t_end_1=8,
@@ -56,7 +58,8 @@ model ThreeWindingTransformer_Test
     P_0=0.04,
     Q_0=0.02,
     dQ1=0.01,
-    dQ2=-0.01) annotation (Placement(transformation(extent={{115,15},{135,35}})));
+    dQ2=-0.01)
+    annotation (Placement(transformation(extent={{115,15},{135,35}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.04,
     Q_0=0.04,
@@ -68,24 +71,31 @@ model ThreeWindingTransformer_Test
     dQ1=0,
     dP2=0,
     dQ2=0) annotation (Placement(transformation(extent={{115,-20},{135,0}})));
-  OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
-  OpenIPSL.Electrical.Buses.Bus Bus1 annotation (Placement(transformation(extent={{10,0},{30,20}})));
-  OpenIPSL.Electrical.Buses.Bus Bus2 annotation (Placement(transformation(extent={{50,0},{70,20}})));
-  OpenIPSL.Electrical.Buses.Bus Bus3 annotation (Placement(transformation(extent={{95,15},{115,35}})));
-  OpenIPSL.Electrical.Buses.Bus Bus4 annotation (Placement(transformation(extent={{95,-20},{115,0}})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-50,50},{-5,70}})));
+  OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer
+    threeWindingTransformer
+    annotation (Placement(transformation(extent={{70,0},{90,20}})));
+  OpenIPSL.Electrical.Buses.Bus Bus1
+    annotation (Placement(transformation(extent={{10,0},{30,20}})));
+  OpenIPSL.Electrical.Buses.Bus Bus2
+    annotation (Placement(transformation(extent={{50,0},{70,20}})));
+  OpenIPSL.Electrical.Buses.Bus Bus3
+    annotation (Placement(transformation(extent={{95,15},{115,35}})));
+  OpenIPSL.Electrical.Buses.Bus Bus4
+    annotation (Placement(transformation(extent={{95,-20},{115,0}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-50,50},{-5,70}})));
 equation
-  connect(sine1.y, add2.u1)
-    annotation (Line(
+  connect(sine1.y, add2.u1) annotation (Line(
       visible=true,
       origin={-93.5606,15.4643},
-      points={{-9.29418,0.0009},{-1.4394,0.0009},{6.86692,0.0009},{6.86692,2.99154}},
+      points={{-9.29418,0.0009},{-1.4394,0.0009},{6.86692,0.0009},{6.86692,
+          2.99154}},
       color={0,0,127}));
-  connect(add2.u2, sine2.y)
-    annotation (Line(
+  connect(add2.u2, sine2.y) annotation (Line(
       visible=true,
       origin={-95.6692,1.8029},
-      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},{-6.78488,-7.3227}},
+      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},
+          {-6.78488,-7.3227}},
       color={0,0,127}));
   connect(add2.y, add.u1) annotation (Line(
       points={{-72.151,14.6621},{-66.0755,14.6621},{-66.0755,16},{-62,16}},
@@ -165,31 +175,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end ThreeWindingTransformer_Test;

@@ -5,50 +5,71 @@ model STABNI
   parameter Real T_2 ">=0 (S)";
   parameter Real T_0 ">0 (s)";
   parameter Real LIMIT "+- (pu)";
-  Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(transformation(extent={{-148,-20},{-108,20}}), iconTransformation(extent={{-148,-20},{-108,20}})));
-  Modelica.Blocks.Interfaces.RealOutput VOTHSG annotation (Placement(transformation(extent={{120,-10},{140,10}}), iconTransformation(extent={{120,-10},{140,10}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=LIMIT, uMin=-LIMIT) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
+  Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
+        transformation(extent={{-148,-20},{-108,20}}), iconTransformation(
+          extent={{-148,-20},{-108,20}})));
+  Modelica.Blocks.Interfaces.RealOutput VOTHSG annotation (Placement(
+        transformation(extent={{120,-10},{140,10}}), iconTransformation(extent=
+            {{120,-10},{140,10}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=LIMIT, uMin=-LIMIT)
+    annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 protected
   parameter Real PELEC0(fixed=false);
 protected
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K,
     T=T_2,
-    y_start=K*PELEC0) annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
+    y_start=K*PELEC0)
+    annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
     T1=T_1,
     T2=T_0,
-    y_start=0) annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
+    y_start=0)
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     T=T_0,
     k=T_0,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag1(
     T=T_0,
     k=T_0,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   NonElectrical.Continuous.SimpleLag imSimpleLag1(
     K=1,
     T=T_0,
     y_start=0) annotation (Placement(transformation(extent={{20,-10},{40,10}})));
-  Modelica.Blocks.Math.Gain gain(k=-1) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
+  Modelica.Blocks.Math.Gain gain(k=-1)
+    annotation (Placement(transformation(extent={{96,-10},{116,10}})));
 initial equation
   PELEC0 = PELEC;
 equation
-  connect(VOTHSG, gain.y) annotation (Line(points={{130,0},{124,0},{117,0}}, color={0,0,127}));
-  connect(PELEC, imSimpleLag.u) annotation (Line(points={{-128,0},{-102,0}}, color={0,0,127}));
-  connect(imSimpleLag.y, imDerivativeLag.u) annotation (Line(points={{-79,0},{-72,0}}, color={0,0,127}));
-  connect(imDerivativeLag.y, imDerivativeLag1.u) annotation (Line(points={{-49,0},{-45.5,0},{-42,0}}, color={0,0,127}));
-  connect(imDerivativeLag1.y, imLeadLag.u) annotation (Line(points={{-19,0},{-15.5,0},{-12,0}}, color={0,0,127}));
-  connect(imLeadLag.y, imSimpleLag1.u) annotation (Line(points={{11,0},{14.5,0},{18,0}}, color={0,0,127}));
-  connect(limiter.y, gain.u) annotation (Line(points={{81,0},{88,0},{94,0}}, color={0,0,127}));
-  connect(limiter.u, imSimpleLag1.y) annotation (Line(points={{58,0},{41,0}}, color={0,0,127}));
+  connect(VOTHSG, gain.y)
+    annotation (Line(points={{130,0},{124,0},{117,0}}, color={0,0,127}));
+  connect(PELEC, imSimpleLag.u)
+    annotation (Line(points={{-128,0},{-102,0}}, color={0,0,127}));
+  connect(imSimpleLag.y, imDerivativeLag.u)
+    annotation (Line(points={{-79,0},{-72,0}}, color={0,0,127}));
+  connect(imDerivativeLag.y, imDerivativeLag1.u)
+    annotation (Line(points={{-49,0},{-45.5,0},{-42,0}}, color={0,0,127}));
+  connect(imDerivativeLag1.y, imLeadLag.u)
+    annotation (Line(points={{-19,0},{-15.5,0},{-12,0}}, color={0,0,127}));
+  connect(imLeadLag.y, imSimpleLag1.u)
+    annotation (Line(points={{11,0},{14.5,0},{18,0}}, color={0,0,127}));
+  connect(limiter.y, gain.u)
+    annotation (Line(points={{81,0},{88,0},{94,0}}, color={0,0,127}));
+  connect(limiter.u, imSimpleLag1.y)
+    annotation (Line(points={{58,0},{41,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}})),
-    Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={28,108,200}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,
+            40}})),
+    Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=
+            false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor
+          ={28,108,200}),Text(
           extent={{-64,20},{56,-20}},
           lineColor={28,108,200},
           textString="STABNI"),Text(
@@ -76,31 +97,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end STABNI;

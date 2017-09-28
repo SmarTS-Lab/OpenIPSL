@@ -72,19 +72,23 @@ model PVnew
         origin={110.0,-63.8978},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Gain gain1(k=1/nSerialModules) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain1(k=1/nSerialModules) annotation (Placement(
+        visible=true, transformation(
         origin={-70.0,60.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Gain gain2(k=nParallelModules) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain2(k=nParallelModules) annotation (Placement(
+        visible=true, transformation(
         origin={68.072,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Gain gain3(k=nSerialModules) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain3(k=nSerialModules) annotation (Placement(
+        visible=true, transformation(
         origin={70.0,-28.0297},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Product product1 annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Product product1 annotation (Placement(visible=true,
+        transformation(
         origin={60.0,60.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -93,8 +97,10 @@ model PVnew
   parameter Real Tdelay=0.05;
   parameter Real Imp=4.58 "Current at maximum power";
   parameter Real Vmp=35 "Voltage at maximum power";
-  parameter Real Iscref=5 "Module short-circuit current reference at reference temp and irradiance";
-  parameter Real Vocref=43.8 "Module open-circuit voltage reference at reference temp and irradiance";
+  parameter Real Iscref=5
+    "Module short-circuit current reference at reference temp and irradiance";
+  parameter Real Vocref=43.8
+    "Module open-circuit voltage reference at reference temp and irradiance";
   parameter Real Kv=-0.0039 "temperature correction factor for the voltage";
   parameter Real Ki=0.0004 "temperature correction factor for the current";
   parameter Real Tstc=25 "Temperature at the standard test conditions";
@@ -109,27 +115,31 @@ equation
       visible=true,
       origin={119.3722,6.3896},
       points={{-40.3002,3.6104},{9.0251,3.6104},{9.0251,-3.6103},{22.2501,-3.6103}},
+
       color={0,0,127}));
   connect(gain3.y, Varray) annotation (Line(
       visible=true,
       origin={120.0322,-24.0148},
-      points={{-39.0322,-4.0149},{8.6024,-4.0148},{8.6024,4.0148},{21.8275,4.0148}},
+      points={{-39.0322,-4.0149},{8.6024,-4.0148},{8.6024,4.0148},{21.8275,
+          4.0148}},
       color={0,0,127}));
-  connect(product1.y, PowerArray)
-    annotation (Line(
+  connect(product1.y, PowerArray) annotation (Line(
       visible=true,
       origin={115.264,-2.6636},
-      points={{-44.264,62.6636},{-5.264,62.6636},{-5.264,-42.3364},{27.3959,-42.3364},{27.3959,-40.6544}},
+      points={{-44.264,62.6636},{-5.264,62.6636},{-5.264,-42.3364},{27.3959,-42.3364},
+          {27.3959,-40.6544}},
       color={0,0,127}));
   connect(T, PVarray1.T) annotation (Line(
       visible=true,
       origin={-60.5,-14.9773},
       points={{-109.5,-12.9772},{35.5,-12.9773},{35.5,12.9773},{38.5,12.9773}},
+
       color={0,0,127}));
   connect(Udc, product1.u1) annotation (Line(
       visible=true,
       origin={-66.8,71.2},
       points={{-103.2,-11.2},{-63.2,-11.2},{-63.2,13.8},{114.8,13.8},{114.8,-5.2}},
+
       color={0,0,127}));
   connect(PVarray1.E, E) annotation (Line(
       visible=true,
@@ -140,22 +150,24 @@ equation
       visible=true,
       origin={42.25,-13.2285},
       points={{-41.25,14.8011},{12.75,14.8011},{12.75,-14.8012},{15.75,-14.8012}},
+
       color={0,0,127}));
   connect(gain2.y, product1.u2) annotation (Line(
       visible=true,
       origin={63.536,33.8119},
-      points={{15.536,-23.8119},{18.536,-23.8119},{18.536,3.6238},{-18.536,3.6238},{-18.536,20.1881},{-15.536,20.1881}},
+      points={{15.536,-23.8119},{18.536,-23.8119},{18.536,3.6238},{-18.536,
+          3.6238},{-18.536,20.1881},{-15.536,20.1881}},
       color={0,0,127}));
   connect(PVarray1.I, gain2.u) annotation (Line(
       visible=true,
       origin={40.804,9.5},
       points={{-39.804,-0.5},{12.268,-0.5},{12.268,0.5},{15.268,0.5}},
       color={0,0,127}));
-  connect(gain1.y, PVarray1.V1)
-    annotation (Line(
+  connect(gain1.y, PVarray1.V1) annotation (Line(
       visible=true,
       origin={-36.6,31.1287},
-      points={{-22.4,28.8713},{-3.4,28.8713},{-3.4,-19.3069},{14.6,-19.3069},{14.6,-19.1287}},
+      points={{-22.4,28.8713},{-3.4,28.8713},{-3.4,-19.3069},{14.6,-19.3069},{
+          14.6,-19.1287}},
       color={0,0,127}));
   annotation (
     Icon(coordinateSystem(
@@ -232,31 +244,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end PVnew;

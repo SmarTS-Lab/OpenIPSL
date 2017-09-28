@@ -22,11 +22,15 @@ package No_Controls
       V_0=V_0,
       angle_0=angle_0,
       P_0=P_0,
-      Q_0=Q_0) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+      Q_0=Q_0)
+      annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
   equation
-    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{26,-8.6},{26,-20},{-18,-20},{-18,-5},{-15.6,-5}}, color={0,0,127}));
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-18,13},{-18,30},{24,30},{24,-1.4},{25.6,-1.4}}, color={0,0,127}));
-    connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
+    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{26,-8.6},
+            {26,-20},{-18,-20},{-18,-5},{-15.6,-5}}, color={0,0,127}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-18,
+            13},{-18,30},{24,30},{24,-1.4},{25.6,-1.4}}, color={0,0,127}));
+    connect(gENSAL.p, pwPin)
+      annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
     annotation (
       Diagram(coordinateSystem(
           preserveAspectRatio=false,
@@ -36,33 +40,7 @@ package No_Controls
           preserveAspectRatio=true,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      Documentation);
   end G1;
 
   model G2
@@ -87,11 +65,15 @@ package No_Controls
       V_0=V_0,
       angle_0=angle_0,
       P_0=P_0,
-      Q_0=Q_0) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+      Q_0=Q_0)
+      annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
   equation
-    connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-15.6,-5},{-26,-5},{-26,-30},{26,-30},{26,-8.6},{25.6,-8.6}}, color={0,0,127}));
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-26,13},{-26,34},{28,34},{28,-1.4},{25.6,-1.4}}, color={0,0,127}));
-    connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{44,4},{44,0},{70,0}}, color={0,0,255}));
+    connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-15.6,-5},{-26,-5},
+            {-26,-30},{26,-30},{26,-8.6},{25.6,-8.6}}, color={0,0,127}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-26,
+            13},{-26,34},{28,34},{28,-1.4},{25.6,-1.4}}, color={0,0,127}));
+    connect(gENSAL.p, pwPin)
+      annotation (Line(points={{26,4},{44,4},{44,0},{70,0}}, color={0,0,255}));
     annotation (
       Diagram(coordinateSystem(
           preserveAspectRatio=false,
@@ -101,33 +83,7 @@ package No_Controls
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      Documentation);
   end G2;
 
   model G3
@@ -152,11 +108,16 @@ package No_Controls
       V_0=V_0,
       P_0=P_0,
       Q_0=Q_0,
-      angle_0=angle_0) annotation (Placement(transformation(extent={{-30,-30},{30,36}})));
+      angle_0=angle_0)
+      annotation (Placement(transformation(extent={{-30,-30},{30,36}})));
   equation
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-29.4,19.5},{-40,19.5},{-40,44},{30,44},{30,-6.9},{32.4,-6.9}}, color={0,0,127}));
-    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{32.4,-20.1},{38,-20.1},{38,-40},{-38,-40},{-38,0},{-38,-13.5},{-29.4,-13.5}}, color={0,0,127}));
-    connect(gENSAL.p, pwPin) annotation (Line(points={{33,3},{46.5,3},{46.5,0},{70,0}}, color={0,0,255}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-29.4,19.5},
+            {-40,19.5},{-40,44},{30,44},{30,-6.9},{32.4,-6.9}}, color={0,0,127}));
+    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{32.4,-20.1},{38,
+            -20.1},{38,-40},{-38,-40},{-38,0},{-38,-13.5},{-29.4,-13.5}}, color
+          ={0,0,127}));
+    connect(gENSAL.p, pwPin) annotation (Line(points={{33,3},{46.5,3},{46.5,0},
+            {70,0}}, color={0,0,255}));
     annotation (
       Diagram(coordinateSystem(
           preserveAspectRatio=false,
@@ -166,33 +127,7 @@ package No_Controls
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      Documentation);
   end G3;
 
   model G4
@@ -217,11 +152,16 @@ package No_Controls
       V_0=V_0,
       angle_0=angle_0,
       P_0=P_0,
-      Q_0=Q_0) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+      Q_0=Q_0)
+      annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
   equation
-    connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
-    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{34,-8.6},{34,-20},{-24,-20},{-24,-5},{-15.6,-5}}, color={0,0,127}));
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-14,13},{-14,12},{-24,12},{-24,30},{34,30},{34,-1.4},{25.6,-1.4}}, color={0,0,127}));
+    connect(gENSAL.p, pwPin)
+      annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
+    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{34,-8.6},
+            {34,-20},{-24,-20},{-24,-5},{-15.6,-5}}, color={0,0,127}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-14,
+            13},{-14,12},{-24,12},{-24,30},{34,30},{34,-1.4},{25.6,-1.4}},
+          color={0,0,127}));
     annotation (
       Diagram(coordinateSystem(
           preserveAspectRatio=false,
@@ -231,60 +171,7 @@ package No_Controls
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      Documentation);
   end G4;
-  annotation (Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  annotation (Documentation);
 end No_Controls;
-

@@ -5,16 +5,13 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
   import Modelica.ComplexMath.real;
   import Modelica.ComplexMath.imag;
   import Modelica.ComplexMath.j;
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(
-          extent={{-100,-10},{-80,10}}), iconTransformation(extent={{-100,
-            -10},{-80,10}})));
-  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(
-          extent={{80,-10},{100,10}}), iconTransformation(extent={{80,
-            -10},{100,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-100,
+            -10},{-80,10}}), iconTransformation(extent={{-100,-10},{-80,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{80,
+            -10},{100,10}}), iconTransformation(extent={{80,-10},{100,10}})));
   parameter Real R "Resistance (pu)"
     annotation (Dialog(group="Line parameters"));
-  parameter Real X "Reactance (pu)"
-    annotation (Dialog(group="Line parameters"));
+  parameter Real X "Reactance (pu)" annotation (Dialog(group="Line parameters"));
   parameter Real G "Shunt half conductance (pu)"
     annotation (Dialog(group="Line parameters"));
   parameter Real B "Shunt half susceptance (pu)"
@@ -25,17 +22,16 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
     annotation (Dialog(group="Perturbation parameters"));
   parameter Real t2=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
-  parameter Integer opening=1 annotation (Dialog(group="Perturbation parameters"),
-      choices(
+  parameter Integer opening=1 annotation (Dialog(group=
+          "Perturbation parameters"), choices(
       choice=1 "Line opening at both ends",
       choice=2 "Line opening at sending end",
       choice=3 "Line opening at receiving end"));
- parameter Boolean displayPF=false "Display power flow results:"
-    annotation (Dialog(
+  parameter Boolean displayPF=false "Display power flow results:" annotation (
+      Dialog(
       group="Visualisation",
       __Dymola_compact=true,
-      __Dymola_descriptionLabel=true),
-      choices(checkBox=true));
+      __Dymola_descriptionLabel=true), choices(checkBox=true));
   OpenIPSL.Types.ActivePowerMega P12;
   OpenIPSL.Types.ActivePowerMega P21;
   OpenIPSL.Types.ReactivePowerMega Q12;
@@ -69,8 +65,8 @@ equation
     vs - vr = Z*(is - vs*Y);
     vr - vs = Z*(ir - vr*Y);
   end if;
-  annotation (Icon(coordinateSystem(preserveAspectRatio=true,
-          initialScale=0.1), graphics={
+  annotation (Icon(coordinateSystem(preserveAspectRatio=true, initialScale=0.1),
+        graphics={
         Rectangle(
           extent={{-80,40},{80,-40}},
           lineColor={0,0,255},
@@ -89,9 +85,9 @@ equation
               OpenIPSL.NonElectrical.Functions.displayPower(P12, " MW"))),
         Polygon(
           visible=displayPF,
-          points=DynamicSelect({{-120,70},{-120,50},{-80,60},{-120,70}},
-              if P12 >= 0 then {{-120,70},{-120,50},{-80,60},{-120,70}}
-               else {{-80,70},{-80,50},{-120,60},{-80,70}}),
+          points=DynamicSelect({{-120,70},{-120,50},{-80,60},{-120,70}}, if P12
+               >= 0 then {{-120,70},{-120,50},{-80,60},{-120,70}} else {{-80,70},
+              {-80,50},{-120,60},{-80,70}}),
           lineColor={255,0,0},
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid),
@@ -103,9 +99,9 @@ equation
               OpenIPSL.NonElectrical.Functions.displayPower(P21, " MW"))),
         Polygon(
           visible=displayPF,
-          points=DynamicSelect({{80,70},{80,50},{120,60},{80,70}},
-              if P21 >= 0 then {{80,70},{80,50},{120,60},{80,70}}
-               else {{120,70},{120,50},{80,60},{120,70}}),
+          points=DynamicSelect({{80,70},{80,50},{120,60},{80,70}}, if P21 >= 0
+               then {{80,70},{80,50},{120,60},{80,70}} else {{120,70},{120,50},
+              {80,60},{120,70}}),
           lineColor={255,0,0},
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid),
@@ -131,14 +127,14 @@ equation
               OpenIPSL.NonElectrical.Functions.displayPower(Q21, " Mvar"))),
         Polygon(
           visible=displayPF,
-          points=DynamicSelect({{80,-70},{80,-50},{120,-60},{80,-70}},
-              if Q21 >= 0 then {{80,-70},{80,-50},{120,-60},{80,-70}}
-              else {{120,-70},{120,-50},{80,-60},{120,-70}}),
+          points=DynamicSelect({{80,-70},{80,-50},{120,-60},{80,-70}}, if Q21
+               >= 0 then {{80,-70},{80,-50},{120,-60},{80,-70}} else {{120,-70},
+              {120,-50},{80,-60},{120,-70}}),
           lineColor={0,255,0},
           fillColor={0,255,0},
           fillPattern=FillPattern.Solid),
         Text(
           extent={{-60,20},{60,-20}},
           lineColor={255,255,0},
-          textString="%name")}));
+          textString="%name")}), Documentation);
 end PwLine;

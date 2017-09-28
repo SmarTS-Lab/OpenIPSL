@@ -1,15 +1,25 @@
 within OpenIPSL.Electrical.FACTS.PSAT;
 model STATCOM "Static Synchronous Compensator model with equation"
-  OpenIPSL.Interfaces.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (
+      Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(
+          extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;
-  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (V)" annotation (Dialog(group="Power flow data"));
-  parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
-  parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=-0.000213067852480 "Voltage angle (deg.)" annotation (Dialog(group="Power flow data"));
-  parameter Real Qg=0.139557595258338 "Reactive power injection(p.u.)" annotation (Dialog(group="Power flow data"));
+  parameter Real Sb=100 "System base power (MVA)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus=400000 "Bus nominal voltage (V)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Sn=100 "Power rating (MVA)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Vn=400000 "Voltage rating (V)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real fn=50 "Frequency rating (Hz)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real V_0=1 "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0=-0.000213067852480 "Voltage angle (deg.)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Qg=0.139557595258338 "Reactive power injection(p.u.)"
+    annotation (Dialog(group="Power flow data"));
   //parameter Real v_ref=1.002791151905167 "Reference voltage of the STATCOM regulator (pu)" annotation(Dialog(group="Power flow data"));
   parameter Real Kr=50 "Regulator gain (p.u./p.u.)";
   parameter Real Tr=0.01 "Regulator time constant (s)";
@@ -39,7 +49,8 @@ protected
     T=Tr,
     y_start=io,
     outMax=i_Max,
-    outMin=i_Min) annotation (Placement(transformation(extent={{-10,-8},{10,12}})));
+    outMin=i_Min)
+    annotation (Placement(transformation(extent={{-10,-8},{10,12}})));
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   0 = p.vr*p.ir + p.vi*p.ii;
@@ -49,43 +60,56 @@ equation
   simpleLagLim.u = u;
   simpleLagLim.y = i_SH;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Ellipse(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-2,22},{48,-22}},
           lineColor={0,0,0},
           fillColor={215,215,215},
-          fillPattern=FillPattern.Solid),Ellipse(
+          fillPattern=FillPattern.Solid),
+        Ellipse(
           extent={{34,24},{84,-20}},
           lineColor={0,0,0},
           fillPattern=FillPattern.Solid,
-          fillColor={215,215,215}),Line(
+          fillColor={215,215,215}),
+        Line(
           points={{-38,0},{-2,0},{-2,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{84,2},{100,2},{100,2}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-90,6},{-82,6},{-76,6}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-90,-6},{-82,-6},{-76,-6}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-38,0},{-46,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
-          points={{-84,6},{-84,26},{-46,26},{-46,-24},{-82,-24},{-84,-24},{-84,-6},{-84,-6}},
+          smooth=Smooth.None),
+        Line(
+          points={{-84,6},{-84,26},{-46,26},{-46,-24},{-82,-24},{-84,-24},{-84,
+              -6},{-84,-6}},
           color={255,0,0},
           thickness=0.5,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-34,-38},{24,-68}},
           lineColor={0,0,0},
           lineThickness=0.5,
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid,
           textString="%Name")}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"1\"><tr>
 <td><p>Reference</p></td>
@@ -104,31 +128,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end STATCOM;

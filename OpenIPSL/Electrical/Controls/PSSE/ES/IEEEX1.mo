@@ -1,7 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model IEEEX1
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
+  import
+    OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
   parameter Real T_R "Voltage input time constant (s)";
   parameter Real K_A "AVR gain";
   parameter Real T_A "AVR time constant (s)";
@@ -22,21 +23,26 @@ model IEEEX1
     T2=T_B,
     K=1,
     y_start=VR0/K_A,
-    x_start=V_REF - ECOMP0) annotation (Placement(transformation(extent={{0,-10},{20,10}})));
-  Modelica.Blocks.Math.Add3 V_Erro1(k3=-1) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+    x_start=V_REF - ECOMP0)
+    annotation (Placement(transformation(extent={{0,-10},{20,10}})));
+  Modelica.Blocks.Math.Add3 V_Erro1(k3=-1)
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
     T=T_F1,
     y_start=0,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    x_start=Efd0) annotation (Placement(transformation(extent={{80,-60},{60,-40}})));
-  Modelica.Blocks.Math.Add3 V_Erro2 annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
+    x_start=Efd0)
+    annotation (Placement(transformation(extent={{80,-60},{60,-40}})));
+  Modelica.Blocks.Math.Add3 V_Erro2
+    annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
   NonElectrical.Continuous.SimpleLagLim SL(
     K=K_A,
     T=T_A,
     y_start=VR0,
     outMax=V_RMAX0,
-    outMin=V_RMIN0) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
+    outMin=V_RMIN0)
+    annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   BaseClasses.RotatingExciter rotatingExciter(
     T_E=T_E,
     E_1=E_1,
@@ -44,11 +50,13 @@ model IEEEX1
     S_EE_1=S_EE_1,
     S_EE_2=S_EE_2,
     Efd0=Efd0,
-    K_E=K_E0) annotation (Placement(transformation(extent={{120,-20},{160,20}})));
+    K_E=K_E0)
+    annotation (Placement(transformation(extent={{120,-20},{160,20}})));
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,
     T=T_R,
-    y_start=ECOMP0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
+    y_start=ECOMP0)
+    annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
 protected
   parameter Real SE_Efd0(fixed=false);
   parameter Real VR0(fixed=false);
@@ -73,19 +81,32 @@ initial equation
   VR0 = Efd0*(K_E0 + SE_Efd0);
   V_REF = VR0/K_A + ECOMP0;
 equation
-  connect(V_Erro1.y, LL.u) annotation (Line(points={{-19,0},{-2,0}}, color={0,0,127}));
-  connect(LL.y, SL.u) annotation (Line(points={{21,0},{58,0}}, color={0,0,127}));
-  connect(DiffV.y, V_Erro1.u2) annotation (Line(points={{-99,0},{-42,0}}, color={0,0,127}));
-  connect(SL.y, rotatingExciter.I_C) annotation (Line(points={{81,0},{117.5,0}}, color={0,0,127}));
-  connect(rotatingExciter.EFD, EFD) annotation (Line(points={{162.5,0},{210,0}}, color={0,0,127}));
-  connect(imDerivativeLag.y, V_Erro1.u3) annotation (Line(points={{59,-50},{-50,-50},{-50,-8},{-42,-8}}, color={0,0,127}));
-  connect(imDerivativeLag.u, EFD) annotation (Line(points={{82,-50},{180,-50},{180,0},{210,0}}, color={0,0,127}));
-  connect(VOTHSG, V_Erro2.u1) annotation (Line(points={{-200,90},{-100,90},{-100,58},{-82,58}}, color={0,0,127}));
-  connect(VUEL, V_Erro2.u2) annotation (Line(points={{-130,-200},{-130,-200},{-130,-30},{-130,-28},{-94,-28},{-94,50},{-82,50}}, color={0,0,127}));
-  connect(VOEL, V_Erro2.u3) annotation (Line(points={{-70,-200},{-70,20},{-88,20},{-88,42},{-82,42}}, color={0,0,127}));
-  connect(V_Erro2.y, V_Erro1.u1) annotation (Line(points={{-59,50},{-50,50},{-50,8},{-42,8}}, color={0,0,127}));
-  connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
-  connect(TransducerDelay.u, ECOMP) annotation (Line(points={{-172,0},{-200,0}}, color={0,0,127}));
+  connect(V_Erro1.y, LL.u)
+    annotation (Line(points={{-19,0},{-2,0}}, color={0,0,127}));
+  connect(LL.y, SL.u)
+    annotation (Line(points={{21,0},{58,0}}, color={0,0,127}));
+  connect(DiffV.y, V_Erro1.u2)
+    annotation (Line(points={{-99,0},{-42,0}}, color={0,0,127}));
+  connect(SL.y, rotatingExciter.I_C)
+    annotation (Line(points={{81,0},{117.5,0}}, color={0,0,127}));
+  connect(rotatingExciter.EFD, EFD)
+    annotation (Line(points={{162.5,0},{210,0}}, color={0,0,127}));
+  connect(imDerivativeLag.y, V_Erro1.u3) annotation (Line(points={{59,-50},{-50,
+          -50},{-50,-8},{-42,-8}}, color={0,0,127}));
+  connect(imDerivativeLag.u, EFD) annotation (Line(points={{82,-50},{180,-50},{
+          180,0},{210,0}}, color={0,0,127}));
+  connect(VOTHSG, V_Erro2.u1) annotation (Line(points={{-200,90},{-100,90},{-100,
+          58},{-82,58}}, color={0,0,127}));
+  connect(VUEL, V_Erro2.u2) annotation (Line(points={{-130,-200},{-130,-200},{-130,
+          -30},{-130,-28},{-94,-28},{-94,50},{-82,50}}, color={0,0,127}));
+  connect(VOEL, V_Erro2.u3) annotation (Line(points={{-70,-200},{-70,20},{-88,
+          20},{-88,42},{-82,42}}, color={0,0,127}));
+  connect(V_Erro2.y, V_Erro1.u1) annotation (Line(points={{-59,50},{-50,50},{-50,
+          8},{-42,8}}, color={0,0,127}));
+  connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,
+          0},{-132,-6},{-122,-6}}, color={0,0,127}));
+  connect(TransducerDelay.u, ECOMP)
+    annotation (Line(points={{-172,0},{-200,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-200,-200},{200,160}},
@@ -98,33 +119,7 @@ equation
           extent={{-130,160},{130,100}},
           lineColor={28,108,200},
           textString="IEEEX1")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-", info="<html>
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

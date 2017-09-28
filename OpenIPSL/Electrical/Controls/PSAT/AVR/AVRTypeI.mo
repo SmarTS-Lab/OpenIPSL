@@ -16,7 +16,8 @@ model AVRTypeI "PSAT Exciter Type 1"
   parameter Real vf0=1.046883400898693 "Initialization";
   parameter Real vm0=v0 "Initialization";
   parameter Real vr10=K0*(1 - T2/T1)*(vref0 - vm0) "Initialization";
-  parameter Real vr20=1/K0*(1 - T4/T3)*(vr10 + K0*(vref0 - vm0)*T2/T1) "Initialization";
+  parameter Real vr20=1/K0*(1 - T4/T3)*(vr10 + K0*(vref0 - vm0)*T2/T1)
+    "Initialization";
   parameter Real e=Modelica.Constants.e;
   Real Se;
   Real vm(start=vm0, fixed=true);
@@ -24,12 +25,13 @@ model AVRTypeI "PSAT Exciter Type 1"
   Real vr2(start=vr20, fixed=true);
   Real vrs;
   Real vr;
-  Modelica.Blocks.Interfaces.RealInput v annotation (Placement(transformation(extent={{-140,
-            -80},{-100,-40}})));
-  Modelica.Blocks.Interfaces.RealInput vref annotation (Placement(transformation(extent={{-140,40},
-            {-100,80}})));
-  Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(transformation(extent={{100,-10},
-            {120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Interfaces.RealInput v
+    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
+  Modelica.Blocks.Interfaces.RealInput vref
+    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
+  Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(transformation(
+          extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
+            120,10}})));
 equation
   der(vm) = (v - vm)/Tr;
   der(vr1) = (K0*(1 - T2/T1)*(vref - vm) - vr1)/T1;
@@ -45,11 +47,11 @@ equation
   der(vf) = -(vf*(1 + Se) - vr)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-    Diagram(coordinateSystem(                           extent={{-100,-100},{100,100}},
-          initialScale=0.1)),
-    Icon(coordinateSystem(                           extent={{-100,-100},{100,100}},
-          initialScale=0.1),                                                          graphics={Rectangle(extent={{
-              -100,100},{100,-100}},                                                                                                  lineColor={0,0,255}),Text(
+    Diagram(coordinateSystem(extent={{-100,-100},{100,100}}, initialScale=0.1)),
+
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}, initialScale=0.1),
+        graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+          Text(
           extent={{-90,80},{-50,40}},
           lineColor={0,0,255},
           textString="vref"),Text(
@@ -80,31 +82,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end AVRTypeI;

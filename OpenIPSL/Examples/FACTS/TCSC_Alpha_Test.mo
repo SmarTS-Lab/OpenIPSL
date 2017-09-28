@@ -18,13 +18,15 @@ model TCSC_Alpha_Test
     amplitude=0.045,
     width=58,
     offset=1.005017533847740,
-    nperiod=2) annotation (Placement(transformation(extent={{-126,6},{-106,26}})));
+    nperiod=2)
+    annotation (Placement(transformation(extent={{-126,6},{-106,26}})));
   Modelica.Blocks.Sources.Pulse pulse1(
     period=10,
     amplitude=-0.045,
     width=42,
     startTime=0,
-    nperiod=2) annotation (Placement(transformation(extent={{-128,-28},{-108,-8}})));
+    nperiod=2)
+    annotation (Placement(transformation(extent={{-128,-28},{-108,-8}})));
   Modelica.Blocks.Math.Add3 add3_1(
     k3=0,
     k1=1,
@@ -44,9 +46,12 @@ model TCSC_Alpha_Test
     t_start_2=12,
     t_end_2=20,
     dP2=-0.01,
-    dQ2=-0.01) annotation (Placement(transformation(extent={{94,-10},{114,10}})));
-  OpenIPSL.Electrical.FACTS.PSAT.TCSCAlpha tCSCAlpha annotation (Placement(transformation(extent={{18,-10},{38,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-120,60},{-96,80}})));
+    dQ2=-0.01)
+    annotation (Placement(transformation(extent={{94,-10},{114,10}})));
+  OpenIPSL.Electrical.FACTS.PSAT.TCSCAlpha tCSCAlpha
+    annotation (Placement(transformation(extent={{18,-10},{38,10}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-120,60},{-96,80}})));
 equation
   connect(pulse1.y, add3_1.u2) annotation (Line(
       points={{-107,-18},{-92,-18},{-92,0},{-80,0}},
@@ -65,7 +70,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.vf0, add3_1.u3) annotation (Line(
-      points={{-22,11},{2,11},{2,22},{-42,22},{-42,-16},{-86,-16},{-86,-8},{-80,-8}},
+      points={{-22,11},{2,11},{2,22},{-42,22},{-42,-16},{-86,-16},{-86,-8},{-80,
+          -8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.pm0, Gen1.pm) annotation (Line(
@@ -81,7 +87,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,
+            100}}), graphics),
     Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
@@ -101,31 +108,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end TCSC_Alpha_Test;

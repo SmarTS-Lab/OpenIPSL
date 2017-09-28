@@ -60,66 +60,43 @@ partial model BaseTest
         origin={94.0335,-14.2889},
         extent={{-6.2889,-6.0335},{6.2889,6.0335}},
         rotation=90)));
-  inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
-  Electrical.Buses.Bus bus annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{30,-10},{50,10}})));
-  Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{70,14},
-            {90,34}})));
-  Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{70,-24},
-            {90,-4}})));
+  inner Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+  Electrical.Buses.Bus bus
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
+  Electrical.Buses.Bus bus1
+    annotation (Placement(transformation(extent={{30,-10},{50,10}})));
+  Electrical.Buses.Bus bus2
+    annotation (Placement(transformation(extent={{70,14},{90,34}})));
+  Electrical.Buses.Bus bus3
+    annotation (Placement(transformation(extent={{70,-24},{90,-4}})));
 equation
-  connect(pwLine2.p, pwLine1.p) annotation (Line(points={{14.6,12},{6,
-          12},{6,-12},{14.6,-12}},                                                         color={0,0,255}));
-  connect(pwLine2.n, pwLine1.n) annotation (Line(points={{25.4,12},{
-          34,12},{34,-12},{25.4,-12}},                                                       color={0,0,255}));
-  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(points={{54.6,36},
-          {48,36},{48,12},{54.6,12}},                                                                 color={0,0,255}));
-  connect(pwLine4.n, pwLinewithOpening1.n) annotation (Line(points={{65.4,36},
-          {72,36},{72,12},{65.4,12}},                                                                 color={0,0,255}));
-  connect(bus.p, pwLine1.p) annotation (Line(points={{0,0},{6,0},{6,
-          -12},{14.6,-12}},                                                         color={0,0,255}));
-  connect(bus1.p, pwLine1.n) annotation (Line(points={{40,0},{34,0},{
-          34,-12},{25.4,-12}},                                                          color={0,0,255}));
-  connect(bus1.p, pwLinewithOpening1.p) annotation (Line(points={{40,0},{
-          44,0},{44,20},{48,20},{48,12},{54.6,12}},                                                              color={0,0,255}));
-  connect(pwLine3.p, pwLinewithOpening1.p) annotation (Line(points={{56.6,
-          -14},{44,-14},{44,20},{48,20},{48,12},{54.6,12}},                                                             color={0,0,255}));
-  connect(bus2.p, pwLoadPQ1.p) annotation (Line(points={{80,24},{84,
-          24},{87.4,24}},                                                   color={0,0,255}));
-  connect(bus2.p, pwLinewithOpening1.n) annotation (Line(points={{80,24},
-          {72,24},{72,12},{65.4,12}},                                                              color={0,0,255}));
-  connect(bus3.p, pwLoadPQ2.p) annotation (Line(points={{80,-14},{
-          87.3966,-14},{87.3966,-14.2889}},                                                         color={0,0,255}));
-  connect(pwLine3.n, bus3.p) annotation (Line(points={{67.4,-14},{
-          67.4,-14},{80,-14}},                                                       color={0,0,255}));
+  connect(pwLine2.p, pwLine1.p) annotation (Line(points={{14.6,12},{6,12},{6,-12},
+          {14.6,-12}}, color={0,0,255}));
+  connect(pwLine2.n, pwLine1.n) annotation (Line(points={{25.4,12},{34,12},{34,
+          -12},{25.4,-12}}, color={0,0,255}));
+  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(points={{54.6,36},{
+          48,36},{48,12},{54.6,12}}, color={0,0,255}));
+  connect(pwLine4.n, pwLinewithOpening1.n) annotation (Line(points={{65.4,36},{
+          72,36},{72,12},{65.4,12}}, color={0,0,255}));
+  connect(bus.p, pwLine1.p) annotation (Line(points={{0,0},{6,0},{6,-12},{14.6,
+          -12}}, color={0,0,255}));
+  connect(bus1.p, pwLine1.n) annotation (Line(points={{40,0},{34,0},{34,-12},{
+          25.4,-12}}, color={0,0,255}));
+  connect(bus1.p, pwLinewithOpening1.p) annotation (Line(points={{40,0},{44,0},
+          {44,20},{48,20},{48,12},{54.6,12}}, color={0,0,255}));
+  connect(pwLine3.p, pwLinewithOpening1.p) annotation (Line(points={{56.6,-14},
+          {44,-14},{44,20},{48,20},{48,12},{54.6,12}}, color={0,0,255}));
+  connect(bus2.p, pwLoadPQ1.p)
+    annotation (Line(points={{80,24},{84,24},{87.4,24}}, color={0,0,255}));
+  connect(bus2.p, pwLinewithOpening1.n) annotation (Line(points={{80,24},{72,24},
+          {72,12},{65.4,12}}, color={0,0,255}));
+  connect(bus3.p, pwLoadPQ2.p) annotation (Line(points={{80,-14},{87.3966,-14},
+          {87.3966,-14.2889}}, color={0,0,255}));
+  connect(pwLine3.n, bus3.p) annotation (Line(points={{67.4,-14},{67.4,-14},{80,
+          -14}}, color={0,0,255}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false)),
     Diagram(coordinateSystem(preserveAspectRatio=false)),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end BaseTest;

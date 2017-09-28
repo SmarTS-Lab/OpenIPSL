@@ -1,11 +1,15 @@
 within PSAT_Systems.TwoAreaOld.BaseClasses;
-
 partial model BaseNetwork
-  OpenIPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
-  OpenIPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{70,-10},{90,10}})));
-  OpenIPSL.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  OpenIPSL.Electrical.Buses.Bus bus4 annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
-  OpenIPSL.Electrical.Buses.Bus bus5 annotation (Placement(transformation(extent={{30,-10},{50,10}})));
+  OpenIPSL.Electrical.Buses.Bus bus1
+    annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
+  OpenIPSL.Electrical.Buses.Bus bus2
+    annotation (Placement(transformation(extent={{70,-10},{90,10}})));
+  OpenIPSL.Electrical.Buses.Bus bus3
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
+  OpenIPSL.Electrical.Buses.Bus bus4
+    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+  OpenIPSL.Electrical.Buses.Bus bus5
+    annotation (Placement(transformation(extent={{30,-10},{50,10}})));
   OpenIPSL.Electrical.Branches.PwLine line_1_4(
     R=0,
     X=0.05,
@@ -45,8 +49,10 @@ partial model BaseNetwork
     D=0,
     angle_0=0,
     P_0=-90.0000000000001,
-    Q_0=23.9371894974117) annotation (Placement(transformation(extent={{120,-10},{100,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-160,60},{-100,80}})));
+    Q_0=23.9371894974117)
+    annotation (Placement(transformation(extent={{120,-10},{100,10}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-160,60},{-100,80}})));
 equation
   connect(bus1.p, line_1_4.p) annotation (Line(
       points={{-80,0},{-67,0}},
@@ -80,40 +86,20 @@ equation
       points={{67,0},{80,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwFault.p, line_3_5.p) annotation (Line(points={{5,-19.1667},{5,0},{13,0}}, color={0,0,255}));
-  connect(order2.p, bus2.p) annotation (Line(points={{99,0.04964},{89.5,0.04964},{89.5,0},{80,0}}, color={0,0,255}));
-  connect(order2.vf, order2.vf0) annotation (Line(points={{120,5},{122,5},{122,14},{118,14},{118,11}}, color={0,0,127}));
-  connect(order2.pm, order2.pm0) annotation (Line(points={{120,-5},{122,-5},{122,-6},{122,-14},{118,-14},{118,-11}}, color={0,0,127}));
+  connect(pwFault.p, line_3_5.p)
+    annotation (Line(points={{5,-19.1667},{5,0},{13,0}}, color={0,0,255}));
+  connect(order2.p, bus2.p) annotation (Line(points={{99,0.04964},{89.5,0.04964},
+          {89.5,0},{80,0}}, color={0,0,255}));
+  connect(order2.vf, order2.vf0) annotation (Line(points={{120,5},{122,5},{122,
+          14},{118,14},{118,11}}, color={0,0,127}));
+  connect(order2.pm, order2.pm0) annotation (Line(points={{120,-5},{122,-5},{
+          122,-6},{122,-14},{118,-14},{118,-11}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,80}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,80}})),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
 
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-", info="<html>
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,
+            80}})),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

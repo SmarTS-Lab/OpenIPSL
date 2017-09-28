@@ -121,12 +121,18 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
         origin={-110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=-0.00243 "Voltage angle (deg.)" annotation (Dialog(group="Power flow data"));
-  parameter Real P_0=0.0160000000000082 "Active power (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real Q_0=0.030527374471207 "Reactive power (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=100 "System base power(MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real V_b=400 "Voltage rating kV" annotation (Dialog(group="Power flow data"));
+  parameter Real V_0=1 "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0=-0.00243 "Voltage angle (deg.)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real P_0=0.0160000000000082 "Active power (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Q_0=0.030527374471207 "Reactive power (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=100 "System base power(MVA)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real V_b=400 "Voltage rating kV"
+    annotation (Dialog(group="Power flow data"));
   parameter Real Pnom=10 "Nominal Power (MVA)";
   parameter Real fn=50 "Frequency rating (Hz)";
   parameter Real rho=1.225 "Air Density (kg/m^3)";
@@ -193,18 +199,21 @@ equation
   connect(mechaBlk1.omega_m, elecDyn.omega_m) annotation (Line(
       visible=true,
       origin={40.3844,-34.0062},
-      points={{38.0025,14.0062},{42.6281,14.0062},{42.6281,0.9937},{44.6156,0.9937},{37.6281,0.9937},{-100.3844,0.9937},{-100.3844,-15.9937},{-95.3719,-15.9938}},
+      points={{38.0025,14.0062},{42.6281,14.0062},{42.6281,0.9937},{44.6156,
+          0.9937},{37.6281,0.9937},{-100.3844,0.9937},{-100.3844,-15.9937},{-95.3719,
+          -15.9938}},
       color={0,0,127}));
   connect(elecDyn.Vbus, elecCircuit.Vbus) annotation (Line(
       visible=true,
       origin={-2.65,-55.6607},
-      points={{-52.3375,15.6607},{-59.3375,15.6607},{-59.3375,-16.3215},{58.675,-16.3215},{58.675,0.6607},{53.6625,0.6607}},
+      points={{-52.3375,15.6607},{-59.3375,15.6607},{-59.3375,-16.3215},{58.675,
+          -16.3215},{58.675,0.6607},{53.6625,0.6607}},
       color={0,0,127}));
-  connect(elecDyn.idr, elecCircuit.idr)
-    annotation (Line(
+  connect(elecDyn.idr, elecCircuit.idr) annotation (Line(
       visible=true,
       origin={14.0062,-41.6194},
       points={{-52.9937,1.6194},{15.9938,1.6194},{15.9938,-1.61938},{21.0063,-1.61938}},
+
       color={0,0,127}));
   connect(elecDyn.iqr, elecCircuit.iqr) annotation (Line(
       visible=true,
@@ -214,40 +223,43 @@ equation
   connect(mechaBlk1.omega_m, elecCircuit.omega_m) annotation (Line(
       visible=true,
       origin={59.8363,-27.8632},
-      points={{18.5506,7.8632},{23.1762,7.8632},{23.1762,-5.2097},{-66.8238,-5.2097},{-66.8238,-29.1368},{-24.8238,-29.1368}},
+      points={{18.5506,7.8632},{23.1762,7.8632},{23.1762,-5.2097},{-66.8238,-5.2097},
+          {-66.8238,-29.1368},{-24.8238,-29.1368}},
       color={0,0,127}));
   connect(mechaBlk1.Tel, elecCircuit.Tel) annotation (Line(
       visible=true,
       origin={56.3623,-35.0},
       points={{6.0246,10},{-0.3373,10},{-0.3373,-10},{-5.3498,-10}},
       color={0,0,127}));
-  connect(pitchControl1.theta_p, windBlk1.theta_p)
-    annotation (Line(
+  connect(pitchControl1.theta_p, windBlk1.theta_p) annotation (Line(
       visible=true,
       origin={-6.6693,-15.1284},
       points={{-32.3182,0.1284},{9.1019,0.1284},{9.1019,-0.12848},{14.1144,-0.12848}},
+
       color={0,0,127}));
-  connect(windBlk1.Tm, mechaBlk1.Tm)
-    annotation (Line(
+  connect(windBlk1.Tm, mechaBlk1.Tm) annotation (Line(
       visible=true,
       origin={50.1452,-14.8679},
       points={{-26.7001,0.13217},{7.2292,0.13217},{7.2292,-0.1321},{12.2417,-0.1321}},
+
       color={0,0,127}));
   connect(mechaBlk1.omega_m, windBlk1.omega_m) annotation (Line(
       visible=true,
       origin={42.916,-25.0816},
-      points={{35.4709,5.0816},{40.4834,5.0816},{40.4834,-7.9309},{-40.4834,-7.9309},{-40.4834,2.84934},{-35.4709,2.84934}},
+      points={{35.4709,5.0816},{40.4834,5.0816},{40.4834,-7.9309},{-40.4834,-7.9309},
+          {-40.4834,2.84934},{-35.4709,2.84934}},
       color={0,0,127}));
-  connect(Wind_Speed, windBlk1.vw)
-    annotation (Line(
+  connect(Wind_Speed, windBlk1.vw) annotation (Line(
       visible=true,
       origin={-24.9193,-5.1166},
       points={{-87.0682,2.7238},{27.3519,2.7238},{27.3519,-2.72393},{32.3644,-2.72393}},
+
       color={0,0,127}));
   connect(pitchControl1.omega_m, mechaBlk1.omega_m) annotation (Line(
       visible=true,
       origin={25.5125,-22.0292},
-      points={{-80.5,7.0292},{-85.5125,7.0292},{-85.5125,-11.0437},{57.5,-11.0437},{57.5,2.0292},{52.8744,2.0292}},
+      points={{-80.5,7.0292},{-85.5125,7.0292},{-85.5125,-11.0437},{57.5,-11.0437},
+          {57.5,2.0292},{52.8744,2.0292}},
       color={0,0,127}));
   annotation (
     Icon(coordinateSystem(
@@ -286,31 +298,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end PSAT_WT;

@@ -48,5 +48,5 @@ equation
           extent={{-60,-20},{60,20}},
           lineColor={170,0,0},
           textString=DynamicSelect("Angle", String(angle, significantDigits=3)
-               + "°"))}));
+               + "°"))}), Documentation);
 end Bus;

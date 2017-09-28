@@ -4,7 +4,8 @@ model DCBusBar
   parameter Real UdcN=1 "kV Nominal DC voltage";
   parameter Real C=0.0172 "s of capacitor on DC busbar";
   parameter Real Udc0=700 "Initial dc voltage";
-  Modelica.Blocks.Interfaces.RealInput Pac "voltage array" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Pac "voltage array" annotation (
+      Placement(
       visible=true,
       transformation(
         origin={-168.2447,-30.0},
@@ -14,7 +15,8 @@ model DCBusBar
         origin={-120.0,60.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Ipv "current array" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Ipv "current array" annotation (
+      Placement(
       visible=true,
       transformation(
         origin={-168.0962,67.0723},
@@ -34,12 +36,13 @@ model DCBusBar
         origin={110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true,
+        transformation(
         origin={-50.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=876, uMin=0)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=876, uMin=0) annotation (
+      Placement(visible=true, transformation(
         origin={100.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -94,24 +97,27 @@ equation
   connect(add1.u2, calcurrent1.yo) annotation (Line(
       visible=true,
       origin={-77.3245,-22.3845},
-      points={{15.3245,16.3845},{12.3245,16.3845},{12.3245,-10.8292},{-19.9867,-10.8292},{-19.9867,-11.1106}},
+      points={{15.3245,16.3845},{12.3245,16.3845},{12.3245,-10.8292},{-19.9867,
+          -10.8292},{-19.9867,-11.1106}},
       color={0,0,127}));
-  connect(Ipv, add1.u1)
-    annotation (Line(
+  connect(Ipv, add1.u1) annotation (Line(
       visible=true,
       origin={-90.0241,36.5361},
-      points={{-78.0721,30.5362},{25.0241,30.5362},{25.0241,-30.5361},{28.0241,-30.5361}},
+      points={{-78.0721,30.5362},{25.0241,30.5362},{25.0241,-30.5361},{28.0241,
+          -30.5361}},
       color={0,0,127}));
   connect(calcurrent1.udc, Vdc) annotation (Line(
       visible=true,
       origin={-30.4173,-44.0824},
-      points={{-89.8939,5.5873},{-106.096,5.5873},{-106.096,-23.7522},{-104.583,-23.7522},{-104.583,-25.9176},{160.417,-25.9176},{160.417,44.0824},{190.417,44.0824}},
+      points={{-89.8939,5.5873},{-106.096,5.5873},{-106.096,-23.7522},{-104.583,
+          -23.7522},{-104.583,-25.9176},{160.417,-25.9176},{160.417,44.0824},{
+          190.417,44.0824}},
       color={0,0,127}));
-  connect(Pac, calcurrent1.yi)
-    annotation (Line(
+  connect(Pac, calcurrent1.yi) annotation (Line(
       visible=true,
       origin={-133.7946,-29.7476},
-      points={{-34.4501,-0.2524},{10.4834,-0.2524},{10.4834,0.2525},{13.4834,0.2525}},
+      points={{-34.4501,-0.2524},{10.4834,-0.2524},{10.4834,0.2525},{13.4834,
+          0.2525}},
       color={0,0,127}));
   annotation (
     Icon(coordinateSystem(
@@ -164,31 +170,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end DCBusBar;

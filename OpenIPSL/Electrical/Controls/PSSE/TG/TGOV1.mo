@@ -1,13 +1,17 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model TGOV1 "Steam Turbine-Governor"
-  Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
-    annotation (Placement(transformation(extent={{-85,-20},{-75,-8}}), iconTransformation(extent={{-80,20},{-60,40}})));
+  Modelica.Blocks.Interfaces.RealInput SPEED
+    "Machine speed deviation from nominal (pu)" annotation (Placement(
+        transformation(extent={{-85,-20},{-75,-8}}), iconTransformation(extent=
+            {{-80,20},{-60,40}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     T1=T_2,
     T2=T_3,
     K=1,
     y_start=P0) annotation (Placement(transformation(extent={{30,7},{40,17}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{80,-6},{90,6}}), iconTransformation(extent={{80,-10},{100,10}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
+    annotation (Placement(transformation(extent={{80,-6},{90,6}}),
+        iconTransformation(extent={{80,-10},{100,10}})));
   parameter Real R "Governor gain, 1/R (pu)";
   parameter Real D_t "(pu)";
   parameter Real T_1 "Control time constant (s)";
@@ -15,12 +19,19 @@ model TGOV1 "Steam Turbine-Governor"
   parameter Real T_3 "Control time constant (s)";
   parameter Real V_MAX "Max. valve position (p.u. on M_b)";
   parameter Real V_MIN "min. valve position (p.u. on M_b)";
-  Modelica.Blocks.Math.Gain imGain9(k=1/R) annotation (Placement(transformation(extent={{-30,7},{-20,17}})));
-  Modelica.Blocks.Math.Gain imGain1(k=D_t) annotation (Placement(transformation(extent={{-16,-19},{-6,-9}})));
-  Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(extent={{-50,7},{-40,17}})));
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{60,-5},{70,5}})));
-  Modelica.Blocks.Sources.Constant REF(k=P_REF) annotation (Placement(transformation(extent={{-80,10},{-70,20}})));
-  Modelica.Blocks.Interfaces.RealInput PMECH0 annotation (Placement(transformation(extent={{-85,-41},{-75,-31}}), iconTransformation(extent={{-80,-40},{-60,-20}})));
+  Modelica.Blocks.Math.Gain imGain9(k=1/R)
+    annotation (Placement(transformation(extent={{-30,7},{-20,17}})));
+  Modelica.Blocks.Math.Gain imGain1(k=D_t)
+    annotation (Placement(transformation(extent={{-16,-19},{-6,-9}})));
+  Modelica.Blocks.Math.Add add(k2=-1)
+    annotation (Placement(transformation(extent={{-50,7},{-40,17}})));
+  Modelica.Blocks.Math.Add add1(k2=-1)
+    annotation (Placement(transformation(extent={{60,-5},{70,5}})));
+  Modelica.Blocks.Sources.Constant REF(k=P_REF)
+    annotation (Placement(transformation(extent={{-80,10},{-70,20}})));
+  Modelica.Blocks.Interfaces.RealInput PMECH0 annotation (Placement(
+        transformation(extent={{-85,-41},{-75,-31}}), iconTransformation(extent
+          ={{-80,-40},{-60,-20}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=1,
     T=T_1,
@@ -34,15 +45,24 @@ initial equation
   P0 = PMECH0;
   P_REF = P0*R;
 equation
-  connect(add.y, imGain9.u) annotation (Line(points={{-39.5,12},{-31,12}}, color={0,0,127}));
-  connect(add.u2, SPEED) annotation (Line(points={{-51,9},{-60,9},{-60,-14},{-80,-14}}, color={0,0,127}));
-  connect(imGain1.u, SPEED) annotation (Line(points={{-17,-14},{-80,-14}}, color={0,0,127}));
-  connect(add1.y, PMECH) annotation (Line(points={{70.5,0},{85,0}}, color={0,0,127}));
-  connect(imLeadLag.y, add1.u1) annotation (Line(points={{40.5,12},{54,12},{54,3},{59,3}}, color={0,0,127}));
-  connect(imGain1.y, add1.u2) annotation (Line(points={{-5.5,-14},{54,-14},{54,-3},{59,-3}}, color={0,0,127}));
-  connect(REF.y, add.u1) annotation (Line(points={{-69.5,15},{-51,15}}, color={0,0,127}));
-  connect(simpleLagLim.u, imGain9.y) annotation (Line(points={{-1,12},{-10,12},{-19.5,12}}, color={0,0,127}));
-  connect(simpleLagLim.y, imLeadLag.u) annotation (Line(points={{10.5,12},{29,12}}, color={0,0,127}));
+  connect(add.y, imGain9.u)
+    annotation (Line(points={{-39.5,12},{-31,12}}, color={0,0,127}));
+  connect(add.u2, SPEED) annotation (Line(points={{-51,9},{-60,9},{-60,-14},{-80,
+          -14}}, color={0,0,127}));
+  connect(imGain1.u, SPEED)
+    annotation (Line(points={{-17,-14},{-80,-14}}, color={0,0,127}));
+  connect(add1.y, PMECH)
+    annotation (Line(points={{70.5,0},{85,0}}, color={0,0,127}));
+  connect(imLeadLag.y, add1.u1) annotation (Line(points={{40.5,12},{54,12},{54,
+          3},{59,3}}, color={0,0,127}));
+  connect(imGain1.y, add1.u2) annotation (Line(points={{-5.5,-14},{54,-14},{54,
+          -3},{59,-3}}, color={0,0,127}));
+  connect(REF.y, add.u1)
+    annotation (Line(points={{-69.5,15},{-51,15}}, color={0,0,127}));
+  connect(simpleLagLim.u, imGain9.y)
+    annotation (Line(points={{-1,12},{-10,12},{-19.5,12}}, color={0,0,127}));
+  connect(simpleLagLim.y, imLeadLag.u)
+    annotation (Line(points={{10.5,12},{29,12}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-80,-60},{80,60}},
@@ -51,7 +71,8 @@ equation
     Icon(coordinateSystem(
         extent={{-80,-60},{80,60}},
         preserveAspectRatio=false,
-        grid={1,1}), graphics={Rectangle(extent={{-80,60},{80,-60}}, lineColor={0,0,255}),Text(
+        grid={1,1}), graphics={Rectangle(extent={{-80,60},{80,-60}}, lineColor=
+          {0,0,255}),Text(
           extent={{-64,36},{-19,25}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
@@ -68,31 +89,5 @@ equation
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString="PMECH0")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end TGOV1;

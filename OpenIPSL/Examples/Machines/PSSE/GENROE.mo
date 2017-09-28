@@ -23,16 +23,14 @@ model GENROE
     Q_0=5.416582,
     Xppq=0.2,
     R_a=0,
-    Xpp=0.2) annotation (Placement(transformation(extent={{-100,-20},
-            {-60,20}})));
+    Xpp=0.2)
+    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,
-          10},{-112,10},{-112,26},{-54,26},{-54,10},{-58,10}}, color=
-          {0,0,127}));
-  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-104,-10},
-          {-112,-10},{-112,-30},{-54,-30},{-54,-10},{-58,-10}}, color
-        ={0,0,127}));
-  connect(gENROE.p, GEN1.p) annotation (Line(points={{-60,0},{-60,0},
-          {-40,0}}, color={0,0,255}));
-
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-112,
+          10},{-112,26},{-54,26},{-54,10},{-58,10}}, color={0,0,127}));
+  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-104,-10},{-112,-10},
+          {-112,-30},{-54,-30},{-54,-10},{-58,-10}}, color={0,0,127}));
+  connect(gENROE.p, GEN1.p)
+    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+  annotation (Documentation);
 end GENROE;

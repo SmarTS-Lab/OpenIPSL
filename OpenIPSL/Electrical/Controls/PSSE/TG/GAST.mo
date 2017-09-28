@@ -9,9 +9,14 @@ model GAST "Gas Turbine-Governor"
   parameter Real V_MAX "Upper limits of input signals";
   parameter Real V_MIN "Lower limits of input signals";
   parameter Real D_turb "Gain value multiplied with input signal";
-  Modelica.Blocks.Interfaces.RealInput SPEED "Machine electrical power (pu on M_b)" annotation (Placement(transformation(extent={{-120,30},{-80,70}}), iconTransformation(extent={{-120,30},{-80,70}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  Modelica.Blocks.Math.Add add(k1=-1) annotation (Placement(transformation(extent={{-78,-22},{-68,-12}})));
+  Modelica.Blocks.Interfaces.RealInput SPEED
+    "Machine electrical power (pu on M_b)" annotation (Placement(transformation(
+          extent={{-120,30},{-80,70}}), iconTransformation(extent={{-120,30},{-80,
+            70}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Math.Add add(k1=-1)
+    annotation (Placement(transformation(extent={{-78,-22},{-68,-12}})));
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
@@ -20,8 +25,10 @@ model GAST "Gas Turbine-Governor"
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-37,-47})));
-  Modelica.Blocks.Math.Add add3(k1=-1) annotation (Placement(transformation(extent={{80,-5},{90,5}})));
-  Modelica.Blocks.Math.Gain gDturb(k=D_turb) annotation (Placement(transformation(extent={{-54,55},{-44,65}})));
+  Modelica.Blocks.Math.Add add3(k1=-1)
+    annotation (Placement(transformation(extent={{80,-5},{90,5}})));
+  Modelica.Blocks.Math.Gain gDturb(k=D_turb)
+    annotation (Placement(transformation(extent={{-54,55},{-44,65}})));
   Modelica.Blocks.Math.Gain gKt(k=K_T) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
@@ -30,14 +37,20 @@ model GAST "Gas Turbine-Governor"
         extent={{-5,-5},{5,5}},
         rotation=270,
         origin={-85,33})));
-  Modelica.Blocks.Interfaces.RealInput Reference "Speed reference (pu)" annotation (Placement(transformation(extent={{-120,-70},{-80,-30}}), iconTransformation(extent={{-120,-70},{-80,-30}})));
-  NonElectrical.Logical.LV_GATE lV_Gate annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={T_2,1}) annotation (Placement(transformation(extent={{48,-6},{60,6}})));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction2(a={T_3,1}) annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Reference "Speed reference (pu)"
+    annotation (Placement(transformation(extent={{-120,-70},{-80,-30}}),
+        iconTransformation(extent={{-120,-70},{-80,-30}})));
+  NonElectrical.Logical.LV_GATE lV_Gate
+    annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
+  Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={T_2,1})
+    annotation (Placement(transformation(extent={{48,-6},{60,6}})));
+  Modelica.Blocks.Continuous.TransferFunction transferFunction2(a={T_3,1})
+    annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={54,-40})));
-  Modelica.Blocks.Sources.Constant const(k=AT) annotation (Placement(transformation(extent={{-48,-94},{-28,-74}})));
+  Modelica.Blocks.Sources.Constant const(k=AT)
+    annotation (Placement(transformation(extent={{-48,-94},{-28,-74}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     outMax=V_MAX,
     outMin=V_MIN,
@@ -97,13 +110,20 @@ equation
       points={{-47.25,-5},{-47.25,-25.3},{-42.5,-25.3},{-42.5,-47}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(const.y, add2.u1) annotation (Line(points={{-27,-84},{-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
-  connect(add1.u1, add2.u1) annotation (Line(points={{31,-50},{38,-50},{38,-84},{-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
-  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},{-17.5,0},{-27.25,0}}, color={0,0,127}));
-  connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},{26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));
+  connect(const.y, add2.u1) annotation (Line(points={{-27,-84},{-8,-84},{-8,-50},
+          {-31,-50}}, color={0,0,127}));
+  connect(add1.u1, add2.u1) annotation (Line(points={{31,-50},{38,-50},{38,-84},
+          {-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
+  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},
+          {-17.5,0},{-27.25,0}}, color={0,0,127}));
+  connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},
+          {26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
+          lineColor={0,0,255}),Text(
           extent={{-90,56},{-30,44}},
           lineColor={0,0,255},
           textString="SPEED"),Text(
@@ -116,31 +136,5 @@ equation
           extent={{-40,18},{36,-18}},
           lineColor={0,0,255},
           textString="GAST")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end GAST;

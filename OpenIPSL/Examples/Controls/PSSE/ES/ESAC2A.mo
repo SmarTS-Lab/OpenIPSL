@@ -22,24 +22,30 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7) annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
+    Tpq0=0.7)
+    annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
+        transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,
         origin={-42,-26})));
-  Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  Modelica.Blocks.Sources.Constant const4(k=1000) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant const2(k=0)
+    annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
+  Modelica.Blocks.Sources.Constant const4(k=1000) annotation (Placement(
+        transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-41,-45})));
-  Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(
+        transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-41,-61})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESAC2A eSAC2A(
     V_RMAX=4,
     V_RMIN=-4,
-    V_FEMAX=10) annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
+    V_FEMAX=10)
+    annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
 equation
   connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
       points={{-74,-61.0556},{-60,-61.0556},{-60,-9.5},{-78.88,-9.5}},
@@ -66,36 +72,14 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
-      points={{-78.88,-3.5},{-74,-3.5},{-74,20},{-110,20},{-110,8.5},{-107.72,8.5}},
+      points={{-78.88,-3.5},{-74,-3.5},{-74,20},{-110,20},{-110,8.5},{-107.72,
+          8.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-44.4444},{-150,-44.4444},{-150,-6.5},{-107.72,-6.5}}, color={0,0,127}));
-  connect(generator.p, GEN1.p) annotation (Line(points={{-78.6,1},{-58.3,1},{-58.3,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-44.4444},
+          {-150,-44.4444},{-150,-6.5},{-107.72,-6.5}}, color={0,0,127}));
+  connect(generator.p, GEN1.p) annotation (Line(points={{-78.6,1},{-58.3,1},{-58.3,
+          0},{-40,0}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})), Documentation);
 end ESAC2A;

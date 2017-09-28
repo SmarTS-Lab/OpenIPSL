@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
 model PVarray
-  Modelica.Blocks.Interfaces.RealInput V1(start=Vmp) "Voltage" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput V1(start=Vmp) "Voltage" annotation (
+      Placement(
       visible=true,
       transformation(
         origin={-168.2602,-0.0},
@@ -10,9 +11,11 @@ model PVarray
         origin={-120.0,70.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  parameter Real Vt=(2*Vmp - Vocref)*(Iscref - Imp)/(Imp + (Iscref - Imp)*log((Iscref - Imp)/Iscref));
+  parameter Real Vt=(2*Vmp - Vocref)*(Iscref - Imp)/(Imp + (Iscref - Imp)*log((
+      Iscref - Imp)/Iscref));
   parameter Real Rs=(Vt*log((Iscref - Imp)/Iscref) + Vocref - Vmp)/Imp;
-  Modelica.Blocks.Interfaces.RealInput E(start=Estc) "Irradiance" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput E(start=Estc) "Irradiance" annotation (
+      Placement(
       visible=true,
       transformation(
         origin={-170.0,80.0},
@@ -22,7 +25,8 @@ model PVarray
         origin={-120.0,0.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput T(start=Tstc) "Temperature" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput T(start=Tstc) "Temperature" annotation (
+      Placement(
       visible=true,
       transformation(
         origin={-168.0185,40.0},
@@ -34,8 +38,10 @@ model PVarray
         rotation=0)));
   parameter Real Imp=1;
   parameter Real Vmp=1;
-  parameter Real Iscref=1 "Module short-circuit current reference at reference temp and irradiance";
-  parameter Real Vocref=1 "Module open-circuit voltage reference at reference temp and irradiance";
+  parameter Real Iscref=1
+    "Module short-circuit current reference at reference temp and irradiance";
+  parameter Real Vocref=1
+    "Module open-circuit voltage reference at reference temp and irradiance";
   parameter Real Kv=1 "temperature correction factor for the voltage";
   parameter Real Ki=1 "temperature correction factor for the current";
   parameter Real Tstc=1 "Temperature at the standard test conditions";
@@ -146,31 +152,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end PVarray;

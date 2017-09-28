@@ -1,5 +1,4 @@
 within IEEE14.Generation_Groups;
-
 model GroupBus6
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=3.146313160164693 "Initial field voltage";
@@ -20,7 +19,8 @@ model GroupBus6
         extent={{-23,-17},{23,17}},
         rotation=0,
         origin={7,27})));
-  Modelica.Blocks.Sources.Constant const4(k=1.228917822125829) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant const4(k=1.228917822125829) annotation (
+      Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-60,40})));
@@ -49,17 +49,26 @@ model GroupBus6
         extent={{-23,-20},{23,20}},
         rotation=0,
         origin={69,2})));
-  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
+            {100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-  connect(const4.y, aVR4TypeII1.vref) annotation (Line(points={{-42.4,40},{-26,40},{-26,36.18},{-11.4,36.18}}, color={0,0,127}));
-  connect(aVR4TypeII1.vf, Syn5.vf) annotation (Line(points={{26.55,31.42},{32,31.42},{32,12},{46,12}}, color={0,0,127}));
-  connect(Syn5.v, aVR4TypeII1.v) annotation (Line(points={{94.3,8},{98,8},{98,-66},{-28,-66},{-28,25.3},{-11.4,25.3}}, color={0,0,127}));
-  connect(Syn5.p, pwPin) annotation (Line(points={{94.3,2.09928},{113.15,2.09928},{113.15,0},{110,0}}, color={0,0,255}));
-  connect(Syn5.pm0, Syn5.pm) annotation (Line(points={{50.6,-20},{50.6,-26},{28,-26},{28,-8},{46,-8}}, color={0,0,127}));
+  connect(const4.y, aVR4TypeII1.vref) annotation (Line(points={{-42.4,40},{-26,
+          40},{-26,36.18},{-11.4,36.18}}, color={0,0,127}));
+  connect(aVR4TypeII1.vf, Syn5.vf) annotation (Line(points={{26.55,31.42},{32,
+          31.42},{32,12},{46,12}}, color={0,0,127}));
+  connect(Syn5.v, aVR4TypeII1.v) annotation (Line(points={{94.3,8},{98,8},{98,-66},
+          {-28,-66},{-28,25.3},{-11.4,25.3}}, color={0,0,127}));
+  connect(Syn5.p, pwPin) annotation (Line(points={{94.3,2.09928},{113.15,
+          2.09928},{113.15,0},{110,0}}, color={0,0,255}));
+  connect(Syn5.pm0, Syn5.pm) annotation (Line(points={{50.6,-20},{50.6,-26},{28,
+          -26},{28,-8},{46,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-92,78},{100,-74}}, lineColor={28,108,200}),Line(points={{-20,26},{6,-6},{24,20}},
-          color={28,108,200}),Line(points={{-36,2},{-20,26}}, color={28,108,200}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={Ellipse(extent={{-92,78},{100,-74}}, lineColor={
+          28,108,200}),Line(points={{-20,26},{6,-6},{24,20}}, color={28,108,200}),
+          Line(points={{-36,2},{-20,26}}, color={28,108,200}),Text(
           extent={{-24,-22},{14,-54}},
           lineColor={28,108,200},
           textString="Gen4 6")}),
@@ -95,31 +104,5 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the OpenIPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end GroupBus6;

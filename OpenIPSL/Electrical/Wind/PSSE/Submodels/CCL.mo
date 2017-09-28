@@ -5,33 +5,37 @@ model CCL
   parameter Real ImaxTD "Converter current limit";
   parameter Real Iphl "Hard active current limit";
   parameter Real Iqhl "Hard reactive current limit";
-  Modelica.Blocks.Interfaces.RealOutput IQmin annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmin annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-12,96}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-50,110})));
-  Modelica.Blocks.Interfaces.RealInput IpCMD annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput IpCMD annotation (Placement(
+        transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
         origin={134,-20}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={50,-100})));
-  Modelica.Blocks.Interfaces.RealInput IqCMD
-    annotation (Placement(transformation(extent={{-146,-30},{-120,-4}}), iconTransformation(
+  Modelica.Blocks.Interfaces.RealInput IqCMD annotation (Placement(
+        transformation(extent={{-146,-30},{-120,-4}}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={50,100})));
-  Modelica.Blocks.Interfaces.RealOutput IQmax annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmax annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={16,96}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,110})));
-  Modelica.Blocks.Interfaces.RealOutput IPmax annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IPmax annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-2,-84}), iconTransformation(
@@ -42,11 +46,13 @@ model CCL
         extent={{-6,6},{6,-6}},
         rotation=270,
         origin={-52,-38})));
-  Modelica.Blocks.Sources.Constant const1(k=Iphl) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant const1(k=Iphl) annotation (Placement(
+        transformation(
         extent={{-7,-7},{7,7}},
         rotation=270,
         origin={-9,-19})));
-  Modelica.Blocks.Sources.Constant const2(k=Iqhl) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant const2(k=Iqhl) annotation (Placement(
+        transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-19,23})));
@@ -82,7 +88,8 @@ model CCL
         rotation=0,
         origin={-100,0})));
 protected
-  Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(
+        transformation(
         extent={{-20,-20},{20,20}},
         rotation=270,
         origin={0,40}), iconTransformation(
@@ -90,56 +97,64 @@ protected
         rotation=0,
         origin={-101,5})));
 protected
-  Modelica.Blocks.Interfaces.RealOutput IQmin1 annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmin1 annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={44,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-52,42})));
-  Modelica.Blocks.Interfaces.RealOutput IQmax1 annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmax1 annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={74,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={2,42})));
-  Modelica.Blocks.Interfaces.RealOutput IQmin2 annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmin2 annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-82,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-52,42})));
-  Modelica.Blocks.Interfaces.RealOutput IQmax2 annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmax2 annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-52,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={2,42})));
-  Modelica.Blocks.Interfaces.RealOutput IPmax1 annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IPmax1 annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={44,-68}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-50,-40})));
-  Modelica.Blocks.Interfaces.RealOutput IPmax2 annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput IPmax2 annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-52,-68}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-50,-40})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain1 "sqrt(ImaxTD^2 - IpCMD^2)" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain1
+    "sqrt(ImaxTD^2 - IpCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
         origin={76,-18}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain2 "sqrt(ImaxTD^2 - IqCMD^2)" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain2
+    "sqrt(ImaxTD^2 - IqCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-90,-20}), iconTransformation(
@@ -232,7 +247,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
@@ -240,7 +256,8 @@ equation
           extent={{-76,58},{82,18}},
           lineColor={244,125,35},
           textString="Converter Current Limit
-"),Text(  extent={{-86,6},{-46,-6}},
+    "),Text(
+          extent={{-86,6},{-46,-6}},
           lineColor={28,108,200},
           textString="VTERM"),Text(
           extent={{-70,96},{-30,84}},
@@ -258,7 +275,8 @@ equation
           extent={{-72,-76},{-32,-88}},
           lineColor={28,108,200},
           textString="I_Pmax")}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics={Rectangle(
           extent={{-112,96},{-34,-86}},
           lineColor={255,0,0},
           pattern=LinePattern.Dot,
@@ -276,31 +294,5 @@ equation
           extent={{-112,-42},{-58,-58}},
           lineColor={0,0,255},
           textString="sqrt(ImaxTD^2 - IqCMD^2)")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end CCL;

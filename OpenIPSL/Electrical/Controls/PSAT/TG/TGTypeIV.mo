@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
-model TGTypeIV "Hydro Turbine (Linear model) and Governor (Standard model with PI controller)- control scheme Type 4"
+model TGTypeIV
+  "Hydro Turbine (Linear model) and Governor (Standard model with PI controller)- control scheme Type 4"
   parameter Real wref "Reference speed (pu)";
   parameter Real Tg "Pilot valve droop (pu)";
   parameter Real gmax "Maximum gate opening (pu)";
@@ -20,19 +21,27 @@ model TGTypeIV "Hydro Turbine (Linear model) and Governor (Standard model with P
   parameter Real Pref;
   Real deltaG "Gate position variation (pu)";
   Real v "Gate opening rate (pu)";
-  Modelica.Blocks.Continuous.Integrator integrator3(initType=Modelica.Blocks.Types.Init.NoInit, y_start=int3) annotation (Placement(transformation(extent={{34,56},{46,68}})));
-  Modelica.Blocks.Math.Gain gain(k=1/(Tg*Tp)) annotation (Placement(transformation(extent={{-50,56},{-38,68}})));
+  Modelica.Blocks.Continuous.Integrator integrator3(initType=Modelica.Blocks.Types.Init.NoInit,
+      y_start=int3)
+    annotation (Placement(transformation(extent={{34,56},{46,68}})));
+  Modelica.Blocks.Math.Gain gain(k=1/(Tg*Tp))
+    annotation (Placement(transformation(extent={{-50,56},{-38,68}})));
   Modelica.Blocks.Math.Gain gain1(k=1/Tp) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-16,42})));
-  Modelica.Blocks.Continuous.Integrator integrator2(initType=Modelica.Blocks.Types.Init.NoInit, y_start=int2) annotation (Placement(transformation(extent={{-18,56},{-6,68}})));
-  Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(extent={{-34,56},{-22,68}})));
-  Modelica.Blocks.Math.Gain gain2(k=delta + sigma) annotation (Placement(transformation(
+  Modelica.Blocks.Continuous.Integrator integrator2(initType=Modelica.Blocks.Types.Init.NoInit,
+      y_start=int2)
+    annotation (Placement(transformation(extent={{-18,56},{-6,68}})));
+  Modelica.Blocks.Math.Feedback feedback
+    annotation (Placement(transformation(extent={{-34,56},{-22,68}})));
+  Modelica.Blocks.Math.Gain gain2(k=delta + sigma) annotation (Placement(
+        transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-4,82})));
-  Modelica.Blocks.Math.Gain gain3(k=delta/Tr) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain3(k=delta/Tr) annotation (Placement(
+        transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-44,26})));
@@ -40,8 +49,8 @@ model TGTypeIV "Hydro Turbine (Linear model) and Governor (Standard model with P
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={24,8})));
-  Modelica.Blocks.Continuous.Integrator integrator4(initType=Modelica.Blocks.Types.Init.NoInit, y_start=int4)
-    annotation (Placement(transformation(
+  Modelica.Blocks.Continuous.Integrator integrator4(initType=Modelica.Blocks.Types.Init.NoInit,
+      y_start=int4) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={22,26})));
@@ -49,12 +58,13 @@ model TGTypeIV "Hydro Turbine (Linear model) and Governor (Standard model with P
         extent={{-6,6},{6,-6}},
         rotation=180,
         origin={48,26})));
-  Modelica.Blocks.Math.Gain gain4(k=1/(a11*Tw)) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain4(k=1/(a11*Tw)) annotation (Placement(
+        transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={138,8})));
-  Modelica.Blocks.Continuous.Integrator integrator5(initType=Modelica.Blocks.Types.Init.NoInit, y_start=int5)
-    annotation (Placement(transformation(
+  Modelica.Blocks.Continuous.Integrator integrator5(initType=Modelica.Blocks.Types.Init.NoInit,
+      y_start=int5) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={142,28})));
@@ -62,23 +72,39 @@ model TGTypeIV "Hydro Turbine (Linear model) and Governor (Standard model with P
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={124,28})));
-  Modelica.Blocks.Math.Gain G6(k=(a11*a23 - a13*a21)/a11) annotation (Placement(transformation(extent={{116,56},{128,68}})));
-  Modelica.Blocks.Math.Gain gain7(k=a13*a21/(a11*a11*Tw)) annotation (Placement(transformation(extent={{104,22},{116,34}})));
-  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (Placement(transformation(extent={{-12,4},{-2,14}}), iconTransformation(extent={{-136,-20},{-100,16}})));
-  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation (Placement(transformation(extent={{78,-8},{90,4}}), iconTransformation(extent={{100,-10},{120,10}})));
-  Modelica.Blocks.Continuous.Integrator integrator1(initType=Modelica.Blocks.Types.Init.NoInit, y_start=int1) annotation (Placement(transformation(extent={{-122,56},{-110,68}})));
-  Modelica.Blocks.Math.Gain gain6(k=Ki) annotation (Placement(transformation(extent={{-144,56},{-132,68}})));
-  Modelica.Blocks.Math.Gain gain8(k=Kp) annotation (Placement(transformation(extent={{-144,82},{-132,94}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vmax, uMin=vmin) annotation (Placement(transformation(extent={{12,56},{24,68}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=gmax, uMin=gmin) annotation (Placement(transformation(extent={{56,56},{68,68}})));
-  Modelica.Blocks.Math.Add add1(k1=+1, k2=-1) annotation (Placement(transformation(extent={{-172,54},{-158,68}})));
-  Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{-102,60},{-88,74}})));
+  Modelica.Blocks.Math.Gain G6(k=(a11*a23 - a13*a21)/a11)
+    annotation (Placement(transformation(extent={{116,56},{128,68}})));
+  Modelica.Blocks.Math.Gain gain7(k=a13*a21/(a11*a11*Tw))
+    annotation (Placement(transformation(extent={{104,22},{116,34}})));
+  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
+      Placement(transformation(extent={{-12,4},{-2,14}}), iconTransformation(
+          extent={{-136,-20},{-100,16}})));
+  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation (
+      Placement(transformation(extent={{78,-8},{90,4}}), iconTransformation(
+          extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Continuous.Integrator integrator1(initType=Modelica.Blocks.Types.Init.NoInit,
+      y_start=int1)
+    annotation (Placement(transformation(extent={{-122,56},{-110,68}})));
+  Modelica.Blocks.Math.Gain gain6(k=Ki)
+    annotation (Placement(transformation(extent={{-144,56},{-132,68}})));
+  Modelica.Blocks.Math.Gain gain8(k=Kp)
+    annotation (Placement(transformation(extent={{-144,82},{-132,94}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vmax, uMin=vmin)
+    annotation (Placement(transformation(extent={{12,56},{24,68}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=gmax, uMin=gmin)
+    annotation (Placement(transformation(extent={{56,56},{68,68}})));
+  Modelica.Blocks.Math.Add add1(k1=+1, k2=-1)
+    annotation (Placement(transformation(extent={{-172,54},{-158,68}})));
+  Modelica.Blocks.Math.Add add2
+    annotation (Placement(transformation(extent={{-102,60},{-88,74}})));
   Modelica.Blocks.Math.Add3 add3_1(
     k1=-1,
     k2=+1,
     k3=+1) annotation (Placement(transformation(extent={{-72,60},{-58,74}})));
-  Modelica.Blocks.Math.Add add3 annotation (Placement(transformation(extent={{172,52},{184,64}})));
-  Modelica.Blocks.Sources.Constant const1(k=wref) annotation (Placement(transformation(extent={{-210,60},{-198,72}})));
+  Modelica.Blocks.Math.Add add3
+    annotation (Placement(transformation(extent={{172,52},{184,64}})));
+  Modelica.Blocks.Sources.Constant const1(k=wref)
+    annotation (Placement(transformation(extent={{-210,60},{-198,72}})));
 protected
   parameter Real int1=sigma*Pref;
   parameter Real int2=0;
@@ -216,9 +242,12 @@ equation
       points={{68.6,62},{92,62},{92,28},{102.8,28}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(const1.y, add1.u1) annotation (Line(points={{-197.4,66},{-173.4,66},{-173.4,65.2}}, color={0,0,127}));
+  connect(const1.y, add1.u1) annotation (Line(points={{-197.4,66},{-173.4,66},{
+          -173.4,65.2}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
+          lineColor={0,0,255}),Text(
           extent={{-34,20},{32,-18}},
           lineColor={0,0,255},
           textString="TGTypeIV"),Text(
@@ -242,7 +271,8 @@ equation
           fontName="Arial",
           textString="Wref",
           lineColor={0,0,0})}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -262,31 +292,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end TGTypeIV;

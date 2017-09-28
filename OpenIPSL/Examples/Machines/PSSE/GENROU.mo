@@ -23,8 +23,7 @@ model GENROU
     Xppq=0.2,
     R_a=0,
     Xpp=0.2,
-    H=4.28) annotation (Placement(transformation(extent={{-100,-20},{
-            -60,20}})));
+    H=4.28) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
 equation
   connect(gENROU.PMECH, gENROU.PMECH0) annotation (Line(points={{-104,10},{-112,
           10},{-112,26},{-54,26},{-54,10},{-58,10}}, color={0,0,127}));
@@ -32,4 +31,5 @@ equation
           {-112,-30},{-54,-30},{-54,-10},{-58,-10}}, color={0,0,127}));
   connect(gENROU.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+  annotation (Documentation);
 end GENROU;

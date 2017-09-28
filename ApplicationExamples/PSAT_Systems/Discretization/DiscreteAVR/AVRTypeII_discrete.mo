@@ -1,5 +1,4 @@
 within PSAT_Systems.Discretization.DiscreteAVR;
-
 model AVRTypeII_discrete "Discretized PSAT Exciter Type 2"
   parameter Real vrmin=0 "Minimum regulator voltage, p.u";
   parameter Real vrmax=7.57 "Maximum regulator voltage, p.u";
@@ -24,11 +23,16 @@ model AVRTypeII_discrete "Discretized PSAT Exciter Type 2"
   Real vr1(start=vr10, fixed=true);
   Real vr2(start=vr20, fixed=true);
   Real vr;
-  Modelica.Blocks.Interfaces.RealInput vref "Connector of clocked, Real input signal"
-    annotation (Placement(transformation(extent={{-140,40},{-100,80}}, rotation=0), iconTransformation(extent={{-140,40},{-100,80}})));
-  Modelica.Blocks.Interfaces.RealInput v "Connector of clocked, Real input signal"
-    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}}, rotation=0), iconTransformation(extent={{-140,-80},{-100,-40}})));
-  Modelica.Blocks.Interfaces.RealOutput vf(start=vf0) annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Interfaces.RealInput vref
+    "Connector of clocked, Real input signal" annotation (Placement(
+        transformation(extent={{-140,40},{-100,80}}, rotation=0),
+        iconTransformation(extent={{-140,40},{-100,80}})));
+  Modelica.Blocks.Interfaces.RealInput v
+    "Connector of clocked, Real input signal" annotation (Placement(
+        transformation(extent={{-140,-80},{-100,-40}}, rotation=0),
+        iconTransformation(extent={{-140,-80},{-100,-40}})));
+  Modelica.Blocks.Interfaces.RealOutput vf(start=vf0)
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 equation
   vm = previous(vm) + (v - vm)/Tr;
   vr1 = previous(vr1) + (Ka*(vref - vm - vr2 - vf*Kf/Tf) - vr1)/Ta;
@@ -43,8 +47,10 @@ equation
   vf = previous(vf) - (vf*(Ke + Se) - vr)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
@@ -62,33 +68,7 @@ equation
           lineColor={0,0,255},
           textString="Discrete
 AVR2")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-", info="<html>
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

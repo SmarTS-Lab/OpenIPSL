@@ -1,15 +1,18 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
 model AVRTypeII "PSAT AVR Type 2"
-  Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage (pu)" annotation (Placement(transformation(extent={{-140,
-            -80},{-100,-40}}),                                                                                                                iconTransformation(extent={{-140,
-            -80},{-100,-40}})));
-  Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (Placement(transformation(extent={{100,-10},
-            {120,10}}),                                                                                                         iconTransformation(extent={{100,-10},
-            {120,10}})));
-  Modelica.Blocks.Interfaces.RealInput vref "Reference generator terminal voltage (pu)"
-    annotation (Placement(transformation(extent={{-140,40},{-100,80}}),
-                                                                      iconTransformation(extent={{-140,40},
-            {-100,80}})));
+  import Modelica.Constants.e;
+  Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage (pu)"
+    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}}),
+        iconTransformation(extent={{-140,-80},{-100,-40}})));
+  Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (
+      Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=0,
+        origin={110,-10}), iconTransformation(extent={{100,-20},{140,20}})));
+  Modelica.Blocks.Interfaces.RealInput vref
+    "Reference generator terminal voltage (pu)" annotation (Placement(
+        transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent
+          ={{-140,40},{-100,80}})));
   parameter Real vrmin "Minimum regulator voltage (pu)";
   parameter Real vrmax "Maximum regulator voltage (p.u..)";
   parameter Real Ka "Amplifier gain (p.u/p.u)";
@@ -22,48 +25,87 @@ model AVRTypeII "PSAT AVR Type 2"
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
   parameter Real v0=1 "Initialization";
-  parameter Real vref0 "Initialization";
-  parameter Real vf0 "Initialization";
+
   Real Se "Saturated field voltage (pu)";
   Real vm(start=vm0, fixed=true);
 protected
+  parameter Real vf00(fixed=false) "Initialization";
+  parameter Real Ce0=Ke*vf00 + Ae*e^(Be*abs(vf00));
+  parameter Real vref00=Ce0/Ka + v0 "Initialization";
   parameter Real vm0=v0 "Initialization";
-  parameter Real vr10=Ka*(vref0 - vm0 - vr20 - vf0*Kf/Tf) "Initialization";
-  parameter Real vr20=-vf0*Kf/Tf "Initialization";
-  parameter Real e=Modelica.Constants.e;
-  Real u;
+  parameter Real vr10=Ka*(vref00 - vm0 - vr20 - vf00*Kf/Tf) "Initialization";
+  parameter Real vr20=-vf00*Kf/Tf "Initialization";
   Real vr2(start=vr20, fixed=true);
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=Ka,
     T=Ta,
     y_start=vr10,
     outMax=vrmax,
-    outMin=vrmin) annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
+    outMin=vrmin)
+    annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
+public
+  Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 (pu)"
+    annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={0,110}), iconTransformation(
+        extent={{-20,-20},{20,20}},
+        rotation=90,
+        origin={0,120})));
+  Modelica.Blocks.Interfaces.RealInput vf0
+    "Reference generator terminal voltage (pu)" annotation (Placement(
+        transformation(
+        extent={{-20,-20},{20,20}},
+        rotation=90,
+        origin={0,-112}), iconTransformation(
+        extent={{-20,-20},{20,20}},
+        rotation=90,
+        origin={0,-120})));
+initial algorithm
+  vf00 := vf0;
+algorithm
+  vref0 := vref00;
 equation
   der(vm) = (v - vm)/Tr;
-  u = vref - vm - vr2 - vf*Kf/Tf;
   der(vr2) = -(vf*Kf/Tf + vr2)/Tf;
-  simpleLagLim.u = u;
+  simpleLagLim.u = vref - vm - vr2 - vf*Kf/Tf;
   der(vf) = -(vf*(Ke + Se) - simpleLagLim.y)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-    Diagram(coordinateSystem(                           extent={{-100,-100},{100,100}},
-          initialScale=0.1)),
-    Icon(coordinateSystem(                           extent={{-100,-100},{100,100}},
-          initialScale=0.1),                                                          graphics={Rectangle(extent={{
-              -100,100},{100,-100}},                                                                                                  lineColor={0,0,255}),Text(
+    Diagram(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        initialScale=0.1,
+        preserveAspectRatio=false)),
+    Icon(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        initialScale=0.1,
+        preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{-90,80},{-50,40}},
           lineColor={0,0,255},
-          textString="vref"),Text(
+          textString="vref"),
+        Text(
           extent={{-100,-40},{-60,-70}},
           lineColor={0,0,255},
-          textString="v"),Text(
+          textString="v"),
+        Text(
           extent={{60,20},{100,-20}},
           lineColor={0,0,255},
-          textString="vf"),Text(
+          textString="vf"),
+        Text(
           extent={{-40,40},{40,-40}},
           lineColor={0,0,255},
-          textString="AVR2")}),
+          textString="AVR2"),
+        Text(
+          extent={{16,-60},{56,-100}},
+          lineColor={0,0,255},
+          textString="vf0
+"),
+        Text(
+          extent={{2,102},{42,62}},
+          lineColor={0,0,255},
+          textString="vref0")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -83,31 +125,6 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+</html>"));
 
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
 end AVRTypeII;

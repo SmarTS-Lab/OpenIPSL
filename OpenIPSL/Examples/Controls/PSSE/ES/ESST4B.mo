@@ -22,22 +22,29 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7) annotation (Placement(transformation(extent={{-120,-16},{-92,18}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
+    Tpq0=0.7)
+    annotation (Placement(transformation(extent={{-120,-16},{-92,18}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
+        transformation(
         extent={{-4,-4},{4,4}},
         rotation=0,
         origin={-98,-52})));
-  Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  Modelica.Blocks.Sources.Constant const5(k=0) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant const2(k=0)
+    annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
+  Modelica.Blocks.Sources.Constant const5(k=0) annotation (Placement(
+        transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-97,-37})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.ESST4B eSST4B annotation (Placement(transformation(
+  OpenIPSL.Electrical.Controls.PSSE.ES.ESST4B eSST4B annotation (Placement(
+        transformation(
         extent={{-14,-10},{14,10}},
         rotation=0,
         origin={-64,-4})));
-  inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
-  Modelica.Blocks.Sources.Constant const1(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-40,-48},{-56,-32}})));
+  inner Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+  Modelica.Blocks.Sources.Constant const1(k=Modelica.Constants.inf)
+    annotation (Placement(transformation(extent={{-40,-48},{-56,-32}})));
 equation
   connect(generator.p, eSST4B.Gen_terminal) annotation (Line(
       points={{-90.6,1},{-66.7,1},{-66.7,4.33333},{-75.9,4.33333}},
@@ -56,48 +63,28 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
-      points={{-90.88,-4.1},{-70,-4.1},{-70,22},{-102,22},{-102,9.5},{-119.72,9.5}},
+      points={{-90.88,-4.1},{-70,-4.1},{-70,22},{-102,22},{-102,9.5},{-119.72,
+          9.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSST4B.EFD, generator.EFD) annotation (Line(
-      points={{-49.3,-2.88889},{-48,-2.88889},{-48,-24},{-124,-24},{-124,-7.5},{-119.72,-7.5}},
+      points={{-49.3,-2.88889},{-48,-2.88889},{-48,-24},{-124,-24},{-124,-7.5},
+          {-119.72,-7.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, eSST4B.XADIFD) annotation (Line(
       points={{-90.88,-14.3},{-90.88,-20},{-94,-20},{-94,-6.77778},{-78,-6.77778}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PELEC, eSST4B.ECOMP) annotation (Line(
       points={{-90.88,-7.5},{-68,-7.5},{-68,-2.88889},{-78,-2.88889}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-52.1,4.33333},{-47.5818,4.33333},{-47.5818,0},{-40,0}}, color={0,0,255}));
-  connect(const1.y, eSST4B.VOEL) annotation (Line(points={{-56.8,-40},{-68.9,-40},{-68.9,-14}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-52.1,4.33333},{-47.5818,
+          4.33333},{-47.5818,0},{-40,0}}, color={0,0,255}));
+  connect(const1.y, eSST4B.VOEL) annotation (Line(points={{-56.8,-40},{-68.9,-40},
+          {-68.9,-14}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})), Documentation);
 end ESST4B;
