@@ -4,7 +4,8 @@ model lim_exc_s1
   parameter Real xiqmin=1;
   parameter Real xiqmax=1;
   parameter Real typpe=1;
-  Modelica.Blocks.Interfaces.RealInput Efd "Input: Excitation voltage" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Efd "Input: Excitation voltage"
+    annotation (Placement(
       transformation(
         extent={{-140.0,40.0},{-100.0,80.0}},
         rotation=0,
@@ -14,7 +15,8 @@ model lim_exc_s1
         origin={0.0,0.0},
         extent={{-140.0,40.0},{-100.0,80.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Vt "Terminal Voltage" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Vt "Terminal Voltage" annotation (
+      Placement(
       transformation(
         extent={{-140.0,-80.0},{-100.0,-40.0}},
         rotation=0,
@@ -24,8 +26,11 @@ model lim_exc_s1
         origin={0.0,0.0},
         extent={{-140.0,-80.0},{-100.0,-40.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput y "Output: saturated excitation voltage" annotation (Placement(transformation(extent={{100,-10},{120,10}}, rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Vref "Reference Voltage " annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput y
+    "Output: saturated excitation voltage" annotation (Placement(transformation(
+          extent={{100,-10},{120,10}}, rotation=0)));
+  Modelica.Blocks.Interfaces.RealInput Vref "Reference Voltage " annotation (
+      Placement(
       visible=true,
       transformation(
         origin={0.0,-58.0},
@@ -37,7 +42,8 @@ model lim_exc_s1
         rotation=0)));
 equation
   if typpe == 1 then
-    if Efd >= Vt + xiqmax and Vref >= 0 or Efd <= Vt + xiqmin and Vref <= 0 then
+    if Efd >= Vt + xiqmax and Vref >= 0 or Efd <= Vt + xiqmin and Vref <= 0
+         then
       y = 0;
     else
       y = Vref;
@@ -71,33 +77,8 @@ Block has two continuous Real input vectors u1 and u2 and one
 continuous Real output vector y.
 All vectors have the same number of elements.
 </p>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"), Diagram(coordinateSystem(
+</html>"),
+    Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
         grid={2,2}), graphics));

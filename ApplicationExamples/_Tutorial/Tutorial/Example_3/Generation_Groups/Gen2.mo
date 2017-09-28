@@ -9,4 +9,5 @@ model Gen2
       Td10=5.89,
       Tq10=0.6,
       M=6.02));
+  annotation (Documentation);
 end Gen2;

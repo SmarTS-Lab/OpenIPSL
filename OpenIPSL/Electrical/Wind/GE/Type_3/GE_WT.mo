@@ -21,14 +21,19 @@ model GE_WT
   parameter Real pirat=10.0 "maximum variation rate of pitch angle";
   parameter Real pwmax=1.12 "Maximal power taken from the wind";
   parameter Real pwmin=0.1 "Minimal power taken from the wind";
-  parameter Real pwrat=0.45 "maximum variation rate of power taken from the wind";
+  parameter Real pwrat=0.45
+    "maximum variation rate of power taken from the wind";
   parameter Real Kptrq=3.0 "Gain Torque Controller";
   parameter Real Kitrq=0.6 "Gain of integrator of Torque Controller";
   parameter Real Tpc=0.05 "Time Constant Torque controller";
-  parameter Real KQi=0.1 "Gain constant of first PI in DFIG electrical control model";
-  parameter Real KVi=40 "Gain constant of second PI in DFIG electrical control model";
-  parameter Real xiqmax=0.4 "Up saturation of second PI in DFIG electrical control model";
-  parameter Real xiqmin=-0.5 "Down saturation of second PI in DFIG electrical control model";
+  parameter Real KQi=0.1
+    "Gain constant of first PI in DFIG electrical control model";
+  parameter Real KVi=40
+    "Gain constant of second PI in DFIG electrical control model";
+  parameter Real xiqmax=0.4
+    "Up saturation of second PI in DFIG electrical control model";
+  parameter Real xiqmin=-0.5
+    "Down saturation of second PI in DFIG electrical control model";
   parameter Real Kpllp=30;
   parameter Real Xpp=0.8;
   parameter Real qmax=0.312;
@@ -134,13 +139,17 @@ protected
     Real[5, 1] lambda_vec;
     Real[5, 1] theta_vec;
     Real[5, 1] prod;
-    parameter Real[5, 5] coeff=[-0.41909, 0.21808, -0.012406, -0.00013365, 0.000011524; -0.067606, 0.060405, -0.013934, 0.0010683, -0.000023895; 0.015727, -0.010996, 0.0021495, -0.00014855,
-        0.0000027937; -0.00086018, 0.00057051, -0.00010479, 0.0000059924, -0.000000089194; 0.000014788, -0.0000094839, 0.0000016167, -0.000000071535, 0.00000000049686];
+    parameter Real[5, 5] coeff=[-0.41909, 0.21808, -0.012406, -0.00013365,
+        0.000011524; -0.067606, 0.060405, -0.013934, 0.0010683, -0.000023895;
+        0.015727, -0.010996, 0.0021495, -0.00014855, 0.0000027937; -0.00086018,
+        0.00057051, -0.00010479, 0.0000059924, -0.000000089194; 0.000014788, -0.0000094839,
+        0.0000016167, -0.000000071535, 0.00000000049686];
   algorithm
     lambda_vec := [1; lambda; lambda^2; lambda^3; lambda^4];
     theta_vec := [1; theta; theta^2; theta^3; theta^4];
     prod := coeff*lambda_vec;
-    cp := prod[1, 1]*theta_vec[1, 1] + prod[2, 1]*theta_vec[2, 1] + prod[3, 1]*theta_vec[3, 1] + prod[4, 1]*theta_vec[4, 1] + prod[5, 1]*theta_vec[5, 1];
+    cp := prod[1, 1]*theta_vec[1, 1] + prod[2, 1]*theta_vec[2, 1] + prod[3, 1]*
+      theta_vec[3, 1] + prod[4, 1]*theta_vec[4, 1] + prod[5, 1]*theta_vec[5, 1];
   end cp_init;
 
   function get_Vw
@@ -173,11 +182,13 @@ protected
         lambdaOUT := lambda;
         stop := true;
       else
-        if abs(new_err - last_err) < abs(new_err + last_err) or last_err > 90000.0 then
+        if abs(new_err - last_err) < abs(new_err + last_err) or last_err >
+            90000.0 then
           last_err := new_err;
           lambda_sav := lambda;
         else
-          lambdaOUT := lambda_sav - last_err*(lambda - lambda_sav)/(new_err - last_err);
+          lambdaOUT := lambda_sav - last_err*(lambda - lambda_sav)/(new_err -
+            last_err);
           cp := cp_init(lambdaOUT, 0.0);
           Vw := wndtge_kl*genbc_k_speed/lambdaOUT;
           stop := true;
@@ -219,11 +230,13 @@ protected
         thetaOUT := theta;
         stop := true;
       else
-        if abs(new_err - last_err) < abs(new_err + last_err) or last_err > 90000 then
+        if abs(new_err - last_err) < abs(new_err + last_err) or last_err >
+            90000 then
           last_err := new_err;
           theta_sav := theta;
         else
-          thetaOUT := theta_sav - last_err*(theta - theta_sav)/(new_err - last_err);
+          thetaOUT := theta_sav - last_err*(theta - theta_sav)/(new_err -
+            last_err);
           cp := cp_init(lambda, thetaOUT);
           Vw1 := wndtge_kl*genbc_k_speed/lambda;
           stop := true;
@@ -232,8 +245,8 @@ protected
     end while;
   end get_theta;
 
-  Modelica.Blocks.Sources.Constant const(k=qgen)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Constant const(k=qgen) annotation (Placement(visible=
+          true, transformation(
         origin={-44.2929,70.7071},
         extent={{-4.2929,-4.2929},{4.2929,4.2929}},
         rotation=0)));
@@ -285,7 +298,8 @@ initial algorithm
   ge_x2_0 := _Ang0;
   ex_x0_0 := _V0;
   ex_x1_0 := ge_x0_0;
-  wndtge_spd0 := if pmech < 0.75 then ((-0.67*pmech) + 1.42)*pmech + 0.51 else genbc_k_speed;
+  wndtge_spd0 := if pmech < 0.75 then ((-0.67*pmech) + 1.42)*pmech + 0.51 else
+    genbc_k_speed;
   theta := pimin;
   lambda := get_Vw(
     pimin,
@@ -325,7 +339,8 @@ initial algorithm
   wt_x3_0 := 0.0;
   wt_x5_0 := genbc_k_speed;
   wt_x6_0 := 0.0;
-  wt_x7_0 := if masflg == 3 then pmech/genbc_k_speed/(wndtge_wn*wndtge_wn*wndtge_m1)*(wndtge_q11 - wndtge_q21) else 0.0;
+  wt_x7_0 := if masflg == 3 then pmech/genbc_k_speed/(wndtge_wn*wndtge_wn*
+    wndtge_m1)*(wndtge_q11 - wndtge_q21) else 0.0;
   wt_x8_0 := 0.0;
   wt_x9_0 := 0.0;
   wndtge_ang0 := -pmech/(Ktg*genbc_k_speed);
@@ -337,19 +352,20 @@ equation
   connect(generator1.Pgen, turbine_Model1.Pelec) annotation (Line(
       visible=true,
       origin={-0.1428,48.5266},
-      points={{53.1428,9.4734},{60.1428,9.4734},{60.1428,-8.085},{-59.4803,-8.085},{-59.4803,-1.38836},{-54.4677,-1.38836}},
+      points={{53.1428,9.4734},{60.1428,9.4734},{60.1428,-8.085},{-59.4803,-8.085},
+          {-59.4803,-1.38836},{-54.4677,-1.38836}},
       color={0,0,127}));
-  connect(Wind_Speed, turbine_Model1.Wind_Speed)
-    annotation (Line(
+  connect(Wind_Speed, turbine_Model1.Wind_Speed) annotation (Line(
       visible=true,
       origin={-62.4641,60.0491},
-      points={{-17.5359,-0.0491},{4.8411,-0.0491},{4.8411,0.04919},{7.8536,0.04919}},
+      points={{-17.5359,-0.0491},{4.8411,-0.0491},{4.8411,0.04919},{7.8536,
+          0.04919}},
       color={0,0,127}));
-  connect(turbine_Model1.Pord, electrical_Control1.Pord)
-    annotation (Line(
+  connect(turbine_Model1.Pord, electrical_Control1.Pord) annotation (Line(
       visible=true,
       origin={-25.6589,60.1024},
-      points={{-12.9516,-0.01612},{2.6464,-0.01612},{2.6464,0.0162},{7.6589,0.0162}},
+      points={{-12.9516,-0.01612},{2.6464,-0.01612},{2.6464,0.0162},{7.6589,
+          0.0162}},
       color={0,0,127}));
   connect(const.y, electrical_Control1.Qord) annotation (Line(
       visible=true,
@@ -358,28 +374,29 @@ equation
       color={0,0,127}));
   P = generator1.Pgen*GEN_base/SYS_base;
   Q = generator1.Qgen*GEN_base/SYS_base;
-  connect(electrical_Control1.Ipcmd, generator1.Ipcmd)
-    annotation (Line(
+  connect(electrical_Control1.Ipcmd, generator1.Ipcmd) annotation (Line(
       visible=true,
       origin={24.7437,65.082},
-      points={{-26.7437,-0.08283},{7.2437,-0.08283},{7.2437,0.0828},{12.2563,0.0828}},
+      points={{-26.7437,-0.08283},{7.2437,-0.08283},{7.2437,0.0828},{12.2563,
+          0.0828}},
       color={0,0,127}));
-  connect(electrical_Control1.Efd, generator1.Efd)
-    annotation (Line(
+  connect(electrical_Control1.Efd, generator1.Efd) annotation (Line(
       visible=true,
       origin={24.7437,56.5275},
       points={{-26.7437,2.18767},{7.2437,2.18767},{7.2437,-2.18767},{12.2563,-2.18767}},
+
       color={0,0,127}));
-  connect(generator1.Qgen, electrical_Control1.Qgen)
-    annotation (Line(
+  connect(generator1.Qgen, electrical_Control1.Qgen) annotation (Line(
       visible=true,
       origin={26.605,49.271},
-      points={{26.395,4.729},{31.4075,4.729},{31.4075,-4.8235},{-44.605,-4.8235},{-44.605,0.189}},
+      points={{26.395,4.729},{31.4075,4.729},{31.4075,-4.8235},{-44.605,-4.8235},
+          {-44.605,0.189}},
       color={0,0,127}));
   connect(generator1.Vt, electrical_Control1.Vterm) annotation (Line(
       visible=true,
       origin={17.5,65.2993},
-      points={{35.5,2.12607},{40.5125,2.12607},{40.5125,7.7132},{-40.5125,7.7132},{-40.5125,-9.8393},{-35.5,-9.8393}},
+      points={{35.5,2.12607},{40.5125,2.12607},{40.5125,7.7132},{-40.5125,
+          7.7132},{-40.5125,-9.8393},{-35.5,-9.8393}},
       color={0,0,127}));
   annotation (
     Icon(coordinateSystem(
@@ -425,31 +442,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end GE_WT;

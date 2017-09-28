@@ -286,7 +286,8 @@ model IEEE_14_Buses
         extent={{-14,-14},{14,14}},
         rotation=180,
         origin={119,-38})));
-  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio(
+  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio
+    tWTransformerWithFixedTapRatio(
     fn=60,
     kT=69/13.8,
     R=0,
@@ -297,7 +298,8 @@ model IEEE_14_Buses
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={-18,-6})));
-  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio1(
+  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio
+    tWTransformerWithFixedTapRatio1(
     fn=60,
     kT=69/13.8,
     R=0,
@@ -308,7 +310,8 @@ model IEEE_14_Buses
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={44,16})));
-  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio tWTransformerWithFixedTapRatio2(
+  OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio
+    tWTransformerWithFixedTapRatio2(
     fn=60,
     kT=69/13.8,
     R=0,
@@ -324,19 +327,22 @@ model IEEE_14_Buses
     V_0=1.045,
     P_0=0.400000000000003*SysData.S_b,
     Q_0=0.948601533828267*SysData.S_b,
-    angle_0=-0.135677901384789*180/pi) annotation (Placement(transformation(extent={{-84,-160},{-64,-140}})));
+    angle_0=-0.135677901384789*180/pi)
+    annotation (Placement(transformation(extent={{-84,-160},{-64,-140}})));
   IEEE14.Generation_Groups.GroupBus3 groupBus3_1(
     V_b=69,
     V_0=1.01,
     P_0=0.000000000000001*SysData.S_b,
     Q_0=0.597360399382514*SysData.S_b,
-    angle_0=-0.332124297307116*180/pi) annotation (Placement(transformation(extent={{12,-162},{34,-142}})));
+    angle_0=-0.332124297307116*180/pi)
+    annotation (Placement(transformation(extent={{12,-162},{34,-142}})));
   IEEE14.Generation_Groups.GroupBus6 groupBus6_1(
     V_b=13.8,
     V_0=1.07,
     P_0=0.000000000000039*SysData.S_b,
     angle_0=-0.378890344088088*180/pi,
-    Q_0=0.444329439389711*SysData.S_b) annotation (Placement(transformation(extent={{-96,-10},{-76,10}})));
+    Q_0=0.444329439389711*SysData.S_b)
+    annotation (Placement(transformation(extent={{-96,-10},{-76,10}})));
   IEEE14.Generation_Groups.GroupBus8 groupBus8_1(
     V_b=18,
     V_0=1.09,
@@ -353,8 +359,10 @@ model IEEE_14_Buses
     B=0.0374/2,
     t2=25,
     t1=20,
-    opening=2) annotation (Placement(transformation(extent={{-2,-82},{16,-69}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-194,126},{-128,154}})));
+    opening=2)
+    annotation (Placement(transformation(extent={{-2,-82},{16,-69}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
+    annotation (Placement(transformation(extent={{-194,126},{-128,154}})));
   OpenIPSL.Electrical.Events.PwFault pwFault2(
     X=1e-5,
     t1=1,
@@ -367,7 +375,8 @@ model IEEE_14_Buses
     V_b=69,
     V_0=1.06,
     P_0=3.520304175896794*SysData.S_b,
-    Q_0=-0.281968127428245*SysData.S_b) annotation (Placement(transformation(extent={{-178,-16},{-158,4}})));
+    Q_0=-0.281968127428245*SysData.S_b)
+    annotation (Placement(transformation(extent={{-178,-16},{-158,4}})));
 equation
   connect(B12.p, L11.p) annotation (Line(
       points={{-128,68},{-128,62},{-96,62},{-88,62},{-88,68.5}},
@@ -417,53 +426,100 @@ equation
       points={{-64,110},{-64,73.5}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(L16.n, B14.p) annotation (Line(points={{104,86.5833},{104,88.05},{104,108}}, color={0,0,255}));
-  connect(B9.p, lPQ9.p) annotation (Line(points={{86,44},{86,44},{86,50},{138,50},{138,55.4}}, color={0,0,255}));
-  connect(B11.p, lPQ10.p) annotation (Line(points={{16,40},{16,40},{16,50},{31.4,50}}, color={0,0,255}));
-  connect(B11.p, L14.p) annotation (Line(points={{16,40},{16,56.5833},{16,56.5833}}, color={0,0,255}));
-  connect(lPQ4.p, B6.p) annotation (Line(points={{-39,66.4},{-39,44.75},{-47,44.75},{-47,19}}, color={0,0,255}));
-  connect(B6.p, L12.p) annotation (Line(points={{-47,19},{-47,40.5},{-64,40.5},{-64,52.5}}, color={0,0,255}));
-  connect(lPQ7.p, B12.p) annotation (Line(points={{-143,92.4},{-143,82},{-128,82},{-128,68}}, color={0,0,255}));
-  connect(B13.p, L11.n) annotation (Line(points={{-64,110},{-64,98},{-88,98},{-88,89.5}}, color={0,0,255}));
-  connect(L10.n, B12.p) annotation (Line(points={{-128,57.5},{-128,62},{-128,68}}, color={0,0,255}));
-  connect(B3.p, lPQ12.p) annotation (Line(points={{44,-122},{44,-122},{44,-106},{44,-107.6},{71,-107.6}}, color={0,0,255}));
-  connect(B3.p, L5.p) annotation (Line(points={{44,-122},{44,-108},{23.5,-108}}, color={0,0,255}));
-  connect(B7.p, L2.p) annotation (Line(points={{91,1},{91,9.5},{91.5,9.5},{91.5,8.41667}}, color={0,0,255}));
-  connect(B9.p, L2.n) annotation (Line(points={{86,44},{91.5,44},{91.5,30.5833}}, color={0,0,255}));
-  connect(B2.p, lPQ3.p) annotation (Line(points={{-60,-128},{-60,-124.6},{-28,-124.6}}, color={0,0,255}));
-  connect(B2.p, L1.p) annotation (Line(points={{-60,-128},{-60,-108},{-60,-87.5},{-60,-87.5}}, color={0,0,255}));
-  connect(L1.n, B5.p) annotation (Line(points={{-60,-66.5},{-60,-59.8},{-24,-59.8},{-24,-40}}, color={0,0,255}));
-  connect(B1.p, L7.p) annotation (Line(points={{-135,-31},{-135,-53},{-95.6667,-53}}, color={0,0,255}));
-  connect(B5.p, L7.n) annotation (Line(points={{-24,-40},{-24,-53},{-72.3333,-53}}, color={0,0,255}));
-  connect(B7.p, twoWindingTransformer.n) annotation (Line(points={{91,1},{91,-38},{103.6,-38}}, color={0,0,255}));
-  connect(twoWindingTransformer.p, B8.p) annotation (Line(points={{134.4,-38},{149,-38},{149,-37}}, color={0,0,255}));
-  connect(B4.p, tWTransformerWithFixedTapRatio1.p) annotation (Line(points={{32,-32},{32,-32},{32,-4},{32,0.6},{44,0.6}}, color={0,0,255}));
-  connect(B5.p, tWTransformerWithFixedTapRatio.p) annotation (Line(points={{-24,-40},{-22,-40},{-22,-21.4},{-18,-21.4}}, color={0,0,255}));
-  connect(B6.p, tWTransformerWithFixedTapRatio.n) annotation (Line(points={{-47,19},{-47,12},{-18,12},{-18,9.4}}, color={0,0,255}));
-  connect(groupBus2_1.pwPin, B2.p) annotation (Line(points={{-63,-150},{-60,-150},{-60,-128}}, color={0,0,255}));
-  connect(groupBus3_1.pwPin, B3.p) annotation (Line(points={{35,-152.2},{44,-152.2},{44,-122}}, color={0,0,255}));
-  connect(groupBus6_1.pwPin, B6.p) annotation (Line(points={{-75,0},{-47,0},{-47,19}}, color={0,0,255}));
-  connect(B4.p, tWTransformerWithFixedTapRatio2.p) annotation (Line(points={{32,-32},{36,-32},{36,-18},{48.6,-18}}, color={0,0,255}));
-  connect(B7.p, tWTransformerWithFixedTapRatio2.n) annotation (Line(points={{91,1},{91,-8.5},{79.4,-8.5},{79.4,-18}}, color={0,0,255}));
-  connect(B9.p, tWTransformerWithFixedTapRatio1.n) annotation (Line(points={{86,44},{86,44},{86,36},{86,34},{44,34},{44,31.4}}, color={0,0,255}));
-  connect(B6.p, L13.p) annotation (Line(points={{-47,19},{-47,28},{-14,28},{-14,26},{-13.6667,26}}, color={0,0,255}));
-  connect(L13.n, B11.p) annotation (Line(points={{9.66667,26},{16,26},{16,40}}, color={0,0,255}));
-  connect(B5.p, L8.p) annotation (Line(points={{-24,-40},{-24,-40},{-14,-40},{-14,-53},{-9.66667,-53}}, color={0,0,255}));
-  connect(B8.p, groupBus8_1.pwPin) annotation (Line(points={{149,-37},{159.5,-37},{159.5,-36.2},{160.8,-36.2}}, color={0,0,255}));
-  connect(L15.p, B9.p) annotation (Line(points={{52,58.5},{86,58.5},{86,44}}, color={0,0,255}));
-  connect(B9.p, L16.p) annotation (Line(points={{86,44},{86,44},{86,56},{96,56},{104,56},{104,64.4167}}, color={0,0,255}));
-  connect(B14.p, L17.p) annotation (Line(points={{104,108},{104,118},{74,118},{74,97.9998},{55.5833,97.9998}}, color={0,0,255}));
-  connect(B13.p, L17.n) annotation (Line(points={{-64,110},{-64,97.9998},{33.4167,97.9998}}, color={0,0,255}));
-  connect(lPQ8.p, B10.p) annotation (Line(points={{17,124.4},{17,114.65},{16,114.65},{16,110}}, color={0,0,255}));
-  connect(lPQ6.p, L17.p) annotation (Line(points={{104,125.4},{104,118},{74,118},{74,97.9998},{55.5833,97.9998}}, color={0,0,255}));
-  connect(B2.p, pwLinewithOpeningSending.p) annotation (Line(points={{-60,-128},{-60,-128},{-60,-100},{-60,-106},{-14,-106},{-14,-76},{-3.5,-76},{-3.5,-75.5}}, color={0,0,255}));
-  connect(B4.p, pwLinewithOpeningSending.n) annotation (Line(points={{32,-32},{32,-32},{32,-76},{17.5,-76},{17.5,-75.5}}, color={0,0,255}));
-  connect(L5.n, B2.p) annotation (Line(points={{2.50002,-108},{-6,-108},{-6,-134},{-60,-134},{-60,-128}}, color={0,0,255}));
-  connect(L3.n, B2.p) annotation (Line(points={{-135,-107.667},{-135,-134},{-60,-134},{-60,-128}}, color={0,0,255}));
-  connect(groupBus1_1.pwPin, B1.p) annotation (Line(points={{-157,-6.2},{-135,-6.2},{-135,-31}}, color={0,0,255}));
-  connect(B4.p, pwFault2.p) annotation (Line(points={{32,-32},{32,-28},{73,-28},{73,-42.8333}}, color={0,0,255}));
+  connect(L16.n, B14.p) annotation (Line(points={{104,86.5833},{104,88.05},{104,
+          108}}, color={0,0,255}));
+  connect(B9.p, lPQ9.p) annotation (Line(points={{86,44},{86,44},{86,50},{138,
+          50},{138,55.4}}, color={0,0,255}));
+  connect(B11.p, lPQ10.p) annotation (Line(points={{16,40},{16,40},{16,50},{
+          31.4,50}}, color={0,0,255}));
+  connect(B11.p, L14.p) annotation (Line(points={{16,40},{16,56.5833},{16,
+          56.5833}}, color={0,0,255}));
+  connect(lPQ4.p, B6.p) annotation (Line(points={{-39,66.4},{-39,44.75},{-47,
+          44.75},{-47,19}}, color={0,0,255}));
+  connect(B6.p, L12.p) annotation (Line(points={{-47,19},{-47,40.5},{-64,40.5},
+          {-64,52.5}}, color={0,0,255}));
+  connect(lPQ7.p, B12.p) annotation (Line(points={{-143,92.4},{-143,82},{-128,
+          82},{-128,68}}, color={0,0,255}));
+  connect(B13.p, L11.n) annotation (Line(points={{-64,110},{-64,98},{-88,98},{-88,
+          89.5}}, color={0,0,255}));
+  connect(L10.n, B12.p) annotation (Line(points={{-128,57.5},{-128,62},{-128,68}},
+        color={0,0,255}));
+  connect(B3.p, lPQ12.p) annotation (Line(points={{44,-122},{44,-122},{44,-106},
+          {44,-107.6},{71,-107.6}}, color={0,0,255}));
+  connect(B3.p, L5.p) annotation (Line(points={{44,-122},{44,-108},{23.5,-108}},
+        color={0,0,255}));
+  connect(B7.p, L2.p) annotation (Line(points={{91,1},{91,9.5},{91.5,9.5},{91.5,
+          8.41667}}, color={0,0,255}));
+  connect(B9.p, L2.n) annotation (Line(points={{86,44},{91.5,44},{91.5,30.5833}},
+        color={0,0,255}));
+  connect(B2.p, lPQ3.p) annotation (Line(points={{-60,-128},{-60,-124.6},{-28,-124.6}},
+        color={0,0,255}));
+  connect(B2.p, L1.p) annotation (Line(points={{-60,-128},{-60,-108},{-60,-87.5},
+          {-60,-87.5}}, color={0,0,255}));
+  connect(L1.n, B5.p) annotation (Line(points={{-60,-66.5},{-60,-59.8},{-24,-59.8},
+          {-24,-40}}, color={0,0,255}));
+  connect(B1.p, L7.p) annotation (Line(points={{-135,-31},{-135,-53},{-95.6667,
+          -53}}, color={0,0,255}));
+  connect(B5.p, L7.n) annotation (Line(points={{-24,-40},{-24,-53},{-72.3333,-53}},
+        color={0,0,255}));
+  connect(B7.p, twoWindingTransformer.n)
+    annotation (Line(points={{91,1},{91,-38},{103.6,-38}}, color={0,0,255}));
+  connect(twoWindingTransformer.p, B8.p) annotation (Line(points={{134.4,-38},{
+          149,-38},{149,-37}}, color={0,0,255}));
+  connect(B4.p, tWTransformerWithFixedTapRatio1.p) annotation (Line(points={{32,
+          -32},{32,-32},{32,-4},{32,0.6},{44,0.6}}, color={0,0,255}));
+  connect(B5.p, tWTransformerWithFixedTapRatio.p) annotation (Line(points={{-24,
+          -40},{-22,-40},{-22,-21.4},{-18,-21.4}}, color={0,0,255}));
+  connect(B6.p, tWTransformerWithFixedTapRatio.n) annotation (Line(points={{-47,
+          19},{-47,12},{-18,12},{-18,9.4}}, color={0,0,255}));
+  connect(groupBus2_1.pwPin, B2.p) annotation (Line(points={{-63,-150},{-60,-150},
+          {-60,-128}}, color={0,0,255}));
+  connect(groupBus3_1.pwPin, B3.p) annotation (Line(points={{35,-152.2},{44,-152.2},
+          {44,-122}}, color={0,0,255}));
+  connect(groupBus6_1.pwPin, B6.p)
+    annotation (Line(points={{-75,0},{-47,0},{-47,19}}, color={0,0,255}));
+  connect(B4.p, tWTransformerWithFixedTapRatio2.p) annotation (Line(points={{32,
+          -32},{36,-32},{36,-18},{48.6,-18}}, color={0,0,255}));
+  connect(B7.p, tWTransformerWithFixedTapRatio2.n) annotation (Line(points={{91,
+          1},{91,-8.5},{79.4,-8.5},{79.4,-18}}, color={0,0,255}));
+  connect(B9.p, tWTransformerWithFixedTapRatio1.n) annotation (Line(points={{86,
+          44},{86,44},{86,36},{86,34},{44,34},{44,31.4}}, color={0,0,255}));
+  connect(B6.p, L13.p) annotation (Line(points={{-47,19},{-47,28},{-14,28},{-14,
+          26},{-13.6667,26}}, color={0,0,255}));
+  connect(L13.n, B11.p)
+    annotation (Line(points={{9.66667,26},{16,26},{16,40}}, color={0,0,255}));
+  connect(B5.p, L8.p) annotation (Line(points={{-24,-40},{-24,-40},{-14,-40},{-14,
+          -53},{-9.66667,-53}}, color={0,0,255}));
+  connect(B8.p, groupBus8_1.pwPin) annotation (Line(points={{149,-37},{159.5,-37},
+          {159.5,-36.2},{160.8,-36.2}}, color={0,0,255}));
+  connect(L15.p, B9.p)
+    annotation (Line(points={{52,58.5},{86,58.5},{86,44}}, color={0,0,255}));
+  connect(B9.p, L16.p) annotation (Line(points={{86,44},{86,44},{86,56},{96,56},
+          {104,56},{104,64.4167}}, color={0,0,255}));
+  connect(B14.p, L17.p) annotation (Line(points={{104,108},{104,118},{74,118},{
+          74,97.9998},{55.5833,97.9998}}, color={0,0,255}));
+  connect(B13.p, L17.n) annotation (Line(points={{-64,110},{-64,97.9998},{
+          33.4167,97.9998}}, color={0,0,255}));
+  connect(lPQ8.p, B10.p) annotation (Line(points={{17,124.4},{17,114.65},{16,
+          114.65},{16,110}}, color={0,0,255}));
+  connect(lPQ6.p, L17.p) annotation (Line(points={{104,125.4},{104,118},{74,118},
+          {74,97.9998},{55.5833,97.9998}}, color={0,0,255}));
+  connect(B2.p, pwLinewithOpeningSending.p) annotation (Line(points={{-60,-128},
+          {-60,-128},{-60,-100},{-60,-106},{-14,-106},{-14,-76},{-3.5,-76},{-3.5,
+          -75.5}}, color={0,0,255}));
+  connect(B4.p, pwLinewithOpeningSending.n) annotation (Line(points={{32,-32},{
+          32,-32},{32,-76},{17.5,-76},{17.5,-75.5}}, color={0,0,255}));
+  connect(L5.n, B2.p) annotation (Line(points={{2.50002,-108},{-6,-108},{-6,-134},
+          {-60,-134},{-60,-128}}, color={0,0,255}));
+  connect(L3.n, B2.p) annotation (Line(points={{-135,-107.667},{-135,-134},{-60,
+          -134},{-60,-128}}, color={0,0,255}));
+  connect(groupBus1_1.pwPin, B1.p) annotation (Line(points={{-157,-6.2},{-135,-6.2},
+          {-135,-31}}, color={0,0,255}));
+  connect(B4.p, pwFault2.p) annotation (Line(points={{32,-32},{32,-28},{73,-28},
+          {73,-42.8333}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-180},{200,160}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-180},{
+            200,160}})),
     Icon(coordinateSystem(extent={{-200,-180},{200,160}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
@@ -497,33 +553,7 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the OpenIPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"),
+</html>"),
     experiment(
       StopTime=10,
       Interval=0.001,

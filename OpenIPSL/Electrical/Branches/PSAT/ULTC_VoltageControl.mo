@@ -1,25 +1,47 @@
 within OpenIPSL.Electrical.Branches.PSAT;
-model ULTC_VoltageControl "Under Load Tap Changer, continuous model, secondary voltage control"
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus1=400000 "Sending end Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus2=100000 "Receiving end Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (V)" annotation (Dialog(group="Power flow data"));
-  parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
-  parameter Real V_0=1.008959700699460 "Voltage magnitude of the controlled bus (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real m0=0.98 "Initial tap ratio" annotation (Dialog(group="Power flow data"));
-  parameter Real kT=4 "Nominal tap ratio (V1/V2)" annotation (Dialog(group="ULTC data"));
-  parameter Real H=0.001 "Integral deviation (pu)" annotation (Dialog(group="ULTC data"));
-  parameter Real K=0.10 "Inverse time constant (1/s)" annotation (Dialog(group="ULTC data"));
-  parameter Real m_max=0.98 "Maximum tap ratio (p.u./p.u.)" annotation (Dialog(group="ULTC data"));
-  parameter Real m_min=0.9785 "Minimum tap ratio (p.u./p.u.)" annotation (Dialog(group="ULTC data"));
-  parameter Real deltam=0 "Tap ratio step (p.u./p.u.)" annotation (Dialog(group="ULTC data"));
-  parameter Real v_ref=1.0 "Reference voltage (power) (pu)" annotation (Dialog(group="ULTC data"));
-  parameter Real xT=0.001 "Transformer reactance (pu)" annotation (Dialog(group="ULTC data"));
-  parameter Real rT=0.1 "Transformer resistance (pu)" annotation (Dialog(group="ULTC data"));
-  parameter Real d=0.05 "Dead zone percentage" annotation (Dialog(group="ULTC data"));
+model ULTC_VoltageControl
+  "Under Load Tap Changer, continuous model, secondary voltage control"
+  OpenIPSL.Interfaces.PwPin p
+    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin n
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  parameter Real Sb=100 "System base power (MVA)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus1=400000 "Sending end Bus nominal voltage (V)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus2=100000 "Receiving end Bus nominal voltage (V)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Sn=100 "Power rating (MVA)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Vn=400000 "Voltage rating (V)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real fn=50 "Frequency rating (Hz)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real V_0=1.008959700699460
+    "Voltage magnitude of the controlled bus (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real m0=0.98 "Initial tap ratio"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real kT=4 "Nominal tap ratio (V1/V2)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real H=0.001 "Integral deviation (pu)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real K=0.10 "Inverse time constant (1/s)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real m_max=0.98 "Maximum tap ratio (p.u./p.u.)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real m_min=0.9785 "Minimum tap ratio (p.u./p.u.)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real deltam=0 "Tap ratio step (p.u./p.u.)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real v_ref=1.0 "Reference voltage (power) (pu)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real xT=0.001 "Transformer reactance (pu)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real rT=0.1 "Transformer resistance (pu)"
+    annotation (Dialog(group="ULTC data"));
+  parameter Real d=0.05 "Dead zone percentage"
+    annotation (Dialog(group="ULTC data"));
   Real m "Tap ratio";
   Real vk "Voltage at primary, p.u.";
   Real vm(start=V_0) "Voltage at secondary p.u.";
@@ -59,9 +81,11 @@ equation
     der(m) = (-H*m) + K*(vm - vref);
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,
-          0,255}),Line(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,
+          255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),Line(
           points={{100,0},{44,0},{44,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
@@ -98,31 +122,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end ULTC_VoltageControl;

@@ -44,8 +44,8 @@ model Gen1
         extent={{-12,-12},{12,12}},
         rotation=0,
         origin={16,10})));
-  Modelica.Blocks.Sources.Constant vref(k=vref0) annotation (
-      Placement(transformation(
+  Modelica.Blocks.Sources.Constant vref(k=vref0) annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-70,-50})));
@@ -56,30 +56,30 @@ model Gen1
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-70,50})));
-  Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-40,-10},
-            {-20,10}})));
-  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=
-        refdisturb)                                                       annotation (Placement(transformation(extent={{-80,-10},
-            {-60,10}})));
-  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-
+  Modelica.Blocks.Logical.Switch switch1
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb)
+    annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 equation
-
   connect(gen.v, AVR.v) annotation (Line(
       points={{82,6},{90,6},{90,-40},{-10,-40},{-10,2.8},{1.6,2.8}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(switch1.y, AVR.vref) annotation (Line(points={{-19,0},{-20,
-          0},{-14,0},{-14,0},{-14,17.2},{1.6,17.2}},                                                      color={0,0,127}));
-  connect(booleanConstant.y, switch1.u2) annotation (Line(points={{-59,0},
-          {-66,0},{-42,0}},                                                                             color={255,0,255}));
-  connect(vref.y, switch1.u3) annotation (Line(points={{-59,-50},{-50,
-          -50},{-50,-8},{-42,-8}}, color={0,0,127}));
-  connect(step.y, switch1.u1) annotation (Line(points={{-59,50},{-59,50},
-          {-50,50},{-50,8},{-42,8}},                                                 color={0,0,127}));
-  connect(gen.p, pwPin) annotation (Line(points={{82,0},{82,0},{110,0}},                    color={0,0,255}));
-  connect(AVR.vf, gen.vf) annotation (Line(points={{29.2,10},{30,10},
-          {40,10}},                                                                     color={0,0,127}));
-  connect(gen.pm0, gen.pm) annotation (Line(points={{44,-22},{44,-30},
-          {30,-30},{30,-10},{40,-10}},                                                   color={0,0,127}));
+  connect(switch1.y, AVR.vref) annotation (Line(points={{-19,0},{-20,0},{-14,0},
+          {-14,0},{-14,17.2},{1.6,17.2}}, color={0,0,127}));
+  connect(booleanConstant.y, switch1.u2)
+    annotation (Line(points={{-59,0},{-66,0},{-42,0}}, color={255,0,255}));
+  connect(vref.y, switch1.u3) annotation (Line(points={{-59,-50},{-50,-50},{-50,
+          -8},{-42,-8}}, color={0,0,127}));
+  connect(step.y, switch1.u1) annotation (Line(points={{-59,50},{-59,50},{-50,
+          50},{-50,8},{-42,8}}, color={0,0,127}));
+  connect(gen.p, pwPin)
+    annotation (Line(points={{82,0},{82,0},{110,0}}, color={0,0,255}));
+  connect(AVR.vf, gen.vf)
+    annotation (Line(points={{29.2,10},{30,10},{40,10}}, color={0,0,127}));
+  connect(gen.pm0, gen.pm) annotation (Line(points={{44,-22},{44,-30},{30,-30},
+          {30,-10},{40,-10}}, color={0,0,127}));
+  annotation (Documentation);
 end Gen1;

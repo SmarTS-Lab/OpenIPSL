@@ -78,11 +78,13 @@ model TGTypeIV_test
         origin={26.863,-12.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0) annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0)
+    annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={77,-11})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{0,60},{46,80}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{0,60},{46,80}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -95,13 +97,16 @@ equation
   connect(Generator.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={11.2254,11.7135},
-      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,2.6151}}));
+      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,
+          2.6151}}));
   connect(Generator.vf0, Generator.vf) annotation (Line(
-      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,10.9366}},
+      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,
+          10.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.w, tGModel4_1.w) annotation (Line(
-      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},{-84.34,-4.2}},
+      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},
+          {-84.34,-4.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel4_1.Pm, Generator.pm) annotation (Line(
@@ -110,10 +115,12 @@ equation
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
       points={{15.1963,-12.6714},{16,-12.6714},{16,14.3286},{14.1967,14.3286}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
       points={{37.5301,14.3286},{38,14.3286},{38,-12.6714},{38.5297,-12.6714}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
@@ -124,7 +131,8 @@ equation
       points={{63.1667,-12},{72,-12},{72,-11},{82.5,-11}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}}), graphics={Text(
           extent={{-96,42},{-22,30}},
           lineColor={0,0,255},
           textString="Wref perturbation with sine signal 5-10s"),Text(
@@ -133,31 +141,5 @@ equation
           textString="Infinite bus"),Text(
           extent={{70,32},{84,20}},
           lineColor={0,0,255},
-          textString="PQ load")}), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+          textString="PQ load")}), Documentation);
 end TGTypeIV_test;

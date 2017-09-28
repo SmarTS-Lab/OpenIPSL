@@ -10,7 +10,9 @@ model HVRCL
         extent={{-5,-5},{5,5}},
         rotation=90,
         origin={0,-35})));
-  Modelica.Blocks.Interfaces.RealOutput Iq_HVRCL annotation (Placement(transformation(extent={{42,4},{60,22}}), iconTransformation(extent={{40,-10},{60,10}})));
+  Modelica.Blocks.Interfaces.RealOutput Iq_HVRCL annotation (Placement(
+        transformation(extent={{42,4},{60,22}}), iconTransformation(extent={{40,
+            -10},{60,10}})));
   Modelica.Blocks.Interfaces.RealInput Iq annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
         rotation=0,
@@ -50,31 +52,5 @@ equation
           extent={{19,4},{38,-4}},
           lineColor={0,0,255},
           textString="I_sorc")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end HVRCL;

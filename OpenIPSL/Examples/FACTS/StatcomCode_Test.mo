@@ -60,26 +60,32 @@ model StatcomCode_Test
     xd1=0.302,
     M=10,
     P_0=0.004219210312137*SysData.S_b,
-    Q_0=-0.001421467052118*SysData.S_b) annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
+    Q_0=-0.001421467052118*SysData.S_b)
+    annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
   Modelica.Blocks.Sources.Pulse pulse(
     period=10,
     startTime=4.2,
     amplitude=0.045,
     width=58,
     nperiod=-1,
-    offset=0.999885177318814) annotation (Placement(transformation(extent={{-158,14},{-138,34}})));
+    offset=0.999885177318814)
+    annotation (Placement(transformation(extent={{-158,14},{-138,34}})));
   Modelica.Blocks.Sources.Pulse pulse1(
     period=10,
     amplitude=-0.045,
     width=42,
     startTime=0,
-    nperiod=-1) annotation (Placement(transformation(extent={{-156,-22},{-136,-2}})));
+    nperiod=-1)
+    annotation (Placement(transformation(extent={{-156,-22},{-136,-2}})));
   Modelica.Blocks.Math.Add3 add3_1(
     k3=0,
     k1=1,
     k2=1) annotation (Placement(transformation(extent={{-118,-10},{-98,10}})));
-  OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480*180/pi) annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
-  OpenIPSL.Electrical.Buses.Bus bus annotation (Placement(transformation(extent={{4,-8},{24,12}})));
+  OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480
+        *180/pi)
+    annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
+  OpenIPSL.Electrical.Buses.Bus bus
+    annotation (Placement(transformation(extent={{4,-8},{24,12}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     t_start_1=7,
     t_end_1=7.001,
@@ -91,8 +97,10 @@ model StatcomCode_Test
     t_end_2=50,
     angle_0=-0.000213067852480*180/pi,
     dQ1=0.1*SysData.S_b,
-    dQ2=0.42*SysData.S_b) annotation (Placement(transformation(extent={{38,-52},{58,-32}})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-116,60},{-76,80}})));
+    dQ2=0.42*SysData.S_b)
+    annotation (Placement(transformation(extent={{38,-52},{58,-32}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-116,60},{-76,80}})));
 equation
   connect(pwLine1.n, pwLine3.n) annotation (Line(
       points={{64.6667,17},{78,17},{78,-17},{66.6667,-17}},
@@ -154,10 +162,13 @@ equation
       points={{-76,-9},{-54,-9},{-54,-16},{-90,-16},{-90,-3},{-78,-3}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{138,8},{148,8},{148,26},{135,26},{135,17.6}}, color={0,0,127}));
-  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{152,-26},{152,-8},{138,-8}}, color={0,0,127}));
+  connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{138,8},{148,8},{148,26},
+          {135,26},{135,17.6}}, color={0,0,127}));
+  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{
+          152,-26},{152,-8},{138,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{160,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{
+            160,100}})),
     Icon(coordinateSystem(extent={{-160,-100},{160,100}})),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>
@@ -177,31 +188,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end StatcomCode_Test;

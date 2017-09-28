@@ -11,12 +11,17 @@ model ConstantPQPV
           origin={-110.0,0.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+    parameter Real S_b=100 "System base power (MVA)"
+      annotation (Dialog(group="Power flow data"));
     parameter Real Sn=10 "Nominal power (MVA)";
-    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-    parameter Real P_0=0.4 "Active power (pu)" annotation (Dialog(group="Power flow data"));
-    parameter Real Q_0=0.3 "Reactive power (pu)" annotation (Dialog(group="Power flow data"));
+    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)"
+      annotation (Dialog(group="Power flow data"));
+    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)"
+      annotation (Dialog(group="Power flow data"));
+    parameter Real P_0=0.4 "Active power (pu)"
+      annotation (Dialog(group="Power flow data"));
+    parameter Real Q_0=0.3 "Reactive power (pu)"
+      annotation (Dialog(group="Power flow data"));
     parameter Real Td=15 "d-axis inverter time constant (s)";
     parameter Real Tq=15 "q-axis inverter time constant (s)";
   protected
@@ -26,7 +31,8 @@ model ConstantPQPV
     parameter Real vd0=-V_0*sin(angle_0) "Initialitation";
     parameter Real vq0=V_0*cos(angle_0) "Initialitation";
     parameter Real idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
+    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2)
+      "Initialitation";
   public
     Real v "Bus voltage magnitude (pu)";
     Real anglev "Bus voltage angle (deg)";
@@ -47,8 +53,10 @@ model ConstantPQPV
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (
@@ -90,33 +98,7 @@ model ConstantPQPV
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
   end PQ1;
 
   model PV1 "Constant PV Generator, Solar Photo-Voltaic Generator"
@@ -130,12 +112,17 @@ model ConstantPQPV
           origin={-110.0,0.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+    parameter Real S_b=100 "System base power (MVA)"
+      annotation (Dialog(group="Power flow data"));
     parameter Real Sn=10 "Nominal power (MVA)";
-    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-    parameter Real P_0=0.4 "Active power (pu)" annotation (Dialog(group="Power flow data"));
-    parameter Real Q_0=0.3 "Reactive power (pu)" annotation (Dialog(group="Power flow data"));
+    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)"
+      annotation (Dialog(group="Power flow data"));
+    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)"
+      annotation (Dialog(group="Power flow data"));
+    parameter Real P_0=0.4 "Active power (pu)"
+      annotation (Dialog(group="Power flow data"));
+    parameter Real Q_0=0.3 "Reactive power (pu)"
+      annotation (Dialog(group="Power flow data"));
     parameter Real vref=1.0002 "Voltage reference (pu)";
     parameter Real Td=0.15 "d-axis inverter time constant (s)";
     parameter Real Tq=0.15 "q-axis inverter time constant (s)";
@@ -146,8 +133,10 @@ model ConstantPQPV
     parameter Real Pref=P_0*CoB;
     parameter Real vd0=-V_0*sin(angle_0) "Initialitation";
     parameter Real vq0=V_0*cos(angle_0) "Initialitation";
-    parameter Real idref=(vq0*Q_0*CoB + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-    parameter Real iqref=((-vd0*Q_0*CoB) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
+    parameter Real idref=(vq0*Q_0*CoB + Pref*vd0)/(vq0^2 + vd0^2)
+      "Initialitation";
+    parameter Real iqref=((-vd0*Q_0*CoB) + Pref*vq0)/(vq0^2 + vd0^2)
+      "Initialitation";
     Real x(start=Q_0*CoB);
     Real Qref(start=Q_0*CoB);
   public
@@ -172,8 +161,10 @@ model ConstantPQPV
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (
@@ -215,63 +206,11 @@ model ConstantPQPV
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
   end PV1;
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={5,5})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        grid={5,5})), Documentation);
 end ConstantPQPV;

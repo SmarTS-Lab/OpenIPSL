@@ -13,19 +13,16 @@ model Order2test2
     M=10,
     D=0,
     P_0=16.0352698692006,
-    Q_0=11.859436505981) annotation (Placement(visible=true,
-        transformation(
+    Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
         origin={-29.946,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
 equation
-  connect(order21.vf, order21.vf0) annotation (Line(points={{-41.946,
-          5},{-46,5},{-46,14},{-38.946,14},{-38.946,11}}, color={0,0,
-          127}));
-  connect(order21.pm, order21.pm0) annotation (Line(points={{-41.9479,
-          -5.03569},{-46,-5.03569},{-46,-14},{-38.946,-14},{-38.946,-11}},
-        color={0,0,127}));
-  connect(order21.p, bus.p) annotation (Line(points={{-19.946,0},{-9.473,
-          0},{-9.473,0},{0,0}}, color={0,0,255}));
-
+  connect(order21.vf, order21.vf0) annotation (Line(points={{-41.946,5},{-46,5},
+          {-46,14},{-38.946,14},{-38.946,11}}, color={0,0,127}));
+  connect(order21.pm, order21.pm0) annotation (Line(points={{-41.9479,-5.03569},
+          {-46,-5.03569},{-46,-14},{-38.946,-14},{-38.946,-11}}, color={0,0,127}));
+  connect(order21.p, bus.p) annotation (Line(points={{-19.946,0},{-9.473,0},{-9.473,
+          0},{0,0}}, color={0,0,255}));
+  annotation (Documentation);
 end Order2test2;

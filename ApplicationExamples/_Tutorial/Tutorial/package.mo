@@ -1,6 +1,4 @@
-within ;
 package Tutorial
-
 annotation (
   Icon(graphics={
       Rectangle(
@@ -19,6 +17,6 @@ annotation (
         pattern=LinePattern.None,
         fillColor={95,95,95},
         fillPattern=FillPattern.Solid)}),
-  Documentation(revisions=""),
+  Documentation,
   uses(Modelica(version="3.2.2"), OpenIPSL(version="1.0.0")));
 end Tutorial;

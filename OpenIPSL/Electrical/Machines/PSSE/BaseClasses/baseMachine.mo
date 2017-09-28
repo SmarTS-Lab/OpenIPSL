@@ -12,14 +12,11 @@ partial model baseMachine
   //Machine parameters
   parameter Real M_b "Machine base power (MVA)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Tpd0
-    "d-axis transient open-circuit time constant (s)"
+  parameter Real Tpd0 "d-axis transient open-circuit time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Tppd0
-    "d-axis sub-transient open-circuit time constant (s)"
+  parameter Real Tppd0 "d-axis sub-transient open-circuit time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Tppq0
-    "q-axis transient open-circuit time constant (s)"
+  parameter Real Tppq0 "q-axis transient open-circuit time constant (s)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real H "Inertia constant (s)"
     annotation (Dialog(group="Machine parameters"));
@@ -48,30 +45,28 @@ partial model baseMachine
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{90,-10},
-            {110,10}})));
-  RealOutput SPEED(start=0)
-    "Machine speed deviation from nominal (pu)" annotation (Placement(
-        transformation(extent={{100,60},{120,80}})));
-  RealInput PMECH "Turbine mechanical power (pu on M_b)" annotation (
-      Placement(transformation(extent={{-140,30},{-100,70}})));
-  RealOutput PMECH0
-    "Initial value of machine electrical power (pu on M_b)"
+    ii(start=ii0))
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+  RealOutput SPEED(start=0) "Machine speed deviation from nominal (pu)"
+    annotation (Placement(transformation(extent={{100,60},{120,80}})));
+  RealInput PMECH "Turbine mechanical power (pu on M_b)"
+    annotation (Placement(transformation(extent={{-140,30},{-100,70}})));
+  RealOutput PMECH0 "Initial value of machine electrical power (pu on M_b)"
     annotation (Placement(transformation(extent={{100,40},{120,60}})));
   RealOutput ETERM(start=V_0) "Machine terminal voltage (pu)"
     annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
-  RealInput EFD "Generator main field voltage (pu)" annotation (
-      Placement(transformation(extent={{-140,-70},{-100,-30}})));
+  RealInput EFD "Generator main field voltage (pu)"
+    annotation (Placement(transformation(extent={{-140,-70},{-100,-30}})));
   RealOutput EFD0 "Initial generator main field voltage (pu)"
     annotation (Placement(transformation(extent={{100,-60},{120,-40}})));
   RealOutput PELEC(start=p0) "Machine electrical power (pu on M_b)"
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
-  RealOutput ISORCE "Machine source current (pu)" annotation (
-      Placement(transformation(extent={{100,-80},{120,-60}})));
-  RealOutput ANGLE "Machine relative rotor angle (deg.)" annotation (
-      Placement(transformation(extent={{100,78},{120,98}})));
-  RealOutput XADIFD "Machine field current (pu)" annotation (
-      Placement(transformation(
+  RealOutput ISORCE "Machine source current (pu)"
+    annotation (Placement(transformation(extent={{100,-80},{120,-60}})));
+  RealOutput ANGLE "Machine relative rotor angle (deg.)"
+    annotation (Placement(transformation(extent={{100,78},{120,98}})));
+  RealOutput XADIFD "Machine field current (pu)" annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={110,-90}), iconTransformation(
@@ -104,8 +99,7 @@ protected
     "Real component of initial armature current, systembase";
   parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, systembase";
-  parameter Real p0=P_0/M_b
-    "initial active power generation in pu machinebase";
+  parameter Real p0=P_0/M_b "initial active power generation in pu machinebase";
   parameter Real q0=Q_0/M_b
     "initial reactive power generation in pu machinebase";
 equation
@@ -114,10 +108,8 @@ equation
   SPEED = w;
   ETERM = Vt;
   PELEC = P/CoB;
-  [p.ir; p.ii] = -CoB*[sin(delta),cos(delta); -cos(delta),sin(delta)]*
-    [id; iq];
-  [p.vr; p.vi] = [sin(delta),cos(delta); -cos(delta),sin(delta)]*[ud;
-    uq];
+  [p.ir; p.ii] = -CoB*[sin(delta), cos(delta); -cos(delta), sin(delta)]*[id; iq];
+  [p.vr; p.vi] = [sin(delta), cos(delta); -cos(delta), sin(delta)]*[ud; uq];
   -P = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
   Vt = sqrt(p.vr^2 + p.vi^2);
@@ -126,45 +118,48 @@ equation
   anglei = atan2(p.ii, p.ir);
   der(w) = ((PMECH - D*w)/(w + 1) - Te)/(2*H);
   der(delta) = w_b*w;
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,
-          extent={{-100,-100},{100,100}})), Icon(graphics={
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
         Text(
-          extent={{66,98},{96,82}},
+          extent={{64,75},{92,65}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="SPEED"),
         Text(
-          extent={{64,78},{96,62}},
+          extent={{60,-66},{92,-76}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="ISORCE"),
         Text(
-          extent={{66,56},{96,42}},
+          extent={{64,-25},{92,-35}},
           lineColor={0,0,255},
           textString="ETERM"),
         Text(
-          extent={{66,38},{96,22}},
+          extent={{64,94},{92,84}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="ANGLE"),
         Text(
-          extent={{62,-24},{96,-36}},
+          extent={{58,56},{92,46}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="PMECH0"),
         Text(
-          extent={{66,-46},{96,-56}},
+          extent={{64,34},{92,24}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="PELEC"),
         Text(
-          extent={{66,-66},{100,-76}},
+          extent={{72,-46},{92,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="EFD0"),
         Text(
-          extent={{62,-86},{98,-96}},
+          extent={{56,-86},{92,-96}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="XADIFD0"),
@@ -177,6 +172,6 @@ equation
           extent={{-88,-46},{-58,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="EFD")}));
-
+          textString="EFD")}),
+    Documentation);
 end baseMachine;

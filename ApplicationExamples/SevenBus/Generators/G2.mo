@@ -1,8 +1,8 @@
 within SevenBus.Generators;
-
 model G2
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real M_b "Machine base power (MVA)"
+    annotation (Dialog(group="Power flow data"));
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     V_b=V_b,
     V_0=V_0,
@@ -25,8 +25,10 @@ model G2
     Xd=2.91,
     Xppq=0.367,
     Xppd=0.367,
-    R_a=0.003275) annotation (Placement(transformation(extent={{-30,-30},{30,30}})));
-  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+    R_a=0.003275)
+    annotation (Placement(transformation(extent={{-30,-30},{30,30}})));
+  OpenIPSL.Interfaces.PwPin pwPin
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
     T_R=0,
     T_C1=0.8,
@@ -45,7 +47,8 @@ model G2
     T_OC1=0.1,
     T_OB1=2,
     T_OC2=0.08,
-    T_OB2=0.08) annotation (Placement(transformation(extent={{30,-76},{-30,-44}})));
+    T_OB2=0.08)
+    annotation (Placement(transformation(extent={{30,-76},{-30,-44}})));
   OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2B pSS2B(
     T_w1=2,
     T_w2=2,
@@ -72,9 +75,12 @@ model G2
     V_STMIN=-0.1,
     M=0,
     N=0) annotation (Placement(transformation(extent={{56,-100},{20,-92}})));
-  Modelica.Blocks.Sources.Constant VUEL(k=-100) annotation (Placement(transformation(extent={{-72,-92},{-60,-80}})));
-  Modelica.Blocks.Sources.Constant VOEL(k=100) annotation (Placement(transformation(extent={{-72,-60},{-60,-48}})));
-  Modelica.Blocks.Sources.Constant PSS_off(k=0) annotation (Placement(transformation(extent={{-72,-120},{-60,-108}})));
+  Modelica.Blocks.Sources.Constant VUEL(k=-100)
+    annotation (Placement(transformation(extent={{-72,-92},{-60,-80}})));
+  Modelica.Blocks.Sources.Constant VOEL(k=100)
+    annotation (Placement(transformation(extent={{-72,-60},{-60,-48}})));
+  Modelica.Blocks.Sources.Constant PSS_off(k=0)
+    annotation (Placement(transformation(extent={{-72,-120},{-60,-108}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.3,
     T_2=1,
@@ -88,21 +94,35 @@ model G2
     P_MAX=1,
     P_MIN=0) annotation (Placement(transformation(extent={{28,54},{-28,76}})));
 equation
-  connect(gENROU.p, pwPin) annotation (Line(points={{33,0},{72,0},{110,0}}, color={0,0,255}));
-  connect(gENROU.ETERM, sT5B.ECOMP) annotation (Line(points={{32.4,15},{44,15},{44,-48},{29,-48}}, color={0,0,127}));
-  connect(sT5B.XADIFD, gENROU.XADIFD) annotation (Line(points={{29,-64},{38,-64},{38,-27},{32.4,-27}}, color={0,0,127}));
-  connect(sT5B.EFD0, gENROU.EFD0) annotation (Line(points={{29,-72},{40,-72},{40,-21},{32.4,-21}}, color={0,0,127}));
-  connect(gENROU.SPEED, pSS2B.V_S1) annotation (Line(points={{32.4,27},{66,27},{66,-94},{56,-94}}, color={0,0,127}));
-  connect(gENROU.PELEC, pSS2B.V_S2) annotation (Line(points={{32.4,-15},{72,-15},{72,-98},{56,-98}}, color={0,0,127}));
-  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-59.4,-86},{-24,-86},{13,-86},{13,-74.6667}}, color={0,0,127}));
-  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-59.4,-54},{-56,-54},{-56,-80},{5,-80},{5,-74.6667}}, color={0,0,127}));
-  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{19.4,-96},{-3,-96},{-3,-74.6667}}, color={0,0,127}));
-  connect(gENROU.EFD, sT5B.EFD) annotation (Line(points={{-29.4,-15},{-40,-15},{-40,-60},{-31,-60}}, color={0,0,127}));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-29.75,66.5714},{-40,66.5714},{-40,15},{-29.4,15}}, color={0,0,127}));
-  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{26.6,71.2857},{32.4,71.2857},{32.4,27}}, color={0,0,127}));
-  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{26.6,60.2857},{52,60.2857},{52,-9},{32.4,-9}}, color={0,0,127}));
+  connect(gENROU.p, pwPin)
+    annotation (Line(points={{33,0},{72,0},{110,0}}, color={0,0,255}));
+  connect(gENROU.ETERM, sT5B.ECOMP) annotation (Line(points={{32.4,15},{44,15},
+          {44,-48},{29,-48}}, color={0,0,127}));
+  connect(sT5B.XADIFD, gENROU.XADIFD) annotation (Line(points={{29,-64},{38,-64},
+          {38,-27},{32.4,-27}}, color={0,0,127}));
+  connect(sT5B.EFD0, gENROU.EFD0) annotation (Line(points={{29,-72},{40,-72},{
+          40,-21},{32.4,-21}}, color={0,0,127}));
+  connect(gENROU.SPEED, pSS2B.V_S1) annotation (Line(points={{32.4,27},{66,27},
+          {66,-94},{56,-94}}, color={0,0,127}));
+  connect(gENROU.PELEC, pSS2B.V_S2) annotation (Line(points={{32.4,-15},{72,-15},
+          {72,-98},{56,-98}}, color={0,0,127}));
+  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-59.4,-86},{-24,-86},{13,
+          -86},{13,-74.6667}}, color={0,0,127}));
+  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-59.4,-54},{-56,-54},{-56,
+          -80},{5,-80},{5,-74.6667}}, color={0,0,127}));
+  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{19.4,-96},{-3,-96},
+          {-3,-74.6667}}, color={0,0,127}));
+  connect(gENROU.EFD, sT5B.EFD) annotation (Line(points={{-29.4,-15},{-40,-15},
+          {-40,-60},{-31,-60}}, color={0,0,127}));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-29.75,66.5714},
+          {-40,66.5714},{-40,15},{-29.4,15}}, color={0,0,127}));
+  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{26.6,71.2857},{
+          32.4,71.2857},{32.4,27}}, color={0,0,127}));
+  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{26.6,60.2857},
+          {52,60.2857},{52,-9},{32.4,-9}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
     Icon(graphics={Ellipse(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
@@ -116,31 +136,5 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end G2;

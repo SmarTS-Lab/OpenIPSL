@@ -21,10 +21,14 @@ model ESAC1A "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-28,-58},{-38,-48}})));
-  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-28,-80},{-38,-70}})));
-  Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-28,-100},{-38,-90}})));
+    Xppq=0.2)
+    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+  Modelica.Blocks.Sources.Constant const(k=0)
+    annotation (Placement(transformation(extent={{-28,-58},{-38,-48}})));
+  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf)
+    annotation (Placement(transformation(extent={{-28,-80},{-38,-70}})));
+  Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf)
+    annotation (Placement(transformation(extent={{-28,-100},{-38,-90}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESAC1A eSAC1A(
     T_R=0.04,
     T_B=2,
@@ -44,43 +48,29 @@ model ESAC1A "SMIB system with one load and GENROE model"
     S_EE_1=0.03,
     S_EE_2=0.1,
     V_RMAX=3,
-    V_RMIN=-3) annotation (Placement(transformation(extent={{-52,-58},{-106,-38}})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+    V_RMIN=-3)
+    annotation (Placement(transformation(extent={{-52,-58},{-106,-38}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
-  connect(eSAC1A.VOTHSG, const.y) annotation (Line(points={{-52,-41.8889},{-52,-53},{-38.5,-53}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSAC1A.ECOMP) annotation (Line(points={{-58.4,10},{-32,10},{-32,-46.8889},{-52,-46.8889}}, color={0,0,127}));
-  connect(eSAC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-52,-54.1111},{-52,-62},{-46,-62},{-46,-14},{-58.4,-14}}, color={0,0,127}));
-  connect(gENROE.XADIFD, eSAC1A.XADIFD) annotation (Line(points={{-58.4,-18},{-44,-18},{-44,-64},{-52,-64},{-52,-50.7778}}, color={0,0,127}));
-  connect(eSAC1A.EFD, gENROE.EFD) annotation (Line(points={{-107.35,-46.8889},{-110,-46.8889},{-110,-10},{-99.6,-10}}, color={0,0,127}));
-  connect(const1.y, eSAC1A.VUEL) annotation (Line(points={{-38.5,-75},{-61.45,-75},{-61.45,-58}}, color={0,0,127}));
-  connect(const2.y, eSAC1A.VOEL) annotation (Line(points={{-38.5,-95},{-38.5,-95},{-69.55,-95},{-69.55,-58}}, color={0,0,127}));
-  connect(gENROE.p, GEN1.p) annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,
+          10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
+  connect(eSAC1A.VOTHSG, const.y) annotation (Line(points={{-52,-41.8889},{-52,
+          -53},{-38.5,-53}}, color={0,0,127}));
+  connect(gENROE.ETERM, eSAC1A.ECOMP) annotation (Line(points={{-58.4,10},{-32,
+          10},{-32,-46.8889},{-52,-46.8889}}, color={0,0,127}));
+  connect(eSAC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-52,-54.1111},{-52,
+          -62},{-46,-62},{-46,-14},{-58.4,-14}}, color={0,0,127}));
+  connect(gENROE.XADIFD, eSAC1A.XADIFD) annotation (Line(points={{-58.4,-18},{-44,
+          -18},{-44,-64},{-52,-64},{-52,-50.7778}}, color={0,0,127}));
+  connect(eSAC1A.EFD, gENROE.EFD) annotation (Line(points={{-107.35,-46.8889},{
+          -110,-46.8889},{-110,-10},{-99.6,-10}}, color={0,0,127}));
+  connect(const1.y, eSAC1A.VUEL) annotation (Line(points={{-38.5,-75},{-61.45,-75},
+          {-61.45,-58}}, color={0,0,127}));
+  connect(const2.y, eSAC1A.VOEL) annotation (Line(points={{-38.5,-95},{-38.5,-95},
+          {-69.55,-95},{-69.55,-58}}, color={0,0,127}));
+  connect(gENROE.p, GEN1.p)
+    annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})), Documentation);
 end ESAC1A;

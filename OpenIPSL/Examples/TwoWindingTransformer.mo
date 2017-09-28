@@ -28,7 +28,8 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     X_d=0.2,
     H=0,
     P_0=10.0278,
-    Q_0=32.05072) annotation (Placement(transformation(extent={{118,-12},{106,12}})));
+    Q_0=32.05072)
+    annotation (Placement(transformation(extent={{118,-12},{106,12}})));
   OpenIPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
     d_t=0,
     d_P=0,
@@ -65,7 +66,8 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     V_0=1,
     angle_0=4.747869,
     P_0=40,
-    Q_0=-16.46028) annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
+    Q_0=-16.46028)
+    annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     CZ=1,
     R=0.001,
@@ -81,51 +83,45 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     t2=1.02,
     VNOM2=130,
     CW=3) annotation (Placement(transformation(extent={{-26,-4},{-14,4}})));
-  OpenIPSL.Electrical.Buses.Bus BUS01 annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
-  OpenIPSL.Electrical.Buses.Bus BUS02 annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  OpenIPSL.Electrical.Buses.Bus BUS03 annotation (Placement(transformation(extent={{40,-40},{60,-20}})));
-  OpenIPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=50) annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+  OpenIPSL.Electrical.Buses.Bus BUS01
+    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+  OpenIPSL.Electrical.Buses.Bus BUS02
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
+  OpenIPSL.Electrical.Buses.Bus BUS03
+    annotation (Placement(transformation(extent={{40,-40},{60,-20}})));
+  OpenIPSL.Electrical.Buses.Bus BUS1
+    annotation (Placement(transformation(extent={{80,-10},{100,10}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=50)
+    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-91.66,10},{-98,10},{-98,26},{-50,26},{-50,-6},{-56.64,-6}}, color={0,0,127}));
-  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-91.66,-10},{-98,-10},{-98,-24},{-50,-24},{-50,-14},{-56.64,-14}}, color={0,0,127}));
-  connect(gENROE.p, BUS01.p) annotation (Line(points={{-56.3,0},{-40,0}}, color={0,0,255}));
-  connect(BUS01.p, twoWindingTransformer.p) annotation (Line(points={{-40,0},{-27,0}}, color={0,0,255}));
-  connect(twoWindingTransformer.n, BUS02.p) annotation (Line(points={{-13,0},{0,0}}, color={0,0,255}));
-  connect(pwLine1.p, BUS02.p) annotation (Line(points={{38.3333,30},{4,30},{4,0},{0,0}}, color={0,0,255}));
-  connect(pwLine3.p, BUS02.p) annotation (Line(points={{18.3333,-30},{4,-30},{4,0},{0,0}}, color={0,0,255}));
-  connect(constantLoad.p, BUS02.p) annotation (Line(points={{2,-39.4},{2,0},{0,0}}, color={0,0,255}));
-  connect(pwLine3.n, BUS03.p) annotation (Line(points={{41.6667,-30},{41.6667,-30},{50,-30}}, color={0,0,255}));
-  connect(BUS03.p, pwLine4.p) annotation (Line(points={{50,-30},{58.3333,-30}}, color={0,0,255}));
-  connect(BUS1.p, gENCLS.p) annotation (Line(points={{90,0},{104.8,0},{104.8,-0.180432}}, color={0,0,255}));
-  connect(pwLine1.n, BUS1.p) annotation (Line(points={{61.6667,30},{86,30},{86,0},{90,0}}, color={0,0,255}));
-  connect(pwLine4.n, BUS1.p) annotation (Line(points={{81.6667,-30},{86,-30},{86,0},{90,0}}, color={0,0,255}));
-  connect(pwFault.p, BUS03.p) annotation (Line(points={{54,-51},{54,-30},{50,-30}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-91.66,10},{-98,
+          10},{-98,26},{-50,26},{-50,-6},{-56.64,-6}}, color={0,0,127}));
+  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-91.66,-10},{-98,-10},
+          {-98,-24},{-50,-24},{-50,-14},{-56.64,-14}}, color={0,0,127}));
+  connect(gENROE.p, BUS01.p)
+    annotation (Line(points={{-56.3,0},{-40,0}}, color={0,0,255}));
+  connect(BUS01.p, twoWindingTransformer.p)
+    annotation (Line(points={{-40,0},{-27,0}}, color={0,0,255}));
+  connect(twoWindingTransformer.n, BUS02.p)
+    annotation (Line(points={{-13,0},{0,0}}, color={0,0,255}));
+  connect(pwLine1.p, BUS02.p) annotation (Line(points={{38.3333,30},{4,30},{4,0},
+          {0,0}}, color={0,0,255}));
+  connect(pwLine3.p, BUS02.p) annotation (Line(points={{18.3333,-30},{4,-30},{4,
+          0},{0,0}}, color={0,0,255}));
+  connect(constantLoad.p, BUS02.p)
+    annotation (Line(points={{2,-39.4},{2,0},{0,0}}, color={0,0,255}));
+  connect(pwLine3.n, BUS03.p) annotation (Line(points={{41.6667,-30},{41.6667,-30},
+          {50,-30}}, color={0,0,255}));
+  connect(BUS03.p, pwLine4.p)
+    annotation (Line(points={{50,-30},{58.3333,-30}}, color={0,0,255}));
+  connect(BUS1.p, gENCLS.p) annotation (Line(points={{90,0},{104.8,0},{104.8,-0.180432}},
+        color={0,0,255}));
+  connect(pwLine1.n, BUS1.p) annotation (Line(points={{61.6667,30},{86,30},{86,
+          0},{90,0}}, color={0,0,255}));
+  connect(pwLine4.n, BUS1.p) annotation (Line(points={{81.6667,-30},{86,-30},{
+          86,0},{90,0}}, color={0,0,255}));
+  connect(pwFault.p, BUS03.p)
+    annotation (Line(points={{54,-51},{54,-30},{50,-30}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})), Documentation);
 end TwoWindingTransformer;

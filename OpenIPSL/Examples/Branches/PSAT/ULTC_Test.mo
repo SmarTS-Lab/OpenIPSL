@@ -17,12 +17,13 @@ model ULTC_Test
         origin={30,10},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
+      Placement(visible=true, transformation(
         origin={-132.783,10.4652},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
+        transformation(
         origin={-109.106,-0.3379},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
@@ -45,7 +46,8 @@ model ULTC_Test
     ra=0.001,
     xd1=0.302,
     M=10) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));
+  Modelica.Blocks.Math.Add add
+    annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
@@ -56,12 +58,18 @@ model ULTC_Test
     dP1=0,
     dP2=0,
     dQ1=-0.05,
-    dQ2=0.05) annotation (Placement(transformation(extent={{115,-10},{135,10}})));
-  OpenIPSL.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl annotation (Placement(transformation(extent={{70,-10},{90,10}})));
-  OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-5,-10},{15,10}})));
-  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{45,-10},{65,10}})));
-  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{0,50},{45,70}})));
+    dQ2=0.05)
+    annotation (Placement(transformation(extent={{115,-10},{135,10}})));
+  OpenIPSL.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl
+    annotation (Placement(transformation(extent={{70,-10},{90,10}})));
+  OpenIPSL.Electrical.Buses.Bus B1
+    annotation (Placement(transformation(extent={{-5,-10},{15,10}})));
+  OpenIPSL.Electrical.Buses.Bus B2
+    annotation (Placement(transformation(extent={{45,-10},{65,10}})));
+  OpenIPSL.Electrical.Buses.Bus B3
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{0,50},{45,70}})));
 equation
   connect(add.y, order2_Inputs_Outputs.vf) annotation (Line(
       points={{-64,0},{-50,0},{-50,5},{-40,5}},
@@ -141,31 +149,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end ULTC_Test;

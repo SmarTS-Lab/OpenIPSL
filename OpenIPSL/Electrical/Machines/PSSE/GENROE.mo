@@ -24,9 +24,12 @@ model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
     uq(start=uq0),
     Te(start=pm0));
   //Machine parameters
-  parameter Real Xpq "Sub-transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Tpq0 "q-axis transient open-circuit time constant (s)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Xpp=Xppd "Sub-transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
+  parameter Real Xpq "Sub-transient reactance (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real Tpq0 "q-axis transient open-circuit time constant (s)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real Xpp=Xppd "Sub-transient reactance (pu)"
+    annotation (Dialog(group="Machine parameters"));
   Real Epd(start=Epd0) "d-axis voltage behind transient reactance (pu)";
   Real Epq(start=Epq0) "q-axis voltage behind transient reactance ";
   Real PSIkd(start=PSIkd0) "d-axis rotor flux linkage (pu)";
@@ -41,15 +44,20 @@ model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
   Real XaqIlq(start=0) "q-axis Machine field current (pu)";
 protected
   parameter Complex Zs=R_a + j*Xpp "Equivalent impedance";
-  parameter Complex VT=V_0*cos(anglev_rad) + j*V_0*sin(anglev_rad) "Complex terminal voltage";
+  parameter Complex VT=V_0*cos(anglev_rad) + j*V_0*sin(anglev_rad)
+    "Complex terminal voltage";
   parameter Complex S=p0 + j*q0 "Complex power on machine base";
-  parameter Complex It=real(S/VT) - j*imag(S/VT) "Complex current, machine base";
-  parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs) "Equivalent internal current source";
-  parameter Complex PSIpp0=real(Zs*Is) + j*imag(Zs*Is) "Sub-transient flux linkage in stator reference frame";
+  parameter Complex It=real(S/VT) - j*imag(S/VT)
+    "Complex current, machine base";
+  parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs)
+    "Equivalent internal current source";
+  parameter Complex PSIpp0=real(Zs*Is) + j*imag(Zs*Is)
+    "Sub-transient flux linkage in stator reference frame";
   parameter Real ang_PSIpp0=arg(PSIpp0) "flux angle";
   parameter Real ang_It=arg(It) "current angle";
   parameter Real ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
-  parameter Real abs_PSIpp0='abs'(PSIpp0) "magnitude of sub-transient flux linkage";
+  parameter Real abs_PSIpp0='abs'(PSIpp0)
+    "magnitude of sub-transient flux linkage";
   parameter Real dsat=SE_exp(
       abs_PSIpp0,
       S10,
@@ -59,32 +67,47 @@ protected
   parameter Real a=abs_PSIpp0 + abs_PSIpp0*dsat*(Xq - Xl)/(Xd - Xl);
   parameter Real b=(It.re^2 + It.im^2)^0.5*(Xpp - Xq);
   //Initializion rotor angle position
-  parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a)) + ang_PSIpp0 "initial rotor angle in radians";
-  parameter Complex DQ_dq=cos(delta0) - j*sin(delta0) "Parks transformation, from stator to rotor reference frame";
-  parameter Complex PSIpp0_dq=real(PSIpp0*DQ_dq) + j*imag(PSIpp0*DQ_dq) "Flux linkage in rotor reference frame";
+  parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a))
+       + ang_PSIpp0 "initial rotor angle in radians";
+  parameter Complex DQ_dq=cos(delta0) - j*sin(delta0)
+    "Parks transformation, from stator to rotor reference frame";
+  parameter Complex PSIpp0_dq=real(PSIpp0*DQ_dq) + j*imag(PSIpp0*DQ_dq)
+    "Flux linkage in rotor reference frame";
   parameter Complex I_dq=real(It*DQ_dq) - j*imag(It*DQ_dq);
   //"The terminal current in rotor reference frame"
-  parameter Real PSIppq0=imag(PSIpp0_dq) "q-axis component of the sub-transient flux linkage";
-  parameter Real PSIppd0=real(PSIpp0_dq) "d-axis component of the sub-transient flux linkage";
+  parameter Real PSIppq0=imag(PSIpp0_dq)
+    "q-axis component of the sub-transient flux linkage";
+  parameter Real PSIppd0=real(PSIpp0_dq)
+    "d-axis component of the sub-transient flux linkage";
   //Initialization of current and voltage components in rotor reference frame (dq-axes).
   parameter Real delta1=delta0*180/pi "rotor angle in degrees";
   parameter Real iq0=real(I_dq) "q-axis component of intitial current";
   parameter Real id0=imag(I_dq) "d-axis component of intitial current";
-  parameter Real ud0=(-(PSIppq0 - Xppq*iq0)) - R_a*id0 "d-axis component of intitial voltage";
-  parameter Real uq0=PSIppd0 - Xppd*id0 - R_a*iq0 "q-axis component of intitial voltage";
+  parameter Real ud0=(-(PSIppq0 - Xppq*iq0)) - R_a*id0
+    "d-axis component of intitial voltage";
+  parameter Real uq0=PSIppd0 - Xppd*id0 - R_a*iq0
+    "q-axis component of intitial voltage";
   //Initialization current and voltage components in synchronous reference frame.
-  parameter Real vr0=V_0*cos(anglev_rad) "Real component of initial terminal voltage";
-  parameter Real vi0=V_0*sin(anglev_rad) "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, systembase";
-  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, systembase";
+  parameter Real vr0=V_0*cos(anglev_rad)
+    "Real component of initial terminal voltage";
+  parameter Real vi0=V_0*sin(anglev_rad)
+    "Imaginary component of intitial terminal voltage";
+  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current, systembase";
+  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current, systembase";
   //Initialization mechanical power and field voltage.
-  parameter Real pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0 "Initial mechanical power, machine base";
-  parameter Real efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0 "Initial field voltage magnitude";
+  parameter Real pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
+    "Initial mechanical power, machine base";
+  parameter Real efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0
+    "Initial field voltage magnitude";
   parameter Real Epq0=PSIkd0 + (Xpd - Xl)*id0;
   parameter Real Epd0=PSIkq0 - (Xpq - Xl)*iq0;
   //Initialize remaining states:
-  parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d) "d-axis initial rotor flux linkage";
-  parameter Real PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q) "q-axis initial rotor flux linkage";
+  parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
+    "d-axis initial rotor flux linkage";
+  parameter Real PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q)
+    "q-axis initial rotor flux linkage";
   parameter Real PSId0=PSIppd0 - Xppd*id0;
   parameter Real PSIq0=PSIppq0 - Xppq*iq0;
   // Constants
@@ -96,7 +119,8 @@ protected
   parameter Real K4d=(Xpd - Xppd)/(Xpd - Xl);
   parameter Real K3q=(Xppq - Xl)/(Xpq - Xl);
   parameter Real K4q=(Xpq - Xppq)/(Xpq - Xl);
-  parameter Real CoB=M_b/S_b "Constant to change from system base to machine base";
+  parameter Real CoB=M_b/S_b
+    "Constant to change from system base to machine base";
 initial equation
   der(Epd) = 0;
   der(Epq) = 0;
@@ -137,36 +161,12 @@ equation
   uq = PSId - R_a*iq;
   //flow
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={Text(
           extent={{-54,24},{54,-26}},
           lineColor={0,0,255},
           textString="GENROE")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end GENROE;

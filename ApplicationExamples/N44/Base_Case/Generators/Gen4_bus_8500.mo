@@ -60,54 +60,46 @@ model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GEN
     T_3=2,
     K_4=0.55,
     K_5=1,
-    T_5=0.01) annotation (Placement(transformation(extent={{-74,-51},{-34,-34}})));
-  Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-21,-61},{-11,-51}})));
-  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+    T_5=0.01)
+    annotation (Placement(transformation(extent={{-74,-51},{-34,-34}})));
+  Modelica.Blocks.Sources.Constant cte(k=0)
+    annotation (Placement(transformation(extent={{-21,-61},{-11,-51}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
+            {100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-  connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-32.1818,-42.5},{-4.0909,-42.5},{-4.0909,-33.8611},{25,-33.8611}}, color={0,0,127}));
-  connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-56},{4,-56},{4,-83},{42.875,-83}}, color={0,0,127}));
-  connect(gENROU.p, pwPin) annotation (Line(points={{6.9,15},{62,15},{62,0},{110,0}}, color={0,0,255}));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.59375,71},{16,71},{16,50},{-68,50},{-68,30.5},{-53.42,30.5}}, color={0,0,127}));
-  connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{6.32,42.9},{20,42.9},{20,82},{-56,82},{-56,75.5},{-47.725,75.5}}, color={0,0,127}));
-  connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{6.32,5.7},{24,5.7},{24,86},{-62,86},{-62,65},{-47.725,65}}, color={0,0,127}));
-  connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.32,-0.5},{18,-0.5},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}}, color={0,0,127}));
-  connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},{12,-12.9},{12,-60.9722},{25,-60.9722}}, color={0,0,127}));
-  connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.32,-6.7},{16,-6.7},{16,-71.1389},{25,-71.1389}}, color={0,0,127}));
-  connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{6.32,30.5},{22,30.5},{22,-49.1111},{25,-49.1111}}, color={0,0,127}));
-  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{81.375,-49.1111},{86,-49.1111},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}}, color={0,0,127}));
-  connect(sCRX.VUEL, cte.y) annotation (Line(points={{34.625,-83},{14,-83},{14,-50},{4,-50},{4,-56},{-10.5,-56}}, color={0,0,127}));
+  connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-32.1818,-42.5},
+          {-4.0909,-42.5},{-4.0909,-33.8611},{25,-33.8611}}, color={0,0,127}));
+  connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-56},{4,-56},{4,-83},
+          {42.875,-83}}, color={0,0,127}));
+  connect(gENROU.p, pwPin) annotation (Line(points={{6.9,15},{62,15},{62,0},{
+          110,0}}, color={0,0,255}));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.59375,71},{16,
+          71},{16,50},{-68,50},{-68,30.5},{-53.42,30.5}}, color={0,0,127}));
+  connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{6.32,42.9},{20,
+          42.9},{20,82},{-56,82},{-56,75.5},{-47.725,75.5}}, color={0,0,127}));
+  connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{6.32,5.7},{24,
+          5.7},{24,86},{-62,86},{-62,65},{-47.725,65}}, color={0,0,127}));
+  connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.32,-0.5},{18,
+          -0.5},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}}, color={0,0,
+          127}));
+  connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},{12,
+          -12.9},{12,-60.9722},{25,-60.9722}}, color={0,0,127}));
+  connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.32,-6.7},{16,-6.7},
+          {16,-71.1389},{25,-71.1389}}, color={0,0,127}));
+  connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{6.32,30.5},{22,
+          30.5},{22,-49.1111},{25,-49.1111}}, color={0,0,127}));
+  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{81.375,-49.1111},{86,
+          -49.1111},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}}, color={0,0,
+          127}));
+  connect(sCRX.VUEL, cte.y) annotation (Line(points={{34.625,-83},{14,-83},{14,
+          -50},{4,-50},{4,-56},{-10.5,-56}}, color={0,0,127}));
   annotation (
     Icon(graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+          smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
+          lineColor={0,0,255})}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation);
 end Gen4_bus_8500;
-

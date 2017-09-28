@@ -27,20 +27,27 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     T1=T_1,
     T2=T_2,
     x_start=V_S0,
-    y_start=V_S0) annotation (Placement(transformation(extent={{40,-5},{50,5}})));
+    y_start=V_S0)
+    annotation (Placement(transformation(extent={{40,-5},{50,5}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag T_3_T_4(
     K=1,
     T1=T_3,
     T2=T_4,
     x_start=V_S0,
-    y_start=V_S0) annotation (Placement(transformation(extent={{60,-5},{70,5}})));
+    y_start=V_S0)
+    annotation (Placement(transformation(extent={{60,-5},{70,5}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0) "PSS output signal"
-    annotation (Placement(transformation(extent={{120,-5},{130,5}}, rotation=0), iconTransformation(extent={{120,-10},{140,10}})));
+    annotation (Placement(transformation(extent={{120,-5},{130,5}}, rotation=0),
+        iconTransformation(extent={{120,-10},{140,10}})));
   Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
-    annotation (Placement(transformation(extent={{-125,-5},{-115,5}}, rotation=0), iconTransformation(extent={{-128,-30},{-108,-10}})));
-  Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN) annotation (Placement(transformation(extent={{100,-5},{110,5}})));
-  Modelica.Blocks.Interfaces.RealInput V_CT "Compensated machine terminal voltage (pu)"
-    annotation (Placement(transformation(extent={{-125,30},{-115,40}}, rotation=0), iconTransformation(extent={{-128,10},{-108,30}})));
+    annotation (Placement(transformation(extent={{-125,-5},{-115,5}}, rotation=
+            0), iconTransformation(extent={{-128,-30},{-108,-10}})));
+  Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN)
+    annotation (Placement(transformation(extent={{100,-5},{110,5}})));
+  Modelica.Blocks.Interfaces.RealInput V_CT
+    "Compensated machine terminal voltage (pu)" annotation (Placement(
+        transformation(extent={{-125,30},{-115,40}}, rotation=0),
+        iconTransformation(extent={{-128,10},{-108,30}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     T=T_6,
     y_start=0,
@@ -48,13 +55,18 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     x_start=V_S0,
     k=K_S*T_5) annotation (Placement(transformation(extent={{80,-5},{90,5}})));
 protected
-  Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal" annotation (Placement(transformation(extent={{113,-5},{123,5}}, rotation=0), iconTransformation(extent={{32,-8},{36,-4}})));
+  Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal"
+    annotation (Placement(transformation(extent={{113,-5},{123,5}}, rotation=0),
+        iconTransformation(extent={{32,-8},{36,-4}})));
   parameter Real V_S0(fixed=false);
   parameter Boolean bypass_filter2(fixed=false);
   parameter Boolean bypass_filter1(fixed=false);
-  parameter Integer n1=if A_1 == 0 and A_2 == 0 then 4 elseif A_2 == 0 then 2 else 3;
-  parameter Integer n2=if A_3 == 0 and A_4 == 0 then 4 elseif A_4 == 0 then 2 else 3;
-  parameter Integer n3=if A_6 == 0 and A_5 == 0 then 1 elseif A_6 == 0 then 2 else 3;
+  parameter Integer n1=if A_1 == 0 and A_2 == 0 then 4 elseif A_2 == 0 then 2
+       else 3;
+  parameter Integer n2=if A_3 == 0 and A_4 == 0 then 4 elseif A_4 == 0 then 2
+       else 3;
+  parameter Integer n3=if A_6 == 0 and A_5 == 0 then 1 elseif A_6 == 0 then 2
+       else 3;
   parameter Real a1[n1](each fixed=false);
   parameter Real a2[n2](each fixed=false);
   parameter Real b[n3](each fixed=false);
@@ -63,8 +75,10 @@ protected
     y_start=V_S0,
     b={1},
     a=a2) annotation (Placement(transformation(extent={{-60,-30},{-50,-20}})));
-  Modelica.Blocks.Logical.Switch swith_filter2 annotation (Placement(transformation(extent={{-30,-26},{-20,-16}})));
-  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=bypass_filter2) annotation (Placement(transformation(extent={{-60,-50},{-50,-40}})));
+  Modelica.Blocks.Logical.Switch swith_filter2
+    annotation (Placement(transformation(extent={{-30,-26},{-20,-16}})));
+  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=bypass_filter2)
+    annotation (Placement(transformation(extent={{-60,-50},{-50,-40}})));
   Modelica.Blocks.Continuous.TransferFunction Filter1_2(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=V_S0,
@@ -75,11 +89,16 @@ protected
     y_start=V_S0,
     a=a2,
     b=b) annotation (Placement(transformation(extent={{-60,10},{-50,20}})));
-  Modelica.Blocks.Logical.Switch swith_filter1 annotation (Placement(transformation(extent={{-75,-5},{-65,5}})));
-  Modelica.Blocks.Sources.BooleanConstant booleanConstant1(k=bypass_filter1) annotation (Placement(transformation(extent={{-95,-15},{-85,-5}})));
-  Modelica.Blocks.Logical.Switch swith_filter3 annotation (Placement(transformation(extent={{20,-5},{30,5}})));
-  Modelica.Blocks.MathBoolean.And and1(nu=2) annotation (Placement(transformation(extent={{-30,-13},{-20,-3}})));
-  Modelica.Blocks.Logical.Switch swith_filter4 annotation (Placement(transformation(extent={{-6,-5},{4,5}})));
+  Modelica.Blocks.Logical.Switch swith_filter1
+    annotation (Placement(transformation(extent={{-75,-5},{-65,5}})));
+  Modelica.Blocks.Sources.BooleanConstant booleanConstant1(k=bypass_filter1)
+    annotation (Placement(transformation(extent={{-95,-15},{-85,-5}})));
+  Modelica.Blocks.Logical.Switch swith_filter3
+    annotation (Placement(transformation(extent={{20,-5},{30,5}})));
+  Modelica.Blocks.MathBoolean.And and1(nu=2)
+    annotation (Placement(transformation(extent={{-30,-13},{-20,-3}})));
+  Modelica.Blocks.Logical.Switch swith_filter4
+    annotation (Placement(transformation(extent={{-6,-5},{4,5}})));
 initial equation
   if n3 == 1 then
     b = {1};
@@ -133,28 +152,51 @@ equation
       points={{-120,0},{-100,0},{-100,-25},{-91,-25}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(T_1_T_2.y, T_3_T_4.u) annotation (Line(points={{50.5,0},{59,0}}, color={0,0,127}));
-  connect(imDerivativeLag.y, VSS.u) annotation (Line(points={{90.5,0},{99,0}}, color={0,0,127}));
-  connect(T_3_T_4.y, imDerivativeLag.u) annotation (Line(points={{70.5,0},{74,0},{79,0}}, color={0,0,127}));
-  connect(Filter1_1.y, Filter2_1.u) annotation (Line(points={{-79.5,-25},{-72,-25},{-61,-25}}, color={0,0,127}));
-  connect(swith_filter2.u3, Filter2_1.y) annotation (Line(points={{-31,-25},{-31,-25},{-49.5,-25}}, color={0,0,127}));
-  connect(swith_filter2.u1, Filter2_1.u) annotation (Line(points={{-31,-17},{-66,-17},{-66,-25},{-61,-25}}, color={0,0,127}));
-  connect(booleanConstant.y, swith_filter2.u2) annotation (Line(points={{-49.5,-45},{-40,-45},{-40,-21},{-31,-21}}, color={255,0,255}));
-  connect(Filter1_2.u, Filter1_1.u) annotation (Line(points={{-91,15},{-100,15},{-100,-25},{-91,-25}}, color={0,0,127}));
-  connect(swith_filter1.y, Filter2_2.u) annotation (Line(points={{-64.5,0},{-63,0},{-63,15},{-61,15}}, color={0,0,127}));
-  connect(swith_filter1.u1, Filter1_1.u) annotation (Line(points={{-76,4},{-95,4},{-95,15},{-100,15},{-100,-25},{-91,-25}}, color={0,0,127}));
-  connect(swith_filter1.u3, Filter1_2.y) annotation (Line(points={{-76,-4},{-78,-4},{-78,15},{-79.5,15}}, color={0,0,127}));
-  connect(booleanConstant1.y, swith_filter1.u2) annotation (Line(points={{-84.5,-10},{-80,-10},{-80,0},{-76,0}}, color={255,0,255}));
-  connect(and1.y, swith_filter3.u2) annotation (Line(points={{-19.25,-8},{15,-8},{15,0},{19,0}}, color={255,0,255}));
-  connect(and1.u[1], swith_filter2.u2) annotation (Line(points={{-30,-6.25},{-35,-6.25},{-40,-6.25},{-40,-6},{-40,-21},{-31,-21}}, color={255,0,255}));
-  connect(and1.u[2], swith_filter1.u2) annotation (Line(points={{-30,-9.75},{-52,-9.75},{-52,-10},{-80,-10},{-80,0},{-76,0}}, color={255,0,255}));
-  connect(swith_filter3.u1, Filter1_1.u) annotation (Line(points={{19,4},{15,4},{15,30},{-110,30},{-110,0},{-100,0},{-100,-25},{-91,-25}}, color={0,0,127}));
-  connect(swith_filter4.y, swith_filter3.u3) annotation (Line(points={{4.5,0},{12,0},{12,-4},{19,-4}}, color={0,0,127}));
-  connect(swith_filter4.u2, swith_filter1.u2) annotation (Line(points={{-7,0},{-52,0},{-52,-10},{-80,-10},{-80,0},{-76,0}}, color={255,0,255}));
-  connect(Filter2_2.y, swith_filter4.u1) annotation (Line(points={{-49.5,15},{-20,15},{-20,4},{-7,4}}, color={0,0,127}));
-  connect(swith_filter2.y, swith_filter4.u3) annotation (Line(points={{-19.5,-21},{-12,-21},{-12,-4},{-7,-4}}, color={0,0,127}));
-  connect(swith_filter3.y, T_1_T_2.u) annotation (Line(points={{30.5,0},{39,0}}, color={0,0,127}));
-  connect(VSS.y, Vs) annotation (Line(points={{110.5,0},{118,0},{118,0}}, color={0,0,127}));
+  connect(T_1_T_2.y, T_3_T_4.u)
+    annotation (Line(points={{50.5,0},{59,0}}, color={0,0,127}));
+  connect(imDerivativeLag.y, VSS.u)
+    annotation (Line(points={{90.5,0},{99,0}}, color={0,0,127}));
+  connect(T_3_T_4.y, imDerivativeLag.u)
+    annotation (Line(points={{70.5,0},{74,0},{79,0}}, color={0,0,127}));
+  connect(Filter1_1.y, Filter2_1.u) annotation (Line(points={{-79.5,-25},{-72,-25},
+          {-61,-25}}, color={0,0,127}));
+  connect(swith_filter2.u3, Filter2_1.y) annotation (Line(points={{-31,-25},{-31,
+          -25},{-49.5,-25}}, color={0,0,127}));
+  connect(swith_filter2.u1, Filter2_1.u) annotation (Line(points={{-31,-17},{-66,
+          -17},{-66,-25},{-61,-25}}, color={0,0,127}));
+  connect(booleanConstant.y, swith_filter2.u2) annotation (Line(points={{-49.5,
+          -45},{-40,-45},{-40,-21},{-31,-21}}, color={255,0,255}));
+  connect(Filter1_2.u, Filter1_1.u) annotation (Line(points={{-91,15},{-100,15},
+          {-100,-25},{-91,-25}}, color={0,0,127}));
+  connect(swith_filter1.y, Filter2_2.u) annotation (Line(points={{-64.5,0},{-63,
+          0},{-63,15},{-61,15}}, color={0,0,127}));
+  connect(swith_filter1.u1, Filter1_1.u) annotation (Line(points={{-76,4},{-95,
+          4},{-95,15},{-100,15},{-100,-25},{-91,-25}}, color={0,0,127}));
+  connect(swith_filter1.u3, Filter1_2.y) annotation (Line(points={{-76,-4},{-78,
+          -4},{-78,15},{-79.5,15}}, color={0,0,127}));
+  connect(booleanConstant1.y, swith_filter1.u2) annotation (Line(points={{-84.5,
+          -10},{-80,-10},{-80,0},{-76,0}}, color={255,0,255}));
+  connect(and1.y, swith_filter3.u2) annotation (Line(points={{-19.25,-8},{15,-8},
+          {15,0},{19,0}}, color={255,0,255}));
+  connect(and1.u[1], swith_filter2.u2) annotation (Line(points={{-30,-6.25},{-35,
+          -6.25},{-40,-6.25},{-40,-6},{-40,-21},{-31,-21}}, color={255,0,255}));
+  connect(and1.u[2], swith_filter1.u2) annotation (Line(points={{-30,-9.75},{-52,
+          -9.75},{-52,-10},{-80,-10},{-80,0},{-76,0}}, color={255,0,255}));
+  connect(swith_filter3.u1, Filter1_1.u) annotation (Line(points={{19,4},{15,4},
+          {15,30},{-110,30},{-110,0},{-100,0},{-100,-25},{-91,-25}}, color={0,0,
+          127}));
+  connect(swith_filter4.y, swith_filter3.u3) annotation (Line(points={{4.5,0},{
+          12,0},{12,-4},{19,-4}}, color={0,0,127}));
+  connect(swith_filter4.u2, swith_filter1.u2) annotation (Line(points={{-7,0},{
+          -52,0},{-52,-10},{-80,-10},{-80,0},{-76,0}}, color={255,0,255}));
+  connect(Filter2_2.y, swith_filter4.u1) annotation (Line(points={{-49.5,15},{-20,
+          15},{-20,4},{-7,4}}, color={0,0,127}));
+  connect(swith_filter2.y, swith_filter4.u3) annotation (Line(points={{-19.5,-21},
+          {-12,-21},{-12,-4},{-7,-4}}, color={0,0,127}));
+  connect(swith_filter3.y, T_1_T_2.u)
+    annotation (Line(points={{30.5,0},{39,0}}, color={0,0,127}));
+  connect(VSS.y, Vs)
+    annotation (Line(points={{110.5,0},{118,0},{118,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
@@ -163,7 +205,8 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-120,-40},{120,40}},
-        grid={1,1}), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),Text(
+        grid={1,1}), graphics={Rectangle(extent={{-120,40},{120,-40}},
+          lineColor={0,0,255}),Text(
           extent={{-46,40},{54,-44}},
           lineColor={0,0,255},
           textString="IEEEST"),Text(
@@ -195,31 +238,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end IEEEST;

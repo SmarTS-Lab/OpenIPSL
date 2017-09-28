@@ -43,7 +43,8 @@ model Controller
         origin={-120.0,-80.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add1(k1=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add1(k1=-1) annotation (Placement(visible=true,
+        transformation(
         origin={-85.0,-65.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -52,7 +53,8 @@ model Controller
         origin={-11.5403,-65.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Gain gain1(k=1/ibase) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain1(k=1/ibase) annotation (Placement(visible=true,
+        transformation(
         origin={16.5869,-65.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -76,7 +78,8 @@ model Controller
         origin={-120.0,20.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k1=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add2(k1=-1) annotation (Placement(visible=true,
+        transformation(
         origin={-95.0,48.1957},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -85,7 +88,8 @@ model Controller
         origin={-26.5403,47.3513},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Gain gain2(k=1/ibase_iq) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain2(k=1/ibase_iq) annotation (Placement(visible=
+          true, transformation(
         origin={10.0,47.3513},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -126,7 +130,8 @@ equation
   connect(id_ref, gain1.y) annotation (Line(
       visible=true,
       origin={97.9312,-8.9184},
-      points={{62.0688,53.9184},{27.0688,53.9184},{27.0688,2.1631},{-22.9312,2.1631},{-22.9312,-56.0816},{-70.3443,-56.0816}},
+      points={{62.0688,53.9184},{27.0688,53.9184},{27.0688,2.1631},{-22.9312,
+          2.1631},{-22.9312,-56.0816},{-70.3443,-56.0816}},
       color={0,0,127}));
   connect(PI2.yo, limiter1.u) annotation (Line(
       visible=true,
@@ -138,11 +143,11 @@ equation
       origin={-68.0,-65.0},
       points={{-6.0,0.0},{6.0,0.0}},
       color={0,0,127}));
-  connect(simpleLagg1.yo, add2.u1)
-    annotation (Line(
+  connect(simpleLagg1.yo, add2.u1) annotation (Line(
       visible=true,
       origin={-117.0729,57.0978},
       points={{-4.2188,2.9022},{-2.9271,2.9022},{-2.9271,-2.9021},{10.0729,-2.9021}},
+
       color={0,0,127}));
   connect(uac, simpleLagg1.yi) annotation (Line(
       visible=true,
@@ -153,6 +158,7 @@ equation
       visible=true,
       origin={-43.9052,47.4423},
       points={{-10.0948,0.0909},{2.3649,0.0909},{2.3649,-0.091},{5.3649,-0.091}},
+
       color={0,0,127}));
   connect(add2.y, PI3.yi) annotation (Line(
       visible=true,
@@ -163,22 +169,25 @@ equation
       visible=true,
       origin={-116.2596,-53.6733},
       points={{-51.779,5.3267},{16.2596,5.3267},{16.2596,-5.3267},{19.2596,-5.3267}},
+
       color={0,0,127}));
   connect(gain2.y, iq_ref) annotation (Line(
       visible=true,
       origin={97.75,-6.3243},
       points={{-76.75,53.6756},{7.25,53.6757},{7.25,-53.6757},{62.25,-53.6757}},
+
       color={0,0,127}));
   connect(Vdcref, add1.u2) annotation (Line(
       visible=true,
       origin={-116.341,-76.258},
       points={{-52.0232,-5.2581},{16.341,-5.258},{16.341,5.258},{19.341,5.258}},
+
       color={0,0,127}));
-  connect(add2.u2, Vacref)
-    annotation (Line(
+  connect(add2.u2, Vacref) annotation (Line(
       visible=true,
       origin={-141.1202,36.0979},
       points={{34.1202,6.0978},{-3.5567,6.0979},{-3.5567,-6.0979},{-27.0067,-6.0979}},
+
       color={0,0,127}));
   connect(limiter2.y, gain2.u) annotation (Line(
       visible=true,
@@ -265,31 +274,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end Controller;

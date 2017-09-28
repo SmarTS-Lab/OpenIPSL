@@ -11,7 +11,8 @@ model Cp_function
         origin={0.0,0.0},
         extent={{-140.0,40.0},{-100.0,80.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Theta "Pitch angle" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Theta "Pitch angle" annotation (
+      Placement(
       transformation(
         extent={{-140.0,-80.0},{-100.0,-40.0}},
         rotation=0,
@@ -21,11 +22,15 @@ model Cp_function
         origin={0.0,0.0},
         extent={{-140.0,-80.0},{-100.0,-40.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput y "Cp" annotation (Placement(transformation(extent={{100,-10},{120,10}}, rotation=0)));
+  Modelica.Blocks.Interfaces.RealOutput y "Cp" annotation (Placement(
+        transformation(extent={{100,-10},{120,10}}, rotation=0)));
 protected
-  Modelica.Blocks.Math.MatrixGain matrixGain1(K=[-0.41909, 0.21808, -0.012406, -0.00013365, 0.000011524; -0.067606, 0.060405, -0.013934, 0.0010683, -0.000023895; 0.015727, -0.010996, 0.0021495, -0.00014855,
-        0.0000027937; -0.00086018, 0.00057051, -0.00010479, 0.0000059924, -0.000000089194; 0.000014788, -0.0000094839, 0.0000016167, -0.000000071535, 0.00000000049686])
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.MatrixGain matrixGain1(K=[-0.41909, 0.21808, -0.012406,
+        -0.00013365, 0.000011524; -0.067606, 0.060405, -0.013934, 0.0010683, -0.000023895;
+        0.015727, -0.010996, 0.0021495, -0.00014855, 0.0000027937; -0.00086018,
+        0.00057051, -0.00010479, 0.0000059924, -0.000000089194; 0.000014788, -0.0000094839,
+        0.0000016167, -0.000000071535, 0.00000000049686]) annotation (Placement(
+        visible=true, transformation(
         origin={-26.0,50.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -57,7 +62,9 @@ equation
   connect(multi_Powers1.y[3], matrixGain1.u[3]);
   connect(multi_Powers1.y[4], matrixGain1.u[4]);
   connect(multi_Powers1.y[5], matrixGain1.u[5]);
-  y = matrixGain1.y[1]*multi_Powers2.y[1] + matrixGain1.y[2]*multi_Powers2.y[2] + matrixGain1.y[3]*multi_Powers2.y[3] + matrixGain1.y[4]*multi_Powers2.y[4] + matrixGain1.y[5]*multi_Powers2.y[5];
+  y = matrixGain1.y[1]*multi_Powers2.y[1] + matrixGain1.y[2]*multi_Powers2.y[2]
+     + matrixGain1.y[3]*multi_Powers2.y[3] + matrixGain1.y[4]*multi_Powers2.y[4]
+     + matrixGain1.y[5]*multi_Powers2.y[5];
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
@@ -76,33 +83,8 @@ Block has two continuous Real input vectors u1 and u2 and one
 continuous Real output vector y.
 All vectors have the same number of elements.
 </p>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"), Diagram(coordinateSystem(
+</html>"),
+    Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
         grid={2,2}), graphics),

@@ -16,8 +16,7 @@ model Example_3
     X=0.092,
     G=0,
     B=0.079,
-    displayPF=true)
-             annotation (Placement(transformation(
+    displayPF=true) annotation (Placement(transformation(
         extent={{10,10},{-10,-10}},
         rotation=270,
         origin={80,0})));
@@ -26,8 +25,7 @@ model Example_3
     R=0.01,
     X=0.085,
     B=0.088,
-    displayPF=true)
-             annotation (Placement(transformation(
+    displayPF=true) annotation (Placement(transformation(
         extent={{10,10},{-10,-10}},
         rotation=270,
         origin={-60,-2})));
@@ -56,8 +54,7 @@ model Example_3
     R=0.039,
     X=0.170,
     B=0.179,
-    displayPF=true)
-             annotation (Placement(transformation(
+    displayPF=true) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={80,56})));
@@ -66,8 +63,7 @@ model Example_3
     R=0.032,
     X=0.161,
     B=0.153,
-    displayPF=true)
-             annotation (Placement(transformation(
+    displayPF=true) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-60,56})));
@@ -76,12 +72,12 @@ model Example_3
     R=0.0119,
     X=0.1008,
     B=0.1045,
-    displayPF=true)
-              annotation (Placement(transformation(
+    displayPF=true) annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         rotation=180,
         origin={30,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+    twoWindingTransformer1(
     r=0,
     kT=13.8/230,
     x=0.0586,
@@ -90,7 +86,8 @@ model Example_3
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={100,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+    twoWindingTransformer2(
     r=0,
     kT=18/230,
     x=0.0625,
@@ -110,37 +107,39 @@ model Example_3
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={10,50})));
-  OpenIPSL.Electrical.Buses.Bus B2(V_0=1.025, angle_0=0.161966652912444*180/pi,
-    displayPF=true)                                                             annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
+  OpenIPSL.Electrical.Buses.Bus B2(
+    V_0=1.025,
+    angle_0=0.161966652912444*180/pi,
+    displayPF=true)
+    annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
   OpenIPSL.Electrical.Buses.Bus B7(displayPF=true)
-                                   annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
-  OpenIPSL.Electrical.Buses.Bus B8(displayPF=true)
-                                   annotation (Placement(transformation(
+    annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
+  OpenIPSL.Electrical.Buses.Bus B8(displayPF=true) annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={0,90})));
   OpenIPSL.Electrical.Buses.Bus B9(displayPF=true)
-                                   annotation (Placement(transformation(extent={{50,80},
-            {70,100}})));
+    annotation (Placement(transformation(extent={{50,80},{70,100}})));
   OpenIPSL.Electrical.Buses.Bus B3(displayPF=true)
-                                   annotation (Placement(transformation(extent={{110,80},{130,100}})));
-  OpenIPSL.Electrical.Buses.Bus B6(displayPF=true)
-                                   annotation (Placement(transformation(
+    annotation (Placement(transformation(extent={{110,80},{130,100}})));
+  OpenIPSL.Electrical.Buses.Bus B6(displayPF=true) annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={80,30})));
-  OpenIPSL.Electrical.Buses.Bus B5(displayPF=true)
-                                   annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B5(displayPF=true) annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-60,30})));
-  OpenIPSL.Electrical.Buses.Bus B4(displayPF=true)
-                                   annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B4(displayPF=true) annotation (Placement(
+        transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-30})));
-  OpenIPSL.Electrical.Buses.Bus B1(angle_0=0, displayPF=true)
-                                              annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.Bus B1(angle_0=0, displayPF=true) annotation (
+      Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-70})));
@@ -155,7 +154,8 @@ model Example_3
     P_0=1.629999999999999*SysData.S_b,
     Q_0=0.066536560198189*SysData.S_b,
     vf0=1.789323314329606,
-    displayPF=true)        annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
+    displayPF=true)
+    annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
   Generation_Groups.Gen2 gen2(
     V_b=13.8,
     V_0=1.025,
@@ -167,8 +167,8 @@ model Example_3
     height=0.05,
     tstart=2,
     refdisturb=false,
-    displayPF=true) annotation (Placement(transformation(extent={{160,
-            80},{140,100}})));
+    displayPF=true)
+    annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
     V_0=1.040000000000000,
     angle_0=0,
@@ -184,8 +184,8 @@ model Example_3
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-100})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{100,
-            -120},{180,-80}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
+    annotation (Placement(transformation(extent={{100,-120},{180,-80}})));
   OpenIPSL.Electrical.Events.PwFault pwFault2(
     X=0.01,
     t1=3,
@@ -203,8 +203,7 @@ model Example_3
     t2=35,
     opening=1,
     displayPF=true)
-               annotation (Placement(transformation(extent={{-40,80},
-            {-20,100}})));
+    annotation (Placement(transformation(extent={{-40,80},{-20,100}})));
 equation
   connect(line_5_7.n, B7.p) annotation (Line(
       points={{-60,65},{-60,90},{-80,90}},
@@ -230,44 +229,47 @@ equation
       points={{-60,47},{-60,30}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(B2.p, gen1.pwPin) annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
-  connect(B2.p, twoWindingTransformer2.p) annotation (Line(points={{-120,90},
-          {-111,90}},                                                                              color={0,0,255}));
-  connect(twoWindingTransformer2.n, B7.p) annotation (Line(points={{-89,90},
-          {-89,90},{-80,90}},                                                                   color={0,0,255}));
-  connect(gen2.pwPin, B3.p) annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
-  connect(lOADPQ.p, B5.p) annotation (Line(points={{-90,1},{-90,20},
-          {-60,20},{-60,30}},                                                            color={0,0,255}));
-  connect(B4.p, twoWindingTransformer.n) annotation (Line(points={{0,-30},
-          {0,-39},{6.66134e-16,-39}},                                               color={0,0,255}));
-  connect(B8.p, lOADPQ1.p) annotation (Line(points={{0,90},{10,90},{
-          10,61}},                                                                         color={0,0,255}));
-  connect(line_8_9.p, B9.p) annotation (Line(points={{39,90},{39,90},
-          {60,90}},                                                              color={0,0,255}));
-  connect(B8.p, line_8_9.n) annotation (Line(points={{0,90},{16,90},
-          {21,90}},                                                             color={0,0,255}));
-  connect(B9.p, pwFault2.p) annotation (Line(points={{60,90},{50,90},
-          {50,61.6667}},                                                            color={0,0,255}));
-  connect(B7.p, pwLine2Openings.p) annotation (Line(points={{-80,90},
-          {-39,90}},                                                                       color={0,0,255}));
-  connect(B8.p, pwLine2Openings.n) annotation (Line(points={{0,90},{
-          -21,90}},                                                                      color={0,0,255}));
-  connect(PQ1.p, B6.p) annotation (Line(points={{110,1},{110,20},{80,
-          20},{80,30}}, color={0,0,255}));
-  connect(gen3.pwPin, B1.p) annotation (Line(points={{0,-89},{0,-89},
-          {0,-70}}, color={0,0,255}));
-  connect(twoWindingTransformer.p, B1.p) annotation (Line(points={{0,
-          -61},{0,-65.5},{0,-70}}, color={0,0,255}));
-  connect(line_6_4.p, B4.p) annotation (Line(points={{80,-9},{80,-20},
-          {80,-20},{80,-20},{0,-20},{0,-30},{0,-30}}, color={0,0,255}));
-  connect(line_6_4.n, B6.p) annotation (Line(points={{80,9},{80,19.5},
-          {80,30}}, color={0,0,255}));
-  connect(line_4_5.n, B5.p) annotation (Line(points={{-60,7},{-60,7},
-          {-60,30}}, color={0,0,255}));
-  connect(line_4_5.p, B4.p) annotation (Line(points={{-60,-11},{-60,
-          -20},{0,-20},{0,-30},{0,-30}}, color={0,0,255}));
+  connect(B2.p, gen1.pwPin)
+    annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
+  connect(B2.p, twoWindingTransformer2.p)
+    annotation (Line(points={{-120,90},{-111,90}}, color={0,0,255}));
+  connect(twoWindingTransformer2.n, B7.p)
+    annotation (Line(points={{-89,90},{-89,90},{-80,90}}, color={0,0,255}));
+  connect(gen2.pwPin, B3.p)
+    annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
+  connect(lOADPQ.p, B5.p) annotation (Line(points={{-90,1},{-90,20},{-60,20},{-60,
+          30}}, color={0,0,255}));
+  connect(B4.p, twoWindingTransformer.n) annotation (Line(points={{0,-30},{0,-39},
+          {6.66134e-16,-39}}, color={0,0,255}));
+  connect(B8.p, lOADPQ1.p)
+    annotation (Line(points={{0,90},{10,90},{10,61}}, color={0,0,255}));
+  connect(line_8_9.p, B9.p)
+    annotation (Line(points={{39,90},{39,90},{60,90}}, color={0,0,255}));
+  connect(B8.p, line_8_9.n)
+    annotation (Line(points={{0,90},{16,90},{21,90}}, color={0,0,255}));
+  connect(B9.p, pwFault2.p)
+    annotation (Line(points={{60,90},{50,90},{50,61.6667}}, color={0,0,255}));
+  connect(B7.p, pwLine2Openings.p)
+    annotation (Line(points={{-80,90},{-39,90}}, color={0,0,255}));
+  connect(B8.p, pwLine2Openings.n)
+    annotation (Line(points={{0,90},{-21,90}}, color={0,0,255}));
+  connect(PQ1.p, B6.p) annotation (Line(points={{110,1},{110,20},{80,20},{80,30}},
+        color={0,0,255}));
+  connect(gen3.pwPin, B1.p)
+    annotation (Line(points={{0,-89},{0,-89},{0,-70}}, color={0,0,255}));
+  connect(twoWindingTransformer.p, B1.p)
+    annotation (Line(points={{0,-61},{0,-65.5},{0,-70}}, color={0,0,255}));
+  connect(line_6_4.p, B4.p) annotation (Line(points={{80,-9},{80,-20},{80,-20},
+          {80,-20},{0,-20},{0,-30},{0,-30}}, color={0,0,255}));
+  connect(line_6_4.n, B6.p)
+    annotation (Line(points={{80,9},{80,19.5},{80,30}}, color={0,0,255}));
+  connect(line_4_5.n, B5.p)
+    annotation (Line(points={{-60,7},{-60,7},{-60,30}}, color={0,0,255}));
+  connect(line_4_5.p, B4.p) annotation (Line(points={{-60,-11},{-60,-20},{0,-20},
+          {0,-30},{0,-30}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
+            180,120}})),
     Icon(coordinateSystem(extent={{-180,-120},{180,120}})),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
@@ -287,7 +289,8 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"), experiment(
+</html>"),
+    experiment(
       StopTime=20,
       Interval=0.001,
       Tolerance=1e-006,

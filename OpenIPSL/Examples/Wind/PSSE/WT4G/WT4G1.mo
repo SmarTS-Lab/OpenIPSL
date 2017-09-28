@@ -15,7 +15,8 @@ model WT4G1
   parameter Real R1=2.50000E-2;
   parameter Real X1=2.50000E-2;
   parameter Real B1=0.05000;
-  parameter Real dyrw[1, 9]=[0.20000E-01, 0.20000E-01, 0.40000, 0.90000, 1.1100, 1.2000, 2.0000, 2.0000, 0.20000E-01];
+  parameter Real dyrw[1, 9]=[0.20000E-01, 0.20000E-01, 0.40000, 0.90000, 1.1100,
+      1.2000, 2.0000, 2.0000, 0.20000E-01];
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=R1,
     X=X1,
@@ -38,7 +39,8 @@ model WT4G1
     G=0,
     B=0,
     R=2.50000E-3,
-    X=2.50000E-3) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
+    X=2.50000E-3)
+    annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   OpenIPSL.Electrical.Wind.PSSE.WT4G.WT4G1 wT4G1(
     V_0=V3,
     angle_0=A3,
@@ -62,47 +64,37 @@ model WT4G1
     X=0.5,
     t1=1,
     t2=1.5) annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
-  OpenIPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  OpenIPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{0,-10},{20,10}})));
-  OpenIPSL.Electrical.Buses.Bus INF annotation (Placement(transformation(extent={{60,-10},{80,10}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
+    annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
+  OpenIPSL.Electrical.Buses.Bus GEN
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+  OpenIPSL.Electrical.Buses.Bus BUS1
+    annotation (Placement(transformation(extent={{0,-10},{20,10}})));
+  OpenIPSL.Electrical.Buses.Bus INF
+    annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 equation
-  connect(wT4G1.p, GEN.p) annotation (Line(points={{-38.8,-1.77636e-015},{-40,-1.77636e-015},{-40,0},{-30,0}}, color={0,0,255}));
-  connect(GEN.p, pwLine2.p) annotation (Line(points={{-30,0},{-21.6667,0}}, color={0,0,255}));
-  connect(pwLine2.n, BUS1.p) annotation (Line(points={{1.66667,0},{1.66667,0},{10,0}}, color={0,0,255}));
-  connect(BUS1.p, pwLine.p) annotation (Line(points={{10,0},{20,0},{20,20},{28.3333,20}}, color={0,0,255}));
-  connect(pwLine1.p, pwLine.p) annotation (Line(points={{28.3333,-20},{20,-20},{20,20},{28.3333,20}}, color={0,0,255}));
-  connect(pwFault.p, BUS1.p) annotation (Line(points={{18.3333,-50},{14,-50},{14,0},{10,0}}, color={0,0,255}));
-  connect(pwLine.n, INF.p) annotation (Line(points={{51.6667,20},{60,20},{60,0},{70,0}}, color={0,0,255}));
-  connect(pwLine1.n, INF.p) annotation (Line(points={{51.6667,-20},{60,-20},{60,0},{70,0}}, color={0,0,255}));
-  connect(INF.p, gENCLS2_1.p) annotation (Line(points={{70,0},{88.8,0},{88.8,-0.180432}}, color={0,0,255}));
-  connect(wT4G1.I_qcmd, wT4G1.I_qcmd0) annotation (Line(points={{-62.8,9.6},{-66,9.6},{-66,16},{-59.2,16},{-59.2,13.2}}, color={0,0,127}));
-  connect(wT4G1.I_pcmd, wT4G1.I_pcmd0) annotation (Line(points={{-62.8,4.8},{-68,4.8},{-68,18},{-54.4,18},{-54.4,13.2}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  connect(wT4G1.p, GEN.p) annotation (Line(points={{-38.8,-1.77636e-015},{-40,-1.77636e-015},
+          {-40,0},{-30,0}}, color={0,0,255}));
+  connect(GEN.p, pwLine2.p)
+    annotation (Line(points={{-30,0},{-21.6667,0}}, color={0,0,255}));
+  connect(pwLine2.n, BUS1.p) annotation (Line(points={{1.66667,0},{1.66667,0},{
+          10,0}}, color={0,0,255}));
+  connect(BUS1.p, pwLine.p) annotation (Line(points={{10,0},{20,0},{20,20},{
+          28.3333,20}}, color={0,0,255}));
+  connect(pwLine1.p, pwLine.p) annotation (Line(points={{28.3333,-20},{20,-20},
+          {20,20},{28.3333,20}}, color={0,0,255}));
+  connect(pwFault.p, BUS1.p) annotation (Line(points={{18.3333,-50},{14,-50},{
+          14,0},{10,0}}, color={0,0,255}));
+  connect(pwLine.n, INF.p) annotation (Line(points={{51.6667,20},{60,20},{60,0},
+          {70,0}}, color={0,0,255}));
+  connect(pwLine1.n, INF.p) annotation (Line(points={{51.6667,-20},{60,-20},{60,
+          0},{70,0}}, color={0,0,255}));
+  connect(INF.p, gENCLS2_1.p) annotation (Line(points={{70,0},{88.8,0},{88.8,-0.180432}},
+        color={0,0,255}));
+  connect(wT4G1.I_qcmd, wT4G1.I_qcmd0) annotation (Line(points={{-62.8,9.6},{-66,
+          9.6},{-66,16},{-59.2,16},{-59.2,13.2}}, color={0,0,127}));
+  connect(wT4G1.I_pcmd, wT4G1.I_pcmd0) annotation (Line(points={{-62.8,4.8},{-68,
+          4.8},{-68,18},{-54.4,18},{-54.4,13.2}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})), Documentation);
 end WT4G1;

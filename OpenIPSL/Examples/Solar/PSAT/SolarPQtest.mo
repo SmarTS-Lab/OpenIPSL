@@ -5,7 +5,8 @@ model SolarPQtest
     P_0=0.4,
     Q_0=0.3,
     V_0=1.00018548610126,
-    angle_0=-0.0000253046024029618) annotation (Placement(visible=true, transformation(
+    angle_0=-0.0000253046024029618) annotation (Placement(visible=true,
+        transformation(
         origin={35.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -85,23 +86,28 @@ model SolarPQtest
         origin={-110.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.Bus bus1 annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.Bus bus1 annotation (Placement(visible=true,
+        transformation(
         origin={-87.5421,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.Bus bus2 annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.Bus bus2 annotation (Placement(visible=true,
+        transformation(
         origin={-46.7243,11.8063},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.Bus bus3 annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.Bus bus3 annotation (Placement(visible=true,
+        transformation(
         origin={5.0,12.1033},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.Bus bus4 annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.Bus bus4 annotation (Placement(visible=true,
+        transformation(
         origin={-3.3112,-30.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,50},{75,70}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{50,50},{75,70}})));
 equation
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
@@ -159,37 +165,13 @@ equation
       visible=true,
       origin={17.4388,13.7927},
       points={{6.5612,-3.7927},{6.2194,-1.6893},{-12.4388,-1.6894}}));
-  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,25},{-125,25},{-125,15},{-120,15}}, color={0,0,127}));
-  connect(order31.pm, order31.pm0) annotation (Line(points={{-120,5},{-125,5},{-125,-5},{-118,-5},{-118,-1}}, color={0,0,127}));
+  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,25},
+          {-125,25},{-125,15},{-120,15}}, color={0,0,127}));
+  connect(order31.pm, order31.pm0) annotation (Line(points={{-120,5},{-125,5},{
+          -125,-5},{-118,-5},{-118,-1}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={5,5})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        grid={5,5})), Documentation);
 end SolarPQtest;

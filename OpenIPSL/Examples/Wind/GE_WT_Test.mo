@@ -1,12 +1,13 @@
 within OpenIPSL.Examples.Wind;
 model GE_WT_Test
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(
+        visible=true, transformation(
         origin={75.0,1.7487},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infBus2(angle_0=-0.000216626610049175, V_0=1.05999999985841)
-    annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infBus2(angle_0=-0.000216626610049175,
+      V_0=1.05999999985841) annotation (Placement(visible=true, transformation(
         origin={-42.5798,1.9703},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -42,7 +43,8 @@ model GE_WT_Test
         origin={53.0297,1.8373},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Wind.WindGenerator windGenerator1 annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Wind.WindGenerator windGenerator1 annotation (Placement(
+        visible=true, transformation(
         origin={50.0,17.493},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -83,8 +85,7 @@ equation
       origin={6.8642,1.7091},
       points={{3.11367,-0.0613},{3.11367,0.0307},{-1.56057,0.0307}},
       color={0,0,255}));
-  connect(windGenerator1.Vw, GE_WT_init1.Wind_Speed)
-    annotation (Line(
+  connect(windGenerator1.Vw, GE_WT_init1.Wind_Speed) annotation (Line(
       visible=true,
       origin={70.3333,14.8446},
       points={{-9.3333,2.6484},{4.6667,2.6484},{4.6667,-5.29687}},
@@ -108,31 +109,5 @@ equation
         extent={{-148.5,-105},{148.5,105}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={5,5}), graphics), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        grid={5,5}), graphics), Documentation);
 end GE_WT_Test;

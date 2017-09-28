@@ -9,4 +9,5 @@ model Gen3
       Td10=8.96,
       Tq10=0.310,
       M=47.28));
+  annotation (Documentation);
 end Gen3;

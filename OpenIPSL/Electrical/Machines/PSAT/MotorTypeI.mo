@@ -1,17 +1,28 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model MotorTypeI "Induction Machine - Order I"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter Integer Sup=1 "Start-up control" annotation (Dialog(group="Machine parameters"), choices(choice=0, choice=1));
-  parameter Real Rs=0.01 "Stator resistance (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Xs=0.15 "Stator reactance (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Rr1=0.05 "1st cage rotor resistance (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Xr1=0.15 "1st cage rotor reactance (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Xm=5 "Magnetizing reactance (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Hm=3 "Inertia constant (kWs/KVA)" annotation (Dialog(group="Machine parameters"));
-  parameter Real a=0.5 "1st coefficient of tau_m(w) (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real b=0.00 "2nd coefficient of tau_m(w) (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real c=0.00 "3rd coefficient of tau_m(w) (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real tup=0 "Start up time (s)" annotation (Dialog(group="Machine parameters"));
+  parameter Integer Sup=1 "Start-up control" annotation (Dialog(group=
+          "Machine parameters"), choices(choice=0, choice=1));
+  parameter Real Rs=0.01 "Stator resistance (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real Xs=0.15 "Stator reactance (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real Rr1=0.05 "1st cage rotor resistance (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real Xr1=0.15 "1st cage rotor reactance (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real Xm=5 "Magnetizing reactance (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real Hm=3 "Inertia constant (kWs/KVA)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real a=0.5 "1st coefficient of tau_m(w) (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real b=0.00 "2nd coefficient of tau_m(w) (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real c=0.00 "3rd coefficient of tau_m(w) (pu)"
+    annotation (Dialog(group="Machine parameters"));
+  parameter Real tup=0 "Start up time (s)"
+    annotation (Dialog(group="Machine parameters"));
   Real v(start=V_0) "Bus voltage magnitude";
   Real anglev(start=angle_0) " Bus voltage angle";
   Real s(start=Rr1*P_0*(Q_0 + V_0*V_0/Xm)/(V_0*V_0*V_0*V_0*(Xs + Xr1)));
@@ -23,8 +34,8 @@ model MotorTypeI "Induction Machine - Order I"
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{90,-10},
-            {110,10}})));
+    ii(start=ii0))
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 protected
   constant Real pi=Modelica.Constants.pi;
   parameter Real vr0=V_0*cos(angle_0);
@@ -48,7 +59,8 @@ equation
   der(s) = (Tm - P)/(2*Hm);
   p.ii = (-p.vr/Xm) + (p.vi*Re - p.vr*Xe)/(Re*Re + Xe*Xe);
   p.ir = p.vi/Xm + (p.vr*Re + p.vi*Xe)/(Re*Re + Xe*Xe);
-  annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+  annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
+            {100,100}}), graphics={Rectangle(
           visible=true,
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}}),Ellipse(

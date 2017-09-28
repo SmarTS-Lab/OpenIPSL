@@ -1,16 +1,26 @@
 within OpenIPSL.Electrical.FACTS.PSAT;
 model TCSCReactance
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-119,-8},{-99,12}})));
-  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p
+    annotation (Placement(transformation(extent={{-119,-8},{-99,12}})));
+  OpenIPSL.Interfaces.PwPin n
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;
-  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (V)" annotation (Dialog(group="Power flow data"));
-  parameter Real f=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
-  parameter Real x_TCSCO=0.01 "Value of the state varialbe x1" annotation (Dialog(group="Power flow data"));
-  parameter Real x20=0.01 "Value of the state varible x2" annotation (Dialog(group="Power flow data"));
-  parameter Real pref=0.080101913348342 "Reference power (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real Sb=100 "System base power (MVA)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus=400000 "Bus nominal voltage (V)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Sn=100 "Power rating (MVA)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real Vn=400000 "Voltage rating (V)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real f=50 "Frequency rating (Hz)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real x_TCSCO=0.01 "Value of the state varialbe x1"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real x20=0.01 "Value of the state varible x2"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real pref=0.080101913348342 "Reference power (pu)"
+    annotation (Dialog(group="Power flow data"));
   parameter Real Cp=0.10 "Percentage of series compensation (%)";
   parameter Real Tr=0.5 "Regulator time constant (s)";
   parameter Real xTCSCmax=0.05 "Maximum reactance (pu)";
@@ -65,8 +75,10 @@ equation
   p.ii - B*p.vr - G*p.vi = (y - b)*(n.vr - p.vr);
   p.ir - G*p.vr + B*p.vi = (y - b)*(p.vi - n.vi);
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics={Rectangle(
           extent={{-60,38},{60,-40}},
           lineColor={0,0,255},
           fillColor={175,175,175},
@@ -104,31 +116,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end TCSCReactance;

@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGtypeII "TG Type II"
-  Modelica.Blocks.Interfaces.RealInput pm0 "Initial mechanical power (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput pm0 "Initial mechanical power (pu)"
+    annotation (Placement(
       visible=true,
       transformation(
         origin={5.0,75.0},
@@ -10,7 +11,8 @@ model TGtypeII "TG Type II"
         origin={0.0,120.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=-90)));
-  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
+      Placement(
       visible=true,
       transformation(
         origin={127.8147,-10.0},
@@ -20,7 +22,8 @@ model TGtypeII "TG Type II"
         origin={110.0,-0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput W "Rotor speed (pu)" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput W "Rotor speed (pu)" annotation (
+      Placement(
       visible=true,
       transformation(
         origin={-86.6223,-82.7085},
@@ -30,12 +33,13 @@ model TGtypeII "TG Type II"
         origin={-120.0,-0.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true,
+        transformation(
         origin={-57.8833,-13.175},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={Ts,1}, b={T3,1})
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={Ts,1}, b={T3,
+        1}) annotation (Placement(visible=true, transformation(
         origin={5.0,-13.2292},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -45,22 +49,26 @@ model TGtypeII "TG Type II"
   parameter Real pmin0=0 "Minimum turbine output (pu)";
   parameter Real Ts=0.1 "Governor Time constant (s)";
   parameter Real T3=-0.1 "Transient gain time constant (s)";
-  parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=100 "System base power (MVA)"
+    annotation (Dialog(group="Power flow data"));
   parameter Real Sn=20 "Nominal power (MVA)";
-  Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(visible=true,
+        transformation(
         origin={-26.9038,-12.7482},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Constant const(k=wref) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Constant const(k=wref) annotation (Placement(visible=
+          true, transformation(
         origin={-125.0,-6.9858},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2 annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add2 annotation (Placement(visible=true,
+        transformation(
         origin={50.0,-5.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=pmax, uMin=pmin)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=pmax, uMin=pmin) annotation (
+      Placement(visible=true, transformation(
         origin={82.1897,-7.0368},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -73,6 +81,7 @@ equation
       visible=true,
       origin={112.546,-8.5184},
       points={{-19.3563,1.4816},{2.0437,1.4816},{2.0437,-1.4816},{15.2687,-1.4816}},
+
       color={0,0,127}));
   connect(pm0, add2.u1) annotation (Line(
       visible=true,
@@ -88,6 +97,7 @@ equation
       visible=true,
       origin={66.3923,-6.0184},
       points={{-5.3923,1.0184},{0.7974,1.0184},{0.7974,-1.0184},{3.7974,-1.0184}},
+
       color={0,0,127}));
   connect(transferFunction1.y, add2.u2) annotation (Line(
       visible=true,
@@ -98,17 +108,19 @@ equation
       visible=true,
       origin={-82.4125,-7.0804},
       points={{-31.5875,0.0946},{9.5292,0.0946},{9.5292,-0.0946},{12.5292,-0.0946}},
+
       color={0,0,127}));
-  connect(gain1.y, transferFunction1.u)
-    annotation (Line(
+  connect(gain1.y, transferFunction1.u) annotation (Line(
       visible=true,
       origin={-10.726,-12.9887},
       points={{-5.1778,0.2405},{0.726,0.2405},{0.726,-0.2405},{3.726,-0.2405}},
+
       color={0,0,127}));
   connect(add1.y, gain1.u) annotation (Line(
       visible=true,
       origin={-42.3987,-12.9616},
       points={{-4.4846,-0.2134},{0.4949,-0.2134},{0.4949,0.2134},{3.4949,0.2134}},
+
       color={0,0,127}));
   annotation (
     Icon(coordinateSystem(
@@ -167,31 +179,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end TGtypeII;

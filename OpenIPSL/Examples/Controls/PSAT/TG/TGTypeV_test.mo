@@ -78,7 +78,8 @@ model TGTypeV_test
     gmax=1,
     gmin=0,
     Tw=1,
-    Pref=0.160552) annotation (Placement(transformation(extent={{-78,-22},{-56,-6}})));
+    Pref=0.160552)
+    annotation (Placement(transformation(extent={{-78,-22},{-56,-6}})));
   Modelica.Blocks.Sources.Sine sine(
     amplitude=0.001,
     freqHz=0.2,
@@ -99,7 +100,8 @@ model TGTypeV_test
         extent={{-8,-8},{8,8}},
         rotation=180,
         origin={-28,-36})));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{0,60},{44,80}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{0,60},{44,80}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -124,30 +126,34 @@ equation
   connect(GenOrder3.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={1.2254,1.7135},
-      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,2.6151}}));
+      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,
+          2.6151}}));
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={8.8634,-5.6714},
       points={{-4.66667,10},{-4.66667,-4},{-4.66667,-4}}));
   connect(GenOrder3.vf0, GenOrder3.vf) annotation (Line(
-      points={{-40.6689,10.9112},{-2,10.9112},{-2,16},{-54,16},{-54,0.936599},{-44,0.936599}},
+      points={{-40.6689,10.9112},{-2,10.9112},{-2,16},{-54,16},{-54,0.936599},{
+          -44,0.936599}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel5_1.Pm, GenOrder3.pm) annotation (Line(
       points={{-54.57,-14.08},{-48,-14.08},{-48,-15.6878},{-44,-15.6878}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(GenOrder3.w, tGModel5_1.w)
-    annotation (Line(
-      points={{-9.02303,7.58636},{0,7.58636},{0,-26},{-86,-26},{-86,-14},{-80,-14},{-80,-14.88},{-79.87,-14.88}},
+  connect(GenOrder3.w, tGModel5_1.w) annotation (Line(
+      points={{-9.02303,7.58636},{0,7.58636},{0,-26},{-86,-26},{-86,-14},{-80,-14},
+          {-80,-14.88},{-79.87,-14.88}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(GenOrder3.pm0, tGModel5_1.w1) annotation (Line(
-      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{-79.98,-9.52}},
+      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{-79.98,
+          -9.52}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine.y, add.u1) annotation (Line(
       points={{39.4,-40},{-16,-40},{-16,-40},{-18,-40},{-18,-40},{-18.4,-40.8}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine1.y, add.u2) annotation (Line(
@@ -158,31 +164,6 @@ equation
       points={{-36.8,-36},{-88,-36},{-88,-19.2},{-79.87,-19.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})), Documentation);
 end TGTypeV_test;

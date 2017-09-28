@@ -1,13 +1,15 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1;
 model GGOV1 "GE General Governor/Turbine Mode"
   parameter Integer Rselect=1 "Feedback signal for
-            governor droop" annotation (Evaluate=true, choices(
+                    governor droop" annotation (Evaluate=true, choices(
       choice=1 "Electrical power",
       choice=0 "None (isochronous governor)",
       choice=-1 "Governor output (requested stroke)",
       choice=-2 "Fuel valve stroke (true stoke)"));
   parameter Integer Flag=1 "Switch for fuel source
-            characteristic" annotation (Evaluate=true, choices(choice=0 "Fuel flow independent of speed", choice=1 "Fuel flow proportional to speed"));
+                    characteristic" annotation (Evaluate=true, choices(choice=0
+        "Fuel flow independent of speed", choice=1
+        "Fuel flow proportional to speed"));
   parameter Real R "Permanent droop (pu)";
   parameter Real T_pelec "Electrical power transducer time constant (s)";
   parameter Real maxerr "Maximum value for speed error signal";
@@ -42,12 +44,15 @@ model GGOV1 "GE General Governor/Turbine Mode"
   parameter Real Rup "Maximum rate of load limit increase";
   parameter Real Rdown "Maximum rate of load limit decrease";
   parameter Real DELT "PSSE time step";
-  Modelica.Blocks.Math.Gain KPLOAD(k=Kpload) annotation (Placement(transformation(extent={{-196,52},{-182,66}})));
-  Modelica.Blocks.Math.Gain KPGOV(k=Kpgov) annotation (Placement(transformation(extent={{-92,-82},{-76,-66}})));
+  Modelica.Blocks.Math.Gain KPLOAD(k=Kpload)
+    annotation (Placement(transformation(extent={{-196,52},{-182,66}})));
+  Modelica.Blocks.Math.Gain KPGOV(k=Kpgov)
+    annotation (Placement(transformation(extent={{-92,-82},{-76,-66}})));
   Modelica.Blocks.Continuous.Integrator s6(
     k=1,
     y_start=s60,
-    initType=Modelica.Blocks.Types.Init.InitialState) annotation (Placement(transformation(
+    initType=Modelica.Blocks.Types.Init.InitialState) annotation (Placement(
+        transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-158,90})));
@@ -62,31 +67,48 @@ model GGOV1 "GE General Governor/Turbine Mode"
     k=Kdgov,
     T=Tdgov,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
-  Modelica.Blocks.Math.Add3 GovernorPID annotation (Placement(transformation(extent={{-60,-88},{-38,-66}})));
-  Modelica.Blocks.Math.Add LoadlimiterPI annotation (Placement(transformation(extent={{-168,56},{-152,72}})));
-  Modelica.Blocks.Nonlinear.DeadZone deadZone(uMax=db, deadZoneAtInit=false) annotation (Placement(transformation(extent={{-168,-84},{-148,-64}})));
-  Modelica.Blocks.Nonlinear.Limiter limiterSerror(uMax=maxerr, uMin=minerr) annotation (Placement(transformation(extent={{-138,-84},{-118,-64}})));
-  Modelica.Blocks.Math.Add3 add3_2(k1=-1, k3=-1) annotation (Placement(transformation(extent={{-198,-80},{-186,-68}})));
-  Modelica.Blocks.Math.Gain Acceleration(k=Ka*DELT) annotation (Placement(transformation(extent={{-116,0},{-92,24}})));
-  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-54,-2},{-36,16}})));
-  Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
-    annotation (Placement(transformation(extent={{-346,102},{-310,138}}), iconTransformation(extent={{-346,102},{-310,138}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
+  Modelica.Blocks.Math.Add3 GovernorPID
+    annotation (Placement(transformation(extent={{-60,-88},{-38,-66}})));
+  Modelica.Blocks.Math.Add LoadlimiterPI
+    annotation (Placement(transformation(extent={{-168,56},{-152,72}})));
+  Modelica.Blocks.Nonlinear.DeadZone deadZone(uMax=db, deadZoneAtInit=false)
+    annotation (Placement(transformation(extent={{-168,-84},{-148,-64}})));
+  Modelica.Blocks.Nonlinear.Limiter limiterSerror(uMax=maxerr, uMin=minerr)
+    annotation (Placement(transformation(extent={{-138,-84},{-118,-64}})));
+  Modelica.Blocks.Math.Add3 add3_2(k1=-1, k3=-1)
+    annotation (Placement(transformation(extent={{-198,-80},{-186,-68}})));
+  Modelica.Blocks.Math.Gain Acceleration(k=Ka*DELT)
+    annotation (Placement(transformation(extent={{-116,0},{-92,24}})));
+  Modelica.Blocks.Math.Add add
+    annotation (Placement(transformation(extent={{-54,-2},{-36,16}})));
+  Modelica.Blocks.Interfaces.RealInput SPEED
+    "Machine speed deviation from nominal (pu)" annotation (Placement(
+        transformation(extent={{-346,102},{-310,138}}), iconTransformation(
+          extent={{-346,102},{-310,138}})));
   Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)"
-    annotation (Placement(transformation(extent={{-348,-118},{-310,-80}}), iconTransformation(extent={{-348,-118},{-310,-80}})));
+    annotation (Placement(transformation(extent={{-348,-118},{-310,-80}}),
+        iconTransformation(extent={{-348,-118},{-310,-80}})));
   Modelica.Blocks.Continuous.Derivative s8(
     k=1,
     T=Ta,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-196,-14},{-170,12}})));
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{-146,2},{-126,22}})));
-  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(transformation(extent={{-180,22},{-164,38}})));
-  Modelica.Blocks.Math.Gain r(k=R) "Permanent droop" annotation (Placement(transformation(
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-196,-14},{-170,12}})));
+  Modelica.Blocks.Math.Add add1(k2=-1)
+    annotation (Placement(transformation(extent={{-146,2},{-126,22}})));
+  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset)
+    annotation (Placement(transformation(extent={{-180,22},{-164,38}})));
+  Modelica.Blocks.Math.Gain r(k=R) "Permanent droop" annotation (Placement(
+        transformation(
         extent={{-7,-7},{7,7}},
         rotation=90,
         origin={-207,-101})));
-  Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{-238,-80},{-226,-68}})));
-  Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(transformation(extent={{-276,-78},{-260,-62}})));
+  Modelica.Blocks.Math.Add add2
+    annotation (Placement(transformation(extent={{-238,-80},{-226,-68}})));
+  Modelica.Blocks.Sources.Constant P_ref(k=Pref)
+    annotation (Placement(transformation(extent={{-276,-78},{-260,-62}})));
   Modelica.Blocks.Continuous.LimIntegrator s7(
     k=Kimw,
     outMax=1.1*R,
@@ -95,7 +117,9 @@ model GGOV1 "GE General Governor/Turbine Mode"
         extent={{-8,-8},{8,8}},
         rotation=90,
         origin={-246,-98})));
-  Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset) "Supervisory Load Controller Setpoint," annotation (Placement(transformation(extent={{-276,-148},{-260,-132}})));
+  Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset)
+    "Supervisory Load Controller Setpoint,"
+    annotation (Placement(transformation(extent={{-276,-148},{-260,-132}})));
   Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
@@ -118,16 +142,21 @@ model GGOV1 "GE General Governor/Turbine Mode"
         extent={{-10,10},{10,-10}},
         rotation=180,
         origin={-30,110})));
-  Modelica.Blocks.Math.Gain gain(k=1/Kturb) annotation (Placement(transformation(extent={{-138,124},{-122,140}})));
-  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference" annotation (Placement(transformation(extent={{-180,124},{-164,140}})));
-  Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMax=1, uMin=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-126,56},{-110,72}})));
+  Modelica.Blocks.Math.Gain gain(k=1/Kturb)
+    annotation (Placement(transformation(extent={{-138,124},{-122,140}})));
+  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference"
+    annotation (Placement(transformation(extent={{-180,124},{-164,140}})));
+  Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMax=1, uMin=-Modelica.Constants.inf)
+    annotation (Placement(transformation(extent={{-126,56},{-110,72}})));
   NonElectrical.Continuous.LeadLag s9(
     T1=Tsa,
     T2=Tsb,
     y_start=s90,
     K=1) annotation (Placement(transformation(extent={{20,100},{0,120}})));
-  Min_select min_select(nu=3, frs0=fsr0) annotation (Placement(transformation(extent={{-18,-28},{-2,-12}})));
-  Modelica.Blocks.Math.Product product annotation (Placement(transformation(extent={{130,-66},{142,-54}})));
+  Min_select min_select(nu=3, frs0=fsr0)
+    annotation (Placement(transformation(extent={{-18,-28},{-2,-12}})));
+  Modelica.Blocks.Math.Product product
+    annotation (Placement(transformation(extent={{130,-66},{142,-54}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag s4(
     K=1,
     T1=Tc,
@@ -140,7 +169,8 @@ model GGOV1 "GE General Governor/Turbine Mode"
         extent={{-8,-8},{8,8}},
         rotation=90,
         origin={150,60})));
-  Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime=Teng) "Transport lag time" annotation (Placement(transformation(
+  Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime=Teng)
+    "Transport lag time" annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={150,20})));
@@ -152,7 +182,8 @@ model GGOV1 "GE General Governor/Turbine Mode"
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={176,158})));
-  Modelica.Blocks.Sources.Constant set1(k=Wfnl) "full load flow" annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant set1(k=Wfnl) "full load flow" annotation (
+      Placement(transformation(
         extent={{-8,-8},{8,8}},
         rotation=180,
         origin={196,-38})));
@@ -164,39 +195,50 @@ model GGOV1 "GE General Governor/Turbine Mode"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={128,-152})));
-  Dm_select dm_select(Dm=Dm) annotation (Placement(transformation(extent={{2,154},{22,174}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{260,-10},{280,10}}), iconTransformation(extent={{260,-10},{280,10}})));
+  Dm_select dm_select(Dm=Dm)
+    annotation (Placement(transformation(extent={{2,154},{22,174}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
+    annotation (Placement(transformation(extent={{260,-10},{280,10}}),
+        iconTransformation(extent={{260,-10},{280,10}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={50,110})));
-  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(transformation(extent={{10,-62},{24,-48}})));
+  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin)
+    annotation (Placement(transformation(extent={{10,-62},{24,-48}})));
   Modelica.Blocks.Math.Add add7 annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
         rotation=0,
         origin={-85,137})));
-  Modelica.Blocks.Sources.Constant set2(k=Wfnl) "full load flow" annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant set2(k=Wfnl) "full load flow" annotation (
+      Placement(transformation(
         extent={{-8,-8},{8,8}},
         rotation=270,
         origin={-116,182})));
-  Modelica.Blocks.Math.Gain Gain(k=Kiload/Kpload) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain Gain(k=Kiload/Kpload) annotation (Placement(
+        transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-138,90})));
-  Modelica.Blocks.Math.Add LoadlimiterPI1(k2=-1) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Add LoadlimiterPI1(k2=-1) annotation (Placement(
+        transformation(
         extent={{-6,6},{6,-6}},
         rotation=180,
         origin={-114,90})));
-  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov/Kpgov) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov/Kpgov) annotation (Placement(
+        transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-31,-117})));
-  Modelica.Blocks.Math.Add LoadlimiterPI2(k1=-1) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Add LoadlimiterPI2(k1=-1) annotation (Placement(
+        transformation(
         extent={{-5,5},{5,-5}},
         rotation=180,
         origin={-11,-117})));
-  Modelica.Blocks.Math.Gain Tactgain(k=1/Tact) annotation (Placement(transformation(extent={{60,-62},{70,-52}})));
-  Modelica.Blocks.Nonlinear.Limiter V1(uMax=Ropen, uMin=Rclose) annotation (Placement(transformation(extent={{76,-64},{90,-50}})));
+  Modelica.Blocks.Math.Gain Tactgain(k=1/Tact)
+    annotation (Placement(transformation(extent={{60,-62},{70,-52}})));
+  Modelica.Blocks.Nonlinear.Limiter V1(uMax=Ropen, uMin=Rclose)
+    annotation (Placement(transformation(extent={{76,-64},{90,-50}})));
   Modelica.Blocks.Continuous.Integrator s3(
     k=1,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
@@ -355,6 +397,7 @@ equation
       smooth=Smooth.None));
   connect(SPEED, flag10.speed) annotation (Line(
       points={{-328,120},{-258,120},{-258,-230},{128,-230},{128,-164},{128.2,-164}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(SPEED, dm_select.speed) annotation (Line(
@@ -375,6 +418,7 @@ equation
       smooth=Smooth.None));
   connect(product1.u1, add4.u1) annotation (Line(
       points={{62,104},{126,104},{126,-30},{134,-30},{134,-31.2},{146.4,-31.2}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(add.u2, V.y) annotation (Line(
@@ -422,7 +466,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(LoadlimiterPI1.u2, LoadlimiterPI.u1) annotation (Line(
-      points={{-106.8,86.4},{-94,86.4},{-94,78},{-184,78},{-184,68.8},{-169.6,68.8}},
+      points={{-106.8,86.4},{-94,86.4},{-94,78},{-184,78},{-184,68.8},{-169.6,
+          68.8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(LoadlimiterPI1.u1, V.y) annotation (Line(
@@ -455,6 +500,7 @@ equation
       smooth=Smooth.None));
   connect(LoadlimiterPI2.u1, GovernorPID.u3) annotation (Line(
       points={{-5,-114},{0,-114},{0,-104},{-98,-104},{-98,-85.8},{-62.2,-85.8}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(LoadlimiterPI2.u2, V.y) annotation (Line(
@@ -487,6 +533,7 @@ equation
       smooth=Smooth.None));
   connect(add8.u2, product.u1) annotation (Line(
       points={{40.8,-61.6},{40,-61.6},{40,-90},{120,-90},{120,-56.4},{128.8,-56.4}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(s4.u, gain1.y) annotation (Line(
@@ -499,6 +546,7 @@ equation
       smooth=Smooth.None));
   connect(rSELECT.y, r.u) annotation (Line(
       points={{-205.56,-114.5},{-205.72,-114.5},{-205.72,-109.4},{-207,-109.4}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(rSELECT.GovernorOutput, V.u) annotation (Line(
@@ -509,11 +557,15 @@ equation
       points={{-179.6,-129.8},{120,-129.8},{120,-56.4},{128.8,-56.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s9.u, product1.y) annotation (Line(points={{22,110},{39,110},{39,110}}, color={0,0,127}));
-  connect(delay.y, gain1.u) annotation (Line(points={{150,35.4},{150,50.4},{150,50.4}}, color={0,0,127}));
-  connect(delay.u, add4.y) annotation (Line(points={{150,3.2},{150,-17.4},{150,-17.4}}, color={0,0,127}));
+  connect(s9.u, product1.y)
+    annotation (Line(points={{22,110},{39,110},{39,110}}, color={0,0,127}));
+  connect(delay.y, gain1.u) annotation (Line(points={{150,35.4},{150,50.4},{150,
+          50.4}}, color={0,0,127}));
+  connect(delay.u, add4.y) annotation (Line(points={{150,3.2},{150,-17.4},{150,
+          -17.4}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{260,220}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{
+            260,220}}), graphics={Text(
           extent={{-272,-98},{-260,-106}},
           lineColor={255,0,0},
           textString="s7"),Text(
@@ -553,7 +605,9 @@ equation
           extent={{-306,232},{-158,190}},
           lineColor={0,0,255},
           textString="input should be speed")}),
-    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-320,220},{260,-240}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=
+            false), graphics={Rectangle(extent={{-320,220},{260,-240}},
+          lineColor={0,0,255}),Text(
           extent={{-306,146},{-216,92}},
           lineColor={0,0,255},
           textString="SPEED"),Text(
@@ -566,31 +620,5 @@ equation
           extent={{172,24},{256,-28}},
           lineColor={0,0,255},
           textString="PMECH")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end GGOV1;

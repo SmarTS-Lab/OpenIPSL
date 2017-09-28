@@ -27,10 +27,15 @@ model PSTransformer
   Real vm(start=vm0);
   Real anglevk(start=anglevk0);
   Real anglevm(start=anglevm0);
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-122,-8},{-102,12}})));
-  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  Modelica.Blocks.Interfaces.RealOutput pk(start=p_ref) annotation (Placement(transformation(extent={{100,-50},{120,-30}}), iconTransformation(extent={{100,-50},{120,-30}})));
-  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-144,36},{-104,76}})));
+  OpenIPSL.Interfaces.PwPin p
+    annotation (Placement(transformation(extent={{-122,-8},{-102,12}})));
+  OpenIPSL.Interfaces.PwPin n
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Interfaces.RealOutput pk(start=p_ref) annotation (Placement(
+        transformation(extent={{100,-50},{120,-30}}), iconTransformation(extent
+          ={{100,-50},{120,-30}})));
+  Modelica.Blocks.Interfaces.RealInput u
+    annotation (Placement(transformation(extent={{-144,36},{-104,76}})));
   pst1 pst1_1(
     SystemBase=SystemBase,
     Vbus1=Vbus1,
@@ -51,7 +56,8 @@ model PSTransformer
     alpha0=alpha0,
     pmes0=pmes0,
     vk0=vk0,
-    anglevk0=anglevk0) annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
+    anglevk0=anglevk0)
+    annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
   pst2 pst2_1(
     SystemBase=SystemBase,
     Vbus1=Vbus1,
@@ -72,12 +78,15 @@ model PSTransformer
     alpha0=alpha0,
     pmes0=pmes0,
     vm0=vm0,
-    anglevm0=anglevm0) annotation (Placement(transformation(extent={{16,-10},{36,10}})));
+    anglevm0=anglevm0)
+    annotation (Placement(transformation(extent={{16,-10},{36,10}})));
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Reactance, p.u.";
+  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Transformer Resistance, p.u.";
+  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Transformer Reactance, p.u.";
   parameter Real pref=p_ref*(Sn/SystemBase);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";
@@ -104,12 +113,15 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-48,24},{10,-32}}, lineColor={0,0,255}),Ellipse(extent={{-6,26},{52,-30}}, lineColor={
-          0,0,255}),Line(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={Ellipse(extent={{-48,24},{10,-32}}, lineColor={0,
+          0,255}),Ellipse(extent={{-6,26},{52,-30}}, lineColor={0,0,255}),Line(
           points={{-104,0},{-48,0}},
           color={0,0,255},
-          smooth=Smooth.None),Rectangle(extent={{66,10},{94,-12}}, lineColor={0,0,255}),Line(
+          smooth=Smooth.None),Rectangle(extent={{66,10},{94,-12}}, lineColor={0,
+          0,255}),Line(
           points={{50,0},{66,0},{66,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
@@ -143,31 +155,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end PSTransformer;

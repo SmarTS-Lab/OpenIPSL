@@ -1,13 +1,13 @@
 within OpenIPSL.Examples.Solar.PSAT;
 model testIrradation
   extends Modelica.Icons.Example;
-  Modelica.Blocks.Sources.Constant const(k=25)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Constant const(k=25) annotation (Placement(visible=
+          true, transformation(
         origin={-59.5887,-17.0499},
         extent={{-3.3987,-3.3987},{3.3987,3.3987}},
         rotation=0)));
-  Modelica.Blocks.Sources.Constant const1(k=1000)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Constant const1(k=1000) annotation (Placement(visible
+        =true, transformation(
         origin={-87.9874,22.9501},
         extent={{-3.3987,-3.3987},{3.3987,3.3987}},
         rotation=0)));
@@ -40,21 +40,23 @@ model testIrradation
         origin={83.2752,-9.5499},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add1 annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add1 annotation (Placement(visible=true,
+        transformation(
         origin={-52.9874,14.9248},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step1(startTime=0.3, height=-500)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step1(startTime=0.3, height=-500) annotation (
+      Placement(visible=true, transformation(
         origin={-113.885,0.0201},
         extent={{-4.1024,-4.1024},{4.1024,4.1024}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step2(startTime=0.7, height=500)
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step2(startTime=0.7, height=500) annotation (
+      Placement(visible=true, transformation(
         origin={-112.9874,-30.0},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2 annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add2 annotation (Placement(visible=true,
+        transformation(
         origin={-85.1206,-12.0499},
         extent={{-2.8669,-2.8669},{2.8669,2.8669}},
         rotation=0)));
@@ -66,29 +68,31 @@ model testIrradation
         origin={-7.9875,0.2883},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,50},{75,70}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{50,50},{75,70}})));
 equation
   connect(const1.y, add1.u1) annotation (Line(
       visible=true,
       origin={-71.3029,21.9375},
       points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,-1.0127}},
+
       color={0,0,127}));
   connect(add2.y, add1.u2) annotation (Line(
       visible=true,
       origin={-76.3072,1.9333},
       points={{-5.65981,-13.9832},{-5.65981,6.9915},{11.3198,6.9915}},
       color={0,0,127}));
-  connect(step1.y, add2.u1)
-    annotation (Line(
+  connect(step1.y, add2.u1) annotation (Line(
       visible=true,
       origin={-95.2638,-5.1548},
       points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,-5.17496}},
+
       color={0,0,127}));
-  connect(add2.u2, step2.y)
-    annotation (Line(
+  connect(add2.u2, step2.y) annotation (Line(
       visible=true,
       origin={-101.2558,-21.885},
       points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,-8.115}},
+
       color={0,0,127}));
   connect(pwLine13.n, pwLine14.p) annotation (Line(
       visible=true,
@@ -105,12 +109,13 @@ equation
   connect(infiniteBus8.p, pwLine14.n) annotation (Line(
       visible=true,
       origin={97.3801,2.1498},
-      points={{31.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3003},{-2.53573,3.3003}}));
-  connect(const.y, PFmodel1.T)
-    annotation (Line(
+      points={{31.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3003},{-2.53573,
+          3.3003}}));
+  connect(const.y, PFmodel1.T) annotation (Line(
       visible=true,
       origin={-30.4532,-10.8808},
-      points={{-25.3969,-6.1691},{7.4657,-6.1691},{7.4657,6.1691},{10.4657,6.1691}},
+      points={{-25.3969,-6.1691},{7.4657,-6.1691},{7.4657,6.1691},{10.4657,
+          6.1691}},
       color={0,0,127}));
   connect(PFmodel1.pwPin1, pwLine13.p) annotation (Line(
       visible=true,
@@ -131,31 +136,5 @@ equation
           fillPattern=FillPattern.Solid,
           extent={{-41.1319,-13.2857},{41.1319,13.2857}},
           textString="VoltageGrid=10000 (1p.u.)",
-          fontName="Arial")}), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+          fontName="Arial")}), Documentation);
 end testIrradation;

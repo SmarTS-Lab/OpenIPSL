@@ -20,7 +20,8 @@ model MPPT
         origin={-120.0,40.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Iarray(start=641.2) annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Iarray(start=641.2) annotation (
+      Placement(
       visible=true,
       transformation(
         origin={-168.0142,-28.0297},
@@ -35,24 +36,28 @@ model MPPT
   parameter Real Vbase=1;
   parameter Real Vmpp0_array=700;
   parameter Real Step=125;
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true,
+        transformation(
         origin={0.0,40.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
+        transformation(
         origin={-1.9703,-25.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Solar.KTH.Auxiliary.InputSelectorEpsilon inputSelectorEpsilon1
-    annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Solar.KTH.Auxiliary.InputSelectorEpsilon
+    inputSelectorEpsilon1 annotation (Placement(visible=true, transformation(
         origin={65.0,5.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Gain gain1(k=Vmpp0_array*Tdelay/Step) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain1(k=Vmpp0_array*Tdelay/Step) annotation (
+      Placement(visible=true, transformation(
         origin={95.0,5.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add3(k2=+1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add3(k2=+1) annotation (Placement(visible=true,
+        transformation(
         origin={123.0297,35.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -80,35 +85,38 @@ equation
   connect(fixedDelay1.y, inputSelectorEpsilon1.vd) annotation (Line(
       visible=true,
       origin={-59.6663,23.3137},
-      points={{-35.9592,16.6863},{-20.3337,16.6863},{-20.3337,-6.144},{-18.0199,-6.144},{-18.0199,-10.5423},{112.666,-10.5423}},
+      points={{-35.9592,16.6863},{-20.3337,16.6863},{-20.3337,-6.144},{-18.0199,
+          -6.144},{-18.0199,-10.5423},{112.666,-10.5423}},
       color={0,0,127}));
   connect(fixedDelay2.y, inputSelectorEpsilon1.id) annotation (Line(
       visible=true,
       origin={-33.9199,-5.4748},
-      points={{-61.7373,-19.5252},{-51.5513,-19.5252},{-51.5513,13.0745},{86.9199,13.0745},{86.9199,12.9015}},
+      points={{-61.7373,-19.5252},{-51.5513,-19.5252},{-51.5513,13.0745},{
+          86.9199,13.0745},{86.9199,12.9015}},
       color={0,0,127}));
   connect(add1.y, inputSelectorEpsilon1.dv) annotation (Line(
       visible=true,
       origin={34.4337,17.6894},
-      points={{-23.4337,22.3106},{-6.8495,22.3106},{-6.8495,-14.5932},{18.5663,-14.5932},{18.5663,-15.4347}},
+      points={{-23.4337,22.3106},{-6.8495,22.3106},{-6.8495,-14.5932},{18.5663,
+          -14.5932},{18.5663,-15.4347}},
       color={0,0,127}));
-  connect(inputSelectorEpsilon1.di, add2.y)
-    annotation (Line(
+  connect(inputSelectorEpsilon1.di, add2.y) annotation (Line(
       visible=true,
       origin={21.5223,-14.2005},
-      points={{31.4777,10.7996},{-9.4926,10.7996},{-9.4926,-10.7995},{-12.4926,-10.7995}},
+      points={{31.4777,10.7996},{-9.4926,10.7996},{-9.4926,-10.7995},{-12.4926,
+          -10.7995}},
       color={0,0,127}));
-  connect(fixedDelay1.y, add3.u1)
-    annotation (Line(
+  connect(fixedDelay1.y, add3.u1) annotation (Line(
       visible=true,
       origin={-12.7429,50.2},
-      points={{-82.8826,-10.2},{-73.2868,-10.2},{-73.2868,14.8},{123.773,14.8},{123.773,-9.2}},
+      points={{-82.8826,-10.2},{-73.2868,-10.2},{-73.2868,14.8},{123.773,14.8},
+          {123.773,-9.2}},
       color={0,0,127}));
-  connect(fixedDelay1.y, add1.u1)
-    annotation (Line(
+  connect(fixedDelay1.y, add1.u1) annotation (Line(
       visible=true,
       origin={-55.9251,49.2},
-      points={{-39.7004,-9.2},{-24.0749,-9.2},{-24.0749,10.8},{43.9251,10.8},{43.9251,-3.2}},
+      points={{-39.7004,-9.2},{-24.0749,-9.2},{-24.0749,10.8},{43.9251,10.8},{
+          43.9251,-3.2}},
       color={0,0,127}));
   connect(fixedDelay1.y, fixedDelay3.u) annotation (Line(
       visible=true,
@@ -123,30 +131,31 @@ equation
   connect(fixedDelay2.y, add2.u1) annotation (Line(
       visible=true,
       origin={-57.5163,-14.6141},
-      points={{-38.1409,-10.3859},{-24.4755,-10.3859},{-24.4755,12.5788},{43.546,12.5788},{43.546,-4.3859}},
+      points={{-38.1409,-10.3859},{-24.4755,-10.3859},{-24.4755,12.5788},{
+          43.546,12.5788},{43.546,-4.3859}},
       color={0,0,127}));
-  connect(fixedDelay2.y, fixedDelay4.u)
-    annotation (Line(
+  connect(fixedDelay2.y, fixedDelay4.u) annotation (Line(
       visible=true,
       origin={-68.1643,-25.8887},
       points={{-27.4929,0.8887},{8.1643,0.8887},{8.1643,-0.8887},{11.1643,-0.8887}},
+
       color={0,0,127}));
-  connect(Iarray, fixedDelay2.u)
-    annotation (Line(
+  connect(Iarray, fixedDelay2.u) annotation (Line(
       visible=true,
       origin={-132.4965,-26.5148},
-      points={{-35.5177,-1.5149},{10.8392,-1.5148},{10.8392,1.5148},{13.8393,1.5148}},
+      points={{-35.5177,-1.5149},{10.8392,-1.5148},{10.8392,1.5148},{13.8393,
+          1.5148}},
       color={0,0,127}));
   connect(fixedDelay3.y, add1.u2) annotation (Line(
       visible=true,
       origin={-20.8296,37.0},
       points={{-20.489,3.0},{5.8296,3.0},{5.8296,-3.0},{8.8296,-3.0}},
       color={0,0,127}));
-  connect(fixedDelay4.y, add2.u2)
-    annotation (Line(
+  connect(fixedDelay4.y, add2.u2) annotation (Line(
       visible=true,
       origin={-20.4777,-28.8887},
       points={{-13.5223,2.1113},{3.5074,2.1113},{3.5074,-2.1113},{6.5074,-2.1113}},
+
       color={0,0,127}));
   connect(add3.y, Vdref) annotation (Line(
       visible=true,
@@ -161,7 +170,8 @@ equation
   connect(gain1.y, add3.u2) annotation (Line(
       visible=true,
       origin={108.5148,17.4083},
-      points={{-2.5148,-12.4083},{0.4852,-12.4083},{0.4852,0.8167},{-0.4852,0.8167},{-0.4852,11.5917},{2.5149,11.5917}},
+      points={{-2.5148,-12.4083},{0.4852,-12.4083},{0.4852,0.8167},{-0.4852,
+          0.8167},{-0.4852,11.5917},{2.5149,11.5917}},
       color={0,0,127}));
   annotation (
     Icon(coordinateSystem(
@@ -220,31 +230,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end MPPT;
