@@ -96,4 +96,3 @@ equation
 </html>
 "));
 end STAB3;
-

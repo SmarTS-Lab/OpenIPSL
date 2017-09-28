@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT4G;
-
-
 model WT4E1 "Electrical Control for Type 4 Wind Generator"
   parameter Boolean PFAFLG "PF fast control" annotation (choices(choice=true "Enable", choice=false "Disable"));
   parameter Boolean VARFLG annotation (choices(choice=false " Qord is not provided by WindVar", choice=true " Qord is provided by WindVar"));

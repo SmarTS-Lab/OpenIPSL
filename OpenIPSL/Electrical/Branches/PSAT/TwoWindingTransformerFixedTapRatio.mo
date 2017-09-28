@@ -1,9 +1,7 @@
 within OpenIPSL.Electrical.Branches.PSAT;
-
-
 model TwoWindingTransformerFixedTapRatio "Modeled as series reactances without iron losses"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Vbus=400000 "Sending end bus voltage" annotation (Dialog(group="Power flow data"));
@@ -69,8 +67,7 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
-"),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={
+"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={
           0,0,255}),Line(
           points={{100,0},{44,0},{44,0}},
           color={0,0,255},

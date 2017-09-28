@@ -59,4 +59,3 @@ equation
 </html>
 "));
 end LOADPQ_variation;
-

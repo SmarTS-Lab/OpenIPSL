@@ -4,19 +4,15 @@ model GENCLS
   import Modelica.Constants.eps;
 
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
     ii(start=ii0)) annotation (Placement(
       visible=true,
       transformation(
-        origin={2.2777,10.4683},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110.0,-1.5036},
-        extent={{-10.0,-10.0},{10.0,10.0}},
+        origin={100,0},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
 
   parameter Real M_b "Machine base power rating (MVA)" annotation (Dialog(group="Power flow data"));
@@ -36,7 +32,6 @@ model GENCLS
   Real iq(start=iq0) "q-axis current (pu)";
   Real P(start=P_0/S_b) "Active power (pu. of S_b)";
   Real Q(start=Q_0/S_b) "Reactive power (pu of S_b)";
-
 
 protected
   parameter Real CoB=M_b/S_b "Change from system to machine base";
@@ -86,69 +81,34 @@ equation
   V = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
 
-
   annotation (
     Icon(coordinateSystem(
-        extent={{0,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
-          extent={{80,100},{100,-100}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Line(
-          points={{40,110},{80,90},{90,90}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,-70},{80,-90},{90,-90}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,70},{80,50},{90,50}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,50},{80,30},{90,30}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,30},{80,10},{90,10}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,10},{80,-10},{90,-10}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,-10},{80,-30},{90,-30}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,90},{80,70},{90,70}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,-30},{80,-50},{90,-50}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{40,-50},{80,-70},{90,-70}},
-          color={0,0,255},
-          smooth=Smooth.None,
-          thickness=0.5),Text(
+        initialScale=0.1),
+                       graphics={
+                         Text(
           extent={{50,150},{100,110}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textStyle={TextStyle.Bold},
-          textString="INF")}),
+          textString="INF"),
+        Line(points={{-40,88},{0,68}}, color={0,0,255}),
+        Line(points={{-40,70},{0,50}}, color={0,0,255}),
+        Line(points={{-40,50},{0,30}}, color={0,0,255}),
+        Line(points={{-40,30},{0,10}}, color={0,0,255}),
+        Line(points={{-40,10},{0,-10}}, color={0,0,255}),
+        Line(points={{-40,-10},{0,-30}}, color={0,0,255}),
+        Line(points={{-40,-30},{0,-50}}, color={0,0,255}),
+        Line(points={{-40,-50},{0,-70}}, color={0,0,255}),
+        Line(points={{0,80},{0,-80}}, color={0,0,255}),
+        Line(points={{100,0},{96,0},{0,0}}, color={0,0,255}),
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255})}),
     Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={5,5})),
+        grid={2,2})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -168,32 +128,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end GENCLS;
-

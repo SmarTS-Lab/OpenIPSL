@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
-
-
 model Capacitor
   Modelica.Blocks.Interfaces.RealOutput y0 annotation (Placement(
       visible=true,

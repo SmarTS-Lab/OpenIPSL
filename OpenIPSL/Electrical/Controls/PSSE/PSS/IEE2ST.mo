@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-
-
 model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
   parameter Real K_1;
   parameter Real K_2;

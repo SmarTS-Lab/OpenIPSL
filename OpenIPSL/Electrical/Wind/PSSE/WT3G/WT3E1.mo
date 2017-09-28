@@ -1,6 +1,4 @@
-within OpenIPSL.Electrical.Wind.PSSE.WT3G;
-
-
+﻿within OpenIPSL.Electrical.Wind.PSSE.WT3G;
 model WT3E1
   parameter Integer VARFLG "0 constant Q; 1 Reactive control; -1 Constant PF control"
     annotation (choices(

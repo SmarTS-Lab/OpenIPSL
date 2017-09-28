@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
-
-
 model TGTypeIV "Hydro Turbine (Linear model) and Governor (Standard model with PI controller)- control scheme Type 4"
   parameter Real wref "Reference speed (pu)";
   parameter Real Tg "Pilot valve droop (pu)";

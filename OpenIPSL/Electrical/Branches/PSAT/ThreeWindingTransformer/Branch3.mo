@@ -1,9 +1,7 @@
 within OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer;
-
-
 model Branch3
-  OpenIPSL.Connectors.PwPin p3 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Connectors.PwPin n3 annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p3 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin n3 annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real SystemBase=100;
   parameter Real Sn=100 "Power rating MVA";
   parameter Real Vbus=400000 "Sending end bus voltage, V";

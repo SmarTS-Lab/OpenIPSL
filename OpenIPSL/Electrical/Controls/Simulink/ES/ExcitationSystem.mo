@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.Simulink.ES;
-
-
 model ExcitationSystem "This ES is composed by the OEL and PSS and exitation part"
   parameter Real V0=1 "Reference value of terminal voltage";
   parameter Real L2=4 "Exciter parameter";

@@ -1,13 +1,11 @@
 within OpenIPSL.Electrical.Branches.PSSE;
-
-
 model TwoWindingTransformer "Static Two-winding transformer according to PSS/E, without phase shift"
   outer OpenIPSL.Electrical.SystemBase SysData;
   import Modelica.Constants.pi;
   import Modelica.ComplexMath.j;
   import Modelica.ComplexMath.conj;
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(enable=false));
   parameter Integer CZ=1 "Impedance I/O code"
     annotation (Dialog(tab="Transformer impedance data"), choices(

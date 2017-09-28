@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Continuous;
-
-
 block DerivativeLag "Derivative lag transfer function blcok"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain";
@@ -52,8 +50,7 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
-"),
-    Icon(graphics={Text(
+"), Icon(graphics={Text(
           extent={{-60,82},{60,22}},
           lineColor={0,0,255},
           textString="Ks"),Line(

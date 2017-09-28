@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
-
-
 model AVRtypeIII
   parameter Real vfmax=5;
   parameter Real vfmin=-5;
@@ -24,20 +22,21 @@ model AVRtypeIII
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0),
       iconTransformation(
-        origin={-120.0,50.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
+        origin={-110,60},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
   Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(
       visible=true,
       transformation(
-        origin={160,0},
+        origin={130,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0),
       iconTransformation(
-        origin={110.0,0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
+        origin={130,0},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-60},{-100,-20}}), iconTransformation(extent={{-140,-60},{-100,-20}})));
+  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-82},{-100,-42}}), iconTransformation(extent={{-120,
+            -70},{-100,-50}})));
   Modelica.Blocks.Interfaces.RealInput vf0(start=1) annotation (Placement(
       visible=true,
       transformation(
@@ -45,8 +44,8 @@ model AVRtypeIII
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=-90),
       iconTransformation(
-        origin={0,120},
-        extent={{-20.0,-20.0},{20.0,20.0}},
+        origin={0,110},
+        extent={{-10,-10},{10,10}},
         rotation=-90)));
 protected
   parameter Real vref(fixed=false);
@@ -63,44 +62,35 @@ equation
   der(vf1) = ((vr + K0*(T1/T2)*(vref + vs - vm) + vf0)*(1 + s0*(v/vm - 1)) - vf1)/Te;
   limiter1.u = vf1;
   limiter1.y = vf;
-  annotation (Icon(
-      coordinateSystem(
-        extent={{-100,-100},{100,100}},
-        preserveAspectRatio=false,
-        initialScale=0.1,
-        grid={10,10}),
-      graphics={Rectangle(
-          visible=true,
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-120},{120,
+            120}}),                                                                   graphics={
+        Rectangle(
+          extent={{-120,120},{120,-120}},
+          lineColor={0,0,255},
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
-          origin={1.5941,2.9728},
-          fillPattern=FillPattern.Solid,
-          extent={{-31.5941,-24.9719},{31.5941,24.9719}},
-          textString="AVRtypeIII",
-          fontName="Arial"),Text(
-          visible=true,
-          origin={-77.3525,52.4473},
-          fillPattern=FillPattern.Solid,
-          extent={{-17.3525,-17.5527},{17.3525,17.5527}},
-          textString="v",
-          fontName="Arial"),Text(
-          origin={-74.7671,-32.7013},
-          fillPattern=FillPattern.Solid,
-          extent={{-11.7427,-9.8104},{11.7427,9.8104}},
-          fontName="Arial",
-          textString="vs",
-          lineColor={0,0,0}),Text(
-          origin={-2.3525,77.4473},
-          extent={{-12.3525,-12.5527},{12.3525,12.5527}},
-          fontName="Arial",
-          textString="vf0",
-          lineColor={0,0,0})},
-      origin={84.2416,-0.0},
-      fillPattern=FillPattern.Solid,
-      extent={{-8.7313,-11.5403},{8.7313,11.5403}},
-      textString="vf",
-      fontName="Arial"), Documentation(revisions="<html>
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-104,72},{-72,50}},
+          lineColor={0,0,255},
+          textString="v"),
+        Text(
+          extent={{-100,-48},{-68,-70}},
+          lineColor={0,0,255},
+          textString="vs"),
+        Text(
+          extent={{88,10},{120,-12}},
+          lineColor={0,0,255},
+          textString="vf"),
+        Text(
+          extent={{-34,36},{42,-24}},
+          lineColor={0,0,255},
+          textString="AVRTypeIII"),
+        Text(
+          extent={{-16,100},{16,78}},
+          lineColor={0,0,255},
+          textString="vf0")}),
+    Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
@@ -145,5 +135,6 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"));
+</html>"),
+    Diagram(coordinateSystem(extent={{-120,-120},{120,120}})));
 end AVRtypeIII;

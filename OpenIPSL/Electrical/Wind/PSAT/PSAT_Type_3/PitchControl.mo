@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Wind.PSAT.PSAT_Type_3;
-
-
 model PitchControl
   Modelica.Blocks.Interfaces.RealInput omega_m "Real voltage" annotation (Placement(
       transformation(

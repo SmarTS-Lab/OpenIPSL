@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model PSS2A "IEEE Dual-Input Stabilizer Model"
+  extends BaseClasses.BasePSS;
   parameter Real T_w1=10 "Washout 1 time constant";
   parameter Real T_w2=10 "Washout 2 time constant";
   parameter Real T_6=1e-9 "Lag 1 time constant";
@@ -19,7 +20,6 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real V_STMIN=-0.1 "PSS output limiation";
   parameter Real M "Ramp tracking filter coefficient";
   parameter Real N "Ramp tracking filter coefficient";
-  Modelica.Blocks.Interfaces.RealInput V_S1 "PSS input signal 1" annotation (Placement(transformation(extent={{-186,14},{-174,26}}), iconTransformation(extent={{-186,14},{-174,26}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag Leadlag1(
     K=1,
     T1=T_1,
@@ -32,8 +32,6 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
     T2=T_4,
     y_start=0,
     x_start=0) annotation (Placement(transformation(extent={{112,-10},{132,10}})));
-  Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output" annotation (Placement(transformation(extent={{200,-6},{212,6}}), iconTransformation(extent={{200,-6},{212,6}})));
-  Modelica.Blocks.Interfaces.RealInput V_S2 "PSS input signal 2" annotation (Placement(transformation(extent={{-186,-26},{-174,-14}}), iconTransformation(extent={{-186,-26},{-174,-14}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
     K=1,
     T=T_6,
@@ -76,15 +74,18 @@ equation
   connect(gain.y, Leadlag1.u) annotation (Line(points={{71,0},{78,0}}, color={0,0,127}));
   connect(Leadlag1.y, Leadlag2.u) annotation (Line(points={{101,0},{110,0}}, color={0,0,127}));
   connect(Leadlag2.y, limiter.u) annotation (Line(points={{133,0},{144,0}}, color={0,0,127}));
-  connect(limiter.y, VOTHSG) annotation (Line(points={{167,0},{206,0}}, color={0,0,127}));
   connect(add.y, rampTrackingFilter.u) annotation (Line(points={{-19,14},{-15.5,14},{-12,14}}, color={0,0,127}));
   connect(rampTrackingFilter.y, add1.u1) annotation (Line(points={{11,14},{14,14},{14,6},{18,6}}, color={0,0,127}));
-  connect(V_S1, derivativeLag.u) annotation (Line(points={{-180,20},{-172,20},{-162,20}}, color={0,0,127}));
   connect(derivativeLag.y, derivativeLag1.u) annotation (Line(points={{-139,20},{-130.5,20},{-122,20}}, color={0,0,127}));
   connect(derivativeLag1.y, SimpleLag1.u) annotation (Line(points={{-99,20},{-82,20},{-82,20}}, color={0,0,127}));
-  connect(derivativeLag2.u, V_S2) annotation (Line(points={{-162,-20},{-180,-20}}, color={0,0,127}));
   connect(derivativeLag3.u, derivativeLag2.y) annotation (Line(points={{-122,-20},{-139,-20}}, color={0,0,127}));
   connect(derivativeLag3.y, SimpleLag2.u) annotation (Line(points={{-99,-20},{-82,-20}}, color={0,0,127}));
+  connect(V_S1, derivativeLag.u)
+    annotation (Line(points={{-160,40},{-160,20},{-162,20}}, color={0,0,127}));
+  connect(V_S2, derivativeLag2.u) annotation (Line(points={{-160,-40},{-160,-30},
+          {-162,-30},{-162,-20}}, color={0,0,127}));
+  connect(limiter.y, VOTHSG)
+    annotation (Line(points={{167,0},{226,0},{226,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),Text(
@@ -146,4 +147,3 @@ equation
 </html>
 "));
 end PSS2A;
-

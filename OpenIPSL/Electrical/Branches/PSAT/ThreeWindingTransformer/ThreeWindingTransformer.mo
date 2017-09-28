@@ -1,10 +1,8 @@
 within OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer;
-
-
 model ThreeWindingTransformer
-  OpenIPSL.Connectors.PwPin b1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Connectors.PwPin b2 annotation (Placement(transformation(extent={{100,20},{120,40}})));
-  OpenIPSL.Connectors.PwPin b3 annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
+  OpenIPSL.Interfaces.PwPin b1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin b2 annotation (Placement(transformation(extent={{100,20},{120,40}})));
+  OpenIPSL.Interfaces.PwPin b3 annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Vbus=400000 "Sending end bus voltage (V)" annotation (Dialog(group="Power flow data"));

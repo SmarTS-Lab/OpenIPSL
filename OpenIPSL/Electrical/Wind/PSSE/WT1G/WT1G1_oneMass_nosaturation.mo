@@ -86,7 +86,7 @@ model WT1G1_oneMass_nosaturation
     anglev0=anglev0,
     CoB=CoB) annotation (Placement(transformation(extent={{-56,6},{-36,26}})));
   OpenIPSL.Electrical.Wind.PSSE.WT3G.shunt1 shunt1_1(v0=eterm, B=Bsh_pu_s) annotation (Placement(transformation(extent={{2,-44},{22,-24}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{84,-8},{104,12}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{84,-8},{104,12}})));
 equation
   connect(iIIorderWind.p, pwPin) annotation (Line(
       points={{-37.6,16},{28,16},{28,2},{94,2}},

@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
-
-
 model PVnew
   OpenIPSL.Electrical.Solar.KTH.Auxiliary.PVarray PVarray1(
     Estc=Estc,

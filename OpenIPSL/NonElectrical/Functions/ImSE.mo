@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Functions;
-
-
 block ImSE "Block for Saturation function of Exc "
   input Modelica.Blocks.Interfaces.RealInput VE_IN "Unsaturated Input" annotation (Placement(transformation(extent={{-120,-20},{-110,-10}}), iconTransformation(extent={{-120,-10},{-100,10}})));
   output Modelica.Blocks.Interfaces.RealOutput VE_OUT "Saturated Output" annotation (Placement(transformation(extent={{100,-2},{110,8}}), iconTransformation(extent={{100,-6},{112,6}})));

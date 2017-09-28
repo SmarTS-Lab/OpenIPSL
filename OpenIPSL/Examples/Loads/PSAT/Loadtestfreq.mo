@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Loads.PSAT;
-
-
 model Loadtestfreq
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(

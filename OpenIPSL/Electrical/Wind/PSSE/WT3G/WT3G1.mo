@@ -14,7 +14,7 @@ model WT3G1
   Real VY(start=0) "y-axis terminal voltage";
   Real VX(start=V_0) "x-axis terminal voltage";
   Complex Is "Equivalent internal current source";
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir1),
@@ -237,4 +237,3 @@ equation
 </html>
 "));
 end WT3G1;
-

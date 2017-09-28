@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
-
-
 model TGTypeIII_test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(

@@ -22,6 +22,17 @@ However, we have removed all models that are dependent on a specific software to
 ## Documentation:
 Please follow this link to our [**documentation**](http://openipsl.readthedocs.io/).
 
+Tutorials on OpenIPSL have been given at many conferences, and are available under [Release](https://github.com/SmarTS-Lab/OpenIPSL/releases). We recommend you start from there.
+
+Our documentation assumes that you have working knowledge of the Modelica language, are familiar with a Modelica-compliant modeling and simulation environment, that you have proeficient knowledge on power system steady state analysis (i.e. the so called "power flow"), and knowledge on power system dynamic modeling (i.e. the called "transient" and "small-signal" stability).
+
+As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
+
+Additional details about many of the models in OpenIPSL are available in disparate sources. Some of these are a reflection of the results from the efforts of many students that have worked with Prof. Luigi Vanfretti. See our [Publication List](http://openipsl.readthedocs.io/en/latest/publications.html) for more details on the models available. 
+In addition, you can also browse a few of the MSc thesis of the students that carried out their MSc research under Prof. Vanfretti's group in the following links: Joan Russiñol (2013, [download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2013_Joan_MSc_Thesis.pdf)), Le Qi (2014, [dowload](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2014_LeQi_MScThesis.pdf)), M.Ahsan Adib Murad (2015, [download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2015_Ahsan_MScThesis.pdf)), and Mengjia Zhang (2015,[download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2015_MengjiaZhang_MScThesis.pdf)).
+
+We would love to develop a detailed documentation, however, the development of OpenIPSL is being carried out in "best effort" basis by the project contributors. If you want a better documentation, and are willing to pay for our time to develop it, get in touch with use through the "Issues" feature in Github.
+
 ## Contributing:
 Contributions to the library are welcome and can be submitted in the form of pull requests to this repository.
 Contributions can be of different nature, such as addition of a new component model, re-organisation of the structure of the library, change in the development practices, etc.

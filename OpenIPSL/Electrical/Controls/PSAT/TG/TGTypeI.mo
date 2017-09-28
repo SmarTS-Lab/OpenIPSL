@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
-
-
 model TGTypeI
   Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (Placement(transformation(extent={{-92,-10},{-72,10}}), iconTransformation(extent={{-94,-4},{-60,34}})));
   Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (Placement(transformation(extent={{70,2},{90,22}}), iconTransformation(extent={{78,-8},{116,34}})));

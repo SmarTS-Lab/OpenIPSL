@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Wind.PSSE.WT4G;
-
-
 model WT4G1
   extends Modelica.Icons.Example;
   constant Real pi=Modelica.Constants.pi;

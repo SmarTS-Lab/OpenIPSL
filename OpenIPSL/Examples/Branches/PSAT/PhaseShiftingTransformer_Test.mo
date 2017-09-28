@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Branches.PSAT;
-
-
 model PhaseShiftingTransformer_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03) annotation (Placement(transformation(extent={{34,-44},{54,-24}})));

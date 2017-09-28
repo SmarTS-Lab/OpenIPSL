@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
-
-
 model InputSelectorEpsilon
   Modelica.Blocks.Interfaces.RealInput vd(start=700) annotation (Placement(
       visible=true,

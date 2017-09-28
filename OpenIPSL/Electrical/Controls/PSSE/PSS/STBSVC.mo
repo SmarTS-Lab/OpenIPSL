@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-
-
 model STBSVC "WECC Supplementary Signal for Static var Compensator"
   parameter Real K_S1 ">0";
   parameter Real T_S7 "(s)";

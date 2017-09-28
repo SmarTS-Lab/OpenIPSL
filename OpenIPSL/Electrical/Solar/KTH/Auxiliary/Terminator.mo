@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
-
-
 model Terminator
   Modelica.Blocks.Interfaces.RealInput V annotation (Placement(
       visible=true,

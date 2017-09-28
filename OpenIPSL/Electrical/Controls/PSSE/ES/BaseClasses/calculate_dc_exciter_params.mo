@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
-
-
 function calculate_dc_exciter_params "Automatic Calculation of DC Exciter Parameters"
   input Real V_RMAX_init;
   input Real V_RMIN_init;

@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Controls.PSAT.AVR;
-
-
 model AVRTypeII_OEL_TGI_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(

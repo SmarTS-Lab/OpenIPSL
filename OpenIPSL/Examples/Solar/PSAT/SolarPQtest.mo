@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Solar.PSAT;
-
-
 model SolarPQtest
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Solar.PSAT.ConstantPQPV.PQ1 PQ11(

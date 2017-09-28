@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer;
-
-
 model PSTransformer
   constant Real pi=Modelica.Constants.pi;
   parameter Real SystemBase=100;
@@ -29,8 +27,8 @@ model PSTransformer
   Real vm(start=vm0);
   Real anglevk(start=anglevk0);
   Real anglevm(start=anglevm0);
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-122,-8},{-102,12}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-122,-8},{-102,12}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealOutput pk(start=p_ref) annotation (Placement(transformation(extent={{100,-50},{120,-30}}), iconTransformation(extent={{100,-50},{120,-30}})));
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-144,36},{-104,76}})));
   pst1 pst1_1(

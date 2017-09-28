@@ -59,8 +59,8 @@ model ESST4B " IEEE type ST4B potential or compounded
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN) annotation (Placement(transformation(extent={{170,-10},{190,10}})));
   Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{140,-10},{160,10}})));
   Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMin=-Modelica.Constants.inf, uMax=V_BMAX) annotation (Placement(transformation(extent={{100,-120},{120,-100}})));
-  OpenIPSL.Connectors.PwPin Gen_terminal annotation (Placement(transformation(extent={{-180,120},{-160,140}}), iconTransformation(extent={{-180,120},{-160,140}})));
-  OpenIPSL.Connectors.PwPin Bus annotation (Placement(transformation(extent={{160,120},{180,140}}), iconTransformation(extent={{160,120},{180,140}})));
+  OpenIPSL.Interfaces.PwPin Gen_terminal annotation (Placement(transformation(extent={{-180,120},{-160,140}}), iconTransformation(extent={{-180,120},{-160,140}})));
+  OpenIPSL.Interfaces.PwPin Bus annotation (Placement(transformation(extent={{160,120},{180,140}}), iconTransformation(extent={{160,120},{180,140}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,
@@ -196,4 +196,3 @@ equation
 </html>
 "));
 end ESST4B;
-

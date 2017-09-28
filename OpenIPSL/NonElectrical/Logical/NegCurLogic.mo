@@ -47,4 +47,3 @@ equation
 </html>
 "));
 end NegCurLogic;
-

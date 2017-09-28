@@ -100,4 +100,3 @@ equation
 </html>
 "));
 end WindGenerator;
-

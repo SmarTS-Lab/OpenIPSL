@@ -1,6 +1,4 @@
 within OpenIPSL.NonElectrical.Continuous;
-
-
 block LeadLag "Lead-Lag filter"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain";
@@ -53,8 +51,7 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
-"),
-    Icon(graphics={Text(
+"), Icon(graphics={Text(
           extent={{-44,82},{76,22}},
           lineColor={0,0,255},
           textString="1+sT"),Line(

@@ -1,10 +1,8 @@
 within OpenIPSL.Electrical.Branches.PSAT;
-
-
 model TWTransformerWithFixedTapRatio "Modeled as series reactances without iron losses"
   outer OpenIPSL.Electrical.SystemBase SysData;
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real SystemBase=SysData.S_b;
   parameter Real Sn=100 "Power rating MVA";
   parameter Real Vbus=400000 "Sending end bus voltage";

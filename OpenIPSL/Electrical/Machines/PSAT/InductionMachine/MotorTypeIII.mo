@@ -27,7 +27,7 @@ model MotorTypeIII "Induction Machine - Order III"
   Real epm(start=epm0);
   Real I;
   Real anglei;
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),

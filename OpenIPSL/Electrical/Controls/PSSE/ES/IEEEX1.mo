@@ -145,4 +145,3 @@ equation
 </table>
 </html>"));
 end IEEEX1;
-

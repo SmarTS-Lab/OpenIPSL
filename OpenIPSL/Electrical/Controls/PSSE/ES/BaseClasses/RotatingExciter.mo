@@ -50,4 +50,3 @@ model RotatingExciter
 </html>
 "));
 end RotatingExciter;
-

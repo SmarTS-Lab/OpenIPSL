@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1;
-
-
 model GGOV1 "GE General Governor/Turbine Mode"
   parameter Integer Rselect=1 "Feedback signal for
             governor droop" annotation (Evaluate=true, choices(

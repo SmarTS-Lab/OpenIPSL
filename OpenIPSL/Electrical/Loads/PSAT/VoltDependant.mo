@@ -60,4 +60,3 @@ equation
 </html>
 "));
 end VoltDependant;
-

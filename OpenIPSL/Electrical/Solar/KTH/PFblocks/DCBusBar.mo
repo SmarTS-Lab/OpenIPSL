@@ -1,11 +1,9 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
-
-
 model DCBusBar
   parameter Real Pnen=0.5 "MW rated power";
   parameter Real UdcN=1 "kV Nominal DC voltage";
   parameter Real C=0.0172 "s of capacitor on DC busbar";
-  parameter Real Udc0=700 "Intial dc voltage";
+  parameter Real Udc0=700 "Initial dc voltage";
   Modelica.Blocks.Interfaces.RealInput Pac "voltage array" annotation (Placement(
       visible=true,
       transformation(

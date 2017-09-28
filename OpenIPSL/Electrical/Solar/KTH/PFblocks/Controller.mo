@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
-
-
 model Controller
   parameter Real v0=1;
   parameter Real ibase=1.02;

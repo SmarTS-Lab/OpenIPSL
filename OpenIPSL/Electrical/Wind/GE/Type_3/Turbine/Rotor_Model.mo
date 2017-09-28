@@ -373,4 +373,3 @@ equation
 </html>
 "));
 end Rotor_Model;
-
