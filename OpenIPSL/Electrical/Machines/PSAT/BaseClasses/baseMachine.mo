@@ -46,12 +46,12 @@ partial model baseMachine
         origin={110,30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput P(start=P_0/S_b) "Active power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput P(start=p0) "Active power (pu)"
     annotation (Placement(visible=true, transformation(
         origin={110,-30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput Q(start=Q_0/S_b) "Reactive power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput Q(start=q0) "Reactive power (pu)"
     annotation (Placement(visible=true, transformation(
         origin={110,-70},
         extent={{-10,-10},{10,10}},
@@ -124,15 +124,15 @@ equation
   anglev = atan2(p.vi, p.vr);
   der(delta) = w_b*(w - 1);
   if D > Modelica.Constants.eps then
-    der(w) = (pm - (P/CoB) - D*(w - 1))/M;
+    der(w) = ((pm - P)/CoB - D*(w - 1))/M;
   else
-    der(w) = (pm - (P/CoB))/M;
+    der(w) = ((pm - P)/CoB)/M;
   end if;
   [p.ir; p.ii] = -CoB*[sin(delta), cos(delta); -cos(delta), sin(delta)]*[id; iq];
   [p.vr; p.vi] = [sin(delta), cos(delta); -cos(delta), sin(delta)]*[vd; vq];
   -P = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
-  pm0 = pm00;
+  pm0 = CoB*pm00 "pu, system base";
   annotation (
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, initialScale=0.1),
         graphics={
