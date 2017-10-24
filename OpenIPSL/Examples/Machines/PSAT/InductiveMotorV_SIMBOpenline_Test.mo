@@ -47,5 +47,5 @@ equation
           0},{60,0},{60,1.33227e-15}}, color={0,0,255}));
   connect(pwLine1.p, motorTypeI.p) annotation (Line(points={{9,-20},{40,-20},{
           40,0},{60,0},{60,1.22125e-15}}, color={0,0,255}));
-  annotation (Documentation);
+  annotation (Documentation,experiment(StopTime=20));
 end InductiveMotorV_SIMBOpenline_Test;

@@ -17,10 +17,10 @@ model Gen1
     ra=0,
     xd=0.8958,
     xq=0.8645,
-    xd1=0.1198,
-    xq1=0.1969,
-    Td10=6,
-    Tq10=0.5350,
+    x1d=0.1198,
+    x1q=0.1969,
+    T1d0=6,
+    T1q0=0.5350,
     M=12.8,
     D=0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
@@ -30,8 +30,6 @@ model Gen1
     vrmin=-5,
     vrmax=5,
     v0=V_0,
-    vf0=vf0,
-    vref0=vref0,
     Ka=20,
     Ta=0.2,
     Kf=0.063,
@@ -44,11 +42,6 @@ model Gen1
         extent={{-12,-12},{12,12}},
         rotation=0,
         origin={16,10})));
-  Modelica.Blocks.Sources.Constant vref(k=vref0) annotation (Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-70,-50})));
   Modelica.Blocks.Sources.Step step(
     startTime=tstart,
     offset=vref0,
@@ -71,15 +64,19 @@ equation
           {-14,0},{-14,17.2},{1.6,17.2}}, color={0,0,127}));
   connect(booleanConstant.y, switch1.u2)
     annotation (Line(points={{-59,0},{-66,0},{-42,0}}, color={255,0,255}));
-  connect(vref.y, switch1.u3) annotation (Line(points={{-59,-50},{-50,-50},{-50,
-          -8},{-42,-8}}, color={0,0,127}));
   connect(step.y, switch1.u1) annotation (Line(points={{-59,50},{-59,50},{-50,
           50},{-50,8},{-42,8}}, color={0,0,127}));
   connect(gen.p, pwPin)
-    annotation (Line(points={{82,0},{82,0},{110,0}}, color={0,0,255}));
+    annotation (Line(points={{80,0},{80,0},{110,0}}, color={0,0,255}));
   connect(AVR.vf, gen.vf)
-    annotation (Line(points={{29.2,10},{30,10},{40,10}}, color={0,0,127}));
+    annotation (Line(points={{30.4,10},{30.4,10},{36,10}}, color={0,0,127}));
   connect(gen.pm0, gen.pm) annotation (Line(points={{44,-22},{44,-30},{30,-30},
-          {30,-10},{40,-10}}, color={0,0,127}));
-  annotation (Documentation);
+          {30,-10},{36,-10}},color={0,0,127}));
+  connect(gen.vf0, AVR.vf0) annotation (Line(points={{44,22},{42,22},{42,36},{-18,
+          36},{-18,-26},{16,-26},{16,-4.4}}, color={0,0,127}));
+  connect(AVR.vref0, switch1.u3) annotation (Line(points={{16,24.4},{16,24.4},{
+          16,58},{10,58},{10,72},{-88,72},{-88,-36},{-42,-36},{-42,-8}}, color=
+          {0,0,127}));
+  annotation (Documentation, Diagram(coordinateSystem(preserveAspectRatio=false,
+          extent={{-100,-100},{100,100}})));
 end Gen1;

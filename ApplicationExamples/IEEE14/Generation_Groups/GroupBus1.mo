@@ -12,8 +12,6 @@ model GroupBus1
     Tr=0.001,
     vrmax=7.32,
     vrmin=0,
-    vref0=vref0,
-    vf0=vf0,
     Ka=200,
     v0=V_0) annotation (Placement(transformation(extent={{-52,-6},{0,42}})));
   OpenIPSL.Electrical.Machines.PSAT.Order5_Type2 Syn1(
@@ -24,47 +22,47 @@ model GroupBus1
     ra=0,
     xd=0.8979,
     xq=0.646,
-    xd1=0.2998,
-    xd2=0.23,
-    xq2=0.4,
-    Td10=7.4,
-    Td20=0.03,
-    Tq20=0.033,
+    x1d=0.2998,
+    x2d=0.23,
+    x2q=0.4,
+    T1d0=7.4,
+    T2d0=0.03,
+    T2q0=0.033,
     M=2*5.148,
     D=2,
     V_0=V_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{34,-32},{88,30}})));
-  Modelica.Blocks.Sources.Constant const5(k=vref0) annotation (Placement(
-        transformation(
-        extent={{-12,-12},{12,12}},
-        rotation=0,
-        origin={-72,28})));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
             {100,-12},{120,8}}), iconTransformation(extent={{100,-12},{120,8}})));
 equation
-  connect(AVR1.vf, Syn1.vf) annotation (Line(points={{-3.9,24.24},{12,24.24},{
-          12,14.5},{34,14.5}}, color={0,0,127}));
+  connect(AVR1.vf, Syn1.vf) annotation (Line(points={{5.2,18},{12,18},{12,14.5},
+          {28.6,14.5}}, color={0,0,127}));
   connect(Syn1.v, AVR1.v) annotation (Line(points={{90.7,8.3},{96,8.3},{96,-56},
-          {-82,-56},{-82,4},{-46.8,4},{-46.8,15.6}}, color={0,0,127}));
-  connect(const5.y, AVR1.vref) annotation (Line(points={{-58.8,28},{-54,28},{-54,
-          30},{-54,30.96},{-46.8,30.96}}, color={0,0,127}));
-  connect(Syn1.p, pwPin) annotation (Line(points={{90.7,-0.846116},{100.35,-0.846116},
-          {100.35,-2},{110,-2}}, color={0,0,255}));
+          {-82,-56},{-82,4},{-57.2,4},{-57.2,3.6}}, color={0,0,127}));
+  connect(Syn1.p, pwPin) annotation (Line(points={{88,-1},{100.35,-1},{100.35,-2},
+          {110,-2}}, color={0,0,255}));
   connect(Syn1.pm0, Syn1.pm) annotation (Line(points={{39.4,-35.1},{39.4,-44},{
-          14,-44},{14,-16.5},{34,-16.5}}, color={0,0,127}));
+          14,-44},{14,-16.5},{28.6,-16.5}}, color={0,0,127}));
+  connect(AVR1.vref0, AVR1.vref) annotation (Line(points={{-26,46.8},{-28,46.8},
+          {-28,66},{-28,70},{-74,70},{-74,32.4},{-57.2,32.4}}, color={0,0,127}));
+  connect(AVR1.vf0, Syn1.vf0) annotation (Line(points={{-26,-10.8},{-26,-30},{8,
+          -30},{8,44},{39.4,44},{39.4,33.1}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=
-            false), graphics={Text(
+            false),graphics={
+        Text(
           extent={{-93,6},{-24,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},
-          textString=""),Ellipse(extent={{-94,68},{98,-84}}, lineColor={28,108,
-          200}),Line(points={{-28,-8},{-12,16}}, color={28,108,200}),Line(
-          points={{-12,16},{14,-16},{32,10}}, color={28,108,200}),Text(
+          textString=""),
+        Ellipse(extent={{-94,68},{98,-84}}, lineColor={28,108,200}),
+        Line(points={{-28,-8},{-12,16}}, color={28,108,200}),
+        Line(points={{-12,16},{14,-16},{32,10}}, color={28,108,200}),
+        Text(
           extent={{-18,-32},{20,-64}},
           lineColor={28,108,200},
           textString="Gen1 5.2")}),

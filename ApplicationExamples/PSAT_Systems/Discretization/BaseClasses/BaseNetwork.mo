@@ -11,12 +11,12 @@ partial model BaseNetwork
     ra=0.001,
     M=10,
     D=0,
-    xd1=0.302,
+    x1d=0.302,
     xd=1.9,
     xq=1.7,
-    xq1=0.5,
-    Td10=8,
-    Tq10=0.8) annotation (Placement(transformation(extent={{-30,-12},{-8,11}})));
+    x1q=0.5,
+    T1d0=8,
+    T1q0=0.8) annotation (Placement(transformation(extent={{-30,-12},{-8,11}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
     R=0.01,

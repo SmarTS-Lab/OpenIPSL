@@ -16,10 +16,10 @@ model Gen2
     Q_0=Q_0,
     ra=0,
     xd=1.3125,
-    xd1=0.1813,
-    xq1=0.25,
-    Td10=5.89,
-    Tq10=0.6,
+    x1d=0.1813,
+    x1q=0.25,
+    T1d0=5.89,
+    T1q0=0.6,
     M=6.02,
     D=0,
     xq=1.2578) annotation (Placement(transformation(
@@ -30,8 +30,6 @@ model Gen2
     vrmin=-5,
     vrmax=5,
     v0=V_0,
-    vref0=vref0,
-    vf0=vf0,
     Ka=20,
     Ta=0.2,
     Kf=0.063,
@@ -44,11 +42,6 @@ model Gen2
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-6,10})));
-  Modelica.Blocks.Sources.Constant vref2(k=vref0) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-71,25})));
   Modelica.Blocks.Sources.Step step(
     startTime=tstart_2,
     height=height_2,
@@ -68,23 +61,25 @@ equation
   //P_MW = gen.P*S_b;
   //Q_MVA = gen.Q*S_b;
   connect(gen.v, AVR.v) annotation (Line(
-      points={{39,17},{48,17},{48,-14},{-22,-14},{-22,9},{-14,9}},
+      points={{39,17},{48,17},{48,-14},{-22,-14},{-22,4},{-18,4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(switch1.y, AVR.vref) annotation (Line(points={{-39.5,17},{-26.75,17},
-          {-26.75,15.4},{-14,15.4}}, color={0,0,127}));
+          {-26.75,16},{-18,16}},color={0,0,127}));
   connect(booleanConstant.y, switch1.u2) annotation (Line(points={{-69.5,7},{-66,
           7},{-66,17},{-51,17}}, color={255,0,255}));
-  connect(vref2.y, switch1.u3) annotation (Line(points={{-65.5,25},{-60,25},{-60,
-          13},{-51,13}}, color={0,0,127}));
   connect(step.y, switch1.u1)
     annotation (Line(points={{-56,2.4},{-56,21},{-51,21}}, color={0,0,127}));
-  connect(gen.p, pwPin) annotation (Line(points={{39,14.0496},{66,14.0496},{66,
-          0},{110,0}}, color={0,0,255}));
-  connect(AVR.vf, gen.vf) annotation (Line(points={{2.5,12.6},{8,12.6},{8,19},{
-          18,19}}, color={0,0,127}));
+  connect(gen.p, pwPin) annotation (Line(points={{38,14},{66,14},{66,0},{110,0}},
+        color={0,0,255}));
+  connect(AVR.vf, gen.vf)
+    annotation (Line(points={{6,10},{8,10},{8,19},{16,19}}, color={0,0,127}));
   connect(gen.pm0, gen.pm) annotation (Line(points={{20,3},{20,0},{12,0},{12,9},
-          {18,9}}, color={0,0,127}));
+          {16,9}}, color={0,0,127}));
+  connect(AVR.vref0, switch1.u3) annotation (Line(points={{-6,22},{-34,22},{-34,
+          42},{-62,42},{-62,13},{-51,13}}, color={0,0,127}));
+  connect(AVR.vf0, gen.vf0) annotation (Line(points={{-6,-2},{0,-2},{0,-6},{10,
+          -6},{10,25},{20,25}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
@@ -113,4 +108,5 @@ equation
           textString=DynamicSelect("0.0", String(Q_MVA, significantDigits=3)))}),
 
     Documentation);
+
 end Gen2;

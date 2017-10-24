@@ -63,28 +63,32 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, uRST5T.EFD0) annotation (Line(
-      points={{-74.88,-10.9},{-64,-10.9},{-64,-36.1111},{-56,-36.1111}},
+      points={{-74.6,-7.5},{-64,-7.5},{-64,-36.1111},{-56,-36.1111}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
-      points={{-74.88,-4.1},{-70,-4.1},{-70,22},{-104,22},{-104,9.5},{-103.72,
-          9.5}},
+      points={{-74.6,9.5},{-70,9.5},{-70,22},{-104,22},{-104,9.5},{-106.8,9.5}},
+
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(generator.PELEC, uRST5T.ECOMP) annotation (Line(
-      points={{-74.88,-7.5},{-66,-7.5},{-66,-28.8889},{-56,-28.8889}},
+      points={{-74.6,6.1},{-66,6.1},{-66,-28.8889},{-56,-28.8889}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(uRST5T.EFD, generator.EFD) annotation (Line(
       points={{-33.45,-28.8889},{-14,-28.8889},{-14,-44},{-104,-44},{-104,-7.5},
-          {-103.72,-7.5}},
+          {-106.8,-7.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.p, GEN1.p) annotation (Line(points={{-74.6,1},{-57.3,1},{-57.3,
+  connect(generator.p, GEN1.p) annotation (Line(points={{-76,1},{-57.3,1},{-57.3,
           0},{-40,0}}, color={0,0,255}));
   connect(uRST5T.VT, uRST5T.ECOMP) annotation (Line(points={{-56,-26.1111},{-58,
           -26.1111},{-58,-26},{-60,-26},{-60,-28.8889},{-56,-28.8889}}, color={
           0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end URST5T;

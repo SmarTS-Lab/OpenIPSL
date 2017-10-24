@@ -53,38 +53,39 @@ model IEESGO
     K_1=0.1) annotation (Placement(transformation(extent={{-64,24},{-96,38}})));
 equation
   connect(SCRX.VUEL, const.y) annotation (Line(
-      points={{-68.3,-14.4444},{-53.67,-14.4444},{-53.67,-34},{-52.2,-34}},
+      points={{-68.3,-18},{-53.67,-18},{-53.67,-34},{-52.2,-34}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(SCRX.VOEL, const.y) annotation (Line(
-      points={{-73.7,-14.4444},{-53.67,-14.4444},{-53.67,-34},{-52.2,-34}},
+      points={{-73.7,-18},{-53.67,-18},{-53.67,-34},{-52.2,-34}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(SCRX.VOTHSG, const.y) annotation (Line(
-      points={{-62,-40.2222},{-53.67,-40.2222},{-53.67,-34},{-52.2,-34}},
+      points={{-62,-43.7778},{-53.67,-43.7778},{-53.67,-34},{-52.2,-34}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, SCRX.EFD0) annotation (Line(
-      points={{-69.2,-7},{-69.2,-20.6667},{-62,-20.6667}},
+      points={{-69,-5},{-69,-24.2222},{-62,-24.2222}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-98.9,-32.2222},{-104,
-          -32.2222},{-104,-5},{-89.8,-5}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-69.2,5},{-44,
-          5},{-44,-32.2222},{-62,-32.2222}}, color={0,0,127}));
-  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-69.2,-9},{-52,
-          -9},{-52,-26},{-62,-26}}, color={0,0,127}));
+  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-98.9,-35.7778},{
+          -104,-35.7778},{-104,-5},{-92,-5}}, color={0,0,127}));
+  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-69,-3},{-44,
+          -3},{-44,-35.7778},{-62,-35.7778}}, color={0,0,127}));
+  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-69.2,-9},{
+          -52,-9},{-52,-29.5556},{-62,-29.5556}}, color={0,0,127}));
   connect(iEESGO.SPEED, generator.SPEED) annotation (Line(points={{-64.8,35},{-62,
-          35},{-62,9},{-69.2,9}}, color={0,0,127}));
+          35},{-62,7},{-69,7}}, color={0,0,127}));
   connect(iEESGO.PMECH, generator.PMECH) annotation (Line(points={{-97,32},{-104,
-          32},{-104,5},{-89.8,5}}, color={0,0,127}));
+          32},{-104,5},{-92,5}}, color={0,0,127}));
   connect(iEESGO.PMECH0, generator.PMECH0) annotation (Line(points={{-64.8,28},
-          {-62,28},{-62,-3},{-69.2,-3}}, color={0,0,127}));
+          {-62,28},{-62,5},{-69,5}},color={0,0,127}));
   connect(generator.p, GEN1.p)
-    annotation (Line(points={{-69,0},{-54.5,0},{-40,0}}, color={0,0,255}));
+    annotation (Line(points={{-70,0},{-70,0},{-40,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{
             100,80}})),
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
-    Documentation);
+    Documentation,
+    experiment(StopTime=10));
 end IEESGO;

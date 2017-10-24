@@ -77,11 +77,11 @@ model SolarPQtest
     angle_0=0,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7) annotation (Placement(visible=true, transformation(
         origin={-110.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},

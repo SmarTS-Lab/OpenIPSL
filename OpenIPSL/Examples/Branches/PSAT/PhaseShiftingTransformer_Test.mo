@@ -60,7 +60,7 @@ model PhaseShiftingTransformer_Test
     Q_0=0.010496891745129,
     angle_0=0,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10) annotation (Placement(transformation(extent={{-101,-11},{-81,9}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-97,20},{-77,40}})));
@@ -83,11 +83,11 @@ model PhaseShiftingTransformer_Test
     annotation (Placement(transformation(extent={{-40,60},{2,80}})));
 equation
   connect(pwLine.n, pwLine1.n) annotation (Line(
-      points={{-2.33333,10},{10,10},{10,-10},{-0.333333,-10}},
+      points={{-5,10},{10,10},{10,-10},{-3,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine.p, pwLine1.p) annotation (Line(
-      points={{-25.6667,10},{-26,10},{-26,-10},{-23.6667,-10}},
+      points={{-23,10},{-26,10},{-26,-10},{-21,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.pk, pSTransformer.u) annotation (Line(
@@ -95,17 +95,17 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pSTransformer.n, pwLine2.n) annotation (Line(
-      points={{75,-12},{92,-12},{92,10},{73.6667,10}},
+      points={{75,-12},{92,-12},{92,10},{71,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(sine1.y, add2.u1) annotation (Line(
-      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{-120.693,
-          34.4558}},
+      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{
+          -120.693,34.4558}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine2.y, add2.u2) annotation (Line(
-      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{-120.693,
-          26.8684}},
+      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{
+          -120.693,26.8684}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add2.y, add.u1) annotation (Line(
@@ -113,12 +113,12 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(add.y, Gen1.vf) annotation (Line(
-      points={{-76,30},{-72,30},{-72,14},{-118,14},{-118,4},{-101,4}},
+      points={{-76,30},{-72,30},{-72,14},{-118,14},{-118,4},{-103,4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.pm0, Gen1.pm) annotation (Line(
       points={{-99,-12},{-72,-12},{-72,8},{-70,8},{-70,-22},{-108,-22},{-108,-6},
-          {-101,-6}},
+          {-103,-6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.vf0, add.u2) annotation (Line(
@@ -126,7 +126,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.p, B1.p) annotation (Line(
-      points={{-80,-0.95036},{-74,-0.95036},{-74,0},{-68,0}},
+      points={{-81,-1},{-74,-1},{-74,0},{-68,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1.p, twoWindingTransformer.p) annotation (Line(
@@ -138,37 +138,37 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(B2.p, pwLine1.p) annotation (Line(
-      points={{-32,0},{-26,0},{-26,-10},{-23.6667,-10}},
+      points={{-32,0},{-26,0},{-26,-10},{-21,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B3.p, pwLine1.n) annotation (Line(
-      points={{24,0},{10,0},{10,-10},{-0.333333,-10}},
+      points={{24,0},{10,0},{10,-10},{-3,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B3.p, lOADPQ2.p) annotation (Line(
-      points={{24,0},{44,0},{44,-23}},
+      points={{24,0},{44,0},{44,-24}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.p, lOADPQ2.p) annotation (Line(
-      points={{50.3333,10},{40,10},{40,0},{44,0},{44,-23}},
+      points={{53,10},{40,10},{40,0},{44,0},{44,-24}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.p, lOADPQ2.p) annotation (Line(
-      points={{52.8,-11.8},{40,-11.8},{40,0},{44,0},{44,-23}},
+      points={{52.8,-11.8},{40,-11.8},{40,0},{44,0},{44,-24}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B4.p, lOADPQ1.p) annotation (Line(
-      points={{98,0},{110,0},{110,11},{120,11}},
+      points={{98,0},{110,0},{110,10},{120,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B4.p, pwLine2.n) annotation (Line(
-      points={{98,0},{92,0},{92,10},{73.6667,10}},
+      points={{98,0},{92,0},{92,10},{71,10}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{140,
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics),
-    Icon(coordinateSystem(extent={{-140,-100},{140,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

@@ -11,7 +11,7 @@ model TWTPST_smib_test
     P_0=0.050249405357958,
     Q_0=0.010496891745129,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10) annotation (Placement(transformation(extent={{-122,-10},{-102,10}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03)
     annotation (Placement(transformation(extent={{34,-44},{54,-24}})));
@@ -65,37 +65,37 @@ model TWTPST_smib_test
     annotation (Placement(transformation(extent={{-40,60},{2,80}})));
 equation
   connect(pwLine.n, pwLine1.n) annotation (Line(
-      points={{-0.333333,6},{10,6},{10,-12},{-0.333333,-12}},
+      points={{-3,6},{10,6},{10,-12},{-3,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine.p, pwLine1.p) annotation (Line(
-      points={{-23.6667,6},{-32,6},{-32,-12},{-23.6667,-12}},
+      points={{-21,6},{-32,6},{-32,-12},{-21,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(lOADPQ2.p, pwLine1.n) annotation (Line(
-      points={{44,-23},{26,-23},{26,-36},{14,-36},{14,-4},{10,-4},{10,-12},{-0.333333,
+      points={{44,-24},{26,-24},{26,-36},{14,-36},{14,-4},{10,-4},{10,-12},{-3,
           -12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(infiniteBus.p, order2_1.p) annotation (Line(
-      points={{-125,-34},{-98,-34},{-98,0.04964},{-101,0.04964}},
+      points={{-104,-34},{-98,-34},{-98,0},{-102,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.n, pwLine2.n) annotation (Line(
-      points={{75,-12},{82,-12},{82,-14},{94,-14},{94,-4},{92,-4},{92,10},{
-          73.6667,10}},
+      points={{75,-12},{82,-12},{82,-14},{94,-14},{94,-4},{92,-4},{92,10},{71,
+          10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, lOADPQ1.p) annotation (Line(
-      points={{104,0},{116,0},{116,11},{126,11}},
+      points={{104,0},{116,0},{116,10},{126,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, pwLine2.n) annotation (Line(
-      points={{104,0},{92,0},{92,10},{73.6667,10}},
+      points={{104,0},{92,0},{92,10},{71,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.p, bus3.p) annotation (Line(
-      points={{50.3333,10},{40,10},{40,0},{26,0}},
+      points={{53,10},{40,10},{40,0},{26,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.p, bus3.p) annotation (Line(
@@ -103,7 +103,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine1.n) annotation (Line(
-      points={{26,0},{10,0},{10,-12},{-0.333333,-12}},
+      points={{26,0},{10,0},{10,-12},{-3,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(twoWindingTransformer.n, bus2.p) annotation (Line(
@@ -115,11 +115,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus1.p, order2_1.p) annotation (Line(
-      points={{-90,0},{-98,0},{-98,0.04964},{-101,0.04964}},
+      points={{-90,0},{-98,0},{-98,0},{-102,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus2.p, pwLine1.p) annotation (Line(
-      points={{-46,0},{-32,0},{-32,-12},{-23.6667,-12}},
+      points={{-46,0},{-32,0},{-32,-12},{-21,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.pk, pSTransformer.u) annotation (Line(
@@ -127,12 +127,12 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{-120,11},{-120,
-          14},{-130,14},{-130,5},{-122,5}}, color={0,0,127}));
-  connect(order2_1.pm, order2_1.pm0) annotation (Line(points={{-122,-5},{-130,-5},
-          {-130,-16},{-120,-16},{-120,-11}}, color={0,0,127}));
+          14},{-130,14},{-130,5},{-124,5}}, color={0,0,127}));
+  connect(order2_1.pm, order2_1.pm0) annotation (Line(points={{-124,-5},{-130,
+          -5},{-130,-16},{-120,-16},{-120,-11}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{
-            140,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
     Documentation,
-    Icon(coordinateSystem(extent={{-140,-100},{140,100}})));
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})));
 end TWTPST_smib_test;

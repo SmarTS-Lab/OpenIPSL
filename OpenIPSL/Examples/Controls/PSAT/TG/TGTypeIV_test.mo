@@ -10,11 +10,11 @@ model TGTypeIV_test
     Sn=20,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7) annotation (Placement(visible=true, transformation(
         origin={-17.3443,2.6244},
         extent={{-16.6557,-16.6244},{16.6557,16.6244}},
@@ -89,19 +89,18 @@ equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={79.076,17.3286},
-      points={{-12.5463,-2},{-12.5463,-2},{0.071,-2},{0.071,8}}));
+      points={{-15.213,-2},{-15.213,-2},{0.071,-2},{0.071,7}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={39.1134,16.8286},
-      points={{-1.58333,-2.5},{4.75,-2.5},{4.75,-1.5},{4.08293,-1.5}}));
+      points={{-4.25,-2.5},{4.75,-2.5},{4.75,-1.5},{6.7496,-1.5}}));
   connect(Generator.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={11.2254,11.7135},
-      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,
-          2.6151}}));
+      points={{-11.914,-9.0891},{1.638,-9.0891},{1.638,2.6151},{5.638,2.6151}}));
   connect(Generator.vf0, Generator.vf) annotation (Line(
-      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,
-          10.9366}},
+      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{
+          -37.3311,10.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.w, tGModel4_1.w) annotation (Line(
@@ -110,35 +109,38 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel4_1.Pm, Generator.pm) annotation (Line(
-      points={{-54.7,-4},{-56,-4},{-56,-5.6878},{-34,-5.6878}},
+      points={{-54.7,-4},{-56,-4},{-56,-5.6878},{-37.3311,-5.6878}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{15.1963,-12.6714},{16,-12.6714},{16,14.3286},{14.1967,14.3286}},
-
+      points={{17.863,-12.6714},{16,-12.6714},{16,14.3286},{16.8634,14.3286}},
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{37.5301,14.3286},{38,14.3286},{38,-12.6714},{38.5297,-12.6714}},
-
+      points={{34.8634,14.3286},{38,14.3286},{38,-12.6714},{35.863,-12.6714}},
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{38.5297,-12.6714},{44,-12.6714},{44,-12},{39.8333,-12}},
+      points={{35.863,-12.6714},{44,-12.6714},{44,-12},{42.5,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, infiniteBus.p) annotation (Line(
-      points={{63.1667,-12},{72,-12},{72,-11},{82.5,-11}},
+      points={{60.5,-12},{72,-12},{72,-11},{72,-11}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics={Text(
+            -100},{100,100}}), graphics={
+        Text(
           extent={{-96,42},{-22,30}},
           lineColor={0,0,255},
-          textString="Wref perturbation with sine signal 5-10s"),Text(
+          textString="Wref perturbation with sine signal 5-10s"),
+        Text(
           extent={{68,-18},{92,-24}},
           lineColor={0,0,255},
-          textString="Infinite bus"),Text(
+          textString="Infinite bus"),
+        Text(
           extent={{70,32},{84,20}},
           lineColor={0,0,255},
           textString="PQ load")}), Documentation);

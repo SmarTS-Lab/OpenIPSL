@@ -10,7 +10,7 @@ model TCSC_Alpha_Test
     V_0=1,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10) annotation (Placement(transformation(extent={{-24,-10},{-4,10}})));
   Modelica.Blocks.Sources.Pulse pulse(
     period=10,
@@ -62,11 +62,11 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine1.n, lOADPQ.p) annotation (Line(
-      points={{77.6667,0},{88,0},{88,11},{104,11}},
+      points={{75,0},{88,0},{88,10},{104,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(add3_1.y, Gen1.vf) annotation (Line(
-      points={{-57,0},{-32,0},{-32,5},{-24,5}},
+      points={{-57,0},{-32,0},{-32,5},{-26,5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.vf0, add3_1.u3) annotation (Line(
@@ -75,21 +75,21 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.pm0, Gen1.pm) annotation (Line(
-      points={{-22,-11},{4,-11},{4,-20},{-32,-20},{-32,-5},{-24,-5}},
+      points={{-22,-11},{4,-11},{4,-20},{-32,-20},{-32,-5},{-26,-5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tCSCAlpha.n, pwLine1.p) annotation (Line(
-      points={{39,0},{54.3333,0}},
+      points={{39,0},{57,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Gen1.p, tCSCAlpha.p) annotation (Line(
-      points={{-3,0.04964},{7.5,0.04964},{7.5,0},{17.1,0}},
+      points={{-4,0},{7.5,0},{7.5,0},{17.1,0}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics),
-    Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

@@ -86,7 +86,7 @@ model Order2test2_perturbation
     Sn=20,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     P_0=16.0352698692006,
     Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
@@ -100,20 +100,22 @@ equation
       points={{-3.192,-4.0917},{2.3974,-4.0917},{2.3974,2.9083},{5.308,2.9083}},
 
       color={0,0,127}));
+
   connect(step4.y, add4.u1) annotation (Line(
       visible=true,
       origin={-86.308,-19.6146},
       points={{-3.192,4.6146},{2.3974,4.6146},{2.3974,-2.3854},{5.308,-2.3854}},
 
       color={0,0,127}));
+
   connect(order2_Inputs_Outputs1.p, bus.p) annotation (Line(points={{-11.2167,
           0.1663},{-5.66375,0.1663},{-5.66375,0},{0,0}}, color={0,0,255}));
   connect(add31.y, order2_Inputs_Outputs1.vf) annotation (Line(points={{-39.5,
           25},{-35,25},{-35,4.74945},{-30.7783,4.74945}}, color={0,0,127}));
-  connect(order2_Inputs_Outputs1.vf0, add31.u3) annotation (Line(points={{-28.1108,
-          10.2492},{-28.1108,14},{-55,14},{-55,21},{-51,21}}, color={0,0,127}));
+  connect(order2_Inputs_Outputs1.vf0, add31.u3) annotation (Line(points={{-27.2217,
+          10.2492},{-27.2217,14},{-55,14},{-55,21},{-51,21}}, color={0,0,127}));
   connect(add32.y, order2_Inputs_Outputs1.pm) annotation (Line(points={{-39.5,-25.0001},
-          {-35,-25.0001},{-35,-4.44956},{-30.78,-4.44956}}, color={0,0,127}));
+          {-35,-25.0001},{-35,-4.41685},{-30.7783,-4.41685}}, color={0,0,127}));
   connect(add1.y, add31.u1) annotation (Line(points={{-69.5,35},{-60,35},{-60,
           29},{-51,29}}, color={0,0,127}));
   connect(add2.y, add31.u2) annotation (Line(points={{-69.5,15},{-60,15},{-60,
@@ -126,8 +128,8 @@ equation
           {-81,12}}, color={0,0,127}));
   connect(sine1.y, add2.u1) annotation (Line(points={{-89.5,20},{-86,20},{-86,
           18},{-81,18}}, color={0,0,127}));
-  connect(order2_Inputs_Outputs1.pm0, add32.u1) annotation (Line(points={{-28.1108,
-          -9.91663},{-28.1108,-13},{-54,-13},{-54,-21},{-51.0001,-21}}, color={
+  connect(order2_Inputs_Outputs1.pm0, add32.u1) annotation (Line(points={{-27.2217,
+          -9.91663},{-27.2217,-13},{-54,-13},{-54,-21},{-51.0001,-21}}, color={
           0,0,127}));
   connect(add4.y, add32.u2) annotation (Line(points={{-69.5,-25},{-60,-25},{-60,
           -25.0001},{-51.0001,-25.0001}}, color={0,0,127}));
@@ -137,5 +139,5 @@ equation
           -68},{-81,-68}}, color={0,0,127}));
   connect(add3.y, add32.u3) annotation (Line(points={{-69.5,-65},{-60,-65},{-60,
           -29.0001},{-51.0001,-29.0001}}, color={0,0,127}));
-  annotation (Documentation);
+  annotation (Documentation,experiment(StopTime=20));
 end Order2test2_perturbation;

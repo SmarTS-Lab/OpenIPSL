@@ -53,24 +53,27 @@ model ESAC1A "SMIB system with one load and GENROE model"
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,
-          10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
+          10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
   connect(eSAC1A.VOTHSG, const.y) annotation (Line(points={{-52,-41.8889},{-52,
           -53},{-38.5,-53}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSAC1A.ECOMP) annotation (Line(points={{-58.4,10},{-32,
-          10},{-32,-46.8889},{-52,-46.8889}}, color={0,0,127}));
-  connect(eSAC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-52,-54.1111},{-52,
-          -62},{-46,-62},{-46,-14},{-58.4,-14}}, color={0,0,127}));
-  connect(gENROE.XADIFD, eSAC1A.XADIFD) annotation (Line(points={{-58.4,-18},{-44,
-          -18},{-44,-64},{-52,-64},{-52,-50.7778}}, color={0,0,127}));
+  connect(gENROE.ETERM, eSAC1A.ECOMP) annotation (Line(points={{-58,-6},{-32,-6},
+          {-32,-46.8889},{-52,-46.8889}}, color={0,0,127}));
+  connect(eSAC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-52,-54.1111},{
+          -52,-62},{-46,-62},{-46,-10},{-58,-10}}, color={0,0,127}));
+  connect(gENROE.XADIFD, eSAC1A.XADIFD) annotation (Line(points={{-58.4,-18},{
+          -44,-18},{-44,-64},{-52,-64},{-52,-50.7778}}, color={0,0,127}));
   connect(eSAC1A.EFD, gENROE.EFD) annotation (Line(points={{-107.35,-46.8889},{
-          -110,-46.8889},{-110,-10},{-99.6,-10}}, color={0,0,127}));
+          -110,-46.8889},{-110,-10},{-104,-10}}, color={0,0,127}));
   connect(const1.y, eSAC1A.VUEL) annotation (Line(points={{-38.5,-75},{-61.45,-75},
           {-61.45,-58}}, color={0,0,127}));
   connect(const2.y, eSAC1A.VOEL) annotation (Line(points={{-38.5,-95},{-38.5,-95},
           {-69.55,-95},{-69.55,-58}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end ESAC1A;

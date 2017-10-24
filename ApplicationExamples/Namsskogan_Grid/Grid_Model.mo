@@ -129,18 +129,18 @@ model Grid_Model
     Sn=8,
     Vn=6.6,
     ra=0,
-    xd1=0.2,
+    x1d=0.2,
     M=5,
     D=0,
     xd=2,
     xq=1.5,
-    xq1=0.3,
-    xd2=0.15,
-    xq2=0.25,
-    Td10=4,
-    Tq10=0.8,
-    Td20=0.026667,
-    Tq20=0.18,
+    x1q=0.3,
+    x2d=0.15,
+    x2q=0.25,
+    T1d0=4,
+    T1q0=0.8,
+    T2d0=0.026667,
+    T2q0=0.18,
     Taa=0.002,
     P_0=P1*SysData.S_b,
     Q_0=Q1*SysData.S_b,
@@ -148,17 +148,17 @@ model Grid_Model
     annotation (Placement(transformation(extent={{28,-158},{48,-138}})));
   OpenIPSL.Electrical.Buses.BusExt B1(
     V_b=132,
-    nu=1,
+    nn=1,
     V_0=V1,
     angle_0=Modelica.SIunits.Conversions.to_deg(A1),
-    no=1) annotation (Placement(transformation(
+    np=1) annotation (Placement(transformation(
         extent={{-2,-28},{2,28}},
         rotation=90,
         origin={208,-134})));
   OpenIPSL.Electrical.Buses.BusExt B2(
     V_b=132,
-    no=3,
-    nu=1,
+    np=3,
+    nn=3,
     V_0=V2,
     angle_0=Modelica.SIunits.Conversions.to_deg(A2)) annotation (Placement(
         transformation(
@@ -167,8 +167,8 @@ model Grid_Model
         origin={162,-82})));
   OpenIPSL.Electrical.Buses.BusExt B3(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V3,
     angle_0=Modelica.SIunits.Conversions.to_deg(A3)) annotation (Placement(
         transformation(
@@ -177,8 +177,8 @@ model Grid_Model
         origin={290,-96})));
   OpenIPSL.Electrical.Buses.BusExt B4(
     V_b=132,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V4,
     angle_0=Modelica.SIunits.Conversions.to_deg(A4)) annotation (Placement(
         transformation(
@@ -187,17 +187,17 @@ model Grid_Model
         origin={134,-32})));
   OpenIPSL.Electrical.Buses.BusExt B5(
     V_b=22,
-    no=4,
+    np=4,
     V_0=V5,
     angle_0=Modelica.SIunits.Conversions.to_deg(A5),
-    nu=1) annotation (Placement(transformation(
+    nn=4) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={106,2})));
   OpenIPSL.Electrical.Buses.BusExt B6(
     V_b=22,
-    no=2,
-    nu=2,
+    np=2,
+    nn=2,
     V_0=V6,
     angle_0=Modelica.SIunits.Conversions.to_deg(A6)) annotation (Placement(
         transformation(
@@ -206,8 +206,8 @@ model Grid_Model
         origin={18,18})));
   OpenIPSL.Electrical.Buses.BusExt B7(
     V_b=22,
-    no=1,
-    nu=2,
+    np=2,
+    nn=2,
     V_0=V7,
     angle_0=Modelica.SIunits.Conversions.to_deg(A7)) annotation (Placement(
         transformation(
@@ -216,8 +216,8 @@ model Grid_Model
         origin={-12,-44})));
   OpenIPSL.Electrical.Buses.BusExt B8(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V8,
     angle_0=Modelica.SIunits.Conversions.to_deg(A8)) annotation (Placement(
         transformation(
@@ -226,8 +226,8 @@ model Grid_Model
         origin={-40,-92})));
   OpenIPSL.Electrical.Buses.BusExt B9(
     V_b=22,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V9,
     angle_0=Modelica.SIunits.Conversions.to_deg(A9)) annotation (Placement(
         transformation(
@@ -236,8 +236,8 @@ model Grid_Model
         origin={58,-82})));
   OpenIPSL.Electrical.Buses.BusExt B10(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V10,
     angle_0=Modelica.SIunits.Conversions.to_deg(A10)) annotation (Placement(
         transformation(
@@ -246,8 +246,8 @@ model Grid_Model
         origin={58,-124})));
   OpenIPSL.Electrical.Buses.BusExt B11(
     V_b=22,
-    no=3,
-    nu=2,
+    np=3,
+    nn=3,
     V_0=V11,
     angle_0=Modelica.SIunits.Conversions.to_deg(A11)) annotation (Placement(
         transformation(
@@ -256,8 +256,8 @@ model Grid_Model
         origin={-82,16})));
   OpenIPSL.Electrical.Buses.BusExt B12(
     V_b=22,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V12,
     angle_0=Modelica.SIunits.Conversions.to_deg(A12)) annotation (Placement(
         transformation(
@@ -266,8 +266,8 @@ model Grid_Model
         origin={-110,-60})));
   OpenIPSL.Electrical.Buses.BusExt B13(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V13,
     angle_0=Modelica.SIunits.Conversions.to_deg(A13)) annotation (Placement(
         transformation(
@@ -276,8 +276,8 @@ model Grid_Model
         origin={-122,-118})));
   OpenIPSL.Electrical.Buses.BusExt B14(
     V_b=22,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V14,
     angle_0=Modelica.SIunits.Conversions.to_deg(A14)) annotation (Placement(
         transformation(
@@ -286,8 +286,8 @@ model Grid_Model
         origin={-106,80})));
   OpenIPSL.Electrical.Buses.BusExt B15(
     V_b=0.69,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V15,
     angle_0=Modelica.SIunits.Conversions.to_deg(A15)) annotation (Placement(
         transformation(
@@ -296,27 +296,26 @@ model Grid_Model
         origin={-42,114})));
   OpenIPSL.Electrical.Buses.BusExt B16(
     V_b=22,
-    no=2,
-    nu=1,
+    nn=2,
     V_0=V16,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A16)) annotation (Placement(
-        transformation(
+    angle_0=Modelica.SIunits.Conversions.to_deg(A16),
+    np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-194,-18})));
   OpenIPSL.Electrical.Buses.BusExt B17(
     V_b=22,
-    nu=1,
+    nn=1,
     V_0=V17,
     angle_0=Modelica.SIunits.Conversions.to_deg(A17),
-    no=1) annotation (Placement(transformation(
+    np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-214,-66})));
   OpenIPSL.Electrical.Buses.BusExt B18(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V18,
     angle_0=Modelica.SIunits.Conversions.to_deg(A18)) annotation (Placement(
         transformation(
@@ -325,8 +324,8 @@ model Grid_Model
         origin={-228,-112})));
   OpenIPSL.Electrical.Buses.BusExt B19(
     V_b=22,
-    no=2,
-    nu=1,
+    np=2,
+    nn=2,
     V_0=V19,
     angle_0=Modelica.SIunits.Conversions.to_deg(A19)) annotation (Placement(
         transformation(
@@ -335,8 +334,8 @@ model Grid_Model
         origin={-266,-12})));
   OpenIPSL.Electrical.Buses.BusExt B20(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V20,
     angle_0=Modelica.SIunits.Conversions.to_deg(A20)) annotation (Placement(
         transformation(
@@ -345,8 +344,8 @@ model Grid_Model
         origin={-310,-72})));
   OpenIPSL.Electrical.Buses.BusExt B21(
     V_b=22,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V21,
     angle_0=Modelica.SIunits.Conversions.to_deg(A21)) annotation (Placement(
         transformation(
@@ -355,17 +354,17 @@ model Grid_Model
         origin={-318,50})));
   OpenIPSL.Electrical.Buses.BusExt B22(
     V_b=6.6,
-    nu=1,
+    nn=1,
     V_0=V22,
     angle_0=Modelica.SIunits.Conversions.to_deg(A22),
-    no=1) annotation (Placement(transformation(
+    np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-288,122})));
   OpenIPSL.Electrical.Buses.BusExt B23(
     V_b=22,
-    no=3,
-    nu=1,
+    np=3,
+    nn=3,
     V_0=V23,
     angle_0=Modelica.SIunits.Conversions.to_deg(A23)) annotation (Placement(
         transformation(
@@ -374,17 +373,17 @@ model Grid_Model
         origin={98,62})));
   OpenIPSL.Electrical.Buses.BusExt B24(
     V_b=22,
-    no=1,
+    np=1,
     V_0=V24,
     angle_0=Modelica.SIunits.Conversions.to_deg(A24),
-    nu=1) annotation (Placement(transformation(
+    nn=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={192,44})));
   OpenIPSL.Electrical.Buses.BusExt B25(
     V_b=0.69,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V25,
     angle_0=Modelica.SIunits.Conversions.to_deg(A25)) annotation (Placement(
         transformation(
@@ -393,8 +392,8 @@ model Grid_Model
         origin={240,-2})));
   OpenIPSL.Electrical.Buses.BusExt B26(
     V_b=22,
-    no=2,
-    nu=4,
+    np=4,
+    nn=4,
     V_0=V26,
     angle_0=Modelica.SIunits.Conversions.to_deg(A26)) annotation (Placement(
         transformation(
@@ -403,8 +402,8 @@ model Grid_Model
         origin={98,110})));
   OpenIPSL.Electrical.Buses.BusExt B27(
     V_b=22,
-    no=2,
-    nu=1,
+    np=2,
+    nn=2,
     V_0=V27,
     angle_0=Modelica.SIunits.Conversions.to_deg(A27)) annotation (Placement(
         transformation(
@@ -413,26 +412,26 @@ model Grid_Model
         origin={196,94})));
   OpenIPSL.Electrical.Buses.BusExt B28(
     V_b=0.69,
-    no=1,
+    np=1,
     V_0=V28,
     angle_0=Modelica.SIunits.Conversions.to_deg(A28),
-    nu=1) annotation (Placement(transformation(
+    nn=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={266,56})));
   OpenIPSL.Electrical.Buses.BusExt B29(
     V_b=22,
-    nu=1,
+    nn=1,
     V_0=V29,
     angle_0=Modelica.SIunits.Conversions.to_deg(A29),
-    no=1) annotation (Placement(transformation(
+    np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={322,96})));
   OpenIPSL.Electrical.Buses.BusExt B30(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V30,
     angle_0=Modelica.SIunits.Conversions.to_deg(A30)) annotation (Placement(
         transformation(
@@ -441,8 +440,8 @@ model Grid_Model
         origin={342,18})));
   OpenIPSL.Electrical.Buses.BusExt B31(
     V_b=22,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V31,
     angle_0=Modelica.SIunits.Conversions.to_deg(A31)) annotation (Placement(
         transformation(
@@ -451,8 +450,8 @@ model Grid_Model
         origin={94,158})));
   OpenIPSL.Electrical.Buses.BusExt B32(
     V_b=22,
-    no=2,
-    nu=1,
+    np=2,
+    nn=2,
     V_0=V32,
     angle_0=Modelica.SIunits.Conversions.to_deg(A32)) annotation (Placement(
         transformation(
@@ -461,8 +460,8 @@ model Grid_Model
         origin={212,140})));
   OpenIPSL.Electrical.Buses.BusExt B33(
     V_b=6.6,
-    no=1,
-    nu=1,
+    np=1,
+    nn=1,
     V_0=V33,
     angle_0=Modelica.SIunits.Conversions.to_deg(A33)) annotation (Placement(
         transformation(
@@ -829,29 +828,26 @@ model Grid_Model
     Ke=-0.05,
     Te=0.405,
     Tr=1,
-    v0=V10,
-    vref0=VR1,
-    vf0=VF1)
-    annotation (Placement(transformation(extent={{-2,-154},{18,-134}})));
+    v0=V10) annotation (Placement(transformation(extent={{-2,-154},{18,-134}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn2(
     V_b=6.6,
     Vn=6.6,
     ra=0,
     M=5,
     D=0,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
     V_0=V8,
     Sn=15,
-    xd1=0.3,
+    x1d=0.3,
     xd=1.5,
     xq=1,
-    xd2=0.2,
-    xq2=0.15,
-    Td10=3,
-    Td20=0.015,
-    Tq20=0.2,
+    x2d=0.2,
+    x2q=0.15,
+    T1d0=3,
+    T2d0=0.015,
+    T2q0=0.2,
     P_0=P2*SysData.S_b,
     Q_0=Q2*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A8))
@@ -865,27 +861,24 @@ model Grid_Model
     Kf=0.08,
     Tf=1,
     Ke=-0.02,
-    Te=0.5,
-    vref0=VR2,
-    vf0=VF2,
-    v0=V8)
+    Te=0.5)
     annotation (Placement(transformation(extent={{-94,-148},{-74,-128}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn3(
     V_b=6.6,
     Sn=8,
     Vn=6.6,
     ra=0,
-    xd1=0.2,
+    x1d=0.2,
     D=0,
     xd=2,
     xq=1.5,
-    xq1=0.3,
-    xd2=0.15,
-    xq2=0.25,
-    Td10=4,
-    Tq10=0.8,
-    Td20=0.026667,
-    Tq20=0.18,
+    x1q=0.3,
+    x2d=0.15,
+    x2q=0.25,
+    T1d0=4,
+    T1q0=0.8,
+    T2d0=0.026667,
+    T2q0=0.18,
     Taa=0.002,
     V_0=V13,
     M=2.5,
@@ -903,29 +896,27 @@ model Grid_Model
     Tf=1,
     Ke=1,
     Te=0.790,
-    v0=V13,
-    vref0=VR3,
-    vf0=VF3)
+    v0=V13)
     annotation (Placement(transformation(extent={{-188,-152},{-168,-132}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn4(
     V_b=6.6,
     Vn=6.6,
     ra=0,
-    xd1=0.2,
+    x1d=0.2,
     D=0,
     xd=2,
     xq=1.5,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
     V_0=V18,
     Sn=4,
     M=0.7,
-    xd2=0.1,
-    xq2=0.15,
-    Td10=3,
-    Td20=0.02,
-    Tq20=0.2,
+    x2d=0.1,
+    x2q=0.15,
+    T1d0=3,
+    T2d0=0.02,
+    T2q0=0.2,
     P_0=P4*SysData.S_b,
     Q_0=Q4*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A18))
@@ -940,29 +931,27 @@ model Grid_Model
     Kf=0.08,
     Tf=1,
     Te=0.5,
-    v0=V18,
-    vref0=VR4,
-    vf0=VF4)
+    v0=V18)
     annotation (Placement(transformation(extent={{-282,-144},{-262,-124}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn5(
     V_b=6.6,
     Vn=6.6,
     ra=0,
-    xd1=0.2,
+    x1d=0.2,
     D=0,
     xd=2,
     xq=1.5,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
-    xd2=0.1,
-    Td20=0.02,
+    x2d=0.1,
+    T2d0=0.02,
     V_0=V20,
     Sn=5,
     M=1,
-    xq2=0.2,
-    Td10=4,
-    Tq20=0.225,
+    x2q=0.2,
+    T1d0=4,
+    T2q0=0.225,
     P_0=P5*SysData.S_b,
     Q_0=Q5*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A20)) annotation (Placement(
@@ -980,9 +969,7 @@ model Grid_Model
     Kf=0.08,
     Tf=1,
     Te=0.5,
-    v0=V20,
-    vref0=VR5,
-    vf0=VF5) annotation (Placement(transformation(
+    v0=V20) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-312,-136})));
@@ -990,21 +977,21 @@ model Grid_Model
     V_b=6.6,
     Vn=6.6,
     ra=0,
-    xd1=0.2,
+    x1d=0.2,
     D=0,
     xd=2,
     xq=1.5,
-    xq1=0.3,
-    Td10=4,
-    Tq10=0.8,
+    x1q=0.3,
+    T1d0=4,
+    T1q0=0.8,
     Taa=0.002,
     V_0=V22,
     Sn=6,
     M=1.5,
-    xd2=0.1,
-    xq2=0.2,
-    Td20=0.04,
-    Tq20=0.225,
+    x2d=0.1,
+    x2q=0.2,
+    T2d0=0.04,
+    T2q0=0.225,
     P_0=P6*SysData.S_b,
     Q_0=Q6*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A22)) annotation (Placement(
@@ -1022,31 +1009,29 @@ model Grid_Model
     Tf=1.25,
     Ke=-0.04,
     Te=0.470,
-    v0=V22,
-    vref0=VR6,
-    vf0=VF6) annotation (Placement(transformation(
+    v0=V22) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={-214,152})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn7(
     ra=0,
     D=0,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
-    xd2=0.1,
+    x2d=0.1,
     V_b=0.69,
     V_0=V15,
     Sn=1.6,
     Vn=0.69,
-    xd1=0.15,
+    x1d=0.15,
     M=0.5,
     xd=1.5,
     xq=1,
-    xq2=0.1,
-    Td10=2,
-    Td20=0.015,
-    Tq20=0.1,
+    x2q=0.1,
+    T1d0=2,
+    T2d0=0.015,
+    T2q0=0.1,
     P_0=P7*SysData.S_b,
     Q_0=Q7*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A15)) annotation (Placement(
@@ -1064,31 +1049,29 @@ model Grid_Model
     Tf=1,
     Ke=1,
     Te=0.730,
-    v0=V15,
-    vref0=VR7,
-    vf0=VF7) annotation (Placement(transformation(
+    v0=V15) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={32,126})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn8(
     ra=0,
     D=0,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
-    xd2=0.1,
+    x2d=0.1,
     V_b=6.6,
     V_0=V33,
     Sn=4,
     Vn=6.6,
-    xd1=0.2,
+    x1d=0.2,
     M=0.7,
     xd=2,
     xq=1.5,
-    xq2=0.15,
-    Td10=3,
-    Td20=0.02,
-    Tq20=0.2,
+    x2q=0.15,
+    T1d0=3,
+    T2d0=0.02,
+    T2q0=0.2,
     P_0=P8*SysData.S_b,
     Q_0=Q8*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A33)) annotation (Placement(
@@ -1106,31 +1089,29 @@ model Grid_Model
     vrmax=4.26,
     Ka=200,
     Te=1.4,
-    v0=V33,
-    vref0=VR8,
-    vf0=VF8) annotation (Placement(transformation(
+    v0=V33) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={356,148})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn9(
     ra=0,
     D=0,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
-    xd2=0.1,
+    x2d=0.1,
     V_b=6.6,
     Vn=6.6,
-    xd1=0.2,
+    x1d=0.2,
     xd=2,
     xq=1.5,
-    Td20=0.02,
+    T2d0=0.02,
     V_0=V30,
     Sn=5,
     M=1,
-    xq2=0.2,
-    Td10=4,
-    Tq20=0.225,
+    x2q=0.2,
+    T1d0=4,
+    T2q0=0.225,
     P_0=P9*SysData.S_b,
     Q_0=Q9*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A30)) annotation (Placement(
@@ -1148,31 +1129,29 @@ model Grid_Model
     Tf=1.26,
     Ke=-0.05,
     Te=0.530,
-    v0=V30,
-    vref0=VR9,
-    vf0=VF9) annotation (Placement(transformation(
+    v0=V30) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={378,-4})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn10(
     ra=0,
     D=0,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
-    xd2=0.1,
+    x2d=0.1,
     V_b=0.69,
     V_0=V28,
     Sn=1.6,
     Vn=0.69,
-    xd1=0.15,
+    x1d=0.15,
     M=0.5,
     xd=1.5,
     xq=1,
-    xq2=0.1,
-    Td10=2,
-    Td20=0.015,
-    Tq20=0.15,
+    x2q=0.1,
+    T1d0=2,
+    T2d0=0.015,
+    T2q0=0.15,
     P_0=P10*SysData.S_b,
     Q_0=Q10*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A28)) annotation (Placement(
@@ -1190,31 +1169,29 @@ model Grid_Model
     Tf=0.35,
     Ke=-0.062,
     Te=0.5,
-    v0=V28,
-    vref0=VR10,
-    vf0=VF10) annotation (Placement(transformation(
+    v0=V28) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={278,-2})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn11(
     ra=0,
     D=0,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
-    xd2=0.1,
+    x2d=0.1,
     V_b=0.69,
     Vn=0.69,
     M=0.5,
-    xq2=0.1,
-    Tq20=0.15,
+    x2q=0.1,
+    T2q0=0.15,
     V_0=V25,
     Sn=2,
-    xd1=0.2,
+    x1d=0.2,
     xd=2,
     xq=1.5,
-    Td10=3,
-    Td20=0.02,
+    T1d0=3,
+    T2d0=0.02,
     P_0=P11*SysData.S_b,
     Q_0=Q11*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A25)) annotation (Placement(
@@ -1227,8 +1204,6 @@ model Grid_Model
     vrmin=-1,
     vrmax=1,
     Ta=0.2,
-    vref0=VR11,
-    vf0=VF11,
     Ka=16.5,
     Kf=0.06,
     Tf=1,
@@ -1241,22 +1216,22 @@ model Grid_Model
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn12(
     ra=0,
     D=0,
-    xq1=0.3,
-    Tq10=0.8,
+    x1q=0.3,
+    T1q0=0.8,
     Taa=0.002,
     V_b=6.6,
     V_0=V3,
     Sn=45,
     Vn=6.6,
-    xd1=0.3,
+    x1d=0.3,
     M=2.5,
     xd=1.05,
     xq=0.8,
-    xd2=0.2,
-    xq2=0.2,
-    Td10=2.8,
-    Td20=0.03,
-    Tq20=0.12,
+    x2d=0.2,
+    x2q=0.2,
+    T1d0=2.8,
+    T2d0=0.03,
+    T2q0=0.12,
     P_0=P12*SysData.S_b,
     Q_0=Q12*SysData.S_b,
     angle_0=Modelica.SIunits.Conversions.to_deg(A3)) annotation (Placement(
@@ -1275,58 +1250,6 @@ model Grid_Model
         origin={140,-148})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=50)
     annotation (Placement(transformation(extent={{-358,138},{-284,180}})));
-  Modelica.Blocks.Sources.Constant const(k=VR9)
-    annotation (Placement(transformation(extent={{370,-38},{380,-28}})));
-  Modelica.Blocks.Sources.Constant const1(k=VR10) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=90,
-        origin={273,-25})));
-  Modelica.Blocks.Sources.Constant const2(k=VR11) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={217,-67})));
-  Modelica.Blocks.Sources.Constant const3(k=VR8) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={383,143})));
-  Modelica.Blocks.Sources.Constant const4(k=VR1) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=270,
-        origin={-17,-129})));
-  Modelica.Blocks.Sources.Constant const5(k=VR2) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=90,
-        origin={-109,-155})));
-  Modelica.Blocks.Sources.Constant const6(k=VR3) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-205,-133})));
-  Modelica.Blocks.Sources.Constant const7(k=VR4) annotation (Placement(
-        transformation(
-        extent={{-4,-4},{4,4}},
-        rotation=0,
-        origin={-298,-130})));
-  Modelica.Blocks.Sources.Constant const8(k=VR5) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-337,-155})));
-  Modelica.Blocks.Sources.Constant const9(k=VR6) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={-183,145})));
-  Modelica.Blocks.Sources.Constant const10(k=VR7) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={59,125})));
   StaticCondenser staticCondenser(B=0.02)
     annotation (Placement(transformation(extent={{164,130},{176,142}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
@@ -1335,403 +1258,463 @@ model Grid_Model
     t1=1,
     t2=1.02) annotation (Placement(transformation(extent={{138,86},{150,98}})));
 equation
-  connect(twoWindingTransformer.p, B3.o[1]) annotation (Line(points={{241,-78},
-          {262,-78},{292,-78},{292,-96}}, color={0,0,255}));
-  connect(B2.o[1], twoWindingTransformer.n) annotation (Line(points={{172.8,-82},
-          {164,-82},{164,-78},{219,-78}}, color={0,0,255}));
-  connect(twoWindingTransformer1.p, B4.o[1]) annotation (Line(points={{131,-24.8},
+  connect(twoWindingTransformer.p, B3.n[1]) annotation (Line(points={{241,-78},
+          {262,-78},{292,-78},{292,-96}},color={0,0,255}));
+  connect(B2.n[1], twoWindingTransformer.n) annotation (Line(points={{172.8,-82},
+          {172,-82},{172,-78},{219,-78}}, color={0,0,255}));
+  connect(twoWindingTransformer1.p, B4.n[1]) annotation (Line(points={{131,-24.8},
           {131,-28.4},{136,-28.4},{136,-32}}, color={0,0,255}));
-  connect(B5.u[1], twoWindingTransformer1.n) annotation (Line(points={{108,-2},
-          {110,-2},{110,-7.2},{131,-7.2}}, color={0,0,255}));
-  connect(B1.u[1], Line1_2.p) annotation (Line(points={{206,-130},{204,-130},{
-          204,-122},{198,-122},{198,-119.667}}, color={0,0,255}));
-  connect(Line1_2.n, B2.u[1]) annotation (Line(points={{198,-96.3333},{198,-96.3333},
-          {198,-92},{162,-92},{162,-86},{164,-86}}, color={0,0,255}));
-  connect(B2.o[2], Line2_4.p) annotation (Line(points={{164,-82},{168,-82},{168,
-          -76},{144,-76},{144,-71.6667}}, color={0,0,255}));
-  connect(B2.o[3], voltDependant2.p) annotation (Line(points={{155.2,-82},{158,
-          -82},{158,-74},{122,-74},{122,-77.6},{124,-77.6}}, color={0,0,255}));
-  connect(B4.u[1], Line2_4.n) annotation (Line(points={{136,-36},{138,-36},{138,
-          -44},{138,-46},{144,-46},{144,-48.3333}}, color={0,0,255}));
-  connect(B5.o[1], voltDependant3.p) annotation (Line(points={{117.9,2},{112,2},
-          {112,8},{156,8},{156,6.4}}, color={0,0,255}));
-  connect(B5.o[2], Line5_23.n) annotation (Line(points={{111.3,2},{110,2},{110,
-          12},{110,18},{102,18},{102,26.3333},{100,26.3333}}, color={0,0,255}));
-  connect(B5.o[3], Line56_2.p) annotation (Line(points={{104.7,2},{108,2},{108,
-          12},{92,12},{92,30},{71.6667,30}}, color={0,0,255}));
-  connect(B5.o[4], line56_1.n) annotation (Line(points={{98.1,2},{104,2},{104,6},
-          {69.6667,6}}, color={0,0,255}));
-  connect(B6.u[1], Line56_2.n) annotation (Line(points={{24,24.6},{38,24.6},{38,
-          30},{48.3333,30}}, color={0,0,255}));
-  connect(B6.u[2], line56_1.p) annotation (Line(points={{24,11.4},{38,11.4},{38,
-          6},{46.3333,6}}, color={0,0,255}));
-  connect(Line6_11.p, B6.o[1]) annotation (Line(points={{-20.3333,18},{20,18},{
-          20,24.6}}, color={0,0,255}));
-  connect(B23.u[1], Line5_23.p) annotation (Line(points={{100,58},{100,49.6667},
-          {100,49.6667}}, color={0,0,255}));
-  connect(B25.o[1], twoWindingTransformer9.p) annotation (Line(points={{242,-2},
+  connect(B5.p[1], twoWindingTransformer1.n) annotation (Line(points={{117.9,-2},
+          {110,-2},{110,-7.2},{131,-7.2}},color={0,0,255}));
+  connect(B1.p[1], Line1_2.p) annotation (Line(points={{206,-130},{204,-130},{
+          204,-122},{198,-122},{198,-117}}, color={0,0,255}));
+  connect(Line1_2.n, B2.p[1]) annotation (Line(points={{198,-99},{198,-99},{198,
+          -92},{162,-92},{162,-86},{172.8,-86}}, color={0,0,255}));
+  connect(B4.p[1], Line2_4.n) annotation (Line(points={{136,-36},{138,-36},{138,
+          -44},{138,-46},{144,-46},{144,-51}}, color={0,0,255}));
+  connect(B5.n[1], voltDependant3.p) annotation (Line(points={{117.9,2},{112,2},
+          {112,8},{156,8},{156,6}}, color={0,0,255}));
+  connect(B5.n[2], Line5_23.n) annotation (Line(points={{111.3,2},{110,2},{110,
+          12},{110,18},{102,18},{102,29},{100,29}}, color={0,0,255}));
+  connect(B5.n[3], Line56_2.p) annotation (Line(points={{104.7,2},{108,2},{108,
+          12},{92,12},{92,30},{69,30}}, color={0,0,255}));
+  connect(B6.p[1], Line56_2.n) annotation (Line(points={{24,24.6},{38,24.6},{38,
+          30},{51,30}}, color={0,0,255}));
+  connect(B6.p[2], line56_1.p) annotation (Line(points={{24,11.4},{38,11.4},{38,
+          6},{49,6}}, color={0,0,255}));
+  connect(Line6_11.p, B6.n[1])
+    annotation (Line(points={{-23,18},{20,18},{20,24.6}}, color={0,0,255}));
+  connect(B23.p[1], Line5_23.p) annotation (Line(points={{108.8,58},{108.8,47},
+          {100,47}}, color={0,0,255}));
+  connect(B25.n[1], twoWindingTransformer9.p) annotation (Line(points={{242,-2},
           {244,-2},{244,8},{244,11},{242,11}}, color={0,0,255}));
-  connect(B24.u[1], twoWindingTransformer9.n) annotation (Line(points={{194,40},
+  connect(B24.p[1], twoWindingTransformer9.n) annotation (Line(points={{194,40},
           {196,40},{196,33},{242,33}}, color={0,0,255}));
-  connect(Line26_1.p, B24.o[1]) annotation (Line(points={{165.667,64},{194,64},
-          {194,44}}, color={0,0,255}));
-  connect(B23.o[1], Line26_1.n) annotation (Line(points={{108.8,62},{108,62},{
-          108,64},{142.333,64}}, color={0,0,255}));
-  connect(B23.o[2], Line2326_2.n) annotation (Line(points={{100,62},{100,76},{
-          98,76},{98,72.3333}}, color={0,0,255}));
-  connect(Line2326_1.n, B23.o[3]) annotation (Line(points={{74,72.3333},{76,
-          72.3333},{76,70},{76,64},{91.2,64},{91.2,62}}, color={0,0,255}));
-  connect(B26.u[1], voltDependant1.p) annotation (Line(points={{109.9,106},{104,
-          106},{104,96},{121,96},{121,92.5}}, color={0,0,255}));
-  connect(B26.u[2], Line2326_2.p) annotation (Line(points={{103.3,106},{98,106},
-          {98,95.6667}}, color={0,0,255}));
-  connect(B26.u[3], Line2326_1.p) annotation (Line(points={{96.7,106},{96,106},
-          {96,100},{74,100},{74,95.6667}}, color={0,0,255}));
-  connect(B26.o[1], Line26_31.n) annotation (Line(points={{106.6,110},{98,110},
-          {98,120},{94,120},{94,120.333}}, color={0,0,255}));
-  connect(Line26_31.p, B31.u[1]) annotation (Line(points={{94,143.667},{92,
-          143.667},{92,154},{96,154}}, color={0,0,255}));
-  connect(B31.o[1], Line31_32.n) annotation (Line(points={{96,158},{96,164},{
-          144.333,164}}, color={0,0,255}));
-  connect(Line31_32.p, B32.o[1]) annotation (Line(points={{167.667,164},{190,
-          164},{190,146.6},{214,146.6}}, color={0,0,255}));
-  connect(B32.u[1], twoWindingTransformer12.n)
-    annotation (Line(points={{218,140},{224,140},{239,140}}, color={0,0,255}));
-  connect(twoWindingTransformer12.p, B33.o[1])
+  connect(Line26_1.p, B24.n[1])
+    annotation (Line(points={{163,64},{194,64},{194,44}}, color={0,0,255}));
+  connect(B23.n[1], Line26_1.n) annotation (Line(points={{108.8,62},{108,62},{
+          108,64},{145,64}}, color={0,0,255}));
+  connect(B26.p[1], voltDependant1.p) annotation (Line(points={{109.9,106},{104,
+          106},{104,96},{121,96},{121,92}}, color={0,0,255}));
+  connect(B26.p[2], Line2326_2.p)
+    annotation (Line(points={{103.3,106},{98,106},{98,93}}, color={0,0,255}));
+  connect(B26.p[3], Line2326_1.p) annotation (Line(points={{96.7,106},{96,106},
+          {96,100},{74,100},{74,93}}, color={0,0,255}));
+  connect(B26.n[1], Line26_31.n) annotation (Line(points={{109.9,110},{98,110},
+          {98,120},{94,120},{94,123}}, color={0,0,255}));
+  connect(Line26_31.p, B31.p[1]) annotation (Line(points={{94,141},{92,141},{92,
+          154},{96,154}}, color={0,0,255}));
+  connect(B31.n[1], Line31_32.n)
+    annotation (Line(points={{96,158},{96,164},{147,164}}, color={0,0,255}));
+  connect(Line31_32.p, B32.n[1]) annotation (Line(points={{165,164},{190,164},{
+          190,146.6},{214,146.6}}, color={0,0,255}));
+  connect(B32.p[1], twoWindingTransformer12.n) annotation (Line(points={{218,
+          146.6},{224,140},{239,140}}, color={0,0,255}));
+  connect(twoWindingTransformer12.p, B33.n[1])
     annotation (Line(points={{261,140},{286,140},{286,136}}, color={0,0,255}));
-  connect(B26.o[2], Line26_27.n) annotation (Line(points={{93.4,110},{93.4,116},
-          {144.333,116}}, color={0,0,255}));
-  connect(Line26_27.p, B27.o[1]) annotation (Line(points={{167.667,116},{204.6,
-          116},{204.6,94}}, color={0,0,255}));
-  connect(B27.u[1], twoWindingTransformer10.n) annotation (Line(points={{198,90},
-          {200,90},{200,82},{200,78},{227,78}}, color={0,0,255}));
-  connect(twoWindingTransformer10.p, B28.o[1])
+  connect(B26.n[2], Line26_27.n) annotation (Line(points={{103.3,110},{103.3,
+          116},{147,116}},color={0,0,255}));
+  connect(B27.p[1], twoWindingTransformer10.n) annotation (Line(points={{204.6,
+          90},{200,90},{200,82},{200,78},{227,78}}, color={0,0,255}));
+  connect(twoWindingTransformer10.p, B28.n[1])
     annotation (Line(points={{249,78},{268,78},{268,56}}, color={0,0,255}));
-  connect(B27.o[2], Line26_29.n) annotation (Line(points={{191.4,94},{202,94},{
-          202,100},{240.333,100},{240.333,102}}, color={0,0,255}));
-  connect(B29.o[1], Line26_29.p) annotation (Line(points={{324,96},{324,102},{
-          263.667,102}}, color={0,0,255}));
-  connect(B29.u[1], twoWindingTransformer11.n) annotation (Line(points={{324,92},
+  connect(B27.n[1], Line26_29.n) annotation (Line(points={{204.6,94},{202,94},{
+          202,100},{243,100},{243,102}}, color={0,0,255}));
+  connect(B29.n[1], Line26_29.p)
+    annotation (Line(points={{324,96},{324,102},{261,102}}, color={0,0,255}));
+  connect(B29.p[1], twoWindingTransformer11.n) annotation (Line(points={{324,92},
           {326,92},{326,78},{326,65},{328,65}}, color={0,0,255}));
-  connect(B30.o[1], twoWindingTransformer11.p) annotation (Line(points={{344,18},
+  connect(B30.n[1], twoWindingTransformer11.p) annotation (Line(points={{344,18},
           {346,18},{346,43},{328,43}}, color={0,0,255}));
-  connect(Line6_11.n, B11.u[1]) annotation (Line(points={{-43.6667,18},{-58,18},
-          {-58,22.6},{-76,22.6}}, color={0,0,255}));
-  connect(B11.o[1], voltDependant.p) annotation (Line(points={{-80,24.8},{-94,
-          24.8},{-94,-3.4}}, color={0,0,255}));
-  connect(Line11_14.n, B11.o[2]) annotation (Line(points={{-100,40.3333},{-100,
-          40.3333},{-100,34},{-84,34},{-84,16},{-80,16}}, color={0,0,255}));
-  connect(Line11_16.p, B11.o[3]) annotation (Line(points={{-120.333,22},{-116,
-          22},{-116,24},{-108,24},{-108,7.2},{-80,7.2}}, color={0,0,255}));
-  connect(Line11_14.p, B14.u[1]) annotation (Line(points={{-100,63.6667},{-100,
-          76},{-104,76}}, color={0,0,255}));
-  connect(B14.o[1], twoWindingTransformer5.n) annotation (Line(points={{-104,80},
+  connect(Line6_11.n, B11.p[1]) annotation (Line(points={{-41,18},{-58,18},{-58,
+          24.8},{-76,24.8}}, color={0,0,255}));
+  connect(B11.n[1], voltDependant.p) annotation (Line(points={{-80,24.8},{-94,
+          24.8},{-94,-4}}, color={0,0,255}));
+  connect(Line11_14.n, B11.n[2]) annotation (Line(points={{-100,43},{-100,43},{
+          -100,34},{-84,34},{-84,16},{-80,16}}, color={0,0,255}));
+  connect(Line11_14.p, B14.p[1])
+    annotation (Line(points={{-100,61},{-100,76},{-104,76}}, color={0,0,255}));
+  connect(B14.n[1], twoWindingTransformer5.n) annotation (Line(points={{-104,80},
           {-96,80},{-96,110},{-85,110}}, color={0,0,255}));
-  connect(B15.o[1], twoWindingTransformer5.p) annotation (Line(points={{-40,114},
+  connect(B15.n[1], twoWindingTransformer5.p) annotation (Line(points={{-40,114},
           {-48,114},{-48,110},{-56,110},{-63,110}}, color={0,0,255}));
-  connect(B6.o[2], Line6_7.p) annotation (Line(points={{20,11.4},{14,11.4},{14,
-          10},{2,10},{2,-4.33333}}, color={0,0,255}));
-  connect(B7.u[1], Line7_9.p) annotation (Line(points={{-3.4,-48},{-4,-48},{-4,
-          -58},{18,-58},{18,-56.3333}}, color={0,0,255}));
-  connect(Line7_9.n, B9.o[1]) annotation (Line(points={{18,-79.6667},{36,-79.6667},
-          {36,-72},{60,-72},{60,-82}}, color={0,0,255}));
-  connect(twoWindingTransformer2.n, B7.u[2]) annotation (Line(points={{-27,-74},
-          {-16.6,-74},{-16.6,-48}}, color={0,0,255}));
-  connect(B8.o[1], twoWindingTransformer2.p) annotation (Line(points={{-38,-92},
+  connect(B6.n[2], Line6_7.p) annotation (Line(points={{20,11.4},{14,11.4},{14,
+          10},{2,10},{2,-7}}, color={0,0,255}));
+  connect(B7.p[1], Line7_9.p) annotation (Line(points={{-3.4,-48},{-4,-48},{-4,
+          -58},{18,-58},{18,-59}}, color={0,0,255}));
+  connect(Line7_9.n, B9.n[1]) annotation (Line(points={{18,-77},{36,-77},{36,
+          -72},{60,-72},{60,-82}}, color={0,0,255}));
+  connect(B8.n[1], twoWindingTransformer2.p) annotation (Line(points={{-38,-92},
           {-38,-92},{-38,-84},{-38,-80},{-49,-80},{-49,-74}}, color={0,0,255}));
-  connect(B7.o[1], Line6_7.n) annotation (Line(points={{-10,-44},{-10,-27.6667},
-          {2,-27.6667}}, color={0,0,255}));
-  connect(B11.u[2], Line7_1.n) annotation (Line(points={{-76,9.4},{-70,9.4},{-70,
-          8},{-70,-18.3333},{-66,-18.3333}}, color={0,0,255}));
-  connect(Line7_1.p, B12.o[1]) annotation (Line(points={{-66,-41.6667},{-66,-41.6667},
-          {-66,-48},{-102,-48},{-102,-60},{-108,-60}}, color={0,0,255}));
-  connect(B12.u[1], twoWindingTransformer4.p) annotation (Line(points={{-108,-64},
+  connect(B7.n[1], Line6_7.n)
+    annotation (Line(points={{-3.4,-44},{-3.4,-25},{2,-25}}, color={0,0,255}));
+  connect(B11.p[2], Line7_1.n) annotation (Line(points={{-76,16},{-70,16},{-70,
+          8},{-70,-21},{-66,-21}}, color={0,0,255}));
+  connect(Line7_1.p, B12.n[1]) annotation (Line(points={{-66,-39},{-66,-39},{
+          -66,-48},{-102,-48},{-102,-60},{-108,-60}}, color={0,0,255}));
+  connect(B12.p[1], twoWindingTransformer4.p) annotation (Line(points={{-108,-64},
           {-108,-81},{-114,-81}}, color={0,0,255}));
-  connect(twoWindingTransformer4.n, B13.o[1]) annotation (Line(points={{-114,-103},
+  connect(twoWindingTransformer4.n, B13.n[1]) annotation (Line(points={{-114,-103},
           {-114,-118},{-120,-118}}, color={0,0,255}));
-  connect(B16.o[1], Line11_16.n) annotation (Line(points={{-185.4,-18},{-185.4,
-          22},{-143.667,22}}, color={0,0,255}));
-  connect(B16.o[2], Line16_19.p) annotation (Line(points={{-198.6,-18},{-198.6,
-          22},{-224.333,22}}, color={0,0,255}));
-  connect(B19.o[1], Line16_19.n) annotation (Line(points={{-257.4,-12},{-257.4,
-          22},{-247.667,22}}, color={0,0,255}));
-  connect(Line19_21.n, B19.o[2]) annotation (Line(points={{-284,12.3333},{-268,
-          12.3333},{-268,14},{-268,-12},{-270.6,-12}}, color={0,0,255}));
-  connect(B21.u[1], Line19_21.p) annotation (Line(points={{-312,50},{-284,50},{
-          -284,35.6667}}, color={0,0,255}));
-  connect(twoWindingTransformer8.n, B21.o[1]) annotation (Line(points={{-330,85},
+  connect(B16.n[1], Line11_16.n) annotation (Line(points={{-185.4,-18},{-185.4,
+          22},{-141,22}}, color={0,0,255}));
+  connect(B19.n[1], Line16_19.n) annotation (Line(points={{-257.4,-12},{-257.4,
+          22},{-245,22}}, color={0,0,255}));
+  connect(B21.p[1], Line19_21.p)
+    annotation (Line(points={{-312,50},{-284,50},{-284,33}}, color={0,0,255}));
+  connect(twoWindingTransformer8.n, B21.n[1]) annotation (Line(points={{-330,85},
           {-328,85},{-328,46},{-316,46},{-316,50}}, color={0,0,255}));
-  connect(B22.u[1], twoWindingTransformer8.p) annotation (Line(points={{-286,
+  connect(B22.p[1], twoWindingTransformer8.p) annotation (Line(points={{-286,
           118},{-286,107},{-330,107}}, color={0,0,255}));
-  connect(B19.u[1], twoWindingTransformer7.p) annotation (Line(points={{-264,-16},
-          {-264,-35},{-292,-35}}, color={0,0,255}));
-  connect(B20.o[1], twoWindingTransformer7.n) annotation (Line(points={{-308,-72},
+  connect(B19.p[1], twoWindingTransformer7.p) annotation (Line(points={{-257.4,
+          -16},{-257.4,-35},{-292,-35}}, color={0,0,255}));
+  connect(B20.n[1], twoWindingTransformer7.n) annotation (Line(points={{-308,-72},
           {-308,-57},{-292,-57}}, color={0,0,255}));
-  connect(B16.u[1], Line16_17.n) annotation (Line(points={{-192,-22},{-192,-30},
-          {-196,-30},{-196,-32.3333}}, color={0,0,255}));
-  connect(B17.o[1], Line16_17.p) annotation (Line(points={{-212,-66},{-212,-55.6667},
-          {-196,-55.6667}}, color={0,0,255}));
-  connect(B17.u[1], twoWindingTransformer6.p)
+  connect(B17.n[1], Line16_17.p) annotation (Line(points={{-212,-66},{-212,-53},
+          {-196,-53}}, color={0,0,255}));
+  connect(B17.p[1], twoWindingTransformer6.p)
     annotation (Line(points={{-212,-70},{-212,-77}}, color={0,0,255}));
-  connect(twoWindingTransformer6.n, B18.o[1]) annotation (Line(points={{-212,-99},
+  connect(twoWindingTransformer6.n, B18.n[1]) annotation (Line(points={{-212,-99},
           {-218,-99},{-218,-100},{-226,-100},{-226,-112}}, color={0,0,255}));
-  connect(B10.o[1], twoWindingTransformer3.n)
+  connect(B10.n[1], twoWindingTransformer3.n)
     annotation (Line(points={{60,-124},{60,-117},{60,-117}}, color={0,0,255}));
-  connect(B9.u[1], twoWindingTransformer3.p)
+  connect(B9.p[1], twoWindingTransformer3.p)
     annotation (Line(points={{60,-86},{60,-95},{60,-95}}, color={0,0,255}));
-  connect(aVR1.vf, syn1.vf) annotation (Line(points={{16.5,-141.4},{22.25,-141.4},
-          {22.25,-143},{28,-143}}, color={0,0,127}));
+  connect(aVR1.vf, syn1.vf) annotation (Line(points={{20,-144},{22.25,-144},{
+          22.25,-143},{26,-143}}, color={0,0,127}));
   connect(syn1.v, aVR1.v) annotation (Line(points={{49,-145},{54,-145},{54,-162},
-          {-12,-162},{-12,-145},{0,-145}}, color={0,0,127}));
-  connect(aVR2.vf, syn2.vf) annotation (Line(points={{-75.5,-135.4},{-69.75,-135.4},
-          {-69.75,-137},{-64,-137}}, color={0,0,127}));
+          {-12,-162},{-12,-150},{-4,-150}},color={0,0,127}));
+  connect(aVR2.vf, syn2.vf) annotation (Line(points={{-72,-138},{-69.75,-138},{
+          -69.75,-137},{-66,-137}}, color={0,0,127}));
   connect(syn2.v, aVR2.v) annotation (Line(points={{-43,-139},{-34,-139},{-34,-154},
-          {-100,-154},{-100,-139},{-92,-139}}, color={0,0,127}));
-  connect(aVR3.vf, syn3.vf) annotation (Line(points={{-169.5,-139.4},{-163.75,-139.4},
-          {-163.75,-141},{-158,-141}}, color={0,0,127}));
+          {-100,-154},{-100,-144},{-96,-144}}, color={0,0,127}));
+  connect(aVR3.vf, syn3.vf) annotation (Line(points={{-166,-142},{-163.75,-142},
+          {-163.75,-141},{-160,-141}}, color={0,0,127}));
   connect(syn3.v, aVR3.v) annotation (Line(points={{-137,-143},{-128,-143},{-128,
-          -158},{-194,-158},{-194,-143},{-186,-143}}, color={0,0,127}));
-  connect(aVR4.vf, syn4.vf) annotation (Line(points={{-263.5,-131.4},{-257.75,-131.4},
-          {-257.75,-133},{-252,-133}}, color={0,0,127}));
+          -158},{-194,-158},{-194,-148},{-190,-148}}, color={0,0,127}));
+  connect(aVR4.vf, syn4.vf) annotation (Line(points={{-260,-134},{-257.75,-134},
+          {-257.75,-133},{-254,-133}}, color={0,0,127}));
   connect(syn4.v, aVR4.v) annotation (Line(points={{-231,-135},{-222,-135},{-222,
-          -150},{-288,-150},{-288,-135},{-280,-135}}, color={0,0,127}));
-  connect(aVR5.vf, syn5.vf) annotation (Line(points={{-314.6,-127.5},{-314.6,-121.75},
-          {-315,-121.75},{-315,-116}}, color={0,0,127}));
+          -150},{-288,-150},{-288,-140},{-284,-140}}, color={0,0,127}));
+  connect(aVR5.vf, syn5.vf) annotation (Line(points={{-312,-124},{-312,-121.75},
+          {-315,-121.75},{-315,-118}}, color={0,0,127}));
   connect(syn5.v, aVR5.v) annotation (Line(points={{-313,-95},{-313,-86},{-324,
-          -86},{-324,-150},{-311,-150},{-311,-144}}, color={0,0,127}));
-  connect(aVR6.vf, syn6.vf) annotation (Line(points={{-222.5,149.4},{-230,149.4},
-          {-230,139},{-240,139}}, color={0,0,127}));
-  connect(syn6.v, aVR6.v) annotation (Line(points={{-261,141},{-264,141},{-264,
-          132},{-198,132},{-198,153},{-206,153}}, color={0,0,127}));
-  connect(syn5.p, B20.u[1]) annotation (Line(points={{-310.05,-95},{-310.05,-86.5},
-          {-308,-86.5},{-308,-76}}, color={0,0,255}));
-  connect(syn4.p, B18.u[1]) annotation (Line(points={{-231,-137.95},{-226,-137.95},
-          {-226,-116}}, color={0,0,255}));
-  connect(syn3.p, B13.u[1]) annotation (Line(points={{-137,-145.95},{-120,-145.95},
-          {-120,-122}}, color={0,0,255}));
-  connect(syn2.p, B8.u[1]) annotation (Line(points={{-43,-141.95},{-38,-141.95},
-          {-38,-96}}, color={0,0,255}));
-  connect(syn1.p, B10.u[1]) annotation (Line(points={{49,-147.95},{60,-147.95},
-          {60,-128}}, color={0,0,255}));
-  connect(aVR7.vf, syn7.vf) annotation (Line(points={{23.5,123.4},{16,123.4},{
-          16,113},{6,113}}, color={0,0,127}));
+          -86},{-324,-150},{-306,-150},{-306,-148}}, color={0,0,127}));
+  connect(aVR6.vf, syn6.vf) annotation (Line(points={{-226,152},{-230,152},{-230,
+          139},{-238,139}}, color={0,0,127}));
+  connect(syn6.v, aVR6.v) annotation (Line(points={{-261,141},{-266,141},{-266,
+          122},{-200,122},{-200,158},{-202,158}}, color={0,0,127}));
+  connect(syn5.p, B20.p[1]) annotation (Line(points={{-310,-96},{-310,-86.5},{
+          -308,-86.5},{-308,-76}}, color={0,0,255}));
+  connect(syn4.p, B18.p[1]) annotation (Line(points={{-232,-138},{-226,-138},{
+          -226,-116}}, color={0,0,255}));
+  connect(syn2.p, B8.p[1]) annotation (Line(points={{-44,-142},{-38,-142},{-38,
+          -96}}, color={0,0,255}));
+  connect(syn1.p, B10.p[1])
+    annotation (Line(points={{48,-148},{60,-148},{60,-128}}, color={0,0,255}));
+  connect(aVR7.vf, syn7.vf) annotation (Line(points={{20,126},{16,126},{16,113},
+          {8,113}}, color={0,0,127}));
   connect(syn7.v, aVR7.v) annotation (Line(points={{-15,115},{-18,115},{-18,106},
-          {48,106},{48,127},{40,127}}, color={0,0,127}));
-  connect(aVR8.vf, syn8.vf) annotation (Line(points={{347.5,145.4},{340,145.4},
-          {340,137},{330,137}}, color={0,0,127}));
+          {48,106},{48,132},{44,132}}, color={0,0,127}));
+  connect(aVR8.vf, syn8.vf) annotation (Line(points={{344,148},{340,148},{340,
+          137},{332,137}}, color={0,0,127}));
   connect(syn8.v, aVR8.v) annotation (Line(points={{309,139},{306,139},{306,128},
-          {372,128},{372,149},{364,149}}, color={0,0,127}));
-  connect(aVR9.vf, syn9.vf) annotation (Line(points={{369.5,-6.6},{362,-6.6},{
-          362,-17},{352,-17}}, color={0,0,127}));
+          {372,128},{372,154},{368,154}}, color={0,0,127}));
+  connect(aVR9.vf, syn9.vf) annotation (Line(points={{366,-4},{362,-4},{362,-17},
+          {354,-17}}, color={0,0,127}));
   connect(syn9.v, aVR9.v) annotation (Line(points={{331,-15},{328,-15},{328,-24},
-          {394,-24},{394,-3},{386,-3}}, color={0,0,127}));
+          {394,-24},{394,2},{390,2}}, color={0,0,127}));
   connect(syn10.v, aVR10.v) annotation (Line(points={{273,37},{273,42},{298,42},
-          {298,-16},{279,-16},{279,-10}}, color={0,0,127}));
-  connect(aVR10.vf, syn10.vf) annotation (Line(points={{275.4,6.5},{275.4,12},{
-          271,12},{271,16}}, color={0,0,127}));
+          {298,-16},{284,-16},{284,-14}}, color={0,0,127}));
+  connect(aVR10.vf, syn10.vf) annotation (Line(points={{278,10},{278,12},{271,
+          12},{271,14}}, color={0,0,127}));
   connect(syn11.v, aVR11.v) annotation (Line(points={{235,-19},{235,-14},{264,-14},
-          {264,-72},{241,-72},{241,-66}}, color={0,0,127}));
-  connect(aVR11.vf, syn11.vf) annotation (Line(points={{237.4,-49.5},{237.4,-44},
-          {233,-44},{233,-40}}, color={0,0,127}));
-  connect(syn6.p, B22.o[1]) annotation (Line(points={{-261,143.95},{-286,143.95},
-          {-286,122}}, color={0,0,255}));
-  connect(syn7.p, B15.u[1]) annotation (Line(points={{-15,117.95},{-26,117.95},
-          {-26,114},{-36,114}}, color={0,0,255}));
-  connect(syn8.p, B33.u[1]) annotation (Line(points={{309,141.95},{298,141.95},
-          {298,136},{290,136}}, color={0,0,255}));
-  connect(syn9.p, B30.u[1]) annotation (Line(points={{331,-12.0496},{322,-12.0496},
-          {322,8},{344,8},{344,14}}, color={0,0,255}));
-  connect(syn11.p, B25.u[1]) annotation (Line(points={{237.95,-19},{237.95,-12.5},
-          {242,-12.5},{242,-6}}, color={0,0,255}));
-  connect(syn12.p, B3.u[1]) annotation (Line(points={{293.95,-117},{293.95,-108.5},
-          {292,-108.5},{292,-100}}, color={0,0,255}));
-  connect(aVR9.vref, const.y) annotation (Line(points={{386,-9.4},{392,-9.4},{
-          392,-32},{380.5,-32},{380.5,-33}}, color={0,0,127}));
+          {264,-72},{246,-72},{246,-70}}, color={0,0,127}));
+  connect(aVR11.vf, syn11.vf) annotation (Line(points={{240,-46},{240,-44},{233,
+          -44},{233,-42}}, color={0,0,127}));
+  connect(syn6.p, B22.n[1]) annotation (Line(points={{-260,144},{-286,144},{
+          -286,122}}, color={0,0,255}));
+  connect(syn7.p, B15.p[1]) annotation (Line(points={{-14,118},{-26,118},{-26,
+          114},{-36,114}}, color={0,0,255}));
+  connect(syn8.p, B33.p[1]) annotation (Line(points={{310,142},{298,142},{298,
+          136},{290,136}}, color={0,0,255}));
+  connect(syn9.p, B30.p[1]) annotation (Line(points={{332,-12},{322,-12},{322,8},
+          {344,8},{344,14}}, color={0,0,255}));
+  connect(syn11.p, B25.p[1]) annotation (Line(points={{238,-20},{238,-12.5},{
+          242,-12.5},{242,-6}}, color={0,0,255}));
+  connect(syn12.p, B3.p[1]) annotation (Line(points={{294,-118},{294,-108.5},{
+          292,-108.5},{292,-100}}, color={0,0,255}));
   connect(syn9.pm0, syn9.pm) annotation (Line(points={{350,-1},{350,0},{356,0},
-          {356,-7},{352,-7}}, color={0,0,127}));
-  connect(const1.y, aVR10.vref) annotation (Line(points={{273,-19.5},{273,-15.75},
-          {272.6,-15.75},{272.6,-10}}, color={0,0,127}));
+          {356,-7},{354,-7}},color={0,0,127}));
   connect(syn10.pm0, syn10.pm) annotation (Line(points={{287,18},{290,18},{290,
-          12},{281,12},{281,16}}, color={0,0,127}));
-  connect(const2.y, aVR11.vref) annotation (Line(points={{222.5,-67},{230,-67},
-          {230,-70},{234.6,-70},{234.6,-66}}, color={0,0,127}));
+          12},{281,12},{281,14}}, color={0,0,127}));
   connect(syn11.pm0, syn11.pm) annotation (Line(points={{249,-38},{254,-38},{
-          254,-44},{243,-44},{243,-40}}, color={0,0,127}));
-  connect(aVR8.vref, const3.y) annotation (Line(points={{364,142.6},{371,142.6},
-          {371,143},{377.5,143}}, color={0,0,127}));
+          254,-44},{243,-44},{243,-42}}, color={0,0,127}));
   connect(syn8.pm0, syn8.pm) annotation (Line(points={{328,153},{328,154},{334,
-          154},{334,147},{330,147}}, color={0,0,127}));
-  connect(syn10.p, B28.u[1]) annotation (Line(points={{275.95,37},{275.95,46},{
-          268,46},{268,52}}, color={0,0,255}));
-  connect(aVR7.vref, const10.y) annotation (Line(points={{40,120.6},{47,120.6},
-          {47,125},{53.5,125}}, color={0,0,127}));
+          154},{334,147},{332,147}}, color={0,0,127}));
+  connect(syn10.p, B28.p[1]) annotation (Line(points={{276,36},{276,46},{268,46},
+          {268,52}}, color={0,0,255}));
   connect(syn7.pm0, syn7.pm) annotation (Line(points={{4,129},{4,132},{12,132},
-          {12,123},{6,123}}, color={0,0,127}));
-  connect(aVR6.vref, const9.y) annotation (Line(points={{-206,146.6},{-197,
-          146.6},{-197,145},{-188.5,145}}, color={0,0,127}));
+          {12,123},{8,123}},color={0,0,127}));
   connect(syn6.pm0, syn6.pm) annotation (Line(points={{-242,155},{-242,158},{-236,
-          158},{-236,149},{-240,149}}, color={0,0,127}));
-  connect(const8.y, aVR5.vref) annotation (Line(points={{-331.5,-155},{-317.4,-155},
-          {-317.4,-144}}, color={0,0,127}));
+          158},{-236,149},{-238,149}}, color={0,0,127}));
   connect(syn5.pm0, syn5.pm) annotation (Line(points={{-299,-114},{-298,-114},{
-          -298,-122},{-305,-122},{-305,-116}}, color={0,0,127}));
-  connect(aVR4.vref, const7.y) annotation (Line(points={{-280,-128.6},{-284,-128.6},
-          {-284,-130},{-286,-130},{-293.6,-130}}, color={0,0,127}));
+          -298,-122},{-305,-122},{-305,-118}}, color={0,0,127}));
   connect(syn4.pm0, syn4.pm) annotation (Line(points={{-250,-149},{-250,-152},{
-          -258,-152},{-258,-143},{-252,-143}}, color={0,0,127}));
-  connect(const6.y, aVR3.vref) annotation (Line(points={{-199.5,-133},{-194,-133},
-          {-194,-136.6},{-186,-136.6}}, color={0,0,127}));
+          -258,-152},{-258,-143},{-254,-143}}, color={0,0,127}));
   connect(syn3.pm0, syn3.pm) annotation (Line(points={{-156,-157},{-156,-162},{
-          -164,-162},{-164,-151},{-158,-151}}, color={0,0,127}));
-  connect(const5.y, aVR2.vref) annotation (Line(points={{-109,-149.5},{-109,-132.6},
-          {-92,-132.6}}, color={0,0,127}));
+          -164,-162},{-164,-151},{-160,-151}}, color={0,0,127}));
   connect(syn2.pm0, syn2.pm) annotation (Line(points={{-62,-153},{-62,-158},{-68,
-          -158},{-68,-147},{-64,-147}}, color={0,0,127}));
-  connect(const4.y, aVR1.vref) annotation (Line(points={{-17,-134.5},{-17,-138.6},
-          {0,-138.6}}, color={0,0,127}));
+          -158},{-68,-147},{-66,-147}}, color={0,0,127}));
   connect(syn1.pm0, syn1.pm) annotation (Line(points={{30,-159},{30,-166},{16,-166},
-          {16,-153},{28,-153}}, color={0,0,127}));
+          {16,-153},{26,-153}}, color={0,0,127}));
   connect(syn12.vf0, syn12.vf) annotation (Line(points={{283,-136},{280,-136},{
-          280,-140},{289,-140},{289,-138}}, color={0,0,127}));
+          280,-140},{289,-140},{289,-140}}, color={0,0,127}));
   connect(syn12.pm0, syn12.pm) annotation (Line(points={{305,-136},{310,-136},{
-          310,-140},{299,-140},{299,-138}}, color={0,0,127}));
-  connect(B32.o[2], staticCondenser.p) annotation (Line(points={{214,133.4},{
-          175.4,133.4},{175.4,136.12}}, color={0,0,255}));
-  connect(B26.u[4], pwFault.p) annotation (Line(points={{90.1,106},{104,106},{
-          104,102},{137,102},{137,92}}, color={0,0,255}));
-  connect(infiniteBus.p, B1.o[1]) annotation (Line(points={{148.8,-148},{180,-148},
+          310,-140},{299,-140},{299,-140}}, color={0,0,127}));
+  connect(infiniteBus.p, B1.n[1]) annotation (Line(points={{132,-148},{180,-148},
           {180,-152},{206,-152},{206,-134}}, color={0,0,255}));
+  connect(syn3.p, B13.p[1]) annotation (Line(points={{-138,-146},{-130,-146},{-130,
+          -122},{-120,-122}}, color={0,0,255}));
+  connect(Line16_17.n, B16.p[1]) annotation (Line(points={{-196,-35},{-196,-35},
+          {-196,-22},{-192,-22}}, color={0,0,255}));
+  connect(pwFault.p, B26.p[4]) annotation (Line(points={{137,92},{124,92},{124,
+          106},{90.1,106}}, color={0,0,255}));
+  connect(B16.n[2], Line16_19.p) annotation (Line(points={{-198.6,-18},{-198.6,
+          22},{-227,22}}, color={0,0,255}));
+  connect(twoWindingTransformer2.n, B7.p[2]) annotation (Line(points={{-27,-74},
+          {-20,-74},{-20,-54},{-16.6,-54},{-16.6,-48}}, color={0,0,255}));
+  connect(staticCondenser.p, B32.n[2]) annotation (Line(points={{175.4,136.12},
+          {206,136.12},{206,133.4},{214,133.4}}, color={0,0,255}));
+  connect(Line26_27.p, B27.n[2]) annotation (Line(points={{165,116},{178,116},{
+          178,104},{191.4,104},{191.4,94}}, color={0,0,255}));
+  connect(Line2326_2.n, B23.n[2]) annotation (Line(points={{98,75},{100,75},{
+          100,62},{100,62}}, color={0,0,255}));
+  connect(Line2326_1.n, B23.n[3])
+    annotation (Line(points={{74,75},{91.2,75},{91.2,62}}, color={0,0,255}));
+  connect(line56_1.n, B5.n[4])
+    annotation (Line(points={{67,6},{98.1,6},{98.1,2}}, color={0,0,255}));
+  connect(Line2_4.p, B2.n[2]) annotation (Line(points={{144,-69},{154,-69},{164,
+          -69},{164,-70},{164,-82},{164,-82}}, color={0,0,255}));
+  connect(voltDependant2.p, B2.n[3]) annotation (Line(points={{124,-78},{126,
+          -78},{126,-72},{155.2,-72},{155.2,-82}}, color={0,0,255}));
+  connect(B11.n[3], Line11_16.p) annotation (Line(points={{-80,7.2},{-102,7.2},
+          {-102,22},{-123,22}}, color={0,0,255}));
+  connect(Line19_21.n, B19.n[2]) annotation (Line(points={{-284,15},{-278,15},{
+          -278,-4},{-270.6,-4},{-270.6,-12}}, color={0,0,255}));
+  connect(aVR3.vf0, syn3.vf0) annotation (Line(points={{-178,-154},{-178,-154},
+          {-178,-166},{-170,-166},{-170,-130},{-156,-130},{-156,-135}}, color={
+          0,0,127}));
+  connect(aVR3.vref0, aVR3.vref) annotation (Line(points={{-178,-130},{-180,
+          -130},{-180,-124},{-180,-126},{-196,-126},{-196,-136},{-190,-136}},
+        color={0,0,127}));
+  connect(syn2.vf0, aVR2.vf0) annotation (Line(points={{-62,-131},{-64,-131},{
+          -64,-124},{-64,-174},{-80,-174},{-80,-150},{-84,-150}}, color={0,0,
+          127}));
+  connect(aVR2.vref, aVR2.vref0) annotation (Line(points={{-96,-132},{-102,-132},
+          {-102,-126},{-84,-126}}, color={0,0,127}));
+  connect(syn1.vf0, aVR1.vf0) annotation (Line(points={{30,-137},{28,-137},{28,
+          -124},{-22,-124},{-22,-182},{8,-182},{8,-156}}, color={0,0,127}));
+  connect(aVR1.vref, aVR1.vref0) annotation (Line(points={{-4,-138},{-10,-138},
+          {-10,-136},{-10,-132},{8,-132}}, color={0,0,127}));
+  connect(aVR4.vf0, syn4.vf0) annotation (Line(points={{-272,-146},{-270,-146},
+          {-270,-166},{-270,-170},{-294,-170},{-294,-116},{-250,-116},{-250,
+          -127}}, color={0,0,127}));
+  connect(aVR4.vref, aVR4.vref0) annotation (Line(points={{-284,-128},{-288,
+          -128},{-288,-126},{-288,-122},{-272,-122}}, color={0,0,127}));
+  connect(syn5.vf0, aVR5.vf0) annotation (Line(points={{-321,-114},{-338,-114},
+          {-338,-160},{-300,-160},{-300,-136}}, color={0,0,127}));
+  connect(aVR5.vref, aVR5.vref0) annotation (Line(points={{-318,-148},{-318,
+          -156},{-330,-156},{-330,-136},{-324,-136}}, color={0,0,127}));
+  connect(syn6.vf0, aVR6.vf0) annotation (Line(points={{-242,133},{-242,126},{
+          -178,126},{-178,172},{-214,172},{-214,164}}, color={0,0,127}));
+  connect(aVR6.vref, aVR6.vref0) annotation (Line(points={{-202,146},{-188,146},
+          {-188,138},{-188,130},{-214,130},{-214,140}}, color={0,0,127}));
+  connect(syn7.vf0, aVR7.vf0) annotation (Line(points={{4,107},{6,107},{6,98},{
+          6,86},{50,86},{50,148},{32,148},{32,138}}, color={0,0,127}));
+  connect(aVR7.vref, aVR7.vref0) annotation (Line(points={{44,120},{44,120},{44,
+          114},{44,110},{32,110},{32,114}}, color={0,0,127}));
+  connect(aVR11.vref, aVR11.vref0) annotation (Line(points={{234,-70},{226,-70},
+          {226,-64},{218,-64},{218,-58},{228,-58}}, color={0,0,127}));
+  connect(syn11.vf0, aVR11.vf0) annotation (Line(points={{227,-38},{218,-38},{
+          218,-40},{208,-40},{208,-90},{258,-90},{258,-58},{252,-58}}, color={0,
+          0,127}));
+  connect(syn9.vf0, aVR9.vf0) annotation (Line(points={{350,-23},{350,-46},{406,
+          -46},{406,14},{378,14},{378,8}}, color={0,0,127}));
+  connect(aVR9.vref0, aVR9.vref) annotation (Line(points={{378,-16},{382,-16},{
+          382,-20},{390,-20},{390,-10}}, color={0,0,127}));
+  connect(aVR10.vref, aVR10.vref0) annotation (Line(points={{272,-14},{272,-26},
+          {266,-26},{266,-2}}, color={0,0,127}));
+  connect(syn10.vf0, aVR10.vf0) annotation (Line(points={{265,18},{308,18},{308,
+          -2},{290,-2}}, color={0,0,127}));
+  connect(syn8.vf0, aVR8.vf0) annotation (Line(points={{328,131},{328,124},{384,
+          124},{384,170},{356,170},{356,160}}, color={0,0,127}));
+  connect(aVR8.vref, aVR8.vref0) annotation (Line(points={{368,142},{368,134},{
+          356,134},{356,136}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-360,-180},{400,180}},
-          preserveAspectRatio=false), graphics={Text(
+          preserveAspectRatio=false), graphics={
+        Text(
           extent={{132,-90},{132,-80}},
           lineColor={0,0,0},
           textString="B2",
-          textStyle={TextStyle.Bold}),Text(
+          textStyle={TextStyle.Bold}),
+        Text(
           extent={{244,-144},{244,-134}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B1"),Text(
+          textString="B1"),
+        Text(
           extent={{312,-94},{312,-84}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B3"),Text(
+          textString="B3"),
+        Text(
           extent={{172,-40},{172,-30}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B4"),Text(
+          textString="B4"),
+        Text(
           extent={{140,-4},{140,6}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B5"),Text(
+          textString="B5"),
+        Text(
           extent={{10,44},{10,54}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B6"),Text(
+          textString="B6"),
+        Text(
           extent={{-72,44},{-72,54}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B11"),Text(
+          textString="B11"),
+        Text(
           extent={{24,-52},{24,-42}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B7"),Text(
+          textString="B7"),
+        Text(
           extent={{-4,-98},{-4,-88}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B8"),Text(
+          textString="B8"),
+        Text(
           extent={{94,-88},{94,-78}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B9"),Text(
+          textString="B9"),
+        Text(
           extent={{94,-128},{94,-118}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B10"),Text(
+          textString="B10"),
+        Text(
           extent={{-74,-66},{-74,-56}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B12"),Text(
+          textString="B12"),
+        Text(
           extent={{-84,-126},{-84,-116}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B13"),Text(
+          textString="B13"),
+        Text(
           extent={{-126,88},{-126,98}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B14"),Text(
+          textString="B14"),
+        Text(
           extent={{-40,142},{-40,152}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B15"),Text(
+          textString="B15"),
+        Text(
           extent={{-152,-22},{-152,-12}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B16"),Text(
+          textString="B16"),
+        Text(
           extent={{-178,-72},{-178,-62}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B17"),Text(
+          textString="B17"),
+        Text(
           extent={{-192,-118},{-192,-108}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B18"),Text(
+          textString="B18"),
+        Text(
           extent={{-316,-18},{-316,-8}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B19"),Text(
+          textString="B19"),
+        Text(
           extent={{-298,60},{-298,72}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B21"),Text(
+          textString="B21"),
+        Text(
           extent={{-250,112},{-250,122}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B22"),Text(
+          textString="B22"),
+        Text(
           extent={{-274,-80},{-274,-70}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B20"),Text(
+          textString="B20"),
+        Text(
           extent={{62,58},{62,68}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B23"),Text(
+          textString="B23"),
+        Text(
           extent={{60,106},{60,116}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B26"),Text(
+          textString="B26"),
+        Text(
           extent={{56,152},{56,162}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B31"),Text(
+          textString="B31"),
+        Text(
           extent={{156,38},{156,48}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B24"),Text(
+          textString="B24"),
+        Text(
           extent={{214,2},{214,12}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B25"),Text(
+          textString="B25"),
+        Text(
           extent={{162,84},{162,94}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B27"),Text(
+          textString="B27"),
+        Text(
           extent={{234,56},{234,66}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B28"),Text(
+          textString="B28"),
+        Text(
           extent={{342,100},{342,110}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B29"),Text(
+          textString="B29"),
+        Text(
           extent={{362,20},{362,30}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B30"),Text(
+          textString="B30"),
+        Text(
           extent={{216,166},{216,176}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B32"),Text(
+          textString="B32"),
+        Text(
           extent={{288,166},{288,176}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},

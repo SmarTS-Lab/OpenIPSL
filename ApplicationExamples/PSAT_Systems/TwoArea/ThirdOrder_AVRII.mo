@@ -9,27 +9,23 @@ model ThirdOrder_AVRII "31-bus system with 3rd-order machine and AVR Type II"
     Tr=0.05,
     Ae=0,
     Be=0,
-    vref0=1.198480294896434,
     Ka=7.04,
     Ta=0.4,
     Kf=1,
     Tf=0.05,
-    Ke=1,
-    vf0=1.045301276070898)
-    annotation (Placement(transformation(extent={{-150,22},{-130,42}})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.198480294896434) annotation (
-      Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-167,49})));
+    Ke=1) annotation (Placement(transformation(extent={{-152,38},{-132,58}})));
 equation
-  connect(vref2.y, aVRTypeII.vref) annotation (Line(points={{-161.5,49},{-158,
-          49},{-158,37.4},{-148,37.4}}, color={0,0,127}));
-  connect(aVRTypeII.vf, order3_1.vf) annotation (Line(points={{-131.5,34.6},{-125.75,
-          34.6},{-125.75,35},{-120,35}}, color={0,0,127}));
-  connect(aVRTypeII.v, order3_1.v) annotation (Line(points={{-148,31},{-150,31},
-          {-150,30},{-152,30},{-152,16},{-94,16},{-94,33},{-99,33}}, color={0,0,
+  connect(aVRTypeII.vf, order3_1.vf) annotation (Line(points={{-130,48},{
+          -125.75,48},{-125.75,35},{-122,35}}, color={0,0,127}));
+  connect(aVRTypeII.v, order3_1.v) annotation (Line(points={{-154,42},{-162,42},
+          {-162,30},{-164,30},{-164,16},{-92,16},{-92,33},{-99,33}}, color={0,0,
           127}));
+  connect(order3_1.vf0, aVRTypeII.vf0) annotation (Line(points={{-118,41},{-120,
+          41},{-120,64},{-120,68},{-168,68},{-168,36},{-142,36}}, color={0,0,
+          127}));
+  connect(aVRTypeII.vref, aVRTypeII.vref0) annotation (Line(points={{-154,54},{
+          -158,54},{-158,56},{-160,56},{-160,64},{-142,64},{-142,60}}, color={0,
+          0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-180,-100},{180,100}},
           preserveAspectRatio=false)),

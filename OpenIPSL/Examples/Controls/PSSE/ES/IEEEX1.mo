@@ -42,23 +42,26 @@ model IEEEX1 "SMIB system with one load and GENROE model"
     S_EE_2=0.47,
     K_E=0) annotation (Placement(transformation(extent={{-68,-60},{-92,-38}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,
-          10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
+          10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
   connect(iEEEX1_1.EFD, gENROE.EFD) annotation (Line(points={{-92.6,-47.7778},{
-          -102,-47.7778},{-102,-48},{-110,-48},{-110,-10},{-99.6,-10}}, color={
-          0,0,127}));
-  connect(iEEEX1_1.VOTHSG, const.y) annotation (Line(points={{-68,-42.2778},{-48.1116,
-          -42.2778},{-48.1116,-42},{-41,-42}}, color={0,0,127}));
+          -102,-47.7778},{-102,-48},{-110,-48},{-110,-10},{-104,-10}}, color={0,
+          0,127}));
+  connect(iEEEX1_1.VOTHSG, const.y) annotation (Line(points={{-68,-42.2778},{
+          -48.1116,-42.2778},{-48.1116,-42},{-41,-42}}, color={0,0,127}));
   connect(iEEEX1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-68,-55.7222},{
-          -54,-55.7222},{-54,-14},{-58.4,-14}}, color={0,0,127}));
+          -54,-55.7222},{-54,-10},{-58,-10}}, color={0,0,127}));
   connect(iEEEX1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-68,-47.7778},
-          {-52,-47.7778},{-52,10},{-58.4,10}}, color={0,0,127}));
+          {-52,-47.7778},{-52,-6},{-58,-6}}, color={0,0,127}));
   connect(iEEEX1_1.VOEL, const.y) annotation (Line(points={{-75.8,-60},{-48,-60},
           {-48,-42},{-41,-42}}, color={0,0,127}));
   connect(iEEEX1_1.VUEL, const.y) annotation (Line(points={{-72.2,-60},{-48,-60},
           {-48,-42},{-41,-42}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-58,0},{-50,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end IEEEX1;

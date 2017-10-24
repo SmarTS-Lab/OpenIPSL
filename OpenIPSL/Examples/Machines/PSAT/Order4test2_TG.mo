@@ -12,7 +12,7 @@ model Order4test2_TG
     V_0=1,
     angle_0=0,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     Sn=370,
@@ -23,14 +23,13 @@ model Order4test2_TG
 equation
   connect(Generator.p, bus.p) annotation (Line(points={{-10,0},{-4.25,0},{-4.25,
           0},{0,0}}, color={0,0,255}));
-  connect(TGtypeII1.pm, Generator.pm) annotation (Line(points={{-58.75,-7.5},{-43.0028,
-          -7.5},{-43.0028,-7.55354}}, color={0,0,127}));
-  connect(Generator.pm0, TGtypeII1.pm0) annotation (Line(points={{-38.5,-16.5},
-          {-38.5,-25},{-50,-25},{-50,15},{-72.5,15},{-72.5,7.5}}, color={0,0,
-          127}));
-  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-38.5,16.5},{-38.5,
+  connect(TGtypeII1.pm, Generator.pm) annotation (Line(points={{-58.75,-7.5},{-43,
+          -7.5},{-43,-7.5}}, color={0,0,127}));
+  connect(Generator.pm0, TGtypeII1.pm0) annotation (Line(points={{-37,-16.5},{-37,
+          -25},{-50,-25},{-50,15},{-72.5,15},{-72.5,7.5}}, color={0,0,127}));
+  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-37,16.5},{-37,
           20},{-45,20},{-45,7.5},{-43,7.5}}, color={0,0,127}));
   connect(TGtypeII1.W, Generator.w) annotation (Line(points={{-87.5,-7.5},{-95,
           -7.5},{-95,25},{-5,25},{-5,13.5},{-8.5,13.5}}, color={0,0,127}));
-  annotation (Documentation);
+  annotation (Documentation,experiment(StopTime=20));
 end Order4test2_TG;

@@ -104,21 +104,21 @@ equation
   connect(wT4G1.p, GEN.p) annotation (Line(points={{-38.8,-1.77636e-015},{-40,-1.77636e-015},
           {-40,0},{-30,0}}, color={0,0,255}));
   connect(GEN.p, pwLine2.p)
-    annotation (Line(points={{-30,0},{-21.6667,0}}, color={0,0,255}));
-  connect(pwLine2.n, BUS1.p) annotation (Line(points={{1.66667,0},{1.66667,0},{
-          10,0}}, color={0,0,255}));
-  connect(BUS1.p, pwLine.p) annotation (Line(points={{10,0},{20,0},{20,20},{
-          28.3333,20}}, color={0,0,255}));
-  connect(pwLine1.p, pwLine.p) annotation (Line(points={{28.3333,-20},{20,-20},
-          {20,20},{28.3333,20}}, color={0,0,255}));
+    annotation (Line(points={{-30,0},{-19,0}}, color={0,0,255}));
+  connect(pwLine2.n, BUS1.p)
+    annotation (Line(points={{-1,0},{-1,0},{10,0}}, color={0,0,255}));
+  connect(BUS1.p, pwLine.p)
+    annotation (Line(points={{10,0},{20,0},{20,20},{31,20}}, color={0,0,255}));
+  connect(pwLine1.p, pwLine.p) annotation (Line(points={{31,-20},{20,-20},{20,
+          20},{31,20}}, color={0,0,255}));
   connect(pwFault.p, BUS1.p) annotation (Line(points={{18.3333,-50},{14,-50},{
           14,0},{10,0}}, color={0,0,255}));
-  connect(pwLine.n, INF.p) annotation (Line(points={{51.6667,20},{60,20},{60,0},
-          {70,0}}, color={0,0,255}));
-  connect(pwLine1.n, INF.p) annotation (Line(points={{51.6667,-20},{60,-20},{60,
-          0},{70,0}}, color={0,0,255}));
-  connect(INF.p, gENCLS2_1.p) annotation (Line(points={{70,0},{88.8,0},{88.8,-0.180432}},
-        color={0,0,255}));
+  connect(pwLine.n, INF.p)
+    annotation (Line(points={{49,20},{60,20},{60,0},{70,0}}, color={0,0,255}));
+  connect(pwLine1.n, INF.p) annotation (Line(points={{49,-20},{60,-20},{60,0},{
+          70,0}}, color={0,0,255}));
+  connect(INF.p, gENCLS2_1.p)
+    annotation (Line(points={{70,0},{90,0},{90,0}}, color={0,0,255}));
   connect(wT4E1_1.WIQCMD, wT4G1.I_qcmd) annotation (Line(points={{-70.8,8.4},{-68,
           8.4},{-68,9.6},{-62.8,9.6}}, color={0,0,127}));
   connect(wT4E1_1.WIPCMD, wT4G1.I_pcmd) annotation (Line(points={{-70.8,3.6},{-68,

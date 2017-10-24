@@ -1,20 +1,18 @@
 within PSAT_Systems.TwoAreaOld;
 model FourthOrder_AVRI "5-bus system with 4th-order machine and AVR Type I"
   extends PSAT_Systems.TwoAreaOld.BaseClasses.BaseOrder4;
-  Modelica.Blocks.Sources.Constant vref2(k=1.198705028536746) annotation (
-      Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-149,9})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRTypeIchange1_1(vrmax=7.57)
-    annotation (Placement(transformation(extent={{-132,-2},{-120,12}})));
+    annotation (Placement(transformation(extent={{-132,4},{-120,18}})));
 equation
-  connect(vref2.y, aVRTypeIchange1_1.vref) annotation (Line(points={{-143.5,9},
-          {-138.75,9},{-138.75,8.92},{-133.32,8.92}}, color={0,0,127}));
-  connect(aVRTypeIchange1_1.vf, order4.vf) annotation (Line(points={{-119.4,
-          5.14},{-115.7,5.14},{-115.7,5},{-112,5}}, color={0,0,127}));
-  connect(aVRTypeIchange1_1.v, order4.v) annotation (Line(points={{-133.44,2.48},
-          {-136,2.48},{-136,-14},{-88,-14},{-88,3},{-91,3}}, color={0,0,127}));
+  connect(aVRTypeIchange1_1.vf, order4.vf) annotation (Line(points={{-118.8,11},
+          {-115.7,11},{-115.7,5},{-114,5}}, color={0,0,127}));
+  connect(aVRTypeIchange1_1.v, order4.v) annotation (Line(points={{-133.2,6.8},
+          {-136,6.8},{-136,-14},{-88,-14},{-88,3},{-91,3}}, color={0,0,127}));
+  connect(aVRTypeIchange1_1.vf0, order4.vf0) annotation (Line(points={{-126,2.6},
+          {-126,-6},{-150,-6},{-150,32},{-110,32},{-110,11}}, color={0,0,127}));
+  connect(aVRTypeIchange1_1.vref0, aVRTypeIchange1_1.vref) annotation (Line(
+        points={{-126,19.4},{-126,26},{-140,26},{-140,15.2},{-133.2,15.2}},
+        color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),

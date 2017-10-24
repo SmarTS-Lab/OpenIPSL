@@ -11,7 +11,7 @@ model Order4test2_perturbation
     ra=0.001,
     M=10,
     D=0,
-    xd1=0.302,
+    x1d=0.302,
     P_0=16.0352698692006,
     Q_0=11.859436505981)
     annotation (Placement(transformation(extent={{-26,-10},{-6,10}})));
@@ -100,12 +100,14 @@ equation
       points={{-3.192,-4.0917},{2.3974,-4.0917},{2.3974,2.9083},{5.308,2.9083}},
 
       color={0,0,127}));
+
   connect(step4.y, add4.u1) annotation (Line(
       visible=true,
       origin={-86.308,-19.6146},
       points={{-3.192,4.6146},{2.3974,4.6146},{2.3974,-2.3854},{5.308,-2.3854}},
 
       color={0,0,127}));
+
   connect(add1.y, add31.u1) annotation (Line(points={{-69.5,35},{-60,35},{-60,
           29},{-51,29}}, color={0,0,127}));
   connect(add2.y, add31.u2) annotation (Line(points={{-69.5,15},{-60,15},{-60,
@@ -129,10 +131,10 @@ equation
   connect(add31.y, Generator.vf) annotation (Line(points={{-39.5,25},{-35,25},{
           -35,5},{-28,5}}, color={0,0,127}));
   connect(add32.y, Generator.pm) annotation (Line(points={{-39.5,-25.0001},{-35,
-          -25.0001},{-35,-5.03569},{-28.0019,-5.03569}}, color={0,0,127}));
-  connect(Generator.vf0, add31.u3) annotation (Line(points={{-25,11},{-25,14},{
+          -25.0001},{-35,-5},{-28,-5}}, color={0,0,127}));
+  connect(Generator.vf0, add31.u3) annotation (Line(points={{-24,11},{-24,14},{
           -55,14},{-55,21},{-51,21}}, color={0,0,127}));
-  connect(Generator.pm0, add32.u1) annotation (Line(points={{-25,-11},{-25,-16},
+  connect(Generator.pm0, add32.u1) annotation (Line(points={{-24,-11},{-24,-16},
           {-54,-16},{-54,-21},{-51.0001,-21}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(

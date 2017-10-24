@@ -14,14 +14,14 @@ partial model Step_1
     ra=0.003,
     xd=1.81,
     xq=1.76,
-    xd1=0.3,
-    xq1=0.65,
-    xd2=0.23,
-    xq2=0.25,
-    Td10=8,
-    Tq10=1,
-    Td20=0.03,
-    Tq20=0.07,
+    x1d=0.3,
+    x1q=0.65,
+    x2d=0.23,
+    x2q=0.25,
+    T1d0=8,
+    T1q0=1,
+    T2d0=0.03,
+    T2q0=0.07,
     Taa=0.002,
     M=7,
     D=0,
@@ -42,23 +42,26 @@ partial model Step_1
     T4=1) annotation (Placement(transformation(extent={{-40,-6},{-20,14}})));
 equation
   connect(avr.vf, machine.vf) annotation (Line(points={{20.8333,10},{20.8333,10},
-          {40,10}}, color={0,0,127}));
-  connect(machine.pm, machine.pm0) annotation (Line(points={{40,-10},{34,-10},{
+          {36,10}}, color={0,0,127}));
+  connect(machine.pm, machine.pm0) annotation (Line(points={{36,-10},{34,-10},{
           34,-28},{44,-28},{44,-22}}, color={0,0,127}));
   connect(machine.p, pwPin)
-    annotation (Line(points={{82,0},{96,0},{96,0},{110,0}}, color={0,0,255}));
+    annotation (Line(points={{80,0},{96,0},{96,0},{110,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics={Rectangle(
+            -100},{100,100}}), graphics={
+        Rectangle(
           extent={{-46,18},{-14,-10}},
           lineColor={255,0,0},
-          lineThickness=1),Text(
+          lineThickness=1),
+        Text(
           extent={{-92,102},{98,84}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Step 1: Adding PSS to the generator model"),Text(
+          textString="Step 1: Adding PSS to the generator model"),
+        Text(
           extent={{-84,28},{20,20}},
           lineColor={0,0,0},
           lineThickness=1,
