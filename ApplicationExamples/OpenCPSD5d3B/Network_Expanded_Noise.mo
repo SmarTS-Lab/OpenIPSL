@@ -176,14 +176,14 @@ equation
         color={0,0,255}));
   connect(T2.n, B5.p)
     annotation (Line(points={{60,-47},{60,-53.5},{60,-60}}, color={0,0,255}));
-  connect(LD2.p, B4.p) annotation (Line(points={{100,-59.4},{100,-24},{80,-24},
-          {80,-20}}, color={0,0,255}));
+  connect(LD2.p, B4.p) annotation (Line(points={{100,-60},{100,-24},{80,-24},{
+          80,-20}}, color={0,0,255}));
   connect(G2.conn, B5.p)
     annotation (Line(points={{60,-69},{60,-60}}, color={0,0,255}));
   connect(LD1.p, B2.p)
-    annotation (Line(points={{-6,0.6},{-6,40},{0,40}}, color={0,0,255}));
+    annotation (Line(points={{-6,0},{-6,40},{0,40}}, color={0,0,255}));
   connect(L3.n, breaker1.n)
-    annotation (Line(points={{80,3},{80,-5.5}}, color={0,0,255}));
+    annotation (Line(points={{80,4.6},{80,-5.5}}, color={0,0,255}));
   connect(B4.p, breaker1.p)
     annotation (Line(points={{80,-20},{80,-14.5}}, color={0,0,255}));
   connect(V_IB, G2.V_IB)
@@ -205,7 +205,7 @@ equation
   connect(breaker2.n, B3.p) annotation (Line(points={{80,32.5},{80,40},{69.5,
           39.8496},{69.5,40},{60,40}}, color={0,0,255}));
   connect(breaker2.p, L3.p)
-    annotation (Line(points={{80,23.5},{80,17},{80,17}}, color={0,0,255}));
+    annotation (Line(points={{80,23.5},{80,15.4},{80,15.4}}, color={0,0,255}));
   connect(breaker2.TRIGGER, G2.TRIGGER) annotation (Line(points={{84.5,28},{116,
           28},{116,-80},{71,-80}}, color={255,0,255}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-120},

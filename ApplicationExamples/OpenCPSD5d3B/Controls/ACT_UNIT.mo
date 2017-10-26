@@ -64,41 +64,49 @@ equation
           {68,-12},{74,-12}}, color={255,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false,
-          extent={{-100,-100},{100,100}}), graphics={Rectangle(
+          extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-62,98},{58,78}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="ACTIVATION UNIT"),Text(
+          textString="ACTIVATION UNIT"),
+        Text(
           extent={{-76,60},{-32,40}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V_DIFF"),Text(
+          textString="V_DIFF"),
+        Text(
           extent={{-74,10},{-30,-10}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{-74,-40},{-30,-60}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="FI_DIFF"),Text(
+          textString="FI_DIFF"),
+        Text(
           extent={{14,60},{94,40}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="START_FREQ"),Text(
+          textString="START_FREQ"),
+        Text(
           extent={{38,10},{92,-10}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="TRIGGER"),Text(
+          textString="TRIGGER"),
+        Text(
           extent={{38,-30},{92,-50}},
           lineColor={28,108,200},
           fillColor={255,255,255},

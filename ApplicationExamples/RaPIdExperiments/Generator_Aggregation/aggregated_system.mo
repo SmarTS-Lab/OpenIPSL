@@ -90,8 +90,8 @@ equation
     annotation (Line(points={{-57,0},{-54,0},{-50,0}}, color={0,0,127}));
   connect(add1.y, gENROE.EFD)
     annotation (Line(points={{-27,-6},{-20,-6}}, color={0,0,127}));
-  connect(add1.u2, gENROE.EFD0) annotation (Line(points={{-50,-12},{-58,-12},{
-          -58,-38},{30,-38},{30,-6},{26,-6}}, color={0,0,127}));
+  connect(add1.u2, gENROE.EFD0) annotation (Line(points={{-50,-12},{-58,-12},{-58,
+          -38},{30,-38},{30,-6},{26,-6}}, color={0,0,127}));
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-20,14},{-28,
           14},{-28,34},{42,34},{42,14},{26,14}}, color={0,0,127}));
   connect(gENROE1.EFD0, gENROE1.EFD) annotation (Line(points={{116,-6},{112,-6},

@@ -72,21 +72,25 @@ equation
   connect(add.u1, switch1.u3) annotation (Line(points={{-58,6},{-66,6},{-66,-16},
           {-22,-16}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics={Rectangle(
+            {100,100}}), graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-52,96},{48,76}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="FREQ CTRL"),Text(
+          textString="FREQ CTRL"),
+        Text(
           extent={{-82,8},{-18,-10}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{34,10},{98,-8}},
           lineColor={28,108,200},
           fillColor={255,255,255},

@@ -92,51 +92,61 @@ equation
   connect(add1.y, add.u2) annotation (Line(points={{-7.4,-54},{-6,-54},{-6,-53.6},
           {0,-53.6},{6.8,-53.6}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics={Rectangle(
+            {100,100}}), graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-56,100},{64,80}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="RESYNCH UNIT"),Text(
+          textString="RESYNCH UNIT"),
+        Text(
           extent={{-76,80},{-48,60}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V_IB"),Text(
+          textString="V_IB"),
+        Text(
           extent={{-76,38},{-48,18}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V_DN"),Text(
+          textString="V_DN"),
+        Text(
           extent={{-74,-20},{-46,-40}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="fi_DN"),Text(
+          textString="fi_DN"),
+        Text(
           extent={{-74,-62},{-46,-82}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="fi_IB"),Text(
+          textString="fi_IB"),
+        Text(
           extent={{40,82},{92,62}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V_CTRL"),Text(
+          textString="V_CTRL"),
+        Text(
           extent={{42,40},{94,20}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="P_CTRL"),Text(
+          textString="P_CTRL"),
+        Text(
           extent={{40,-18},{80,-38}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="P_0"),Text(
+          textString="P_0"),
+        Text(
           extent={{20,-60},{78,-80}},
           lineColor={28,108,200},
           fillColor={255,255,255},

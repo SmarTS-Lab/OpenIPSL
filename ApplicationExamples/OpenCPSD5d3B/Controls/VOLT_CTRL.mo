@@ -44,26 +44,31 @@ equation
     annotation (Line(points={{41,30},{60,30},{60,6},{68,6}}, color={0,0,127}));
   connect(booleanStep.y, switch1.u2)
     annotation (Line(points={{-49,0},{-32,0}}, color={255,0,255}));
-  annotation (Icon(graphics={Rectangle(
+  annotation (Icon(graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-50,100},{50,80}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="VOLT CTRL"),Text(
+          textString="VOLT CTRL"),
+        Text(
           extent={{18,12},{100,-8}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V_REF"),Text(
+          textString="V_REF"),
+        Text(
           extent={{-96,60},{-14,40}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V_IB"),Text(
+          textString="V_IB"),
+        Text(
           extent={{-96,-40},{-14,-60}},
           lineColor={28,108,200},
           fillColor={255,255,255},
