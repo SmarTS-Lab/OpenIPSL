@@ -145,12 +145,14 @@ equation
       points={{-12.7895,12.7674},{3.2632,12.7674},{3.2632,-12.7674},{6.2631,-12.7674}},
 
       color={0,0,127}));
+
   connect(integrator1.y, lim_exc_s12.Vref) annotation (Line(
       visible=true,
       origin={42.3527,72.7755},
       points={{-15.4777,0.1739},{4.1592,0.1739},{4.1592,-0.17397},{7.1592,-0.17397}},
 
       color={0,0,127}));
+
   connect(lim_exc_s11.Efd, lim_exc_s12.y) annotation (Line(
       visible=true,
       origin={28.4241,91.1481},
@@ -170,12 +172,14 @@ equation
       points={{-91.6161,0.2594},{22.872,0.2594},{22.872,-0.2594},{45.872,-0.2594}},
 
       color={0,0,127}));
+
   connect(gain1.y, lim_exc_s11.Vref) annotation (Line(
       visible=true,
       origin={-31.2336,73.4238},
       points={{-9.5491,-0.0964},{2.183,-0.0964},{2.183,0.09643},{5.183,0.09643}},
 
       color={0,0,127}));
+
   connect(lim_exc_s11.y, integrator1.u) annotation (Line(
       visible=true,
       origin={0.6436,73.1384},
@@ -199,6 +203,7 @@ equation
       points={{-22.3653,0.5669},{6.4551,0.567},{6.4551,-0.567},{9.4551,-0.567}},
 
       color={0,0,127}));
+
   connect(limiter1.y, Ipcmd) annotation (Line(
       visible=true,
       origin={42.6532,-80.0},
@@ -216,24 +221,28 @@ equation
           -15.7201},{-32.3219,-58.8094},{-67.6641,-58.8094},{-67.6641,-61.6695}},
 
       color={0,0,127}));
+
   connect(Pord, division1.u1) annotation (Line(
       visible=true,
       origin={-193.0156,-68.3185},
       points={{-36.9844,5.6816},{11.3281,5.6815},{11.3281,-5.6815},{14.3281,-5.6815}},
 
       color={0,0,127}));
+
   connect(add2.y, gain1.u) annotation (Line(
       visible=true,
       origin={-65.5871,73.1805},
       points={{-3.4129,-0.1468},{0.8043,-0.1468},{0.8043,0.1469},{1.8044,0.1469}},
 
       color={0,0,127}));
+
   connect(limIntegrator1.y, add2.u1) annotation (Line(
       visible=true,
       origin={-96.4784,79.5168},
       points={{-7.4353,0.4832},{1.4784,0.4832},{1.4784,-0.4831},{4.4784,-0.4831}},
 
       color={0,0,127}));
+
   connect(add1.y, limIntegrator1.u) annotation (Line(
       visible=true,
       origin={-132.9568,80.0},

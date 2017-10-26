@@ -386,6 +386,7 @@ equation
       points={{-26.7437,2.18767},{7.2437,2.18767},{7.2437,-2.18767},{12.2563,-2.18767}},
 
       color={0,0,127}));
+
   connect(generator1.Qgen, electrical_Control1.Qgen) annotation (Line(
       visible=true,
       origin={26.605,49.271},

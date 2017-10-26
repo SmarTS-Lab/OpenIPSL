@@ -47,8 +47,8 @@ equation
   connect(iEEEX1_1.EFD, gENROE.EFD) annotation (Line(points={{-92.6,-47.7778},{
           -102,-47.7778},{-102,-48},{-110,-48},{-110,-10},{-104,-10}}, color={0,
           0,127}));
-  connect(iEEEX1_1.VOTHSG, const.y) annotation (Line(points={{-68,-42.2778},{
-          -48.1116,-42.2778},{-48.1116,-42},{-41,-42}}, color={0,0,127}));
+  connect(iEEEX1_1.VOTHSG, const.y) annotation (Line(points={{-68,-42.2778},{-48.1116,
+          -42.2778},{-48.1116,-42},{-41,-42}}, color={0,0,127}));
   connect(iEEEX1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-68,-55.7222},{
           -54,-55.7222},{-54,-10},{-58,-10}}, color={0,0,127}));
   connect(iEEEX1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-68,-47.7778},

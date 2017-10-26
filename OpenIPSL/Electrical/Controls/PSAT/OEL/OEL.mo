@@ -83,34 +83,28 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={
-        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
-        Text(
+            100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
+          lineColor={0,0,255}),Text(
           extent={{-88,82},{-50,46}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="v"),
-        Text(
+          textString="v"),Text(
           extent={{-84,42},{-50,8}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="p"),
-        Text(
+          textString="p"),Text(
           extent={{-82,-2},{-54,-36}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="q"),
-        Text(
+          textString="q"),Text(
           extent={{10,98},{46,66}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="vref0"),
-        Text(
+          textString="vref0"),Text(
           extent={{60,-4},{94,-38}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="v_ref"),
-        Text(
+          textString="v_ref"),Text(
           extent={{-26,38},{36,-40}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
