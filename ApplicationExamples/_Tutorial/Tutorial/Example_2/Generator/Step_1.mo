@@ -48,20 +48,17 @@ equation
   connect(machine.p, pwPin)
     annotation (Line(points={{80,0},{96,0},{96,0},{110,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics={
-        Rectangle(
+            -100},{100,100}}), graphics={Rectangle(
           extent={{-46,18},{-14,-10}},
           lineColor={255,0,0},
-          lineThickness=1),
-        Text(
+          lineThickness=1),Text(
           extent={{-92,102},{98,84}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Step 1: Adding PSS to the generator model"),
-        Text(
+          textString="Step 1: Adding PSS to the generator model"),Text(
           extent={{-84,28},{20,20}},
           lineColor={0,0,0},
           lineThickness=1,

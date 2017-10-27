@@ -2096,8 +2096,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_7000_7010.n, bus_7000.n[16]) annotation (Line(
-      points={{-275,-5.5},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,
-          -51.75}},
+      points={{-275,-5.5},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,-51.75}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_7000_7100_3.n, bus_7000.p[1]) annotation (Line(
@@ -2110,8 +2110,8 @@ equation
       smooth=Smooth.None));
 
   connect(line_7000_7100_1.n, bus_7000.p[3]) annotation (Line(
-      points={{-260,-51.5},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,
-          -66.6}},
+      points={{-260,-51.5},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,-66.6}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_7000_7100_3.p, bus_7100.n[1]) annotation (Line(
@@ -2391,8 +2391,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_2.n, bus_3359.n[9]) annotation (Line(
-      points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{
-          -124,98.4667}},
+      points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{-124,
+          98.4667}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3360.p, bus_3360.p[1]) annotation (Line(
@@ -2417,8 +2417,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3100_3200_2.n, bus_3100.n[5]) annotation (Line(
-      points={{-187,72.5},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},{
-          -178,49}},
+      points={{-187,72.5},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},{-178,
+          49}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3100_3200_1.n, bus_3100.n[6]) annotation (Line(
@@ -2448,8 +2448,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3244_6500.p, bus_6500.n[1]) annotation (Line(
-      points={{-106.5,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,
-          -111}},
+      points={{-106.5,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,-111}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load3_bus6500.p, bus_6500.n[2]) annotation (Line(
@@ -2953,13 +2953,13 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3249.p, bus_3249.n[5]) annotation (Line(
-      points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{
-          -180,-14},{-180,-18.0286},{-176,-18.0286}},
+      points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{-180,
+          -14},{-180,-18.0286},{-176,-18.0286}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
-      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
-          -13.0571}},
+      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3100_3249.n, bus_3249.n[7]) annotation (Line(
@@ -3017,15 +3017,14 @@ equation
       points={{188,7.5},{188,18},{184,18}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(Exch_bus8500.p, bus_8500.n[9]) annotation (Line(points={{-210,176},{
-          -202,176},{-202,156.2},{-198,156.2}}, color={0,0,255}));
-  connect(Exch_bus7000.p, bus_7000.p[4]) annotation (Line(points={{-266,-48},{
-          -266,-48},{-266,-56},{-268,-56},{-268,-55.8},{-270,-55.8}}, color={0,
-          0,255}));
-  connect(Exch_bus7100.p, bus_7100.p[3]) annotation (Line(points={{-246,-15},{
-          -246,-25.4},{-250,-25.4}}, color={0,0,255}));
-  connect(Exch1_bus6701.p, bus_6701.n[2]) annotation (Line(points={{-154.5,
-          -75.75},{-150,-75.75},{-150,-81},{-146,-81}}, color={0,0,255}));
+  connect(Exch_bus8500.p, bus_8500.n[9]) annotation (Line(points={{-210,176},{-202,
+          176},{-202,156.2},{-198,156.2}}, color={0,0,255}));
+  connect(Exch_bus7000.p, bus_7000.p[4]) annotation (Line(points={{-266,-48},{-266,
+          -48},{-266,-56},{-268,-56},{-268,-55.8},{-270,-55.8}}, color={0,0,255}));
+  connect(Exch_bus7100.p, bus_7100.p[3]) annotation (Line(points={{-246,-15},{-246,
+          -25.4},{-250,-25.4}}, color={0,0,255}));
+  connect(Exch1_bus6701.p, bus_6701.n[2]) annotation (Line(points={{-154.5,-75.75},
+          {-150,-75.75},{-150,-81},{-146,-81}}, color={0,0,255}));
   connect(Exch2_bus6701.p, bus_6701.p[1]) annotation (Line(points={{-136,-75.75},
           {-140,-75.75},{-140,-87},{-144,-87}}, color={0,0,255}));
   connect(line_3115_7100.n, bus_3115.n[1]) annotation (Line(points={{-234.5,-26},
@@ -3084,8 +3083,8 @@ equation
           255}));
   connect(twoWindingTransformer.n, bus_3360.n[1]) annotation (Line(points={{-101,
           140},{-98.5,140},{-96,140}}, color={0,0,255}));
-  connect(twoWindingTransformer.p, bus_3359.p[9]) annotation (Line(points={{
-          -115,140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
+  connect(twoWindingTransformer.p, bus_3359.p[9]) annotation (Line(points={{-115,
+          140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
   connect(twoWindingTransformer1.n, bus_3249.p[6]) annotation (Line(points={{-147,
           -12},{-174,-12},{-174,-8.5}}, color={0,0,255}));
   connect(twoWindingTransformer1.p, bus_3701.n[1]) annotation (Line(points={{-133,
@@ -3132,265 +3131,221 @@ equation
           219,14},{234,14},{234,6},{240,6}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-300,-220},{
-            300,220}}), graphics={
-        Text(
+            300,220}}), graphics={Text(
           extent={{-278,12},{-290,16}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-7010"),
-        Text(
+7010"),Text(
           extent={{-266,-110},{-254,-114}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-7000"),
-        Text(
+7000"),Text(
           extent={{-280,-10},{-292,-6}},
           lineColor={0,128,0},
           textString="bus 7020",
-          textStyle={TextStyle.Bold}),
-        Text(
+          textStyle={TextStyle.Bold}),Text(
           extent={{-256,-54},{-244,-58}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-7100"),
-        Text(
+7100"),Text(
           extent={{-232,42},{-220,38}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3115"),
-        Text(
+3115"),Text(
           extent={{-264,44},{-252,40}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3000"),
-        Text(
+3000"),Text(
           extent={{-288,98},{-276,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3020"),
-        Text(
+3020"),Text(
           extent={{-224,84},{-212,80}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3300"),
-        Text(
+3300"),Text(
           extent={{-184,114},{-172,110}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3200"),
-        Text(
+3200"),Text(
           extent={{-182,34},{-170,30}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3100"),
-        Text(
+3100"),Text(
           extent={{-202,172},{-190,168}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-8500"),
-        Text(
+8500"),Text(
           extent={{-242,154},{-230,150}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-8700"),
-        Text(
+8700"),Text(
           extent={{-166,154},{-154,150}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-8600"),
-        Text(
+8600"),Text(
           extent={{-128,118},{-116,114}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3359"),
-        Text(
+3359"),Text(
           extent={{-100,156},{-88,152}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3360"),
-        Text(
+3360"),Text(
           extent={{-182,-54},{-170,-58}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3249"),
-        Text(
+3249"),Text(
           extent={{-124,-42},{-112,-46}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3701"),
-        Text(
+3701"),Text(
           extent={{-212,-84},{-200,-88}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3245"),
-        Text(
+3245"),Text(
           extent={{-182,-112},{-170,-116}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-3244"),
-        Text(
+3244"),Text(
           extent={{-150,-96},{-138,-100}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6701"),
-        Text(
+6701"),Text(
           extent={{-82,-96},{-70,-100}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6700"),
-        Text(
+6700"),Text(
           extent={{-24,-124},{-12,-128}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6500"),
-        Text(
+6500"),Text(
           extent={{18,-76},{30,-80}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5100"),
-        Text(
+5100"),Text(
           extent={{18,26},{30,22}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5101"),
-        Text(
+5101"),Text(
           extent={{74,66},{86,62}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5103"),
-        Text(
+5103"),Text(
           extent={{116,98},{128,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5304"),
-        Text(
+5304"),Text(
           extent={{118,0},{130,-4}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5102"),
-        Text(
+5102"),Text(
           extent={{158,138},{170,134}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5305"),
-        Text(
+5305"),Text(
           extent={{196,98},{208,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5301"),
-        Text(
+5301"),Text(
           extent={{236,98},{248,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5300"),
-        Text(
+5300"),Text(
           extent={{276,66},{288,62}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6100"),
-        Text(
+6100"),Text(
           extent={{234,18},{246,14}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6000"),
-        Text(
+6000"),Text(
           extent={{178,38},{190,34}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-6001"),
-        Text(
+6001"),Text(
           extent={{274,26},{286,22}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5601"),
-        Text(
+5601"),Text(
           extent={{276,-58},{288,-62}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5600"),
-        Text(
+5600"),Text(
           extent={{276,-108},{288,-112}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5620"),
-        Text(
+5620"),Text(
           extent={{238,-120},{250,-124}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5610"),
-        Text(
+5610"),Text(
           extent={{214,-88},{226,-92}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5603"),
-        Text(
+5603"),Text(
           extent={{178,-88},{190,-92}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5602"),
-        Text(
+5602"),Text(
           extent={{72,-92},{84,-96}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5500"),
-        Text(
+5500"),Text(
           extent={{76,-28},{88,-32}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5501"),
-        Text(
+5501"),Text(
           extent={{118,-46},{130,-50}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5401"),
-        Text(
+5401"),Text(
           extent={{176,-30},{188,-34}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5400"),
-        Text(
+5400"),Text(
           extent={{190,8},{202,4}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},

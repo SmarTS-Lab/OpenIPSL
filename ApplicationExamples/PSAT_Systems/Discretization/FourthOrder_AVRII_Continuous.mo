@@ -20,8 +20,8 @@ equation
     annotation (Line(points={{-114,5},{-114,5},{-114,2}}, color={0,0,127}));
   connect(aVRTypeII.v, order4.v) annotation (Line(points={{-138,-4},{-138,-4},{
           -138,-14},{-88,-14},{-88,3},{-91,3}}, color={0,0,127}));
-  connect(aVRTypeII.vref, aVRTypeII.vref0) annotation (Line(points={{-138,8},{
-          -142,8},{-142,14},{-142,20},{-126,20},{-126,14}}, color={0,0,127}));
+  connect(aVRTypeII.vref, aVRTypeII.vref0) annotation (Line(points={{-138,8},{-142,
+          8},{-142,14},{-142,20},{-126,20},{-126,14}}, color={0,0,127}));
   connect(order4.vf0, aVRTypeII.vf0) annotation (Line(points={{-110,11},{-110,
           26},{-110,28},{-150,28},{-150,-32},{-126,-32},{-126,-28},{-126,-10}},
         color={0,0,127}));

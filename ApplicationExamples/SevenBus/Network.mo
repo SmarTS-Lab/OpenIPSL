@@ -330,8 +330,8 @@ equation
           {120,30.7},{100,30.7}}, color={0,0,255}));
   connect(twoWindingTransformer.n, FTDPRA.n[4]) annotation (Line(points={{
           9.66667,0},{98,0},{98,36},{98,36.55}}, color={0,0,255}));
-  connect(twoWindingTransformer.p, FPAND.p[4]) annotation (Line(points={{
-          -13.6667,0},{-98,0},{-98,36},{-98,36.55}}, color={0,0,255}));
+  connect(twoWindingTransformer.p, FPAND.p[4]) annotation (Line(points={{-13.6667,
+          0},{-98,0},{-98,36},{-98,36.55}}, color={0,0,255}));
   connect(pwFault.p, FTILL.p[4]) annotation (Line(points={{-77,-142},{-82,-142},
           {-82,-101},{-98,-101}}, color={0,0,255}));
   connect(twoWindingTransformer2.n, FVALDI.p[1]) annotation (Line(points={{223,
@@ -348,32 +348,25 @@ equation
           {-200,-100},{-200,-99}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(extent={{-280,-200},{280,180}},
-          preserveAspectRatio=false), graphics={
-        Text(
+          preserveAspectRatio=false), graphics={Text(
           extent={{-222,-50},{-198,-60}},
           lineColor={28,108,200},
-          textString="FSSV"),
-        Text(
+          textString="FSSV"),Text(
           extent={{204,-50},{236,-60}},
           lineColor={28,108,200},
-          textString="FVALDI"),
-        Text(
+          textString="FVALDI"),Text(
           extent={{100,70},{138,60}},
           lineColor={28,108,200},
-          textString="FTDPRA"),
-        Text(
+          textString="FTDPRA"),Text(
           extent={{-132,70},{-102,60}},
           lineColor={28,108,200},
-          textString="FPAND"),
-        Text(
+          textString="FPAND"),Text(
           extent={{46,126},{84,116}},
           lineColor={28,108,200},
-          textString="FVERGE"),
-        Text(
+          textString="FVERGE"),Text(
           extent={{44,-76},{74,-86}},
           lineColor={28,108,200},
-          textString="FSBIS"),
-        Text(
+          textString="FSBIS"),Text(
           extent={{-114,-78},{-84,-88}},
           lineColor={28,108,200},
           textString="FTILL5")}),

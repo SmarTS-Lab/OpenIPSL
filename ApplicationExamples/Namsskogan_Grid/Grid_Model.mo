@@ -1313,7 +1313,7 @@ equation
   connect(twoWindingTransformer12.p, B33.n[1])
     annotation (Line(points={{261,140},{286,140},{286,136}}, color={0,0,255}));
   connect(B26.n[2], Line26_27.n) annotation (Line(points={{103.3,110},{103.3,
-          116},{147,116}},color={0,0,255}));
+          116},{147,116}}, color={0,0,255}));
   connect(B27.p[1], twoWindingTransformer10.n) annotation (Line(points={{204.6,
           90},{200,90},{200,82},{200,78},{227,78}}, color={0,0,255}));
   connect(twoWindingTransformer10.p, B28.n[1])
@@ -1342,16 +1342,16 @@ equation
           10},{2,10},{2,-7}}, color={0,0,255}));
   connect(B7.p[1], Line7_9.p) annotation (Line(points={{-3.4,-48},{-4,-48},{-4,
           -58},{18,-58},{18,-59}}, color={0,0,255}));
-  connect(Line7_9.n, B9.n[1]) annotation (Line(points={{18,-77},{36,-77},{36,
-          -72},{60,-72},{60,-82}}, color={0,0,255}));
+  connect(Line7_9.n, B9.n[1]) annotation (Line(points={{18,-77},{36,-77},{36,-72},
+          {60,-72},{60,-82}}, color={0,0,255}));
   connect(B8.n[1], twoWindingTransformer2.p) annotation (Line(points={{-38,-92},
           {-38,-92},{-38,-84},{-38,-80},{-49,-80},{-49,-74}}, color={0,0,255}));
   connect(B7.n[1], Line6_7.n)
     annotation (Line(points={{-3.4,-44},{-3.4,-25},{2,-25}}, color={0,0,255}));
   connect(B11.p[2], Line7_1.n) annotation (Line(points={{-76,16},{-70,16},{-70,
           8},{-70,-21},{-66,-21}}, color={0,0,255}));
-  connect(Line7_1.p, B12.n[1]) annotation (Line(points={{-66,-39},{-66,-39},{
-          -66,-48},{-102,-48},{-102,-60},{-108,-60}}, color={0,0,255}));
+  connect(Line7_1.p, B12.n[1]) annotation (Line(points={{-66,-39},{-66,-39},{-66,
+          -48},{-102,-48},{-102,-60},{-108,-60}}, color={0,0,255}));
   connect(B12.p[1], twoWindingTransformer4.p) annotation (Line(points={{-108,-64},
           {-108,-81},{-114,-81}}, color={0,0,255}));
   connect(twoWindingTransformer4.n, B13.n[1]) annotation (Line(points={{-114,-103},
@@ -1404,10 +1404,10 @@ equation
           139},{-238,139}}, color={0,0,127}));
   connect(syn6.v, aVR6.v) annotation (Line(points={{-261,141},{-266,141},{-266,
           122},{-200,122},{-200,158},{-202,158}}, color={0,0,127}));
-  connect(syn5.p, B20.p[1]) annotation (Line(points={{-310,-96},{-310,-86.5},{
-          -308,-86.5},{-308,-76}}, color={0,0,255}));
-  connect(syn4.p, B18.p[1]) annotation (Line(points={{-232,-138},{-226,-138},{
-          -226,-116}}, color={0,0,255}));
+  connect(syn5.p, B20.p[1]) annotation (Line(points={{-310,-96},{-310,-86.5},{-308,
+          -86.5},{-308,-76}}, color={0,0,255}));
+  connect(syn4.p, B18.p[1]) annotation (Line(points={{-232,-138},{-226,-138},{-226,
+          -116}}, color={0,0,255}));
   connect(syn2.p, B8.p[1]) annotation (Line(points={{-44,-142},{-38,-142},{-38,
           -96}}, color={0,0,255}));
   connect(syn1.p, B10.p[1])
@@ -1432,8 +1432,8 @@ equation
           {264,-72},{246,-72},{246,-70}}, color={0,0,127}));
   connect(aVR11.vf, syn11.vf) annotation (Line(points={{240,-46},{240,-44},{233,
           -44},{233,-42}}, color={0,0,127}));
-  connect(syn6.p, B22.n[1]) annotation (Line(points={{-260,144},{-286,144},{
-          -286,122}}, color={0,0,255}));
+  connect(syn6.p, B22.n[1]) annotation (Line(points={{-260,144},{-286,144},{-286,
+          122}}, color={0,0,255}));
   connect(syn7.p, B15.p[1]) annotation (Line(points={{-14,118},{-26,118},{-26,
           114},{-36,114}}, color={0,0,255}));
   connect(syn8.p, B33.p[1]) annotation (Line(points={{310,142},{298,142},{298,
@@ -1496,8 +1496,8 @@ equation
     annotation (Line(points={{67,6},{98.1,6},{98.1,2}}, color={0,0,255}));
   connect(Line2_4.p, B2.n[2]) annotation (Line(points={{144,-69},{154,-69},{164,
           -69},{164,-70},{164,-82},{164,-82}}, color={0,0,255}));
-  connect(voltDependant2.p, B2.n[3]) annotation (Line(points={{124,-78},{126,
-          -78},{126,-72},{155.2,-72},{155.2,-82}}, color={0,0,255}));
+  connect(voltDependant2.p, B2.n[3]) annotation (Line(points={{124,-78},{126,-78},
+          {126,-72},{155.2,-72},{155.2,-82}}, color={0,0,255}));
   connect(B11.n[3], Line11_16.p) annotation (Line(points={{-80,7.2},{-102,7.2},
           {-102,22},{-123,22}}, color={0,0,255}));
   connect(Line19_21.n, B19.n[2]) annotation (Line(points={{-284,15},{-278,15},{
@@ -1505,12 +1505,11 @@ equation
   connect(aVR3.vf0, syn3.vf0) annotation (Line(points={{-178,-154},{-178,-154},
           {-178,-166},{-170,-166},{-170,-130},{-156,-130},{-156,-135}}, color={
           0,0,127}));
-  connect(aVR3.vref0, aVR3.vref) annotation (Line(points={{-178,-130},{-180,
-          -130},{-180,-124},{-180,-126},{-196,-126},{-196,-136},{-190,-136}},
-        color={0,0,127}));
-  connect(syn2.vf0, aVR2.vf0) annotation (Line(points={{-62,-131},{-64,-131},{
-          -64,-124},{-64,-174},{-80,-174},{-80,-150},{-84,-150}}, color={0,0,
-          127}));
+  connect(aVR3.vref0, aVR3.vref) annotation (Line(points={{-178,-130},{-180,-130},
+          {-180,-124},{-180,-126},{-196,-126},{-196,-136},{-190,-136}}, color={
+          0,0,127}));
+  connect(syn2.vf0, aVR2.vf0) annotation (Line(points={{-62,-131},{-64,-131},{-64,
+          -124},{-64,-174},{-80,-174},{-80,-150},{-84,-150}}, color={0,0,127}));
   connect(aVR2.vref, aVR2.vref0) annotation (Line(points={{-96,-132},{-102,-132},
           {-102,-126},{-84,-126}}, color={0,0,127}));
   connect(syn1.vf0, aVR1.vf0) annotation (Line(points={{30,-137},{28,-137},{28,
@@ -1518,16 +1517,16 @@ equation
   connect(aVR1.vref, aVR1.vref0) annotation (Line(points={{-4,-138},{-10,-138},
           {-10,-136},{-10,-132},{8,-132}}, color={0,0,127}));
   connect(aVR4.vf0, syn4.vf0) annotation (Line(points={{-272,-146},{-270,-146},
-          {-270,-166},{-270,-170},{-294,-170},{-294,-116},{-250,-116},{-250,
-          -127}}, color={0,0,127}));
-  connect(aVR4.vref, aVR4.vref0) annotation (Line(points={{-284,-128},{-288,
-          -128},{-288,-126},{-288,-122},{-272,-122}}, color={0,0,127}));
+          {-270,-166},{-270,-170},{-294,-170},{-294,-116},{-250,-116},{-250,-127}},
+        color={0,0,127}));
+  connect(aVR4.vref, aVR4.vref0) annotation (Line(points={{-284,-128},{-288,-128},
+          {-288,-126},{-288,-122},{-272,-122}}, color={0,0,127}));
   connect(syn5.vf0, aVR5.vf0) annotation (Line(points={{-321,-114},{-338,-114},
           {-338,-160},{-300,-160},{-300,-136}}, color={0,0,127}));
-  connect(aVR5.vref, aVR5.vref0) annotation (Line(points={{-318,-148},{-318,
-          -156},{-330,-156},{-330,-136},{-324,-136}}, color={0,0,127}));
-  connect(syn6.vf0, aVR6.vf0) annotation (Line(points={{-242,133},{-242,126},{
-          -178,126},{-178,172},{-214,172},{-214,164}}, color={0,0,127}));
+  connect(aVR5.vref, aVR5.vref0) annotation (Line(points={{-318,-148},{-318,-156},
+          {-330,-156},{-330,-136},{-324,-136}}, color={0,0,127}));
+  connect(syn6.vf0, aVR6.vf0) annotation (Line(points={{-242,133},{-242,126},{-178,
+          126},{-178,172},{-214,172},{-214,164}}, color={0,0,127}));
   connect(aVR6.vref, aVR6.vref0) annotation (Line(points={{-202,146},{-188,146},
           {-188,138},{-188,130},{-214,130},{-214,140}}, color={0,0,127}));
   connect(syn7.vf0, aVR7.vf0) annotation (Line(points={{4,107},{6,107},{6,98},{
@@ -1553,168 +1552,135 @@ equation
           356,134},{356,136}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-360,-180},{400,180}},
-          preserveAspectRatio=false), graphics={
-        Text(
+          preserveAspectRatio=false), graphics={Text(
           extent={{132,-90},{132,-80}},
           lineColor={0,0,0},
           textString="B2",
-          textStyle={TextStyle.Bold}),
-        Text(
+          textStyle={TextStyle.Bold}),Text(
           extent={{244,-144},{244,-134}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B1"),
-        Text(
+          textString="B1"),Text(
           extent={{312,-94},{312,-84}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B3"),
-        Text(
+          textString="B3"),Text(
           extent={{172,-40},{172,-30}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B4"),
-        Text(
+          textString="B4"),Text(
           extent={{140,-4},{140,6}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B5"),
-        Text(
+          textString="B5"),Text(
           extent={{10,44},{10,54}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B6"),
-        Text(
+          textString="B6"),Text(
           extent={{-72,44},{-72,54}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B11"),
-        Text(
+          textString="B11"),Text(
           extent={{24,-52},{24,-42}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B7"),
-        Text(
+          textString="B7"),Text(
           extent={{-4,-98},{-4,-88}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B8"),
-        Text(
+          textString="B8"),Text(
           extent={{94,-88},{94,-78}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B9"),
-        Text(
+          textString="B9"),Text(
           extent={{94,-128},{94,-118}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B10"),
-        Text(
+          textString="B10"),Text(
           extent={{-74,-66},{-74,-56}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B12"),
-        Text(
+          textString="B12"),Text(
           extent={{-84,-126},{-84,-116}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B13"),
-        Text(
+          textString="B13"),Text(
           extent={{-126,88},{-126,98}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B14"),
-        Text(
+          textString="B14"),Text(
           extent={{-40,142},{-40,152}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B15"),
-        Text(
+          textString="B15"),Text(
           extent={{-152,-22},{-152,-12}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B16"),
-        Text(
+          textString="B16"),Text(
           extent={{-178,-72},{-178,-62}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B17"),
-        Text(
+          textString="B17"),Text(
           extent={{-192,-118},{-192,-108}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B18"),
-        Text(
+          textString="B18"),Text(
           extent={{-316,-18},{-316,-8}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B19"),
-        Text(
+          textString="B19"),Text(
           extent={{-298,60},{-298,72}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B21"),
-        Text(
+          textString="B21"),Text(
           extent={{-250,112},{-250,122}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B22"),
-        Text(
+          textString="B22"),Text(
           extent={{-274,-80},{-274,-70}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B20"),
-        Text(
+          textString="B20"),Text(
           extent={{62,58},{62,68}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B23"),
-        Text(
+          textString="B23"),Text(
           extent={{60,106},{60,116}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B26"),
-        Text(
+          textString="B26"),Text(
           extent={{56,152},{56,162}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B31"),
-        Text(
+          textString="B31"),Text(
           extent={{156,38},{156,48}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B24"),
-        Text(
+          textString="B24"),Text(
           extent={{214,2},{214,12}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B25"),
-        Text(
+          textString="B25"),Text(
           extent={{162,84},{162,94}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B27"),
-        Text(
+          textString="B27"),Text(
           extent={{234,56},{234,66}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B28"),
-        Text(
+          textString="B28"),Text(
           extent={{342,100},{342,110}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B29"),
-        Text(
+          textString="B29"),Text(
           extent={{362,20},{362,30}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B30"),
-        Text(
+          textString="B30"),Text(
           extent={{216,166},{216,176}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
-          textString="B32"),
-        Text(
+          textString="B32"),Text(
           extent={{288,166},{288,176}},
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
