@@ -69,8 +69,9 @@ equation
           -112,30},{-112,7.5},{-108.8,7.5}}, color={0,0,127}));
   connect(generator.EFD, SCRX.EFD) annotation (Line(points={{-108.8,-5.5},{-116,
           -5.5},{-116,-37.7778},{-112.9,-37.7778}}, color={0,0,127}));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-76,-45.7778},{-74,-45.7778},
-          {-74,-36},{-71.67,-36},{-71.67,-34},{-70.2,-34}}, color={0,0,127}));
+  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-76,-45.7778},{-74,
+          -45.7778},{-74,-36},{-71.67,-36},{-71.67,-34},{-70.2,-34}}, color={0,
+          0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-78,1},{-58.3,1},{-58.3,
           0},{-40,0}}, color={0,0,255}));
   annotation (

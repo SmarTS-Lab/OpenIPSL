@@ -140,7 +140,6 @@ equation
       points={{-27.4929,0.8887},{8.1643,0.8887},{8.1643,-0.8887},{11.1643,-0.8887}},
 
       color={0,0,127}));
-
   connect(Iarray, fixedDelay2.u) annotation (Line(
       visible=true,
       origin={-132.4965,-26.5148},
@@ -158,7 +157,6 @@ equation
       points={{-13.5223,2.1113},{3.5074,2.1113},{3.5074,-2.1113},{6.5074,-2.1113}},
 
       color={0,0,127}));
-
   connect(add3.y, Vdref) annotation (Line(
       visible=true,
       origin={162.8331,17.5},

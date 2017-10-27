@@ -56,18 +56,18 @@ model EXAC2 "SMIB system with one load and GENROE model"
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
           10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
-  connect(gENROE.EFD0, eXAC2_1.EFD0) annotation (Line(points={{-58,-10},{-48,-10},
-          {-48,-47.7222},{-54,-47.7222}}, color={0,0,127}));
+  connect(gENROE.EFD0, eXAC2_1.EFD0) annotation (Line(points={{-58,-10},{-48,
+          -10},{-48,-47.7222},{-54,-47.7222}}, color={0,0,127}));
   connect(gENROE.XADIFD, eXAC2_1.XADIFD) annotation (Line(points={{-58.4,-18},{
           -50,-18},{-50,-44.0556},{-54.23,-44.0556}}, color={0,0,127}));
-  connect(gENROE.ETERM, eXAC2_1.ECOMP) annotation (Line(points={{-58,-6},{-46,-6},
-          {-46,-39.7778},{-54,-39.7778}}, color={0,0,127}));
+  connect(gENROE.ETERM, eXAC2_1.ECOMP) annotation (Line(points={{-58,-6},{-46,
+          -6},{-46,-39.7778},{-54,-39.7778}}, color={0,0,127}));
   connect(eXAC2_1.EFD, gENROE.EFD) annotation (Line(points={{-101.15,-39.7778},
           {-110,-39.7778},{-110,-10},{-104,-10}},color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
-  connect(eXAC2_1.VOTHSG, const.y) annotation (Line(points={{-54,-34.2778},{-51.1437,
-          -34.2778},{-51.1437,-44},{-48.4,-44}}, color={0,0,127}));
+  connect(eXAC2_1.VOTHSG, const.y) annotation (Line(points={{-54,-34.2778},{
+          -51.1437,-34.2778},{-51.1437,-44},{-48.4,-44}}, color={0,0,127}));
   connect(eXAC2_1.VUEL, const.y) annotation (Line(points={{-62.05,-52},{-50,-52},
           {-50,-44},{-48.4,-44}}, color={0,0,127}));
   connect(eXAC2_1.VOEL, const.y) annotation (Line(points={{-68.95,-52},{-50,-52},

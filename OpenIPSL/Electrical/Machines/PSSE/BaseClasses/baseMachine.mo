@@ -122,43 +122,53 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255}),Text(
+            100}}), graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{64,75},{92,65}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{60,-66},{92,-76}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="ISORCE"),Text(
+          textString="ISORCE"),
+        Text(
           extent={{64,-25},{92,-35}},
           lineColor={0,0,255},
-          textString="ETERM"),Text(
+          textString="ETERM"),
+        Text(
           extent={{64,94},{92,84}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="ANGLE"),Text(
+          textString="ANGLE"),
+        Text(
           extent={{58,56},{92,46}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PMECH0"),Text(
+          textString="PMECH0"),
+        Text(
           extent={{64,34},{92,24}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PELEC"),Text(
+          textString="PELEC"),
+        Text(
           extent={{72,-46},{92,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{56,-86},{92,-96}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="XADIFD0"),Text(
+          textString="XADIFD0"),
+        Text(
           extent={{-84,56},{-44,46}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PMECH0"),Text(
+          textString="PMECH0"),
+        Text(
           extent={{-88,-46},{-58,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,

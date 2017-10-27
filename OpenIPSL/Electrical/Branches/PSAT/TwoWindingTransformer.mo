@@ -34,17 +34,22 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics),
-    Icon(graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),
-          Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),Line(
+    Icon(graphics={
+        Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),
+        Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),
+        Line(
           points={{100,0},{44,0},{44,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-100,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-38,20},{-4,-20}},
           lineColor={28,108,200},
-          textString="1"),Text(
+          textString="1"),
+        Text(
           extent={{4,18},{32,-16}},
           lineColor={28,108,200},
           textString="2")}),

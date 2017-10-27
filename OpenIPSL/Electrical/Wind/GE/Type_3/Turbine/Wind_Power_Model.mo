@@ -127,14 +127,12 @@ equation
       points={{-10.4891,21.7537},{16.75,21.7537},{16.75,-19.7536},{62.5109,-19.7536}},
 
       color={0,0,127}));
-
   connect(Wind_Speed, product3.u2) annotation (Line(
       visible=true,
       origin={-139.2437,-0.0},
       points={{-10.7563,27.5073},{16.75,26.7536},{16.75,-26.7536},{62.2437,-26.0}},
 
       color={0,0,127}));
-
   connect(Theta, cp_function1.Theta) annotation (Line(
       visible=true,
       origin={7.0,46.1983},
@@ -146,7 +144,6 @@ equation
       points={{-3.2128,-0.8017},{0.7376,-0.8017},{0.7376,0.8018},{1.7375,0.8018}},
 
       color={0,0,127}));
-
   connect(Gain_wndtge_kp.y, Pm) annotation (Line(
       visible=true,
       origin={122.1088,0.0},
@@ -168,21 +165,18 @@ equation
       points={{-21.2206,4.3664},{6.0735,4.3664},{6.0735,-4.3663},{9.0735,-4.3663}},
 
       color={0,0,127}));
-
   connect(Gain_KI.y, limiter2.u) annotation (Line(
       visible=true,
       origin={-38.9706,74.0646},
       points={{-5.0294,0.9354},{0.6765,0.9354},{0.6765,-0.9354},{3.6765,-0.9354}},
 
       color={0,0,127}));
-
   connect(product3.y, product2.u2) annotation (Line(
       visible=true,
       origin={-44.554,-16.3018},
       points={{-9.446,-3.6982},{2.1487,-3.6982},{2.1487,3.6983},{5.1487,3.6983}},
 
       color={0,0,127}));
-
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

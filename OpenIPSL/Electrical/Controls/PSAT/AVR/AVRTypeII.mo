@@ -120,43 +120,55 @@ equation
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         initialScale=0.1,
-        preserveAspectRatio=false), graphics={Text(
+        preserveAspectRatio=false), graphics={
+        Text(
           extent={{32,-28},{46,-36}},
           lineColor={28,108,200},
-          textString="vr2"),Text(
+          textString="vr2"),
+        Text(
           extent={{-2,0},{-8,12}},
           lineColor={28,108,200},
-          textString="vr1"),Text(
+          textString="vr1"),
+        Text(
           extent={{-72,-14},{-64,-20}},
           lineColor={28,108,200},
-          textString="Vm"),Text(
+          textString="Vm"),
+        Text(
           extent={{24,12},{30,2}},
           lineColor={28,108,200},
           textString="vr")}),
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         initialScale=0.1,
-        preserveAspectRatio=false), graphics={Rectangle(
+        preserveAspectRatio=false), graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-90,80},{-50,40}},
           lineColor={0,0,255},
-          textString="vref"),Text(
+          textString="vref"),
+        Text(
           extent={{-100,-40},{-60,-70}},
           lineColor={0,0,255},
-          textString="v"),Text(
+          textString="v"),
+        Text(
           extent={{60,20},{100,-20}},
           lineColor={0,0,255},
-          textString="vf"),Text(
+          textString="vf"),
+        Text(
           extent={{-40,40},{40,-40}},
           lineColor={0,0,255},
-          textString="AVR2"),Text(
+          textString="AVR2"),
+        Text(
           extent={{16,-60},{56,-100}},
           lineColor={0,0,255},
           textString="vf0
-"),Text(  extent={{2,102},{42,62}},
+"),
+        Text(
+          extent={{2,102},{42,62}},
           lineColor={0,0,255},
           textString="vref0")}),
     Documentation(info="<html>

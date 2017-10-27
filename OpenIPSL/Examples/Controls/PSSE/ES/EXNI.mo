@@ -32,10 +32,10 @@ equation
           10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
-  connect(eXNI.VOTHSG, const.y) annotation (Line(points={{-64,-31.4444},{-60,-31.4444},
-          {-60,-32},{-41,-32},{-41,-46}}, color={0,0,127}));
-  connect(eXNI.ECOMP, gENROE.ETERM) annotation (Line(points={{-64,-38.4444},{-60,
-          -38.4444},{-60,-38},{-52,-38},{-52,-6},{-58,-6}}, color={0,0,127}));
+  connect(eXNI.VOTHSG, const.y) annotation (Line(points={{-64,-31.4444},{-60,
+          -31.4444},{-60,-32},{-41,-32},{-41,-46}}, color={0,0,127}));
+  connect(eXNI.ECOMP, gENROE.ETERM) annotation (Line(points={{-64,-38.4444},{
+          -60,-38.4444},{-60,-38},{-52,-38},{-52,-6},{-58,-6}}, color={0,0,127}));
   connect(eXNI.XADIFD, gENROE.XADIFD) annotation (Line(points={{-64,-43.8889},{
           -60,-43.8889},{-60,-44},{-60,-18},{-58.4,-18}}, color={0,0,127}));
   connect(eXNI.EFD0, gENROE.EFD0) annotation (Line(points={{-64,-48.5556},{-60,
@@ -44,8 +44,8 @@ equation
           -70,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
   connect(eXNI.VOEL, const.y) annotation (Line(points={{-73.75,-54},{-74,-54},{
           -74,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXNI.EFD, gENROE.EFD) annotation (Line(points={{-94.75,-38.4444},{-110,
-          -38.4444},{-110,-10},{-104,-10}}, color={0,0,127}));
+  connect(eXNI.EFD, gENROE.EFD) annotation (Line(points={{-94.75,-38.4444},{
+          -110,-38.4444},{-110,-10},{-104,-10}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),

@@ -76,21 +76,25 @@ equation
   connect(product3.u2, derOfReal.u) annotation (Line(points={{-16.2,-50},{-34,-50},
           {-34,-38},{-70,-38},{-70,44},{-60,44}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics={Rectangle(
+            {100,100}}), graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={85,170,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-80,88},{-14,62}},
           lineColor={28,108,200},
           fillColor={28,108,200},
           fillPattern=FillPattern.Solid,
-          textString="real part"),Text(
+          textString="real part"),
+        Text(
           extent={{-82,-44},{-16,-70}},
           lineColor={28,108,200},
           fillColor={28,108,200},
           fillPattern=FillPattern.Solid,
-          textString="imag part"),Text(
+          textString="imag part"),
+        Text(
           extent={{32,4},{110,-20}},
           lineColor={28,108,200},
           fillColor={28,108,200},

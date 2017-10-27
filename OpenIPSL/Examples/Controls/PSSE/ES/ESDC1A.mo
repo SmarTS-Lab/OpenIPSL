@@ -47,14 +47,14 @@ model ESDC1A "SMIB system with one load and GENROE model"
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
           10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
-  connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-101,-42.2222},{-106,
-          -42.2222},{-106,-10},{-104,-10}}, color={0,0,127}));
-  connect(eSDC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-47.2778},{-60,
-          -58},{-48,-58},{-48,-10},{-58,-10}}, color={0,0,127}));
+  connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-101,-42.2222},{
+          -106,-42.2222},{-106,-10},{-104,-10}}, color={0,0,127}));
+  connect(eSDC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-47.2778},{
+          -60,-58},{-48,-58},{-48,-10},{-58,-10}}, color={0,0,127}));
   connect(gENROE.ETERM, eSDC1A.ECOMP) annotation (Line(points={{-58,-6},{-54,-6},
           {-54,-38},{-58,-38},{-58,-42.2222},{-60,-42.2222}}, color={0,0,127}));
-  connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-60,-38.7222},{-49.5556,
-          -38.7222},{-49.5556,-41},{-38.5,-41}}, color={0,0,127}));
+  connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-60,-38.7222},{
+          -49.5556,-38.7222},{-49.5556,-41},{-38.5,-41}}, color={0,0,127}));
   connect(eSDC1A.VOEL, const.y) annotation (Line(points={{-73,-50},{-42,-50},{-42,
           -41},{-38.5,-41}}, color={0,0,127}));
   connect(eSDC1A.VUEL, const1.y) annotation (Line(points={{-67,-50},{-54,-50},{

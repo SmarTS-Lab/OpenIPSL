@@ -25,24 +25,28 @@ equation
   angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;
   p.ir = 0;
   p.ii = 0;
-  annotation (Icon(graphics={Rectangle(
+  annotation (Icon(graphics={
+        Rectangle(
           visible=true,
           fillPattern=FillPattern.Solid,
-          extent={{-10,-100},{10,100}}),Text(
+          extent={{-10,-100},{10,100}}),
+        Text(
           visible=true,
           origin={-0.02605,120.133},
           fillPattern=FillPattern.Solid,
           extent={{-100,-20},{100,20}},
-          textString="%name"),Text(
+          textString="%name"),
+        Text(
           visible=displayPF,
           origin={0,-120},
           extent={{-60,-20},{60,20}},
           lineColor={170,0,0},
-          textString=DynamicSelect("Vpu", String(V, significantDigits=3))),Text(
+          textString=DynamicSelect("Vpu", String(V, significantDigits=3))),
+        Text(
           visible=displayPF,
           origin={0,-160},
           extent={{-60,-20},{60,20}},
           lineColor={170,0,0},
           textString=DynamicSelect("Angle", String(angle, significantDigits=3)
-             + "°"))}), Documentation);
+               + "°"))}), Documentation);
 end Bus;

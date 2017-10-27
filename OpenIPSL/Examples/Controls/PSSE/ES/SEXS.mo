@@ -48,12 +48,12 @@ equation
           {-64,-38.4444},{-70,-38.4444}},color={0,0,127}));
   connect(sEXS.VOEL, const.y) annotation (Line(points={{-82.35,-54},{-68,-54},{
           -68,-40},{-54.4,-40}}, color={0,0,127}));
-  connect(sEXS.VOTHSG, const.y) annotation (Line(points={{-70,-31.4444},{-64,-31.4444},
-          {-64,-40},{-54.4,-40}}, color={0,0,127}));
+  connect(sEXS.VOTHSG, const.y) annotation (Line(points={{-70,-31.4444},{-64,
+          -31.4444},{-64,-40},{-54.4,-40}}, color={0,0,127}));
   connect(sEXS.VUEL, const.y) annotation (Line(points={{-76.65,-54},{-64,-54},{
           -64,-40},{-54.4,-40}}, color={0,0,127}));
-  connect(sEXS.EFD, gENROE.EFD) annotation (Line(points={{-108.95,-38.4444},{-114,
-          -38.4444},{-114,-10},{-114,-10}}, color={0,0,127}));
+  connect(sEXS.EFD, gENROE.EFD) annotation (Line(points={{-108.95,-38.4444},{
+          -114,-38.4444},{-114,-10},{-114,-10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-70,0},{-40,0},{-40,0}}, color={0,0,255}));
   annotation (

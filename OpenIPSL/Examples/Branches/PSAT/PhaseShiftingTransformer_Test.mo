@@ -99,13 +99,13 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(sine1.y, add2.u1) annotation (Line(
-      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{-120.693,
-          34.4558}},
+      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{
+          -120.693,34.4558}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine2.y, add2.u2) annotation (Line(
-      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{-120.693,
-          26.8684}},
+      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{
+          -120.693,26.8684}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add2.y, add.u1) annotation (Line(

@@ -59,8 +59,8 @@ equation
           {-48,-46},{-41,-46}}, color={0,0,127}));
   connect(eXAC1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-60,-35.5556},
           {-52,-35.5556},{-52,-6},{-58,-6}},color={0,0,127}));
-  connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-44.9444},{-54,
-          -44.9444},{-54,-10},{-58,-10}}, color={0,0,127}));
+  connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-44.9444},{
+          -54,-44.9444},{-54,-10},{-58,-10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
   annotation (

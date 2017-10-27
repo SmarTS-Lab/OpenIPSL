@@ -117,7 +117,6 @@ equation
       points={{-40.3002,3.6104},{9.0251,3.6104},{9.0251,-3.6103},{22.2501,-3.6103}},
 
       color={0,0,127}));
-
   connect(gain3.y, Varray) annotation (Line(
       visible=true,
       origin={120.0322,-24.0148},
@@ -136,14 +135,12 @@ equation
       points={{-109.5,-12.9772},{35.5,-12.9773},{35.5,12.9773},{38.5,12.9773}},
 
       color={0,0,127}));
-
   connect(Udc, product1.u1) annotation (Line(
       visible=true,
       origin={-66.8,71.2},
       points={{-103.2,-11.2},{-63.2,-11.2},{-63.2,13.8},{114.8,13.8},{114.8,-5.2}},
 
       color={0,0,127}));
-
   connect(PVarray1.E, E) annotation (Line(
       visible=true,
       origin={-121.275,7.5},
@@ -155,7 +152,6 @@ equation
       points={{-41.25,14.8011},{12.75,14.8011},{12.75,-14.8012},{15.75,-14.8012}},
 
       color={0,0,127}));
-
   connect(gain2.y, product1.u2) annotation (Line(
       visible=true,
       origin={63.536,33.8119},

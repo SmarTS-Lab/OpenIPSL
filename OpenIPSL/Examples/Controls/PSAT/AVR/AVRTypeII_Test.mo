@@ -126,14 +126,14 @@ equation
           45},{-96,45},{-96,17},{-89.6,17}}, color={0,0,127}));
   connect(aVRI.v, order6Type2_Inputs_Outputs.v) annotation (Line(points={{-70,
           39.6},{-44,39.6},{-44,13.4},{-48.2,13.4}}, color={0,0,127}));
-  connect(aVRI.vf0, order6Type2_Inputs_Outputs.vf0) annotation (Line(points={{-82,
-          34.2},{-82,27.8},{-82.4,27.8}}, color={0,0,127}));
+  connect(aVRI.vf0, order6Type2_Inputs_Outputs.vf0) annotation (Line(points={{
+          -82,34.2},{-82,27.8},{-82.4,27.8}}, color={0,0,127}));
   connect(aVRI.vref0, add.u1) annotation (Line(points={{-82,55.8},{-82,62},{-49,
           62},{-49,54}}, color={0,0,127}));
   connect(ramp.y, add.u2) annotation (Line(points={{-40.6,48},{-40.6,48},{-49,
           48}}, color={0,0,127}));
-  connect(add.y, aVRI.vref) annotation (Line(points={{-60.5,51},{-65.25,51},{-65.25,
-          50.4},{-70,50.4}}, color={0,0,127}));
+  connect(add.y, aVRI.vref) annotation (Line(points={{-60.5,51},{-65.25,51},{
+          -65.25,50.4},{-70,50.4}}, color={0,0,127}));
   connect(order6Type2_Inputs_Outputs.pm, order6Type2_Inputs_Outputs.pm0)
     annotation (Line(points={{-89.6,-1},{-96,-1},{-96,-16},{-82.4,-16},{-82.4,-11.8}},
         color={0,0,127}));
