@@ -143,25 +143,25 @@ equation
       smooth=Smooth.None));
 
   connect(order3_Inputs_Outputs1.vf0, tGModel6_1.Pe) annotation (Line(
-      points={{-38.6689,0.91124},{6,0.91124},{6,-46},{-66,-46},{-66,29.26},{
-          -46.72,29.26}},
+      points={{-38.6689,0.91124},{6,0.91124},{6,-46},{-66,-46},{-66,29.26},{-46.72,
+          29.26}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf) annotation (
       Line(
-      points={{-38.6689,0.91124},{0,0.91124},{0,6},{-52,6},{-52,-9.0634},{
-          -45.3311,-9.0634}},
+      points={{-38.6689,0.91124},{0,0.91124},{0,6},{-52,6},{-52,-9.0634},{-45.3311,
+          -9.0634}},
       color={0,0,127},
       smooth=Smooth.None));
 
   connect(order3_Inputs_Outputs1.pm0, tGModel6_1.Pref) annotation (Line(
-      points={{-38.6689,-35.6624},{8,-35.6624},{8,12},{-56,12},{-56,22.12},{
-          -46.72,22.12}},
+      points={{-38.6689,-35.6624},{8,-35.6624},{8,12},{-56,12},{-56,22.12},{-46.72,
+          22.12}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel6_1.Pm, order3_Inputs_Outputs1.pm) annotation (Line(
-      points={{-7.79,35.89},{-4,35.89},{-4,52},{-78,52},{-78,-25.6878},{
-          -45.3311,-25.6878}},
+      points={{-7.79,35.89},{-4,35.89},{-4,52},{-78,52},{-78,-25.6878},{-45.3311,
+          -25.6878}},
       color={0,0,127},
       smooth=Smooth.None));
 

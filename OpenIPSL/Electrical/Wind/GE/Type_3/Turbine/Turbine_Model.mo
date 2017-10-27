@@ -235,12 +235,14 @@ equation
       points={{-19.8942,0.0916},{4.9606,0.0916},{4.9606,-0.09163},{9.9731,-0.09163}},
 
       color={0,0,127}));
+
   connect(integrator1.y, add2.u1) annotation (Line(
       visible=true,
       origin={-50.6823,74.6186},
       points={{-5.047,10.3814},{0.6823,10.3814},{0.6823,-10.3814},{3.6823,-10.3814}},
 
       color={0,0,127}));
+
   connect(add1.u2, integrator1.y) annotation (Line(
       visible=true,
       origin={-79.8948,75.9958},
@@ -263,6 +265,7 @@ equation
       points={{-8.144,9.5849},{-1.6187,9.5849},{-1.6187,9.5849},{11.3813,8.7548}},
 
       color={0,0,127}));
+
   connect(add4.u2, limIntegrator2.y) annotation (Line(
       visible=true,
       origin={16.5876,-49.6768},
@@ -296,6 +299,7 @@ equation
       points={{-0.9918,-3.0},{7.2964,-3.2002},{7.2964,-3.2002},{10.2964,-3.2002}},
 
       color={0,0,127}));
+
   connect(limIntegrator2.y, add8.u2) annotation (Line(
       visible=true,
       origin={97.3618,-84.8669},
@@ -313,12 +317,14 @@ equation
       points={{-3.0812,-9.4106},{0.6938,-9.4106},{0.6938,9.4105},{1.6938,9.4105}},
 
       color={0,0,127}));
+
   connect(add31.u2, integrator2.y) annotation (Line(
       visible=true,
       origin={10.196,54.0018},
       points={{1.2005,10.9982},{-0.0668,10.9982},{-0.0668,-10.9982},{-1.0668,-10.9982}},
 
       color={0,0,127}));
+
   connect(add3.y, add31.u3) annotation (Line(
       visible=true,
       origin={11.1982,16.0},
@@ -347,6 +353,7 @@ equation
       points={{-3.0812,0.2895},{0.6938,0.2895},{0.6938,-0.2895},{1.6938,-0.2895}},
 
       color={0,0,127}));
+
   connect(wind_Power_Model1.Theta, limIntegrator1.y) annotation (Line(
       visible=true,
       origin={-28.0648,76.8501},
@@ -380,6 +387,7 @@ equation
       points={{-3.0812,-0.8804},{0.6937,-0.8804},{0.6937,0.8805},{1.6938,0.8805}},
 
       color={0,0,127}));
+
   connect(add4.y, Gain_Kpc.u) annotation (Line(
       visible=true,
       origin={-60.25,-5.1256},
@@ -397,12 +405,14 @@ equation
       points={{-3.9505,0.0256},{0.3168,0.0256},{0.3168,-0.0257},{3.3168,-0.0257}},
 
       color={0,0,127}));
+
   connect(add2.y, Gain_Kpp.u) annotation (Line(
       visible=true,
       origin={-20.6531,65.6443},
       points={{-3.3469,-7.4071},{0.7823,-7.4071},{0.7823,7.407},{1.7823,7.407}},
 
       color={0,0,127}));
+
   connect(Change_Base.y, rotor_Model1.Pe) annotation (Line(
       visible=true,
       origin={-111.2201,65.5087},

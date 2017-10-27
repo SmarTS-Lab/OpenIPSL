@@ -400,6 +400,7 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(SPEED, dm_select.speed) annotation (Line(
       points={{-328,120},{-328,163.8},{0,163.8}},
       color={0,0,127},
@@ -421,6 +422,7 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(add.u2, V.y) annotation (Line(
       points={{-55.8,1.6},{-76,1.6},{-76,78},{34,78},{34,-55},{24.7,-55}},
       color={0,0,127},
@@ -503,6 +505,7 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(LoadlimiterPI2.u2, V.y) annotation (Line(
       points={{-5,-120},{34,-120},{34,-55},{24.7,-55}},
       color={0,0,127},
@@ -536,6 +539,7 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(s4.u, gain1.y) annotation (Line(
       points={{150,98},{150,68.8}},
       color={0,0,127},
@@ -549,6 +553,7 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(rSELECT.GovernorOutput, V.u) annotation (Line(
       points={{-179.6,-118.4},{2,-118.4},{2,-55},{8.6,-55}},
       color={0,0,127},

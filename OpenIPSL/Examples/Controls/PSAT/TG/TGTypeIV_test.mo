@@ -99,8 +99,8 @@ equation
       origin={11.2254,11.7135},
       points={{-11.914,-9.0891},{1.638,-9.0891},{1.638,2.6151},{5.638,2.6151}}));
   connect(Generator.vf0, Generator.vf) annotation (Line(
-      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{
-          -37.3311,10.9366}},
+      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-37.3311,
+          10.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.w, tGModel4_1.w) annotation (Line(
@@ -131,16 +131,13 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics={
-        Text(
+            -100},{100,100}}), graphics={Text(
           extent={{-96,42},{-22,30}},
           lineColor={0,0,255},
-          textString="Wref perturbation with sine signal 5-10s"),
-        Text(
+          textString="Wref perturbation with sine signal 5-10s"),Text(
           extent={{68,-18},{92,-24}},
           lineColor={0,0,255},
-          textString="Infinite bus"),
-        Text(
+          textString="Infinite bus"),Text(
           extent={{70,32},{84,20}},
           lineColor={0,0,255},
           textString="PQ load")}), Documentation);

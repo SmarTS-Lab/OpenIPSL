@@ -109,12 +109,14 @@ equation
       points={{13.4724,0.0027},{-3.4908,0.0027},{-3.4908,-0.00273},{-6.4908,-0.00273}},
 
       color={0,0,127}));
+
   connect(controller1.id_ref, staticgenerator1.id_ref) annotation (Line(
       visible=true,
       origin={91.5092,13.9109},
       points={{-13.4724,1.9109},{3.4908,1.9109},{3.4908,-1.9109},{6.4908,-1.9109}},
 
       color={0,0,127}));
+
   connect(staticgenerator1.v, controller1.uac) annotation (Line(
       visible=true,
       origin={96.2147,25.1802},
@@ -127,18 +129,21 @@ equation
       points={{10.9792,4.4109},{-2.6597,4.4109},{-2.6597,-4.4109},{-5.6597,-4.4109}},
 
       color={0,0,127}));
+
   connect(const3.y, controller1.Vacref) annotation (Line(
       visible=true,
       origin={45.8773,19.9114},
       points={{-21.4784,6.0896},{6.1595,6.0896},{6.1595,-6.0896},{9.1595,-6.0896}},
 
       color={0,0,127}));
+
   connect(staticgenerator1.P, gain1.u) annotation (Line(
       visible=true,
       origin={93.0,-18.6575},
       points={{28,16.1362},{32,16.1362},{32,-11.3425},{-46,-11.3425},{-46,-9.5872}},
 
       color={0,0,127}));
+
   connect(PVnew1.Udc, DCBusBar1.Vdc) annotation (Line(
       visible=true,
       origin={-53.6023,19.0},
@@ -155,6 +160,7 @@ equation
       points={{-45.75,-14.9697},{14.25,-14.9697},{14.25,14.9696},{17.25,14.9696}},
 
       color={0,0,127}));
+
   connect(E, PVnew1.E) annotation (Line(
       visible=true,
       origin={-138.5,-5.0},
