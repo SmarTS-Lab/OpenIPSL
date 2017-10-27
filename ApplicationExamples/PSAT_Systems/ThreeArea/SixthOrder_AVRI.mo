@@ -22,8 +22,8 @@ model SixthOrder_AVRI
     T2=6.67,
     Tr=0.001) annotation (Placement(transformation(extent={{166,0},{156,10}})));
 equation
-  connect(Exc1.vf, Syn2.vf) annotation (Line(points={{-141,87},{-138.75,87},{-138.75,
-          86},{-138.4,86}}, color={0,0,127}));
+  connect(Exc1.vf, Syn2.vf) annotation (Line(points={{-141,87},{-138.75,87},{
+          -138.75,86},{-138.4,86}}, color={0,0,127}));
   connect(Exc1.v, Syn2.v) annotation (Line(points={{-153,84},{-160,84},{-160,98},
           {-108,98},{-108,83.6},{-110.8,83.6}}, color={0,0,127}));
   connect(Exc2.vf, order3_2.vf)

@@ -29,8 +29,8 @@ model SixthOrder_AVRII
     Ae=0,
     Be=0) annotation (Placement(transformation(extent={{170,0},{160,10}})));
 equation
-  connect(Syn2.vf, Exc1.vf) annotation (Line(points={{-138.4,86},{-138,86},{-138,
-          85},{-139,85}}, color={0,0,127}));
+  connect(Syn2.vf, Exc1.vf) annotation (Line(points={{-138.4,86},{-138,86},{
+          -138,85},{-139,85}}, color={0,0,127}));
   connect(Exc1.v, Syn2.v) annotation (Line(points={{-151,82},{-166,82},{-166,98},
           {-108,98},{-108,83.6},{-110.8,83.6}}, color={0,0,127}));
   connect(order3_2.vf, Exc2.vf)

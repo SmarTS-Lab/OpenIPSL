@@ -40,12 +40,12 @@ equation
           20,-40},{0,-40},{0,-15},{8,-15}}, color={0,0,127}));
   connect(machine.p, pwPin)
     annotation (Line(points={{74,0},{78.5,0},{110,0}}, color={0,0,255}));
-  connect(pss_off.y, avr.vs) annotation (Line(points={{-71,8},{-50.3333,8},{-50.3333,
-          6}}, color={0,0,127}));
+  connect(pss_off.y, avr.vs) annotation (Line(points={{-71,8},{-50.3333,8},{
+          -50.3333,6}}, color={0,0,127}));
   connect(avr.vf, machine.vf) annotation (Line(points={{-10.3333,16},{2,16},{2,
           15},{8,15}}, color={0,0,127}));
-  connect(machine.v, avr.v) annotation (Line(points={{77,9},{88,9},{88,52},{-50.3333,
-          52},{-50.3333,26}}, color={0,0,127}));
+  connect(machine.v, avr.v) annotation (Line(points={{77,9},{88,9},{88,52},{
+          -50.3333,52},{-50.3333,26}}, color={0,0,127}));
   connect(machine.vf0, avr.vf0) annotation (Line(points={{20,33},{4,33},{4,44},
           {-30,44},{-30,34.3333},{-32,34.3333}},color={0,0,127}));
   annotation (

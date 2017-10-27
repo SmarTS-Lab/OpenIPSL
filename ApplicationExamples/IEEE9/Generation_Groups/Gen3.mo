@@ -66,8 +66,8 @@ equation
       smooth=Smooth.None));
   connect(switch1.y, AVR.vref) annotation (Line(points={{-39.5,17},{-26.75,17},
           {-26.75,16},{-18,16}},color={0,0,127}));
-  connect(booleanConstant.y, switch1.u2) annotation (Line(points={{-61.5,17},{-61.5,
-          17},{-51,17}}, color={255,0,255}));
+  connect(booleanConstant.y, switch1.u2) annotation (Line(points={{-61.5,17},{
+          -61.5,17},{-51,17}}, color={255,0,255}));
   connect(step.y, switch1.u1) annotation (Line(points={{-61.6,30},{-56,30},{-56,
           21},{-51,21}}, color={0,0,127}));
   connect(gen.p, pwPin) annotation (Line(points={{38,14},{66,14},{66,0},{110,0}},
@@ -84,20 +84,23 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor
-          ={28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
-          color={28,108,200}),Text(
+            100}}), graphics={
+        Ellipse(extent={{-100,-100},{100,100}}, lineColor={28,108,200}),
+        Line(points={{-60,-20},{-20,20},{20,-20},{60,20}}, color={28,108,200}),
+
+        Text(
           extent={{-34,-32},{38,-52}},
           lineColor={28,108,200},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="%name"),Text(
+          textString="%name"),
+        Text(
           extent={{62,106},{134,68}},
           lineColor={238,46,47},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString=DynamicSelect("0.0", String(P_MW, significantDigits=3))),
-          Text(
+        Text(
           extent={{62,-70},{134,-108}},
           lineColor={0,255,0},
           fillColor={0,0,255},
@@ -105,4 +108,5 @@ equation
           textString=DynamicSelect("0.0", String(Q_MVA, significantDigits=3)))}),
 
     Documentation);
+
 end Gen3;

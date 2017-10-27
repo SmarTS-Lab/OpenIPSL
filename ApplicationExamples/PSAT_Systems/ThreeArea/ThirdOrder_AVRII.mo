@@ -30,8 +30,8 @@ model ThirdOrder_AVRII "ABC system with 3rd-order machines and AVR Type II"
 equation
   connect(Exc1.vf, order3_1.vf) annotation (Line(points={{-133,83},{-132.375,83},
           {-132.375,85},{-132,85}}, color={0,0,127}));
-  connect(Exc1.v, order3_1.v) annotation (Line(points={{-145,80},{-152,80},{-152,
-          96},{-106,96},{-106,83},{-109,83}}, color={0,0,127}));
+  connect(Exc1.v, order3_1.v) annotation (Line(points={{-145,80},{-152,80},{
+          -152,96},{-106,96},{-106,83},{-109,83}}, color={0,0,127}));
   connect(Exc2.vf, order3_2.vf) annotation (Line(points={{155,3},{154.375,3},{
           154.375,5},{154,5}}, color={0,0,127}));
   connect(Exc2.v, order3_2.v) annotation (Line(points={{167,0},{176,0},{176,24},

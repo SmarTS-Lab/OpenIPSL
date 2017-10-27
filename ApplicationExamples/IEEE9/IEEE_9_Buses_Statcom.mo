@@ -243,10 +243,10 @@ equation
     annotation (Line(points={{-91,90},{-91,90},{-80,90}}, color={0,0,255}));
   connect(gen2.pwPin, B3.p)
     annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
-  connect(lOADPQ.p, B5.p) annotation (Line(points={{-99,-2},{-99,4},{-72,4},{-72,
-          20}}, color={0,0,255}));
-  connect(line_4_5.p, B4.p) annotation (Line(points={{-72,-29.1},{-72,-29.1},{-72,
-          -42},{0,-42},{0,-46}}, color={0,0,255}));
+  connect(lOADPQ.p, B5.p) annotation (Line(points={{-99,-2},{-99,4},{-72,4},{
+          -72,20}}, color={0,0,255}));
+  connect(line_4_5.p, B4.p) annotation (Line(points={{-72,-29.1},{-72,-29.1},{
+          -72,-42},{0,-42},{0,-46}}, color={0,0,255}));
   connect(line_6_4.p, B4.p) annotation (Line(points={{86,-29.1},{86,-42},{0,-42},
           {0,-46}}, color={0,0,255}));
   connect(PQ1.p, B6.p) annotation (Line(points={{109,-6},{109,0},{86,0},{86,20}},

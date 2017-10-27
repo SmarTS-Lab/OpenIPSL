@@ -140,8 +140,8 @@ equation
           {66,0},{70,0},{70,20},{83,20}}, color={0,0,255}));
   connect(gENROE1.EFD0, gENROE1.EFD) annotation (Line(points={{142,30},{138,30},
           {138,14},{190,14},{190,30},{188,30}},color={0,0,127}));
-  connect(gENROE2.EFD0, gENROE2.EFD) annotation (Line(points={{142,-50},{136,-50},
-          {136,-66},{190,-66},{190,-50},{188,-50}}, color={0,0,127}));
+  connect(gENROE2.EFD0, gENROE2.EFD) annotation (Line(points={{142,-50},{136,
+          -50},{136,-66},{190,-66},{190,-50},{188,-50}}, color={0,0,127}));
   connect(gENROE2.PMECH, gENROE2.PMECH0) annotation (Line(points={{188,-30},{
           194,-30},{194,-70},{132,-70},{132,-30},{142,-30}}, color={0,0,127}));
   connect(gENROE1.PMECH, gENROE1.PMECH0) annotation (Line(points={{188,50},{194,

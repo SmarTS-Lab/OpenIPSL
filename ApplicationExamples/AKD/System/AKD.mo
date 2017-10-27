@@ -384,12 +384,13 @@ equation
       smooth=Smooth.None));
   connect(gen58567.pwPin, bus_58567.n[1]) annotation (Line(points={{-81.6,-35},
           {-75.8,-35},{-70,-35}},color={0,0,255}));
-  connect(Load_58563.p, bus_58563.p[1]) annotation (Line(points={{20,-52},{20,-38},
-          {6,-38},{6,-38},{0,-38},{0,-36},{0,-34},{0,-33.8}}, color={0,0,255}));
-  connect(line_58563_58573.p, bus_58563.p[2]) annotation (Line(points={{24.6,-12},
-          {12,-12},{12,-23},{0,-23}}, color={0,0,255}));
-  connect(line_58553_58563.n, bus_58563.n[1]) annotation (Line(points={{-24.6,-6},
-          {-12,-6},{-12,-31.1},{-2,-31.1}}, color={0,0,255}));
+  connect(Load_58563.p, bus_58563.p[1]) annotation (Line(points={{20,-52},{20,
+          -38},{6,-38},{6,-38},{0,-38},{0,-36},{0,-34},{0,-33.8}}, color={0,0,
+          255}));
+  connect(line_58563_58573.p, bus_58563.p[2]) annotation (Line(points={{24.6,
+          -12},{12,-12},{12,-23},{0,-23}}, color={0,0,255}));
+  connect(line_58553_58563.n, bus_58563.n[1]) annotation (Line(points={{-24.6,
+          -6},{-12,-6},{-12,-31.1},{-2,-31.1}}, color={0,0,255}));
   connect(gen58566.pwPin, bus_58566.p[1]) annotation (Line(points={{93.3,-35},{
           82.65,-35},{71,-35}}, color={0,0,255}));
   connect(twoWindingTransformer.n, bus_58567.p[1])
@@ -402,31 +403,38 @@ equation
     annotation (Line(points={{33,-34},{0,-34},{0,-12.2}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            120,100}}), graphics={Text(
+            120,100}}), graphics={
+        Text(
           extent={{-12,56},{8,50}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58583"),Text(
+          textString="bus 58583"),
+        Text(
           extent={{-72,24},{-52,18}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58553"),Text(
+          textString="bus 58553"),
+        Text(
           extent={{-79,-45},{-59,-51}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58567"),Text(
+          textString="bus 58567"),
+        Text(
           extent={{60,-46},{80,-52}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58566"),Text(
+          textString="bus 58566"),
+        Text(
           extent={{-11,-51},{9,-57}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58563"),Text(
+          textString="bus 58563"),
+        Text(
           extent={{40,30},{60,24}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 58573"),Text(
+          textString="bus 58573"),
+        Text(
           extent={{80,16},{100,10}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},

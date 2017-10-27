@@ -57,9 +57,11 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{
             120,100}})),
     Icon(coordinateSystem(extent={{-120,-100},{120,100}}, preserveAspectRatio=
-            false), graphics={Ellipse(extent={{-72,78},{120,-74}}, lineColor={
-          28,108,200}),Line(points={{0,26},{26,-6},{44,20}}, color={28,108,200}),
-          Line(points={{-16,2},{0,26}}, color={28,108,200}),Text(
+            false), graphics={
+        Ellipse(extent={{-72,78},{120,-74}}, lineColor={28,108,200}),
+        Line(points={{0,26},{26,-6},{44,20}}, color={28,108,200}),
+        Line(points={{-16,2},{0,26}}, color={28,108,200}),
+        Text(
           extent={{-6,-22},{32,-54}},
           lineColor={28,108,200},
           textString="Gen2 6")}),

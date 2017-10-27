@@ -43,15 +43,16 @@ equation
       smooth=Smooth.None));
   connect(aVRTypeII.vf, hold1.u) annotation (Line(points={{-136,4},{-136.75,4},
           {-136.75,6},{-133.2,6}}, color={0,0,127}));
-  connect(hold1.y, order4.vf) annotation (Line(points={{-119.4,6},{-116,6},{-116,
-          5},{-114,5}}, color={0,0,127}));
+  connect(hold1.y, order4.vf) annotation (Line(points={{-119.4,6},{-116,6},{
+          -116,5},{-114,5}}, color={0,0,127}));
   connect(sample2.u, order4.v) annotation (Line(points={{-179.2,0},{-188,0},{-188,
           -16},{-88,-16},{-88,3},{-91,3}}, color={0,0,127}));
   connect(aVRTypeII.vref0, sample1.u) annotation (Line(points={{-148,16},{-148,
           28},{-148,30},{-190,30},{-190,12},{-179.2,12},{-179.2,10}}, color={0,
           0,127}));
-  connect(aVRTypeII.vf0, order4.vf0) annotation (Line(points={{-148,-8},{-150,-8},
-          {-150,-26},{-204,-26},{-204,40},{-110,40},{-110,11}}, color={0,0,127}));
+  connect(aVRTypeII.vf0, order4.vf0) annotation (Line(points={{-148,-8},{-150,
+          -8},{-150,-26},{-204,-26},{-204,40},{-110,40},{-110,11}}, color={0,0,
+          127}));
   annotation (
     Diagram(coordinateSystem(extent={{-220,-100},{160,100}},
           preserveAspectRatio=false)),

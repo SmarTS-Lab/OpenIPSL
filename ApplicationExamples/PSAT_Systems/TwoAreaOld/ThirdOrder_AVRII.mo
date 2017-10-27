@@ -17,8 +17,9 @@ model ThirdOrder_AVRII "5-bus system with 3rd-order machine and AVR Type II"
 equation
   connect(aVRTypeII.vf, order3.vf) annotation (Line(points={{-120,14},{-117.75,
           14},{-117.75,5},{-114,5}}, color={0,0,127}));
-  connect(aVRTypeII.v, order3.v) annotation (Line(points={{-144,8},{-140,8},{-140,
-          2},{-142,2},{-142,-14},{-88,-14},{-88,3},{-91,3}}, color={0,0,127}));
+  connect(aVRTypeII.v, order3.v) annotation (Line(points={{-144,8},{-140,8},{
+          -140,2},{-142,2},{-142,-14},{-88,-14},{-88,3},{-91,3}}, color={0,0,
+          127}));
   connect(order3.vf0, aVRTypeII.vf0) annotation (Line(points={{-110,11},{-110,
           42},{-154,42},{-154,-4},{-132,-4},{-132,2}}, color={0,0,127}));
   connect(aVRTypeII.vref0, aVRTypeII.vref) annotation (Line(points={{-132,26},{

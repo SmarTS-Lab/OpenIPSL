@@ -1,7 +1,7 @@
 within ;
-package Namsskogan_Grid
+package Namsskogan_Grid 
 
-annotation (uses(OpenIPSL(version="1.5.0"), Modelica(version="3.2.2")),
+annotation (uses(OpenIPSL(version="1.0.0"), Modelica(version="3.2.2")),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

@@ -60,16 +60,14 @@ equation
   connect(sEXS.EFD, gENROE.EFD) annotation (Line(points={{-37,10},{-34,10},{-34,
           -10},{-24,-10}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
-        Ellipse(
+          Ellipse(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Line(
+          fillPattern=FillPattern.Solid),Line(
           points={{-48,2},{-20,56},{2,4},{24,-28},{48,22}},
           color={0,0,0},
-          smooth=Smooth.Bezier),
-        Text(
+          smooth=Smooth.Bezier),Text(
           extent={{-52,-18},{56,-66}},
           lineColor={0,0,0},
           fillColor={255,255,255},

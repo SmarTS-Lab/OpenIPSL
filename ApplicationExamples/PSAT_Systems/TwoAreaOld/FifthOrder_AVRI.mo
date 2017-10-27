@@ -14,8 +14,8 @@ equation
           14},{-114.6,5},{-114,5}}, color={0,0,127}));
   connect(aVRTypeI.v, order5.v) annotation (Line(points={{-137.6,9.2},{-140,9.2},
           {-140,-14},{-88,-14},{-88,3},{-91,3}}, color={0,0,127}));
-  connect(aVRTypeI.vf0, order5.vf0) annotation (Line(points={{-128,4.4},{-128,-4},
-          {-152,-4},{-152,34},{-110,34},{-110,11}}, color={0,0,127}));
+  connect(aVRTypeI.vf0, order5.vf0) annotation (Line(points={{-128,4.4},{-128,
+          -4},{-152,-4},{-152,34},{-110,34},{-110,11}}, color={0,0,127}));
   connect(aVRTypeI.vref0, aVRTypeI.vref) annotation (Line(points={{-128,23.6},{
           -128,30},{-146,30},{-146,16},{-137.6,16},{-137.6,18.8}}, color={0,0,
           127}));

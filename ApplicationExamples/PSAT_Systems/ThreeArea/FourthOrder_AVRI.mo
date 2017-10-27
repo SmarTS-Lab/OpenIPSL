@@ -24,8 +24,8 @@ model FourthOrder_AVRI
 equation
   connect(Exc1.vf, order4_1.vf) annotation (Line(points={{-145,85},{-142.75,85},
           {-142.75,86},{-142.4,86}}, color={0,0,127}));
-  connect(Exc1.v, order4_1.v) annotation (Line(points={{-157,82},{-166,82},{-166,
-          100},{-110,100},{-110,83.6},{-114.8,83.6}}, color={0,0,127}));
+  connect(Exc1.v, order4_1.v) annotation (Line(points={{-157,82},{-166,82},{
+          -166,100},{-110,100},{-110,83.6},{-114.8,83.6}},color={0,0,127}));
   connect(Exc2.vf, order3_2.vf)
     annotation (Line(points={{155,5},{153.75,5},{154,5}}, color={0,0,127}));
   connect(Exc2.v, order3_2.v) annotation (Line(points={{167,2},{178,2},{178,26},

@@ -103,17 +103,14 @@ equation
   connect(central_Unit.V_CTRL, sEXS.VOTHSG) annotation (Line(points={{-41,35},{
           -36,35},{-36,-4.27778},{-24,-4.27778}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics={
-        Ellipse(
+            {100,100}}), graphics={Ellipse(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Line(
+          fillPattern=FillPattern.Solid),Line(
           points={{-48,2},{-20,56},{2,4},{24,-28},{48,22}},
           color={0,0,0},
-          smooth=Smooth.Bezier),
-        Text(
+          smooth=Smooth.Bezier),Text(
           extent={{-52,-18},{56,-66}},
           lineColor={0,0,0},
           fillColor={255,255,255},

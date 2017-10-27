@@ -29,16 +29,17 @@ model FifthOrder_AVRII
     Ae=0,
     Be=0) annotation (Placement(transformation(extent={{168,0},{158,10}})));
 equation
-  connect(Exc1.vf, Syn2.vf) annotation (Line(points={{-145,85},{-144.375,85},{-144.375,
-          86},{-142.4,86}}, color={0,0,127}));
+  connect(Exc1.vf, Syn2.vf) annotation (Line(points={{-145,85},{-144.375,85},{
+          -144.375,86},{-142.4,86}}, color={0,0,127}));
   connect(Exc1.v, Syn2.v) annotation (Line(points={{-157,82},{-168,82},{-168,
           100},{-112,100},{-112,83.6},{-114.8,83.6}}, color={0,0,127}));
   connect(Exc2.vf, order3_2.vf)
     annotation (Line(points={{157,5},{156.375,5},{154,5}}, color={0,0,127}));
   connect(Exc2.v, order3_2.v) annotation (Line(points={{169,2},{176,2},{176,22},
           {128,22},{128,3},{131,3}}, color={0,0,127}));
-  connect(Exc1.vf0, Syn2.vf0) annotation (Line(points={{-151,79},{-151,66},{-166,
-          66},{-166,96},{-166,98},{-137.6,98},{-137.6,93.2}}, color={0,0,127}));
+  connect(Exc1.vf0, Syn2.vf0) annotation (Line(points={{-151,79},{-151,66},{
+          -166,66},{-166,96},{-166,98},{-137.6,98},{-137.6,93.2}}, color={0,0,
+          127}));
   connect(Exc1.vref0, Exc1.vref) annotation (Line(points={{-151,91},{-151,94},{
           -162,94},{-162,88},{-157,88}}, color={0,0,127}));
   connect(Exc2.vref, Exc2.vref0) annotation (Line(points={{169,8},{174,8},{174,

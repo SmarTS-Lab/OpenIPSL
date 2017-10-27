@@ -10,8 +10,8 @@ model ThirdOrder_AVRI "5-bus system with 3rd-order machine and AVR Type I"
     Ae=0,
     Be=0) annotation (Placement(transformation(extent={{-136,10},{-118,24}})));
 equation
-  connect(aVRTypeII.vf, order3.vf) annotation (Line(points={{-116.2,17},{-114.55,
-          17},{-114.55,5},{-114,5}}, color={0,0,127}));
+  connect(aVRTypeII.vf, order3.vf) annotation (Line(points={{-116.2,17},{
+          -114.55,17},{-114.55,5},{-114,5}}, color={0,0,127}));
   connect(aVRTypeII.v, order3.v) annotation (Line(points={{-137.8,12.8},{-142,
           12.8},{-142,-14},{-86,-14},{-86,3},{-91,3}}, color={0,0,127}));
   connect(aVRTypeII.vf0, order3.vf0) annotation (Line(points={{-127,8.6},{-127,

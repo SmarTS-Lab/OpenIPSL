@@ -482,8 +482,8 @@ equation
           {-64,54.9}}, color={0,0,255}));
   connect(lPQ7.p, B12.p) annotation (Line(points={{-143,93},{-143,82},{-128,82},
           {-128,68}}, color={0,0,255}));
-  connect(B13.p, L11.n) annotation (Line(points={{-64,110},{-64,98},{-88,98},{-88,
-          87.1}}, color={0,0,255}));
+  connect(B13.p, L11.n) annotation (Line(points={{-64,110},{-64,98},{-88,98},{
+          -88,87.1}}, color={0,0,255}));
   connect(L10.n, B12.p) annotation (Line(points={{-128,55.1},{-128,62},{-128,68}},
         color={0,0,255}));
   connect(B3.p, lPQ12.p) annotation (Line(points={{44,-122},{44,-122},{44,-106},
@@ -494,12 +494,12 @@ equation
           10.95}}, color={0,0,255}));
   connect(B9.p, L2.n) annotation (Line(points={{86,44},{91.5,44},{91.5,28.05}},
         color={0,0,255}));
-  connect(B2.p, lPQ3.p) annotation (Line(points={{-60,-128},{-60,-124},{-28,-124}},
-        color={0,0,255}));
-  connect(B2.p, L1.p) annotation (Line(points={{-60,-128},{-60,-85.1},{-60,-85.1}},
-        color={0,0,255}));
-  connect(L1.n, B5.p) annotation (Line(points={{-60,-68.9},{-60,-59.8},{-24,-59.8},
-          {-24,-40}}, color={0,0,255}));
+  connect(B2.p, lPQ3.p) annotation (Line(points={{-60,-128},{-60,-124},{-28,
+          -124}}, color={0,0,255}));
+  connect(B2.p, L1.p) annotation (Line(points={{-60,-128},{-60,-85.1},{-60,
+          -85.1}}, color={0,0,255}));
+  connect(L1.n, B5.p) annotation (Line(points={{-60,-68.9},{-60,-59.8},{-24,
+          -59.8},{-24,-40}}, color={0,0,255}));
   connect(B1.p, L7.p) annotation (Line(points={{-135,-31},{-135,-53},{-93,-53}},
         color={0,0,255}));
   connect(B5.p, L7.n)
@@ -530,8 +530,8 @@ equation
           26},{-11,26}}, color={0,0,255}));
   connect(L13.n, B11.p)
     annotation (Line(points={{7,26},{16,26},{16,40}}, color={0,0,255}));
-  connect(B5.p, L8.p) annotation (Line(points={{-24,-40},{-24,-40},{-14,-40},{-14,
-          -53},{-7,-53}}, color={0,0,255}));
+  connect(B5.p, L8.p) annotation (Line(points={{-24,-40},{-24,-40},{-14,-40},{
+          -14,-53},{-7,-53}}, color={0,0,255}));
   connect(B8.p, groupBus8_1.pwPin) annotation (Line(points={{149,-37},{159.5,-37},
           {159.5,-36.2},{160.8,-36.2}}, color={0,0,255}));
   connect(L15.p, B9.p)
@@ -547,14 +547,14 @@ equation
   connect(lPQ6.p, L17.p) annotation (Line(points={{104,126},{104,118},{74,118},
           {74,97.9998},{53.05,97.9998}}, color={0,0,255}));
   connect(B2.p, pwLinewithOpeningSending.p) annotation (Line(points={{-60,-128},
-          {-60,-128},{-60,-100},{-60,-106},{-14,-106},{-14,-76},{-1.1,-76},{-1.1,
-          -75.5}}, color={0,0,255}));
+          {-60,-128},{-60,-100},{-60,-106},{-14,-106},{-14,-76},{-1.1,-76},{
+          -1.1,-75.5}}, color={0,0,255}));
   connect(B4.p, pwLinewithOpeningSending.n) annotation (Line(points={{32,-32},{
           32,-32},{32,-76},{15.1,-76},{15.1,-75.5}}, color={0,0,255}));
-  connect(L5.n, B2.p) annotation (Line(points={{4.90002,-108},{-6,-108},{-6,-134},
-          {-60,-134},{-60,-128}}, color={0,0,255}));
-  connect(L3.n, B2.p) annotation (Line(points={{-135,-105},{-135,-134},{-60,-134},
-          {-60,-128}}, color={0,0,255}));
+  connect(L5.n, B2.p) annotation (Line(points={{4.90002,-108},{-6,-108},{-6,
+          -134},{-60,-134},{-60,-128}}, color={0,0,255}));
+  connect(L3.n, B2.p) annotation (Line(points={{-135,-105},{-135,-134},{-60,
+          -134},{-60,-128}}, color={0,0,255}));
   connect(groupBus1_1.pwPin, B1.p) annotation (Line(points={{-157,-6.2},{-135,-6.2},
           {-135,-31}}, color={0,0,255}));
   connect(B4.p, pwFault2.p) annotation (Line(points={{32,-32},{32,-28},{73,-28},
