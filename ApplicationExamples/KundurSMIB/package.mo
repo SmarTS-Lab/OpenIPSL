@@ -1,6 +1,6 @@
 package KundurSMIB "Single-machine infinite bus model used in the Example 13.2 of the Kundur's book"
 annotation (
-  uses(OpenIPSL(version="1.0.0"), Modelica(version="3.2.2")),
+  uses(OpenIPSL(version="1.5.0"), Modelica(version="3.2.2")),
   version="1",
   Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
