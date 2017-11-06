@@ -77,6 +77,7 @@ equation
       points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,-1.0127}},
 
       color={0,0,127}));
+
   connect(add2.y, add1.u2) annotation (Line(
       visible=true,
       origin={-76.3072,1.9333},
@@ -88,12 +89,14 @@ equation
       points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,-5.17496}},
 
       color={0,0,127}));
+
   connect(add2.u2, step2.y) annotation (Line(
       visible=true,
       origin={-101.2558,-21.885},
       points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,-8.115}},
 
       color={0,0,127}));
+
   connect(pwLine13.n, pwLine14.p) annotation (Line(
       visible=true,
       origin={68.1427,2.7263},

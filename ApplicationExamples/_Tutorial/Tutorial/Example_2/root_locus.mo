@@ -3,6 +3,7 @@ function root_locus
   import Modelica_LinearSystems2.StateSpace;
   import Modelica_LinearSystems2.TransferFunction;
   input String pathToPlantModel="Tutorial.Example_1.Example_1";
+  output Modelica_LinearSystems2.StateSpace ss;
 algorithm
   // LINEARIZE the model
   ss := Modelica_LinearSystems2.ModelAnalysis.Linearize(pathToPlantModel);

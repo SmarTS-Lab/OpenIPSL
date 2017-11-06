@@ -10,11 +10,11 @@ model TGTypeV_test
     Sn=20,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7) annotation (Placement(visible=true, transformation(
         origin={-27.3443,-7.3756},
         extent={{-16.6557,-16.6244},{16.6557,16.6244}},
@@ -106,39 +106,39 @@ equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={65.076,7.3286},
-      points={{-14.5463,-2},{-14.5463,8},{-3.929,8}}));
+      points={{-17.213,-2},{-17.213,7},{-3.929,7}}));
   connect(pwLine3.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
       origin={87,-15.5},
-      points={{-35.8333,5.5},{-25.5,5.5},{-25.5,16.5}}));
+      points={{-38.5,5.5},{-25.5,5.5},{-25.5,15.5}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={27.1134,6.8286},
-      points={{0.416667,-2.5},{4.75,-2.5},{4.75,-1.5},{0.0829333,-1.5}}));
+      points={{-2.25,-2.5},{4.75,-2.5},{4.75,-1.5},{2.7496,-1.5}}));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
       visible=true,
       origin={27.0909,-4.8357},
-      points={{0.439167,-4.8357},{0.742433,-4.8357},{0.742433,-5.1643}}));
+      points={{-2.2275,-4.8357},{3.4091,-4.8357},{3.4091,-5.1643}}));
   connect(pwLine1.n, pwLine2.n) annotation (Line(
       visible=true,
       origin={22.8634,-5.6714},
-      points={{4.66667,-4},{4.66667,10},{4.66667,10}}));
+      points={{2,-4},{2,10},{2,10}}));
   connect(GenOrder3.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={1.2254,1.7135},
-      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,
-          2.6151}}));
+      points={{-11.914,-9.0891},{1.638,-9.0891},{1.638,2.6151},{5.638,2.6151}}));
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={8.8634,-5.6714},
-      points={{-4.66667,10},{-4.66667,-4},{-4.66667,-4}}));
+      points={{-2,10},{-2,-4},{-2,-4}}));
   connect(GenOrder3.vf0, GenOrder3.vf) annotation (Line(
       points={{-40.6689,10.9112},{-2,10.9112},{-2,16},{-54,16},{-54,0.936599},{
-          -44,0.936599}},
+          -47.3311,0.936599}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel5_1.Pm, GenOrder3.pm) annotation (Line(
-      points={{-54.57,-14.08},{-48,-14.08},{-48,-15.6878},{-44,-15.6878}},
+      points={{-54.57,-14.08},{-48,-14.08},{-48,-15.6878},{-47.3311,-15.6878}},
+
       color={0,0,127},
       smooth=Smooth.None));
   connect(GenOrder3.w, tGModel5_1.w) annotation (Line(
@@ -147,8 +147,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(GenOrder3.pm0, tGModel5_1.w1) annotation (Line(
-      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{-79.98,
-          -9.52}},
+      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{
+          -79.98,-9.52}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine.y, add.u1) annotation (Line(
@@ -156,6 +156,7 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(sine1.y, add.u2) annotation (Line(
       points={{7.4,-30},{-18,-30},{-18,-31.2},{-18.4,-31.2}},
       color={0,0,127},

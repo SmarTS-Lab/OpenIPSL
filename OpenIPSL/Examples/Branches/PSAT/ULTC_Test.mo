@@ -44,7 +44,7 @@ model ULTC_Test
     angle_0=0,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));

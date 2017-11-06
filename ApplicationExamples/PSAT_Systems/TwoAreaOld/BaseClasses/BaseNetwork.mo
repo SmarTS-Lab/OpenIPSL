@@ -42,7 +42,7 @@ partial model BaseNetwork
     Sn=991,
     V_0=1.081,
     ra=0,
-    xd1=0.01,
+    x1d=0.01,
     M=6,
     V_b=20,
     Vn=20,

@@ -7,14 +7,14 @@ model Generator_AVR
     ra=0.003,
     xd=1.81,
     xq=1.76,
-    xd1=0.3,
-    xq1=0.65,
-    xd2=0.23,
-    xq2=0.25,
-    Td10=8,
-    Tq10=1,
-    Td20=0.03,
-    Tq20=0.07,
+    x1d=0.3,
+    x1q=0.65,
+    x2d=0.23,
+    x2q=0.25,
+    T1d0=8,
+    T1q0=1,
+    T2d0=0.03,
+    T2q0=0.07,
     M=7,
     D=0,
     P_0=P_0,
@@ -32,22 +32,22 @@ model Generator_AVR
     T2=1,
     T1=1,
     Te=0.0001,
-    vf0=2.420701642076922,
-    s0=0,
     Tr=0.015) annotation (Placement(transformation(extent={{-52,-4},{-12,36}})));
   Modelica.Blocks.Sources.Constant pss_off(k=0)
     annotation (Placement(transformation(extent={{-92,-2},{-72,18}})));
 equation
   connect(machine.pm0, machine.pm) annotation (Line(points={{20,-33},{20,-33},{
-          20,-40},{0,-40},{0,-15},{14,-15}}, color={0,0,127}));
-  connect(machine.p, pwPin) annotation (Line(points={{77,0.14892},{78.5,0.14892},
-          {78.5,0},{110,0}}, color={0,0,255}));
-  connect(pss_off.y, avr.vs)
-    annotation (Line(points={{-71,8},{-60,8},{-56,8}}, color={0,0,127}));
-  connect(avr.vf, machine.vf) annotation (Line(points={{-10,16},{2,16},{2,15},{
-          14,15}}, color={0,0,127}));
-  connect(machine.v, avr.v) annotation (Line(points={{77,9},{88,9},{88,52},{-56,
-          52},{-56,26}}, color={0,0,127}));
+          20,-40},{0,-40},{0,-15},{8,-15}}, color={0,0,127}));
+  connect(machine.p, pwPin)
+    annotation (Line(points={{74,0},{78.5,0},{110,0}}, color={0,0,255}));
+  connect(pss_off.y, avr.vs) annotation (Line(points={{-71,8},{-50.3333,8},{
+          -50.3333,6}}, color={0,0,127}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{-10.3333,16},{2,16},{2,
+          15},{8,15}}, color={0,0,127}));
+  connect(machine.v, avr.v) annotation (Line(points={{77,9},{88,9},{88,52},{
+          -50.3333,52},{-50.3333,26}}, color={0,0,127}));
+  connect(machine.vf0, avr.vf0) annotation (Line(points={{20,33},{4,33},{4,44},
+          {-30,44},{-30,34.3333},{-32,34.3333}},color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(

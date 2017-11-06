@@ -3,26 +3,23 @@ model ThirdOrder_AVRI "5-bus system with 3rd-order machine and AVR Type I"
   extends PSAT_Systems.TwoAreaOld.BaseClasses.BaseOrder3;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRTypeII(
     v0=1.05,
-    vf0=1.046883400898693,
-    vref0=1.198705028536746,
     vrmin=0,
     vrmax=7.57,
     Te=0.4,
     Tr=0.05,
     Ae=0,
-    Be=0) annotation (Placement(transformation(extent={{-136,-2},{-118,12}})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.198705028536746) annotation (
-      Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-151,9})));
+    Be=0) annotation (Placement(transformation(extent={{-136,10},{-118,24}})));
 equation
-  connect(vref2.y, aVRTypeII.vref) annotation (Line(points={{-145.5,9},{-141.75,
-          9},{-141.75,8.92},{-137.98,8.92}}, color={0,0,127}));
-  connect(aVRTypeII.vf, order3.vf) annotation (Line(points={{-117.1,5.14},{-114.55,
-          5.14},{-114.55,5},{-112,5}}, color={0,0,127}));
-  connect(aVRTypeII.v, order3.v) annotation (Line(points={{-138.16,2.48},{-142,
-          2.48},{-142,-14},{-86,-14},{-86,3},{-91,3}}, color={0,0,127}));
+  connect(aVRTypeII.vf, order3.vf) annotation (Line(points={{-116.2,17},{
+          -114.55,17},{-114.55,5},{-114,5}}, color={0,0,127}));
+  connect(aVRTypeII.v, order3.v) annotation (Line(points={{-137.8,12.8},{-142,
+          12.8},{-142,-14},{-86,-14},{-86,3},{-91,3}}, color={0,0,127}));
+  connect(aVRTypeII.vf0, order3.vf0) annotation (Line(points={{-127,8.6},{-127,
+          2},{-127,0},{-152,0},{-152,36},{-106,36},{-106,38},{-110,38},{-110,11}},
+        color={0,0,127}));
+  connect(aVRTypeII.vref0, aVRTypeII.vref) annotation (Line(points={{-127,25.4},
+          {-126,25.4},{-126,28},{-140,28},{-140,21.2},{-137.8,21.2}}, color={0,
+          0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),

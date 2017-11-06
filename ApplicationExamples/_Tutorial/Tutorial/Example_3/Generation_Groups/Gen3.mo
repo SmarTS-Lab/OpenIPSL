@@ -4,10 +4,10 @@ model Gen3
       Vn=16.5,
       xd=0.1460,
       xq=0.0969,
-      xd1=0.0608,
-      xq1=0.0969,
-      Td10=8.96,
-      Tq10=0.310,
+      x1d=0.0608,
+      x1q=0.0969,
+      T1d0=8.96,
+      T1q0=0.310,
       M=47.28));
   annotation (Documentation);
 end Gen3;

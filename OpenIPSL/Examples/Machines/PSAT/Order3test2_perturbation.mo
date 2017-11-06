@@ -9,11 +9,11 @@ model Order3test2_perturbation
     Sn=20,
     Vn=400,
     ra=0.01,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7,
     P_0=16.0352698692006,
     Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
@@ -103,12 +103,14 @@ equation
       points={{-3.192,-4.0917},{2.3974,-4.0917},{2.3974,2.9083},{5.308,2.9083}},
 
       color={0,0,127}));
+
   connect(step4.y, add4.u1) annotation (Line(
       visible=true,
       origin={-86.308,-19.6146},
       points={{-3.192,4.6146},{2.3974,4.6146},{2.3974,-2.3854},{5.308,-2.3854}},
 
       color={0,0,127}));
+
   connect(add1.y, add31.u1) annotation (Line(points={{-69.5,35},{-60,35},{-60,
           29},{-51,29}}, color={0,0,127}));
   connect(add2.y, add31.u2) annotation (Line(points={{-69.5,15},{-60,15},{-60,
@@ -132,13 +134,13 @@ equation
   connect(order3_Inputs_Outputs1.p, bus.p) annotation (Line(points={{-8.6886,-0.375609},
           {-3.86151,-0.375609},{-3.86151,0},{0,0}}, color={0,0,255}));
   connect(add31.y, order3_Inputs_Outputs1.vf) annotation (Line(points={{-39.5,
-          25},{-34,25},{-34,4.43659},{-29.9312,4.43659}}, color={0,0,127}));
+          25},{-34,25},{-34,4.43659},{-29.9311,4.43659}}, color={0,0,127}));
   connect(add32.y, order3_Inputs_Outputs1.pm) annotation (Line(points={{-39.5,-25.0001},
-          {-34,-25.0001},{-34,-5.22215},{-29.933,-5.22215}}, color={0,0,127}));
-  connect(order3_Inputs_Outputs1.vf0, add31.u3) annotation (Line(points={{-27.0344,
-          10.2112},{-27.0344,14},{-56,14},{-56,21},{-51,21}}, color={0,0,127}));
-  connect(order3_Inputs_Outputs1.pm0, add32.u1) annotation (Line(points={{-27.0344,
-          -10.9624},{-27.0344,-16},{-56,-16},{-56,-21},{-51.0001,-21}}, color={
+          {-34,-25.0001},{-34,-5.1878},{-29.9311,-5.1878}}, color={0,0,127}));
+  connect(order3_Inputs_Outputs1.vf0, add31.u3) annotation (Line(points={{-26.0689,
+          10.2112},{-26.0689,14},{-56,14},{-56,21},{-51,21}}, color={0,0,127}));
+  connect(order3_Inputs_Outputs1.pm0, add32.u1) annotation (Line(points={{-26.0689,
+          -10.9624},{-26.0689,-16},{-56,-16},{-56,-21},{-51.0001,-21}}, color={
           0,0,127}));
-  annotation (Documentation);
+  annotation (Documentation,experiment(StopTime=20));
 end Order3test2_perturbation;

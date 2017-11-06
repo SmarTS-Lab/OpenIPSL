@@ -118,11 +118,11 @@ model Loadtestexponentialrecovery
     angle_0=0,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7) annotation (Placement(visible=true, transformation(
         origin={3.3113,-20.7513},
         extent={{-10.0,-10.0},{10.0,10.0}},
@@ -199,18 +199,21 @@ equation
       points={{-9.86321,0.3396},{2.2878,0.3396},{2.2878,-0.3396},{5.2878,-0.3396}},
 
       color={0,0,127}));
+
   connect(step4.y, add4.u1) annotation (Line(
       visible=true,
       origin={-92.0911,-31.2646},
       points={{-10.1922,1.2646},{2.3974,1.2646},{2.3974,-1.26456},{5.39742,-1.26456}},
 
       color={0,0,127}));
+
   connect(add4.y, add32.u1) annotation (Line(
       visible=true,
       origin={-62.2878,-42.6625},
       points={{-9.86321,6.3396},{2.2878,6.3396},{2.2878,-6.3396},{5.2878,-6.3396}},
 
       color={0,0,127}));
+
   connect(add3.u2, sine3.y) annotation (Line(
       visible=true,
       origin={-95.6692,-69.1821},
@@ -247,18 +250,21 @@ equation
       points={{-10.1922,1.2646},{2.3974,1.2646},{2.3974,-1.26456},{5.39742,-1.26456}},
 
       color={0,0,127}));
+
   connect(add1.y, add31.u1) annotation (Line(
       visible=true,
       origin={-62.2878,28.3225},
       points={{-9.86321,6.3396},{2.2878,6.3396},{2.2878,-6.3396},{5.2878,-6.3396}},
 
       color={0,0,127}));
+
   connect(add2.y, add31.u2) annotation (Line(
       visible=true,
       origin={-62.2878,14.3225},
       points={{-9.86321,0.3396},{2.2878,0.3396},{2.2878,-0.3396},{5.2878,-0.3396}},
 
       color={0,0,127}));
+
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={25.2254,-18.2865},

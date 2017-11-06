@@ -1,18 +1,19 @@
 within PSAT_Systems.ThreeArea.BaseClasses;
 partial model BaseNetwork
+
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_2(
     Sn=900,
     Vn=1,
     ra=0,
     xd=1.8,
-    xd1=0.3,
+    x1d=0.3,
     M=7,
     V_0=1.05,
     angle_0=0.755059086011694,
     P_0=50.0000000000002,
     Q_0=21.9157659600514,
     D=2,
-    Td10=8,
+    T1d0=8,
     xq=1.7,
     V_b=1000)
     annotation (Placement(transformation(extent={{152,-10},{132,10}})));
@@ -22,7 +23,7 @@ partial model BaseNetwork
     ra=0,
     M=14,
     D=2,
-    xd1=0.3,
+    x1d=0.3,
     P_0=-99.9999999999999,
     Q_0=41.3913357523525,
     V_b=1000,

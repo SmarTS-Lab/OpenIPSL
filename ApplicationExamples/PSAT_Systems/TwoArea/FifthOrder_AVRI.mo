@@ -9,22 +9,16 @@ model FifthOrder_AVRI
     Te=0.4,
     Tr=0.05,
     Ae=0,
-    Be=0,
-    vref0=1.197897259627584,
-    vf0=1.041196707778194)
-    annotation (Placement(transformation(extent={{-150,26},{-130,46}})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.197897259627584) annotation (
-      Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-163,45})));
+    Be=0) annotation (Placement(transformation(extent={{-150,26},{-130,46}})));
 equation
-  connect(vref2.y, aVRTypeI.vref) annotation (Line(points={{-157.5,45},{-154,45},
-          {-154,41.6},{-152.2,41.6}}, color={0,0,127}));
-  connect(aVRTypeI.vf, order5.vf) annotation (Line(points={{-129,36.2},{-124.5,
-          36.2},{-124.5,35},{-120,35}}, color={0,0,127}));
-  connect(aVRTypeI.v, order5.v) annotation (Line(points={{-152.4,32.4},{-156,
-          32.4},{-156,14},{-96,14},{-96,33},{-99,33}}, color={0,0,127}));
+  connect(aVRTypeI.vf, order5.vf) annotation (Line(points={{-128,36},{-124.5,36},
+          {-124.5,35},{-122,35}}, color={0,0,127}));
+  connect(aVRTypeI.v, order5.v) annotation (Line(points={{-152,30},{-156,30},{
+          -156,14},{-96,14},{-96,33},{-99,33}}, color={0,0,127}));
+  connect(aVRTypeI.vref, aVRTypeI.vref0) annotation (Line(points={{-152,42},{
+          -158,42},{-164,42},{-164,56},{-140,56},{-140,48}}, color={0,0,127}));
+  connect(order5.vf0, aVRTypeI.vf0) annotation (Line(points={{-118,41},{-118,64},
+          {-172,64},{-172,6},{-140,6},{-140,24}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-180,-100},{180,100}},
           preserveAspectRatio=false)),

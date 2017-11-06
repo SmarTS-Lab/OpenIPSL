@@ -40,12 +40,12 @@ model EXST1 "SMIB system with one load and GENROE model"
     T_C=0.1)
     annotation (Placement(transformation(extent={{-58,-58},{-100,-28}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,
-          10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
+          10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
   connect(eXST1_1.EFD, gENROE.EFD) annotation (Line(points={{-101.05,-41.3333},
-          {-110,-41.3333},{-110,-10},{-99.6,-10}}, color={0,0,127}));
+          {-110,-41.3333},{-110,-10},{-104,-10}},color={0,0,127}));
   connect(eXST1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-58,-41.3333},
-          {-50,-41.3333},{-50,10},{-58.4,10}}, color={0,0,127}));
+          {-50,-41.3333},{-50,-6},{-58,-6}},color={0,0,127}));
   connect(const.y, eXST1_1.VOEL) annotation (Line(points={{-41,-46},{-71.65,-46},
           {-71.65,-58}}, color={0,0,127}));
   connect(eXST1_1.VOTHSG, eXST1_1.VOEL) annotation (Line(points={{-58,-33.8333},
@@ -54,10 +54,13 @@ equation
           -58},{-50,-46},{-71.65,-46},{-71.65,-58}}, color={0,0,127}));
   connect(eXST1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-58,-47.1667},
           {-54,-47.1667},{-54,-18},{-58.4,-18}}, color={0,0,127}));
-  connect(eXST1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-58,-52.1667},{-58,
-          -60},{-48,-60},{-48,-14},{-58.4,-14}}, color={0,0,127}));
+  connect(eXST1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-58,-52.1667},{
+          -58,-60},{-48,-60},{-48,-10},{-58,-10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end EXST1;

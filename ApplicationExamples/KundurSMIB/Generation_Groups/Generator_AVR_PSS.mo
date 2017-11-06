@@ -7,14 +7,14 @@ model Generator_AVR_PSS
     ra=0.003,
     xd=1.81,
     xq=1.76,
-    xd1=0.3,
-    xq1=0.65,
-    xd2=0.23,
-    xq2=0.25,
-    Td10=8,
-    Tq10=1,
-    Td20=0.03,
-    Tq20=0.07,
+    x1d=0.3,
+    x1q=0.65,
+    x2d=0.23,
+    x2q=0.25,
+    T1d0=8,
+    T1q0=1,
+    T2d0=0.03,
+    T2q0=0.07,
     M=7,
     D=0,
     P_0=P_0,
@@ -32,8 +32,6 @@ model Generator_AVR_PSS
     T2=1,
     T1=1,
     Te=0.0001,
-    vf0=2.420701642076922,
-    s0=0,
     Tr=0.015) annotation (Placement(transformation(extent={{-52,-4},{-12,36}})));
   OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(
     vsmax=0.2,
@@ -57,6 +55,8 @@ equation
     annotation (Line(points={{-63,8},{-63,8},{-56,8}}, color={0,0,127}));
   connect(pss.vSI, machine.w) annotation (Line(points={{-85,8},{-90,8},{-90,-58},
           {84,-58},{84,27},{77,27}}, color={0,0,127}));
+  connect(machine.vf0, avr.vf0) annotation (Line(points={{20,33},{-6,33},{-6,44},
+          {-32,44},{-32,34.3333}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(

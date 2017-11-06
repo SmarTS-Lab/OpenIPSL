@@ -9,13 +9,13 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Dialog(group="Power flow"));
   parameter Real Sn=100 "Power rating (MVA)"
     annotation (Dialog(group="Power flow"));
-  parameter Real V_b=400000 "Sending end bus voltage"
+  parameter Real V_b=40 "Sending end bus voltage (kV)"
     annotation (Dialog(group="Power flow"));
-  parameter Real Vn=400000 "Voltage rating (kV)"
+  parameter Real Vn=40 "Voltage rating (kV)"
     annotation (Dialog(group="Power flow"));
   parameter Real fn=SysData.fn "Frequency rating (Hz)"
     annotation (Dialog(group="Power flow"));
-  parameter Real kT=1 "Nominal tap ratio (V1/V2)"
+  parameter Real kT=1 "Nominal tap ratio (kV1/kV2)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real x=0.001 "Reactance (pu machine base)"
     annotation (Dialog(group="Transformer parameters"));

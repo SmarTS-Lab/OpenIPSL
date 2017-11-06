@@ -54,5 +54,5 @@ equation
       points={{9,-20},{40,-20},{40,1.33227e-15},{60,1.33227e-15}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Documentation);
+  annotation (Documentation,experiment(StopTime=20));
 end InductiveMotorI_SIMBOpenline_Test;

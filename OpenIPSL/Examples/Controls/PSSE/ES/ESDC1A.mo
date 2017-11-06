@@ -45,23 +45,25 @@ model ESDC1A "SMIB system with one load and GENROE model"
     V_RMAX=0)
     annotation (Placement(transformation(extent={{-60,-50},{-100,-36}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,
-          10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
-  connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-101.111,-43},{-106,
-          -43},{-106,-10},{-99.6,-10}}, color={0,0,127}));
-  connect(eSDC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-75.5556,-48.95},
-          {-75.5556,-58},{-48,-58},{-48,-14},{-58.4,-14}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSDC1A.ECOMP) annotation (Line(points={{-58.4,10},{-54,
-          10},{-54,-38},{-58,-38},{-58,-37.925},{-61.1111,-37.925}}, color={0,0,
-          127}));
-  connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-61.1111,-41.25},{-49.5556,
-          -41.25},{-49.5556,-41},{-38.5,-41}}, color={0,0,127}));
-  connect(eSDC1A.VOEL, const.y) annotation (Line(points={{-61.1111,-44.75},{-42,
-          -44.75},{-42,-41},{-38.5,-41}}, color={0,0,127}));
-  connect(eSDC1A.VUEL, const1.y) annotation (Line(points={{-61.1111,-48.25},{-54,
-          -48.25},{-54,-55},{-38.5,-55}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
+          10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
+  connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-101,-42.2222},{
+          -106,-42.2222},{-106,-10},{-104,-10}}, color={0,0,127}));
+  connect(eSDC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-47.2778},{
+          -60,-58},{-48,-58},{-48,-10},{-58,-10}}, color={0,0,127}));
+  connect(gENROE.ETERM, eSDC1A.ECOMP) annotation (Line(points={{-58,-6},{-54,-6},
+          {-54,-38},{-58,-38},{-58,-42.2222},{-60,-42.2222}}, color={0,0,127}));
+  connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-60,-38.7222},{
+          -49.5556,-38.7222},{-49.5556,-41},{-38.5,-41}}, color={0,0,127}));
+  connect(eSDC1A.VOEL, const.y) annotation (Line(points={{-73,-50},{-42,-50},{-42,
+          -41},{-38.5,-41}}, color={0,0,127}));
+  connect(eSDC1A.VUEL, const1.y) annotation (Line(points={{-67,-50},{-54,-50},{
+          -54,-55},{-38.5,-55}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-58,0},{-58,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end ESDC1A;

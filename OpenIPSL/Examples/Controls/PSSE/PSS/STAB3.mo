@@ -46,36 +46,38 @@ model STAB3
         origin={-68,-34})));
 equation
   connect(SCRX.VUEL, const.y) annotation (Line(
-      points={{-82.3,-16.4444},{-71.67,-16.4444},{-71.67,-34},{-70.2,-34}},
+      points={{-82.3,-20},{-71.67,-20},{-71.67,-34},{-70.2,-34}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(SCRX.VOEL, const.y) annotation (Line(
-      points={{-87.7,-16.4444},{-71.67,-16.4444},{-71.67,-34},{-70.2,-34}},
+      points={{-87.7,-20},{-71.67,-20},{-71.67,-34},{-70.2,-34}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, SCRX.EFD0) annotation (Line(
-      points={{-76.88,-8.1},{-74,-8.1},{-74,-22.6667},{-76,-22.6667}},
+      points={{-76.6,-5.5},{-74,-5.5},{-74,-26.2222},{-76,-26.2222}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-76.88,-10.7},
-          {-70,-10.7},{-70,-28},{-76,-28}}, color={0,0,127}));
-  connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-76,-34.2222},
-          {-66,-34.2222},{-66,7.5},{-76.88,7.5}}, color={0,0,127}));
-  connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-76.88,12.7},
-          {-58,12.7},{-58,23},{-64.475,23}}, color={0,0,127}));
-  connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-76.88,-2.9},
-          {-64,-2.9},{-64,10},{-48,10},{-48,37},{-64.475,37}}, color={0,0,127}));
+          {-70,-10.7},{-70,-31.5556},{-76,-31.5556}}, color={0,0,127}));
+  connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-76,-37.7778},
+          {-66,-37.7778},{-66,-2.9},{-76.6,-2.9}},color={0,0,127}));
+  connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-76.6,10.1},{
+          -58,10.1},{-58,23},{-64.475,23}}, color={0,0,127}));
+  connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-76.6,7.5},
+          {-64,7.5},{-64,10},{-48,10},{-48,37},{-64.475,37}},color={0,0,127}));
   connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-102.95,30},{
-          -112,30},{-112,7.5},{-105.72,7.5}}, color={0,0,127}));
-  connect(generator.EFD, SCRX.EFD) annotation (Line(points={{-105.72,-5.5},{-116,
-          -5.5},{-116,-34.2222},{-112.9,-34.2222}}, color={0,0,127}));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-76,-42.2222},{-74,-42.2222},
-          {-74,-36},{-71.67,-36},{-71.67,-34},{-70.2,-34}}, color={0,0,127}));
-  connect(generator.p, GEN1.p) annotation (Line(points={{-76.6,1},{-58.3,1},{-58.3,
+          -112,30},{-112,7.5},{-108.8,7.5}}, color={0,0,127}));
+  connect(generator.EFD, SCRX.EFD) annotation (Line(points={{-108.8,-5.5},{-116,
+          -5.5},{-116,-37.7778},{-112.9,-37.7778}}, color={0,0,127}));
+  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-76,-45.7778},{-74,
+          -45.7778},{-74,-36},{-71.67,-36},{-71.67,-34},{-70.2,-34}}, color={0,
+          0,127}));
+  connect(generator.p, GEN1.p) annotation (Line(points={{-78,1},{-58.3,1},{-58.3,
           0},{-40,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{
             100,80}})),
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
-    Documentation);
+    Documentation,
+    experiment(StopTime=10));
 end STAB3;

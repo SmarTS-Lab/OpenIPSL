@@ -60,30 +60,27 @@ partial model SMIBpartial "SMIB system with one load"
     annotation (Placement(transformation(extent={{30,-40},{50,-20}})));
 equation
   connect(GEN1.p, pwLine.p)
-    annotation (Line(points={{-40,0},{-40,0},{-27,0}}, color={0,0,255}));
+    annotation (Line(points={{-40,0},{-40,0},{-25.4,0}}, color={0,0,255}));
   connect(pwLine.n, LOAD.p)
-    annotation (Line(points={{-13,0},{-6.5,0},{0,0}}, color={0,0,255}));
-  connect(pwLine3.p, LOAD.p)
-    annotation (Line(points={{13,-30},{4,-30},{4,0},{0,0}}, color={0,0,255}));
+    annotation (Line(points={{-14.6,0},{-14.6,0},{0,0}}, color={0,0,255}));
+  connect(pwLine3.p, LOAD.p) annotation (Line(points={{14.6,-30},{4,-30},{4,0},
+          {0,0}},color={0,0,255}));
   connect(constantLoad.p, LOAD.p)
-    annotation (Line(points={{2,-39.4},{2,0},{0,0}}, color={0,0,255}));
+    annotation (Line(points={{2,-40},{2,0},{0,0}}, color={0,0,255}));
   connect(pwLine1.p, LOAD.p)
-    annotation (Line(points={{33,30},{4,30},{4,0},{0,0}}, color={0,0,255}));
-  connect(GEN2.p, gENCLS.p) annotation (Line(points={{80,0},{96.6,0},{96.6,-0.180432}},
-        color={0,0,255}));
-  connect(pwLine4.n, GEN2.p) annotation (Line(points={{67,-30},{76,-30},{76,0},
+    annotation (Line(points={{34.6,30},{4,30},{4,0},{0,0}}, color={0,0,255}));
+  connect(GEN2.p, gENCLS.p)
+    annotation (Line(points={{80,0},{98,0},{98,0}}, color={0,0,255}));
+  connect(pwLine4.n, GEN2.p) annotation (Line(points={{65.4,-30},{76,-30},{76,0},
           {80,0}}, color={0,0,255}));
-  connect(pwLine1.n, GEN2.p)
-    annotation (Line(points={{47,30},{76,30},{76,0},{80,0}}, color={0,0,255}));
+  connect(pwLine1.n, GEN2.p) annotation (Line(points={{45.4,30},{76,30},{76,0},
+          {80,0}},color={0,0,255}));
   connect(FAULT.p, pwLine4.p)
-    annotation (Line(points={{40,-30},{53,-30}}, color={0,0,255}));
+    annotation (Line(points={{40,-30},{54.6,-30}}, color={0,0,255}));
   connect(FAULT.p, pwLine3.n)
-    annotation (Line(points={{40,-30},{27,-30}}, color={0,0,255}));
+    annotation (Line(points={{40,-30},{25.4,-30}}, color={0,0,255}));
   connect(pwFault.p, pwLine4.p)
-    annotation (Line(points={{44,-53},{44,-30},{53,-30}}, color={0,0,255}));
-  annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+    annotation (Line(points={{44,-53},{44,-30},{54.6,-30}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+            -100},{100,100}})), Documentation);
 end SMIBpartial;

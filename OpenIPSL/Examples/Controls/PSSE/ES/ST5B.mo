@@ -50,24 +50,27 @@ model ST5B "SMIB system with one load and GENROE model"
     Xppq=0.2)
     annotation (Placement(transformation(extent={{-112,-20},{-72,20}})));
 equation
-  connect(PSS_off.y, sT5B.VOTHSG) annotation (Line(points={{-127.4,-96},{-64,-96},
-          {-64,-50.2222}}, color={0,0,127}));
+  connect(PSS_off.y, sT5B.VOTHSG) annotation (Line(points={{-127.4,-96},{-64,
+          -96},{-64,-50.2222}}, color={0,0,127}));
   connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-127.4,-116},{-83.5,-116},
           {-83.5,-76}}, color={0,0,127}));
   connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-127.4,-136},{-74.5,-136},
           {-74.5,-76}}, color={0,0,127}));
-  connect(gENROE.ETERM, sT5B.ECOMP) annotation (Line(points={{-70.4,10},{-50,10},
-          {-50,-58.2222},{-64,-58.2222}}, color={0,0,127}));
+  connect(gENROE.ETERM, sT5B.ECOMP) annotation (Line(points={{-70,-6},{-50,-6},
+          {-50,-58.2222},{-64,-58.2222}},color={0,0,127}));
   connect(sT5B.XADIFD, gENROE.XADIFD) annotation (Line(points={{-64,-63.5556},{
           -60,-63.5556},{-60,-18},{-70.4,-18}}, color={0,0,127}));
   connect(sT5B.EFD0, gENROE.EFD0) annotation (Line(points={{-64,-69.7778},{-56,
-          -69.7778},{-56,-14},{-70.4,-14}}, color={0,0,127}));
-  connect(sT5B.EFD, gENROE.EFD) annotation (Line(points={{-125.5,-58.2222},{-128,
-          -58.2222},{-128,-10},{-111.6,-10}}, color={0,0,127}));
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-111.6,10},{-128,
-          10},{-128,30},{-60,30},{-60,-6},{-70.4,-6}}, color={0,0,127}));
+          -69.7778},{-56,-10},{-70,-10}}, color={0,0,127}));
+  connect(sT5B.EFD, gENROE.EFD) annotation (Line(points={{-125.5,-58.2222},{
+          -128,-58.2222},{-128,-10},{-116,-10}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-116,10},{-128,
+          10},{-128,30},{-60,30},{-60,10},{-70,10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-70,0},{-55,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+    annotation (Line(points={{-72,0},{-72,0},{-40,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end ST5B;

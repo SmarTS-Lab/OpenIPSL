@@ -45,24 +45,27 @@ model EXAC1 "SMIB system with one load and GENROE model"
     T_C=0.004)
     annotation (Placement(transformation(extent={{-60,-50},{-98,-24}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,
-          10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
-  connect(eXAC1_1.EFD, gENROE.EFD) annotation (Line(points={{-98.95,-37},{-110,
-          -37},{-110,-10},{-99.6,-10}}, color={0,0,127}));
-  connect(eXAC1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-60.95,-27.25},
-          {-56,-27.25},{-56,-18},{-58.4,-18}}, color={0,0,127}));
-  connect(eXAC1_1.VOTHSG, const.y) annotation (Line(points={{-60.95,-30.5},{-48,
-          -30.5},{-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.VUEL, const.y) annotation (Line(points={{-61.14,-41.875},{-48,
-          -42},{-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.VOEL, const.y) annotation (Line(points={{-60.95,-45.125},{-48,
-          -44},{-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-60.95,-37},{-52,
-          -37},{-52,10},{-58.4,10}}, color={0,0,127}));
-  connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-60.95,-48.2125},
-          {-54,-48.2125},{-54,-14},{-58.4,-14}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
+          10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
+  connect(eXAC1_1.EFD, gENROE.EFD) annotation (Line(points={{-98.95,-35.5556},{
+          -110,-35.5556},{-110,-10},{-104,-10}}, color={0,0,127}));
+  connect(eXAC1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-60,-40.6111},
+          {-56,-40.6111},{-56,-18},{-58.4,-18}}, color={0,0,127}));
+  connect(eXAC1_1.VOTHSG, const.y) annotation (Line(points={{-60,-29.0556},{-48,
+          -29.0556},{-48,-46},{-41,-46}}, color={0,0,127}));
+  connect(eXAC1_1.VUEL, const.y) annotation (Line(points={{-66.65,-50},{-48,-50},
+          {-48,-46},{-41,-46}}, color={0,0,127}));
+  connect(eXAC1_1.VOEL, const.y) annotation (Line(points={{-72.35,-50},{-48,-50},
+          {-48,-46},{-41,-46}}, color={0,0,127}));
+  connect(eXAC1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-60,-35.5556},
+          {-52,-35.5556},{-52,-6},{-58,-6}},color={0,0,127}));
+  connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-44.9444},{
+          -54,-44.9444},{-54,-10},{-58,-10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end EXAC1;

@@ -10,11 +10,11 @@ model TGTypeIII_test
     Sn=20,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7) annotation (Placement(visible=true, transformation(
         origin={-35.3443,12.6244},
         extent={{-16.6557,-16.6244},{16.6557,16.6244}},
@@ -85,16 +85,16 @@ equation
   connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf) annotation (
       Line(
       points={{-48.6689,30.9112},{-12,30.9112},{-12,36},{-62,36},{-62,20.9366},
-          {-52,20.9366}},
+          {-55.3311,20.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.w, tGTypeIII1.w) annotation (Line(
-      points={{-17.023,27.5864},{-10,27.5864},{-10,-12},{-98,-12},{-98,5},{-87.78,
-          5}},
+      points={{-17.023,27.5864},{-10,27.5864},{-10,-12},{-98,-12},{-98,5},{
+          -87.78,5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGTypeIII1.Pm, order3_Inputs_Outputs1.pm) annotation (Line(
-      points={{-64.46,5.36},{-61.16,5.36},{-61.16,4.3122},{-52,4.3122}},
+      points={{-64.46,5.36},{-61.16,5.36},{-61.16,4.3122},{-55.3311,4.3122}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine.y, add.u1) annotation (Line(
@@ -106,28 +106,28 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{21.5301,12.3286},{22,12.3286},{22,-14.6714},{22.5297,-14.6714}},
-
+      points={{18.8634,12.3286},{22,12.3286},{22,-14.6714},{19.863,-14.6714}},
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{22.5297,-14.6714},{28,-14.6714},{28,-14},{23.8333,-14}},
+      points={{19.863,-14.6714},{28,-14.6714},{28,-14},{26.5,-14}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, infiniteBus.p) annotation (Line(
-      points={{47.1667,-14},{60.6,-14}},
+      points={{44.5,-14},{48,-14}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(
-      points={{-17.023,12.7069},{-17.5115,12.7069},{-17.5115,12.3286},{-1.80327,
+      points={{-18.6886,12.6244},{-17.5115,12.6244},{-17.5115,12.3286},{0.8634,
           12.3286}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{-0.803667,-14.6714},{-4,-14.6714},{-4,12.3286},{-1.80327,12.3286}},
-
+      points={{1.863,-14.6714},{-4,-14.6714},{-4,12.3286},{0.8634,12.3286}},
       color={0,0,255},
       smooth=Smooth.None));
+
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics={Text(
           extent={{44,66},{80,38}},
