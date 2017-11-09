@@ -51,8 +51,8 @@ equation
           {-58,-43.5556},{-58,-6},{-66,-6}}, color={0,0,127}));
   connect(iEEET2_1.EFD0, gENROE.EFD0) annotation (Line(points={{-74,-52.9444},{
           -56,-52.9444},{-56,-10},{-66,-10}}, color={0,0,127}));
-  connect(iEEET2_1.VOTHSG, const.y) annotation (Line(points={{-74,-37.0556},{
-          -55.3333,-37.0556},{-55.3333,-40},{-49,-40}}, color={0,0,127}));
+  connect(iEEET2_1.VOTHSG, const.y) annotation (Line(points={{-74,-37.0556},{-55.3333,
+          -37.0556},{-55.3333,-40},{-49,-40}}, color={0,0,127}));
   connect(iEEET2_1.VOEL, const.y) annotation (Line(points={{-84.4,-58},{-50,-58},
           {-50,-40},{-49,-40}}, color={0,0,127}));
   connect(iEEET2_1.VUEL, const.y) annotation (Line(points={{-79.6,-58},{-50,-58},

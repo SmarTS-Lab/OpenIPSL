@@ -29,24 +29,20 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={
-        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
-        Text(
+            100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
+          lineColor={0,0,255}),Text(
           extent={{-90,80},{-58,60}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="v"),
-        Text(
+          textString="v"),Text(
           extent={{-90,-44},{-62,-60}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="p"),
-        Text(
+          textString="p"),Text(
           extent={{-88,16},{-60,0}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="q"),
-        Text(
+          textString="q"),Text(
           extent={{64,16},{92,0}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,

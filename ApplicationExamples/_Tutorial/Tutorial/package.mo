@@ -18,5 +18,5 @@ annotation (
         fillColor={95,95,95},
         fillPattern=FillPattern.Solid)}),
   Documentation,
-  uses(Modelica(version="3.2.2"), OpenIPSL(version="1.0.0")));
+  uses(Modelica(version="3.2.2"), OpenIPSL(version="1.5.0")));
 end Tutorial;

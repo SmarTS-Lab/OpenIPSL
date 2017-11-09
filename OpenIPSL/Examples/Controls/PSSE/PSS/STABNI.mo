@@ -63,9 +63,8 @@ equation
           8.1},{-52,8.1},{-52,22},{-52,21},{-56.475,21}}, color={0,0,127}));
   connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-68.88,-12.7},
           {-62,-12.7},{-62,-33.5556},{-68,-33.5556}}, color={0,0,127}));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-68,-47.7778},{-64,
-          -47.7778},{-64,-38},{-64,-37.2},{-64,-36},{-62.2,-36}}, color={0,0,
-          127}));
+  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-68,-47.7778},{-64,-47.7778},
+          {-64,-38},{-64,-37.2},{-64,-36},{-62.2,-36}}, color={0,0,127}));
   connect(generator.PMECH, HYGOV.PMECH0) annotation (Line(points={{-100.8,5.5},
           {-110,5.5},{-110,14},{-48,14},{-48,35},{-56.475,35}},color={0,0,127}));
   connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-104.9,-39.7778},{

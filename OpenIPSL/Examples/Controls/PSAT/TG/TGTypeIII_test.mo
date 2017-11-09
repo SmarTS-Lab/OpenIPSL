@@ -89,8 +89,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.w, tGTypeIII1.w) annotation (Line(
-      points={{-17.023,27.5864},{-10,27.5864},{-10,-12},{-98,-12},{-98,5},{
-          -87.78,5}},
+      points={{-17.023,27.5864},{-10,27.5864},{-10,-12},{-98,-12},{-98,5},{-87.78,
+          5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGTypeIII1.Pm, order3_Inputs_Outputs1.pm) annotation (Line(

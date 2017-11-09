@@ -211,12 +211,14 @@ equation
       points={{-11.3069,9.2968},{6.2068,9.2968},{6.2068,-9.2968},{20.0547,-9.2969}},
 
       color={0,0,127}));
+
   connect(add3.u1, Ipcmd) annotation (Line(
       visible=true,
       origin={-147.4735,61.7648},
       points={{15.1422,0.1706},{2.7693,0.1706},{2.7693,-0.1705},{-20.6807,-0.1705}},
 
       color={0,0,127}));
+
   connect(Efd, add2.u1) annotation (Line(
       visible=true,
       origin={-142.5385,92.0184},
@@ -229,6 +231,7 @@ equation
       points={{-3.4882,-0.0312},{0.1627,-0.0312},{0.1627,0.0312},{3.1627,0.0312}},
 
       color={0,0,127}));
+
   connect(add7.u1, add4.y) annotation (Line(
       visible=true,
       origin={62.1454,46.0725},
@@ -252,6 +255,7 @@ equation
       points={{-27.1865,16.35},{15.3823,17.4718},{15.3823,-17.4718},{40.3427,-18.5937}},
 
       color={0,0,127}));
+
   connect(integrator3.y, product4.u1) annotation (Line(
       visible=true,
       origin={-51.7474,76.9688},
@@ -264,36 +268,42 @@ equation
       points={{4.0578,71.9011},{-1.6755,70.5781},{-1.6755,-70.5781},{-8.6443,-69.2552}},
 
       color={0,0,127}));
+
   connect(product6.u2, sin1.y) annotation (Line(
       visible=true,
       origin={-15.5286,-35.5782},
       points={{3.7932,44.9845},{-1.6755,45.5782},{-1.6755,-45.5782},{-8.9089,-46.1718}},
 
       color={0,0,127}));
+
   connect(product1.y, add1.u1) annotation (Line(
       visible=true,
       origin={13.1104,-57.5985},
       points={{-3.6812,-0.1047},{0.8938,-0.1047},{0.8938,0.1047},{1.8938,0.1047}},
 
       color={0,0,127}));
+
   connect(product2.y, add1.u2) annotation (Line(
       visible=true,
       origin={13.1766,-75.8953},
       points={{-3.4829,-6.4015},{0.8276,-6.4015},{0.8276,6.4015},{1.8276,6.4015}},
 
       color={0,0,127}));
+
   connect(cos1.y, product1.u2) annotation (Line(
       visible=true,
       origin={-17.7875,-60.1318},
       points={{-6.65,3.5714},{1.2167,3.5714},{1.2167,-3.5714},{4.2167,-3.5714}},
 
       color={0,0,127}));
+
   connect(sin1.y, product2.u1) annotation (Line(
       visible=true,
       origin={-17.5891,-79.0234},
       points={{-6.8484,-2.7266},{1.2828,-2.7266},{1.2828,2.7266},{4.2828,2.7266}},
 
       color={0,0,127}));
+
   connect(add1.y, gain1.u) annotation (Line(
       visible=true,
       origin={-45.4625,-77.6549},
@@ -318,24 +328,28 @@ equation
       points={{-3.6813,-0.1047},{0.8938,-0.1047},{0.8938,0.1047},{1.8937,0.1047}},
 
       color={0,0,127}));
+
   connect(product3.y, add4.u2) annotation (Line(
       visible=true,
       origin={14.7474,71.8078},
       points={{-3.4828,-6.4015},{0.8276,-6.4015},{0.8276,6.4016},{1.8276,6.4016}},
 
       color={0,0,127}));
+
   connect(product5.y, add5.u1) annotation (Line(
       visible=true,
       origin={14.6813,40.1047},
       points={{-3.6813,-0.1047},{0.8938,-0.1047},{0.8938,0.1047},{1.8937,0.1047}},
 
       color={0,0,127}));
+
   connect(product6.y, add5.u2) annotation (Line(
       visible=true,
       origin={14.7474,21.8078},
       points={{-3.4828,-6.4015},{0.8276,-6.4015},{0.8276,6.4016},{1.8276,6.4016}},
 
       color={0,0,127}));
+
   connect(integrator1.y, sin1.u) annotation (Line(
       visible=true,
       origin={-51.125,-75.875},
@@ -347,6 +361,7 @@ equation
       points={{-5.0626,-6.7198},{0.6875,-6.7198},{0.6875,6.7198},{3.6875,6.7198}},
 
       color={0,0,127}));
+
   connect(gain1.y, limiter1.u) annotation (Line(
       visible=true,
       origin={-112.3448,-70.0},
@@ -375,6 +390,7 @@ equation
       points={{-3.8001,-0.2073},{0.2667,-0.2073},{0.2667,0.2073},{3.2666,0.2073}},
 
       color={0,0,127}));
+
   connect(add2.y, integrator2.u) annotation (Line(
       visible=true,
       origin={-104.3136,90.0},
