@@ -52,7 +52,7 @@ partial model BaseTest
         origin={94,24},
         extent={{-6,-6},{6,6}},
         rotation=90)));
-  Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
+  Electrical.Loads.PSAT.LOADPQ_variation pwLoadPQ2(
     P_0=8,
     Q_0=6,
     V_0=1,

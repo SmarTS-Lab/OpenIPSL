@@ -1,38 +1,15 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order2 "Second Order Synchronous Machine with Inputs and Outputs"
-  import Modelica.Constants.pi;
-  extends BaseClasses.baseMachine(
-    delta(start=delta0),
-    pe(start=pm00),
-    pm(start=pm00),
-    pm0(start=pm00),
-    vf(start=vf00),
-    vf0(start=vf00),
-    vq(start=vq0),
-    vd(start=vd0),
-    iq(start=iq0),
-    id(start=id0));
+  extends BaseClasses.baseMachine(vf(start=vf00), xq0=x1d);
 protected
-  parameter Real c1=Ra*K "CONSTANT";
-  parameter Real c2=x1d*K "CONSTANT";
-  parameter Real c3=x1d*K " CONSTANT";
-  parameter Real K=1/(Ra*Ra + x1d*x1d) "CONSTANT";
-  parameter Real delta0=atan2(vi0 + Ra*ii0 + x1d*ir0, vr0 + Ra*ir0 - x1d*ii0)
-    "Initial rotor angle";
-  parameter Real pm00=(vq0 + Ra*iq0)*iq0 + (vd0 + Ra*id0)*id0 "Initialitation";
-  parameter Real vf00=vq0 + Ra*iq0 + x1d*id0 "Initialitation";
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
-    "Initialitation";
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0)
-    "Initialitation";
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
-    "Initialitation";
+  parameter Real K=1/(ra^2 + x1d^2) "a constant for scaling";
+  parameter Real c1=ra*K "scaled ra";
+  parameter Real c2=x1d*K "scaled x'd";
+  parameter Real c3=x1d*K "scaled x'd";
+  parameter Real vf00=V_MBtoSB*(vq0 + ra*iq0 + x1d*id0) "Init. val. (pu, SB)";
 equation
-  id = (-c1*vd) - c3*vq + vf*c3;
-  iq = c2*vd - c1*vq + vf*c1;
-  pm0 = pm00;
+  id = -c1*vd - c3*vq + vf_MB*c3;
+  iq = c2*vd - c1*vq + vf_MB*c1;
   vf0 = vf00;
   annotation (Documentation(info="<html> 
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"> 

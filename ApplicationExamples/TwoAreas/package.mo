@@ -1,5 +1,5 @@
 package TwoAreas "2 areas test system from Klein, Rogers, and Kundur"
-annotation (uses(OpenIPSL(version="1.0.0"), Modelica(version="3.2.2")),
+annotation (uses(OpenIPSL(version="1.5.0"), Modelica(version="3.2.2")),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

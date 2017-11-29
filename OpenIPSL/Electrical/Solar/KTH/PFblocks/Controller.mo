@@ -149,6 +149,7 @@ equation
       points={{-4.2188,2.9022},{-2.9271,2.9022},{-2.9271,-2.9021},{10.0729,-2.9021}},
 
       color={0,0,127}));
+
   connect(uac, simpleLagg1.yi) annotation (Line(
       visible=true,
       origin={-156.3279,60.0},
@@ -160,6 +161,7 @@ equation
       points={{-10.0948,0.0909},{2.3649,0.0909},{2.3649,-0.091},{5.3649,-0.091}},
 
       color={0,0,127}));
+
   connect(add2.y, PI3.yi) annotation (Line(
       visible=true,
       origin={-80.25,47.8645},
@@ -171,24 +173,28 @@ equation
       points={{-51.779,5.3267},{16.2596,5.3267},{16.2596,-5.3267},{19.2596,-5.3267}},
 
       color={0,0,127}));
+
   connect(gain2.y, iq_ref) annotation (Line(
       visible=true,
       origin={97.75,-6.3243},
       points={{-76.75,53.6756},{7.25,53.6757},{7.25,-53.6757},{62.25,-53.6757}},
 
       color={0,0,127}));
+
   connect(Vdcref, add1.u2) annotation (Line(
       visible=true,
       origin={-116.341,-76.258},
       points={{-52.0232,-5.2581},{16.341,-5.258},{16.341,5.258},{19.341,5.258}},
 
       color={0,0,127}));
+
   connect(add2.u2, Vacref) annotation (Line(
       visible=true,
       origin={-141.1202,36.0979},
       points={{34.1202,6.0978},{-3.5567,6.0979},{-3.5567,-6.0979},{-27.0067,-6.0979}},
 
       color={0,0,127}));
+
   connect(limiter2.y, gain2.u) annotation (Line(
       visible=true,
       origin={-8.7701,47.3513},

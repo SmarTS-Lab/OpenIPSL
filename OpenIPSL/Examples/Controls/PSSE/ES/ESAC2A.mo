@@ -48,7 +48,7 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
 equation
   connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
-      points={{-74,-61.0556},{-60,-61.0556},{-60,-9.5},{-78.88,-9.5}},
+      points={{-74,-61.0556},{-60,-61.0556},{-60,-6.5},{-78.6,-6.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const.y, eSAC2A.VOTHSG) annotation (Line(
@@ -68,18 +68,22 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PELEC, eSAC2A.ECOMP) annotation (Line(
-      points={{-78.88,-6.5},{-64,-6.5},{-64,-44.4444},{-74,-44.4444}},
+      points={{-78.6,5.5},{-64,5.5},{-64,-44.4444},{-74,-44.4444}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
-      points={{-78.88,-3.5},{-74,-3.5},{-74,20},{-110,20},{-110,8.5},{-107.72,
-          8.5}},
+      points={{-78.6,8.5},{-74,8.5},{-74,20},{-110,20},{-110,8.5},{-110.8,8.5}},
+
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-44.4444},
-          {-150,-44.4444},{-150,-6.5},{-107.72,-6.5}}, color={0,0,127}));
-  connect(generator.p, GEN1.p) annotation (Line(points={{-78.6,1},{-58.3,1},{-58.3,
+          {-150,-44.4444},{-150,-6.5},{-110.8,-6.5}}, color={0,0,127}));
+  connect(generator.p, GEN1.p) annotation (Line(points={{-80,1},{-58.3,1},{-58.3,
           0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end ESAC2A;

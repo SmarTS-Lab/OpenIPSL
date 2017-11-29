@@ -7,17 +7,17 @@ partial model BaseOrder4
     V_b=1000,
     ra=0,
     xd=1.8,
-    xd1=0.3,
+    x1d=0.3,
     M=21,
     V_0=1.05,
     angle_0=0.820649645221365,
     P_0=49.9999999999999,
     Q_0=19.7946892114272,
     D=2,
-    Tq10=0.4,
+    T1q0=0.4,
     xq=1.7,
-    xq1=0.5,
-    Td10=8) annotation (Placement(transformation(extent={{-140,68},{-116,92}})));
+    x1q=0.5,
+    T1d0=8) annotation (Placement(transformation(extent={{-140,68},{-116,92}})));
 equation
   connect(order4_1.p, B800.p) annotation (Line(points={{-114.8,80.0596},{-107.4,
           80.0596},{-107.4,80},{-100,80}}, color={0,0,255}));

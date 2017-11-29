@@ -44,24 +44,27 @@ model ESDC2A "SMIB system with one load and GENROE model"
     V_RMAX=0,
     K_E=0) annotation (Placement(transformation(extent={{-62,-50},{-104,-32}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-103.6,10},{-114,
-          10},{-114,26},{-52,26},{-52,-6},{-62.4,-6}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-108,10},{-114,
+          10},{-114,26},{-52,26},{-52,10},{-62,10}}, color={0,0,127}));
   connect(eSDC2A.EFD, gENROE.EFD) annotation (Line(points={{-105.05,-40},{-112,
-          -40},{-112,-10},{-103.6,-10}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSDC2A.ECOMP) annotation (Line(points={{-62.4,10},{-56,
-          10},{-56,-40},{-62,-40}}, color={0,0,127}));
+          -40},{-112,-10},{-108,-10}}, color={0,0,127}));
+  connect(gENROE.ETERM, eSDC2A.ECOMP) annotation (Line(points={{-62,-6},{-56,-6},
+          {-56,-40},{-62,-40}}, color={0,0,127}));
   connect(eSDC2A.VOTHSG, const.y) annotation (Line(points={{-62,-35.5},{-46,-35.5},
           {-46,-41},{-42.5,-41}}, color={0,0,127}));
   connect(eSDC2A.VT, eSDC2A.ECOMP) annotation (Line(points={{-62,-43.5},{-62,-56},
           {-56,-56},{-56,-40},{-62,-40}}, color={0,0,127}));
   connect(eSDC2A.EFD0, gENROE.EFD0) annotation (Line(points={{-62,-46.5},{-62,-54},
-          {-58,-54},{-58,-14},{-62.4,-14}}, color={0,0,127}));
+          {-58,-54},{-58,-10},{-62,-10}}, color={0,0,127}));
   connect(eSDC2A.VOEL, const.y) annotation (Line(points={{-75.65,-50},{-46,-50},
           {-46,-41},{-42.5,-41}}, color={0,0,127}));
   connect(const1.y, eSDC2A.VUEL) annotation (Line(points={{-42.5,-55},{-50,-55},
           {-50,-50},{-69.35,-50}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-62,0},{-51,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+    annotation (Line(points={{-64,0},{-64,0},{-40,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end ESDC2A;

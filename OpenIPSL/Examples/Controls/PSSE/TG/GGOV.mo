@@ -65,20 +65,24 @@ model GGOV "three phase to ground fault test of GGOV"
         origin={-68,40})));
 equation
   connect(gGOV1pele.PELEC, generator.PELEC) annotation (Line(
-      points={{-43.2414,48.5304},{-34,48.5304},{-34,-7.5},{-58.4,-7.5}},
+      points={{-47.3793,46.9652},{-34,46.9652},{-34,6.1},{-58,6.1}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, generator.EFD) annotation (Line(
-      points={{-58.4,-10.9},{-52,-10.9},{-52,-30},{-102,-30},{-102,-7.5},{-99.6,
-          -7.5}},
+      points={{-58,-7.5},{-52,-7.5},{-52,-30},{-102,-30},{-102,-7.5},{-104,-7.5}},
+
       color={0,0,127},
       smooth=Smooth.None));
-  connect(gGOV1pele.PMECH, generator.PMECH) annotation (Line(points={{-84.5517,
-          40.7826},{-106,40.7826},{-106,9.5},{-99.6,9.5}}, color={0,0,127}));
-  connect(generator.SPEED, gGOV1pele.SPEED) annotation (Line(points={{-58.4,
-          16.3},{-40,16.3},{-40,31.3913},{-43.3103,31.3913}}, color={0,0,127}));
-  connect(generator.p, GEN1.p) annotation (Line(points={{-58,1},{-50,1},{-50,0},
+
+  connect(gGOV1pele.PMECH, generator.PMECH) annotation (Line(points={{-88.6897,
+          39.2174},{-106,39.2174},{-106,9.5},{-104,9.5}}, color={0,0,127}));
+  connect(generator.SPEED, gGOV1pele.SPEED) annotation (Line(points={{-58,12.9},
+          {-40,12.9},{-40,29.8261},{-47.4483,29.8261}}, color={0,0,127}));
+  connect(generator.p, GEN1.p) annotation (Line(points={{-60,1},{-50,1},{-50,0},
           {-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end GGOV;

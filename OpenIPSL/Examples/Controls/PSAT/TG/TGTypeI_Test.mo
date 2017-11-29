@@ -73,7 +73,7 @@ model TGTypeI_Test
     Sn=370,
     Vn=200,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0) annotation (Placement(transformation(extent={{-68,-12},{12,66}})));
   parameter Real p0=0.160352698692006 "Power flow, node active power";
@@ -94,48 +94,48 @@ equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
       origin={101.213,29},
-      points={{-10.5463,2},{3.0708,2},{3.0708,8},{21.07,8}}));
+      points={{-13.213,2},{3.0708,2},{3.0708,7},{21.07,7}}));
   connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
       visible=true,
       origin={86,23.5},
-      points={{0,-7.5},{0,7.5}}));
+      points={{2,-7.5},{2,-4},{4,-4},{4,0},{2,0},{2,7.5}}));
   connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(
       visible=true,
       origin={72,23.5},
-      points={{0,7.5},{0,-7.5}}));
+      points={{-2,7.5},{-2,4},{-4,4},{-4,0},{-2,0},{-2,-7.5}}));
   connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={107.5,-18.5},
-      points={{-11.8333,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
+      points={{-14.5,-0.5},{3.5,-0.5},{3.5,9.5},{16.5,9.5}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{55.6667,26},{64,26},{64,31},{67.3333,31}},
+      points={{53,26},{64,26},{64,31},{70,31}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{55.6667,-4},{64,-4},{64,-19},{72.3333,-19}},
+      points={{53,-4},{64,-4},{64,-19},{75,-19}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{55.6667,26},{55.6667,20},{56,20},{56,12},{55.6667,12},{55.6667,-4}},
-
+      points={{53,26},{53,20},{56,20},{56,12},{53,12},{53,-4}},
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(pwFault.p, pwLine3.n) annotation (Line(
-      points={{113.333,-42},{104,-42},{104,-19},{95.6667,-19}},
+      points={{113.333,-42},{104,-42},{104,-19},{93,-19}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.p, pwLine2.p) annotation (Line(
-      points={{16,27.1936},{27,27.1936},{27,26},{32.3333,26}},
+      points={{12,27},{27,27},{27,26},{35,26}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{32.3333,-4},{32.3333,4},{32,4},{32,12},{32.3333,12},{32.3333,26}},
-
+      points={{35,-4},{35,4},{32,4},{32,12},{35,12},{35,26}},
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(order6Type2_Inputs_Outputs.vf0, order6Type2_Inputs_Outputs.vf)
     annotation (Line(
-      points={{-60,69.9},{28,69.9},{28,80},{-88,80},{-88,46.5},{-68,46.5}},
+      points={{-60,69.9},{28,69.9},{28,80},{-88,80},{-88,46.5},{-76,46.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.w, tGTypeI.w) annotation (Line(
@@ -143,12 +143,12 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGTypeI.pm, order6Type2_Inputs_Outputs.pm) annotation (Line(
-      points={{-56.175,-39.14},{-88,-39.14},{-88,7.5},{-68,7.5}},
+      points={{-56.175,-39.14},{-88,-39.14},{-88,7.5},{-76,7.5}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
+    Diagram(coordinateSystem(extent={{-100,-100},{100,100}},
           preserveAspectRatio=false), graphics),
-    Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation);
 end TGTypeI_Test;

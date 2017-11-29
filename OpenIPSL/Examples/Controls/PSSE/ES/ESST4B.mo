@@ -47,7 +47,7 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
     annotation (Placement(transformation(extent={{-40,-48},{-56,-32}})));
 equation
   connect(generator.p, eSST4B.Gen_terminal) annotation (Line(
-      points={{-90.6,1},{-66.7,1},{-66.7,4.33333},{-75.9,4.33333}},
+      points={{-92,1},{-66.7,1},{-66.7,4.33333},{-75.9,4.33333}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(const.y, eSST4B.VOTHSG) annotation (Line(
@@ -55,7 +55,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, eSST4B.EFD0) annotation (Line(
-      points={{-90.88,-10.9},{-90,-10.9},{-90,-10.1111},{-78,-10.1111}},
+      points={{-90.6,-7.5},{-90,-7.5},{-90,-10.1111},{-78,-10.1111}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const5.y, eSST4B.VUEL) annotation (Line(
@@ -63,13 +63,14 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
-      points={{-90.88,-4.1},{-70,-4.1},{-70,22},{-102,22},{-102,9.5},{-119.72,
-          9.5}},
+      points={{-90.6,9.5},{-70,9.5},{-70,22},{-102,22},{-102,9.5},{-122.8,9.5}},
+
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(eSST4B.EFD, generator.EFD) annotation (Line(
       points={{-49.3,-2.88889},{-48,-2.88889},{-48,-24},{-124,-24},{-124,-7.5},
-          {-119.72,-7.5}},
+          {-122.8,-7.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, eSST4B.XADIFD) annotation (Line(
@@ -77,14 +78,18 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(generator.PELEC, eSST4B.ECOMP) annotation (Line(
-      points={{-90.88,-7.5},{-68,-7.5},{-68,-2.88889},{-78,-2.88889}},
+      points={{-90.6,6.1},{-68,6.1},{-68,-2.88889},{-78,-2.88889}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-52.1,4.33333},{-47.5818,
           4.33333},{-47.5818,0},{-40,0}}, color={0,0,255}));
   connect(const1.y, eSST4B.VOEL) annotation (Line(points={{-56.8,-40},{-68.9,-40},
           {-68.9,-14}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Documentation,
+    experiment(StopTime=10));
 end ESST4B;

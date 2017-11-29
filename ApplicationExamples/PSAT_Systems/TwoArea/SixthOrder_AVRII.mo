@@ -9,25 +9,22 @@ model SixthOrder_AVRII "31-bus system with 6th-order machine and AVR Type II"
     Tr=0.05,
     Ae=0,
     Be=0,
-    vref0=1.198480294896434,
-    vf0=1.045348880531484,
     Ka=7.04,
     Ta=0.4,
     Kf=1,
     Tf=0.05,
     Ke=1) annotation (Placement(transformation(extent={{-150,24},{-130,44}})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.198480294896434) annotation (
-      Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-163,43})));
 equation
-  connect(vref2.y, aVRTypeII.vref) annotation (Line(points={{-157.5,43},{-154,
-          43},{-154,39.4},{-148,39.4}}, color={0,0,127}));
-  connect(aVRTypeII.vf, order6.vf) annotation (Line(points={{-131.5,36.6},{-125.75,
-          36.6},{-125.75,35},{-120,35}}, color={0,0,127}));
-  connect(aVRTypeII.v, order6.v) annotation (Line(points={{-148,33},{-152,33},{
+  connect(aVRTypeII.vf, order6.vf) annotation (Line(points={{-128,34},{-125.75,
+          34},{-125.75,35},{-122,35}}, color={0,0,127}));
+  connect(aVRTypeII.v, order6.v) annotation (Line(points={{-152,28},{-152,28},{
           -152,18},{-152,16},{-96,16},{-96,33},{-99,33}}, color={0,0,127}));
+  connect(aVRTypeII.vref, aVRTypeII.vref0) annotation (Line(points={{-152,40},{
+          -156,40},{-156,42},{-158,42},{-158,54},{-140,54},{-140,46}}, color={0,
+          0,127}));
+  connect(aVRTypeII.vf0, order6.vf0) annotation (Line(points={{-140,22},{-140,
+          22},{-140,8},{-140,4},{-140,10},{-166,10},{-166,60},{-118,60},{-118,
+          41}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-180,-100},{180,100}},
           preserveAspectRatio=false)),

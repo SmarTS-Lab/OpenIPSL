@@ -24,7 +24,7 @@ model StatcomCode_Test
     V_0=1.027606413803688,
     V_b=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     angle_0=0.036282466109908*180/pi,
     P_0=0.800000000076548*SysData.S_b,
@@ -57,7 +57,7 @@ model StatcomCode_Test
     angle_0=0,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     P_0=0.004219210312137*SysData.S_b,
     Q_0=-0.001421467052118*SysData.S_b)
@@ -103,47 +103,47 @@ model StatcomCode_Test
     annotation (Placement(transformation(extent={{-116,60},{-76,80}})));
 equation
   connect(pwLine1.n, pwLine3.n) annotation (Line(
-      points={{64.6667,17},{78,17},{78,-17},{66.6667,-17}},
+      points={{62,17},{78,17},{78,-17},{64,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus.p, lOADPQ.p) annotation (Line(
-      points={{14,2},{24,2},{24,-31},{48,-31}},
+      points={{14,2},{24,2},{24,-32},{48,-32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(sTATCOM3_1.p, lOADPQ.p) annotation (Line(
-      points={{7,-44},{20,-44},{20,2},{24,2},{24,-31},{48,-31}},
+      points={{7,-44},{20,-44},{20,2},{24,2},{24,-32},{48,-32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.p, lOADPQ.p) annotation (Line(
-      points={{43.3333,-17},{38,-17},{38,2},{24,2},{24,-31},{48,-31}},
+      points={{46,-17},{38,-17},{38,2},{24,2},{24,-32},{48,-32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, lOADPQ.p) annotation (Line(
-      points={{41.3333,17},{38,17},{38,2},{24,2},{24,-31},{48,-31}},
+      points={{44,17},{38,17},{38,2},{24,2},{24,-32},{48,-32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Syn2.p, pwLine3.n) annotation (Line(
-      points={{106.5,-0.079424},{78,-0.079424},{78,-17},{66.6667,-17}},
+      points={{108,1.83187e-015},{78,1.83187e-015},{78,-17},{64,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, bus.p) annotation (Line(
-      points={{-3.33333,-17},{0,-17},{0,2},{14,2}},
+      points={{-6,-17},{0,-17},{0,2},{14,2}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine4.n, bus.p) annotation (Line(
-      points={{-1.33333,13},{0,13},{0,2},{14,2}},
+      points={{-4,13},{0,13},{0,2},{14,2}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine4.p, pwLine2.p) annotation (Line(
-      points={{-24.6667,13},{-28,13},{-28,-17},{-26.6667,-17}},
+      points={{-22,13},{-28,13},{-28,-17},{-24,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order2_Inputs_Outputs.p, pwLine2.p) annotation (Line(
-      points={{-57,2.04964},{-28,2.04964},{-28,-17},{-26.6667,-17}},
+      points={{-58,2},{-28,2},{-28,-17},{-24,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(add3_1.y, order2_Inputs_Outputs.vf) annotation (Line(
-      points={{-97,0},{-92,0},{-92,7},{-78,7}},
+      points={{-97,0},{-92,0},{-92,7},{-80,7}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order2_Inputs_Outputs.vf0, add3_1.u3) annotation (Line(
@@ -159,17 +159,17 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order2_Inputs_Outputs.pm0, order2_Inputs_Outputs.pm) annotation (Line(
-      points={{-76,-9},{-54,-9},{-54,-16},{-90,-16},{-90,-3},{-78,-3}},
+      points={{-76,-9},{-54,-9},{-54,-16},{-90,-16},{-90,-3},{-80,-3}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{138,8},{148,8},{148,26},
+  connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{141,8},{148,8},{148,26},
           {135,26},{135,17.6}}, color={0,0,127}));
   connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{
-          152,-26},{152,-8},{138,-8}}, color={0,0,127}));
+          152,-26},{152,-8},{141,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{
-            160,100}})),
-    Icon(coordinateSystem(extent={{-160,-100},{160,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
