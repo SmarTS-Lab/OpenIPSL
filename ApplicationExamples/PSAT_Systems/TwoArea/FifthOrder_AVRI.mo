@@ -13,10 +13,10 @@ model FifthOrder_AVRI
 equation
   connect(aVRTypeI.vf, order5.vf) annotation (Line(points={{-128,36},{-124.5,36},
           {-124.5,35},{-122,35}}, color={0,0,127}));
-  connect(aVRTypeI.v, order5.v) annotation (Line(points={{-152,30},{-156,30},{
-          -156,14},{-96,14},{-96,33},{-99,33}}, color={0,0,127}));
-  connect(aVRTypeI.vref, aVRTypeI.vref0) annotation (Line(points={{-152,42},{
-          -158,42},{-164,42},{-164,56},{-140,56},{-140,48}}, color={0,0,127}));
+  connect(aVRTypeI.v, order5.v) annotation (Line(points={{-152,30},{-156,30},{-156,
+          14},{-96,14},{-96,33},{-99,33}}, color={0,0,127}));
+  connect(aVRTypeI.vref, aVRTypeI.vref0) annotation (Line(points={{-152,42},{-158,
+          42},{-164,42},{-164,56},{-140,56},{-140,48}}, color={0,0,127}));
   connect(order5.vf0, aVRTypeI.vf0) annotation (Line(points={{-118,41},{-118,64},
           {-172,64},{-172,6},{-140,6},{-140,24}}, color={0,0,127}));
   annotation (

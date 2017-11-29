@@ -9,18 +9,20 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
             -10},{-80,10}}), iconTransformation(extent={{-100,-10},{-80,10}})));
   OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{80,
             -10},{100,10}}), iconTransformation(extent={{80,-10},{100,10}})));
-  parameter Real R "Resistance (pu)"
+  parameter Modelica.SIunits.PerUnit R "Resistance (pu)"
     annotation (Dialog(group="Line parameters"));
-  parameter Real X "Reactance (pu)" annotation (Dialog(group="Line parameters"));
-  parameter Real G "Shunt half conductance (pu)"
+  parameter Modelica.SIunits.PerUnit X "Reactance (pu)"
     annotation (Dialog(group="Line parameters"));
-  parameter Real B "Shunt half susceptance (pu)"
+  parameter Modelica.SIunits.PerUnit G "Shunt half conductance (pu)"
     annotation (Dialog(group="Line parameters"));
-  parameter Real S_b=SysData.S_b "System base power (MVA)"
+  parameter Modelica.SIunits.PerUnit B "Shunt half susceptance (pu)"
+    annotation (Dialog(group="Line parameters"));
+  parameter OpenIPSL.Types.ApparentPowerMega S_b=SysData.S_b
+    "System base power (MVA)"
     annotation (Dialog(group="Line parameters", enable=false));
-  parameter Real t1=Modelica.Constants.inf
+  parameter Modelica.SIunits.Time t1=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
-  parameter Real t2=Modelica.Constants.inf
+  parameter Modelica.SIunits.Time t2=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
   parameter Integer opening=1 annotation (Dialog(group=
           "Perturbation parameters"), choices(
@@ -66,74 +68,65 @@ equation
     vr - vs = Z*(ir - vr*Y);
   end if;
   annotation (Icon(coordinateSystem(preserveAspectRatio=true, initialScale=0.1),
-        graphics={
-        Rectangle(
+        graphics={Rectangle(
           extent={{-80,40},{80,-40}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Rectangle(
+          fillPattern=FillPattern.Solid),Rectangle(
           extent={{-60,20},{60,-20}},
           lineColor={0,0,255},
           fillColor={95,95,95},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           visible=displayPF,
           extent={{-200,160},{-20,40}},
           lineColor={255,0,0},
           textString=DynamicSelect("0.0 MW",
-              OpenIPSL.NonElectrical.Functions.displayPower(P12, " MW"))),
-        Polygon(
+            OpenIPSL.NonElectrical.Functions.displayPower(P12, " MW"))),Polygon(
           visible=displayPF,
           points=DynamicSelect({{-120,70},{-120,50},{-80,60},{-120,70}}, if P12
-               >= 0 then {{-120,70},{-120,50},{-80,60},{-120,70}} else {{-80,70},
-              {-80,50},{-120,60},{-80,70}}),
+             >= 0 then {{-120,70},{-120,50},{-80,60},{-120,70}} else {{-80,70},
+            {-80,50},{-120,60},{-80,70}}),
           lineColor={255,0,0},
           fillColor={255,0,0},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           visible=displayPF,
           extent={{20,160},{200,40}},
           lineColor={255,0,0},
           textString=DynamicSelect("0.0 MW",
-              OpenIPSL.NonElectrical.Functions.displayPower(P21, " MW"))),
-        Polygon(
+            OpenIPSL.NonElectrical.Functions.displayPower(P21, " MW"))),Polygon(
           visible=displayPF,
           points=DynamicSelect({{80,70},{80,50},{120,60},{80,70}}, if P21 >= 0
-               then {{80,70},{80,50},{120,60},{80,70}} else {{120,70},{120,50},
-              {80,60},{120,70}}),
+             then {{80,70},{80,50},{120,60},{80,70}} else {{120,70},{120,50},{
+            80,60},{120,70}}),
           lineColor={255,0,0},
           fillColor={255,0,0},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           visible=displayPF,
           extent={{-200,-40},{-20,-160}},
           lineColor={0,255,0},
           textString=DynamicSelect("0.0 Mvar",
-              OpenIPSL.NonElectrical.Functions.displayPower(Q12, " Mvar"))),
-        Polygon(
+            OpenIPSL.NonElectrical.Functions.displayPower(Q12, " Mvar"))),
+          Polygon(
           visible=displayPF,
           points=DynamicSelect({{-120,-70},{-120,-50},{-80,-60},{-120,-70}},
-              if Q12 >= 0 then {{-120,-70},{-120,-50},{-80,-60},{-120,-70}}
-               else {{-80,-70},{-80,-50},{-120,-60},{-80,-70}}),
+            if Q12 >= 0 then {{-120,-70},{-120,-50},{-80,-60},{-120,-70}} else
+            {{-80,-70},{-80,-50},{-120,-60},{-80,-70}}),
           lineColor={0,255,0},
           fillColor={0,255,0},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           visible=displayPF,
           extent={{20,-40},{200,-160}},
           lineColor={0,255,0},
           textString=DynamicSelect("0.0 Mvar",
-              OpenIPSL.NonElectrical.Functions.displayPower(Q21, " Mvar"))),
-        Polygon(
+            OpenIPSL.NonElectrical.Functions.displayPower(Q21, " Mvar"))),
+          Polygon(
           visible=displayPF,
           points=DynamicSelect({{80,-70},{80,-50},{120,-60},{80,-70}}, if Q21
-               >= 0 then {{80,-70},{80,-50},{120,-60},{80,-70}} else {{120,-70},
-              {120,-50},{80,-60},{120,-70}}),
+             >= 0 then {{80,-70},{80,-50},{120,-60},{80,-70}} else {{120,-70},{
+            120,-50},{80,-60},{120,-70}}),
           lineColor={0,255,0},
           fillColor={0,255,0},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           extent={{-60,20},{60,-20}},
           lineColor={255,255,0},
           textString="%name")}), Documentation);

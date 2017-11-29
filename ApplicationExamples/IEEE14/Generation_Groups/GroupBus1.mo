@@ -53,16 +53,13 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=
-            false),graphics={
-        Text(
+            false),graphics={Text(
           extent={{-93,6},{-24,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},
-          textString=""),
-        Ellipse(extent={{-94,68},{98,-84}}, lineColor={28,108,200}),
-        Line(points={{-28,-8},{-12,16}}, color={28,108,200}),
-        Line(points={{-12,16},{14,-16},{32,10}}, color={28,108,200}),
-        Text(
+          textString=""),Ellipse(extent={{-94,68},{98,-84}}, lineColor={28,108,
+          200}),Line(points={{-28,-8},{-12,16}}, color={28,108,200}),Line(
+          points={{-12,16},{14,-16},{32,10}}, color={28,108,200}),Text(
           extent={{-18,-32},{20,-64}},
           lineColor={28,108,200},
           textString="Gen1 5.2")}),

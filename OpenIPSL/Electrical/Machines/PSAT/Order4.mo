@@ -1,9 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order4 "Fourth Order Synchronous Machine with Inputs and Outputs"
-  extends BaseClasses.baseMachine(
-    vf(start=vf00),
-    vf0(start=vf00),
-    xq0=xq);
+  extends BaseClasses.baseMachine(vf(start=vf00), xq0=xq);
   parameter Real xd=1.9 "d-axis synchronous reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real xq=1.7 "q-axis synchronous reactance (pu)"
@@ -17,14 +14,14 @@ model Order4 "Fourth Order Synchronous Machine with Inputs and Outputs"
   Real e1q(start=e1q0) "q-axis transient voltage (pu)";
   Real e1d(start=e1d0) "d-axis transient voltage (pu)";
 protected
-  parameter Real vf00=e1q0 + (xd - x1d)*id0 "Initialization";
+  parameter Real vf00=V_MBtoSB*(e1q0 + (xd - x1d)*id0) "Init. val. (pu, SB)";
   parameter Real e1q0=vq0 + ra*iq0 + x1d*id0 "Initialization";
   parameter Real e1d0=vd0 + ra*id0 - x1q*iq0 "Initialization";
 initial equation
   der(e1q) = 0;
 
 equation
-  der(e1q) = ((-e1q) - (xd - x1d)*id + vf)/T1d0;
+  der(e1q) = ((-e1q) - (xd - x1d)*id + vf_MB)/T1d0;
   if xq <> x1q then
     // safe-guard against division by zero.
     der(e1d) = ((-e1d) + (xq - x1q)*iq)/T1q0 "differential equations *";

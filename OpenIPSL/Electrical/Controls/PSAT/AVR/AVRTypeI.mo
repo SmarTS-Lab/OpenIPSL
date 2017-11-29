@@ -105,35 +105,27 @@ equation
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         initialScale=0.1,
-        preserveAspectRatio=false), graphics={
-        Rectangle(
+        preserveAspectRatio=false), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           extent={{-90,80},{-50,40}},
           lineColor={0,0,255},
-          textString="vref"),
-        Text(
+          textString="vref"),Text(
           extent={{-100,-40},{-60,-70}},
           lineColor={0,0,255},
-          textString="v"),
-        Text(
+          textString="v"),Text(
           extent={{60,20},{100,-20}},
           lineColor={0,0,255},
-          textString="vf"),
-        Text(
+          textString="vf"),Text(
           extent={{-40,40},{40,-40}},
           lineColor={0,0,255},
-          textString="AVR1"),
-        Text(
+          textString="AVR1"),Text(
           extent={{16,-60},{56,-100}},
           lineColor={0,0,255},
           textString="vf0
-"),
-        Text(
-          extent={{2,102},{42,62}},
+"),Text(  extent={{2,102},{42,62}},
           lineColor={0,0,255},
           textString="vref0")}),
     Documentation(info="<html>

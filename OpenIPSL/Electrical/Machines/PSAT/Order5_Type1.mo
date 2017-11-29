@@ -1,9 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order5_Type1
-  extends BaseClasses.baseMachine(
-    vf(start=vf00),
-    vf0(start=vf00),
-    xq0=xq);
+  extends BaseClasses.baseMachine(vf(start=vf00), xq0=xq);
   parameter Real xd=1.9 "d-axis synchronous reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real xq=1.7 "q-axis synchronous reactance (pu)"
@@ -21,7 +18,7 @@ model Order5_Type1
   Real e1d(start=e1d0) "d-axis transient voltage";
   Real e2d(start=e2d0) "d-axis sub-transient voltage";
 protected
-  parameter Real vf00=e1q0 + (xd - x1d)*id0 "Initialization";
+  parameter Real vf00=V_MBtoSB*(e1q0 + (xd - x1d)*id0) "Init. val. (pu, SB)";
   parameter Real e1q0=vq0 + ra*iq0 + x1d*id0 "Initialization";
   parameter Real e1d0=vd0 + ra*id0 - x1q*iq0 "Initialization*";
   parameter Real e2d0=vd0 + ra*id0 - x1q*iq0 "Initialization";
@@ -31,14 +28,13 @@ initial equation
   der(e1d) = 0;
   der(e2d) = 0;
 equation
-  der(e1q) = ((-e1q) - (xd - x1d)*id + vf)/T1d0;
+  der(e1q) = ((-e1q) - (xd - x1d)*id + vf_MB)/T1d0;
   der(e1d) = ((-e1d) + (xq - x1q - T2q0/T1q0*x1d/x1q*(xq - x1q))*iq)/T1q0
     "differential equations/";
   der(e2d) = ((-e2d) + e1d + (x1q - x1d + T2q0/T1q0*x1d/x1q*(xq - x1q))*iq)/
     T2q0 "differential equations/";
   e1q = vq + ra*iq + x1d*id;
   e2d = vd + ra*id - x1q*iq "relation between voltages and currents/";
-
   vf0 = vf00;
   annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
           initialScale=0.1), graphics={Text(

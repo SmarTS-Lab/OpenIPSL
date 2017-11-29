@@ -27,8 +27,8 @@ equation
           {128,14},{128,3},{131,3}}, color={0,0,127}));
   connect(Exc1.vf, order3_1.vf)
     annotation (Line(points={{-141,85},{-141,85},{-132,85}}, color={0,0,127}));
-  connect(Exc1.v, order3_1.v) annotation (Line(points={{-153,82},{-164,82},{
-          -164,96},{-106,96},{-106,83},{-109,83}}, color={0,0,127}));
+  connect(Exc1.v, order3_1.v) annotation (Line(points={{-153,82},{-164,82},{-164,
+          96},{-106,96},{-106,83},{-109,83}}, color={0,0,127}));
   connect(Exc1.vf0, order3_1.vf0) annotation (Line(points={{-147,79},{-147,64},
           {-170,64},{-170,98},{-128,98},{-128,91}}, color={0,0,127}));
   connect(Exc1.vref0, Exc1.vref) annotation (Line(points={{-147,91},{-147,94},{
