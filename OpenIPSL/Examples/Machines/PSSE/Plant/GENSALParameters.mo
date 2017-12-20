@@ -1,0 +1,22 @@
+within OpenIPSL.Examples.Machines.PSSE.Plant;
+record GENSALParameters
+parameter Real M_b;
+parameter Real Tpd0;
+parameter Real Tppd0;
+parameter Real Tppq0;
+parameter Real H;
+parameter Real D;
+parameter Real Xd;
+parameter Real Xq;
+parameter Real Xpd;
+parameter Real Xppd;
+parameter Real Xl;
+parameter Real S10;
+parameter Real S12;
+parameter Real Xppq;
+parameter Real R_a;
+parameter Real V_0 "power flow voltage, TBSeparated";
+parameter Real P_0 "power flow active power, TBSeparated";
+parameter Real angle_0 "power flow angle, TBSeparated";
+parameter Real Q_0 "power flow reactive power, TBSeparated";
+end GENSALParameters;
