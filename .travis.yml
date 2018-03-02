@@ -4,8 +4,11 @@ python:
 
 services: docker
 
-install:
-  - docker pull smartslab/ci_openipsl
+before_install:
+  - docker pull smartslab/openipsl
+
+before_script:
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl sh -c "python /OpenIPSL/CI/CICheck.py"
 
 script:
-  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl sh /OpenIPSL/CI/changeUser.sh
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl sh -c "python /OpenIPSL/CI/syntaxCheck.py"

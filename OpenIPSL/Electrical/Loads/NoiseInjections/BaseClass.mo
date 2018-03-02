@@ -20,9 +20,9 @@ partial model BaseClass
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           extent={{-100,100},{100,-100}},
-          endAngle=360), Line(
+          endAngle=360),Line(
           origin={30,0},
           points={{-100,0},{-80,0},{-70,40},{-60,-20},{-50,20},{-28,-40},{-10,
-              40},{0,-20},{12,20},{20,0},{40,0},{40,0}},
+            40},{0,-20},{12,20},{20,0},{40,0},{40,0}},
           thickness=2)}));
 end BaseClass;

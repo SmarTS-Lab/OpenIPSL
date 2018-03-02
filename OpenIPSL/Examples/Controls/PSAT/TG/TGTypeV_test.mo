@@ -141,14 +141,15 @@ equation
 
       color={0,0,127},
       smooth=Smooth.None));
+
   connect(GenOrder3.w, tGModel5_1.w) annotation (Line(
       points={{-9.02303,7.58636},{0,7.58636},{0,-26},{-86,-26},{-86,-14},{-80,-14},
           {-80,-14.88},{-79.87,-14.88}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(GenOrder3.pm0, tGModel5_1.w1) annotation (Line(
-      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{
-          -79.98,-9.52}},
+      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{-79.98,
+          -9.52}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine.y, add.u1) annotation (Line(

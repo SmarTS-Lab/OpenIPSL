@@ -1,9 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order6
-  extends BaseClasses.baseMachine(
-    vf(start=vf00),
-    vf0(start=vf00),
-    xq0=xq);
+  extends BaseClasses.baseMachine(vf(start=vf00), xq0=xq);
   parameter Real xd=1.9 "d-axis synchronous reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real xq=1.7 "q-axis synchronous reactance (pu)"
@@ -36,7 +33,8 @@ protected
   parameter Real K1=xd - x1d - T2d0*x2d*(xd - x1d)/(T1d0*x1d);
   parameter Real K2=x1d - x2d + T2d0*x2d*(xd - x1d)/(T1d0*x1d);
   parameter Real e1q0=e2q0 + K2*id0 - Taa/T1d0*((K1 + K2)*id0 + e2q0);
-  parameter Real vf00=(K1*id0 + e1q0)/(1 - Taa/T1d0);
+  parameter Real vf00=V_MBtoSB*(K1*id0 + e1q0)/(1 - Taa/T1d0)
+    "Init. val. (pu, SB)";
 initial equation
   der(e1d) = 0;
   // der(e1d) = 0;
@@ -45,12 +43,12 @@ initial equation
 equation
 
   der(e1q) = ((-e1q) - (xd - x1d - T2d0/T1d0*x2d/x1d*(xd - x1d))*id + (1 - Taa/
-    T1d0)*vf)/T1d0;
+    T1d0)*vf_MB)/T1d0;
   der(e1d) = ((-e1d) + (xq - x1q - T2q0/T1q0*x2q/x1q*(xq - x1q))*iq)/T1q0;
   der(e2d) = ((-e2d) + e1d + (x1q - x2q + T2q0/T1q0*x2q/x1q*(xq - x1q))*iq)/
     T2q0;
   der(e2q) = ((-e2q) + e1q - (x1d - x2d + T2d0/T1d0*x2d/x1d*(xd - x1d))*id +
-    Taa/T1d0*vf)/T2d0;
+    Taa/T1d0*vf_MB)/T2d0;
   e2q = vq + ra*iq + x2d*id;
   e2d = vd + ra*id - x2q*iq;
   vf0 = vf00;

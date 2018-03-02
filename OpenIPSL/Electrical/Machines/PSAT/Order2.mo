@@ -6,10 +6,10 @@ protected
   parameter Real c1=ra*K "scaled ra";
   parameter Real c2=x1d*K "scaled x'd";
   parameter Real c3=x1d*K "scaled x'd";
-  parameter Real vf00=vq0 + ra*iq0 + x1d*id0 "Initialization";
+  parameter Real vf00=V_MBtoSB*(vq0 + ra*iq0 + x1d*id0) "Init. val. (pu, SB)";
 equation
-  id = -c1*vd - c3*vq + vf*c3;
-  iq = c2*vd - c1*vq + vf*c1;
+  id = -c1*vd - c3*vq + vf_MB*c3;
+  iq = c2*vd - c1*vq + vf_MB*c1;
   vf0 = vf00;
   annotation (Documentation(info="<html> 
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"> 

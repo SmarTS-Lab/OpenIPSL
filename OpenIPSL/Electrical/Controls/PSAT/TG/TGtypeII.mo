@@ -83,6 +83,7 @@ equation
       points={{-19.3563,1.4816},{2.0437,1.4816},{2.0437,-1.4816},{15.2687,-1.4816}},
 
       color={0,0,127}));
+
   connect(pm0, add2.u1) annotation (Line(
       visible=true,
       origin={16.0,25.6667},
@@ -99,6 +100,7 @@ equation
       points={{-5.3923,1.0184},{0.7974,1.0184},{0.7974,-1.0184},{3.7974,-1.0184}},
 
       color={0,0,127}));
+
   connect(transferFunction1.y, add2.u2) annotation (Line(
       visible=true,
       origin={31.0,-12.1146},
@@ -110,18 +112,21 @@ equation
       points={{-31.5875,0.0946},{9.5292,0.0946},{9.5292,-0.0946},{12.5292,-0.0946}},
 
       color={0,0,127}));
+
   connect(gain1.y, transferFunction1.u) annotation (Line(
       visible=true,
       origin={-10.726,-12.9887},
       points={{-5.1778,0.2405},{0.726,0.2405},{0.726,-0.2405},{3.726,-0.2405}},
 
       color={0,0,127}));
+
   connect(add1.y, gain1.u) annotation (Line(
       visible=true,
       origin={-42.3987,-12.9616},
       points={{-4.4846,-0.2134},{0.4949,-0.2134},{0.4949,0.2134},{3.4949,0.2134}},
 
       color={0,0,127}));
+
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

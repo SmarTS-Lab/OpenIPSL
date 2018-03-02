@@ -5,7 +5,7 @@ partial model pfComponent
     "Must add this line in all models";
   parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus"
     annotation (Dialog(group="Power flow data"));
-  parameter Real V_0=1 "Voltage magnitude (pu)"
+  parameter Modelica.SIunits.PerUnit V_0=1 "Voltage magnitude (pu)"
     annotation (Dialog(group="Power flow data"));
   parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
     "Voltage angle" annotation (Dialog(group="Power flow data"));

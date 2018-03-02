@@ -128,8 +128,8 @@ equation
       smooth=Smooth.None));
   connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{-120,11},{-120,
           14},{-130,14},{-130,5},{-124,5}}, color={0,0,127}));
-  connect(order2_1.pm, order2_1.pm0) annotation (Line(points={{-124,-5},{-130,
-          -5},{-130,-16},{-120,-16},{-120,-11}}, color={0,0,127}));
+  connect(order2_1.pm, order2_1.pm0) annotation (Line(points={{-124,-5},{-130,-5},
+          {-130,-16},{-120,-16},{-120,-11}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),

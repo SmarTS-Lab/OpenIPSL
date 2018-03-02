@@ -1,14 +1,14 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model Plant
 
-  redeclare replaceable OpenIPSL.Electrical.Machines.PSSE.BaseClasses.baseMachine machine
+  replaceable OpenIPSL.Electrical.Machines.PSSE.BaseClasses.baseMachine machine
     annotation (choicesAllMatching=true,
                 Placement(transformation(extent={{40,-10},
             {60,10}})));
   replaceable Controls.PSSE.ES.BaseClasses.BaseExciter exciter
     annotation (choicesAllMatching=true,
       Placement(transformation(extent={{-28,-24},{10,10}})));
-  Connectors.PwPin pwPin
+  OpenIPSL.Interfaces.PwPin pwPin
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-40,-54},{-32,-46}})));
@@ -48,7 +48,8 @@ equation
           -98,5.25},{-98,68},{80,68},{80,9},{60.8,9}},  color={0,0,127}));
   connect(pss.V_S2, governor.PMECH0) annotation (Line(points={{-92.1053,0.75},{
           -94,0.75},{-94,30},{-40,30},{-40,45},{-30,45}},  color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={                      Ellipse(extent={{
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false), 
+  graphics={Ellipse(extent={{
               -100,-100},{100,100}},                                                                                                    lineColor=
               {28,108,200},
           fillColor={255,255,255},
