@@ -1,8 +1,8 @@
 within OpenIPSL.NonElectrical.Continuous;
-block DerivativeLag "Derivative lag transfer function blcok"
+block DerivativeLag "Derivative lag transfer function block"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain";
-  parameter Modelica.SIunits.Time T "Time constan (s)";
+  parameter Modelica.SIunits.Time T "Time constant";
   parameter Real y_start "Output start value"
     annotation (Dialog(group="Initialization"));
   parameter Real x_start=0 "Start value of state variable"
