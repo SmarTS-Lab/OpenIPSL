@@ -1,18 +1,23 @@
 within Tutorial.Example_1;
 model Example_1
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Buses.Bus B1(displayPF=false)
+  import Modelica.Constants.pi;
+  OpenIPSL.Electrical.Buses.Bus B1(angle_0=0.494677176989154*180/pi, displayPF=
+        false)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Electrical.Buses.Bus B2(displayPF=false)
+  OpenIPSL.Electrical.Buses.Bus B2(
+    V_0=0.944299492912195,
+    angle_0=0.351222533717268*180/pi,
+    displayPF=false)
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
-  OpenIPSL.Electrical.Buses.Bus B3(displayPF=false)
+  OpenIPSL.Electrical.Buses.Bus B3(V_0=0.900810000000000, displayPF=false)
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   Generator.Generator G1(
-    angle_0=0.494677176989154,
     V_0=1,
-    P_0=1997.9999999936396,
-    Q_0=967.9249699065775,
-    displayPF=false)
+    displayPF=false,
+    P_0=1997.99999999364,
+    Q_0=967.924969906578,
+    angle_0=0.494677176989154*180/pi)
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(
     Sn=2220,

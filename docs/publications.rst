@@ -5,12 +5,12 @@ The OpenIPSL library emerged as a fork of iPSL, which was been developed as part
 The list of publications written about OpenIPSL library and its models can be found below. 
 
 .. note::
-   If you use OpenIPSL in your work or research, we kindly ask you to cite (preferably), our `SoftwareX`_ paper.
+    If you use OpenIPSL in your work or research, we kindly ask you to cite (preferably), our `SoftwareX`_ paper:
 
-.. rubric:: SoftwareX paper:
-* L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL):
-  A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110, `DOI: 10.1016/j.softx.2016.05.001. <http://dx.doi.org/10.1016/j.softx.2016.05.001>`_
-
+    M. Baudette, M. Castro, T. Rabuzin, J. Lavenius, T. Bogodorova, L. Vanfretti,
+    OpenIPSL: Open-Instance Power System Library — Update 1.5 to “iTesla Power Systems Library (iPSL):
+    A Modelica library for phasor time-domain simulations”, SoftwareX, Volume 7, January–June 2018, Pages 34-36, ISSN 2352-7110,
+    `DOI: 10.1016/j.softx.2018.01.002. <https://doi.org/10.1016/j.softx.2018.01.002>`_
 
 Otherwise, you cite one of the following papers, according to a specific use of OpenIPSL:
 
@@ -38,7 +38,10 @@ Otherwise, you cite one of the following papers, according to a specific use of 
 - L. Vanfretti, W. Li, T. Bogodorova, and P.Panciatici,
   “Unambiguous Power System Modeling and Simulation using Modelica Tools”,
   IEEE PES General Meeting 2013. `Link <http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A695601&dswid=4147>`_.
+- L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL):
+  A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110,
+  `DOI: 10.1016/j.softx.2016.05.001. <http://dx.doi.org/10.1016/j.softx.2016.05.001>`_
 
 .. Links:
 
-.. _SoftwareX: http://www.sciencedirect.com/science/article/pii/S2352711016300097
+.. _SoftwareX: https://www.sciencedirect.com/science/article/pii/S2352711018300050

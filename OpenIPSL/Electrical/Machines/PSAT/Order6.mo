@@ -15,16 +15,16 @@ model Order6
     annotation (Dialog(group="Machine parameters"));
   parameter Real T1q0=0.8 "q-axis open circuit transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real T2d0=0.04 "d-axis open circuit transient time constant (s)"
+  parameter Real T2d0=0.04 "d-axis open circuit sub-transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real T2q0=0.02 "q-axis open circuit transient time constant (s)"
+  parameter Real T2q0=0.02 "q-axis open circuit sub-transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real Taa=2e-3 "d-axis aditional leakage time constant (s)"
     annotation (Dialog(group="Machine parameters"));
 
-  Real e1q(start=e1q0) "q-axis transient voltage";
+  Real e1q(start=e1q0, fixed=true) "q-axis transient voltage";
   Real e1d(start=e1d0) "d-axis transient voltage";
-  Real e2q(start=e2q0) "q-axis sub-transient voltage";
+  Real e2q(start=e2q0, fixed=true) "q-axis sub-transient voltage";
   Real e2d(start=e2d0) "d-axis sub-transient voltage";
 protected
   parameter Real e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";

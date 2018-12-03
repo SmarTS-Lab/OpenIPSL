@@ -11,9 +11,9 @@ model Order5_Type2
     annotation (Dialog(group="Machine parameters"));
   parameter Real T1d0=8 "d-axis open circuit transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real T2d0=0.8 "d-axis open circuit transient time constant (s)"
+  parameter Real T2d0=0.8 "d-axis open circuit sub-transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real T2q0=0.02 "q-axis open circuit transient time constant (s)"
+  parameter Real T2q0=0.02 "q-axis open circuit sub-transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real Taa=0.002 "d-axis aditional leakage time constant (s)"
     annotation (Dialog(group="Machine parameters"));
