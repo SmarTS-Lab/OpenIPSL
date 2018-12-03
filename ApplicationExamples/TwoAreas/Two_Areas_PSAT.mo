@@ -102,9 +102,9 @@ model Two_Areas_PSAT
     B=b*25) annotation (Placement(transformation(extent={{110,20},{130,40}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
     R=0,
-    t1=1,
-    t2=1.050,
-    X=1e-5) annotation (Placement(transformation(
+    X=1e-5,
+    t1= 1,
+    t2= 1.05) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={2,-16})));

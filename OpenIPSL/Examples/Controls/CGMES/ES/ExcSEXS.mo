@@ -43,6 +43,8 @@ model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
         rotation=0,
         origin={-50,-40})));
 equation
+  connect(gENROE.XADIFD, sEXS.XADIFD) annotation(
+    Line(points = {{-68, -18}, {-58, -18}, {-58, -58}, {-98, -58}, {-98, -54}, {-98, -54}, {-98, -54}}, color = {0, 0, 127}));
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-114,10},{-114,
           10},{-114,26},{-60,26},{-60,10},{-68,10}}, color={0,0,127}));
   connect(gENROE.EFD0, sEXS.EFD0) annotation (Line(points={{-68,-10},{-60,-10},

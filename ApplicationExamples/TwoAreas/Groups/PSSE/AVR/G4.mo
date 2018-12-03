@@ -44,6 +44,8 @@ model G4
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-62,2},{-54,10}})));
 equation
+  connect(gENSAL.XADIFD, eSDC1A.XADIFD) annotation(
+    Line(points = {{46, -16}, {48, -16}, {48, -20}, {-8, -20}, {-8, -14}, {-8, -14}}, color = {0, 0, 127}));
   connect(gENSAL.p, pwPin)
     annotation (Line(points={{46,0},{42,0},{70,0}}, color={0,0,255}));
   connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{4.4,9},{2,9},{

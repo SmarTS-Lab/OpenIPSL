@@ -44,15 +44,6 @@ protected
   parameter Real Efd0(fixed=false);
   parameter Real V_REF(fixed=false);
   parameter Real ECOMP0(fixed=false);
-public
-  Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
-        transformation(
-        extent={{-20,-20},{20,20}},
-        rotation=90,
-        origin={80,-200}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={90,-196})));
 initial equation
   Efd0 = EFD0;
   ECOMP0 = ECOMP;

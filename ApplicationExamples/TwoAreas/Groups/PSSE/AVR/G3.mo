@@ -34,6 +34,8 @@ model G3
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-66,4},{-60,10}})));
 equation
+  connect(g3.XADIFD, sEXS.XADIFD) annotation(
+    Line(points = {{46, -16}, {48, -16}, {48, -22}, {-10, -22}, {-10, -14}, {-10, -14}}, color = {0, 0, 127}));
   connect(g3.PMECH, g3.PMECH0) annotation (Line(points={{12.32,12},{-24,12},{-24,
           44},{54,44},{54,-4},{45.28,-4}}, color={0,0,127}));
   connect(g3.p, pwPin) annotation (Line(points={{45.6,2},{46.5,2},{46.5,0},{70,

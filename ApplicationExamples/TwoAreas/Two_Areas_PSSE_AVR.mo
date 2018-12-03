@@ -99,7 +99,7 @@ model Two_Areas_PSSE_AVR
     X=0,
     R=0,
     t1=3,
-    t2=3.2) annotation (Placement(transformation(
+    t2=3.05) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={2,-16})));
