@@ -47,7 +47,11 @@ equation
           textString="1"),Text(
           extent={{4,18},{32,-16}},
           lineColor={28,108,200},
-          textString="2")}),
+          textString="2"),
+        Text(
+          extent={{-100,100},{100,40}},
+          lineColor={0,0,255},
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
