@@ -1,8 +1,8 @@
 ﻿within OpenIPSL.Electrical.Buses;
 model Bus "Bus model (2014/03/10)"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Interfaces.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi/
-          180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)))
+  OpenIPSL.Interfaces.PwPin p(vr(start=V_0*cos(angle_0*C.pi/
+          180)), vi(start=V_0*sin(angle_0*C.pi/180)))
     annotation (Placement(
       visible=true,
       transformation(
@@ -22,7 +22,7 @@ model Bus "Bus model (2014/03/10)"
       __Dymola_descriptionLabel=true), choices(checkBox=true));
 equation
   V = sqrt(p.vr^2 + p.vi^2);
-  angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;
+  angle = atan2(p.vi, p.vr)*180/C.pi;
   p.ir = 0;
   p.ii = 0;
   annotation (Icon(graphics={Rectangle(

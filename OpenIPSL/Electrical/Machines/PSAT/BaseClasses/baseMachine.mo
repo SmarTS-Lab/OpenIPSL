@@ -5,15 +5,15 @@ partial model baseMachine
   import SI = Modelica.SIunits;
   import CM = Modelica.ComplexMath;
   import Complex;
-  parameter OpenIPSL.Types.ApparentPowerMega Sn "Power rating (MVA)"
+  parameter SI.ApparentPower Sn(displayUnit="MVA") "Power rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter OpenIPSL.Types.VoltageKilo Vn "Voltage rating (kV)"
+  parameter SI.Voltage Vn(displayUnit="kV") "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit ra "Armature resistance (pu)"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit x1d "d-axis transient reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real M "Mechanical starting time (2H), kWs/kVA"
+  parameter SI.Time M "Mechanical starting time, 2H (kWs/kW)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));

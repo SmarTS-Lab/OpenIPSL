@@ -24,11 +24,11 @@ model OEL "PSATs Over-Excitation Limiter"
     "Maximum field current (pu, system base)";
   parameter Modelica.SIunits.PerUnit vOEL_max
     "Maximum output signal (pu, machine base)";
-  parameter OpenIPSL.Types.ApparentPowerMega Sn=SysData.S_b
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b
     "Power rating (MVA)" annotation (Dialog(group="Machine parameters"));
-  parameter OpenIPSL.Types.VoltageKilo Vn=V_b "Voltage rating (kV)"
+  parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus (kV)";
+  parameter SI.Voltage V_b(displayUnit="kV")=400e3 "Base voltage of the bus";
 protected
   parameter Real Z_MBtoSB=(SysData.S_b*Vn^2)/(Sn*V_b^2)
     "Z(machine base) -> Z(system base)";

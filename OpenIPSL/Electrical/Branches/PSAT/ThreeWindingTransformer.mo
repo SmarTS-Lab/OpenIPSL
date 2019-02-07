@@ -7,36 +7,36 @@ model ThreeWindingTransformer
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
   OpenIPSL.Interfaces.PwPin b3
     annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
-  parameter Real S_b=SysData.S_b "System base power (MVA)"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter Real V_b=400000 "Sending end bus voltage (kV)"
+  parameter SI.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
     annotation (Dialog(group="Power flow"));
-  parameter Real Sn=100 "Power rating (MVA)"
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real Vn=400000 "Voltage rating for transformer (V)"
+  parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating for transformer"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real r12=0.01 "Resistance of the branch 1-2 (pu, transformer base)"
+  parameter SI.PerUnit r12=0.01 "Resistance of the branch 1-2 (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real r13=0.01 "Resistance of the branch 1-3 (pu, transformer base)"
+  parameter SI.PerUnit r13=0.01 "Resistance of the branch 1-3 (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real r23=0.01 "Resistance of the branch 2-3 (pu, transformer base)"
+  parameter SI.PerUnit r23=0.01 "Resistance of the branch 2-3 (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real x12=0.1 "Reactance of the branch 1-2 (pu, transformer base)"
+  parameter SI.PerUnit x12=0.1 "Reactance of the branch 1-2 (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real x13=0.1 "Reactance of the branch 1-3 (pu, transformer base)"
+  parameter SI.PerUnit x13=0.1 "Reactance of the branch 1-3 (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real x23=0.1 "Reactance of the branch 2-3 (pu, transformer base)"
+  parameter SI.PerUnit x23=0.1 "Reactance of the branch 2-3 (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real m=0.98 "Fixed tap ratio"
+  parameter SI.PerUnit m=0.98 "Fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
-  Real v0 "Voltage of the fictious bus";
-  Real v1;
-  Real v2;
-  Real v3;
-  Real anglev0 "Angle of the fictious bus";
-  Real anglev1;
-  Real anglev2;
-  Real anglev3;
+  SI.Voltage v0 "Voltage of the fictious bus";
+  SI.Voltage v1;
+  SI.Voltage v2;
+  SI.Voltage v3;
+  SI.Angle anglev0 "Angle of the fictious bus";
+  SI.Angle anglev1;
+  SI.Angle anglev2;
+  SI.Angle anglev3;
   TwoWindingTransformer branch1(
     V_b=V_b,
     Sn=Sn,

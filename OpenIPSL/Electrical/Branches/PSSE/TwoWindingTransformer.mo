@@ -9,53 +9,53 @@ model TwoWindingTransformer
             -10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{60,
             -10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
-  parameter Real S_b=SysData.S_b "System base power (MVA)"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(enable=false));
   parameter Integer CZ=1 "Impedance I/O code" annotation (Dialog(tab=
           "Transformer impedance data"), choices(
       choice=1 "Z pu (winding kV system MVA)",
       choice=2 "Z pu (winding kV widing MVA)",
       choice=3 "Load loss (W) & |Z| (pu)"));
-  parameter Real R "Specified R (pu)"
+  parameter SI.PerUnit R "Specified R (pu)"
     annotation (Dialog(tab="Transformer impedance data"));
-  parameter Real X "Specified X (pu)"
+  parameter SI.PerUnit X "Specified X (pu)"
     annotation (Dialog(tab="Transformer impedance data"));
-  parameter Real G "Magnetizing G"
+  parameter SI.PerUnit G "Magnetizing G (pu)"
     annotation (Dialog(tab="Transformer impedance data"));
-  parameter Real B "Magnetizing B"
+  parameter SI.PerUnit B "Magnetizing B (pu)"
     annotation (Dialog(tab="Transformer impedance data"));
   parameter Integer CW=1 "Winding I/O code" annotation (Dialog(tab=
           "Transformer Nominal Ratings Data"), choices(
-      choice=1 "Turns ratio (pu on bus base kV)",
-      choice=2 "Winding voltage (kV)",
-      choice=3 "Turns ratio (pu on nom wind kV)"));
-  parameter Real t1=1 "Winding 1 ratio (pu)"
+      choice=1 "Turns ratio (pu on bus base)",
+      choice=2 "Winding voltage",
+      choice=3 "Turns ratio (pu on nom wind)"));
+  parameter SI.PerUnit t1=1 "Winding 1 ratio (pu)"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real VNOM1=0 "Winding 1 Nominal kV"
+  parameter SI.Voltage VNOM1(displayUnit="kV")=0 "Nominal voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real VB1=300 "Bus Base kV on the side of winding 1"
+  parameter SI.Voltage VB1(displayUnit="kV")=300e3 "Bus base voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real t2=1 "Secondary winding tap ratio"
+  parameter SI.PerUnit t2=1 "Secondary winding tap ratio (pu)"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real VNOM2=0 "Winding 2 Nominal kV"
+  parameter SI.Voltage VNOM2(displayUnit="kV")=0 "Nominal Voltage of winding 2"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real VB2=300 "Bus Base kV on the side of winding 2"
+  parameter SI.Voltage VB2(displayUnit="kV")=300e3 "Bus base voltage of winding 2"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real ANG1=0 "Winding (1-2) Angle (degrees)"
+  parameter SI.Conversions.NonSIunits.Angle_deg ANG1=0 "Winding (1-2) Angle"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real S_n=S_b "Winding MVA"
+  parameter SI.ApparentPower S_n(displayUnit="MVA")=S_b "Winding MVA"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
 protected
-  parameter Real VNOM1_int=if abs(VNOM1) < Modelica.Constants.eps then VB1
+  parameter SI.Voltage VNOM1_int=if abs(VNOM1) < Modelica.Constants.eps then VB1
        else VNOM1;
-  parameter Real VNOM2_int=if abs(VNOM2) < Modelica.Constants.eps then VB2
+  parameter SI.Voltage VNOM2_int=if abs(VNOM2) < Modelica.Constants.eps then VB2
        else VNOM2;
-  parameter Real r=if CZ == 1 then R else R*S_b/S_n;
-  parameter Real x=if CZ == 1 then X else X*S_b/S_n;
+  parameter SI.PerUnit r=if CZ == 1 then R else R*S_b/S_n;
+  parameter SI.PerUnit x=if CZ == 1 then X else X*S_b/S_n;
   parameter Complex t=T1/T2*(cos(ANG1/180*pi) + j*sin(ANG1/180*pi));
-  parameter Real T2=if CW == 1 then t2 elseif CW == 3 then t2*(VNOM2_int/VB2)
+  parameter SI.PerUnit T2=if CW == 1 then t2 elseif CW == 3 then t2*(VNOM2_int/VB2)
        else t2/VB2;
-  parameter Real T1=if CW == 1 then t1 elseif CW == 3 then t1*(VNOM1_int/VB1)
+  parameter SI.PerUnit T1=if CW == 1 then t1 elseif CW == 3 then t1*(VNOM1_int/VB1)
        else t1/VB1;
   parameter Complex Ym(re=G, im=B);
   parameter Complex xeq(re=r*abs(T2)^2, im=x*abs(T2)^2);
@@ -73,8 +73,8 @@ equation
           lineColor={255,255,255},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),Ellipse(extent={{-50,30},{10,-30}},
-          lineColor={28,108,200}),Ellipse(extent={{-12,30},{52,-30}}, lineColor
-          ={28,108,200}),Line(
+          lineColor={28,108,200}),Ellipse(extent={{-12,30},{52,-30}}, lineColor=
+           {28,108,200}),Line(
           points={{-60,0},{-50,0}},
           color={28,108,200},
           arrow={Arrow.None,Arrow.Filled}),Line(points={{52,0},{60,0}}, color={

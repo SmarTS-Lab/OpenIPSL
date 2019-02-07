@@ -1,10 +1,9 @@
 within OpenIPSL.Electrical.Buses;
 model InternalBus "Bus for change base"
   outer OpenIPSL.Electrical.SystemBase SysData;
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real M_b=120 "Machine base power rating (MVA)"
+  parameter SI.ApparentPower M_b(displayUnit="MVA")=120e6 "Machine base power rating"
     annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=SysData.S_b "System base power rating (MVA)"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power rating"
     annotation (Dialog(group="Power flow data"));
   OpenIPSL.Interfaces.PwPin p "Machine base" annotation (Placement(
         transformation(extent={{-32,-4},{-12,16}}), iconTransformation(extent={

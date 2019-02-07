@@ -5,18 +5,14 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real S_b=SysData.S_b "System base power (MVA)"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter Real V_b=40 "Sending end bus voltage (kV)"
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating"
     annotation (Dialog(group="Power flow"));
-//  parameter Real fn=SysData.fn "Frequency rating (Hz)"
-//    annotation (Dialog(group="Power flow"));
-  parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="Transformer parameters"));
-  parameter Real Vn=40 "Voltage rating of transformer (kV)"
-    annotation (Dialog(group="Transformer parameters"));
-//  parameter Real kT=1 "Nominal tap ratio (kV1/kV2)"
-//    annotation (Dialog(group="Transformer parameters"));
+  parameter SI.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
+    annotation (Dialog(group="Power flow"));
+  parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
+    annotation (Dialog(group="Power flow"));
   parameter Real rT=0.01 "Resistance (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real xT=0.2 "Reactance (pu, transformer base)"

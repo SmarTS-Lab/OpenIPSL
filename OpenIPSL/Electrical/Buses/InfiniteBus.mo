@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Buses;
 model InfiniteBus "PSAT Infinite Bus"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  Real P "Active Power absorbed by the Infinite bus (MW)";
+  SI.ActivePower P(displayUnit="MW") "Active Power absorbed by the Infinite bus";
   Real Q "Reactive Power absorbed by the Infinite bus (MVAr)";
   Interfaces.PwPin p
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
@@ -11,8 +11,8 @@ model InfiniteBus "PSAT Infinite Bus"
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true), choices(checkBox=true));
 equation
-  p.vr = V_0*cos(angle_0*Modelica.Constants.pi/180);
-  p.vi = V_0*sin(angle_0*Modelica.Constants.pi/180);
+  p.vr = V_0*cos(angle_0*C.pi/180);
+  p.vi = V_0*sin(angle_0*C.pi/180);
   P = -(p.vr*p.ir + p.vi*p.ii)*S_b;
   Q = -(p.vr*p.ii - p.vi*p.ir)*S_b;
   annotation (

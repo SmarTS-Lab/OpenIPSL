@@ -17,8 +17,8 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
     annotation (Dialog(group="Line parameters"));
   parameter Modelica.SIunits.PerUnit B "Shunt half susceptance (pu)"
     annotation (Dialog(group="Line parameters"));
-  parameter OpenIPSL.Types.ApparentPowerMega S_b=SysData.S_b
-    "System base power (MVA)"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b
+    "System base power"
     annotation (Dialog(group="Line parameters", enable=false));
   parameter Modelica.SIunits.Time t1=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
@@ -34,10 +34,10 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
       group="Visualisation",
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true), choices(checkBox=true));
-  OpenIPSL.Types.ActivePowerMega P12;
-  OpenIPSL.Types.ActivePowerMega P21;
-  OpenIPSL.Types.ReactivePowerMega Q12;
-  OpenIPSL.Types.ReactivePowerMega Q21;
+  SI.ActivePower P12(displayUnit="MW");
+  SI.ActivePower P21(displayUnit="MW");
+  SI.ReactivePower Q12(displayUnit="Mvar");
+  SI.ReactivePower Q21(displayUnit="Mvar");
   Complex vs(re=p.vr, im=p.vi);
   Complex is(re=p.ir, im=p.ii);
   Complex vr(re=n.vr, im=n.vi);

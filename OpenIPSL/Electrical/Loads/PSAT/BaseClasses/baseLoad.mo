@@ -2,10 +2,10 @@ within OpenIPSL.Electrical.Loads.PSAT.BaseClasses;
 partial model baseLoad
   import Modelica.Constants.pi;
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter OpenIPSL.Types.ApparentPowerMega Sn=S_b "Power rating (MVA)";
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating";
   Modelica.SIunits.PerUnit V(start=V_0) "Voltage magnitude (pu)";
   Modelica.SIunits.Angle Angle_V(start=Modelica.SIunits.Conversions.from_deg(
-        angle_0)) "voltage angle (rad)";
+        angle_0)) "Voltage angle";
   Modelica.SIunits.PerUnit P(start=P_0/S_b) "Active power (pu)";
   Modelica.SIunits.PerUnit Q(start=Q_0/S_b) "Reactive power (pu)";
   Interfaces.PwPin p(vr(start=V_0*cos(angle_0rad)),vi(start=V_0*sin(angle_0rad)))
