@@ -2,9 +2,17 @@
 
 // Change references to classes that are removed from OpenIPSL
 
+// System Base
+convertModifiers({"OpenIPSL.Electrical.SystemBase"},
+                 {"S_b"}, {"S_b=%S_b%*1e6"});
+
+// pfComponent
+convertModifiers({"pfComponent"},
+                 {"V_b","V_0","P_0","Q_0","S_b"}, {"V_b=%V_b%*1e3","V_0=%V_0%*1e3","P_0=%P_0%*1e6","Q_0=%Q_0%*1e6","S_b=%S_b%*1e6"});
+
 // PSAT transformer package #172:
 convertModifiers({"OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio"},
-                 {"R","X","Vn1","Vbus"}, {"r=%R%","x=%X%","Vn=%Vn1%","V_b=%Vbus%"});
+                 {"R","X","Vn1","Vbus"}, {"r=%R%","x=%X%","Vn=%Vn1%*1e3","V_b=%Vbus%*1e3"});
 convertModifiers({"OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformerFixedTapRatio"},
                  {"Vbus"}, {"V_b=%Vbus%"});
 convertClass({"OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio",

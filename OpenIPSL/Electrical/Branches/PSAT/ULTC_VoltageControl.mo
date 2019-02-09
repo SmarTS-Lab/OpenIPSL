@@ -5,53 +5,53 @@ model ULTC_VoltageControl
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real S_b=100 "System base power (MVA)"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus1=400000 "Sending end Bus nominal voltage (V)"
+  parameter SI.Voltage Vbus1(displayUnit="kV")=400e3 "Sending end Bus nominal voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus2=100000 "Receiving end Bus nominal voltage (V)"
+  parameter SI.Voltage Vbus2(displayUnit="kV")=100e3 "Receiving end Bus nominal voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real Vn=400000 "Voltage rating (V)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real V_0=1.008959700699460
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating (MVA)"
+    annotation (Dialog(group="Transformer data"));
+  parameter SI.Voltage Vn(displayUnit="kV")=400e3 "Voltage rating"
+    annotation (Dialog(group="Transformer data"));
+  parameter SI.PerUnit rT=0.01 "Transformer resistance (pu, transformer base)"
+    annotation (Dialog(group="Transformer data"));
+  parameter SI.PerUnit xT=0.2 "Transformer reactance (pu, transformer base)"
+    annotation (Dialog(group="Transformer data"));
+  parameter SI.PerUnit v_ref=1.0 "Reference voltage (pu)"
+    annotation (Dialog(group="Voltage control"));
+  parameter SI.PerUnit v_0=1.008959700699460
     "Initial voltage magnitude of the controlled bus (pu)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real m0=0.98 "Initial tap ratio"
-    annotation (Dialog(group="Power flow data"));
+    annotation (Dialog(group="Voltage control"));
   parameter Real kT=4 "Nominal tap ratio (V1/V2)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real H=0.001 "Integral deviation (pu)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real K=0.10 "Inverse time constant (1/s)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real m_max=0.98 "Maximum tap ratio (p.u./p.u.)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real m_min=0.9785 "Minimum tap ratio (p.u./p.u.)"
-    annotation (Dialog(group="ULTC data"));
-//    annotation (Dialog(group="ULTC data"));
+    annotation (Dialog(group="Voltage control"));
+  parameter SI.PerUnit m0=0.98 "Initial tap ratio (pu/pu)"
+    annotation (Dialog(group="Voltage control"));
+  parameter SI.PerUnit m_max=0.98 "Maximum tap ratio (pu/pu)"
+    annotation (Dialog(group="Voltage control"));
+  parameter SI.PerUnit m_min=0.9785 "Minimum tap ratio (pu/pu)"
+    annotation (Dialog(group="Voltage control"));
+  parameter SI.PerUnit H=0.001 "Integral deviation (pu)"
+    annotation (Dialog(group="Voltage control"));
+  parameter SI.TimeAging K=0.10 "Inverse time constant"
+    annotation (Dialog(group="Voltage control"));
 //  parameter Real deltam=0 "Tap ratio step (p.u./p.u.)"
-  parameter Real v_ref=1.0 "Reference voltage (power) (pu)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real xT=0.001 "Transformer reactance (pu)"
-    annotation (Dialog(group="ULTC data"));
-  parameter Real rT=0.1 "Transformer resistance (pu)"
-    annotation (Dialog(group="ULTC data"));
+//    annotation (Dialog(group="Voltage control"));
 //  parameter Real d=0.05 "Dead zone percentage"
-//    annotation (Dialog(group="ULTC data"));
-  Real m "Tap ratio";
-  Real vk "Voltage at primary, p.u.";
-  Real vm(start=V_0) "Voltage at secondary p.u.";
-  Real anglevk "Angle at primary";
-  Real anglevm "Angle at secondary ";
+//    annotation (Dialog(group="Voltage control"));
+  SI.PerUnit m "Tap ratio";
+  SI.PerUnit vk "Voltage at primary (pu)";
+  SI.PerUnit vm(start=v_0) "Voltage at secondary (pu)";
+  SI.Angle anglevk "Angle at primary";
+  SI.Angle anglevm "Angle at secondary ";
 protected
-  parameter Real V2=Vn/kT "Secondary voltage";
-  parameter Real Zn = Vn^2/Sn "Transformer base impedance";
-  parameter Real Zb = Vbus1^2/S_b "System base impedance";
-  parameter Real r = rT * Zn/Zb "Resistance (pu, system base)";
-  parameter Real x = xT * Zn/Zb "Reactance (pu, system base)";
-  parameter Real vref=v_ref*(V2/Vbus2);
+  parameter SI.Voltage V2=Vn/kT "Secondary voltage";
+  parameter SI.Impedance Zn = Vn^2/Sn "Transformer base impedance";
+  parameter SI.Impedance Zb = Vbus1^2/S_b "System base impedance";
+  parameter SI.PerUnit r = rT * Zn/Zb "Resistance (pu, system base)";
+  parameter SI.PerUnit x = xT * Zn/Zb "Reactance (pu, system base)";
+  parameter SI.PerUnit vref=v_ref*(V2/Vbus2);
 initial equation
   m = m0;
 equation
