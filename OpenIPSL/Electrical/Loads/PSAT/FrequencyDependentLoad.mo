@@ -1,6 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model FrequencyDependentLoad "Frequency Dependent Load"
-  import Modelica.Constants.pi;
   extends BaseClasses.baseLoad;
   parameter Real alpha_p=0 "Active power voltage coefficient";
   parameter Real alpha_q=0 "Reactive power voltage coefficient";
@@ -14,9 +13,9 @@ protected
 initial equation
   der(x) = 0;
 equation
-  a = V/V_0;
+  a = v/v_0;
   der(x) = -deltaw/Tf;
-  0 = x + 1/(2*pi*fn)*1/Tf*(Angle_V - angle_0) - deltaw;
+  0 = x + 1/(2*C.pi*fn)*1/Tf*(Angle_V - angle_0rad) - deltaw;
   P = P_0/S_b*a^alpha_p*(1 + deltaw)^beta_p;
   Q = Q_0/S_b*a^alpha_q*(1 + deltaw)^beta_q;
   annotation (

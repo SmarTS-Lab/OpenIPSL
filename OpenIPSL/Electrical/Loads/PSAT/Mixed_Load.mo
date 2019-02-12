@@ -1,6 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model Mixed_Load "Mixed Load"
-  import Modelica.Constants.pi;
   extends BaseClasses.baseLoad;
   parameter Real Kpf=0 "Frequency coefficient for the active power (pu)";
   parameter Real alpha=0 "Voltage exponent for the active power";
@@ -14,14 +13,14 @@ model Mixed_Load "Mixed Load"
 protected
   Real a "Auxiliary variable, voltage division";
   Real b "Auxiliary variable, derivation";
-  Real x(start=-V_0/Tfv);
+  Real x(start=-v_0/Tfv);
   Real y(start=0);
 equation
-  a = V/V_0;
-  der(x) = ((-V/Tfv) - x)/Tfv;
-  b = x + V/Tfv;
-  der(y) = -1/Tft*(1/(2*pi*fn*Tft)*(Angle_V - angle_0) + y);
-  deltaw = y + 1/(2*pi*fn*Tft)*(Angle_V - angle_0);
+  a = v/v_0;
+  der(x) = ((-v/Tfv) - x)/Tfv;
+  b = x + v/Tfv;
+  der(y) = -1/Tft*(1/(2*C.pi*fn*Tft)*(Angle_V - angle_0rad) + y);
+  deltaw = y + 1/(2*C.pi*fn*Tft)*(Angle_V - angle_0rad);
   P = Kpf*deltaw + P_0/S_b*(a^alpha + Tpv*b);
   Q = Kqf*deltaw + Q_0/S_b*(a^beta + Tqv*b);
   annotation (

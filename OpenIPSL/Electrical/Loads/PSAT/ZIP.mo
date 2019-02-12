@@ -10,7 +10,7 @@ model ZIP "ZIP Load"
 protected
   Real a "Auxiliary variable, voltage division";
 equation
-  a = V/V_0;
+  a = v/v_0;
   P = P_0/S_b*(Pz*a^2 + Pi*a + Pp);
   Q = Q_0/S_b*(Qz*a^2 + Qi*a + Qp);
   annotation (

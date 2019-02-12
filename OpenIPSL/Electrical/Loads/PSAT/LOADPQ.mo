@@ -1,9 +1,9 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model LOADPQ "Constant PQ Load"
   extends BaseClasses.baseLoad;
-  parameter Modelica.SIunits.PerUnit Vmax=1.2 "maximum voltage"
+  parameter SI.PerUnit Vmax=1.2 "maximum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
-  parameter Modelica.SIunits.PerUnit Vmin=0.8 "minimum voltage"
+  parameter SI.PerUnit Vmin=0.8 "minimum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
   parameter Boolean forcePQ=true
     "force constant PQ-load, false may cause simulation problems" annotation (
@@ -14,13 +14,13 @@ equation
   if forcePQ or initial() then
     P = P_0/S_b;
     Q = Q_0/S_b;
-  elseif (V > Vmax) then
+  elseif (v > Vmax) then
     // needs a better implementation
-    P = P_0*V^2/(Vmax^2)/S_b;
-    Q = Q_0*V^2/(Vmax^2)/S_b;
-  elseif (V < Vmin) then
-    P = P_0*V^2/Vmin^2/S_b;
-    Q = Q_0*V^2/(Vmin^2)/S_b;
+    P = P_0*v^2/(Vmax^2)/S_b;
+    Q = Q_0*v^2/(Vmax^2)/S_b;
+  elseif (v < Vmin) then
+    P = P_0*v^2/Vmin^2/S_b;
+    Q = Q_0*v^2/(Vmin^2)/S_b;
   else
     P = P_0/S_b;
     Q = Q_0/S_b;
