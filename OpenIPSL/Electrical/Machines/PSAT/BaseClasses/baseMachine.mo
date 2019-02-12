@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT.BaseClasses;
 partial model baseMachine
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  import Modelica.Constants.pi;
-  import SI = Modelica.SIunits;
   import CM = Modelica.ComplexMath;
   import Complex;
   parameter SI.ApparentPower Sn(displayUnit="MVA") "Power rating"
@@ -13,7 +11,7 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit x1d "d-axis transient reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time M "Mechanical starting time, 2H (kWs/kW)"
+  parameter SI.Time M "Mechanical starting time, 2H (MWs/MVA)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
@@ -40,7 +38,7 @@ partial model baseMachine
         origin={110,90},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput v(start=V_0)
+  Modelica.Blocks.Interfaces.RealOutput v(start=v_0)
     "Generator terminal voltage (pu)" annotation (Placement(visible=true,
         transformation(
         origin={110,30},
@@ -86,7 +84,7 @@ partial model baseMachine
 protected
   SI.PerUnit pe(start=pm00) "electrical power transmitted through the air-gap";
   SI.PerUnit vf_MB=vf*V_b/Vn "field voltage on machine base";
-  parameter SI.AngularVelocity w_b=2*pi*fn "Base frequency in rad/s";
+  parameter SI.AngularVelocity w_b=2*C.pi*fn "Base frequency in rad/s";
   // Define multiplicative transforms to go from one pu-base to another:
   parameter Real S_SBtoMB=S_b/Sn "S(system base) -> S(machine base)";
   parameter Real I_MBtoSB=(Sn*V_b)/(S_b*Vn) "I(machine base) -> I(system base)";
@@ -99,7 +97,7 @@ protected
     "Initial active power generation in pu (system base)";
   parameter SI.PerUnit q0=Q_0/S_b
     "Initial reactive power generation in pu (system base)";
-  parameter Complex Vt0=CM.fromPolar(V_0, SI.Conversions.from_deg(angle_0))
+  parameter Complex Vt0=CM.fromPolar(v_0, SI.Conversions.from_deg(angle_0))
     "Init. val., conjugate";
   parameter Complex S0(re=p0, im=-q0) "Init. val., conjugate";
   parameter Complex I0=S0/(CM.conj(Vt0)) "Init. val., conjugate";
@@ -112,9 +110,9 @@ protected
   parameter SI.PerUnit xq0 "used for setting the initial rotor angle";
   parameter SI.Angle delta0=CM.arg((Vt0 + ((ra + CM.j*xq0)*Z_MBtoSB*I0)))
     "Init. val. rotor angle";
-  parameter Complex Vdq0=Vt0*CM.fromPolar(1/V_MBtoSB, (-delta0 + (pi/2)))
+  parameter Complex Vdq0=Vt0*CM.fromPolar(1/V_MBtoSB, (-delta0 + (C.pi/2)))
     "Init. val (pu, machine base)";
-  parameter Complex Idq0=I0*CM.fromPolar(1/I_MBtoSB, (-delta0 + (pi/2)))
+  parameter Complex Idq0=I0*CM.fromPolar(1/I_MBtoSB, (-delta0 + (C.pi/2)))
     "(pu, machine base)";
   parameter SI.PerUnit vd0=CM.real(Vdq0) "Init. val.";
   parameter SI.PerUnit vq0=CM.imag(Vdq0) "Init. val.";

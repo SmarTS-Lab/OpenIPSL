@@ -10,7 +10,6 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
   import Modelica.ComplexMath.fromPolar;
   import Modelica.ComplexMath.j;
   import OpenIPSL.NonElectrical.Functions.SE;
-  import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(
     w(start=0),
     XADIFD(start=efd0),
@@ -22,27 +21,27 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
     uq(start=uq0),
     Te(start=pm0));
   //Machine parameters
-  parameter Real Xpq "q-axis transient reactance (pu)"
+  parameter SI.PerUnit Xpq "q-axis transient reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Tpq0 "q-axis transient open-circuit time constant (s)"
+  parameter SI.Time Tpq0 "q-axis transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xpp=Xppd "Sub-transient reactance (pu)"
+  parameter SI.PerUnit Xpp=Xppd "Sub-transient reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  Real Epd(start=Epd0) "d-axis voltage behind transient reactance (pu)";
-  Real Epq(start=Epq0) "q-axis voltage behind transient reactance ";
-  Real PSIkd(start=PSIkd0) "d-axis rotor flux linkage (pu)";
-  Real PSIkq(start=PSIkq0) "q-axis rotor flux linkage (pu)";
+  SI.PerUnit Epd(start=Epd0) "d-axis voltage behind transient reactance (pu)";
+  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance ";
+  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage (pu)";
+  SI.PerUnit PSIkq(start=PSIkq0) "q-axis rotor flux linkage (pu)";
   //State variables
-  Real PSId(start=PSId0) "d-axis flux linkage (pu)";
-  Real PSIq(start=PSIq0) "q-axis flux linkage (pu)";
-  Real PSIppd(start=PSIppd0) "d-axis subtransient flux linkage (pu)";
-  Real PSIppq(start=PSIppq0) "q-axis subtransient flux linkage (pu)";
-  Real PSIpp "Air-gap flux (pu)";
-  Real XadIfd(start=efd0) "d-axis machine field current (pu)";
-  Real XaqIlq(start=0) "q-axis Machine field current (pu)";
+  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage (pu)";
+  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage (pu)";
+  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage (pu)";
+  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage (pu)";
+  SI.PerUnit PSIpp "Air-gap flux (pu)";
+  SI.PerUnit XadIfd(start=efd0) "d-axis machine field current (pu)";
+  SI.PerUnit XaqIlq(start=0) "q-axis Machine field current (pu)";
 protected
   parameter Complex Zs=R_a + j*Xpp "Equivalent impedance";
-  parameter Complex VT=V_0*cos(anglev_rad) + j*V_0*sin(anglev_rad)
+  parameter Complex VT=v_0*cos(angle_0rad) + j*v_0*sin(angle_0rad)
     "Complex terminal voltage";
   parameter Complex S=p0 + j*q0 "Complex power on machine base";
   parameter Complex It=real(S/VT) - j*imag(S/VT)
@@ -51,10 +50,10 @@ protected
     "Equivalent internal current source";
   parameter Complex PSIpp0=real(Zs*Is) + j*imag(Zs*Is)
     "Sub-transient flux linkage in stator reference frame";
-  parameter Real ang_PSIpp0=arg(PSIpp0) "flux angle";
-  parameter Real ang_It=arg(It) "current angle";
-  parameter Real ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
-  parameter Real abs_PSIpp0='abs'(PSIpp0)
+  parameter SI.Angle ang_PSIpp0=arg(PSIpp0) "flux angle";
+  parameter SI.Angle ang_It=arg(It) "current angle";
+  parameter SI.Angle ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
+  parameter SI.PerUnit abs_PSIpp0='abs'(PSIpp0)
     "magnitude of sub-transient flux linkage";
   parameter Real dsat=SE(
       abs_PSIpp0,
@@ -65,7 +64,7 @@ protected
   parameter Real a=abs_PSIpp0 + abs_PSIpp0*dsat*(Xq - Xl)/(Xd - Xl);
   parameter Real b=(It.re^2 + It.im^2)^0.5*(Xpp - Xq);
   //Initializion rotor angle position
-  parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a))
+  parameter SI.Angle delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a))
        + ang_PSIpp0 "initial rotor angle in radians";
   parameter Complex DQ_dq=cos(delta0) - j*sin(delta0)
     "Parks transformation, from stator to rotor reference frame";
@@ -73,41 +72,40 @@ protected
     "Flux linkage in rotor reference frame";
   parameter Complex I_dq=conj(It*DQ_dq);
   //"The terminal current in rotor reference frame"
-  parameter Real PSIppq0=imag(PSIpp0_dq)
+  parameter SI.PerUnit PSIppq0=imag(PSIpp0_dq)
     "q-axis component of the sub-transient flux linkage";
-  parameter Real PSIppd0=real(PSIpp0_dq)
+  parameter SI.PerUnit PSIppd0=real(PSIpp0_dq)
     "d-axis component of the sub-transient flux linkage";
   //Initialization of current and voltage components in rotor reference frame (dq-axes).
-  parameter Real delta1=delta0*180/pi "rotor angle in degrees";
-  parameter Real iq0=real(I_dq) "q-axis component of intitial current";
-  parameter Real id0=imag(I_dq) "d-axis component of intitial current";
-  parameter Real ud0=(-(PSIppq0 - Xppq*iq0)) - R_a*id0
+  parameter SI.PerUnit iq0=real(I_dq) "q-axis component of intitial current";
+  parameter SI.PerUnit id0=imag(I_dq) "d-axis component of intitial current";
+  parameter SI.PerUnit ud0=(-(PSIppq0 - Xppq*iq0)) - R_a*id0
     "d-axis component of intitial voltage";
-  parameter Real uq0=PSIppd0 - Xppd*id0 - R_a*iq0
+  parameter SI.PerUnit uq0=PSIppd0 - Xppd*id0 - R_a*iq0
     "q-axis component of intitial voltage";
   //Initialization current and voltage components in synchronous reference frame.
-  parameter Real vr0=V_0*cos(anglev_rad)
+  parameter SI.PerUnit vr0=v_0*cos(angle_0rad)
     "Real component of initial terminal voltage";
-  parameter Real vi0=V_0*sin(anglev_rad)
+  parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
     "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current, systembase";
-  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current, systembase";
+  parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current (pu, system base)";
+  parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current (pu, system base)";
   //Initialization mechanical power and field voltage.
-  parameter Real pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
-    "Initial mechanical power, machine base";
-  parameter Real efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0
+  parameter SI.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
+    "Initial mechanical power (pu, machine base)";
+  parameter SI.PerUnit efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0
     "Initial field voltage magnitude";
-  parameter Real Epq0=PSIkd0 + (Xpd - Xl)*id0;
-  parameter Real Epd0=PSIkq0 - (Xpq - Xl)*iq0;
+  parameter SI.PerUnit Epq0=PSIkd0 + (Xpd - Xl)*id0;
+  parameter SI.PerUnit Epd0=PSIkq0 - (Xpq - Xl)*iq0;
   //Initialize remaining states:
-  parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
+  parameter SI.PerUnit PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
     "d-axis initial rotor flux linkage";
-  parameter Real PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q)
+  parameter SI.PerUnit PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q)
     "q-axis initial rotor flux linkage";
-  parameter Real PSId0=PSIppd0 - Xppd*id0;
-  parameter Real PSIq0=(-PSIppq0) - Xppq*iq0;
+  parameter SI.PerUnit PSId0=PSIppd0 - Xppd*id0;
+  parameter SI.PerUnit PSIq0=(-PSIppq0) - Xppq*iq0;
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;
   parameter Real K2d=(Xpd - Xl)*(Xppd - Xl)/(Xpd - Xppd);

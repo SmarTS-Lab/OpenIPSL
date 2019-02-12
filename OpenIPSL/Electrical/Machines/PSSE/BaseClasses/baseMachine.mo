@@ -1,6 +1,5 @@
 within OpenIPSL.Electrical.Machines.PSSE.BaseClasses;
 partial model baseMachine
-  import Modelica.Constants.pi;
   import Complex;
   import Modelica.ComplexMath.arg;
   import Modelica.ComplexMath.real;
@@ -10,35 +9,35 @@ partial model baseMachine
   import Modelica.Blocks.Interfaces.*;
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   //Machine parameters
-  parameter Real M_b "Machine base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Tpd0 "d-axis transient open-circuit time constant (s)"
+  parameter SI.ApparentPower M_b(displayUnit="MVA") "Machine base power"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Tppd0 "d-axis sub-transient open-circuit time constant (s)"
+  parameter SI.Time Tpd0 "d-axis transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Tppq0 "q-axis transient open-circuit time constant (s)"
+  parameter SI.Time Tppd0 "d-axis sub-transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real H "Inertia constant (s)"
+  parameter SI.Time Tppq0 "q-axis transient open-circuit time constant"
+    annotation (Dialog(group="Machine parameters"));
+  parameter SI.Time H "Inertia constant"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Speed damping"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xd "d-axis reactance"
+  parameter SI.PerUnit Xd "d-axis reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xq "q-axis reactance"
+  parameter SI.PerUnit Xq "q-axis reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xpd "d-axis transient reactance"
+  parameter SI.PerUnit Xpd "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xppd "d-axis sub-transient reactance"
+  parameter SI.PerUnit Xppd "d-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xppq "q-axis sub-transient reactance"
+  parameter SI.PerUnit Xppq "q-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xl "leakage reactance"
+  parameter SI.PerUnit Xl "leakage reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real S10 "Saturation factor at 1.0 pu"
+  parameter SI.PerUnit S10 "Saturation factor at 1.0 pu"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real S12 "Saturation factor at 1.2 pu"
+  parameter SI.PerUnit S12 "Saturation factor at 1.2 pu"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real R_a=0 "amature resistance"
+  parameter SI.PerUnit R_a=0 "Amature resistance"
     annotation (Dialog(group="Machine parameters"));
   //Initialization
   OpenIPSL.Interfaces.PwPin p(
@@ -49,21 +48,21 @@ partial model baseMachine
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
   RealOutput SPEED(start=0) "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{100,60},{120,80}})));
-  RealInput PMECH "Turbine mechanical power (pu on M_b)"
+  RealInput PMECH "Turbine mechanical power (pu, machine base)"
     annotation (Placement(transformation(extent={{-140,30},{-100,70}})));
-  RealOutput PMECH0 "Initial value of machine electrical power (pu on M_b)"
+  RealOutput PMECH0 "Initial value of machine electrical power (pu, machine base)"
     annotation (Placement(transformation(extent={{100,40},{120,60}})));
-  RealOutput ETERM(start=V_0) "Machine terminal voltage (pu)"
+  RealOutput ETERM(start=v_0) "Machine terminal voltage (pu)"
     annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
   RealInput EFD "Generator main field voltage (pu)"
     annotation (Placement(transformation(extent={{-140,-70},{-100,-30}})));
   RealOutput EFD0 "Initial generator main field voltage (pu)"
     annotation (Placement(transformation(extent={{100,-60},{120,-40}})));
-  RealOutput PELEC(start=p0) "Machine electrical power (pu on M_b)"
+  RealOutput PELEC(start=p0) "Machine electrical power (pu, machine base)"
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
   RealOutput ISORCE "Machine source current (pu)"
     annotation (Placement(transformation(extent={{100,-80},{120,-60}})));
-  RealOutput ANGLE "Machine relative rotor angle (deg.)"
+  RealOutput ANGLE "Machine relative rotor angle (deg)"
     annotation (Placement(transformation(extent={{100,78},{120,98}})));
   RealOutput XADIFD "Machine field current (pu)" annotation (Placement(
         transformation(
@@ -73,35 +72,33 @@ partial model baseMachine
         extent={{-8,-8},{8,8}},
         rotation=0,
         origin={108,-90})));
-  Real w(start=0) "Machine speed deviation (pu)";
-  Real delta "Rotor angle (deg.)";
-  Real Vt(start=V_0) "Bus voltage magnitude (pu)";
-  Real anglev(start=anglev_rad) "Bus voltage angle (deg.)";
-  Real I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude (pu)";
-  Real anglei(start=atan2(ii0, ir0)) "Terminal current angle (deg.)";
-  Real P(start=P_0/S_b) "Active power (p.u. on S_b)";
-  Real Q(start=Q_0/S_b) "Reactive power (p.u. on S_b)";
-  Real Te "Electrical torque (pu)";
-  Real id "d-axis armature current (pu)";
-  Real iq "q-axis armature current (pu)";
-  Real ud "d-axis terminal voltage (pu)";
-  Real uq "q-axis terminal voltage (pu)";
+  SI.PerUnit w(start=0) "Machine speed deviation (pu)";
+  SI.Angle delta "Rotor angle";
+  SI.PerUnit Vt(start=v_0) "Bus voltage magnitude (pu)";
+  SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  SI.PerUnit I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude (pu)";
+  SI.Angle anglei(start=atan2(ii0, ir0)) "Terminal current angle";
+  SI.PerUnit P(start=P_0/S_b) "Active power (pu, system base)";
+  SI.PerUnit Q(start=Q_0/S_b) "Reactive power (pu, system base)";
+  SI.PerUnit Te "Electrical torque (pu)";
+  SI.PerUnit id "d-axis armature current (pu)";
+  SI.PerUnit iq "q-axis armature current (pu)";
+  SI.PerUnit ud "d-axis terminal voltage (pu)";
+  SI.PerUnit uq "q-axis terminal voltage (pu)";
 protected
-  parameter Real w_b=2*pi*fn "System base speed (rad/s)";
-  parameter Real anglev_rad=angle_0*pi/180
-    "initial value of bus voltage angle in rad";
+  parameter SI.AngularVelocity w_b=2*C.pi*fn "System base speed";
   parameter Real CoB=M_b/S_b;
-  parameter Real vr0=V_0*cos(anglev_rad)
+  parameter SI.PerUnit vr0=v_0*cos(angle_0rad)
     "Real component of initial terminal voltage";
-  parameter Real vi0=V_0*sin(anglev_rad)
+  parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
     "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current, systembase";
-  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current, systembase";
-  parameter Real p0=P_0/M_b "initial active power generation in pu machinebase";
-  parameter Real q0=Q_0/M_b
-    "initial reactive power generation in pu machinebase";
+  parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current (pu, system base)";
+  parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current (pu, system base)";
+  parameter SI.PerUnit p0=P_0/M_b "Initial active power generation (pu, machine base)";
+  parameter SI.PerUnit q0=Q_0/M_b
+    "Initial reactive power generation (pu, machine base)";
 equation
   //Interfacing outputs with the internal variables
   ANGLE = delta;

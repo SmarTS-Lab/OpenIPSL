@@ -6,14 +6,37 @@
 convertModifiers({"OpenIPSL.Electrical.SystemBase"},
                  {"S_b"}, {"S_b=%S_b%*1e6"});
 
-// Interfaces.Generator
+
+// PSAT base machine
+convertModifiers("OpenIPSL.Electrical.Machines.PSAT.BaseClasses.baseMachine",
+     {"Sn"},{"Sn=%Sn%*1e6"}, aggressive=true);
+convertModifiers("OpenIPSL.Electrical.Machines.PSAT.BaseClasses.baseMachine",
+     {"Vn"},{"Vn=%Vn%*1e3"}, aggressive=true);
+
+// pfComponent
+convertModifiers("OpenIPSL.Electrical.Essentials.pfComponent",
+     {"V_b"},{"V_b=%V_b%*1e3"}, aggressive=true);
+convertModifiers("OpenIPSL.Electrical.Essentials.pfComponent",
+     {"V_0"},{"v_0=%V_0%"}, aggressive=true);
+convertModifiers("OpenIPSL.Electrical.Essentials.pfComponent",
+     {"P_0"},{" P_0=%P_0%*1e6"}, aggressive=true);
+convertModifiers("OpenIPSL.Electrical.Essentials.pfComponent",
+     {"Q_0"},{"Q_0=%Q_0%*1e6"}, aggressive=true);
+convertModifiers("OpenIPSL.Electrical.Essentials.pfComponent",
+     {"S_b"},{"S_b=%S_b%*1e6"}, aggressive=true);
+
+
+/*// Interfaces.Generator
 convertModifiers({"OpenIPSL.Interfaces.Generator",
                   "OpenIPSL.Electrical.Branches.PwLine",
-                  "OpenIPSL.Electrical.Buses",
-                  "OpenIPSL.Electrical.Machines.PSAT.Order2",
-                  "OpenIPSL.Electrical.Loads.PSAT"},
+                  "OpenIPSL.Electrical.Buses.Bus",
+                  "OpenIPSL.Electrical.Buses.InfiniteBus",
+//                  "OpenIPSL.Electrical.Machines.PSSE.BaseClasses.baseMachine",
+"OpenIPSL.Electrical.Essentials.pfComponent"
+"OpenIPSL.Electrical.Loads.PSAT"},
                  {"V_b","V_0","P_0","Q_0","S_b"},
-                 {"V_b=%V_b%*1e3","v_0=%V_0%","P_0=%P_0%*1e6","Q_0=%Q_0%*1e6","S_b=%S_b%*1e6"});
+{"V_b=%V_b%*1e3","v_0=%V_0%","P_0=%P_0%*1e6","Q_0=%Q_0%*1e6","S_b=%S_b%*1e6"},
+aggressive=true);
 
 
 // PSAT transformer package #172:
@@ -39,3 +62,4 @@ convertClass("OpenIPSL.Examples.Branches.PSAT.TWTPST_smib_test",
              "OpenIPSL.Examples.Branches.PSAT.TwoWindingTransformer_Test");
 convertClass("OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer",
              "OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer");
+*/

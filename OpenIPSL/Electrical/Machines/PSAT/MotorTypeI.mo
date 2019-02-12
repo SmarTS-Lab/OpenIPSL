@@ -1,35 +1,37 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model MotorTypeI "Induction Machine - Order I"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
+    annotation (Dialog(group="Machine parameters"));
   parameter Integer Sup=1 "Start-up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
-  parameter Real Rs=0.01 "Stator resistance (pu)"
+  parameter SI.PerUnit Rs=0.01 "Stator resistance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xs=0.15 "Stator reactance (pu)"
+  parameter SI.PerUnit Xs=0.15 "Stator reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Rr1=0.05 "1st cage rotor resistance (pu)"
+  parameter SI.PerUnit Rr1=0.05 "1st cage rotor resistance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xr1=0.15 "1st cage rotor reactance (pu)"
+  parameter SI.PerUnit Xr1=0.15 "1st cage rotor reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Xm=5 "Magnetizing reactance (pu)"
+  parameter SI.PerUnit Xm=5 "Magnetizing reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Hm=3 "Inertia constant (kWs/KVA)"
+  parameter SI.Time Hm=3 "Inertia constant (kWs/KVA)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real a=0.5 "1st coefficient of tau_m(w) (pu)"
+  parameter SI.PerUnit a=0.5 "1st coefficient of tau_m(w) (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real b=0.00 "2nd coefficient of tau_m(w) (pu)"
+  parameter SI.PerUnit b=0.00 "2nd coefficient of tau_m(w) (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real c=0.00 "3rd coefficient of tau_m(w) (pu)"
+  parameter SI.PerUnit c=0.00 "3rd coefficient of tau_m(w) (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real tup=0 "Start up time (s)"
+  parameter SI.Time tup=0 "Start up time (s)"
     annotation (Dialog(group="Machine parameters"));
-  Real v(start=V_0) "Bus voltage magnitude";
-  Real anglev(start=angle_0) " Bus voltage angle";
-  Real s(start=Rr1*P_0*(Q_0 + V_0*V_0/Xm)/(V_0*V_0*V_0*V_0*(Xs + Xr1)));
-  Real Tm;
-  Real P(start=P_0);
-  Real Q(start=Q_0);
-  Real Re;
+  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
+  SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  SI.PerUnit s(start=Rr1*P_0*(Q_0 + v_0*v_0/Xm)/(v_0*v_0*v_0*v_0*(Xs + Xr1)));
+  SI.PerUnit Tm;
+  SI.PerUnit P(start=P_0/Sn);
+  SI.PerUnit Q(start=Q_0/Sn);
+  SI.PerUnit Re;
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
@@ -37,15 +39,14 @@ model MotorTypeI "Induction Machine - Order I"
     ii(start=ii0))
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 protected
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real vr0=V_0*cos(angle_0);
-  parameter Real vi0=V_0*sin(angle_0);
-  parameter Real ir0=(P_0*vr0 + Q_0*vi0)/(vr0^2 + vi0^2);
-  parameter Real ii0=(P_0*vi0 - Q_0*vr0)/(vr0^2 + vi0^2);
-  parameter Real A=a + b + c;
-  parameter Real B=(-b) - 2*c;
-  parameter Real C=c;
-  parameter Real Xe=Xs + Xr1;
+  parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
+  parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter SI.PerUnit ir0=(P_0*vr0 + Q_0*vi0)/(vr0^2 + vi0^2);
+  parameter SI.PerUnit ii0=(P_0*vi0 - Q_0*vr0)/(vr0^2 + vi0^2);
+  parameter SI.PerUnit A=a + b + c;
+  parameter SI.PerUnit B=(-b) - 2*c;
+  parameter SI.PerUnit C=c;
+  parameter SI.PerUnit Xe=Xs + Xr1;
 initial equation
   der(s) = 0;
 equation

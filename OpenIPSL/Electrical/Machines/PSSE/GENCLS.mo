@@ -1,7 +1,5 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENCLS
-  import Modelica.Constants.pi;
-  import Modelica.Constants.eps;
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
@@ -11,47 +9,46 @@ model GENCLS
         origin={100,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  parameter Real M_b "Machine base power rating (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real H=0 "Inertia constant (s)"
+  parameter SI.ApparentPower M_b(displayUnit="MVA") "Machine base power rating"
+    annotation (Dialog(group="Machine parameters"));
+  parameter SI.Time H=0 "Inertia constant (s)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D=0 "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real R_a=0 "Amature resistance (pu)"
+  parameter SI.PerUnit R_a=0 "Amature resistance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real X_d=0.2 "d-axis transient reactance (pu)"
+  parameter SI.PerUnit X_d=0.2 "d-axis transient reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
   Real delta(start=delta0, fixed=true) "Rotor angle (deg)";
-  Real omega(start=0, fixed=true) "Rotor speed (pu)";
-  Real V(start=V_0) "Bus voltage magnitude (pu)";
-  Real anglev(start=anglev_rad) "Bus voltage angle (rad)";
-  Real eq(start=vf0, fixed=true) "Constant emf behind transient reactance (pu)";
-  Real vd(start=vd0) "d-axis voltage (pu)";
-  Real vq(start=vq0) "q-axis voltage (pu)";
-  Real id(start=id0) "d-axis current (pu)";
-  Real iq(start=iq0) "q-axis current (pu)";
-  Real P(start=P_0/S_b) "Active power (pu. of S_b)";
-  Real Q(start=Q_0/S_b) "Reactive power (pu of S_b)";
+  SI.PerUnit omega(start=0, fixed=true) "Rotor speed (pu)";
+  SI.PerUnit V(start=v_0) "Bus voltage magnitude (pu)";
+  SI.Angle anglev(start=angle_0rad) "Bus voltage angle (rad)";
+  SI.PerUnit eq(start=vf0, fixed=true) "Constant emf behind transient reactance (pu)";
+  SI.PerUnit vd(start=vd0) "d-axis voltage (pu)";
+  SI.PerUnit vq(start=vq0) "q-axis voltage (pu)";
+  SI.PerUnit id(start=id0) "d-axis current (pu)";
+  SI.PerUnit iq(start=iq0) "q-axis current (pu)";
+  SI.PerUnit P(start=P_0/S_b) "Active power (pu, system base)";
+  SI.PerUnit Q(start=Q_0/S_b) "Reactive power (pu, system base)";
 protected
   parameter Real CoB=M_b/S_b "Change from system to machine base";
-  parameter Real anglev_rad=angle_0*pi/180 "Initial bus voltage angle (rad)";
-  parameter Real p0=P_0/M_b "Initial active power (pu on M_b)";
-  parameter Real q0=Q_0/M_b "Initial reactive power in (pu on M_b)";
-  parameter Real vr0=V_0*cos(anglev_rad);
-  parameter Real vi0=V_0*sin(anglev_rad);
-  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2);
-  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2);
-  parameter Real delta0=atan2(vi0 + R_a*ii0 + X_d*ir0, vr0 + R_a*ir0 - X_d*ii0);
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0);
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0);
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0);
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0);
-  parameter Real vf0=vq0 + R_a*iq0 + X_d*id0;
+  parameter SI.PerUnit p0=P_0/M_b "Initial active power (pu, machine base)";
+  parameter SI.PerUnit q0=Q_0/M_b "Initial reactive power (pu, machine base)";
+  parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
+  parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2);
+  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2);
+  parameter SI.Angle delta0=atan2(vi0 + R_a*ii0 + X_d*ir0, vr0 + R_a*ir0 - X_d*ii0);
+  parameter SI.PerUnit vd0=vr0*cos(C.pi/2 - delta0) - vi0*sin(C.pi/2 - delta0);
+  parameter SI.PerUnit vq0=vr0*sin(C.pi/2 - delta0) + vi0*cos(C.pi/2 - delta0);
+  parameter SI.PerUnit id0=ir0*cos(C.pi/2 - delta0) - ii0*sin(C.pi/2 - delta0);
+  parameter SI.PerUnit iq0=ir0*sin(C.pi/2 - delta0) + ii0*cos(C.pi/2 - delta0);
+  parameter SI.PerUnit vf0=vq0 + R_a*iq0 + X_d*id0;
 equation
   //Swing equation
   //in PSS/E setting to zero is equivalent to removing the swing equation
-  if abs(H) > eps then
-    der(delta) = omega*2*pi*50;
+  if abs(H) > C.eps then
+    der(delta) = omega*2*C.pi*50;
     der(omega) = (P_0/S_b - P - D*omega)/(2*H);
   else
     der(delta) = 0;

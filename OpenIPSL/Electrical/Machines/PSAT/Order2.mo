@@ -6,7 +6,7 @@ protected
   parameter Real c1=ra*K "scaled ra";
   parameter Real c2=x1d*K "scaled x'd";
   parameter Real c3=x1d*K "scaled x'd";
-  parameter Real vf00=V_MBtoSB*(vq0 + ra*iq0 + x1d*id0) "Init. val. (pu, SB)";
+  parameter SI.PerUnit vf00=V_MBtoSB*(vq0 + ra*iq0 + x1d*id0) "Init. val. (pu, SB)";
 equation
   id = -c1*vd - c3*vq + vf_MB*c3;
   iq = c2*vd - c1*vq + vf_MB*c1;

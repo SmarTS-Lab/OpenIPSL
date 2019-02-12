@@ -1,20 +1,20 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order3 "Third Order Synchronous Machine with Inputs and Outputs"
   extends BaseClasses.baseMachine(vf(start=vf00), xq0=xq);
-  parameter Real xd "d-axis synchronous reactance (pu)"
+  parameter SI.PerUnit xd "d-axis synchronous reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real T1d0 "d-axis open circuit transient time constant (s)"
+  parameter SI.Time T1d0 "d-axis open circuit transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real xq "q-axis synchronous reactance (pu)"
+  parameter SI.PerUnit xq "q-axis synchronous reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  Real e1q(start=e1q0) "q-axis transient voltage (pu)";
+  SI.PerUnit e1q(start=e1q0) "q-axis transient voltage (pu)";
 
 protected
   parameter Real K=1/(ra^2 + xq*x1d) "a constant for scaling";
   parameter Real c1=ra*K "scaled ra";
   parameter Real c2=x1d*K "scaled x'd";
   parameter Real c3=xq*K " scaled xq";
-  parameter Real vf00=V_MBtoSB*(e1q0 + (xd - x1d)*id0) "Init. val. (pu, SB)";
+  parameter SI.PerUnit vf00=V_MBtoSB*(e1q0 + (xd - x1d)*id0) "Init. val. (pu, SB)";
   parameter Real e1q0=vq0 + ra*iq0 + x1d*id0 "Initialitation";
 initial equation
   der(e1q) = 0;
