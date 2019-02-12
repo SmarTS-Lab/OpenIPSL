@@ -6,7 +6,7 @@ partial model pfComponent
   parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b
     "System base power"
     annotation (Dialog(group="Power flow data", enable=false));
-  parameter Modelica.SIunits.Frequency fn=SysData.fn
+  parameter SI.Frequency fn=SysData.fn
     "System frequency"
     annotation (Dialog(group="Power flow data", enable=false));
   parameter SI.Voltage V_b(displayUnit="kV")=400e3
@@ -18,10 +18,12 @@ partial model pfComponent
   parameter SI.ReactivePower Q_0(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Modelica.SIunits.PerUnit v_0=1
+  parameter SI.PerUnit v_0=1
     "Initial voltage magnitude (pu)"
     annotation (Dialog(group="Power flow data"));
-  parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
+  parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0
     "Initial voltage angle"
     annotation (Dialog(group="Power flow data"));
+protected
+  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Intial angle in rad";
 end pfComponent;

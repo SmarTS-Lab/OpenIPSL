@@ -8,8 +8,8 @@ partial model Generator "Interface for a generator which provides the PwPin"
       __Dymola_descriptionLabel=true), choices(checkBox=true));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
             {100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-  OpenIPSL.Types.ActivePowerMega P "Active power";
-  OpenIPSL.Types.ReactivePowerMega Q "Reactive power";
+  SI.ActivePower P(displayUnit="MVA") "Active power";
+  SI.ReactivePower Q(displayUnit="MVA") "Reactive power";
 equation
   -P = (pwPin.vr*pwPin.ir + pwPin.vi*pwPin.ii)*S_b "Active power";
   -Q = (pwPin.vi*pwPin.ir - pwPin.vr*pwPin.ii)*S_b "Reactive power";

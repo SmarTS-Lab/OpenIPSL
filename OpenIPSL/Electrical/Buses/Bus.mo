@@ -1,8 +1,8 @@
 ﻿within OpenIPSL.Electrical.Buses;
 model Bus "Bus model (2014/03/10)"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Interfaces.PwPin p(vr(start=V_0*cos(angle_0*C.pi/
-          180)), vi(start=V_0*sin(angle_0*C.pi/180)))
+  OpenIPSL.Interfaces.PwPin p(vr(start=v_0*cos(angle_0*C.pi/
+          180)), vi(start=v_0*sin(angle_0*C.pi/180)))
     annotation (Placement(
       visible=true,
       transformation(
@@ -13,7 +13,7 @@ model Bus "Bus model (2014/03/10)"
         origin={0,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Real V(start=V_0) "Bus voltage magnitude (pu)";
+  Real V(start=v_0) "Bus voltage magnitude (pu)";
   Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle(start=angle_0)
     "Bus voltage angle";
   parameter Boolean displayPF=true "Display voltage values:" annotation (Dialog(

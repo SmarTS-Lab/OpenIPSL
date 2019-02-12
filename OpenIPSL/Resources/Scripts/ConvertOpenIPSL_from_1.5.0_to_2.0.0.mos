@@ -7,8 +7,13 @@ convertModifiers({"OpenIPSL.Electrical.SystemBase"},
                  {"S_b"}, {"S_b=%S_b%*1e6"});
 
 // Interfaces.Generator
-convertModifiers({"OpenIPSL.Interfaces.Generator"},
-                 {"V_b","V_0","P_0","Q_0","S_b"},{"V_b=%V_b%*1e3","V_0=%V_0%*1e3","P_0=%P_0%*1e6","Q_0=%Q_0%*1e6","S_b=%S_b%*1e6"});
+convertModifiers({"OpenIPSL.Interfaces.Generator",
+                  "OpenIPSL.Electrical.Branches.PwLine",
+                  "OpenIPSL.Electrical.Buses",
+                  "OpenIPSL.Electrical.Machines.PSAT.Order2",
+                  "OpenIPSL.Electrical.Loads.PSAT"},
+                 {"V_b","V_0","P_0","Q_0","S_b"},
+                 {"V_b=%V_b%*1e3","v_0=%V_0%","P_0=%P_0%*1e6","Q_0=%Q_0%*1e6","S_b=%S_b%*1e6"});
 
 
 // PSAT transformer package #172:
