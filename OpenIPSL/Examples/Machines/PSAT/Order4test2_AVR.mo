@@ -34,8 +34,7 @@ equation
   connect(order4_Inputs_Outputs.pm0, order4_Inputs_Outputs.pm) annotation (Line(
         points={{-35,-11},{-35,-13},{-41,-13},{-41,-5},{-39,-5}}, color={0,0,
           127}));
-  connect(order4_Inputs_Outputs.p, bus.p)
-    annotation (Line(points={{-17,0},{-8,0},{-8,0},{0,0}}, color={0,0,255}));
+  connect(order4_Inputs_Outputs.p, bus1.p) annotation (Line(points={{-17,0},{-8,0},{-8,0},{0,0}}, color={0,0,255}));
   connect(AVRtypeIII1.vf0, order4_Inputs_Outputs.vf0) annotation (Line(points={
           {-67,14.1667},{-67,23},{-35,23},{-35,11}},color={0,0,127}));
   annotation (Documentation,experiment(StopTime=20));

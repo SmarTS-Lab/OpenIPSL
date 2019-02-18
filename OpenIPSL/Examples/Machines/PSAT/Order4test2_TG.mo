@@ -21,8 +21,7 @@ model Order4test2_TG
     Q_0=11.859436505981)
     annotation (Placement(transformation(extent={{-40,-15},{-10,15}})));
 equation
-  connect(Generator.p, bus.p) annotation (Line(points={{-10,0},{-4.25,0},{-4.25,
-          0},{0,0}}, color={0,0,255}));
+  connect(Generator.p, bus1.p) annotation (Line(points={{-10,0},{-4.25,0},{-4.25,0},{0,0}}, color={0,0,255}));
   connect(TGtypeII1.pm, Generator.pm) annotation (Line(points={{-58.75,-7.5},{-43,-7.5}},
                              color={0,0,127}));
   connect(Generator.pm0, TGtypeII1.pm0) annotation (Line(points={{-37,-16.5},{-37,-25},{-50,-25},{-50,15},{-72.5,15},{-72.5,7.5}},

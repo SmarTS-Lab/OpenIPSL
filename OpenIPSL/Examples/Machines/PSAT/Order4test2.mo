@@ -20,7 +20,6 @@ equation
           28},{-76,28},{-76,10},{-64,10}}, color={0,0,127}));
   connect(Generator.pm, Generator.pm0) annotation (Line(points={{-64,-10},{-72,
           -10},{-72,-18},{-72,-28},{-56,-28},{-56,-22}}, color={0,0,127}));
-  connect(Generator.p, bus.p)
-    annotation (Line(points={{-20,0},{-20,0},{0,0}}, color={0,0,255}));
+  connect(Generator.p, bus1.p) annotation (Line(points={{-20,0},{-20,0},{0,0}}, color={0,0,255}));
   annotation (experiment(StopTime=20), Documentation);
 end Order4test2;

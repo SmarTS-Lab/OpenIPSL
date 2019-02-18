@@ -22,7 +22,6 @@ equation
           {-46,14},{-37.946,14},{-37.946,11}}, color={0,0,127}));
   connect(order21.pm, order21.pm0) annotation (Line(points={{-41.946,-5},{-46,-5},
           {-46,-14},{-37.946,-14},{-37.946,-11}}, color={0,0,127}));
-  connect(order21.p, bus.p) annotation (Line(points={{-19.946,0},{-9.473,0},{-9.473,
-          0},{0,0}}, color={0,0,255}));
+  connect(order21.p, bus1.p) annotation (Line(points={{-19.946,0},{-9.473,0},{-9.473,0},{0,0}}, color={0,0,255}));
   annotation (Documentation,experiment(StopTime=20));
 end Order2test2;

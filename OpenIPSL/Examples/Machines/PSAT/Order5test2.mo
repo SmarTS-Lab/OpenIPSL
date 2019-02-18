@@ -28,8 +28,7 @@ equation
   connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0)
     annotation (Line(points={{-34,-5},{-37,-5},{-37,-15},{-30,-15},{-30,-11}},
         color={0,0,127}));
-  connect(order5Type1_Inputs_Outputs.p, bus.p)
-    annotation (Line(points={{-12,0},{-6,0},{-6,0},{0,0}}, color={0,0,255}));
+  connect(order5Type1_Inputs_Outputs.p, bus1.p) annotation (Line(points={{-12,0},{-6,0},{-6,0},{0,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},

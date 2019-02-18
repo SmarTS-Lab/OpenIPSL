@@ -30,8 +30,8 @@ model Order4test2_perturbation
         origin={-95,55},
         extent={{-5,-5},{5,5}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step2(height=-0.0005, startTime=2.1) annotation
-    (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step2(height=-0.0005, startTime=2.1) annotation (
+     Placement(visible=true, transformation(
         origin={-95,35},
         extent={{-5,-5},{5,5}},
         rotation=0)));
@@ -71,8 +71,8 @@ model Order4test2_perturbation
         origin={-95,-55},
         extent={{-5,-5},{5,5}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step3(height=-0.0005, startTime=7.1) annotation
-    (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step3(height=-0.0005, startTime=7.1) annotation (
+     Placement(visible=true, transformation(
         origin={-95,-35},
         extent={{-5,-5},{5,5}},
         rotation=0)));
@@ -92,20 +92,17 @@ model Order4test2_perturbation
         extent={{-5.00007,-5.00012},{5.00001,4.99999}},
         rotation=0)));
 equation
-  connect(Generator.p, bus.p) annotation (Line(points={{-6,0},{-4.25,0},{-4.25,
-          0},{0,0}}, color={0,0,255}));
+  connect(Generator.p, bus1.p) annotation (Line(points={{-6,0},{-4.25,0},{-4.25,0},{0,0}}, color={0,0,255}));
   connect(step3.y, add4.u2) annotation (Line(
       visible=true,
       origin={-86.308,-30.9083},
       points={{-3.192,-4.0917},{2.3974,-4.0917},{2.3974,2.9083},{5.308,2.9083}},
-
       color={0,0,127}));
 
   connect(step4.y, add4.u1) annotation (Line(
       visible=true,
       origin={-86.308,-19.6146},
       points={{-3.192,4.6146},{2.3974,4.6146},{2.3974,-2.3854},{5.308,-2.3854}},
-
       color={0,0,127}));
 
   connect(add1.y, add31.u1) annotation (Line(points={{-69.5,35},{-60,35},{-60,

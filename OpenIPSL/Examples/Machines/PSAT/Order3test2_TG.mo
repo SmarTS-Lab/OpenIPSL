@@ -33,8 +33,7 @@ equation
           0,0,127}));
   connect(order3_Inputs_Outputs1.pm0, TGtypeII1.pm0) annotation (Line(points={{-38,-11},{-38,-28},{-86,-28},{-86,10},{-63,10},{-63,5.8}},
         color={0,0,127}));
-  connect(order3_Inputs_Outputs1.p, bus.p)
-    annotation (Line(points={{-20,0},{-20,0},{0,0}}, color={0,0,255}));
+  connect(order3_Inputs_Outputs1.p, bus1.p) annotation (Line(points={{-20,0},{-20,0},{0,0}}, color={0,0,255}));
   connect(order3_Inputs_Outputs1.w, TGtypeII1.w) annotation (Line(points={{-19,9},{-16,9},{-16,22},{-80,22},{-80,-5},{-73.8,-5}}, color={0,0,127}));
   annotation (Documentation,experiment(StopTime=20));
 end Order3test2_TG;

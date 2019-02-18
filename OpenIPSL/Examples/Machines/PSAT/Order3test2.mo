@@ -25,7 +25,6 @@ equation
           15},{-33,15},{-33,11}}, color={0,0,127}));
   connect(order31.pm, order31.pm0) annotation (Line(points={{-37,-5},{-40,-5},{
           -40,-15},{-33,-15},{-33,-11}}, color={0,0,127}));
-  connect(order31.p, bus.p)
-    annotation (Line(points={{-15,0},{-7,0},{-7,0},{0,0}}, color={0,0,255}));
+  connect(order31.p, bus1.p) annotation (Line(points={{-15,0},{-7,0},{-7,0},{0,0}}, color={0,0,255}));
   annotation (Documentation,experiment(StopTime=20));
 end Order3test2;

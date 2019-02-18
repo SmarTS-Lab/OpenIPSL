@@ -28,8 +28,7 @@ model Order3test2_AVR
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-98,-4},{-90,4}})));
 equation
-  connect(order3_Inputs_Outputs1.p, bus.p)
-    annotation (Line(points={{-20,0},{-20,0},{0,0}}, color={0,0,255}));
+  connect(order3_Inputs_Outputs1.p, bus1.p) annotation (Line(points={{-20,0},{-20,0},{0,0}}, color={0,0,255}));
   connect(AVRtypeIII1.vf, order3_Inputs_Outputs1.vf) annotation (Line(points={{
           -57.1667,0},{-50.5,0},{-50.5,5},{-41.9999,5}}, color={0,0,127}));
   connect(AVRtypeIII1.v, order3_Inputs_Outputs1.v) annotation (Line(points={{-77.1667,
