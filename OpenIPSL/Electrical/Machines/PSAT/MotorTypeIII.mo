@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model MotorTypeIII "Induction Machine - Order III"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
-    annotation (Dialog(group="Machine parameters"));
   parameter Integer Sup=1 "Start up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
   parameter SI.PerUnit Rs=0.01 "Stator resistance (pu)"
@@ -30,8 +28,8 @@ model MotorTypeIII "Induction Machine - Order III"
   SI.PerUnit s(start=S0);
   SI.PerUnit Tm;
   SI.PerUnit Te;
-  SI.PerUnit P(start=P_0/Sn);
-  SI.PerUnit Q(start=Q_0/Sn);
+  SI.PerUnit P(start=P_0/S_b);
+  SI.PerUnit Q(start=Q_0/S_b);
   SI.PerUnit Vr;
   SI.PerUnit Vm;
   SI.PerUnit Ir;
@@ -53,8 +51,8 @@ protected
   parameter SI.AngularVelocity Omegab=2*pi*fn "Base freq";
   parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
-  parameter SI.PerUnit ir0=(P_0*vr0 + Q_0*vi0)/(vr0^2 + vi0^2);
-  parameter SI.PerUnit ii0=(P_0*vi0 - Q_0*vr0)/(vr0^2 + vi0^2);
+  parameter SI.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
+  parameter SI.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
   parameter SI.PerUnit i2=ir0*ir0 + ii0*ii0;
   parameter SI.PerUnit A=a + b + c;
   parameter SI.PerUnit B=(-b) - 2*c;
@@ -70,7 +68,7 @@ protected
   //r1^2+(xS +xR1xm/(xR1 + xm))^2
   parameter Real a13=Rs/a03;
   parameter Real a23=Xp/a03;
-  parameter Real S0=K*((-Q_0/Sn) + X0*i2);
+  parameter Real S0=K*((-Q_0/S_b) + X0*i2);
   parameter Real epm0=(K1*(X0 - Xp)*ir0 + (X0 - Xp)*(-1)*ii0)/K2;
   parameter Real epr0=(K1*(X0 - Xp)*(-1)*ii0 - (X0 - Xp)*ir0)/K2;
 initial equation

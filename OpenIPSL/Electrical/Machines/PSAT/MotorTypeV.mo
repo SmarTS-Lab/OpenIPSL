@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model MotorTypeV "Induction Machine - Order V"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
-    annotation (Dialog(group="Machine parameters"));
   parameter Integer Sup=1 "Start up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
   parameter SI.PerUnit Rs=0.01 "Stator resistance (pu)"
@@ -35,8 +33,8 @@ model MotorTypeV "Induction Machine - Order V"
   //(start=Rr1*P_0*(Q_0+v_0*v_0/Xm)/(v_0*v_0*v_0*v_0*(Xs + Xr1)));
   SI.PerUnit Tm;
   SI.PerUnit Te;
-  SI.PerUnit P(start=P_0);
-  SI.PerUnit Q(start=Q_0);
+  SI.PerUnit P(start=P_0/S_b);
+  SI.PerUnit Q(start=Q_0/S_b);
   SI.PerUnit e1r(start=epr0);
   SI.PerUnit e1m(start=epm0);
   SI.PerUnit e2r(start=0.0353);
@@ -76,7 +74,7 @@ protected
   parameter Real K=Rr1/((Xr1 + Xm)*A);
   parameter Real K2=1 + T10*T10*Omegab*Omegab*S0*S0;
   parameter Real K1=T10*Omegab*S0;
-  parameter SI.PerUnit S0=K*((-Q_0/Sn) + X0*i2);
+  parameter SI.PerUnit S0=K*((-Q_0/S_b) + X0*i2);
   parameter Real epm0=(K1*(X0 - X1)*ir0 + (X0 - X1)*(-1)*ii0)/K2;
   parameter Real epr0=(K1*(X0 - X1)*(-1)*ii0 - (X0 - X1)*ir0)/K2;
 initial equation

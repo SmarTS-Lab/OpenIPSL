@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model MotorTypeI "Induction Machine - Order I"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
-    annotation (Dialog(group="Machine parameters"));
   parameter Integer Sup=1 "Start-up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
   parameter SI.PerUnit Rs=0.01 "Stator resistance (pu)"
@@ -27,10 +25,10 @@ model MotorTypeI "Induction Machine - Order I"
     annotation (Dialog(group="Machine parameters"));
   SI.PerUnit v(start=v_0) "Bus voltage magnitude";
   SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
-  SI.PerUnit s(start=Rr1*P_0*(Q_0 + v_0*v_0/Xm)/(v_0*v_0*v_0*v_0*(Xs + Xr1)));
+  SI.PerUnit s(start=Rr1*P_0/S_b*(Q_0/S_b + v_0*v_0/Xm)/(v_0*v_0*v_0*v_0*(Xs + Xr1)));
   SI.PerUnit Tm;
-  SI.PerUnit P(start=P_0/Sn);
-  SI.PerUnit Q(start=Q_0/Sn);
+  SI.PerUnit P(start=P_0/S_b);
+  SI.PerUnit Q(start=Q_0/S_b);
   SI.PerUnit Re;
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
@@ -41,8 +39,8 @@ model MotorTypeI "Induction Machine - Order I"
 protected
   parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
-  parameter SI.PerUnit ir0=(P_0*vr0 + Q_0*vi0)/(vr0^2 + vi0^2);
-  parameter SI.PerUnit ii0=(P_0*vi0 - Q_0*vr0)/(vr0^2 + vi0^2);
+  parameter SI.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
+  parameter SI.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
   parameter SI.PerUnit A=a + b + c;
   parameter SI.PerUnit B=(-b) - 2*c;
   parameter SI.PerUnit C=c;
