@@ -13,7 +13,7 @@ model MotorTypeI "Induction Machine - Order I"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit Xm=5 "Magnetizing reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Hm=3 "Inertia constant (kWs/KVA)"
+  parameter SI.Time Hm=3 "Inertia constant (kWs/kVA)"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit a=0.5 "1st coefficient of tau_m(w) (pu)"
     annotation (Dialog(group="Machine parameters"));
