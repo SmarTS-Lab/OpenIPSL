@@ -33,7 +33,6 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
     "Lag time constant of second lead-lag block (over- excitation channel) (s)";
   Modelica.Blocks.Math.Add VERR1 annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
-        rotation=0,
         origin={-10,0})));
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{-48,0},{-26,12}})));
@@ -57,14 +56,12 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Blocks.Math.Gain K_r(k=K_R) annotation (Placement(transformation(
         extent={{-10,-9.5},{10,9.5}},
-        rotation=0,
         origin={90,0.5})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
     annotation (Placement(transformation(extent={{108,-10},{128,10}})));
   Modelica.Blocks.Math.Add VERR2(k1=-1, k2=1) annotation (Placement(
         transformation(
         extent={{-10,10},{10,-10}},
-        rotation=0,
         origin={150,0})));
   Modelica.Blocks.Math.Gain K_c(k=K_C) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -109,11 +106,9 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
     annotation (Placement(transformation(extent={{174,-10},{194,10}})));
   Modelica.Blocks.Math.Gain high(k=V_RMAX) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={106,-30})));
   Modelica.Blocks.Math.Gain low(k=V_RMIN) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={104,-70})));
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,

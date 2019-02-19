@@ -72,8 +72,6 @@ equation
   connect(branch1.n, branch3.p) annotation (Line(points={{-37,0},{0,0},{0,-30},{39,-30}}, color={0,0,255}));
   connect(branch3.n, b3) annotation (Line(points={{61,-30},{110,-30}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}})),
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-52,34},{12,-28}}, lineColor={0,
           0,255}),Ellipse(extent={{-4,64},{60,2}}, lineColor={0,0,255}),Ellipse(

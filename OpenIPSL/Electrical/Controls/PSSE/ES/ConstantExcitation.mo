@@ -8,6 +8,4 @@ equation
           6},{-122,6}}, color={0,0,127}));
   connect(EFD0, EFD) annotation (Line(points={{-200,-130},{-20,-130},{160,-130},
           {160,0},{210,0}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
 end ConstantExcitation;

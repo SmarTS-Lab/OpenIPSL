@@ -19,7 +19,6 @@ equation
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
         grid={2,2}), graphics={Rectangle(
           extent={{-100,-100},{100,100}},
           lineColor={0,0,0},
@@ -52,10 +51,6 @@ equation
           extent={{-100,160},{100,120}},
           lineColor={0,0,255},
           textString="%name")}),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={2,2})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

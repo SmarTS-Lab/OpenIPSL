@@ -37,16 +37,15 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     y_start=V_S0)
     annotation (Placement(transformation(extent={{60,-5},{70,5}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0) "PSS output signal"
-    annotation (Placement(transformation(extent={{120,-5},{130,5}}, rotation=0),
+    annotation (Placement(transformation(extent={{120,-5},{130,5}}),
         iconTransformation(extent={{120,-10},{140,10}})));
   Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
-    annotation (Placement(transformation(extent={{-125,-5},{-115,5}}, rotation=
-            0), iconTransformation(extent={{-128,-30},{-108,-10}})));
+    annotation (Placement(transformation(extent={{-125,-5},{-115,5}}), iconTransformation(extent={{-128,-30},{-108,-10}})));
   Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN)
     annotation (Placement(transformation(extent={{100,-5},{110,5}})));
   Modelica.Blocks.Interfaces.RealInput V_CT
     "Compensated machine terminal voltage (pu)" annotation (Placement(
-        transformation(extent={{-125,30},{-115,40}}, rotation=0),
+        transformation(extent={{-125,30},{-115,40}}),
         iconTransformation(extent={{-128,10},{-108,30}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     T=T_6,
@@ -56,7 +55,7 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     k=K_S*T_5) annotation (Placement(transformation(extent={{80,-5},{90,5}})));
 protected
   Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{113,-5},{123,5}}, rotation=0),
+    annotation (Placement(transformation(extent={{113,-5},{123,5}}),
         iconTransformation(extent={{32,-8},{36,-4}})));
   parameter Real V_S0(fixed=false);
   parameter Boolean bypass_filter2(fixed=false);

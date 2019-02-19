@@ -3,7 +3,7 @@ block RSELECT "Output the minimum and the maximum element of the input vector"
   // extends Modelica.Blocks.Icons.Block;
   parameter Real Rselect;
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
-          extent={{100,-12},{120,8}}, rotation=0)));
+          extent={{100,-12},{120,8}})));
   Modelica.Blocks.Interfaces.RealInput Pelect annotation (Placement(
         transformation(extent={{-140,36},{-100,76}}), iconTransformation(extent
           ={{-140,36},{-100,76}})));
@@ -23,8 +23,7 @@ equation
   annotation (
     Icon(coordinateSystem(
         preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        initialScale=0.1), graphics={Text(
+        extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-51,31},{51,-31}},
           lineColor={0,0,255},
           textString="Rselect

@@ -58,8 +58,6 @@ equation
   connect(relay.u3, min.u2) annotation (Line(points={{38.5,9.5},{32,9.5},{32,-38},
           {60,-38},{60,8},{67,8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-74,26},{74,-62}}, lineColor={
           0,0,127}),Text(

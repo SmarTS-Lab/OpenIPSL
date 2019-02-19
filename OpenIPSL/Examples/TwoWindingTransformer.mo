@@ -119,6 +119,4 @@ equation
           86,0},{90,0}}, color={0,0,255}));
   connect(pwFault.p, BUS03.p)
     annotation (Line(points={{54,-51},{54,-30},{50,-30}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
 end TwoWindingTransformer;

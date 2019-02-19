@@ -63,15 +63,12 @@ model Governor "Speed governor model for hydro turbines"
         origin={-53,-9})));
   Modelica.Blocks.Math.Add add1 annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
-        rotation=0,
         origin={-41,25})));
   Modelica.Blocks.Math.Add add2(k1=-1) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
-        rotation=0,
         origin={-65,29})));
   Modelica.Blocks.Math.Add add3 annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={58,16})));
 equation
   connect(Gain3.y, Limited.u) annotation (Line(points={{106.7,17},{106.7,17},{
@@ -150,6 +147,5 @@ equation
           textString="Pmset"),Text(
           extent={{0,-2},{20,-18}},
           lineColor={0,0,255},
-          textString="Pe")}),
-    Documentation);
+          textString="Pe")}));
 end Governor;

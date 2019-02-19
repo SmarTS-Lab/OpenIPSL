@@ -17,8 +17,6 @@ equation
     out = 0;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-54,32},{62,-34}}, lineColor={
           0,0,255}),Line(

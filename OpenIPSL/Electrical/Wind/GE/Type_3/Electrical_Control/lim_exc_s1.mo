@@ -8,38 +8,29 @@ model lim_exc_s1
     annotation (Placement(
       transformation(
         extent={{-140.0,40.0},{-100.0,80.0}},
-        rotation=0,
         origin={0.0,18.0}),
-      visible=true,
       iconTransformation(
         origin={0.0,0.0},
-        extent={{-140.0,40.0},{-100.0,80.0}},
-        rotation=0)));
+        extent={{-140.0,40.0},{-100.0,80.0}})));
   Modelica.Blocks.Interfaces.RealInput Vt "Terminal Voltage" annotation (
       Placement(
       transformation(
         extent={{-140.0,-80.0},{-100.0,-40.0}},
-        rotation=0,
         origin={0.0,-18.0}),
-      visible=true,
       iconTransformation(
         origin={0.0,0.0},
-        extent={{-140.0,-80.0},{-100.0,-40.0}},
-        rotation=0)));
+        extent={{-140.0,-80.0},{-100.0,-40.0}})));
   Modelica.Blocks.Interfaces.RealOutput y
     "Output: saturated excitation voltage" annotation (Placement(transformation(
-          extent={{100,-10},{120,10}}, rotation=0)));
+          extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput Vref "Reference Voltage " annotation (
       Placement(
-      visible=true,
       transformation(
         origin={0.0,-58.0},
-        extent={{-140.0,40.0},{-100.0,80.0}},
-        rotation=0),
+        extent={{-140.0,40.0},{-100.0,80.0}}),
       iconTransformation(
         origin={0.0,-58.0717},
-        extent={{-140.0,40.0},{-100.0,80.0}},
-        rotation=0)));
+        extent={{-140.0,40.0},{-100.0,80.0}})));
 equation
   if typpe == 1 then
     if Efd >= Vt + xiqmax and Vref >= 0 or Efd <= Vt + xiqmin and Vref <= 0
@@ -63,9 +54,7 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Text(
-          visible=true,
           origin={-1.349,1.6286},
           fillPattern=FillPattern.Solid,
           extent={{-55.1519,-28.3714},{55.1519,28.3714}},
@@ -77,9 +66,5 @@ Block has two continuous Real input vectors u1 and u2 and one
 continuous Real output vector y.
 All vectors have the same number of elements.
 </p>
-</html>"),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics));
+</html>"));
 end lim_exc_s1;

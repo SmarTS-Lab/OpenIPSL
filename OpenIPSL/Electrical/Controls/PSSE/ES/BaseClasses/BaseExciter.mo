@@ -21,19 +21,16 @@ partial model BaseExciter
   Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={-200,-130}), iconTransformation(extent={{-10,-10},{10,10}},
           origin={-200,-130})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={-200,90}), iconTransformation(extent={{-10,-10},{10,10}},
           origin={-200,90})));
   Modelica.Blocks.Interfaces.RealInput ECOMP annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={-200,0}), iconTransformation(extent={{-10,-10},{10,10}}, origin
           ={-200,0})));
   Modelica.Blocks.Sources.Constant VoltageReference(k=V_REF)
@@ -60,7 +57,7 @@ equation
   connect(VoltageReference.y, DiffV.u1) annotation (Line(points={{-149,50},{-132,
           50},{-132,6},{-122,6}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Rectangle(
           extent={{-200,160},{200,-200}},
           lineColor={28,108,200},
@@ -84,7 +81,5 @@ equation
           extent={{152,12},{194,-8}},
           lineColor={28,108,200},
           textString="EFD")}),
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
-
-    Documentation);
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})));
 end BaseExciter;

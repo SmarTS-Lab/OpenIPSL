@@ -26,6 +26,5 @@ equation
           fillPattern=FillPattern.Solid),Text(
           extent={{-52,46},{54,-42}},
           lineColor={0,0,255},
-          textString="Negative Current Logic")}),
-    Documentation);
+          textString="Negative Current Logic")}));
 end NegCurLogic;

@@ -47,21 +47,16 @@ model GE_WT
   Real P "Active Power produced in SYS_base";
   Real Q "Reactive Power produced in SYS_base";
   OpenIPSL.Interfaces.PwPin pwPin1 annotation (Placement(
-      visible=true,
       transformation(
         origin={-77.9122,32.2584},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         origin={-110.0,0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Interfaces.RealInput Wind_Speed annotation (Placement(
-      visible=true,
       transformation(
         origin={-80.0,60.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
+        extent={{-20.0,-20.0},{20.0,20.0}}),
       iconTransformation(
         origin={0.0,77.9903},
         extent={{-20.0,-20.0},{20.0,20.0}},
@@ -102,10 +97,9 @@ model GE_WT
     wndtge_kp=wndtge_kp,
     wbase=wbase,
     wndtge_ang0=wndtge_ang0,
-    wndtge_spd0=wndtge_spd0) annotation (Placement(visible=true, transformation(
+    wndtge_spd0=wndtge_spd0) annotation (Placement(transformation(
         origin={-46.6105,53.4541},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Electrical_Control.Electrical_Control electrical_Control1(
     ex_x0_0=ex_x0_0,
     ex_x1_0=ex_x1_0,
@@ -114,10 +108,9 @@ model GE_WT
     qmin=qmin,
     KVi=KVi,
     xiqmax=xiqmax,
-    xiqmin=xiqmin) annotation (Placement(visible=true, transformation(
+    xiqmin=xiqmin) annotation (Placement(transformation(
         origin={-10.0,57.46},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Generator.Generator generator1(
     freq=freq,
     ge_x0_0=ge_x0_0,
@@ -126,10 +119,9 @@ model GE_WT
     GEN_base=GEN_base,
     Kpllp=Kpllp,
     Lpp=Lpp,
-    SYS_base=SYS_base) annotation (Placement(visible=true, transformation(
+    SYS_base=SYS_base) annotation (Placement(transformation(
         origin={45.0,60.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
 protected
   function cp_init
     input Real lambda;
@@ -245,11 +237,9 @@ protected
     end while;
   end get_theta;
 
-  Modelica.Blocks.Sources.Constant const(k=qgen) annotation (Placement(visible=
-          true, transformation(
+  Modelica.Blocks.Sources.Constant const(k=qgen) annotation (Placement(transformation(
         origin={-44.2929,70.7071},
-        extent={{-4.2929,-4.2929},{4.2929,4.2929}},
-        rotation=0)));
+        extent={{-4.2929,-4.2929},{4.2929,4.2929}})));
   parameter Real Lpp=Xpp;
   parameter Real wbase=2*Modelica.Constants.pi*freq/poles;
   parameter Real pelec=_P0/WT_base*SYS_base;
@@ -346,55 +336,46 @@ initial algorithm
   wndtge_ang0 := -pmech/(Ktg*genbc_k_speed);
 equation
   connect(pwPin1, generator1.p) annotation (Line(
-      visible=true,
       origin={4.0293,37.8389},
       points={{-81.9415,-5.5805},{40.9707,-5.5805},{40.9707,11.1611}}));
   connect(generator1.Pgen, turbine_Model1.Pelec) annotation (Line(
-      visible=true,
       origin={-0.1428,48.5266},
       points={{53.1428,9.4734},{60.1428,9.4734},{60.1428,-8.085},{-59.4803,-8.085},
           {-59.4803,-1.38836},{-54.4677,-1.38836}},
       color={0,0,127}));
   connect(Wind_Speed, turbine_Model1.Wind_Speed) annotation (Line(
-      visible=true,
       origin={-62.4641,60.0491},
       points={{-17.5359,-0.0491},{4.8411,-0.0491},{4.8411,0.04919},{7.8536,
           0.04919}},
       color={0,0,127}));
   connect(turbine_Model1.Pord, electrical_Control1.Pord) annotation (Line(
-      visible=true,
       origin={-25.6589,60.1024},
       points={{-12.9516,-0.01612},{2.6464,-0.01612},{2.6464,0.0162},{7.6589,
           0.0162}},
       color={0,0,127}));
   connect(const.y, electrical_Control1.Qord) annotation (Line(
-      visible=true,
       origin={-25.1902,68.958},
       points={{-14.3805,1.7491},{7.1902,1.7491},{7.1902,-3.498}},
       color={0,0,127}));
   P = generator1.Pgen*GEN_base/SYS_base;
   Q = generator1.Qgen*GEN_base/SYS_base;
   connect(electrical_Control1.Ipcmd, generator1.Ipcmd) annotation (Line(
-      visible=true,
       origin={24.7437,65.082},
       points={{-26.7437,-0.08283},{7.2437,-0.08283},{7.2437,0.0828},{12.2563,
           0.0828}},
       color={0,0,127}));
   connect(electrical_Control1.Efd, generator1.Efd) annotation (Line(
-      visible=true,
       origin={24.7437,56.5275},
       points={{-26.7437,2.18767},{7.2437,2.18767},{7.2437,-2.18767},{12.2563,-2.18767}},
 
       color={0,0,127}));
 
   connect(generator1.Qgen, electrical_Control1.Qgen) annotation (Line(
-      visible=true,
       origin={26.605,49.271},
       points={{26.395,4.729},{31.4075,4.729},{31.4075,-4.8235},{-44.605,-4.8235},
           {-44.605,0.189}},
       color={0,0,127}));
   connect(generator1.Vt, electrical_Control1.Vterm) annotation (Line(
-      visible=true,
       origin={17.5,65.2993},
       points={{35.5,2.12607},{40.5125,2.12607},{40.5125,7.7132},{-40.5125,
           7.7132},{-40.5125,-9.8393},{-35.5,-9.8393}},
@@ -403,18 +384,14 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Ellipse(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={0.0,16.6286},
           fillPattern=FillPattern.Solid,
           extent={{-44.8085,-23.3714},{44.8085,23.3714}},
           textString="DFIG",
           fontName="Arial"),Text(
-          visible=true,
           origin={0.0,-17.9447},
           fillPattern=FillPattern.Solid,
           extent={{-25.6048,-15.9106},{25.6048,15.9106}},
@@ -423,7 +400,6 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>

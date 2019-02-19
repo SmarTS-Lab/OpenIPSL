@@ -45,7 +45,6 @@ model MotorTypeIII "Induction Machine - Order III"
     ii(start=ii0))
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 
-
   import Modelica.Constants.pi;
 protected
   parameter SI.AngularVelocity Omegab=2*pi*fn "Base freq";
@@ -95,10 +94,8 @@ equation
   Ir = a13*((-Vr) - epr) + a23*(Vm - epm);
   annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
             {100,100}}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}}),Ellipse(
-          visible=true,
           fillColor={255,255,255},
           extent={{-56,-58},{55.9318,54}}),Text(
           extent={{-50,48},{50,-52}},

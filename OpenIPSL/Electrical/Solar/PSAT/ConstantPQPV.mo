@@ -2,15 +2,12 @@ within OpenIPSL.Electrical.Solar.PSAT;
 model ConstantPQPV
   model PQ1 "Constant PQ Generator, Solar Photo-Voltaic Generator"
     OpenIPSL.Interfaces.PwPin p annotation (Placement(
-        visible=true,
         transformation(
           origin={55.0,22.7992},
-          extent={{-10.0,-10.0},{10.0,10.0}},
-          rotation=0),
+          extent={{-10.0,-10.0},{10.0,10.0}}),
         iconTransformation(
           origin={-110.0,0.0},
-          extent={{-10.0,-10.0},{10.0,10.0}},
-          rotation=0)));
+          extent={{-10.0,-10.0},{10.0,10.0}})));
     parameter Real S_b=100 "System base power (MVA)"
       annotation (Dialog(group="Power flow data"));
     parameter Real Sn=10 "Nominal power (MVA)";
@@ -63,12 +60,9 @@ model ConstantPQPV
       Icon(coordinateSystem(
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
-          initialScale=0.1,
           grid={10,10}), graphics={Rectangle(
-              visible=true,
               fillColor={255,255,255},
               extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
               origin={0.0,15.3102},
               fillPattern=FillPattern.Solid,
               extent={{-31.415,-20.0667},{31.415,20.0667}},
@@ -77,7 +71,6 @@ model ConstantPQPV
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
-          initialScale=0.1,
           grid={5,5})),
       Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
@@ -103,15 +96,12 @@ model ConstantPQPV
 
   model PV1 "Constant PV Generator, Solar Photo-Voltaic Generator"
     OpenIPSL.Interfaces.PwPin p annotation (Placement(
-        visible=true,
         transformation(
           origin={55.0,22.7992},
-          extent={{-10.0,-10.0},{10.0,10.0}},
-          rotation=0),
+          extent={{-10.0,-10.0},{10.0,10.0}}),
         iconTransformation(
           origin={-110.0,0.0},
-          extent={{-10.0,-10.0},{10.0,10.0}},
-          rotation=0)));
+          extent={{-10.0,-10.0},{10.0,10.0}})));
     parameter Real S_b=100 "System base power (MVA)"
       annotation (Dialog(group="Power flow data"));
     parameter Real Sn=10 "Nominal power (MVA)";
@@ -171,12 +161,9 @@ model ConstantPQPV
       Icon(coordinateSystem(
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
-          initialScale=0.1,
           grid={10,10}), graphics={Rectangle(
-              visible=true,
               fillColor={255,255,255},
               extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
               origin={0.0,15.3102},
               fillPattern=FillPattern.Solid,
               extent={{-31.415,-20.0667},{31.415,20.0667}},
@@ -185,7 +172,6 @@ model ConstantPQPV
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
-          initialScale=0.1,
           grid={5,5})),
       Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
@@ -211,6 +197,5 @@ model ConstantPQPV
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})), Documentation);
+        grid={5,5})));
 end ConstantPQPV;

@@ -72,8 +72,5 @@ equation
   connect(eXAC2_1.VOEL, const.y) annotation (Line(points={{-68.95,-52},{-50,-52},
           {-50,-44},{-48.4,-44}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end EXAC2;

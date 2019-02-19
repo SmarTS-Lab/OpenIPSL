@@ -16,15 +16,13 @@ model Order3test2_AVR
     Sn=20000000,
     v_0=1,
     V_b=400000,
-    Vn=400000) annotation (Placement(visible=true, transformation(
+    Vn=400000) annotation (Placement(transformation(
         origin={-30,0},
-        extent={{-9.99992,-10},{10,10}},
-        rotation=0)));
+        extent={{-9.99992,-10},{10,10}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-68,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-98,-4},{-90,4}})));
 equation
@@ -40,5 +38,5 @@ equation
           {{-68,9.16667},{-68,16},{-37.9999,16},{-37.9999,11}},color={0,0,127}));
   connect(AVRtypeIII1.vs, const.y) annotation (Line(points={{-77.1667,-5},{-86,
           -5},{-86,0},{-89.6,0}}, color={0,0,127}));
-  annotation (Documentation,experiment(StopTime=20));
+  annotation (experiment(StopTime=20));
 end Order3test2_AVR;

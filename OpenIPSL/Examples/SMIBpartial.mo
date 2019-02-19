@@ -81,6 +81,4 @@ equation
     annotation (Line(points={{40,-30},{25.4,-30}}, color={0,0,255}));
   connect(pwFault.p, pwLine4.p)
     annotation (Line(points={{44,-53},{44,-30},{54.6,-30}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
 end SMIBpartial;

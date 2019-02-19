@@ -46,7 +46,6 @@ model TGTypeIII
         origin={-130,-60})));
   Modelica.Blocks.Math.Gain gain5(k=1/Tr) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-74,-90})));
   Modelica.Blocks.Continuous.Integrator integrator2(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=0) annotation (Placement(transformation(
@@ -65,11 +64,9 @@ model TGTypeIII
   Modelica.Blocks.Continuous.Integrator integrator3(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=int3) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={150,-40})));
   Modelica.Blocks.Math.Feedback feedback2 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={120,-40})));
   Modelica.Blocks.Math.Gain G6(k=(a11*a23 - a13*a21)/a11)
     annotation (Placement(transformation(extent={{84,-10},{104,10}})));

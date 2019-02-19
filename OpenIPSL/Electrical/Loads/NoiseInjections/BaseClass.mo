@@ -10,10 +10,9 @@ partial model BaseClass
   Modelica.Blocks.Noise.NormalNoise noise_gen(
     mu=active_mu,
     samplePeriod=samplePeriod,
-    sigma=active_sigma) annotation (Placement(visible=true, transformation(
+    sigma=active_sigma) annotation (Placement(transformation(
         origin={20,62},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
           extent={{40,0},{64,24}}), iconTransformation(extent={{96,-14},{122,12}})));
   annotation (Icon(graphics={Ellipse(

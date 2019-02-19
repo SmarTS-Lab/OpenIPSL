@@ -1,15 +1,12 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
 model PQ1
   OpenIPSL.Interfaces.PwPin p annotation (Placement(
-      visible=true,
       transformation(
         origin={55.0,22.7992},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         origin={-110.0,0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   parameter Real SystemBase=100;
   parameter Real Sn=10;
   parameter Real CoB=Sn/SystemBase;
@@ -38,11 +35,9 @@ model PQ1
   Real Pgen(start=Pref);
   Real Q(start=Qref);
   Modelica.Blocks.Interfaces.RealInput P(start=Pref) annotation (Placement(
-      visible=true,
       transformation(
         origin={165.1089,40.5794},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
+        extent={{-20.0,-20.0},{20.0,20.0}}),
       iconTransformation(
         origin={120.0,60.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
@@ -66,12 +61,9 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={0.0,15.3102},
           fillPattern=FillPattern.Solid,
           extent={{-31.415,-20.0667},{31.415,20.0667}},
@@ -80,7 +72,6 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

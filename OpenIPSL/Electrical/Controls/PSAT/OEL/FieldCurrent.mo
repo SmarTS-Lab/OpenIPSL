@@ -26,8 +26,6 @@ equation
     gamma_p^2)/sqrt((v + gamma_q)^2 + p^2));
 
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Text(
@@ -46,6 +44,5 @@ equation
           extent={{64,16},{92,0}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="if")}),
-    Documentation);
+          textString="if")}));
 end FieldCurrent;

@@ -57,12 +57,10 @@ model WT3G1
   Modelica.Blocks.Interfaces.RealInput Eqcmd(start=Eqcmd0) annotation (
       Placement(transformation(extent={{-110,70},{-90,90}}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-90,70})));
   Modelica.Blocks.Interfaces.RealInput Ipcmd(start=Ipcmd0) annotation (
       Placement(transformation(extent={{-110,30},{-90,50}}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-90,30})));
   Modelica.Blocks.Math.Gain imGain1(k=K_pll/wbase)
     annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
@@ -73,7 +71,6 @@ model WT3G1
   Modelica.Blocks.Interfaces.RealOutput delta(start=anglev_rad) annotation (
       Placement(transformation(extent={{80,-30},{100,-10}}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={110,-30})));
   Modelica.Blocks.Interfaces.RealOutput V=VT annotation (Placement(
         transformation(extent={{100,20},{120,40}}), iconTransformation(extent={
@@ -82,12 +79,10 @@ model WT3G1
       Placement(transformation(extent={{100,-40},{120,-20}}),
         iconTransformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={110,70})));
   Modelica.Blocks.Interfaces.RealOutput Q annotation (Placement(transformation(
           extent={{100,-80},{120,-60}}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={110,30})));
   Modelica.Blocks.Interfaces.RealOutput ipcmd0=Ipcmd0 annotation (Placement(
         transformation(
@@ -176,8 +171,6 @@ equation
   connect(imIntegrator1.y, add.u1) annotation (Line(points={{-19,10},{-16,10},{
           -16,-14},{-12,-14}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
@@ -252,6 +245,5 @@ equation
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="Ipcmd0")}),
-    Documentation);
+          textString="Ipcmd0")}));
 end WT3G1;

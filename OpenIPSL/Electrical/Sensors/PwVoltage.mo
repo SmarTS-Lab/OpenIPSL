@@ -36,5 +36,5 @@ equation
           textString="v"),Text(
           extent={{-100,-100},{100,-160}},
           lineColor={0,0,255},
-          textString="%name")}), Documentation);
+          textString="%name")}));
 end PwVoltage;

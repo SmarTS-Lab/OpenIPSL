@@ -28,6 +28,5 @@ equation
           fillPattern=FillPattern.Solid),Text(
           extent={{-88,38},{82,-42}},
           lineColor={0,0,255},
-          textString="SE(Efd)")}),
-    Documentation);
+          textString="SE(Efd)")}));
 end ImSE_exp;

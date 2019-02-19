@@ -15,7 +15,6 @@ model HVRCL
             -10},{60,10}})));
   Modelica.Blocks.Interfaces.RealInput Iq annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
-        rotation=0,
         origin={-27,11}), iconTransformation(extent={{-40,-5},{-30,5}})));
 equation
   if Vt > VHVRCR then
@@ -51,6 +50,5 @@ equation
           textString="V"),Text(
           extent={{19,4},{38,-4}},
           lineColor={0,0,255},
-          textString="I_sorc")}),
-    Documentation);
+          textString="I_sorc")}));
 end HVRCL;

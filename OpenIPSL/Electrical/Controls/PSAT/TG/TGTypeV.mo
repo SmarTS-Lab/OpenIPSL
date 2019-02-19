@@ -21,7 +21,6 @@ model TGTypeV
   Modelica.Blocks.Continuous.Integrator integrator3(initType=Modelica.Blocks.Types.Init.SteadyState,
       y_start=Pref) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={190,0})));
   Modelica.Blocks.Math.Gain gain7(k=1/Tw)
     annotation (Placement(transformation(extent={{164,-6},{176,6}})));
@@ -63,7 +62,6 @@ model TGTypeV
   Modelica.Blocks.Math.MultiProduct square(nu=2) annotation (Placement(transformation(extent={{124,-6},{136,6}})));
   Modelica.Blocks.Sources.Constant one(k=1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={130,-20})));
   Modelica.Blocks.Interfaces.RealInput pref "Reference power (pu)" annotation (Placement(transformation(extent={{-180,20},{-160,40}}), iconTransformation(extent={{-140,40},{-100,80}})));
   Modelica.Blocks.Math.Feedback p_feedback annotation (Placement(transformation(

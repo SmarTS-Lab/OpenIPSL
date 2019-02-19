@@ -19,10 +19,9 @@ model AVRTypeII_Test
     X=0.1,
     R=0.01,
     G=0,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={0,2},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLinewithOpening1(
     G=0,
     R=0.01,
@@ -30,39 +29,35 @@ model AVRTypeII_Test
     opening=1,
     B=0.0005,
     t1=2,
-    t2=2.15) annotation (Placement(visible=true, transformation(
+    t2=2.15) annotation (Placement(transformation(
         origin={40,22},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLine2(
     G=0,
     R=0.01,
     X=0.1,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={0,16},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLine3(
     G=0,
     R=0.01,
     X=0.1,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={42,-6},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLine4(
     G=0,
     R=0.01,
     X=0.1,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={40,40},
-        extent={{-5.99999,-5.99998},{5.99999,6}},
-        rotation=0)));
+        extent={{-5.99999,-5.99998},{5.99999,6}})));
   Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
     angle_0=0,
     P_0=8000000,
     Q_0=6000000,
-    v_0=1) annotation (Placement(visible=true, transformation(
+    v_0=1) annotation (Placement(transformation(
         origin={74,32},
         extent={{-6,-6},{6,6}},
         rotation=90)));
@@ -70,7 +65,7 @@ model AVRTypeII_Test
     angle_0=0,
     P_0=8000000,
     Q_0=6000000,
-    v_0=1) annotation (Placement(visible=true, transformation(
+    v_0=1) annotation (Placement(transformation(
         origin={74.034,-6.2889},
         extent={{-6.2889,-6.0335},{6.2889,6.0335}},
         rotation=90)));
@@ -89,7 +84,6 @@ model AVRTypeII_Test
     startTime=1,
     height=-0.1) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
-        rotation=0,
         origin={-34,48})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-50,46},{-60,56}})));
@@ -137,10 +131,5 @@ equation
     annotation (Line(points={{-89.6,-1},{-96,-1},{-96,-16},{-82.4,-16},{-82.4,-11.8}},
         color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{100,100}},
-          preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
-    Documentation,
-    experiment(StopTime=60),
-    __Dymola_experimentSetupOutput);
+experiment(StopTime=60));
 end AVRTypeII_Test;

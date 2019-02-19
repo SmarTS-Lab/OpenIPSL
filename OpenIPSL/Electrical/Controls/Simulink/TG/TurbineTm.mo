@@ -88,6 +88,5 @@ equation
           textString="Pm (mech. power)"),Text(
           extent={{-8,-6},{22,-8}},
           lineColor={0,0,127},
-          textString="1/Tw (water time constant)")}),
-    Documentation);
+          textString="1/Tw (water time constant)")}));
 end TurbineTm;

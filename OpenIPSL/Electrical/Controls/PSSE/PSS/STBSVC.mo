@@ -95,6 +95,5 @@ equation
           textString="VOTHSG"),Text(
           extent={{-62,30},{66,-32}},
           lineColor={28,108,200},
-          textString="STBSVC")}),
-    Documentation);
+          textString="STBSVC")}));
 end STBSVC;

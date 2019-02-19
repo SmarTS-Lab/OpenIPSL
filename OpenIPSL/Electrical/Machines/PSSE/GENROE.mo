@@ -159,12 +159,9 @@ equation
   uq = PSId - R_a*iq;
   //flow
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Text(
           extent={{-54,24},{54,-26}},
           lineColor={0,0,255},
-          textString="GENROE")}),
-    Documentation);
+          textString="GENROE")}));
 end GENROE;

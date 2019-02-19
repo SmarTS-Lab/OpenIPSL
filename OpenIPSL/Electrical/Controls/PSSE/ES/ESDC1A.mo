@@ -114,12 +114,10 @@ equation
   annotation (
     Diagram(coordinateSystem(
         extent={{-200,-200},{200,160}},
-        grid={2,2},
-        initialScale=0.1)),
+        grid={2,2})),
     Icon(coordinateSystem(
         extent={{-200,-200},{200,160}},
-        grid={2,2},
-        initialScale=0.1), graphics={Text(
+        grid={2,2}), graphics={Text(
           extent={{-120,154},{140,94}},
           lineColor={28,108,200},
           textString="ESDC1A")}),

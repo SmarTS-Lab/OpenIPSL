@@ -5,57 +5,42 @@ model ElecBlk
       Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-46.1127,-159.0},
-        rotation=0),
-      visible=true,
+        origin={-46.1127,-159.0}),
       iconTransformation(
         origin={2.0,-144.0},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealInput idr(start=idr0, fixed=false) "idr"
     annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-45.2181,9.0065},
-        rotation=0),
-      visible=true,
+        origin={-45.2181,9.0065}),
       iconTransformation(
         origin={2.0,-6.3878},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealInput iqr(start=iqr0, fixed=false) "iqr"
     annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-44.5564,-24.0},
-        rotation=0),
-      visible=true,
+        origin={-44.5564,-24.0}),
       iconTransformation(
         origin={2.0,-74.0},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealOutput Tel "Electrical Torque" annotation (
       Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
-        origin={44.9293,3.7214},
-        rotation=0),
-      visible=true,
+        origin={44.9293,3.7214}),
       iconTransformation(
         origin={-2.0,-24.0},
-        extent={{102.0,54.0},{62.0,94.0}},
-        rotation=0)));
+        extent={{102.0,54.0},{62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealOutput Vbus "Bus Voltage Magnitude"
     annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
-        origin={46.3073,-49.0},
-        rotation=0),
-      visible=true,
+        origin={46.3073,-49.0}),
       iconTransformation(
         origin={-2.0,-124.0},
-        extent={{102.0,54.0},{62.0,94.0}},
-        rotation=0)));
+        extent={{102.0,54.0},{62.0,94.0}})));
   parameter Real Sbase=100 "Power Rating [Normalization Factor] (MVA)";
   parameter Real Vbus0=1 "p.u. Input PowerFlow";
   parameter Real angle0=-0.00243 "Angle PowerFlow";
@@ -93,15 +78,12 @@ model ElecBlk
   Real vdr(start=vdr0, fixed=false) "rotor voltage in dq";
   Real vqr(start=vqr0, fixed=false) "rotor voltage in dq";
   OpenIPSL.Interfaces.PwPin pin annotation (Placement(
-      visible=true,
       transformation(
         origin={-158.3073,1.6927},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         origin={0.0,-110.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Real slip;
   Real Anglebus=atan(pin.vi/pin.vr);
 equation
@@ -122,12 +104,9 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={1.7639,5.0},
           fillPattern=FillPattern.Solid,
           extent={{-44.3912,-45.0},{44.3912,45.0}},
@@ -136,7 +115,5 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})),
-    Documentation);
+        grid={5,5})));
 end ElecBlk;

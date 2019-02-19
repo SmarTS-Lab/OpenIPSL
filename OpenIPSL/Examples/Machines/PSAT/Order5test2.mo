@@ -29,11 +29,5 @@ equation
         color={0,0,127}));
   connect(order5Type1_Inputs_Outputs.p, bus1.p) annotation (Line(points={{-12,0},{-6,0},{-6,0},{0,0}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(
-        extent={{-100,-100},{100,100}},
-        preserveAspectRatio=false,
-        initialScale=0.1,
-        grid={1,1})),
-    experiment(StopTime=20),
-    Documentation);
+    experiment(StopTime=20));
 end Order5test2;

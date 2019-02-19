@@ -43,6 +43,5 @@ equation
           lineColor={0,0,255},
           textString="%name")}),
     Diagram(coordinateSystem(extent={{-40,-40},{40,40}}, preserveAspectRatio=
-            true)),
-    Documentation);
+            true)));
 end Relay;

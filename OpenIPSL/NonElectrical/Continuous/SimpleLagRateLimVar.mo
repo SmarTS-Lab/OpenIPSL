@@ -33,8 +33,6 @@ equation
   der(x) = if rate > rmax then rmax elseif rate < rmin then rmin else rate;
   y = if x > outMax then outMax elseif x < outMin then outMin else x;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Line(points={{-100,-140},{-60,-140},{-40,-100}},
           color={0,0,0}),Line(points={{40,100},{60,140},{100,140}}, color={0,0,
@@ -50,6 +48,5 @@ equation
           lineColor={0,0,255},
           textString="1 + Ts"),Line(points={{-60,100},{-80,140},{-120,140}},
           color={255,0,0}),Line(points={{120,-140},{80,-140},{60,-100}}, color=
-          {255,0,0})}),
-    Documentation);
+          {255,0,0})}));
 end SimpleLagRateLimVar;

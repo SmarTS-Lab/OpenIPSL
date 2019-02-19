@@ -32,22 +32,18 @@ model PhaseShiftingTransformer_Test
     P_0=20000,
     Q_0=10000) annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
   Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-26,40},
-        extent={{4.4802,-4.4802},{-4.4802,4.4802}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add diff(k2=-1) annotation (Placement(visible=true,
-        transformation(
+        extent={{4.4802,-4.4802},{-4.4802,4.4802}})));
+  Modelica.Blocks.Math.Add diff(k2=-1) annotation (Placement(transformation(
         origin={-47,31},
-        extent={{4.99999,-4.99999},{-5,5}},
-        rotation=0)));
+        extent={{4.99999,-4.99999},{-5,5}})));
   Modelica.Blocks.Sources.Sine sine2(
     amplitude=0.001,
     freqHz=0.2,
-    startTime=5) annotation (Placement(visible=true, transformation(
+    startTime=5) annotation (Placement(transformation(
         origin={-26,22},
-        extent={{4.4802,-4.4802},{-4.4802,4.4802}},
-        rotation=0)));
+        extent={{4.4802,-4.4802},{-4.4802,4.4802}})));
   OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
     D=5,
     angle_0=0,

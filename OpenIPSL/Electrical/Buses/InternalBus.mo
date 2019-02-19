@@ -27,7 +27,5 @@ equation
           fillPattern=FillPattern.Solid),Text(
           extent={{-46,34},{-22,2}},
           lineColor={0,0,255},
-          textString="*")}),
-    Diagram(graphics),
-    Documentation);
+          textString="*")}));
 end InternalBus;

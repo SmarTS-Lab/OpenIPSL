@@ -80,8 +80,5 @@ equation
   connect(generator.p, GEN1.p) annotation (Line(points={{-80,1},{-58.3,1},{-58.3,
           0},{-40,0}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end ESAC2A;

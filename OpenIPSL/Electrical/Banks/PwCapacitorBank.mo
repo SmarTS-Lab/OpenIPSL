@@ -54,5 +54,5 @@ equation
           smooth=Smooth.None),Text(
           extent={{-100,-100},{100,-140}},
           lineColor={0,0,255},
-          textString="%name")}), Documentation);
+          textString="%name")}));
 end PwCapacitorBank;

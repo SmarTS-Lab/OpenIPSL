@@ -62,6 +62,5 @@ equation
           points={{0,16},{12,0},{40,0}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5)}),
-    Documentation);
+          thickness=0.5)}));
 end Relay4;

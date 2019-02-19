@@ -7,6 +7,4 @@ model DisabledPSS
 equation
   connect(const.y, VOTHSG)
     annotation (Line(points={{121,0},{226,0},{226,0}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
 end DisabledPSS;

@@ -46,8 +46,5 @@ equation
   connect(eXNI.EFD, gENROE.EFD) annotation (Line(points={{-94.75,-38.4444},{-110,
           -38.4444},{-110,-10},{-104,-10}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end EXNI;

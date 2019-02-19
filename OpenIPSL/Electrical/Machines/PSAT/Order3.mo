@@ -23,8 +23,7 @@ equation
   id = (-c1*vd) - c3*vq + e1q*c3;
   iq = c2*vd - c1*vq + e1q*c1;
   vf0 = vf00;
-  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
-          initialScale=0.1), graphics={Text(
+  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Text(
           origin={0,60},
           extent={{-60,-20},{60,20}},
           lineColor={28,108,200},

@@ -27,11 +27,9 @@ model EXST1 "IEEE Type AC2A Excitation System"
     K=1,
     T=T_A) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={130,0})));
   Modelica.Blocks.Math.Gain K_a(k=K_A) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={90,0})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
@@ -97,11 +95,10 @@ equation
   connect(feedback.u2, imDerivativeLag.y) annotation (Line(points={{-30,-8},{-30,
           -8},{-30,-60},{71,-60}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
         extent={{-200,-200},{200,160}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Text(
+        preserveAspectRatio=true), graphics={Text(
           extent={{-186,-62},{-112,-82}},
           lineColor={28,108,200},
           textString="XADIFD")}),

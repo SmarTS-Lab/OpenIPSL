@@ -25,11 +25,9 @@ model pst2
   SI.Angle anglevk "Angle at primary";
   SI.Angle anglevm "Angle at secondary";
 
-
   Real alpha;
   Real pmes;
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(visible=true,
-        transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput pk

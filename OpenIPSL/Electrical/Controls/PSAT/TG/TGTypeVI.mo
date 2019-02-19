@@ -48,7 +48,6 @@ model TGTypeVI
         origin={-140,0})));
   Modelica.Blocks.Math.Feedback w_fb annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={-160,20})));
   Modelica.Blocks.Continuous.Integrator integrator5(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=po*(gmax - gmin))
@@ -57,7 +56,6 @@ model TGTypeVI
     annotation (Placement(transformation(extent={{64,44},{76,56}})));
   Modelica.Blocks.Math.Gain gain8(k=Ki) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={-110,20})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vmax, uMin=vmin)
     annotation (Placement(transformation(extent={{-26,14},{-14,26}})));

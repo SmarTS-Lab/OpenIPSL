@@ -23,6 +23,5 @@ model RotatingExciter
           extent={{56,6},{77,-4}},
           lineColor={28,108,200},
           textString="V_E")}),
-    Diagram(coordinateSystem(initialScale=0.05, extent={{-80,-80},{80,80}})),
-    Documentation);
+    Diagram(coordinateSystem(initialScale=0.05, extent={{-80,-80},{80,80}})));
 end RotatingExciter;

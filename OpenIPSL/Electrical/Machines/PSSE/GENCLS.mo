@@ -5,10 +5,9 @@ model GENCLS
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(visible=true, transformation(
+    ii(start=ii0)) annotation (Placement(transformation(
         origin={100,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   parameter SI.ApparentPower M_b(displayUnit="MVA") "Machine base power rating"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time H=0 "Inertia constant (s)"
@@ -68,7 +67,7 @@ equation
   V = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+    Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Text(
           extent={{50,150},{100,110}},
           lineColor={0,0,255},
@@ -85,10 +84,6 @@ equation
           Line(points={{0,80},{0,-80}}, color={0,0,255}),Line(points={{100,0},{
           96,0},{0,0}}, color={0,0,255}),Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255})}),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={2,2})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

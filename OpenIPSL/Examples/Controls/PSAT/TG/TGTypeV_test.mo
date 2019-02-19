@@ -28,7 +28,6 @@ model TGTypeV_test
     startTime=10,
     offset=0) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
-        rotation=0,
         origin={-26,-40})));
   Modelica.Blocks.Math.Add pertubation annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
@@ -56,6 +55,5 @@ equation
             -100},{100,100}}), graphics={Text(
           extent={{-14,-46},{60,-58}},
           lineColor={0,0,255},
-          textString="Wref perturbation with sine signal 5-10s")}),
-                                Documentation);
+          textString="Wref perturbation with sine signal 5-10s")}));
 end TGTypeV_test;

@@ -45,7 +45,6 @@ model ESST1A "IEEE Type ST1A Excitation System"
   Modelica.Blocks.Interfaces.RealInput VOTHSG2 "VOS=2" annotation (Placement(
         transformation(extent={{-210,122},{-190,142}}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-200,130})));
   Modelica.Blocks.Interfaces.RealInput VUEL3 "UEL=3" annotation (Placement(
         transformation(
@@ -81,7 +80,6 @@ model ESST1A "IEEE Type ST1A Excitation System"
         rotation=270,
         origin={150,-140}), iconTransformation(
         extent={{-9.75,-10.25},{9.75,10.25}},
-        rotation=0,
         origin={-199.75,49.75})));
   Modelica.Blocks.Sources.Constant Vref1(k=I_LR)
     annotation (Placement(transformation(extent={{0,-150},{20,-130}})));
@@ -224,12 +222,10 @@ equation
   annotation (
     Diagram(coordinateSystem(
         extent={{-200,-200},{200,160}},
-        grid={2,2},
-        initialScale=0.1)),
+        grid={2,2})),
     Icon(coordinateSystem(
         extent={{-200,-200},{200,160}},
-        grid={2,2},
-        initialScale=0.1), graphics={Text(
+        grid={2,2}), graphics={Text(
           extent={{-162,112},{-134,95}},
           lineColor={0,128,0},
           textString="(VOS=1)"),Text(

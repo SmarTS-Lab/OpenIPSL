@@ -18,6 +18,5 @@ connector PwPin
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},
           fillColor={0,0,255},
-          fillPattern=FillPattern.Solid)}),
-    Documentation);
+          fillPattern=FillPattern.Solid)}));
 end PwPin;

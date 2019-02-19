@@ -11,6 +11,5 @@ annotation (Icon(graphics={Rectangle(
         fillColor={78,138,73},
         pattern=LinePattern.None,
         fillPattern=FillPattern.Solid,
-        points={{-58.0,46.0},{42.0,-14.0},{-58.0,-74.0},{-58.0,46.0}})}),
-    Documentation);
+        points={{-58.0,46.0},{42.0,-14.0},{-58.0,-74.0},{-58.0,46.0}})}));
 end ES;

@@ -67,7 +67,7 @@ equation
     vs - vr = Z*(is - vs*Y);
     vr - vs = Z*(ir - vr*Y);
   end if;
-  annotation (Icon(coordinateSystem(preserveAspectRatio=true, initialScale=0.1),
+  annotation (Icon(coordinateSystem(preserveAspectRatio=true),
         graphics={Rectangle(
           extent={{-80,40},{80,-40}},
           lineColor={0,0,255},
@@ -129,5 +129,5 @@ equation
           fillPattern=FillPattern.Solid),Text(
           extent={{-60,20},{60,-20}},
           lineColor={255,255,0},
-          textString="%name")}), Documentation);
+          textString="%name")}));
 end PwLine;

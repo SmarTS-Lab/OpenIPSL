@@ -94,6 +94,4 @@ equation
           9.6},{-66,16},{-59.2,16},{-59.2,13.2}}, color={0,0,127}));
   connect(wT4G1.I_pcmd, wT4G1.I_pcmd0) annotation (Line(points={{-62.8,4.8},{-68,
           4.8},{-68,18},{-54.4,18},{-54.4,13.2}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
 end WT4G1;

@@ -58,7 +58,6 @@ public
         origin={-2,112})));
   Modelica.Blocks.Math.Feedback difference annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={80,0})));
 equation
   connect(field_current.ifield, add.u1)
@@ -80,8 +79,6 @@ equation
   connect(add.y, limIntegrator.u)
     annotation (Line(points={{9,-20},{9,-20},{20,-20}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Text(

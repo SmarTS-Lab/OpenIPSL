@@ -20,61 +20,50 @@ partial model baseMachine
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(visible=true, transformation(
+    ii(start=ii0)) annotation (Placement(transformation(
         origin={100,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Interfaces.RealOutput delta(
     start=delta0,
     quantity="Angle",
     unit="rad",
-    displayUnit="rad") "Rotor angle (rad)" annotation (Placement(visible=true,
-        transformation(
+    displayUnit="rad") "Rotor angle (rad)" annotation (Placement(transformation(
         origin={110,60},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput w(start=1) "Rotor speed (pu)"
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={110,90},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput v(start=v_0)
-    "Generator terminal voltage (pu)" annotation (Placement(visible=true,
-        transformation(
+    "Generator terminal voltage (pu)" annotation (Placement(transformation(
         origin={110,30},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput P(start=p0) "Active power (pu)"
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={110,-30},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput Q(start=q0) "Reactive power (pu)"
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={110,-70},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealInput vf "Field voltage (pu)" annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-120,50},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+        extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Interfaces.RealOutput vf0 "Initial field voltage (pu)"
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={-80,110},
         extent={{-10,-10},{10,10}},
         rotation=90)));
   Modelica.Blocks.Interfaces.RealOutput pm0(start=pm00)
-    "Initial mechanical power (pu)" annotation (Placement(visible=true,
-        transformation(
+    "Initial mechanical power (pu)" annotation (Placement(transformation(
         origin={-80,-110},
         extent={{-10,-10},{10,10}},
         rotation=270)));
   Modelica.Blocks.Interfaces.RealInput pm(start=pm00) "Mechanical power (pu)"
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={-120,-50},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+        extent={{-20,-20},{20,20}})));
   SI.Angle anglev(start=SI.Conversions.from_deg(angle_0))
     " Bus voltage angle (rad)";
   Real vd(start=vd0) "d-axis voltage (pu)";
@@ -142,7 +131,7 @@ equation
   pe = (vq + ra*iq)*iq + (vd + ra*id)*id "pu, machine base";
   pm0 = pm00 "pu, system base";
   annotation (
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}}, initialScale=0.1),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
         graphics={Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
@@ -191,8 +180,5 @@ equation
           origin={90,-70},
           extent={{-10,-10},{10,10}},
           lineColor={28,108,200},
-          textString="Q")}),
-    Documentation,
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})));
+          textString="Q")}));
 end baseMachine;

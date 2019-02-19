@@ -46,6 +46,5 @@ equation
           color={0,0,255},
           pattern=LinePattern.Dash)}),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-40,-40},{40,
-            40}}), graphics),
-    Documentation);
+            40}}), graphics));
 end Relay3;

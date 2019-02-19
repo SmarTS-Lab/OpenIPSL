@@ -24,5 +24,5 @@ equation
           textString="%P_0+j%Q_0"),Text(
           extent={{-150,-110},{150,-150}},
           lineColor={0,0,255},
-          textString="%name")}), Documentation);
+          textString="%name")}));
 end baseLoad;

@@ -2,40 +2,31 @@ within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
 model PVarray
   Modelica.Blocks.Interfaces.RealInput V1(start=Vmp) "Voltage" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={-168.2602,-0.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
+        extent={{-20.0,-20.0},{20.0,20.0}}),
       iconTransformation(
         origin={-120.0,70.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0)));
+        extent={{-20.0,-20.0},{20.0,20.0}})));
   parameter Real Vt=(2*Vmp - Vocref)*(Iscref - Imp)/(Imp + (Iscref - Imp)*log((
       Iscref - Imp)/Iscref));
   parameter Real Rs=(Vt*log((Iscref - Imp)/Iscref) + Vocref - Vmp)/Imp;
   Modelica.Blocks.Interfaces.RealInput E(start=Estc) "Irradiance" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={-170.0,80.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
+        extent={{-20.0,-20.0},{20.0,20.0}}),
       iconTransformation(
         origin={-120.0,0.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0)));
+        extent={{-20.0,-20.0},{20.0,20.0}})));
   Modelica.Blocks.Interfaces.RealInput T(start=Tstc) "Temperature" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={-168.0185,40.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
+        extent={{-20.0,-20.0},{20.0,20.0}}),
       iconTransformation(
         origin={-120.0,-70.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0)));
+        extent={{-20.0,-20.0},{20.0,20.0}})));
   parameter Real Imp=1;
   parameter Real Vmp=1;
   parameter Real Iscref=1
@@ -54,25 +45,19 @@ model PVarray
   Real Iph;
   Real Id;
   Modelica.Blocks.Interfaces.RealOutput I(start=Imp) annotation (Placement(
-      visible=true,
       transformation(
         origin={160.0,60.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         origin={110.0,40.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Interfaces.RealOutput V(start=Vmp) annotation (Placement(
-      visible=true,
       transformation(
         origin={160.0,21.9548},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         origin={110.0,-34.2738},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
 equation
   Voct = Vocref + Kv*(T - Tstc);
   Voc = Voct*log(E)/log(Estc);
@@ -87,42 +72,34 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={40.0,0.0},
           fillPattern=FillPattern.Solid,
           extent={{-45.9305,-23.3368},{45.9305,23.3368}},
           textString="%name",
           fontName="Arial"),Text(
-          visible=true,
           origin={-46.5008,63.2046},
           fillPattern=FillPattern.Solid,
           extent={{-51.9003,-55.1779},{51.9003,55.1779}},
           textString="Vdc(ex=35)",
           fontName="Arial"),Text(
-          visible=true,
           origin={-80.0,0.0},
           fillPattern=FillPattern.Solid,
           extent={{-12.8628,-13.6751},{12.8628,13.6751}},
           textString="E",
           fontName="Arial"),Text(
-          visible=true,
           origin={-80.0,-70.0},
           fillPattern=FillPattern.Solid,
           extent={{-12.8628,-13.6751},{12.8628,13.6751}},
           textString="T",
           fontName="Arial"),Text(
-          visible=true,
           origin={70.7131,40.0},
           fillPattern=FillPattern.Solid,
           extent={{-20.7131,-17.8652},{20.7131,17.8652}},
           textString="Ipv(4.58)",
           fontName="Arial"),Text(
-          visible=true,
           origin={70.0,-37.1013},
           fillPattern=FillPattern.Solid,
           extent={{-25.1013,-17.1013},{25.1013,17.1013}},
@@ -131,7 +108,6 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

@@ -16,15 +16,13 @@ model Order3test2_TG
     Sn=20000000,
     v_0=1,
     V_b=400000,
-    Vn=400000) annotation (Placement(visible=true, transformation(
+    Vn=400000) annotation (Placement(transformation(
         origin={-29.9999,0},
-        extent={{-10.0001,-10},{9.99991,10}},
-        rotation=0)));
+        extent={{-10.0001,-10},{9.99991,10}})));
   OpenIPSL.Electrical.Controls.PSAT.TG.TGtypeII TGtypeII1 annotation (Placement(
-        visible=true, transformation(
+        transformation(
         origin={-63,-5},
-        extent={{-9,-9},{9,9}},
-        rotation=0)));
+        extent={{-9,-9},{9,9}})));
 equation
   connect(TGtypeII1.pm, order3_Inputs_Outputs1.pm) annotation (Line(points={{-53.1,-5},{-42,-5}},
                                            color={0,0,127}));
@@ -35,5 +33,5 @@ equation
         color={0,0,127}));
   connect(order3_Inputs_Outputs1.p, bus1.p) annotation (Line(points={{-20,0},{-20,0},{0,0}}, color={0,0,255}));
   connect(order3_Inputs_Outputs1.w, TGtypeII1.w) annotation (Line(points={{-19,9},{-16,9},{-16,22},{-80,22},{-80,-5},{-73.8,-5}}, color={0,0,127}));
-  annotation (Documentation,experiment(StopTime=20));
+  annotation (experiment(StopTime=20));
 end Order3test2_TG;

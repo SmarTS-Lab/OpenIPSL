@@ -121,7 +121,7 @@ model WT3E1
     Tp=Tp,
     p0=p0,
     PFA_ref=PFA_ref,
-    q0=q0) annotation (Placement(transformation(rotation=0, extent={{-114,20},{
+    q0=q0) annotation (Placement(transformation(extent={{-114,20},{
             -74,60}})));
   ActivePowerControl activePowerControl(
     TFP=TFP,
@@ -141,7 +141,7 @@ model WT3E1
     wP40=wP40,
     wP60=wP60,
     Pmin=Pmin,
-    wP100=wP100) annotation (Placement(transformation(rotation=0, extent={{-40,
+    wP100=wP100) annotation (Placement(transformation(extent={{-40,
             -80},{40,-40}})));
   ReactivePowerControl reactivePowerControl(
     Tfv=Tfv,
@@ -157,7 +157,7 @@ model WT3E1
     k0=k0,
     k10=k10,
     k40=k40,
-    k80=k80) annotation (Placement(transformation(rotation=0, extent={{-104,80},
+    k80=k80) annotation (Placement(transformation(extent={{-104,80},
             {-46,104}})));
 protected
   parameter Real PFA_ref(fixed=false) "PF angle reference if PFAFLG=1";
@@ -289,7 +289,7 @@ protected
     parameter Real p0;
     parameter Real q0;
     Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-            rotation=0, extent={{-214,-10},{-194,10}})));
+            extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_REF_PF
       annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   equation
@@ -402,13 +402,13 @@ protected
     parameter Real k30;
     parameter Real k50;
     Modelica.Blocks.Interfaces.RealInput SPEED annotation (Placement(
-          transformation(rotation=0, extent={{-210,50},{-190,70}}),
+          transformation(extent={{-210,50},{-190,70}}),
           iconTransformation(extent={{-200,40},{-180,60}})));
     Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(
-          transformation(rotation=0, extent={{200,-70},{220,-50}}),
+          transformation(extent={{200,-70},{220,-50}}),
           iconTransformation(extent={{200,-10},{220,10}})));
     Modelica.Blocks.Interfaces.RealInput VTERM annotation (Placement(
-          transformation(rotation=0, extent={{-210,-10},{-190,10}}),
+          transformation(extent={{-210,-10},{-190,10}}),
           iconTransformation(extent={{-200,-60},{-180,-40}})));
     Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
           transformation(extent={{-210,80},{-190,100}}), iconTransformation(
@@ -552,10 +552,10 @@ protected
     parameter Real k40;
     parameter Real k80;
     Modelica.Blocks.Interfaces.RealInput ITERM annotation (Placement(
-          transformation(rotation=0, extent={{-210.5,-30},{-189.5,-10}}),
+          transformation(extent={{-210.5,-30},{-189.5,-10}}),
           iconTransformation(extent={{-200,30},{-180,50}})));
     Modelica.Blocks.Interfaces.RealInput VTERM annotation (Placement(
-          transformation(rotation=0, extent={{-210.5,-4},{-190,16}}),
+          transformation(extent={{-210.5,-4},{-190,16}}),
           iconTransformation(extent={{-200,-50},{-180,-30}})));
     Modelica.Blocks.Interfaces.RealOutput Q_ord annotation (Placement(
           transformation(extent={{200,-10},{220,10}}), iconTransformation(
@@ -729,6 +729,5 @@ equation
           fillPattern=FillPattern.Solid),Text(
           extent={{-80,60},{80,-60}},
           lineColor={28,108,200},
-          textString="WT3E1")}),
-    Documentation);
+          textString="WT3E1")}));
 end WT3E1;

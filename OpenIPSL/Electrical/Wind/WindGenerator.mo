@@ -6,13 +6,10 @@ model WindGenerator
     annotation (Placement(
       transformation(
         extent={{100.0,-10.0},{120.0,10.0}},
-        rotation=0,
         origin={0.0,0.0}),
-      visible=true,
       iconTransformation(
         origin={0.0,0.0},
-        extent={{100.0,-10.0},{120.0,10.0}},
-        rotation=0)));
+        extent={{100.0,-10.0},{120.0,10.0}})));
   parameter Real tstart=5 "Start time of the wind gust";
   parameter Real tstop=10 "Stop time of the wind gust";
   parameter Real v0=14 "steady state wind speed";
@@ -41,14 +38,11 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           lineThickness=0.75,
           extent={{-100.0,-100.0},{100.0,100.0}}),Bitmap(
-          visible=true,
           origin={-0.1255,0},
           extent={{-99.8745,-96.8769},{99.8745,96.877}},
           fileName="modelica://OpenIPSL/Resources/Images/WindGenerator.png")}),
@@ -56,7 +50,6 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>

@@ -61,8 +61,5 @@ equation
     annotation (Line(points={{-68,0},{-68,0},{-40,0}}, color={0,0,255}));
   connect(gENROE.XADIFD, iEEET2_1.XADIFD) annotation (Line(points={{-66.4,-18},{-62,-18},{-62,-64},{-97.2,-64},{-97.2,-57.7111}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end IEEET2;

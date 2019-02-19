@@ -74,6 +74,5 @@ equation
           textString="Pm (mech. power)"),Text(
           extent={{-98,-4},{-82,4}},
           lineColor={0,0,127},
-          textString="z (gate opening)")}),
-    Documentation);
+          textString="z (gate opening)")}));
 end TurbinePm;

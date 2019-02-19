@@ -51,9 +51,9 @@ equation
   connect(leadLag.u, V_erro.y)
     annotation (Line(points={{38,0},{-19,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
 
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},

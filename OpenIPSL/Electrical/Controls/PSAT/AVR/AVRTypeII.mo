@@ -7,7 +7,6 @@ model AVRTypeII "PSAT AVR Type 2"
   Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (
       Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={110,0}), iconTransformation(extent={{100,-20},{140,20}})));
   Modelica.Blocks.Interfaces.RealInput vref
     "Reference generator terminal voltage (pu)" annotation (Placement(
@@ -119,7 +118,6 @@ equation
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
-        initialScale=0.1,
         preserveAspectRatio=false), graphics={Text(
           extent={{32,-28},{46,-36}},
           lineColor={28,108,200},
@@ -135,7 +133,6 @@ equation
           textString="vr")}),
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
-        initialScale=0.1,
         preserveAspectRatio=false), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},

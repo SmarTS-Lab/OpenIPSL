@@ -26,19 +26,16 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
         transformation(
         extent={{-4,-4},{4,4}},
-        rotation=0,
         origin={-98,-52})));
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   Modelica.Blocks.Sources.Constant const5(k=0) annotation (Placement(
         transformation(
         extent={{-5,-5},{5,5}},
-        rotation=0,
         origin={-97,-37})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESST4B eSST4B annotation (Placement(
         transformation(
         extent={{-14,-10},{14,10}},
-        rotation=0,
         origin={-64,-4})));
   inner Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
@@ -85,8 +82,5 @@ equation
   connect(const1.y, eSST4B.VOEL) annotation (Line(points={{-56.8,-40},{-68.9,-40},
           {-68.9,-14}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end ESST4B;

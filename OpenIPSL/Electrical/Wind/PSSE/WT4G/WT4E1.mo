@@ -41,7 +41,6 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
   Modelica.Blocks.Interfaces.RealInput Q(start=q0) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-200,188}), iconTransformation(
         extent={{-20,-20},{20,20}},
         rotation=180,
@@ -81,7 +80,6 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
   Modelica.Blocks.Sources.Constant Qcmd0(k=Qref) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-100,0})));
   ActivePowerController activePowerController(
     Kpp=Kpp,
@@ -95,13 +93,13 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
     k20=k20,
     k30=k30,
     k50=k50,
-    p0=p0) annotation (Placement(transformation(rotation=0, extent={{40,-100},{
+    p0=p0) annotation (Placement(transformation(extent={{40,-100},{
             80,-60}})));
   pf_Controller PF_Controller(
     Tp=Tp,
     PFA_ref=PFA_ref,
     p0=p0,
-    q0=q0) annotation (Placement(transformation(rotation=0, extent={{-120,28},{
+    q0=q0) annotation (Placement(transformation(extent={{-120,28},{
             -80,68}})));
   windControlEmulator windControlEmulator1(
     Tfv=Tfv,
@@ -113,7 +111,7 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
     Vref=Vref,
     k0=k0,
     k10=k10,
-    k80=k80) annotation (Placement(transformation(rotation=0, extent={{-120,140},
+    k80=k80) annotation (Placement(transformation(extent={{-120,140},
             {-80,180}})));
   Modelica.Blocks.Logical.Switch switch_QREF
     annotation (Placement(transformation(extent={{-50,30},{-30,50}})));
@@ -209,7 +207,6 @@ protected
     Modelica.Blocks.Sources.Constant VAR3(k=Pref) annotation (Placement(
           transformation(
           extent={{-10,-10},{10,10}},
-          rotation=0,
           origin={-94,40})));
     Modelica.Blocks.Math.Gain gain(k=Kpp)
       annotation (Placement(transformation(extent={{-12,0},{8,20}})));
@@ -227,7 +224,6 @@ protected
       T=Tf,
       x_start=k30) annotation (Placement(transformation(
           extent={{10,-10},{-10,10}},
-          rotation=0,
           origin={-4,-20})));
     NonElectrical.Continuous.SimpleLag K5(
       K=1,
@@ -237,7 +233,6 @@ protected
     Modelica.Blocks.Sources.Constant NoLimiMin(k=-Modelica.Constants.inf)
       annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
-          rotation=0,
           origin={106,-20})));
     parameter Real Kpp " Proportional gain in torque regulator (pu)";
     parameter Real KIP " Integrator gain in torque regulator (pu)";
@@ -252,7 +247,7 @@ protected
     parameter Real k50 "Power filter";
     parameter Real p0;
     Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
-          transformation(rotation=0, extent={{-220,-20},{-180,20}})));
+          transformation(extent={{-220,-20},{-180,20}})));
     Modelica.Blocks.Interfaces.RealInput I_PMAX annotation (Placement(
           transformation(
           rotation=270,
@@ -262,7 +257,7 @@ protected
           rotation=270,
           origin={0,200})));
     Modelica.Blocks.Interfaces.RealOutput ipcmd annotation (Placement(
-          transformation(rotation=0, extent={{200,-20},{240,20}}),
+          transformation(extent={{200,-20},{240,20}}),
           iconTransformation(extent={{200,-20},{240,20}})));
     Modelica.Blocks.Interfaces.RealInput VTERM annotation (Placement(
           transformation(
@@ -376,7 +371,7 @@ protected
     parameter Real p0;
     parameter Real q0;
     Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-            rotation=0, extent={{-214,-10},{-194,10}})));
+            extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_REF_PF
       annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   equation
@@ -468,7 +463,7 @@ protected
     parameter Real k10 "Integrator in voltage regulator";
     parameter Real k80 "Lag of the WindVar controller";
     Modelica.Blocks.Interfaces.RealInput V_REG annotation (Placement(
-          transformation(rotation=0, extent={{-214,-10},{-194,10}})));
+          transformation(extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_ord
       annotation (Placement(transformation(extent={{200,-10},{220,10}})));
   equation
@@ -636,6 +631,5 @@ equation
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="WIQCMD")}),
-    Documentation);
+          textString="WIQCMD")}));
 end WT4E1;

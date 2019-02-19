@@ -6,18 +6,16 @@ model StatcomCode_Test
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={-13,13},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={-15,-17},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Machines.PSAT.Order2 Syn2(
     D=1,
     ra=0.001,
@@ -37,18 +35,16 @@ model StatcomCode_Test
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={53,17},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={55,-17},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs(
     D=5,
     angle_0=0,
@@ -165,9 +161,6 @@ equation
   connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{
           152,-26},{152,-8},{141,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

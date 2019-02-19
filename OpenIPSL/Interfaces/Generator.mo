@@ -51,5 +51,5 @@ equation
           fillPattern=FillPattern.Solid),Line(
           points={{-20,20},{-50,40},{-80,0}},
           color={0,0,0},
-          thickness=0.5)}), Documentation);
+          thickness=0.5)}));
 end Generator;

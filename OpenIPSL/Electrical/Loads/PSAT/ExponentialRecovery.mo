@@ -27,14 +27,11 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10})),
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={5,5}), graphics={Rectangle(
-          visible=true,
           origin={10.0,-2.5},
           lineColor={0,0,128},
           fillColor={255,255,255},

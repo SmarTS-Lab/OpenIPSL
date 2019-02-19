@@ -23,6 +23,5 @@ equation
           extent={{-60,20},{0,-20}},
           lineColor={0,0,255},
           textString="LV
-Gate")}),
-    Documentation);
+Gate")}));
 end LV_GATE;

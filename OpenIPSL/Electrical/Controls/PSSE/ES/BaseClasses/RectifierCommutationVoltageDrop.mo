@@ -7,7 +7,6 @@ model RectifierCommutationVoltageDrop
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={-120,50}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -17,15 +16,12 @@ model RectifierCommutationVoltageDrop
             {{100,-10},{120,10}})));
   Modelica.Blocks.Math.Gain gain2(k=K_C) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-70,50})));
   NonElectrical.Nonlinear.FEX fEX annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={10,0})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={70,0})));
   Modelica.Blocks.Math.Division division
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
@@ -45,7 +41,7 @@ equation
   connect(product1.u1, division.u2) annotation (Line(points={{58,6},{48,6},{48,
           20},{-80,20},{-80,-6},{-42,-6}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(initialScale=0.1), graphics={Rectangle(
+    Icon(coordinateSystem(), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
@@ -54,7 +50,7 @@ equation
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="Rectifier Commutation 
+          textString="Rectifier Commutation
 Voltage Drop"),Text(
           extent={{-99,4},{-70,-6}},
           lineColor={28,108,200},
@@ -64,7 +60,5 @@ Voltage Drop"),Text(
           textString="XADIFD"),Text(
           extent={{76,6},{98,-4}},
           lineColor={28,108,200},
-          textString="EFD")}),
-    Diagram(coordinateSystem(initialScale=0.1)),
-    Documentation);
+          textString="EFD")}));
 end RectifierCommutationVoltageDrop;

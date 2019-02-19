@@ -4,5 +4,4 @@ model WhiteNoiseInjection
 
 equation
   y = noise_gen.y;
-  annotation ();
 end WhiteNoiseInjection;

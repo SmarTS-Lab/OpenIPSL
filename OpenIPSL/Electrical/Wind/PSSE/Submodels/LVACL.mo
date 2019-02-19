@@ -18,7 +18,6 @@ model LVACL
   Modelica.Blocks.Interfaces.RealInput Ip_LVPL annotation (Placement(
         transformation(
         extent={{-9,-9},{9,9}},
-        rotation=0,
         origin={-33,-3}), iconTransformation(extent={{-100,-10},{-80,10}})));
 equation
   if Vt < 0.4 then
@@ -62,6 +61,5 @@ equation
           textString="IP_LVACL"),Text(
           extent={{4,-78},{22,-92}},
           lineColor={0,0,255},
-          textString="V")}),
-    Documentation);
+          textString="V")}));
 end LVACL;

@@ -4,45 +4,33 @@ model ElecDynBlk
       Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-45.2439,-151.0508},
-        rotation=0),
-      visible=true,
+        origin={-45.2439,-151.0508}),
       iconTransformation(
         origin={2.0,-124.0},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealInput Vbus "Vbus" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-45.2049,-85.6189},
-        rotation=0),
-      visible=true,
+        origin={-45.2049,-85.6189}),
       iconTransformation(
         origin={2.0,-24.0},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealOutput idr(start=idr0, fixed=false)
     "saturated idr" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
-        origin={43.0,-29.0},
-        rotation=0),
-      visible=true,
+        origin={43.0,-29.0}),
       iconTransformation(
         origin={-2.0,-24.0},
-        extent={{102.0,54.0},{62.0,94.0}},
-        rotation=0)));
+        extent={{102.0,54.0},{62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealOutput iqr(start=iqr0, fixed=false)
     "saturated iqr" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
-        origin={43.0,-94.0},
-        rotation=0),
-      visible=true,
+        origin={43.0,-94.0}),
       iconTransformation(
         origin={-2.0,-124.0},
-        extent={{102.0,54.0},{62.0,94.0}},
-        rotation=0)));
+        extent={{102.0,54.0},{62.0,94.0}})));
   constant Real pi=3.14159265358979;
   parameter Real Sbase=100 "Power Rating [Normalization Factor] (MVA)";
   parameter Real Vbus0=1 "p.u. Input PowerFlow";
@@ -110,12 +98,9 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={0.294,8.6655},
           fillPattern=FillPattern.Solid,
           extent={{-47.919,-38.6655},{47.919,38.6655}},
@@ -124,7 +109,5 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})),
-    Documentation);
+        grid={5,5})));
 end ElecDynBlk;

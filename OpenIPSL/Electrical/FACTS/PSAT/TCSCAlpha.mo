@@ -97,8 +97,6 @@ equation
   p.ii - B*p.vr - G*p.vi = (y + b)*(n.vr - p.vr);
   p.ir - G*p.vr + B*p.vi = (y + b)*(p.vi - n.vi);
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
           extent={{-4,46},{-4,34}},

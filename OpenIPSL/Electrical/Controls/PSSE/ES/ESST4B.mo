@@ -36,7 +36,6 @@ model ESST4B " IEEE type ST4B potential or compounded
     T=T_A,
     y_start=VR0) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={60,0})));
   Modelica.Blocks.Continuous.LimIntegrator VR1(
     outMax=V_RMAX/K_PR,
@@ -185,12 +184,12 @@ equation
   connect(Gen_terminal, Bus) annotation (Line(points={{-170,130},{170,130},{170,
           130}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{210,-4},{234,-18}},
           lineColor={255,0,0},
           textString="VB")}),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-146,158},{-96,100}},
           lineColor={0,0,255},

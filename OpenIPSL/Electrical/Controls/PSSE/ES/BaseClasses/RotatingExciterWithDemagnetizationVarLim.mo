@@ -48,5 +48,5 @@ equation
           lineColor={255,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="with Demagnetization Effect")}), Documentation);
+          textString="with Demagnetization Effect")}));
 end RotatingExciterWithDemagnetizationVarLim;

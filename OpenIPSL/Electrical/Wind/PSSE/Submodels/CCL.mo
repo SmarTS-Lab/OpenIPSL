@@ -54,7 +54,6 @@ model CCL
   Modelica.Blocks.Sources.Constant const2(k=Iqhl) annotation (Placement(
         transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={-19,23})));
   Modelica.Blocks.Math.Min min2 annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
@@ -85,7 +84,6 @@ model CCL
         rotation=270,
         origin={0,78}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-100,0})));
 protected
   Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(
@@ -94,7 +92,6 @@ protected
         rotation=270,
         origin={0,40}), iconTransformation(
         extent={{-9,-9},{9,9}},
-        rotation=0,
         origin={-101,5})));
 protected
   Modelica.Blocks.Interfaces.RealOutput IQmin1 annotation (Placement(
@@ -156,7 +153,6 @@ protected
   Modelica.Blocks.Interfaces.RealInput Available_remain2
     "sqrt(ImaxTD^2 - IqCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
-        rotation=0,
         origin={-90,-20}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
@@ -293,6 +289,5 @@ equation
           textString="sqrt(ImaxTD^2 - IpCMD^2)"),Text(
           extent={{-112,-42},{-58,-58}},
           lineColor={0,0,255},
-          textString="sqrt(ImaxTD^2 - IqCMD^2)")}),
-    Documentation);
+          textString="sqrt(ImaxTD^2 - IqCMD^2)")}));
 end CCL;

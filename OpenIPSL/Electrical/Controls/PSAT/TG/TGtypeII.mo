@@ -2,7 +2,6 @@ within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGtypeII "TG Type II"
   Modelica.Blocks.Interfaces.RealInput pm0 "Initial mechanical power (pu)"
     annotation (Placement(
-      visible=true,
       transformation(
         origin={0,120},
         extent={{-20,-20},{20,20}},
@@ -13,36 +12,27 @@ model TGtypeII "TG Type II"
         rotation=-90)));
   Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={109.815,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         origin={110.0,-0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={-120,5e-06},
-        extent={{-20,-20},{20,20}},
-        rotation=0),
+        extent={{-20,-20},{20,20}}),
       iconTransformation(
         origin={-120.0,-0.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true,
-        transformation(
+        extent={{-20.0,-20.0},{20.0,20.0}})));
+  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(
         origin={-50,6.66134e-16},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={Ts,1}, b={T3,
-        1}) annotation (Placement(visible=true, transformation(
+        1}) annotation (Placement(transformation(
         origin={10,4.44089e-16},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   parameter Real wref=1 "Reference speed (pu)";
   parameter Real R=0.2 "Droop (pu)";
   parameter Real pmax0=1 "Maximum turbine output (pu)";
@@ -52,26 +42,19 @@ model TGtypeII "TG Type II"
   parameter Real S_b=100 "System base power (MVA)"
     annotation (Dialog(group="Power flow data"));
   parameter Real Sn=20 "Nominal power (MVA)";
-  Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(transformation(
         origin={-20,6.66134e-16},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  Modelica.Blocks.Sources.Constant const(k=wref) annotation (Placement(visible=
-          true, transformation(
+        extent={{-10.0,-10.0},{10.0,10.0}})));
+  Modelica.Blocks.Sources.Constant const(k=wref) annotation (Placement(transformation(
         origin={-90,20},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add add2 annotation (Placement(visible=true,
-        transformation(
+        extent={{-10,-10},{10,10}})));
+  Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(
         origin={50,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=pmax, uMin=pmin) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={80,-5.55112e-16},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
 protected
   parameter Real Ro=R*S_b/Sn;
   parameter Real pmax=pmax0*Sn/S_b;

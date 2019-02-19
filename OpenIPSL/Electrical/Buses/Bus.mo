@@ -4,15 +4,10 @@ model Bus "Bus model (2014/03/10)"
   OpenIPSL.Interfaces.PwPin p(vr(start=v_0*cos(angle_0*C.pi/
           180)), vi(start=v_0*sin(angle_0*C.pi/180)))
     annotation (Placement(
-      visible=true,
       transformation(
-        origin={0,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
-        origin={0,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Real V(start=v_0) "Bus voltage magnitude (pu)";
   Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle(start=angle_0)
     "Bus voltage angle";
@@ -26,10 +21,8 @@ equation
   p.ir = 0;
   p.ii = 0;
   annotation (Icon(graphics={Rectangle(
-          visible=true,
           fillPattern=FillPattern.Solid,
           extent={{-10,-100},{10,100}}),Text(
-          visible=true,
           origin={-0.02605,120.133},
           fillPattern=FillPattern.Solid,
           extent={{-100,-20},{100,20}},
@@ -44,5 +37,5 @@ equation
           extent={{-60,-20},{60,20}},
           lineColor={170,0,0},
           textString=DynamicSelect("Angle", String(angle, significantDigits=3)
-             + "°"))}), Documentation);
+             + "°"))}));
 end Bus;

@@ -26,8 +26,6 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="deadband")}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

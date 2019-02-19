@@ -43,6 +43,5 @@ equation
           lineColor={0,0,255},
           textString="s"),Line(points={{-100,-140},{-60,-140},{-40,-100}},
           color={0,0,0})}),
-    Diagram,
-    Documentation);
+    Diagram);
 end IntegratorLimVar;

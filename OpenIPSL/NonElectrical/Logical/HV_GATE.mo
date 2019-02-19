@@ -23,6 +23,5 @@ equation
           extent={{-64,14},{-2,-14}},
           lineColor={0,0,255},
           textString="HV
-Gate")}),
-    Documentation);
+Gate")}));
 end HV_GATE;

@@ -4,61 +4,54 @@ partial model TGTestBase
     angle_0=0,
     P_0=80000,
     Q_0=60000,
-    v_0=1) annotation (Placement(visible=true, transformation(
+    v_0=1) annotation (Placement(transformation(
         origin={90.0709,0},
-        extent={{-5.92912,-6.00002},{5.92911,6.00001}},
-        rotation=0)));
+        extent={{-5.92912,-6.00002},{5.92911,6.00001}})));
   OpenIPSL.Electrical.Branches.PwLine pwLineFault(
     B=0.001/2,
     G=0,
     R=0.01,
     X=0.1,
     t1=8,
-    t2=8.1) annotation (Placement(visible=true, transformation(
+    t2=8.1) annotation (Placement(transformation(
         origin={70,30},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={70,10},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={70,-10},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
     angle_0=0,
     P_0=80000,
     Q_0=60000,
-    v_0=1) annotation (Placement(visible=true, transformation(
+    v_0=1) annotation (Placement(transformation(
         origin={90,-26},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
     G=0,
     R=0.01,
     X=0.1,
-    displayPF=false) annotation (Placement(visible=true, transformation(
+    displayPF=false) annotation (Placement(transformation(
         origin={46,10},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={46,-10},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Events.PwFaultPQ pwFault(
     X=0.001,
     t1=3,
@@ -81,10 +74,8 @@ partial model TGTestBase
     Sn=20000000,
     v_0=1,
     V_b=400000,
-    Vn=400000) annotation (Placement(visible=true, transformation(
-        origin={0,0},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+    Vn=400000) annotation (Placement(transformation(
+        extent={{-20,-20},{20,20}})));
 equation
   connect(pwLine1.n, pwLine3.p) annotation (Line(
       points={{55,10},{61,10}},
@@ -104,9 +95,4 @@ equation
   connect(gen.vf0, gen.vf) annotation (Line(points={{-16,22},{-16,28},{-32,28},{-32,10},{-24,10}}, color={0,0,127}));
   connect(gen.p, pwLine1.p) annotation (Line(points={{20,0},{37,0},{37,10}}, color={0,0,255}));
   connect(gen.p, pwLine2.p) annotation (Line(points={{20,0},{37,0},{37,-10}}, color={0,0,255}));
-  annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{100,100}},
-          preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
-    Documentation);
 end TGTestBase;

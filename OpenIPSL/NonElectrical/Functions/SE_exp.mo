@@ -11,5 +11,4 @@ protected
   parameter Real X=log(S_EE_2/S_EE_1)/log(E_2);
 algorithm
   sys := S_EE_1*u^X;
-  annotation (Documentation);
 end SE_exp;

@@ -78,8 +78,6 @@ equation
     n = Ratio[1, 33];
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-54,46},{70,-42}}, lineColor={
           0,0,255}),Line(

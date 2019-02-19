@@ -5,15 +5,13 @@ model EXAC2
   import OpenIPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={160,-48},
         extent={{-10,-10},{10,10}},
         rotation=90),
       iconTransformation(
         origin={-198,-70},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLagLim imLimitedSimpleLag(
     K=K_A,
     T=T_A,
@@ -95,7 +93,6 @@ model EXAC2
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Math.Gain gain3(k=K_L) annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0,
         origin={62,-30})));
   Modelica.Blocks.Math.Add add3(k1=-1, k2=+1) annotation (Placement(
         transformation(
@@ -105,7 +102,6 @@ model EXAC2
   Modelica.Blocks.Sources.Constant Vref1(k=V_LR) annotation (Placement(
         transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0,
         origin={150,-90})));
 protected
   parameter Real VA0(fixed=false);
@@ -188,9 +184,9 @@ equation
   connect(DiffV1.y, lV_GATE.n1)
     annotation (Line(points={{41,0},{44.625,0},{44.625,3}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
 
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-184,-62},{-114,-82}},
           lineColor={28,108,200},

@@ -113,8 +113,6 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-48,24},{10,-32}}, lineColor={0,
           0,255}),Ellipse(extent={{-6,26},{52,-30}}, lineColor={0,0,255}),Line(

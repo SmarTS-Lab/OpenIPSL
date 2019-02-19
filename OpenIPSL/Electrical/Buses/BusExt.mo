@@ -7,25 +7,18 @@ model BusExt
   parameter Integer nn(min=0) = 0 "Number of right connections"
     annotation (Dialog(connectorSizing=true), HideResult=true);
   OpenIPSL.Interfaces.PwPin p[np] annotation (Placement(
-      visible=true,
       transformation(
         origin={-20.0001,1},
-        extent={{-9.99994,-99},{10.0001,99}},
-        rotation=0),
+        extent={{-9.99994,-99},{10.0001,99}}),
       iconTransformation(
         origin={20,0},
-        extent={{-4,-60},{4,60}},
-        rotation=0)));
+        extent={{-4,-60},{4,60}})));
   OpenIPSL.Interfaces.PwPin n[nn] annotation (Placement(
-      visible=true,
       transformation(
         origin={20,0},
-        extent={{-12,-100},{12,100}},
-        rotation=0),
+        extent={{-12,-100},{12,100}}),
       iconTransformation(
-        origin={0,0},
-        extent={{-4,-60},{4,60}},
-        rotation=0)));
+        extent={{-4,-60},{4,60}})));
   SI.PerUnit v(start=v_0) "Bus voltage magnitude (pu)";
   SI.Conversions.NonSIunits.Angle_deg angle(start=angle_0) "Bus voltage angle";
   parameter SI.PerUnit v_0=1 "Voltage magnitude (pu)"

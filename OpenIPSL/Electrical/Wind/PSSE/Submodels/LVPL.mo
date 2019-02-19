@@ -65,6 +65,5 @@ equation
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="LVLP")}),
-    Documentation);
+          textString="LVLP")}));
 end LVPL;

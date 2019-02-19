@@ -36,7 +36,6 @@ initial equation
   P0 = PMECH0;
   P_REF = P0*R;
 
-
 equation
   connect(REF.y, add.u1) annotation (Line(points={{-119,50},{-60,50},{-60,5.8},{
           -42,5.8}},                                                    color={0,0,127}));
@@ -60,13 +59,11 @@ equation
     Diagram(coordinateSystem(
         extent={{-240,-200},{240,180}},
         preserveAspectRatio=false,
-        grid={2,2},
-        initialScale=0.1)),
+        grid={2,2})),
     Icon(coordinateSystem(
         extent={{-240,-200},{240,180}},
         preserveAspectRatio=false,
-        grid={2,2},
-        initialScale=0.1),
+        grid={2,2}),
         graphics={Text(
           extent={{-60,26},{58,-18}},
           lineColor={28,108,200},

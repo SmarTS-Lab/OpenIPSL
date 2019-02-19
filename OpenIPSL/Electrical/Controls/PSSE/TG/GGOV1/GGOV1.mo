@@ -129,7 +129,6 @@ model GGOV1 "GE General Governor/Turbine Mode"
     y_start=s00,
     K=1) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-270,-170})));
   Modelica.Blocks.Math.Add add6(k1=-1) annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},
@@ -180,7 +179,6 @@ model GGOV1 "GE General Governor/Turbine Mode"
         origin={150,-24})));
   Modelica.Blocks.Math.Add add5(k1=-1) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={176,158})));
   Modelica.Blocks.Sources.Constant set1(k=Wfnl) "full load flow" annotation (
       Placement(transformation(
@@ -189,7 +187,6 @@ model GGOV1 "GE General Governor/Turbine Mode"
         origin={196,-38})));
   Modelica.Blocks.Math.Gain gain2(k=Dm) annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},
-        rotation=0,
         origin={76,164})));
   flag flag10(flag=Flag) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -208,7 +205,6 @@ model GGOV1 "GE General Governor/Turbine Mode"
     annotation (Placement(transformation(extent={{10,-62},{24,-48}})));
   Modelica.Blocks.Math.Add add7 annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
-        rotation=0,
         origin={-85,137})));
   Modelica.Blocks.Sources.Constant set2(k=Wfnl) "full load flow" annotation (
       Placement(transformation(
@@ -244,11 +240,9 @@ model GGOV1 "GE General Governor/Turbine Mode"
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=s30) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={107,-57})));
   Modelica.Blocks.Math.Add add8(k2=-1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={48,-58})));
   RSELECT rSELECT(Rselect=Rselect) annotation (Placement(transformation(
         extent={{-15,-22},{15,22}},
@@ -619,6 +613,5 @@ equation
           textString="GGOV1"),Text(
           extent={{172,24},{256,-28}},
           lineColor={0,0,255},
-          textString="PMECH")}),
-    Documentation);
+          textString="PMECH")}));
 end GGOV1;

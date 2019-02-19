@@ -22,23 +22,19 @@ model TGTypeVI_test
     freqHz=0.2,
     startTime=10,
     amplitude=-0.001,
-    offset=0) annotation (Placement(visible=true, transformation(
+    offset=0) annotation (Placement(transformation(
         origin={-26,-60},
-        extent={{6,-6},{-6,6}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add Perturbation(k2=+1) annotation (Placement(visible=
-          true, transformation(
+        extent={{6,-6},{-6,6}})));
+  Modelica.Blocks.Math.Add Perturbation(k2=+1) annotation (Placement(transformation(
         origin={-60,-50},
-        extent={{9.99996,-9.99996},{-10,10}},
-        rotation=0)));
+        extent={{9.99996,-9.99996},{-10,10}})));
   Modelica.Blocks.Sources.Sine sine1(
     freqHz=0.2,
     startTime=5,
     amplitude=0.001,
-    offset=1) annotation (Placement(visible=true, transformation(
+    offset=1) annotation (Placement(transformation(
         origin={-26,-40},
-        extent={{6.00002,-6.00001},{-6,6.00001}},
-        rotation=0)));
+        extent={{6.00002,-6.00001},{-6,6.00001}})));
 equation
 
   connect(sine1.y, Perturbation.u1) annotation (Line(
@@ -58,7 +54,5 @@ equation
           extent={{-14,-46},{60,-58}},
           lineColor={0,0,255},
           textString="Wref perturbation with sine signal 5-10s")}),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end TGTypeVI_test;

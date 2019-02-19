@@ -99,8 +99,6 @@ equation
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid,
           textString="%Name")}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"1\"><tr>
 <td><p>Reference</p></td>

@@ -28,8 +28,7 @@ equation
   annotation (
     Icon(coordinateSystem(
         preserveAspectRatio=true,
-        extent={{-60,-60},{60,60}},
-        initialScale=0.1), graphics={Rectangle(extent={{-60,60},{60,-60}},
+        extent={{-60,-60},{60,60}}), graphics={Rectangle(extent={{-60,60},{60,-60}},
           lineColor={0,0,255}),Rectangle(
           extent={{-28,26},{12,6}},
           lineColor={0,0,0},
@@ -66,7 +65,5 @@ equation
           textString="%name")}),
     Diagram(coordinateSystem(
         extent={{-60,-60},{60,60}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics),
-    Documentation);
+        preserveAspectRatio=true), graphics));
 end PwFault;

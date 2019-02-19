@@ -96,6 +96,5 @@ equation
           fillColor={28,108,200},
           fillPattern=FillPattern.Solid,
           textString="freq.
-")}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})));
+")}));
 end FrenquencyCalc;

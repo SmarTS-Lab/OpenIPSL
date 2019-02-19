@@ -31,7 +31,6 @@ equation
           color={0,0,255},
           smooth=Smooth.Bezier,
           thickness=0.5)}),
-    Diagram(graphics),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

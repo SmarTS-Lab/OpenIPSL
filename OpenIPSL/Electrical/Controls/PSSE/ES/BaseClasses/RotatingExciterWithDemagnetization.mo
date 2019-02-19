@@ -54,6 +54,5 @@ equation
           extent={{-77,-44},{-53,-54}},
           lineColor={28,108,200},
           textString="V_FE")}),
-    Diagram(coordinateSystem(initialScale=0.05, extent={{-80,-80},{80,80}})),
-    Documentation);
+    Diagram(coordinateSystem(initialScale=0.05, extent={{-80,-80},{80,80}})));
 end RotatingExciterWithDemagnetization;

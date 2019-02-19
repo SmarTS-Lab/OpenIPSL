@@ -42,8 +42,7 @@ equation
     annotation (Line(points={{-110,0},{-62,0},{-62,0}}, color={0,0,127}));
   connect(derivativeLag.y, imLeadLag.u)
     annotation (Line(points={{-39,0},{-12,0},{-12,0}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  annotation ( Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

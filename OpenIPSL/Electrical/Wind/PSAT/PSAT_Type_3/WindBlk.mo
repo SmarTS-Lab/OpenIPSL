@@ -4,45 +4,33 @@ model WindBlk
   Modelica.Blocks.Interfaces.RealInput vw "Real voltage" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-43.0,7.7602},
-        rotation=0),
-      visible=true,
+        origin={-43.0,7.7602}),
       iconTransformation(
         origin={2.0,-2.4053},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealInput theta_p "Real voltage" annotation (
       Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-43.0,-34.0},
-        rotation=0),
-      visible=true,
+        origin={-43.0,-34.0}),
       iconTransformation(
         origin={2.0,-76.5688},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealInput omega_m "Real voltage" annotation (
       Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-43.0,-74.0},
-        rotation=0),
-      visible=true,
+        origin={-43.0,-74.0}),
       iconTransformation(
         origin={2.0,-146.3226},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealOutput Tm "Real voltage" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
-        origin={43.0,-74.0},
-        rotation=0),
-      visible=true,
+        origin={43.0,-74.0}),
       iconTransformation(
         origin={-2.0,-71.3573},
-        extent={{102.0,54.0},{62.0,94.0}},
-        rotation=0)));
+        extent={{102.0,54.0},{62.0,94.0}})));
   parameter Real vw_base=15 "Vw Nominal (m/s)";
   parameter Real rho=1.225 "Air Density (kg/m^3)";
   parameter Real Sbase=100 "Power Rating [Normalization Factor] (MVA)";
@@ -67,12 +55,9 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={5.2917,-1.4606},
           fillPattern=FillPattern.Solid,
           extent={{-39.3935,-41.4606},{39.3935,41.4606}},
@@ -81,7 +66,5 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})),
-    Documentation);
+        grid={5,5})));
 end WindBlk;

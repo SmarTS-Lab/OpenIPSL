@@ -126,8 +126,8 @@ equation
   connect(XADIFD, rotatingExciterWithDemagnetization.XADIFD) annotation (Line(points={{80,-200},{80,-120},{134,-120},{134,28.75}}, color={0,0,127}));
   connect(XADIFD, rectifierCommutationVoltageDrop.XADIFD) annotation (Line(points={{80,-200},{80,-120},{170,-120},{170,29}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-186,-60},{-116,-80}},
           lineColor={28,108,200},

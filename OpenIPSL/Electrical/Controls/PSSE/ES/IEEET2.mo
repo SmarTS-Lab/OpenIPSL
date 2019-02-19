@@ -111,12 +111,11 @@ equation
   connect(derivativeLag.u, rotatingExciter.I_C) annotation (Line(points={{82,-50},
           {120,-50},{120,0},{138.75,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
 
     Icon(coordinateSystem(
         preserveAspectRatio=true,
-        extent={{-200,-200},{200,160}},
-        initialScale=0.1), graphics={Text(
+        extent={{-200,-200},{200,160}}), graphics={Text(
           extent={{-100,152},{100,92}},
           lineColor={28,108,200},
           textString="IEEET2")}),

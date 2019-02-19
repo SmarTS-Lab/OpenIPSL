@@ -63,9 +63,5 @@ equation
     annotation (Line(points={{-38.4,34},{-54,34},{-68,34}}, color={0,0,127}));
   connect(bus1.p, order4.p) annotation (Line(points={{0,0},{-25,0}}, color={0,0,255}));
   annotation (
-    Documentation,
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    experiment(StopTime=50),
-    __Dymola_experimentSetupOutput);
+    experiment(StopTime=50));
 end AVRTypeII_OEL_Test;

@@ -31,5 +31,5 @@ equation
           {-112,-30},{-54,-30},{-54,-10},{-58,-10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
-  annotation (Documentation, experiment(StopTime=10));
+  annotation (experiment(StopTime=10));
 end GENROE;

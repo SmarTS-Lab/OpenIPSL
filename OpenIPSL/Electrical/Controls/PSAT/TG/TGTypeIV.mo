@@ -47,7 +47,6 @@ model TGTypeIV
         origin={-44,-40})));
   Modelica.Blocks.Math.Gain gain5(k=1/Tr) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={-10,-60})));
   Modelica.Blocks.Continuous.Integrator integrator4(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=int4) annotation (Placement(transformation(
@@ -66,11 +65,9 @@ model TGTypeIV
   Modelica.Blocks.Continuous.Integrator integrator5(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=int5) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={120,-20})));
   Modelica.Blocks.Math.Feedback feedback2 annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={100,-20})));
   Modelica.Blocks.Math.Gain G6(k=(a11*a23 - a13*a21)/a11)
     annotation (Placement(transformation(extent={{74,-6},{86,6}})));

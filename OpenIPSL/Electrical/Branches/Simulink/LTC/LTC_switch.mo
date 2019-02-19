@@ -18,8 +18,6 @@ equation
     r = Normalin;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
           extent={{-46,94},{56,-94}},

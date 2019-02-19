@@ -13,7 +13,6 @@ model URST5T "IEEE Proposed Type ST5B Excitation System"
   parameter Real K_C=0.3;
   Modelica.Blocks.Math.Add VERR1 annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
-        rotation=0,
         origin={-10,0})));
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{-56,-6},{-32,6}})));
@@ -37,14 +36,12 @@ model URST5T "IEEE Proposed Type ST5B Excitation System"
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   Modelica.Blocks.Math.Gain K_R(k=KR) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={80,0})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Math.Add VERR2(k1=-1, k2=1) annotation (Placement(
         transformation(
         extent={{-10,10},{10,-10}},
-        rotation=0,
         origin={178,0})));
   Modelica.Blocks.Math.Gain K_c(k=K_C) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -52,11 +49,9 @@ model URST5T "IEEE Proposed Type ST5B Excitation System"
         origin={160,-30})));
   Modelica.Blocks.Math.Gain Vmin(k=V_RMIN) annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0,
         origin={150,50})));
   Modelica.Blocks.Math.Gain Vmax(k=V_RMAX) annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0,
         origin={150,90})));
   NonElectrical.Continuous.SimpleLagLimVar simpleLagLimVar(
     K=1,
@@ -70,7 +65,6 @@ model URST5T "IEEE Proposed Type ST5B Excitation System"
     annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
   Modelica.Blocks.Interfaces.RealInput VT annotation (Placement(transformation(
         extent={{20,-20},{-20,20}},
-        rotation=0,
         origin={200,70}), iconTransformation(extent={{-10,-10},{10,10}}, origin=
            {-200,50})));
 protected
@@ -121,11 +115,10 @@ equation
           128,90},{128,20},{148,20},{148,14}}, color={0,0,127}));
   connect(K_c.u, XADIFD) annotation (Line(points={{160,-42},{160,-140},{80,-140},{80,-200}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
         extent={{-200,-200},{200,160}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Text(
+        preserveAspectRatio=true), graphics={Text(
           extent={{-188,60},{-154,40}},
           lineColor={28,108,200},
           textString="VT"),Text(

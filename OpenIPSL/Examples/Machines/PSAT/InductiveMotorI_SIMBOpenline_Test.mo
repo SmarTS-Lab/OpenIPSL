@@ -32,7 +32,6 @@ model InductiveMotorI_SIMBOpenline_Test
         origin={0,20})));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(angle_0=0, v_0=1.05) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-70,0})));
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
@@ -53,5 +52,5 @@ equation
       points={{9,-20},{40,-20},{40,1.33227e-15},{60,1.33227e-15}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Documentation,experiment(StopTime=20));
+  annotation (experiment(StopTime=20));
 end InductiveMotorI_SIMBOpenline_Test;

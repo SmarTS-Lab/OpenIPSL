@@ -31,10 +31,7 @@ equation
   connect(TF.u, u)
     annotation (Line(points={{-10,0},{-120,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    Icon(graphics={Text(
+Icon(graphics={Text(
           extent={{-44,82},{76,22}},
           lineColor={0,0,255},
           textString="1+sT"),Line(

@@ -129,9 +129,9 @@ equation
   connect(imDerivativeLag.y, add3_1.u3) annotation (Line(points={{-1,-50},{-26,
           -50},{-70,-50},{-70,-8},{-62,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
 
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-184,-62},{-114,-82}},
           lineColor={28,108,200},

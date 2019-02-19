@@ -5,35 +5,29 @@ model ThreeWindingTransformer_Test
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={-2,-10},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={-2,10},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-91.783,9.4652},
-        extent={{-4.4802,-4.4802},{4.4802,4.4802}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
-        transformation(
+        extent={{-4.4802,-4.4802},{4.4802,4.4802}})));
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(transformation(
         origin={-78,2},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
+        extent={{-4,-4},{4,4}})));
   Modelica.Blocks.Sources.Sine sine2(
     amplitude=0.001,
     freqHz=0.2,
-    startTime=5) annotation (Placement(visible=true, transformation(
+    startTime=5) annotation (Placement(transformation(
         origin={-91.382,-5.5198},
-        extent={{-4.4802,-4.4802},{4.4802,4.4802}},
-        rotation=0)));
+        extent={{-4.4802,-4.4802},{4.4802,4.4802}})));
   OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
     D=5,
     angle_0=0,

@@ -13,15 +13,14 @@ model Order2test2
     Sn=20000000,
     v_0=1,
     V_b=400000,
-    Vn=400000) annotation (Placement(visible=true, transformation(
+    Vn=400000) annotation (Placement(transformation(
         origin={-29.946,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
 equation
   connect(order21.vf, order21.vf0) annotation (Line(points={{-41.946,5},{-46,5},
           {-46,14},{-37.946,14},{-37.946,11}}, color={0,0,127}));
   connect(order21.pm, order21.pm0) annotation (Line(points={{-41.946,-5},{-46,-5},
           {-46,-14},{-37.946,-14},{-37.946,-11}}, color={0,0,127}));
   connect(order21.p, bus1.p) annotation (Line(points={{-19.946,0},{-9.473,0},{-9.473,0},{0,0}}, color={0,0,255}));
-  annotation (Documentation,experiment(StopTime=20));
+  annotation (experiment(StopTime=20));
 end Order2test2;

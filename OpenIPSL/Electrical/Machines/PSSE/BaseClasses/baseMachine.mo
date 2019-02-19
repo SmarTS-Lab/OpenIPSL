@@ -67,10 +67,8 @@ partial model baseMachine
   RealOutput XADIFD "Machine field current (pu)" annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={110,-90}), iconTransformation(
         extent={{-8,-8},{8,8}},
-        rotation=0,
         origin={108,-90})));
   SI.PerUnit w(start=0) "Machine speed deviation (pu)";
   SI.Angle delta "Rotor angle";
@@ -116,8 +114,6 @@ equation
   der(w) = ((PMECH - D*w)/(w + 1) - Te)/(2*H);
   der(delta) = w_b*w;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Text(
@@ -159,6 +155,5 @@ equation
           extent={{-88,-46},{-58,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="EFD")}),
-    Documentation);
+          textString="EFD")}));
 end baseMachine;

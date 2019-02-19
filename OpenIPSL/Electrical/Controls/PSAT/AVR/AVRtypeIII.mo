@@ -11,35 +11,27 @@ model AVRtypeIII
   Real vr;
   Real vf1;
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=vfmax, uMin=vfmin)
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={5,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   Modelica.Blocks.Interfaces.RealInput v(start=1) annotation (Placement(
-      visible=true,
       transformation(
         origin={-119.972,50},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
+        extent={{-20.0,-20.0},{20.0,20.0}}),
       iconTransformation(
         origin={-110,60},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(
-      visible=true,
       transformation(
         origin={130,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
+        extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         origin={130,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(
           extent={{-140,-82},{-100,-42}}), iconTransformation(extent={{-120,-70},
             {-100,-50}})));
   Modelica.Blocks.Interfaces.RealInput vf0(start=1) annotation (Placement(
-      visible=true,
       transformation(
         origin={0.028,120},
         extent={{-20.0,-20.0},{20.0,20.0}},

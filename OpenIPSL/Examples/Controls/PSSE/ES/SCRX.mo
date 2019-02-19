@@ -29,7 +29,6 @@ model SCRX "SMIB model example of GENROU with Excitation System EXST1"
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
         transformation(
         extent={{4,-4},{-4,4}},
-        rotation=0,
         origin={-52,-36})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     T_AT_B=0.1,
@@ -63,7 +62,6 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{
             120,100}})),
-    Documentation,
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
+Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
     experiment(StopTime=10));
 end SCRX;

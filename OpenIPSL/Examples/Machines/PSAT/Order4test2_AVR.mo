@@ -3,10 +3,9 @@ model Order4test2_AVR
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-67,5},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Machines.PSAT.Order4 order4_Inputs_Outputs(
     angle_0=0,
     ra=0.001,
@@ -36,5 +35,5 @@ equation
   connect(order4_Inputs_Outputs.p, bus1.p) annotation (Line(points={{-17,0},{-8,0},{-8,0},{0,0}}, color={0,0,255}));
   connect(AVRtypeIII1.vf0, order4_Inputs_Outputs.vf0) annotation (Line(points={
           {-67,14.1667},{-67,23},{-35,23},{-35,11}},color={0,0,127}));
-  annotation (Documentation,experiment(StopTime=20));
+  annotation (experiment(StopTime=20));
 end Order4test2_AVR;

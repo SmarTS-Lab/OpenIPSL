@@ -79,8 +79,6 @@ equation
     der(m) = (-H*m) + K*(vm - vref);
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,
           255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),Line(

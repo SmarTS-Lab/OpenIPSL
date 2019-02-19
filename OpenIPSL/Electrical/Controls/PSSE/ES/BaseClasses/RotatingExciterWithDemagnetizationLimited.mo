@@ -12,5 +12,5 @@ model RotatingExciterWithDemagnetizationLimited
           lineColor={255,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="Limited")}), Documentation);
+          textString="Limited")}));
 end RotatingExciterWithDemagnetizationLimited;

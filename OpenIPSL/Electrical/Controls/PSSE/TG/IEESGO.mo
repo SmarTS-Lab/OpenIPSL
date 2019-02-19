@@ -51,7 +51,6 @@ protected
 initial algorithm
   p0 := PMECH0;
 
-
 equation
   connect(imSimpleLag.y, imLeadLag.u) annotation (Line(points={{-159,-120},{-142,
           -120}},                                                                color={0,0,127}));

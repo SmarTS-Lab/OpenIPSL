@@ -16,95 +16,72 @@ model Order3test2_perturbation
     Sn=20000000,
     v_0=1,
     V_b=400000,
-    Vn=400000) annotation (Placement(visible=true, transformation(
+    Vn=400000) annotation (Placement(transformation(
         origin={-18.3443,-0.375609},
-        extent={{-9.6557,-9.62439},{9.6557,9.62439}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add3 add31 annotation (Placement(visible=true,
-        transformation(
+        extent={{-9.6557,-9.62439},{9.6557,9.62439}})));
+  Modelica.Blocks.Math.Add3 add31 annotation (Placement(transformation(
         origin={-45,25},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add add1 annotation (Placement(visible=true,
-        transformation(
+        extent={{-5,-5},{5,5}})));
+  Modelica.Blocks.Math.Add add1 annotation (Placement(transformation(
         origin={-74.9999,35},
-        extent={{-4.99992,-5.00001},{4.99991,5.00002}},
-        rotation=0)));
+        extent={{-4.99992,-5.00001},{4.99991,5.00002}})));
   Modelica.Blocks.Sources.Step step1(height=0.0005, startTime=2) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-95,55},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
+        extent={{-5,-5},{5,5}})));
   Modelica.Blocks.Sources.Step step2(height=-0.0005, startTime=2.1) annotation (
-     Placement(visible=true, transformation(
+     Placement(transformation(
         origin={-95,35},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
+        extent={{-5,-5},{5,5}})));
   Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-95,20},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
-        transformation(
+        extent={{-5,-5},{5,5}})));
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(transformation(
         origin={-75,15},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
+        extent={{-5,-5},{5,5}})));
   Modelica.Blocks.Sources.Sine sine2(
     amplitude=0.001,
     freqHz=0.2,
-    startTime=5) annotation (Placement(visible=true, transformation(
+    startTime=5) annotation (Placement(transformation(
         origin={-95,5},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
+        extent={{-5,-5},{5,5}})));
   Modelica.Blocks.Sources.Sine sine3(
     amplitude=0.001,
     freqHz=0.2,
-    startTime=10) annotation (Placement(visible=true, transformation(
+    startTime=10) annotation (Placement(transformation(
         origin={-95,-75},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(visible=true,
-        transformation(
+        extent={{-5,-5},{5,5}})));
+  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(
         origin={-75,-65},
-        extent={{-4.99999,-4.99999},{4.99999,4.99999}},
-        rotation=0)));
+        extent={{-4.99999,-4.99999},{4.99999,4.99999}})));
   Modelica.Blocks.Sources.Sine sine4(
     amplitude=0.001,
     freqHz=0.2,
-    startTime=5) annotation (Placement(visible=true, transformation(
+    startTime=5) annotation (Placement(transformation(
         origin={-95,-55},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
+        extent={{-5,-5},{5,5}})));
   Modelica.Blocks.Sources.Step step3(height=-0.0005, startTime=7.1) annotation (
-     Placement(visible=true, transformation(
+     Placement(transformation(
         origin={-95,-35},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
+        extent={{-5,-5},{5,5}})));
   Modelica.Blocks.Sources.Step step4(height=0.0005, startTime=7) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={-95,-15},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add add4 annotation (Placement(visible=true,
-        transformation(
+        extent={{-5,-5},{5,5}})));
+  Modelica.Blocks.Math.Add add4 annotation (Placement(transformation(
         origin={-75,-25},
-        extent={{-5,-5},{5,5}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add3 add32 annotation (Placement(visible=true,
-        transformation(
+        extent={{-5,-5},{5,5}})));
+  Modelica.Blocks.Math.Add3 add32 annotation (Placement(transformation(
         origin={-45,-25},
-        extent={{-5.00007,-5.00012},{5.00001,4.99999}},
-        rotation=0)));
+        extent={{-5.00007,-5.00012},{5.00001,4.99999}})));
 equation
   connect(step3.y, add4.u2) annotation (Line(
-      visible=true,
       origin={-86.308,-30.9083},
       points={{-3.192,-4.0917},{2.3974,-4.0917},{2.3974,2.9083},{5.308,2.9083}},
       color={0,0,127}));
 
   connect(step4.y, add4.u1) annotation (Line(
-      visible=true,
       origin={-86.308,-19.6146},
       points={{-3.192,4.6146},{2.3974,4.6146},{2.3974,-2.3854},{5.308,-2.3854}},
       color={0,0,127}));
@@ -139,5 +116,5 @@ equation
   connect(order3_Inputs_Outputs1.pm0, add32.u1) annotation (Line(points={{-26.0689,
           -10.9624},{-26.0689,-16},{-56,-16},{-56,-21},{-51.0001,-21}}, color={
           0,0,127}));
-  annotation (Documentation,experiment(StopTime=20));
+  annotation (experiment(StopTime=20));
 end Order3test2_perturbation;

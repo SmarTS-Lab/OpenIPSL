@@ -1,15 +1,12 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
 model Terminator
   Modelica.Blocks.Interfaces.RealInput V annotation (Placement(
-      visible=true,
       transformation(
         origin={-155.0,1.9703},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0),
+        extent={{-20.0,-20.0},{20.0,20.0}}),
       iconTransformation(
         origin={-120.0,0.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
-        rotation=0)));
+        extent={{-20.0,-20.0},{20.0,20.0}})));
   parameter Real T1=0.1;
   parameter Real T2=0.05;
   parameter Real Step=0.001;
@@ -33,15 +30,12 @@ algorithm
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}})}),
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

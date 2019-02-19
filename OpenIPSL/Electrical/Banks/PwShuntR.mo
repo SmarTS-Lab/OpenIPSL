@@ -21,8 +21,7 @@ equation
   l = Vbase^2/(2*C.pi*fn*(-Qnom)*Zbase) "S=U*I";
   anglei = anglev - C.pi/2;
   i = v/(2*C.pi*fn*l) "I=U/Z";
-  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
-          initialScale=0.1), graphics={Rectangle(extent={{-100,100},{100,-100}},
+  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Line(
           points={{-15.5,-9},{-15.5,-1},{-11.5,7},{-3.5,11},{6.5,9},{12.5,1},{
             12.5,-9}},
@@ -72,5 +71,5 @@ equation
           Line(points={{0,-60},{0,-40}}, color={0,0,255}),Text(
           extent={{-100,-100},{100,-140}},
           lineColor={0,0,255},
-          textString="%name")}), Documentation);
+          textString="%name")}));
 end PwShuntR;

@@ -83,6 +83,5 @@ equation
           textString="vfd"),Text(
           extent={{-34,58},{88,0}},
           lineColor={0,0,255},
-          textString="Exciter AVR OEL PSS")}),
-    Documentation);
+          textString="Exciter AVR OEL PSS")}));
 end ExcitationSystemKp0;

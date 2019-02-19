@@ -60,10 +60,8 @@ equation
   p.ir = p.vi/Xm + (p.vr*Re + p.vi*Xe)/(Re*Re + Xe*Xe);
   annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
             {100,100}}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}}),Ellipse(
-          visible=true,
           fillColor={255,255,255},
           extent={{-56,-58},{55.9318,54}}),Text(
           extent={{-50,48},{50,-52}},

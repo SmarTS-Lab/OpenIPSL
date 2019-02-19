@@ -52,9 +52,7 @@ equation
   e2q = vq + ra*iq + x2d*id;
   e2d = vd + ra*id - x2q*iq;
   vf0 = vf00;
-  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
-          initialScale=0.1), graphics={Rectangle(
-          visible=true,
+  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Rectangle(
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
           origin={0,60},

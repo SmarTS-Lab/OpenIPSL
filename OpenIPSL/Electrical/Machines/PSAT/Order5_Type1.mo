@@ -36,8 +36,7 @@ equation
   e1q = vq + ra*iq + x1d*id;
   e2d = vd + ra*id - x1q*iq "relation between voltages and currents/";
   vf0 = vf00;
-  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
-          initialScale=0.1), graphics={Text(
+  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={Text(
           origin={0,60},
           fillPattern=FillPattern.Solid,
           extent={{-60,-20},{60,20}},

@@ -7,5 +7,4 @@ function displayPower
   output String pwrDsp "Resultant display string";
 algorithm
   pwrDsp := String(abs(pwrVar)/1e6, format=".1f") + unitStr;
-  annotation (Documentation);
 end displayPower;

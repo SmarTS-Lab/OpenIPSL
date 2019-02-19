@@ -126,8 +126,6 @@ equation
   connect(const2.y, add1.u1) annotation (Line(points={{-79,20},{-76,20},{-76,6},
           {-72,6}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Text(
@@ -136,6 +134,5 @@ equation
           textString="CSVGN1"),Text(
           extent={{-100,-100},{100,-140}},
           lineColor={0,0,255},
-          textString="%name")}),
-    Documentation);
+          textString="%name")}));
 end CSVGN1;

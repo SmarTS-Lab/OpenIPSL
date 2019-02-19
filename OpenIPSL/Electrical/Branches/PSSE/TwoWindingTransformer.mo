@@ -84,6 +84,5 @@ equation
           fillColor={28,108,200},
           fillPattern=FillPattern.Solid)}),
     Diagram(coordinateSystem(extent={{-60,-40},{60,40}}, preserveAspectRatio=
-            false)),
-    Documentation);
+            false)));
 end TwoWindingTransformer;

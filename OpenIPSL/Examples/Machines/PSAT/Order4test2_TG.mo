@@ -3,10 +3,9 @@ model Order4test2_TG
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.TG.TGtypeII TGtypeII1 annotation (Placement(
-        visible=true, transformation(
+        transformation(
         origin={-72.5,-7.5},
-        extent={{-12.5,-12.5},{12.5,12.5}},
-        rotation=0)));
+        extent={{-12.5,-12.5},{12.5,12.5}})));
   OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
     angle_0=0,
     ra=0.001,
@@ -28,5 +27,5 @@ equation
   connect(Generator.vf0, Generator.vf) annotation (Line(points={{-37,16.5},{-37,
           20},{-45,20},{-45,7.5},{-43,7.5}}, color={0,0,127}));
   connect(Generator.w, TGtypeII1.w) annotation (Line(points={{-8.5,13.5},{-4,13.5},{-4,26},{-92,26},{-92,-7.5},{-87.5,-7.5}}, color={0,0,127}));
-  annotation (Documentation,experiment(StopTime=20));
+  annotation (experiment(StopTime=20));
 end Order4test2_TG;

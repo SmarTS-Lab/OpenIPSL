@@ -39,7 +39,6 @@ equation
   freq = (fCalc.y*180/pi) + SysData.fn;
   annotation (Icon(coordinateSystem(
         preserveAspectRatio=false,
-        initialScale=0.1,
         extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-60,20},{60,-20}},
           lineColor={0,0,255},
@@ -58,6 +57,5 @@ equation
           lineColor={28,108,200},
           fillColor={85,170,255},
           fillPattern=FillPattern.Solid,
-          textString="PMU")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})));
+          textString="PMU")}));
 end SoftPMU;

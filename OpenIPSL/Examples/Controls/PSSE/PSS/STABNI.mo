@@ -76,6 +76,5 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{
             100,80}})),
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end STABNI;

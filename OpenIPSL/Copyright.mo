@@ -51,6 +51,5 @@ class Copyright "Disclaimer<html>
           extent={{28,22},{64,-20}},
           lineColor={255,255,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid)}),
-    Documentation);
+          fillPattern=FillPattern.Solid)}));
 end Copyright;

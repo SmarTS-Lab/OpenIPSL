@@ -119,8 +119,6 @@ equation
   connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},
           {26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Text(
@@ -135,6 +133,5 @@ equation
           textString="PMECH"),Text(
           extent={{-40,18},{36,-18}},
           lineColor={0,0,255},
-          textString="GAST")}),
-    Documentation);
+          textString="GAST")}));
 end GAST;

@@ -128,6 +128,4 @@ equation
           {-73.2,-9.6}}, color={0,0,127}));
   connect(wT4G1.Q, wT4E1_1.Q) annotation (Line(points={{-65.2,-9.6},{-68,-9.6},
           {-68,-6},{-73.2,-6}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation);
 end WT4G1_WT4E1;

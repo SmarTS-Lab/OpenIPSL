@@ -4,35 +4,26 @@ model MechaBlk
       Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-43.0,7.7602},
-        rotation=0),
-      visible=true,
+        origin={-43.0,7.7602}),
       iconTransformation(
         origin={2.0,-24.0},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealInput Tel "electromagnetical torque"
     annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-43.0,-34.0},
-        rotation=0),
-      visible=true,
+        origin={-43.0,-34.0}),
       iconTransformation(
         origin={2.0,-124.0},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealOutput omega_m "engine shaft angular velocity"
     annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
-        origin={43.0,-74.0},
-        rotation=0),
-      visible=true,
+        origin={43.0,-74.0}),
       iconTransformation(
         origin={-2.0,-74.0},
-        extent={{102.0,54.0},{62.0,94.0}},
-        rotation=0)));
+        extent={{102.0,54.0},{62.0,94.0}})));
   parameter Real Sbase=100 "Power Rating [Normalization Factor] (MVA)";
   parameter Real Pnom=10 "Nominal Power (MVA)";
   parameter Real Hm=0.3 "inertia (pu)";
@@ -52,12 +43,9 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={-1.9109,6.1667},
           fillPattern=FillPattern.Solid,
           extent={{-49.8299,-36.1667},{49.8299,36.1667}},
@@ -66,7 +54,5 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})),
-    Documentation);
+        grid={5,5})));
 end MechaBlk;

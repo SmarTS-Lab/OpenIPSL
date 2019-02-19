@@ -4,24 +4,18 @@ model PitchControl
       Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
-        origin={-43.0,-74.0},
-        rotation=0),
-      visible=true,
+        origin={-43.0,-74.0}),
       iconTransformation(
         origin={2.0,-74.0},
-        extent={{-102.0,54.0},{-62.0,94.0}},
-        rotation=0)));
+        extent={{-102.0,54.0},{-62.0,94.0}})));
   Modelica.Blocks.Interfaces.RealOutput theta_p(start=theta_p0)
     "saturated theta_p" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
-        origin={46.3073,-74.0},
-        rotation=0),
-      visible=true,
+        origin={46.3073,-74.0}),
       iconTransformation(
         origin={-2.0,-74.0},
-        extent={{102.0,54.0},{62.0,94.0}},
-        rotation=0)));
+        extent={{102.0,54.0},{62.0,94.0}})));
   parameter Real Kp=10 "Pitch control gain (pu)";
   parameter Real Tp=3 "Pitch control time constant (s)";
   parameter Real theta_p0=0;
@@ -44,12 +38,9 @@ equation
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
-          visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
           origin={0.0,3.0984},
           fillPattern=FillPattern.Solid,
           extent={{-44.9792,-41.316},{44.9792,41.316}},
@@ -58,7 +49,5 @@ equation
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})),
-    Documentation);
+        grid={5,5})));
 end PitchControl;

@@ -79,11 +79,10 @@ equation
           {120,5},{147.5,5}}, color={0,0,127}));
   connect(XADIFD, negCurLogic.XadIfd) annotation (Line(points={{80,-200},{80,-5},{147.5,-5}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
-        extent={{-200,-200},{200,160}},
-        initialScale=0.1), graphics={Text(
+        extent={{-200,-200},{200,160}}), graphics={Text(
           extent={{-186,-62},{-116,-82}},
           lineColor={28,108,200},
           textString="XADIFD"),Text(

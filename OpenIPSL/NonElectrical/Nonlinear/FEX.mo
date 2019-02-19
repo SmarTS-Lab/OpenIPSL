@@ -19,8 +19,6 @@ equation
     y = 0;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
@@ -29,6 +27,5 @@ equation
           fillPattern=FillPattern.Solid),Text(
           extent={{-62,28},{64,-30}},
           lineColor={0,0,255},
-          textString="FEX=f(IN)")}),
-    Documentation);
+          textString="FEX=f(IN)")}));
 end FEX;

@@ -26,8 +26,7 @@ model pst1
   SI.Angle anglevk(start=anglevk0);
   SI.Angle anglevm;
 
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(visible=true,
-        transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 protected

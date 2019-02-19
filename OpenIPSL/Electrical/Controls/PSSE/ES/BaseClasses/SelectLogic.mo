@@ -36,13 +36,10 @@ model SelectLogic
 equation
   Vout = if VOEL > 0 then V3 else if VUEL > 0 then V2 else V1;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Text(
           extent={{-42,54},{38,-48}},
           lineColor={0,0,255},
           textString="Select
-Logic"),Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255})}),
-    Documentation);
+Logic"),Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255})}));
 end SelectLogic;

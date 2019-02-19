@@ -269,6 +269,5 @@ specified at PSSE model dialog")}),
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_y")}),
-    Documentation);
+          textString="I_y")}));
 end WT4G1;

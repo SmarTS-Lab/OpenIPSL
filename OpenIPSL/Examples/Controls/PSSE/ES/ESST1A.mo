@@ -77,8 +77,5 @@ equation
   connect(eSST1A.VUEL, const.y) annotation (Line(points={{-62.9,-60},{-62,-60},
           {-62,-64},{-44,-64},{-44,-46},{-41,-46}},color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end ESST1A;

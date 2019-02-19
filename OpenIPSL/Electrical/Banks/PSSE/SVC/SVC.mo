@@ -105,7 +105,7 @@ equation
   connect(imRelay.u1, add3_1.u2) annotation (Line(points={{28,-37.5},{0,-37.5},
           {0,-46},{-36,-46},{-36,8},{-25.2,8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(initialScale=0.1), graphics={Text(
+    Diagram(coordinateSystem(), graphics={Text(
           extent={{-44,16},{-34,12}},
           lineColor={255,0,0},
           textString="Verr"),Text(
@@ -118,7 +118,7 @@ equation
           extent={{-80,-14},{-68,-20}},
           lineColor={255,0,0},
           textString="|VB|")}),
-    Icon(coordinateSystem(initialScale=0.1), graphics={Rectangle(extent={{-100,
+    Icon(coordinateSystem(), graphics={Rectangle(extent={{-100,
           100},{100,-100}}, lineColor={0,0,255}),Text(
           extent={{-20,-60},{20,-100}},
           lineColor={0,0,255},
@@ -135,6 +135,5 @@ equation
           color={0,0,255},
           smooth=Smooth.Bezier),Line(points={{50,-40},{90,-40}}, color={0,0,255}),
           Line(points={{60,-50},{80,-50}}, color={0,0,255}),Line(points={{10,0},
-          {70,0},{70,-40}}, color={0,0,255})}),
-    Documentation);
+          {70,0},{70,-40}}, color={0,0,255})}));
 end SVC;

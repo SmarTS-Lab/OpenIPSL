@@ -37,7 +37,6 @@ model SEXS "SMIB model example of GENROU with Excitation System EXST1"
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
         transformation(
         extent={{4,-4},{-4,4}},
-        rotation=0,
         origin={-50,-40})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-114,10},{-114,
@@ -60,7 +59,6 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{
             120,100}})),
-    Documentation,
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
+Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
     experiment(StopTime=10));
 end SEXS;

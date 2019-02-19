@@ -5,10 +5,9 @@ partial model BaseTest
     X=0.1,
     R=0.01,
     G=0,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={20,-12},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLinewithOpening1(
     G=0,
     R=0.01,
@@ -16,39 +15,35 @@ partial model BaseTest
     opening=1,
     B=0.0005,
     t1=2,
-    t2=2.15) annotation (Placement(visible=true, transformation(
+    t2=2.15) annotation (Placement(transformation(
         origin={60,12},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLine2(
     G=0,
     R=0.01,
     X=0.1,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={20,12},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLine3(
     G=0,
     R=0.01,
     X=0.1,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={62,-14},
-        extent={{-6,-6},{6,6}},
-        rotation=0)));
+        extent={{-6,-6},{6,6}})));
   Electrical.Branches.PwLine pwLine4(
     G=0,
     R=0.01,
     X=0.1,
-    B=0.0005) annotation (Placement(visible=true, transformation(
+    B=0.0005) annotation (Placement(transformation(
         origin={60,36},
-        extent={{-5.99999,-5.99998},{5.99999,6}},
-        rotation=0)));
-  Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0=8000000, Q_0=6000000) annotation (Placement(visible=true, transformation(
+        extent={{-5.99999,-5.99998},{5.99999,6}})));
+  Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0=8000000, Q_0=6000000) annotation (Placement(transformation(
         origin={94,24},
         extent={{-6,-6},{6,6}},
         rotation=90)));
-  Electrical.Loads.PSAT.LOADPQ_variation pwLoadPQ2(P_0=8000000, Q_0=6000000) annotation (Placement(visible=true, transformation(
+  Electrical.Loads.PSAT.LOADPQ_variation pwLoadPQ2(P_0=8000000, Q_0=6000000) annotation (Placement(transformation(
         origin={94.0335,-14.2889},
         extent={{-6.2889,-6.0335},{6.2889,6.0335}},
         rotation=90)));
@@ -85,8 +80,4 @@ equation
                                color={0,0,255}));
   connect(pwLine3.n,bus4. p) annotation (Line(points={{67.4,-14},{67.4,-14},{80,
           -14}}, color={0,0,255}));
-  annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false)),
-    Diagram(coordinateSystem(preserveAspectRatio=false)),
-    Documentation);
 end BaseTest;

@@ -24,8 +24,5 @@ equation
           thickness=0.5),Text(
           extent={{-66,-20},{74,-80}},
           lineColor={0,0,255},
-          textString="K")}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Documentation);
+          textString="K")}));
 end SimpleLead;

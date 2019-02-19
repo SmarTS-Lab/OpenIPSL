@@ -74,9 +74,8 @@ equation
   annotation (
     Diagram(coordinateSystem(
         extent={{-200,-200},{200,160}},
-        initialScale=0.1,
         preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},

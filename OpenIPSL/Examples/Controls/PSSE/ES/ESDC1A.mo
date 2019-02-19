@@ -62,8 +62,5 @@ equation
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
   connect(gENROE.XADIFD, eSDC1A.XADIFD) annotation (Line(points={{-58.4,-18},{-56,-18},{-56,-62},{-89,-62},{-89,-49.8444}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation,
-    experiment(StopTime=10));
+experiment(StopTime=10));
 end ESDC1A;

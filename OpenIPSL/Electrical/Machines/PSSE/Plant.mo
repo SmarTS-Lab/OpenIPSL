@@ -17,7 +17,7 @@ model Plant
     annotation (choicesAllMatching=true,
     Placement(transformation(extent={{-30,40},{-10,60}})));
   replaceable OpenIPSL.Electrical.Controls.PSSE.PSS.BaseClasses.BasePSS pss
-    annotation (Placement(visible = true, transformation(extent = {{-88, -6}, {-48, 12}}, rotation = 0)));
+    annotation (Placement(transformation(extent = {{-88, -6}, {-48, 12}})));
 equation
   connect(pss.V_S2, governor.PMECH0) annotation (
     Line(points={{-87.3684,-1.5},{-94,-1.5},{-94,30},{-40,30},{-40,45.4545},{-29.1667,45.4545}},
