@@ -101,3 +101,13 @@ convertClass("OpenIPSL.Examples.Branches.PSAT.TWTPST_smib_test",
              "OpenIPSL.Examples.Branches.PSAT.TwoWindingTransformer_Test");
 convertClass("OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer",
              "OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer");
+
+// custom types are no longer used, conversion is not perfect since it does not take care of the scaling
+convertClass("OpenIPSL.Types.ActivePowerMega",
+             "Modelica.SIunits.ActivePower");
+convertClass("OpenIPSL.Types.ApparentPower",
+             "Modelica.SIunits.ApparentPower");
+convertClass("OpenIPSL.Types.ReactivePowerMega",
+             "Modelica.SIunits.ReactivePower");
+convertClass("OpenIPSL.Types.VoltageKilo",
+             "Modelica.SIunits.Voltage");
