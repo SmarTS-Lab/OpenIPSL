@@ -26,19 +26,20 @@ model BusExt
         origin={0,0},
         extent={{-4,-60},{4,60}},
         rotation=0)));
-  Real V(start=V_0) "Bus voltage magnitude (pu)";
-  Real angle(start=angle_0) "Bus voltage angle (deg)";
-  parameter Real V_0=1 "Voltage magnitude (pu)"
+  SI.PerUnit v(start=v_0) "Bus voltage magnitude (pu)";
+  SI.Conversions.NonSIunits.Angle_deg angle(start=angle_0) "Bus voltage angle";
+  parameter SI.PerUnit v_0=1 "Voltage magnitude (pu)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=0 "Voltage angle (deg)"
+  parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0 "Voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter Real V_b=130 "Base voltage (kV)"
+  parameter SI.Voltage V_b=130e3 "Base voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=SysData.S_b "System base power (MVA)"
+  parameter SI.ApparentPower S_b=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow data"));
 protected
-  parameter Real vr0=V_0*cos(angle_0*Modelica.Constants.pi/180);
-  parameter Real vi0=V_0*sin(angle_0*Modelica.Constants.pi/180);
+  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Intial angle in rad";
+  parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
+  parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
 equation
   if np > 1 then
     for i in 2:np loop
@@ -54,13 +55,13 @@ equation
     connect(p[1], n[1]);
   end if;
   if np > 0 then
-    V = sqrt(p[1].vr^2 + p[1].vi^2);
-    angle = atan2(p[1].vi, p[1].vr)*180/Modelica.Constants.pi;
+    v = sqrt(p[1].vr^2 + p[1].vi^2);
+    angle = SI.Conversions.to_deg(atan2(p[1].vi, p[1].vr));
   elseif nn > 0 then
-    V = sqrt(n[1].vr^2 + n[1].vi^2);
-    angle = atan2(n[1].vi, n[1].vr)*180/Modelica.Constants.pi;
+    v = sqrt(n[1].vr^2 + n[1].vi^2);
+    angle = SI.Conversions.to_deg(atan2(n[1].vi, n[1].vr));
   else
-    V = 0;
+    v = 0;
     angle = 0;
   end if;
   annotation (
