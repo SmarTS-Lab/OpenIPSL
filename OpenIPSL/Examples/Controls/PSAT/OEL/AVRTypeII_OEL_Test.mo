@@ -45,8 +45,6 @@ model AVRTypeII_OEL_Test
 equation
   connect(order4.pm0, order4.pm) annotation (Line(points={{-43,-11},{-43,-16},{
           -60,-16},{-60,-5},{-47,-5}}, color={0,0,127}));
-  connect(order4.p, bus.p)
-    annotation (Line(points={{-25,0},{-25,0},{0,0}}, color={0,0,255}));
   connect(order4.vf, exciter_Type_II.vf) annotation (Line(points={{-47,5},{-96.75,
           5},{-96.75,28},{-92,28}}, color={0,0,127}));
   connect(exciter_Type_II.vf0, order4.vf0) annotation (Line(points={{-80,16},{-80,
@@ -63,6 +61,7 @@ equation
           22},{-20,3},{-24,3}}, color={0,0,127}));
   connect(oXL.v_ref, exciter_Type_II.vref)
     annotation (Line(points={{-38.4,34},{-54,34},{-68,34}}, color={0,0,127}));
+  connect(bus1.p, order4.p) annotation (Line(points={{0,0},{-25,0}}, color={0,0,255}));
   annotation (
     Documentation,
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
