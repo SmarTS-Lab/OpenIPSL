@@ -1,30 +1,31 @@
 within OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer;
 model pst2
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real SystemBase=100;
-  parameter Real Vbus1=20000 "Sending end Bus nominal voltage, change of base";
-  parameter Real Vbus2=20000 "Receiving end Bus voltage, change of base";
-  parameter Real Sn=100 "Power rating MVA";
-  parameter Real Vn1=20000 "Primary Voltage rating,KV";
-  parameter Real Vn2=20000 "Secondary voltage rating, KV";
-  parameter Real fn=50 "Frequency rating Hz";
-  parameter Real Tm=0.001 "Measurement time constant, s";
+  parameter SI.ApparentPower SystemBase(displayUnit="MVA")=100e6 "System base power";
+  parameter SI.Voltage Vbus1(displayUnit="kV")=20e3 "Nominal bus voltage of sending end";
+  parameter SI.Voltage Vbus2(displayUnit="kV")=20e3 "Nominal bus voltage of receiving end";
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating";
+  parameter SI.Voltage Vn1(displayUnit="kV")=20e3 "Primary Voltage rating";
+  parameter SI.Voltage Vn2(displayUnit="kV")=20e3 "Secondary voltage rating";
+  parameter SI.Frequency fn=50 "Frequency rating";
+  parameter SI.Time Tm=0.001 "Measurement time constant";
   parameter Real Kp=0.05 "Proportional gain";
   parameter Real Ki=0.01 "Integral gain";
-  parameter Real p_ref=0.01 "Reference Power, p.u.";
-  parameter Real alpha_max=pi/2 "Maximum phase angle, rad";
-  parameter Real alpha_min=-pi/2 "Minimum phase angle, rad";
-  parameter Real xT=0.1 "Transformer Reactance, p.u.";
-  parameter Real rT=0.01 "Transformer Resistance, p.u.";
-  parameter Real m=0.98 "Transformer fixed tap  ratio, p.u./p.u.";
-  parameter Real alpha0=0.002062339234360;
-  parameter Real pmes0=0.01;
-  parameter Real vm0=1.007257703014177;
-  parameter Real anglevm0=-0.009372077496959;
-  Real vk "Voltage at primary, p.u.";
-  Real vm(start=vm0) "Voltage at secondary p.u.";
-  Real anglevk "Angle at primary";
-  Real anglevm;
+  parameter SI.PerUnit p_ref=0.01 "Reference Power (pu)";
+  parameter SI.Angle alpha_max=C.pi/2 "Maximum phase angle";
+  parameter SI.Angle alpha_min=-C.pi/2 "Minimum phase angle";
+  parameter SI.PerUnit xT=0.1 "Transformer Reactance (pu)";
+  parameter SI.PerUnit rT=0.01 "Transformer Resistance (pu)";
+  parameter Real m=0.98 "Transformer fixed tap  ratio, (pu/pu)";
+  parameter SI.Angle alpha0=0.002062339234360;
+  parameter SI.PerUnit pmes0=0.01;
+  parameter SI.PerUnit vm0=1.007257703014177;
+  parameter SI.Angle anglevm0=-0.009372077496959;
+  SI.PerUnit vk "Voltage at primary (pu)";
+  SI.PerUnit vm(start=vm0) "Voltage at secondary (pu)";
+  SI.Angle anglevk "Angle at primary";
+  SI.Angle anglevm "Angle at secondary";
+
+
   Real alpha;
   Real pmes;
   OpenIPSL.Interfaces.PwPin p annotation (Placement(visible=true,

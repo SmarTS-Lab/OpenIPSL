@@ -1,32 +1,32 @@
 within OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer;
 model PSTransformer
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real SystemBase=100;
-  parameter Real Vbus1=20000 "Sending end Bus nominal voltage, change of base";
-  parameter Real Vbus2=20000 "Receiving end Bus voltage, change of base";
-  parameter Real Sn=100 "Power rating MVA";
-  parameter Real Vn1=20000 "Primary Voltage rating,KV";
-  parameter Real Vn2=20000 "Secondary voltage rating, KV";
-  parameter Real fn=50 "Frequency rating Hz";
-  parameter Real Tm=0.001 "Measurement time constant, s";
+  outer OpenIPSL.Electrical.SystemBase SysData;
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power";
+  parameter SI.Voltage Vbus1(displayUnit="kV")=20e3 "Nominal bus voltage of sending end";
+  parameter SI.Voltage Vbus2(displayUnit="kV")=20e3 "Nominal bus voltage of receiving end";
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating";
+  parameter SI.Voltage Vn1(displayUnit="kV")=20e3 "Primary Voltage rating";
+  parameter SI.Voltage Vn2(displayUnit="kV")=20e3 "Secondary voltage rating";
+  parameter SI.Frequency fn=50 "Frequency rating";
+  parameter SI.Time Tm=0.001 "Measurement time constant";
   parameter Real Kp=0.05 "Proportional gain";
   parameter Real Ki=0.01 "Integral gain";
-  parameter Real p_ref=0.01 "Reference Power, p.u.";
-  parameter Real alpha_max=pi/2 "Maximum phase angle, rad";
-  parameter Real alpha_min=-pi/2 "Minimum phase angle, rad";
-  parameter Real xT=0.1 "Transformer Reactance, p.u.";
-  parameter Real rT=0.01 "Transformer Resistance, p.u.";
-  parameter Real m=0.98 "Transformer fixed tap  ratio, p.u./p.u.";
-  parameter Real alpha0=0.002062339234360;
+  parameter SI.PerUnit p_ref=0.01 "Reference Power (pu)";
+  parameter SI.Angle alpha_max=C.pi/2 "Maximum phase angle";
+  parameter SI.Angle alpha_min=-C.pi/2 "Minimum phase angle";
+  parameter SI.PerUnit xT=0.1 "Transformer Reactance (pu)";
+  parameter SI.PerUnit rT=0.01 "Transformer Resistance (pu)";
+  parameter Real m=0.98 "Transformer fixed tap  ratio, (pu/pu)";
+  parameter SI.Angle alpha0=0.002062339234360;
   parameter Real pmes0=0.01;
-  parameter Real vk0=0.997649085060455;
-  parameter Real vm0=1.007257703014177;
-  parameter Real anglevk0=-0.007392164704867;
-  parameter Real anglevm0=-0.009372077496959;
-  Real vk(start=vk0);
-  Real vm(start=vm0);
-  Real anglevk(start=anglevk0);
-  Real anglevm(start=anglevm0);
+  parameter SI.PerUnit vk0=0.997649085060455;
+  parameter SI.PerUnit vm0=1.007257703014177;
+  parameter SI.Angle anglevk0=-0.007392164704867;
+  parameter SI.Angle anglevm0=-0.009372077496959;
+  SI.PerUnit vk(start=vk0);
+  SI.PerUnit vm(start=vm0);
+  SI.Angle anglevk(start=anglevk0);
+  SI.Angle anglevm(start=anglevm0);
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
@@ -37,7 +37,7 @@ model PSTransformer
   Modelica.Blocks.Interfaces.RealInput u
     annotation (Placement(transformation(extent={{-140,36},{-100,76}})));
   pst1 pst1_1(
-    SystemBase=SystemBase,
+    SystemBase=S_b,
     Vbus1=Vbus1,
     Vbus2=Vbus2,
     Sn=Sn,
@@ -59,7 +59,7 @@ model PSTransformer
     anglevk0=anglevk0)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   pst2 pst2_1(
-    SystemBase=SystemBase,
+    SystemBase=S_b,
     Vbus1=Vbus1,
     Vbus2=Vbus2,
     Sn=Sn,
@@ -83,11 +83,11 @@ model PSTransformer
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
+  parameter Real R=rT*(Vb2old*S_b)/(Vb2new*Sn)
     "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
+  parameter Real X=xT*(Vb2old*S_b)/(Vb2new*Sn)
     "Transformer Reactance, p.u.";
-  parameter Real pref=p_ref*(Sn/SystemBase);
+  parameter Real pref=p_ref*(Sn/S_b);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";
 equation
