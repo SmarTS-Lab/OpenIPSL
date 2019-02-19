@@ -4,7 +4,7 @@
 
 // System Base
 convertModifiers({"OpenIPSL.Electrical.SystemBase"},
-                 {"S_b"}, {"S_b=%S_b%*1e6"});
+                 {"S_b"}, {"S_b=%S_b%*1e6"}, aggressive=true);
 
 // PSAT base machine
 convertModifiers("OpenIPSL.Electrical.Machines.PSAT.BaseClasses.baseMachine",
