@@ -1,10 +1,10 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 partial model TGTestBase
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
+    angle_0=0,
+    P_0=80000,
+    Q_0=60000,
+    v_0=1) annotation (Placement(visible=true, transformation(
         origin={90.0709,0},
         extent={{-5.92912,-6.00002},{5.92911,6.00001}},
         rotation=0)));
@@ -35,10 +35,10 @@ partial model TGTestBase
         extent={{-10,-10},{10,10}},
         rotation=0)));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
+    angle_0=0,
+    P_0=80000,
+    Q_0=60000,
+    v_0=1) annotation (Placement(visible=true, transformation(
         origin={90,-26},
         extent={{-6,-6},{6,6}},
         rotation=0)));
@@ -68,20 +68,20 @@ partial model TGTestBase
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
   Electrical.Machines.PSAT.Order3 gen(
-    P_0=0.16041,
-    Q_0=0.12012,
-    V_b=400,
-    V_0=1,
     angle_0=0,
-    Sn=20,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
     T1d0=8,
-    xq=1.7) annotation (Placement(visible=true, transformation(
+    xq=1.7,
+    P_0=160410,
+    Q_0=120120,
+    Sn=20000000,
+    v_0=1,
+    V_b=400000,
+    Vn=400000) annotation (Placement(visible=true, transformation(
         origin={0,0},
         extent={{-20,-20},{20,20}},
         rotation=0)));

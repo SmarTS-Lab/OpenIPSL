@@ -23,21 +23,20 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
   OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS(
     M_b=100,
     D=0,
-    V_0=1,
     angle_0=0,
     X_d=0.2,
     H=0,
-    P_0=10.0278,
-    Q_0=32.05072)
-    annotation (Placement(transformation(extent={{118,-12},{106,12}})));
+    P_0=10027800,
+    Q_0=32050720,
+    v_0=1) annotation (Placement(transformation(extent={{118,-12},{106,12}})));
   OpenIPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
     d_t=0,
     d_P=0,
     t1=0,
-    V_0=0.9679495,
     angle_0=-0.5840921,
-    P_0=50,
-    Q_0=10) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
+    P_0=50000000,
+    Q_0=10000000,
+    v_0=0.9679495) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
     t1=2,
     t2=2.15,
@@ -47,7 +46,6 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
         rotation=-90,
         origin={54,-58})));
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENROE(
-    M_b=100,
     Tpd0=5,
     D=0,
     Xppd=0.2,
@@ -62,12 +60,12 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     S10=0.1,
     S12=0.5,
     R_a=0.002,
-    V_b=14.7,
-    V_0=1,
     angle_0=4.747869,
-    P_0=40,
-    Q_0=-16.46028)
-    annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
+    M_b=100000000,
+    P_0=40000000,
+    Q_0=-16460280,
+    v_0=1,
+    V_b=14700) annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     CZ=1,
     R=0.001,
@@ -91,8 +89,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     annotation (Placement(transformation(extent={{40,-40},{60,-20}})));
   OpenIPSL.Electrical.Buses.Bus BUS1
     annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=50)
-    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=50, S_b=(100)*1e6) annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-91.66,10},{-98,
           10},{-98,26},{-50,26},{-50,-6},{-56.64,-6}}, color={0,0,127}));

@@ -52,28 +52,28 @@ model SolarPVtest
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
+    angle_0=0,
+    P_0=80000,
+    Q_0=60000,
+    v_0=1) annotation (Placement(visible=true, transformation(
         origin={15.0,-30.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order3 order31(
-    Sn=20,
-    P_0=0.0401256732154526,
-    Q_0=0.0262725307404601,
-    V_b=400,
-    V_0=1,
     angle_0=0,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
     T1d0=8,
-    xq=1.7) annotation (Placement(visible=true, transformation(
+    xq=1.7,
+    P_0=40125.6732154526,
+    Q_0=26272.5307404601,
+    Sn=20000000,
+    v_0=1,
+    V_b=400000,
+    Vn=400000) annotation (Placement(visible=true, transformation(
         origin={-110.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));

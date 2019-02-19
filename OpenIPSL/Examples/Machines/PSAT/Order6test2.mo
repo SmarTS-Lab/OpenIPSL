@@ -3,15 +3,11 @@ model Order6test2
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_1(
-    Sn=100,
-    V_0=1,
     angle_0=0,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
-    V_b=400,
-    Vn=20,
     xd=1.9,
     xq=1.7,
     x1q=0.5,
@@ -22,9 +18,12 @@ model Order6test2
     T2d0=0.04,
     T2q0=0.02,
     Taa=2e-3,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981)
-    annotation (Placement(transformation(extent={{-61,-20},{-21,20}})));
+    P_0=16035269.8692006,
+    Q_0=11859436.505981,
+    Sn=100000000,
+    v_0=1,
+    V_b=400000,
+    Vn=20000) annotation (Placement(transformation(extent={{-61,-20},{-21,20}})));
 equation
   connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-57,22},
           {-57,25},{-71,25},{-71,10},{-65,10}}, color={0,0,127}));

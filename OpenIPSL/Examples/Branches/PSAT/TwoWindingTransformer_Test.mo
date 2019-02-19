@@ -2,26 +2,25 @@ within OpenIPSL.Examples.Branches.PSAT;
 model TwoWindingTransformer_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2_1(
-    Sn=100,
     D=5,
-    V_0=1,
     angle_0=0,
-    Vn=13800,
-    V_b=13800,
-    P_0=0.050249405357958,
-    Q_0=0.010496891745129,
     ra=0.001,
     x1d=0.302,
-    M=10) annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(Q_0=0.001, P_0=0.03) annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
+    M=10,
+    P_0=50249.405357958,
+    Q_0=10496.891745129,
+    Sn=100000000,
+    v_0=1,
+    V_b=13800000,
+    Vn=13800000) annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+  OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(P_0=30000, Q_0=1000) annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Vn=13800,
     xT=0.1,
     rT=0.01,
     V_b=13800)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0)
-    annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(angle_0=0, v_0=1) annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     X=0.1,

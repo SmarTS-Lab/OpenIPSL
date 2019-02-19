@@ -6,11 +6,7 @@ model STAB3
     Xppd=0.2,
     Xppq=0.2,
     Xl=0.12,
-    V_0=1,
     angle_0=4.05,
-    P_0=39.99995,
-    Q_0=5.416571,
-    M_b=100,
     Tpd0=6.7000,
     Tppd0=0.28000E-01,
     Tppq0=0.35000E-01,
@@ -20,8 +16,11 @@ model STAB3
     Xq=0.76000,
     Xpd=0.29700,
     S10=0.18600,
-    S12=0.802)
-    annotation (Placement(transformation(extent={{-106,-12},{-78,14}})));
+    S12=0.802,
+    M_b=100000000,
+    P_0=39999950,
+    Q_0=5416571,
+    v_0=1) annotation (Placement(transformation(extent={{-106,-12},{-78,14}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(VELM=0.02, G_MAX=0.415)
     annotation (Placement(transformation(
         extent={{-19,-14},{19,14}},

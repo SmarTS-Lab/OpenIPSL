@@ -27,8 +27,7 @@ model testTemperature
         origin={83.1777,5.4501},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle_0=0, V_0=1)
-    annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle_0=0, v_0=1) annotation (Placement(visible=true, transformation(
         origin={117.9874,-1.1504},
         extent={{10.0,-10.0},{-10.0,10.0}},
         rotation=0)));
@@ -75,14 +74,12 @@ equation
       visible=true,
       origin={-26.2406,-10.712},
       points={{-12.7594,-5.712},{3.2531,-5.712},{3.2531,5.712},{6.2531,5.712}},
-
       color={0,0,127}));
 
   connect(const.y, PFmodel1.E) annotation (Line(
       visible=true,
       origin={-33.9057,8.3006},
       points={{-35.7544,3.3007},{10.9182,3.3007},{10.9182,-3.3006},{13.9182,-3.3006}},
-
       color={0,0,127}));
 
   connect(PFmodel1.pwPin1, pwLine13.p) annotation (Line(
@@ -93,7 +90,6 @@ equation
       visible=true,
       origin={-68.3155,-9.4113},
       points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,-1.0127}},
-
       color={0,0,127}));
 
   connect(add2.y, add1.u2) annotation (Line(
@@ -105,14 +101,12 @@ equation
       visible=true,
       origin={-92.2764,-36.5036},
       points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,-5.17496}},
-
       color={0,0,127}));
 
   connect(add2.u2, step2.y) annotation (Line(
       visible=true,
       origin={-98.2684,-53.2338},
       points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,-8.115}},
-
       color={0,0,127}));
 
   connect(pwLine13.n, pwLine14.p) annotation (Line(

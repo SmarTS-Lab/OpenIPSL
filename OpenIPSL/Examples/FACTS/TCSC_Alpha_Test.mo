@@ -2,16 +2,16 @@ within OpenIPSL.Examples.FACTS;
 model TCSC_Alpha_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
-    Sn=370,
-    P_0=0.080101913348342,
-    Q_0=0.060948619430301,
     D=5,
     angle_0=0,
-    V_0=1,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
-    M=10) annotation (Placement(transformation(extent={{-24,-10},{-4,10}})));
+    M=10,
+    P_0=80101.913348342,
+    Q_0=60948.619430301,
+    Sn=370000000,
+    v_0=1,
+    Vn=400000) annotation (Placement(transformation(extent={{-24,-10},{-4,10}})));
   Modelica.Blocks.Sources.Pulse pulse(
     period=10,
     startTime=4.2,
@@ -37,8 +37,6 @@ model TCSC_Alpha_Test
     B=0.001/2,
     X=0.1) annotation (Placement(transformation(extent={{56,-10},{76,10}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
-    P_0=0.08,
-    Q_0=0.06,
     t_start_1=2,
     t_end_1=10,
     dP1=0.01,
@@ -46,8 +44,9 @@ model TCSC_Alpha_Test
     t_start_2=12,
     t_end_2=20,
     dP2=-0.01,
-    dQ2=-0.01)
-    annotation (Placement(transformation(extent={{94,-10},{114,10}})));
+    dQ2=-0.01,
+    P_0=80000,
+    Q_0=60000) annotation (Placement(transformation(extent={{94,-10},{114,10}})));
   OpenIPSL.Electrical.FACTS.PSAT.TCSCAlpha tCSCAlpha
     annotation (Placement(transformation(extent={{18,-10},{38,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData

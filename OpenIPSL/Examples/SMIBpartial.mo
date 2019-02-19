@@ -24,22 +24,22 @@ partial model SMIBpartial "SMIB system with one load"
   OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS(
     M_b=100,
     D=0,
-    V_0=1,
     angle_0=0,
     X_d=0.2,
-    P_0=10.01711,
-    Q_0=8.006544,
-    H=0) annotation (Placement(transformation(extent={{112,-12},{98,12}})));
+    H=0,
+    P_0=10017110,
+    Q_0=8006544,
+    v_0=1) annotation (Placement(transformation(extent={{112,-12},{98,12}})));
   OpenIPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
     PQBRAK=0.7,
     d_t=0,
     d_P=0,
-    V_0=0.9919935,
     angle_0=-0.5762684,
     t1=0,
     characteristic=2,
-    P_0=50,
-    Q_0=10) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
+    P_0=50000000,
+    Q_0=10000000,
+    v_0=0.9919935) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
     t1=2,
     t2=2.15,

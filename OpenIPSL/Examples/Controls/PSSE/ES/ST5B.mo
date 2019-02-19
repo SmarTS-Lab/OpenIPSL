@@ -28,7 +28,6 @@ model ST5B "SMIB system with one load and GENROE model"
   Modelica.Blocks.Sources.Constant VUEL(k=-100)
     annotation (Placement(transformation(extent={{-140,-142},{-128,-130}})));
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
-    M_b=100,
     Tpd0=5,
     Tppd0=0.07,
     Tpq0=0.9,
@@ -43,12 +42,12 @@ model ST5B "SMIB system with one load and GENROE model"
     Xl=0.12,
     S10=0.11,
     S12=0.39,
-    V_0=1,
-    P_0=40,
     angle_0=4.046276,
-    Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-112,-20},{-72,20}})));
+    Xppq=0.2,
+    M_b=100000000,
+    P_0=40000000,
+    Q_0=5416582,
+    v_0=1) annotation (Placement(transformation(extent={{-112,-20},{-72,20}})));
 equation
   connect(PSS_off.y, sT5B.VOTHSG) annotation (Line(points={{-127.4,-96},{-64,-96},
           {-64,-50.2222}}, color={0,0,127}));

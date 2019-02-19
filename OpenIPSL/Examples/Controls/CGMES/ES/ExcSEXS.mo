@@ -4,7 +4,6 @@ model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROE(
-    M_b=100,
     Tpd0=5,
     Tppd0=0.07,
     Tpq0=0.9,
@@ -18,14 +17,15 @@ model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
     Xl=0.12,
     S10=0.11,
     S12=0.39,
-    V_0=1,
-    P_0=40,
     angle_0=4.046276,
-    Q_0=5.416582,
     Xppq=0.2,
     R_a=0,
     Xpp=0.2,
-    H=4.28) annotation (Placement(transformation(extent={{-110,-20},{-70,20}})));
+    H=4.28,
+    M_b=100000000,
+    P_0=40000000,
+    Q_0=5416582,
+    v_0=1) annotation (Placement(transformation(extent={{-110,-20},{-70,20}})));
   Electrical.Controls.CGMES.ES.ExcSEXS sEXS(
     T_AT_B=0.1,
     T_B=1,

@@ -3,10 +3,10 @@ model InductiveMotorIII_SIMBOpenline_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.MotorTypeIII motorTypeI(
     Sup=0,
-    V_0=1.0336,
     angle_0=-0.02173,
-    P_0=0.251061717038311,
-    Q_0=0.226568616630697) annotation (Placement(transformation(
+    P_0=251061.717038311,
+    Q_0=226568.616630697,
+    v_0=1.0336) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={70,0})));
@@ -29,8 +29,7 @@ model InductiveMotorIII_SIMBOpenline_Test
         extent={{-10,-9.99992},{10,10.0001}},
         rotation=180,
         origin={0,20.0001})));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1.05, angle_0=0)
-    annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(angle_0=0, v_0=1.05) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-70,0})));

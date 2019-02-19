@@ -28,13 +28,13 @@ model WT4G1_WT4E1
     G=0,
     B=B1/2) annotation (Placement(transformation(extent={{30,-30},{50,-10}})));
   OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS2_1(
-    V_0=V1,
     angle_0=A1,
-    P_0=P1,
-    Q_0=Q1,
     R_a=Zr,
     X_d=Zi,
-    M_b=100) annotation (Placement(transformation(extent={{102,-12},{90,12}})));
+    M_b=100,
+    P_0=(P1)*1e6,
+    Q_0=(Q1)*1e6,
+    v_0=V1) annotation (Placement(transformation(extent={{102,-12},{90,12}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine2(
     G=0,
     B=0,
@@ -42,11 +42,8 @@ model WT4G1_WT4E1
     X=2.50000E-3)
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   OpenIPSL.Electrical.Wind.PSSE.WT4G.WT4G1 wT4G1(
-    V_0=V3,
     angle_0=A3,
     M_b=100,
-    P_0=P3,
-    Q_0=Q3,
     T_IQCmd=0.02,
     T_IPCmd=0.02,
     V_LVPL1=0.4,
@@ -55,7 +52,10 @@ model WT4G1_WT4E1
     V_HVRCR=1.2,
     CUR_HVRCR=2,
     RIp_LVPL=2,
-    T_LVPL=0.02) annotation (Placement(transformation(
+    T_LVPL=0.02,
+    P_0=(P3)*1e6,
+    Q_0=(Q3)*1e6,
+    v_0=V3) annotation (Placement(transformation(
         extent={{12,12},{-12,-12}},
         rotation=180,
         origin={-52,0})));
@@ -92,8 +92,7 @@ model WT4G1_WT4E1
     Iqhl=1.11,
     PQFLAG=false)
     annotation (Placement(transformation(extent={{-96,12},{-72,-12}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
-    annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=60, S_b=(100)*1e6) annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
   OpenIPSL.Electrical.Buses.Bus GEN
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   OpenIPSL.Electrical.Buses.Bus BUS1

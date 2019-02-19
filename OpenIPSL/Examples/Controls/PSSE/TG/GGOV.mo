@@ -6,7 +6,6 @@ model GGOV "three phase to ground fault test of GGOV"
     Xppq=0.2,
     Xpp=0.2,
     Xl=0.12,
-    M_b=100,
     Tpd0=5,
     Tppd0=0.50000E-01,
     Tppq0=0.1,
@@ -19,11 +18,11 @@ model GGOV "three phase to ground fault test of GGOV"
     S12=0.5,
     Xpq=0.6,
     Tpq0=0.7,
-    V_0=1,
     angle_0=4.05,
-    P_0=39.99995,
-    Q_0=5.416571)
-    annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
+    M_b=100000000,
+    P_0=39999950,
+    Q_0=5416571,
+    v_0=1) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1.GGOV1 gGOV1pele(
     R=0.04,
     T_pelec=1,
@@ -70,7 +69,6 @@ equation
       smooth=Smooth.None));
   connect(generator.EFD0, generator.EFD) annotation (Line(
       points={{-58,-7.5},{-52,-7.5},{-52,-30},{-102,-30},{-102,-7.5},{-104,-7.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
 

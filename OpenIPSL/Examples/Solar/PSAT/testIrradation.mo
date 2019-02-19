@@ -6,8 +6,8 @@ model testIrradation
         origin={-59.5887,-17.0499},
         extent={{-3.3987,-3.3987},{3.3987,3.3987}},
         rotation=0)));
-  Modelica.Blocks.Sources.Constant const1(k=1000) annotation (Placement(visible
-        =true, transformation(
+  Modelica.Blocks.Sources.Constant const1(k=1000) annotation (Placement(visible=
+         true, transformation(
         origin={-87.9874,22.9501},
         extent={{-3.3987,-3.3987},{3.3987,3.3987}},
         rotation=0)));
@@ -27,8 +27,7 @@ model testIrradation
         origin={83.1777,5.4501},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle_0=0, V_0=1)
-    annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle_0=0, v_0=1) annotation (Placement(visible=true, transformation(
         origin={117.9874,-1.1504},
         extent={{10.0,-10.0},{-10.0,10.0}},
         rotation=0)));
@@ -75,7 +74,6 @@ equation
       visible=true,
       origin={-71.3029,21.9375},
       points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,-1.0127}},
-
       color={0,0,127}));
 
   connect(add2.y, add1.u2) annotation (Line(
@@ -87,14 +85,12 @@ equation
       visible=true,
       origin={-95.2638,-5.1548},
       points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,-5.17496}},
-
       color={0,0,127}));
 
   connect(add2.u2, step2.y) annotation (Line(
       visible=true,
       origin={-101.2558,-21.885},
       points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,-8.115}},
-
       color={0,0,127}));
 
   connect(pwLine13.n, pwLine14.p) annotation (Line(

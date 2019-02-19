@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Branches.PSAT;
 model PhaseShiftingTransformer_Test
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ_B3(Q_0=0.001, P_0=0.03) annotation (Placement(transformation(extent={{30,-50},{50,-30}})));
+  OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ_B3(P_0=30000, Q_0=1000) annotation (Placement(transformation(extent={{30,-50},{50,-30}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     X=0.1,
@@ -21,8 +21,6 @@ model PhaseShiftingTransformer_Test
     pSTransformer
     annotation (Placement(transformation(extent={{50,-20},{70,0}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ_B4(
-    P_0=0.02,
-    Q_0=0.01,
     t_start_1=5,
     t_end_1=7.99,
     t_start_2=8,
@@ -30,7 +28,9 @@ model PhaseShiftingTransformer_Test
     dQ1=0.01,
     dQ2=-0.01,
     dP1=0.02,
-    dP2=-0.02) annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
+    dP2=-0.02,
+    P_0=20000,
+    Q_0=10000) annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
   Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
       Placement(visible=true, transformation(
         origin={-26,40},
@@ -50,16 +50,16 @@ model PhaseShiftingTransformer_Test
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
     D=5,
-    Sn=100,
-    Vn=13800,
-    V_b=13800,
-    V_0=1,
-    P_0=0.050249405357958,
-    Q_0=0.010496891745129,
     angle_0=0,
     ra=0.001,
     x1d=0.302,
-    M=10) annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+    M=10,
+    P_0=50249.405357958,
+    Q_0=10496.891745129,
+    Sn=100000000,
+    v_0=1,
+    V_b=13800000,
+    Vn=13800000) annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-64,24},{-78,38}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(

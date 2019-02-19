@@ -8,18 +8,17 @@ model Order4test2_TG
         extent={{-12.5,-12.5},{12.5,12.5}},
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
-    V_b=200,
-    V_0=1,
     angle_0=0,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
-    Sn=370,
-    Vn=200,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981)
-    annotation (Placement(transformation(extent={{-40,-15},{-10,15}})));
+    P_0=16035269.8692006,
+    Q_0=11859436.505981,
+    Sn=370000000,
+    v_0=1,
+    V_b=200000,
+    Vn=200000) annotation (Placement(transformation(extent={{-40,-15},{-10,15}})));
 equation
   connect(Generator.p, bus1.p) annotation (Line(points={{-10,0},{-4.25,0},{-4.25,0},{0,0}}, color={0,0,255}));
   connect(TGtypeII1.pm, Generator.pm) annotation (Line(points={{-58.75,-7.5},{-43,-7.5}},

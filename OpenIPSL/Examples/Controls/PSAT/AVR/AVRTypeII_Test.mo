@@ -2,18 +2,17 @@ within OpenIPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeII_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
-    V_0=1,
     angle_0=0,
-    V_b=200,
-    Sn=370,
-    Vn=200,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981)
-    annotation (Placement(transformation(extent={{-86,-10},{-50,26}})));
+    P_0=16035269.8692006,
+    Q_0=11859436.505981,
+    Sn=370000000,
+    v_0=1,
+    V_b=200000,
+    Vn=200000) annotation (Placement(transformation(extent={{-86,-10},{-50,26}})));
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{58,78},{82,98}})));
   Electrical.Branches.PwLine pwLine1(
@@ -60,18 +59,18 @@ model AVRTypeII_Test
         extent={{-5.99999,-5.99998},{5.99999,6}},
         rotation=0)));
   Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
-    P_0=8,
-    Q_0=6,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
+    angle_0=0,
+    P_0=8000000,
+    Q_0=6000000,
+    v_0=1) annotation (Placement(visible=true, transformation(
         origin={74,32},
         extent={{-6,-6},{6,6}},
         rotation=90)));
   Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=8,
-    Q_0=6,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
+    angle_0=0,
+    P_0=8000000,
+    Q_0=6000000,
+    v_0=1) annotation (Placement(visible=true, transformation(
         origin={74.034,-6.2889},
         extent={{-6.2889,-6.0335},{6.2889,6.0335}},
         rotation=90)));

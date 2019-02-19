@@ -6,11 +6,7 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     Xppq=0.2,
     Xpp=0.2,
     Xl=0.12,
-    V_0=1,
-    P_0=100*0.399999529123306,
     angle_0=4.04626655578613,
-    Q_0=100*0.0541657134890556,
-    M_b=100,
     Tpd0=5,
     Tppd0=0.50000E-01,
     Tppq0=0.1,
@@ -22,8 +18,11 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7)
-    annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
+    Tpq0=0.7,
+    M_b=100000000,
+    P_0=39999952.9123306,
+    Q_0=5416571.34890556,
+    v_0=1) annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
         transformation(
         extent={{-4,-4},{4,4}},

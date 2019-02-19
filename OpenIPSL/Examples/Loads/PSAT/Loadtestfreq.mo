@@ -110,20 +110,20 @@ model Loadtestfreq
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
-    P_0=0.0800989878477798,
-    Q_0=0.0570163388727956,
-    Sn=20,
-    V_b=400,
-    V_0=1,
     angle_0=0,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
     T1d0=8,
-    xq=1.7) annotation (Placement(visible=true, transformation(
+    xq=1.7,
+    P_0=80098.9878477798,
+    Q_0=57016.3388727956,
+    Sn=20000000,
+    v_0=1,
+    V_b=400000,
+    Vn=400000) annotation (Placement(visible=true, transformation(
         origin={3.3113,-20.7513},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -132,12 +132,12 @@ model Loadtestfreq
     beta_p=1,
     beta_q=1,
     Sn=10,
-    V_0=0.993325452568749,
     angle_0=-0.00746932024404292,
     alpha_q=0,
     Tf=0.1,
-    P_0=0.8,
-    Q_0=0.6) annotation (Placement(visible=true, transformation(
+    P_0=800000,
+    Q_0=600000,
+    v_0=0.993325452568749) annotation (Placement(visible=true, transformation(
         origin={123.3697,-45.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));

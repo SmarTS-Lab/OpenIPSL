@@ -3,17 +3,17 @@ model Order2test2
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order2 order21(
-    Sn=20,
-    V_b=400,
-    V_0=1,
     angle_0=0,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
+    P_0=16035269.8692006,
+    Q_0=11859436.505981,
+    Sn=20000000,
+    v_0=1,
+    V_b=400000,
+    Vn=400000) annotation (Placement(visible=true, transformation(
         origin={-29.946,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));

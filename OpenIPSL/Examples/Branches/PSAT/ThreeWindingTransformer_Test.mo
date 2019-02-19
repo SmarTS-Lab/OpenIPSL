@@ -35,17 +35,17 @@ model ThreeWindingTransformer_Test
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
-    Sn=370,
     D=5,
-    P_0=0.080124489663871,
-    Q_0=0.059251697676828,
-    V_b=400,
-    V_0=1,
     angle_0=0,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
-    M=10) annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
+    M=10,
+    P_0=80124.48966387101,
+    Q_0=59251.697676828,
+    Sn=370000000,
+    v_0=1,
+    V_b=400000,
+    Vn=400000) annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-70,10},{-60,0}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
@@ -55,14 +55,11 @@ model ThreeWindingTransformer_Test
     t_end_2=12,
     dP1=0,
     dP2=0,
-    P_0=0.04,
-    Q_0=0.02,
     dQ1=0.01,
-    dQ2=-0.01)
-    annotation (Placement(transformation(extent={{80,-10},{100,10}})));
+    dQ2=-0.01,
+    P_0=40000,
+    Q_0=20000) annotation (Placement(transformation(extent={{80,-10},{100,10}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
-    P_0=0.04,
-    Q_0=0.04,
     t_start_1=0,
     t_end_1=0,
     t_start_2=0,
@@ -70,7 +67,9 @@ model ThreeWindingTransformer_Test
     dP1=0,
     dQ1=0,
     dP2=0,
-    dQ2=0) annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
+    dQ2=0,
+    P_0=40000,
+    Q_0=40000) annotation (Placement(transformation(extent={{80,-50},{100,-30}})));
   Electrical.Branches.PSAT.ThreeWindingTransformer threeWindingTransformer annotation (Placement(transformation(extent={{28,-10},{48,10}})));
   OpenIPSL.Electrical.Buses.Bus Bus1
     annotation (Placement(transformation(extent={{-32,-10},{-12,10}})));

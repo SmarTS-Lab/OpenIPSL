@@ -80,16 +80,16 @@ model Order2test2_perturbation
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs1(
     D=0,
-    V_b=400,
-    V_0=1,
     angle_0=0,
-    Sn=20,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
     M=10,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
+    P_0=16035269.8692006,
+    Q_0=11859436.505981,
+    Sn=20000000,
+    v_0=1,
+    V_b=400000,
+    Vn=400000) annotation (Placement(visible=true, transformation(
         origin={-20.1083,0.1663},
         extent={{-8.8917,-9.1663},{8.8916,9.1663}},
         rotation=0)));

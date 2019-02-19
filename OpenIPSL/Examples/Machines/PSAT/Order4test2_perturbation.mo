@@ -3,18 +3,17 @@ model Order4test2_perturbation
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
-    Sn=100,
-    Vn=20,
-    V_b=400,
-    V_0=1,
     angle_0=0,
     ra=0.001,
     M=10,
     D=0,
     x1d=0.302,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981)
-    annotation (Placement(transformation(extent={{-26,-10},{-6,10}})));
+    P_0=16035269.8692006,
+    Q_0=11859436.505981,
+    Sn=100000000,
+    v_0=1,
+    V_b=400000,
+    Vn=20000) annotation (Placement(transformation(extent={{-26,-10},{-6,10}})));
   Modelica.Blocks.Math.Add3 add31 annotation (Placement(visible=true,
         transformation(
         origin={-45,25},

@@ -2,7 +2,6 @@ within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESDC1A "SMIB system with one load and GENROE model"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
-    M_b=100,
     Tpd0=5,
     Tppd0=0.07,
     Tpq0=0.9,
@@ -17,12 +16,12 @@ model ESDC1A "SMIB system with one load and GENROE model"
     Xl=0.12,
     S10=0.11,
     S12=0.39,
-    V_0=1,
-    P_0=40,
     angle_0=4.046276,
-    Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    Xppq=0.2,
+    M_b=100000000,
+    P_0=40000000,
+    Q_0=5416582,
+    v_0=1) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-28,-46},{-38,-36}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf)

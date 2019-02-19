@@ -6,8 +6,7 @@ model GE_WT_Test
         origin={75.0,1.7487},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infBus2(angle_0=-0.000216626610049175,
-      V_0=1.05999999985841) annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infBus2(angle_0=-0.000216626610049175, v_0=1.05999999985841) annotation (Placement(visible=true, transformation(
         origin={-42.5798,1.9703},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));

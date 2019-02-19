@@ -32,8 +32,7 @@ model PSAT_WT_Test
         origin={25.0,40.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus1(V_0=1, angle_0=0)
-    annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus1(angle_0=0, v_0=1) annotation (Placement(visible=true, transformation(
         origin={-28.2108,15.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));

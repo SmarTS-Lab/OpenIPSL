@@ -6,11 +6,7 @@ model URST5T "SMIB model example of GENROU with Excitation System URST5T"
     Xppq=0.2,
     Xpp=0.2,
     Xl=0.12,
-    V_0=1,
-    P_0=100*0.399999529123306,
     angle_0=4.04626655578613,
-    Q_0=100*0.0541657134890556,
-    M_b=100,
     Tpd0=5,
     Tppd0=0.50000E-01,
     Tppq0=0.1,
@@ -22,8 +18,11 @@ model URST5T "SMIB model example of GENROU with Excitation System URST5T"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7)
-    annotation (Placement(transformation(extent={{-104,-16},{-76,18}})));
+    Tpq0=0.7,
+    M_b=100000000,
+    P_0=39999952.9123306,
+    Q_0=5416571.34890556,
+    v_0=1) annotation (Placement(transformation(extent={{-104,-16},{-76,18}})));
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   Modelica.Blocks.Sources.Constant VOEL(k=1000) annotation (Placement(
@@ -68,7 +67,6 @@ equation
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-74.6,9.5},{-70,9.5},{-70,22},{-104,22},{-104,9.5},{-106.8,9.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
 

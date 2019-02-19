@@ -10,17 +10,17 @@ model AVRTypeII_OEL_Test
     pwLoadPQ1(forcePQ=false));
   extends Modelica.Icons.Example;
   Electrical.Machines.PSAT.Order4 order4(
-    V_0=1,
     angle_0=0,
     ra=0.001,
     x1d=0.302,
     M=10,
     D=0,
-    P_0=16.0352698692006,
-    Q_0=11.859436505981,
-    Sn=20,
-    Vn=370,
-    V_b=400) annotation (Placement(transformation(extent={{-45,-10},{-25,10}})));
+    P_0=16035269.8692006,
+    Q_0=11859436.505981,
+    Sn=20000000,
+    v_0=1,
+    V_b=400000,
+    Vn=370000) annotation (Placement(transformation(extent={{-45,-10},{-25,10}})));
   Electrical.Controls.PSAT.AVR.AVRTypeII exciter_Type_II(
     vrmin=-5,
     vrmax=5,

@@ -35,22 +35,20 @@ model ULTC_Test
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs(
-    Sn=370,
-    P_0=0.081032877181982,
-    Q_0=0.058523044412627,
     D=5,
-    V_b=400,
-    V_0=1,
     angle_0=0,
-    Vn=400,
     ra=0.001,
     x1d=0.302,
-    M=10) annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
+    M=10,
+    P_0=81032.877181982,
+    Q_0=58523.044412627,
+    Sn=370000000,
+    v_0=1,
+    V_b=400000,
+    Vn=400000) annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-56,-6},{-44,6}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ_B3(
-    P_0=0.08,
-    Q_0=0.06,
     t_start_1=5,
     t_end_1=8,
     t_start_2=8,
@@ -58,7 +56,9 @@ model ULTC_Test
     dP1=0,
     dP2=0,
     dQ1=-0.05,
-    dQ2=0.05) annotation (Placement(transformation(extent={{80,-40},{100,-20}})));
+    dQ2=0.05,
+    P_0=80000,
+    Q_0=60000) annotation (Placement(transformation(extent={{80,-40},{100,-20}})));
   OpenIPSL.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   OpenIPSL.Electrical.Buses.Bus B1

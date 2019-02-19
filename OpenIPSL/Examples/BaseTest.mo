@@ -44,13 +44,11 @@ partial model BaseTest
         origin={60,36},
         extent={{-5.99999,-5.99998},{5.99999,6}},
         rotation=0)));
-  Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0=8, Q_0=6)
-               annotation (Placement(visible=true, transformation(
+  Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0=8000000, Q_0=6000000) annotation (Placement(visible=true, transformation(
         origin={94,24},
         extent={{-6,-6},{6,6}},
         rotation=90)));
-  Electrical.Loads.PSAT.LOADPQ_variation pwLoadPQ2(P_0=8, Q_0=6)
-               annotation (Placement(visible=true, transformation(
+  Electrical.Loads.PSAT.LOADPQ_variation pwLoadPQ2(P_0=8000000, Q_0=6000000) annotation (Placement(visible=true, transformation(
         origin={94.0335,-14.2889},
         extent={{-6.2889,-6.0335},{6.2889,6.0335}},
         rotation=90)));
