@@ -101,7 +101,7 @@ package Data
     Loads loads;
     annotation (
       defaultComponentName="PF_results",
-      defaultAttributes="inner",
+      defaultComponentPrefixes="inner",
       missingInnerMessage="
     No 'PF_results' data is defined.",
       Documentation);

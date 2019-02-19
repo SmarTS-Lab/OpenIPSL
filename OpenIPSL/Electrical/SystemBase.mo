@@ -21,7 +21,7 @@ record SystemBase "System Base Definition"
           horizontalAlignment=TextAlignment.Center,
           textString="System Data")}),
     defaultComponentName="SysData",
-    defaultAttributes="inner",
+    defaultComponentPrefixes="inner",
     missingInnerMessage="
 No 'System Data' component is defined. A default component will be used, and generate a system base of 100 MVA, and a frequency of 50 Hz",
 

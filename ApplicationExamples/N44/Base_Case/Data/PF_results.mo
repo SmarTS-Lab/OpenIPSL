@@ -575,7 +575,7 @@ record PF_results
   Loads loads;
   annotation (
     defaultComponentName="PF_results",
-    defaultAttributes="inner",
+    defaultComponentPrefixes="inner",
     missingInnerMessage="
     No 'PF_results' data is defined.");
 end PF_results;
