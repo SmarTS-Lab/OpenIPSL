@@ -1,9 +1,9 @@
 within OpenIPSL.Electrical.Banks;
 model PwShuntB
-  parameter Real B "(pu) on system base";
+  parameter SI.PerUnit B "(pu) on system base";
   Complex I;
   Complex V;
-  Real v;
+  SI.PerUnit v;
   Complex S;
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,88},{10,108}})));

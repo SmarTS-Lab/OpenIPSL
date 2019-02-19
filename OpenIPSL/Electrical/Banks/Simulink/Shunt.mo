@@ -2,13 +2,12 @@ within OpenIPSL.Electrical.Banks.Simulink;
 model Shunt "Shunt Inductor or Capacitor"
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real Qnom
-    "Reactive power produced by the shunt under 1 p.u voltage, (negative for inductive charge, positive for capacitive charge) Mvar";
-  parameter Real Sbase "Base power of the system, MVA";
-  parameter Real X=Sbase/(-Qnom) "Reactance in p.u";
-  Real Q "Consumed power";
-  Real v;
+  parameter SI.ReactivePower Qnom(displayUnit="Mvar")
+    "Reactive power produced by the shunt at 1 pu voltage, (negative for inductive charge, positive for capacitive charge)";
+  parameter SI.ApparentPower Sbase(displayUnit="MVA") "Base power of the system";
+  parameter SI.PerUnit X=Sbase/(-Qnom) "Reactance (pu)";
+  SI.PerUnit Q "Consumed power";
+  SI.PerUnit v;
 equation
   v = sqrt(p.vr*p.vr + p.vi*p.vi);
   0 = p.vr*p.ir + p.vi*p.ii;

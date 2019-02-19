@@ -1,10 +1,10 @@
 within OpenIPSL.Electrical.Banks.PSSE;
 model Shunt
-  parameter Real G "(p.u.) on system base";
-  parameter Real B "(p.u.) on system base";
+  parameter SI.PerUnit G "(pu) on system base";
+  parameter SI.PerUnit B "(pu) on system base";
   Complex I;
   Complex V;
-  Real v;
+  SI.PerUnit v;
   Complex S;
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));

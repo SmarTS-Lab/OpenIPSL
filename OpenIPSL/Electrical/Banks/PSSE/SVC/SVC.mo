@@ -24,39 +24,39 @@ model SVC "On bus 10106 & 10114"
   NonElectrical.Continuous.SimpleLagLim imLimitedSimpleLag(
     K=1,
     T=T5,
-    outMin=Mvar_C,
+    outMin=var_C,
     y_start=init_SVC_Lag,
-    outMax=Mvar_R)
+    outMax=var_R)
     annotation (Placement(transformation(extent={{66,0},{82,16}})));
   OpenIPSL.Electrical.Banks.PwShunt shunt
     annotation (Placement(transformation(extent={{80,-40},{100,-20}})));
   OpenIPSL.NonElectrical.Logical.Relay3 imRelay
     annotation (Placement(transformation(extent={{30,-40},{50,-20}})));
-  Modelica.Blocks.Sources.Constant Q_capacitors(k=Mvar_C) "If Verr>Vov"
+  Modelica.Blocks.Sources.Constant Q_capacitors(k=var_C) "If Verr>Vov"
     annotation (Placement(transformation(extent={{-20,-20},{-10,-10}})));
-  Modelica.Blocks.Sources.Constant Q_Reactors(k=Mvar_R) "If Verr<-Vov"
+  Modelica.Blocks.Sources.Constant Q_Reactors(k=var_R) "If Verr<-Vov"
     annotation (Placement(transformation(extent={{-20,-38},{-10,-28}})));
   Modelica.Blocks.Math.Gain imGain(k=1/Sbase)
     annotation (Placement(transformation(extent={{60,-36},{72,-24}})));
-  parameter Real Vref "Reference voltage (pu)";
-  parameter Real Bref "Reference susceptance (pu)";
+  parameter SI.PerUnit Vref "Reference voltage (pu)";
+  parameter SI.PerUnit Bref "Reference susceptance (pu)";
   parameter Real K=150 "Steady-state gain";
   parameter Real T1 "Time constant (s)";
   parameter Real T2 "Time constant (s)";
   parameter Real T3 "Time constant (s)";
   parameter Real T4 "Time constant (s)";
   parameter Real T5=0.03 "Time constant of thyristor bridge (s)";
-  parameter Real Vmax;
-  parameter Real Vmin;
-  parameter Real Vov=0.5 "Override voltage (pu)";
-  parameter Real Sbase "Base power of the bus (MVA)";
+  parameter SI.PerUnit Vmax;
+  parameter SI.PerUnit Vmin;
+  parameter SI.PerUnit Vov=0.5 "Override voltage (pu)";
+  parameter SI.ReactivePower Sbase(displayUnit="MVA") "Base power of the bus";
   parameter Real init_SVC_Leadlag "Initial value";
   parameter Real init_SVC_Lag "Initial value";
   parameter Real OtherSignals;
-  parameter Real Mvar_C=100
-    "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
-  parameter Real Mvar_R=-50
-    "Total compensation capacity of shunt reactor, MVar";
+  parameter SI.ReactivePower var_C(displayUnit="Mvar")=100e6
+    "Total compensation capacity of shunt capacitor, 100(10106)/200(10114)";
+  parameter SI.ReactivePower var_R(displayUnit="Mvar")=-50
+    "Total compensation capacity of shunt reactor";
   Modelica.Blocks.Sources.Constant imSetPoint2(k=OtherSignals)
     annotation (Placement(transformation(extent={{-52,-20},{-40,-8}})));
   OpenIPSL.Electrical.Sensors.PwVoltage absoluteVoltage

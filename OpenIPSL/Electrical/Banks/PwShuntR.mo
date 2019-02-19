@@ -2,26 +2,25 @@ within OpenIPSL.Electrical.Banks;
 model PwShuntR "Shunt inductor"
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real Qnom=75
-    "Reactive power produced by the shunt inductor under 1 p.u voltage, -Mvar";
-  parameter Real Vbase=138 "Base volatage of the bus, kV";
-  parameter Real fn=50 "Frequency rating, Hz";
-  Real Zbase;
-  Real L "Inductance in p.u";
-  Real v;
-  Real anglev;
-  Real i;
-  Real anglei;
+  parameter SI.ReactivePower Qnom(displayUnit="Mvar")=75e6
+    "Reactive power produced by the shunt inductor at 1 pu voltage";
+  parameter SI.Voltage Vbase(displayUnit="kV")=138e3 "Base voltage of the bus";
+  parameter SI.Frequency fn=50 "Frequency rating, Hz";
+  SI.Resistance Zbase;
+  SI.PerUnit l "Inductance (pu)";
+  SI.PerUnit v;
+  SI.Angle anglev;
+  SI.PerUnit i;
+  SI.PerUnit anglei;
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   i = sqrt(p.ir^2 + p.ii^2);
   anglei = atan2(p.ii, p.ir);
   Zbase = Vbase^2/(-Qnom);
-  L = Vbase^2/(2*pi*fn*(-Qnom)*Zbase) "S=U*I";
-  anglei = anglev - pi/2;
-  i = v/(2*pi*fn*L) "I=U/Z";
+  l = Vbase^2/(2*C.pi*fn*(-Qnom)*Zbase) "S=U*I";
+  anglei = anglev - C.pi/2;
+  i = v/(2*C.pi*fn*l) "I=U/Z";
   annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
           initialScale=0.1), graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Line(

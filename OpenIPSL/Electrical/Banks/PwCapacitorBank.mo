@@ -2,9 +2,9 @@ within OpenIPSL.Electrical.Banks;
 model PwCapacitorBank "Capacitor Bank with Bank.2013"
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  parameter Real nsteps "number of steps";
-  parameter Real G=0;
-  parameter Real B=0;
+  parameter Integer nsteps "number of steps";
+  parameter SI.PerUnit G=0 "Active power losses (pu)";
+  parameter SI.PerUnit B=0 "Reactive power (pu)";
 equation
   p.vr = (p.ir*G + p.ii*B)/(G*G + B*B);
   p.vi = ((-p.ir*B) + p.ii*G)/(G*G + B*B);

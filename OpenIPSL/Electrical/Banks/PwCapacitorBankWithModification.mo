@@ -3,14 +3,14 @@ model PwCapacitorBankWithModification "Capacitor Bank with Bank modification at 
               2014/03/10"
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  parameter Real nsteps "number of steps";
-  parameter Real Go "active losses (pu) in each element";
-  parameter Real Bo "reactive power (pu) in each element";
-  parameter Real t1 "time for Bank Modification";
-  parameter Real nmod "number of step to switch on/off (+/-)";
-  Real G;
-  Real B;
-  Real nt;
+  parameter Integer nsteps "Number of steps";
+  parameter SI.PerUnit Go "Active power losses (pu) in each element";
+  parameter SI.PerUnit Bo "Reactive power (pu) in each element";
+  parameter SI.Time t1 "Time for bank Modification";
+  parameter Integer nmod "Number of step to switch on/off (+/-)";
+  SI.PerUnit G;
+  SI.PerUnit B;
+  Integer nt;
 equation
   if time > t1 then
     nt = nsteps + nmod;
