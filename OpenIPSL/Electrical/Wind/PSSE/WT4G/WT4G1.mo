@@ -96,17 +96,16 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
         origin={-20,110})));
 protected
   Real delta(start=anglev_rad);
-  Real VT(start=V_0) "Bus voltage magnitude (pu)";
+  Real VT(start=v_0) "Bus voltage magnitude (pu)";
   Real anglev(start=anglev_rad) "Bus voltage angle (rad)";
 protected
   parameter Real p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";
   parameter Real q0=Q_0/M_b
     "initial value of bus reactive power in p.u. machinebase";
-  parameter Real v0=V_0;
-  parameter Real vr0=v0*cos(anglev_rad)
+  parameter Real vr0=v_0*cos(anglev_rad)
     "Real component of initial terminal voltage";
-  parameter Real vi0=v0*sin(anglev_rad)
+  parameter Real vi0=v_0*sin(anglev_rad)
     "Imaginary component of intitial terminal voltage";
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, M_b";
