@@ -3,16 +3,16 @@ from CITests import CITests
 
 # Libs in Application Examples
 appExamples = {
-"KundurSMIB":"/ApplicationExamples/KundurSMIB/package.mo",
-"TwoAreas":"/ApplicationExamples/TwoAreas/package.mo",
-"SevenBus":"/ApplicationExamples/SevenBus/package.mo",
-"IEEE9":"/ApplicationExamples/IEEE9/package.mo",
-"IEEE14":"/ApplicationExamples/IEEE14/package.mo",
-"AKD":"/ApplicationExamples/AKD/package.mo",
-"N44":"/ApplicationExamples/N44/package.mo",
-"OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo",
-"RaPIdExperiments":"/ApplicationExamples/RaPIdExperiments/package.mo",
-"ThreePhase":"/ApplicationExamples/ThreePhase/package.mo"
+#"KundurSMIB":"/ApplicationExamples/KundurSMIB/package.mo",
+#"TwoAreas":"/ApplicationExamples/TwoAreas/package.mo",
+#"SevenBus":"/ApplicationExamples/SevenBus/package.mo",
+#"IEEE9":"/ApplicationExamples/IEEE9/package.mo",
+#"IEEE14":"/ApplicationExamples/IEEE14/package.mo",
+#"AKD":"/ApplicationExamples/AKD/package.mo",
+#"N44":"/ApplicationExamples/N44/package.mo",
+#"OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo",
+#"RaPIdExperiments":"/ApplicationExamples/RaPIdExperiments/package.mo",
+#"ThreePhase":"/ApplicationExamples/ThreePhase/package.mo"
 }
 
 # Instance of CITests
