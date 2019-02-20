@@ -5,11 +5,7 @@ model InfiniteBus "PSAT Infinite Bus"
   SI.ReactivePower Q(displayUnit="Mvar") "Reactive Power absorbed by the Infinite bus (MVAr)";
   Interfaces.PwPin p
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  parameter Boolean displayPF=false "Display power flow results:" annotation (
-      Dialog(
-      group="Visualisation",
-      __Dymola_compact=true,
-      __Dymola_descriptionLabel=true), choices(checkBox=true));
+
 equation
   p.vr = v_0*cos(angle_0*C.pi/180);
   p.vi = v_0*sin(angle_0*C.pi/180);

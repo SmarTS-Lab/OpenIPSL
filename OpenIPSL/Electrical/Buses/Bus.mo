@@ -11,10 +11,6 @@ model Bus "Bus model (2014/03/10)"
   Real V(start=v_0) "Bus voltage magnitude (pu)";
   Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle(start=angle_0)
     "Bus voltage angle";
-  parameter Boolean displayPF=true "Display voltage values:" annotation (Dialog(
-      group="Visualisation",
-      __Dymola_compact=true,
-      __Dymola_descriptionLabel=true), choices(checkBox=true));
 equation
   V = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr)*180/C.pi;

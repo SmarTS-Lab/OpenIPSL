@@ -24,6 +24,11 @@ partial model pfComponent
   parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0
     "Initial voltage angle"
     annotation (Dialog(group="Power flow data"));
+  parameter Boolean displayPF=false "Display power flow results:" annotation (
+      Dialog(
+      group="Visualisation",
+      __Dymola_compact=true,
+      __Dymola_descriptionLabel=true), choices(checkBox=true));
 protected
   parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Intial angle in rad";
 end pfComponent;

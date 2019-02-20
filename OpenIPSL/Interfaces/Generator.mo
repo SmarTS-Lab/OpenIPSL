@@ -1,11 +1,6 @@
 within OpenIPSL.Interfaces;
 partial model Generator "Interface for a generator which provides the PwPin"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter Boolean displayPF=false "Display power flow results:" annotation (
-      Dialog(
-      group="Visualisation",
-      __Dymola_compact=true,
-      __Dymola_descriptionLabel=true), choices(checkBox=true));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
             {100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   SI.ActivePower P(displayUnit="MVA") "Active power";
