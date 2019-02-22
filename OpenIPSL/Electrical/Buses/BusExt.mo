@@ -25,9 +25,9 @@ model BusExt
     annotation (Dialog(group="Power flow data"));
   parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0 "Voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Voltage V_b=130e3 "Base voltage"
+  parameter SI.Voltage V_b(displayUnit="kV")=130e3 "Base voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ApparentPower S_b=SysData.S_b "System base power"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow data"));
 protected
   parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Intial angle in rad";
