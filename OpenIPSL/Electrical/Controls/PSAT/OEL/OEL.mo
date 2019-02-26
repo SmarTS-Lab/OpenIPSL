@@ -2,19 +2,15 @@ within OpenIPSL.Electrical.Controls.PSAT.OEL;
 model OEL "PSATs Over-Excitation Limiter"
   outer OpenIPSL.Electrical.SystemBase SysData;
   Modelica.Blocks.Interfaces.RealInput v "Generator terminal voltage (pu)"
-    annotation (Placement(transformation(extent={{-112,50},{-92,70}}),
-        iconTransformation(extent={{-104,48},{-80,72}})));
+    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
   Modelica.Blocks.Interfaces.RealInput p "Active power (pu)" annotation (
-      Placement(transformation(extent={{-112,-10},{-92,10}}),
-        iconTransformation(extent={{-104,8},{-80,32}})));
+      Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealInput q "Reactive power (pu)" annotation (
-      Placement(transformation(extent={{-112,-70},{-92,-50}}),
-        iconTransformation(extent={{-104,-32},{-80,-8}})));
+      Placement(transformation(extent={{-140,-80},{-100,-40}})));
   FieldCurrent field_current(xd=Z_MBtoSB*xd, xq=Z_MBtoSB*xq)
-    annotation (Placement(transformation(extent={{-40,-32},{-20,-8}})));
+    annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
   Modelica.Blocks.Interfaces.RealOutput v_ref annotation (Placement(
-        transformation(extent={{94,-10},{114,10}}), iconTransformation(extent={
-            {92,-12},{116,12}})));
+        transformation(extent={{100,-10},{120,10}})));
   parameter Modelica.SIunits.Time T0=10 "Integrator time constant (s)";
   parameter Modelica.SIunits.PerUnit xd
     "d-axis estimated generator reactance (pu, machine base)";
@@ -29,12 +25,7 @@ model OEL "PSATs Over-Excitation Limiter"
   parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Voltage V_b(displayUnit="kV")=400e3 "Base voltage of the bus";
-protected
-  parameter Real Z_MBtoSB=(SysData.S_b*Vn^2)/(Sn*V_b^2)
-    "Z(machine base) -> Z(system base)";
-  parameter Real I_MBtoSB=(Sn*V_b)/(SysData.S_b*Vn)
-    "I(machine base) -> I(system base)";
-public
+
   Modelica.Blocks.Math.Feedback add
     annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
   Modelica.Blocks.Sources.Constant currentLimit(k=if_lim) annotation (Placement(
@@ -50,62 +41,66 @@ public
     annotation (Placement(transformation(extent={{22,-30},{42,-10}})));
   Modelica.Blocks.Interfaces.RealInput v_ref0 "Generator terminal voltage (pu)"
     annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
+        extent={{-20,-20},{20,20}},
         rotation=-90,
-        origin={0,110}), iconTransformation(
+        origin={0,120}), iconTransformation(
         extent={{-12,-12},{12,12}},
         rotation=-90,
-        origin={-2,112})));
+        origin={0,112})));
   Modelica.Blocks.Math.Feedback difference annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         origin={80,0})));
+protected
+  parameter Real Z_MBtoSB=(SysData.S_b*Vn^2)/(Sn*V_b^2)
+    "Z(machine base) -> Z(system base)";
+  parameter Real I_MBtoSB=(Sn*V_b)/(SysData.S_b*Vn)
+    "I(machine base) -> I(system base)";
+
 equation
   connect(field_current.ifield, add.u1)
-    annotation (Line(points={{-19,-20},{-19,-20},{-8,-20}}, color={0,0,127}));
+    annotation (Line(points={{-19,-20},{-8,-20}},           color={0,0,127}));
   connect(currentLimit.y, add.u2) annotation (Line(points={{8.88178e-016,-49},{
           8.88178e-016,-38},{8.88178e-016,-28},{0,-28}}, color={0,0,127}));
   connect(v_ref, difference.y)
-    annotation (Line(points={{104,0},{89,0}}, color={0,0,127}));
-  connect(field_current.v, v) annotation (Line(points={{-40,-12.8},{-60,-12.8},
-          {-60,60},{-102,60}},color={0,0,127}));
-  connect(limIntegrator.y, difference.u2) annotation (Line(points={{43,-20},{44,
-          -20},{80,-20},{80,-8}}, color={0,0,127}));
-  connect(difference.u1, v_ref0) annotation (Line(points={{72,0},{72,0},{40,0},
-          {40,60},{0,60},{0,110}},color={0,0,127}));
-  connect(p, field_current.p) annotation (Line(points={{-102,0},{-102,0},{-80,0},
-          {-80,-20},{-40,-20}}, color={0,0,127}));
-  connect(q, field_current.q) annotation (Line(points={{-102,-60},{-60,-60},{-60,
-          -27.2},{-40,-27.2}}, color={0,0,127}));
+    annotation (Line(points={{110,0},{89,0}}, color={0,0,127}));
+  connect(field_current.v, v) annotation (Line(points={{-42,-14},{-60,-14},{-60,60},{-120,60}},
+                              color={0,0,127}));
+  connect(limIntegrator.y, difference.u2) annotation (Line(points={{43,-20},{80,-20},{80,-8}}, color={0,0,127}));
+  connect(difference.u1, v_ref0) annotation (Line(points={{72,0},{40,0},{40,60},{0,60},{0,120}},
+                                  color={0,0,127}));
+  connect(p, field_current.p) annotation (Line(points={{-120,0},{-80,0},{-80,-20},{-42,-20}},
+                                color={0,0,127}));
+  connect(q, field_current.q) annotation (Line(points={{-120,-60},{-60,-60},{-60,-26},{-42,-26}},
+                               color={0,0,127}));
   connect(add.y, limIntegrator.u)
     annotation (Line(points={{9,-20},{9,-20},{20,-20}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255}),Text(
-          extent={{-88,82},{-50,46}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          lineColor={28,108,200}),
+                               Text(
+          extent={{-100,80},{-70,50}},
+          lineColor={28,108,200},
           textString="v"),Text(
-          extent={{-84,42},{-50,8}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          extent={{-100,20},{-70,-10}},
+          lineColor={28,108,200},
           textString="p"),Text(
-          extent={{-82,-2},{-54,-36}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          extent={{-100,-40},{-70,-70}},
+          lineColor={28,108,200},
           textString="q"),Text(
-          extent={{10,98},{46,66}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          extent={{-20,100},{20,80}},
+          lineColor={28,108,200},
           textString="vref0"),Text(
           extent={{60,-4},{94,-38}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          lineColor={28,108,200},
           textString="v_ref"),Text(
-          extent={{-26,38},{36,-40}},
+          extent={{-36,70},{26,-8}},
+          lineColor={28,108,200},
+          textString="OXL"),
+        Text(
+          extent={{-72,-40},{70,-80}},
           lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-          textString="OXL")}),
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

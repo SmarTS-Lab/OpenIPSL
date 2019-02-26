@@ -3,17 +3,13 @@ model FieldCurrent
   "Estimates the field current from P,Q,V and the d- and q-axis reactances"
 
   Modelica.Blocks.Interfaces.RealInput v "generator terminal voltage (pu)"
-    annotation (Placement(transformation(extent={{-70,30},{-50,50}}),
-        iconTransformation(extent={{-116,43},{-84,77}})));
+    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
   Modelica.Blocks.Interfaces.RealInput p "active power (pu)" annotation (
-      Placement(transformation(extent={{-70,-10},{-50,10}}), iconTransformation(
-          extent={{-117,-17},{-83,17}})));
+      Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealInput q "reactive power (pu)" annotation (
-      Placement(transformation(extent={{-70,-50},{-50,-30}}),
-        iconTransformation(extent={{-117,-77},{-83,-43}})));
+      Placement(transformation(extent={{-140,-80},{-100,-40}})));
   Modelica.Blocks.Interfaces.RealOutput ifield "estimated field current (pu)"
-    annotation (Placement(transformation(extent={{96,-10},{116,10}}),
-        iconTransformation(extent={{94,-17},{126,17}})));
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real xd;
   parameter Real xq;
 protected
@@ -28,21 +24,18 @@ equation
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255}),Text(
+          lineColor={28,108,200}),
+                               Text(
           extent={{-90,80},{-58,60}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          lineColor={28,108,200},
           textString="v"),Text(
           extent={{-90,-44},{-62,-60}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          lineColor={28,108,200},
           textString="p"),Text(
           extent={{-88,16},{-60,0}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          lineColor={28,108,200},
           textString="q"),Text(
           extent={{64,16},{92,0}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          lineColor={28,108,200},
           textString="if")}));
 end FieldCurrent;
