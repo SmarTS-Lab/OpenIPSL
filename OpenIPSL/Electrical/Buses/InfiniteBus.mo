@@ -14,7 +14,7 @@ equation
   p.vr = v_0*cos(angle_0*C.pi/180);
   p.vi = v_0*sin(angle_0*C.pi/180);
   P = -(p.vr*p.ir + p.vi*p.ii)*S_b;
-  Q = -(p.vr*p.ii - p.vi*p.ir)*S_b;
+  Q = (p.vr*p.ii - p.vi*p.ir)*S_b;
   annotation (
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
