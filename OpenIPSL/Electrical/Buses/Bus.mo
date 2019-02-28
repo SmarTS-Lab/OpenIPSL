@@ -1,8 +1,10 @@
 ﻿within OpenIPSL.Electrical.Buses;
 model Bus "Bus model (2014/03/10)"
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Interfaces.PwPin p(vr(start=v_0*cos(angle_0*C.pi/
-          180)), vi(start=v_0*sin(angle_0*C.pi/180)))
+  extends OpenIPSL.Electrical.Essentials.pfComponent(
+    enabledisplayPF=true,
+    enableangle_0=true,
+    enablev_0=true);
+  OpenIPSL.Interfaces.PwPin p(vr(start=v_0*cos(angle_0rad)), vi(start=v_0*sin(angle_0rad)))
     annotation (Placement(
       transformation(
         extent={{-10.0,-10.0},{10.0,10.0}}),

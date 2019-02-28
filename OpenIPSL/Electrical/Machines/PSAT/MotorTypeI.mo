@@ -1,6 +1,11 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model MotorTypeI "Induction Machine - Order I"
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent(
+    enableangle_0=true,
+    enablev_0=true,
+    enableQ_0=true,
+    enableP_0=true,
+    enableS_b=true);
   parameter Integer Sup=1 "Start-up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
   parameter SI.PerUnit Rs=0.01 "Stator resistance (pu)"

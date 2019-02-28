@@ -1,6 +1,11 @@
 within OpenIPSL.Electrical.Loads.PSSE.BaseClasses;
 partial model baseLoad
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent(
+    enableS_b=true,
+    enableangle_0=true,
+    enablev_0=true,
+    enableQ_0=true,
+    enableP_0=true);
  import Modelica.ComplexMath.j;
   parameter SI.ComplexPower S_p=P_0 + j*Q_0
     "Consumption of original constant power load";

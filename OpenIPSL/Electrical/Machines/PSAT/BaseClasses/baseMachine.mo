@@ -1,6 +1,12 @@
 within OpenIPSL.Electrical.Machines.PSAT.BaseClasses;
 partial model baseMachine
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent(
+    enableangle_0=true,
+    enablev_0=true,
+    enableQ_0=true,
+    enableP_0=true,
+    enableV_b=true,
+    enableS_b=true);
   import CM = Modelica.ComplexMath;
   import Complex;
   parameter SI.ApparentPower Sn(displayUnit="MVA") "Power rating"
