@@ -49,7 +49,7 @@ model SVC "On bus 10106 & 10114"
   parameter SI.PerUnit Vmax;
   parameter SI.PerUnit Vmin;
   parameter SI.PerUnit Vov=0.5 "Override voltage (pu)";
-  parameter SI.ReactivePower Sbase(displayUnit="MVA") "Base power of the bus";
+  parameter SI.ApparentPower Sbase(displayUnit="MVA") "Base power of the bus";
   parameter Real init_SVC_Leadlag "Initial value";
   parameter Real init_SVC_Lag "Initial value";
   parameter Real OtherSignals;
@@ -105,7 +105,7 @@ equation
   connect(imRelay.u1, add3_1.u2) annotation (Line(points={{28,-37.5},{0,-37.5},
           {0,-46},{-36,-46},{-36,8},{-25.2,8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(), graphics={Text(
+    Diagram(graphics={Text(
           extent={{-44,16},{-34,12}},
           lineColor={255,0,0},
           textString="Verr"),Text(
@@ -118,7 +118,7 @@ equation
           extent={{-80,-14},{-68,-20}},
           lineColor={255,0,0},
           textString="|VB|")}),
-    Icon(coordinateSystem(), graphics={Rectangle(extent={{-100,
+    Icon(graphics={Rectangle(extent={{-100,
           100},{100,-100}}, lineColor={0,0,255}),Text(
           extent={{-20,-60},{20,-100}},
           lineColor={0,0,255},
