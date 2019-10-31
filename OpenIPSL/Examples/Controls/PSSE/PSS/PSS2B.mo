@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.PSS;
 model PSS2B "SMIB system with one load and GENROE model"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,
     Tppd0=0.07,
@@ -83,28 +83,35 @@ equation
           -110},{-80.713,-89.9917}}, color={0,0,127}));
   connect(eSST1A.VUEL, const.y) annotation (Line(points={{-65.1,-90},{-65.1,-94},
           {-46,-94},{-46,-76},{-41,-76}}, color={0,0,127}));
-  connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-88.4805,-89.9958},
-          {-88.4805,-110},{-80.713,-110},{-80.713,-89.9917}}, color={0,0,127}));
+  connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-88.4805,
+          -89.9958},{-88.4805,-110},{-80.713,-110},{-80.713,-89.9917}},
+                                                              color={0,0,127}));
   connect(const2.y, eSST1A.VOEL) annotation (Line(points={{-39,-140},{-72.9,-140},
           {-72.9,-90}}, color={0,0,127}));
-  connect(eSST1A.EFD, gENROE.EFD) annotation (Line(points={{-109.3,-73.3333},{-114,
-          -73.3333},{-114,-10},{-104,-10}}, color={0,0,127}));
+  connect(eSST1A.EFD, gENROE.EFD) annotation (Line(points={{-109.3,-73.3333},{
+          -114,-73.3333},{-114,-10},{-104,-10}},
+                                            color={0,0,127}));
   connect(eSST1A.VT, gENROE.ETERM) annotation (Line(points={{-56.0325,-69.1875},
           {-52,-69.1875},{-52,-6},{-58,-6}}, color={0,0,127}));
-  connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-56,-84.1667},{-50,
-          -84.1667},{-50,-10},{-58,-10}}, color={0,0,127}));
-  connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-56,-79.1667},
-          {-48,-79.1667},{-48,-18},{-58.4,-18}}, color={0,0,127}));
+  connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-56,-84.1667},{
+          -50,-84.1667},{-50,-10},{-58,-10}},
+                                          color={0,0,127}));
+  connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-93.7,
+          -89.6667},{-48,-89.6667},{-48,-18},{-58.4,-18}},
+                                                 color={0,0,127}));
   connect(eSST1A.VOTHSG, const.y) annotation (Line(points={{-56,-65.8333},{-46,
           -65.8333},{-46,-76},{-41,-76}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
   connect(gENROE.SPEED, pSS2B.V_S1) annotation (Line(points={{-58,14},{-44,14},
-          {-44,30},{-158,30},{-158,-22},{-156,-22}},color={0,0,127}));
-  connect(gENROE.PELEC, pSS2B.V_S2) annotation (Line(points={{-58,6},{-46,6},{-46,
-          -30},{-158,-30},{-158,-26},{-156,-26}}, color={0,0,127}));
-  connect(pSS2B.VOTHSG, eSST1A.VOTHSG2) annotation (Line(points={{-119.4,-24},{
-          -82,-24},{-44,-24},{-44,-62.5},{-56,-62.5}}, color={0,0,127}));
+          {-44,30},{-158,30},{-158,-22},{-155.432,-22}},
+                                                    color={0,0,127}));
+  connect(gENROE.PELEC, pSS2B.V_S2) annotation (Line(points={{-58,6},{-46,6},{
+          -46,-30},{-158,-30},{-158,-26},{-155.432,-26}},
+                                                  color={0,0,127}));
+  connect(pSS2B.VOTHSG, eSST1A.VOTHSG2) annotation (Line(points={{-119.432,-24},
+          {-119.432,-24},{-44,-24},{-44,-62.5},{-56,-62.5}},
+                                                       color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end PSS2B;

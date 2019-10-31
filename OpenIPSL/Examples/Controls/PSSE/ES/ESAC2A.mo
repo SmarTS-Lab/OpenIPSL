@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   OpenIPSL.Electrical.Machines.PSSE.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -55,7 +55,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, eSAC2A.XADIFD) annotation (Line(
-      points={{-78.88,-12.5},{-56,-12.5},{-56,-53.3889},{-74,-53.3889}},
+      points={{-78.88,-12.5},{-56,-12.5},{-56,-69.4889},{-124.75,-69.4889}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.VOEL, const4.y) annotation (Line(

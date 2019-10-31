@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESDC2A "SMIB system with one load and GENROE model"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,
     Tppd0=0.07,

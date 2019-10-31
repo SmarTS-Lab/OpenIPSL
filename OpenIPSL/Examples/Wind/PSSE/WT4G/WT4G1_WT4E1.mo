@@ -31,7 +31,7 @@ model WT4G1_WT4E1
     angle_0=A1,
     R_a=Zr,
     X_d=Zi,
-    M_b=100,
+    M_b=100000000,
     P_0=(P1)*1e6,
     Q_0=(Q1)*1e6,
     v_0=V1) annotation (Placement(transformation(extent={{102,-12},{90,12}})));

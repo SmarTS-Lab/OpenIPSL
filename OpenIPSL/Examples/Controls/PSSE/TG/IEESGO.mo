@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
 model IEESGO
   "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   OpenIPSL.Electrical.Machines.PSSE.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -67,18 +67,24 @@ equation
       points={{-69,-5},{-69,-24.2222},{-62,-24.2222}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-98.9,-35.7778},{-104,
-          -35.7778},{-104,-5},{-92,-5}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-69,-3},{-44,-3},
-          {-44,-35.7778},{-62,-35.7778}}, color={0,0,127}));
-  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-69.2,-9},{-52,
-          -9},{-52,-29.5556},{-62,-29.5556}}, color={0,0,127}));
-  connect(iEESGO.SPEED, generator.SPEED) annotation (Line(points={{-64.8,35},{-62,
-          35},{-62,7},{-69,7}}, color={0,0,127}));
-  connect(iEESGO.PMECH, generator.PMECH) annotation (Line(points={{-97,32},{-104,
-          32},{-104,5},{-92,5}}, color={0,0,127}));
-  connect(iEESGO.PMECH0, generator.PMECH0) annotation (Line(points={{-64.8,28},
-          {-62,28},{-62,5},{-69,5}},color={0,0,127}));
+  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-98.9,-35.7778},{
+          -104,-35.7778},{-104,-5},{-92,-5}},
+                                         color={0,0,127}));
+  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-69,-3},{-44,
+          -3},{-44,-35.7778},{-62,-35.7778}},
+                                          color={0,0,127}));
+  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-69.2,-9},{
+          -52,-9},{-52,-18.3556},{-88.1,-18.3556}},
+                                              color={0,0,127}));
+  connect(iEESGO.SPEED, generator.SPEED) annotation (Line(points={{-65.3333,
+          35.6667},{-62,35.6667},{-62,7},{-69,7}},
+                                color={0,0,127}));
+  connect(iEESGO.PMECH, generator.PMECH) annotation (Line(points={{-96.6667,
+          31.7778},{-104,31.7778},{-104,5},{-92,5}},
+                                 color={0,0,127}));
+  connect(iEESGO.PMECH0, generator.PMECH0) annotation (Line(points={{-65.3333,
+          27.1111},{-62,27.1111},{-62,5},{-69,5}},
+                                    color={0,0,127}));
   connect(generator.p, GEN1.p)
     annotation (Line(points={{-70,0},{-70,0},{-40,0}}, color={0,0,255}));
   annotation (

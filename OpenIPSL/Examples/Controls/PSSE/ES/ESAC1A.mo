@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESAC1A "SMIB system with one load and GENROE model"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,
     Tppd0=0.07,
@@ -58,10 +58,12 @@ equation
           -53},{-38.5,-53}}, color={0,0,127}));
   connect(gENROE.ETERM, eSAC1A.ECOMP) annotation (Line(points={{-58,-6},{-32,-6},
           {-32,-46.8889},{-52,-46.8889}}, color={0,0,127}));
-  connect(eSAC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-52,-54.1111},{-52,
-          -62},{-46,-62},{-46,-10},{-58,-10}}, color={0,0,127}));
-  connect(gENROE.XADIFD, eSAC1A.XADIFD) annotation (Line(points={{-58.4,-18},{-44,
-          -18},{-44,-64},{-52,-64},{-52,-50.7778}}, color={0,0,127}));
+  connect(eSAC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-52,-54.1111},{
+          -52,-62},{-46,-62},{-46,-10},{-58,-10}},
+                                               color={0,0,127}));
+  connect(gENROE.XADIFD, eSAC1A.XADIFD) annotation (Line(points={{-58.4,-18},{
+          -44,-18},{-44,-64},{-91.15,-64},{-91.15,-57.7778}},
+                                                    color={0,0,127}));
   connect(eSAC1A.EFD, gENROE.EFD) annotation (Line(points={{-107.35,-46.8889},{
           -110,-46.8889},{-110,-10},{-104,-10}}, color={0,0,127}));
   connect(const1.y, eSAC1A.VUEL) annotation (Line(points={{-38.5,-75},{-61.45,-75},

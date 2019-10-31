@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.PSS;
 model STAB3
   "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   OpenIPSL.Electrical.Machines.PSSE.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -57,19 +57,24 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-76.88,-10.7},
-          {-70,-10.7},{-70,-31.5556},{-76,-31.5556}}, color={0,0,127}));
+          {-70,-10.7},{-70,-20.3556},{-102.1,-20.3556}},
+                                                      color={0,0,127}));
   connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-76,-37.7778},
           {-66,-37.7778},{-66,-2.9},{-76.6,-2.9}},color={0,0,127}));
   connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-76.6,10.1},{
-          -58,10.1},{-58,23},{-64.475,23}}, color={0,0,127}));
+          -58,10.1},{-58,20.6667},{-65.5833,20.6667}},
+                                            color={0,0,127}));
   connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-76.6,7.5},
-          {-64,7.5},{-64,10},{-48,10},{-48,37},{-64.475,37}},color={0,0,127}));
-  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-102.95,30},{
-          -112,30},{-112,7.5},{-108.8,7.5}}, color={0,0,127}));
+          {-64,7.5},{-64,10},{-48,10},{-48,37.7778},{-65.5833,37.7778}},
+                                                             color={0,0,127}));
+  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-102.792,
+          28.4444},{-112,28.4444},{-112,7.5},{-108.8,7.5}},
+                                             color={0,0,127}));
   connect(generator.EFD, SCRX.EFD) annotation (Line(points={{-108.8,-5.5},{-116,
           -5.5},{-116,-37.7778},{-112.9,-37.7778}}, color={0,0,127}));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-76,-45.7778},{-74,-45.7778},
-          {-74,-36},{-71.67,-36},{-71.67,-34},{-70.2,-34}}, color={0,0,127}));
+  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-76,-45.7778},{-74,
+          -45.7778},{-74,-36},{-71.67,-36},{-71.67,-34},{-70.2,-34}},
+                                                            color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-78,1},{-58.3,1},{-58.3,
           0},{-40,0}}, color={0,0,255}));
   annotation (

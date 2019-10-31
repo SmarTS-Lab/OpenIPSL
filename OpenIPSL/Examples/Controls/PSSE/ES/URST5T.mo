@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model URST5T "SMIB model example of GENROU with Excitation System URST5T"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   OpenIPSL.Electrical.Machines.PSSE.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -55,7 +55,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, uRST5T.XADIFD) annotation (Line(
-      points={{-74.88,-14.3},{-74.88,-32.7778},{-56,-32.7778}},
+      points={{-74.88,-14.3},{-74.88,-39.7778},{-40.05,-39.7778}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, uRST5T.EFD0) annotation (Line(

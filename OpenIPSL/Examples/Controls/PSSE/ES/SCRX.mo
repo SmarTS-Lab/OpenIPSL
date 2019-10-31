@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model SCRX "SMIB model example of GENROU with Excitation System EXST1"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial(gENCLS(M_b=100000000));
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROE(
@@ -43,20 +43,23 @@ model SCRX "SMIB model example of GENROU with Excitation System EXST1"
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-116,10},{-116,
           10},{-116,26},{-62,26},{-62,10},{-70,10}}, color={0,0,127}));
-  connect(sCRX.EFD, gENROE.EFD) annotation (Line(points={{-108.85,-42.4444},{-116,-42.4444},{-116,-10},{-116,-10}},
+  connect(sCRX.EFD, gENROE.EFD) annotation (Line(points={{-108.85,-42.4444},{
+          -116,-42.4444},{-116,-10},{-116,-10}},
                                             color={0,0,127}));
-  connect(gENROE.ETERM, sCRX.ECOMP) annotation (Line(points={{-70,-6},{-66,-6},{-66,-42.4444},{-74,-42.4444}},
-                                         color={0,0,127}));
-  connect(const.y, sCRX.VOTHSG) annotation (Line(points={{-56.4,-36},{-74,-36},{-74,-35.4444}},
-                          color={0,0,127}));
-  connect(sCRX.VOEL, sCRX.VOTHSG) annotation (Line(points={{-85.05,-58},{-70,-58},{-70,-36},{-74,-36},{-74,-35.4444}},
+  connect(gENROE.ETERM, sCRX.ECOMP) annotation (Line(points={{-70,-6},{-66,-6},
+          {-66,-42.4444},{-74,-42.4444}},color={0,0,127}));
+  connect(const.y, sCRX.VOTHSG) annotation (Line(points={{-56.4,-36},{-74,-36},
+          {-74,-35.4444}},color={0,0,127}));
+  connect(sCRX.VOEL, sCRX.VOTHSG) annotation (Line(points={{-85.05,-58},{-70,
+          -58},{-70,-36},{-74,-36},{-74,-35.4444}},
                                                color={0,0,127}));
-  connect(sCRX.VUEL, sCRX.VOTHSG) annotation (Line(points={{-79.95,-58},{-70,-58},{-70,-36},{-74,-36},{-74,-35.4444}},
+  connect(sCRX.VUEL, sCRX.VOTHSG) annotation (Line(points={{-79.95,-58},{-70,
+          -58},{-70,-36},{-74,-36},{-74,-35.4444}},
                                                color={0,0,127}));
-  connect(sCRX.XADIFD, gENROE.XADIFD) annotation (Line(points={{-98.65,-57.6889},{-64,-57.6889},{-64,-18},{-70.4,-18}},
-                                                color={0,0,127}));
-  connect(sCRX.EFD0, gENROE.EFD0) annotation (Line(points={{-74,-52.5556},{-62,-52.5556},{-62,-10},{-70,-10}},
-                                          color={0,0,127}));
+  connect(sCRX.XADIFD, gENROE.XADIFD) annotation (Line(points={{-98.65,-57.6889},
+          {-64,-57.6889},{-64,-18},{-70.4,-18}},color={0,0,127}));
+  connect(sCRX.EFD0, gENROE.EFD0) annotation (Line(points={{-74,-52.5556},{-62,
+          -52.5556},{-62,-10},{-70,-10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-72,0},{-72,0},{-40,0}}, color={0,0,255}));
   annotation (
