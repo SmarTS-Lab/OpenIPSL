@@ -7,8 +7,8 @@ model WT3E1
       choice=1 "Reactive power control",
       choice=-1 "Constant PF control"));
   parameter Integer VLRFLG
-    "0 Bypass V control; 1 WT3G1 Eqcmd limits;2 WT3G2 Eqcmd limits" annotation
-    (choices(
+    "0 Bypass V control; 1 WT3G1 Eqcmd limits;2 WT3G2 Eqcmd limits" annotation (
+     choices(
       choice=0 "Disable terminal voltage control",
       choice=1 "Enable terminal voltage control ",
       choice=2 "Fixed limits for Eqcmd"));
@@ -59,8 +59,8 @@ model WT3E1
         rotation=180,
         origin={-190,-40})));
   Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(
-        transformation(extent={{180,-70},{200,-50}}), iconTransformation(extent
-          ={{-200,40},{-220,60}})));
+        transformation(extent={{180,-70},{200,-50}}), iconTransformation(extent=
+           {{-200,40},{-220,60}})));
   Modelica.Blocks.Nonlinear.Limiter Qord(uMin=QMN, uMax=QMX)
     annotation (Placement(transformation(extent={{12,30},{32,50}})));
   Modelica.Blocks.Interfaces.RealInput Qelec annotation (Placement(
@@ -476,8 +476,8 @@ protected
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
               textString="Active Power Control")}), Icon(coordinateSystem(
-            extent={{-200,-100},{200,100}}, preserveAspectRatio=true), graphics
-          ={Rectangle(
+            extent={{-200,-100},{200,100}}, preserveAspectRatio=true), graphics=
+           {Rectangle(
               extent={{-200,100},{200,-100}},
               lineColor={28,108,200},
               fillColor={255,255,255},

@@ -129,8 +129,8 @@ initial equation
 equation
   connect(rectifierCommutationVoltageDrop.XADIFD, XADIFD) annotation (Line(
         points={{180,-11},{180,-30.5},{160,-30.5},{160,-48}}, color={0,0,127}));
-  connect(rotatingExciterWithDemagnetizationLimited.XADIFD, XADIFD) annotation
-    (Line(points={{140,-11.25},{140,-30},{160,-30},{160,-48}}, color={0,0,127}));
+  connect(rotatingExciterWithDemagnetizationLimited.XADIFD, XADIFD) annotation (
+     Line(points={{140,-11.25},{140,-30},{160,-30},{160,-48}}, color={0,0,127}));
   connect(leadLag.y, imLimitedSimpleLag.u)
     annotation (Line(points={{-29,0},{-29,0},{-22,0}}, color={0,0,127}));
   connect(add3_1.y, leadLag.u)
@@ -185,7 +185,6 @@ equation
     annotation (Line(points={{41,0},{44.625,0},{44.625,3}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-184,-62},{-114,-82}},

@@ -27,8 +27,8 @@ explicitly defined via parameters n1, n2, n3 and n4.
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
         grid={1,1}), graphics={Line(points={{8,0},{102,0}}, color={0,0,127}),
-          Line(points={{-100,90},{-60,90},{-3,4}}, color={0,0,127}),Line(points
-          ={{-100,30},{-60,30},{-9,0}}, color={0,0,127}),Line(points={{-99,-30},
+          Line(points={{-100,90},{-60,90},{-3,4}}, color={0,0,127}),Line(points=
+           {{-100,30},{-60,30},{-9,0}}, color={0,0,127}),Line(points={{-99,-30},
           {-59,-30},{-10,-5}}, color={0,0,127}),Line(points={{-100,-90},{-60,-90},
           {-5,-6}}, color={0,0,127}),Ellipse(
           extent={{-15,15},{15,-15}},

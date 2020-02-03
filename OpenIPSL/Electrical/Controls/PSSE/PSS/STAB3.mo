@@ -59,8 +59,8 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,
             40}})),
     Icon(coordinateSystem(extent={{-100,-40},{100,40}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor
-          ={28,108,200}),Text(
+            false), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor=
+           {28,108,200}),Text(
           extent={{-70,20},{70,-20}},
           lineColor={28,108,200},
           textString="STAB3"),Text(

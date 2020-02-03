@@ -112,7 +112,6 @@ equation
           {120,-50},{120,0},{138.75,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-200,-200},{200,160}}), graphics={Text(

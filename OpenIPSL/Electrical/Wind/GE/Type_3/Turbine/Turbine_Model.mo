@@ -52,8 +52,8 @@ model Turbine_Model
       iconTransformation(
         origin={2.0,-7.5581},
         extent={{-102.0,54.0},{-62.0,94.0}})));
-  Modelica.Blocks.Interfaces.RealOutput Pord "Active power command" annotation
-    (Placement(
+  Modelica.Blocks.Interfaces.RealOutput Pord "Active power command" annotation (
+     Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
         origin={128.0,-75.6493}),
@@ -180,13 +180,11 @@ equation
   connect(Wind_Speed, wind_Power_Model1.Wind_Speed) annotation (Line(
       origin={-150.1058,44.9084},
       points={{-19.8942,0.0916},{4.9606,0.0916},{4.9606,-0.09163},{9.9731,-0.09163}},
-
       color={0,0,127}));
 
   connect(integrator1.y, add2.u1) annotation (Line(
       origin={-50.6823,74.6186},
       points={{-5.047,10.3814},{0.6823,10.3814},{0.6823,-10.3814},{3.6823,-10.3814}},
-
       color={0,0,127}));
 
   connect(add1.u2, integrator1.y) annotation (Line(
@@ -205,7 +203,6 @@ equation
   connect(const.y, add4.u1) annotation (Line(
       origin={-128.3813,-14.5849},
       points={{-8.144,9.5849},{-1.6187,9.5849},{-1.6187,9.5849},{11.3813,8.7548}},
-
       color={0,0,127}));
 
   connect(add4.u2, limIntegrator2.y) annotation (Line(
@@ -233,7 +230,6 @@ equation
   connect(product1.y, add8.u1) annotation (Line(
       origin={34.2519,-67.0},
       points={{-0.9918,-3.0},{7.2964,-3.2002},{7.2964,-3.2002},{10.2964,-3.2002}},
-
       color={0,0,127}));
 
   connect(limIntegrator2.y, add8.u2) annotation (Line(
@@ -248,13 +244,11 @@ equation
   connect(integrator4.y, add6.u2) annotation (Line(
       origin={-20.9188,-97.4105},
       points={{-3.0812,-9.4106},{0.6938,-9.4106},{0.6938,9.4105},{1.6938,9.4105}},
-
       color={0,0,127}));
 
   connect(add31.u2, integrator2.y) annotation (Line(
       origin={10.196,54.0018},
       points={{1.2005,10.9982},{-0.0668,10.9982},{-0.0668,-10.9982},{-1.0668,-10.9982}},
-
       color={0,0,127}));
 
   connect(add3.y, add31.u3) annotation (Line(
@@ -278,7 +272,6 @@ equation
   connect(Gain_Kptrq.y, add6.u1) annotation (Line(
       origin={-20.9188,-75.7105},
       points={{-3.0812,0.2895},{0.6938,0.2895},{0.6938,-0.2895},{1.6938,-0.2895}},
-
       color={0,0,127}));
 
   connect(wind_Power_Model1.Theta, limIntegrator1.y) annotation (Line(
@@ -306,7 +299,6 @@ equation
   connect(integrator3.y, add3.u2) annotation (Line(
       origin={-20.9188,-31.8805},
       points={{-3.0812,-0.8804},{0.6937,-0.8804},{0.6937,0.8805},{1.6938,0.8805}},
-
       color={0,0,127}));
 
   connect(add4.y, Gain_Kpc.u) annotation (Line(
@@ -321,13 +313,11 @@ equation
   connect(Gain_Kpp.y, add31.u1) annotation (Line(
       origin={8.0797,73.0257},
       points={{-3.9505,0.0256},{0.3168,0.0256},{0.3168,-0.0257},{3.3168,-0.0257}},
-
       color={0,0,127}));
 
   connect(add2.y, Gain_Kpp.u) annotation (Line(
       origin={-20.6531,65.6443},
       points={{-3.3469,-7.4071},{0.7823,-7.4071},{0.7823,7.407},{1.7823,7.407}},
-
       color={0,0,127}));
 
   connect(Change_Base.y, rotor_Model1.Pe) annotation (Line(

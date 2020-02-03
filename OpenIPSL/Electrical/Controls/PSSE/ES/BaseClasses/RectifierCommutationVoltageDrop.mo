@@ -41,7 +41,7 @@ equation
   connect(product1.u1, division.u2) annotation (Line(points={{58,6},{48,6},{48,
           20},{-80,20},{-80,-6},{-42,-6}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(), graphics={Rectangle(
+    Icon(coordinateSystem,   graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},

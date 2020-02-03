@@ -7,8 +7,8 @@ model SoftPMU "model of a PMU measuring phasors on a line"
   import Modelica.ComplexMath.j;
   import Modelica.Constants.pi;
   OpenIPSL.Interfaces.PwPin p
-    "the positive direction of the current is from connector p ..." annotation
-    (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(
+    "the positive direction of the current is from connector p ..." annotation (
+     Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(
           extent={{-80,-10},{-60,10}})));
   OpenIPSL.Interfaces.PwPin n "... and to connector n" annotation (Placement(
         transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{
@@ -51,8 +51,8 @@ equation
             34}},
           lineColor={28,108,200},
           fillPattern=FillPattern.Solid,
-          fillColor={28,108,200}),Ellipse(extent={{-60,62},{62,-60}}, lineColor
-          ={28,108,200}),Text(
+          fillColor={28,108,200}),Ellipse(extent={{-60,62},{62,-60}}, lineColor=
+           {28,108,200}),Text(
           extent={{-36,-26},{44,-48}},
           lineColor={28,108,200},
           fillColor={85,170,255},

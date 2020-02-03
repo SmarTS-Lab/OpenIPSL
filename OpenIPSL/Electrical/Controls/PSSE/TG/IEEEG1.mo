@@ -58,11 +58,11 @@ model IEEEG1
         rotation=-90,
         origin={130,-16})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_HP
-    "Turbine mechanical power (pu)" annotation (Placement(transformation(extent
-          ={{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
+    "Turbine mechanical power (pu)" annotation (Placement(transformation(extent=
+           {{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_LP
-    "Turbine mechanical power (pu)" annotation (Placement(transformation(extent
-          ={{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
+    "Turbine mechanical power (pu)" annotation (Placement(transformation(extent=
+           {{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
   parameter Real P0 "Power reference of the governor";
   parameter Real K=20 "Governor gain, 1/R (pu)";
   parameter Real T_1=1e-8 "Control time constant (s)";

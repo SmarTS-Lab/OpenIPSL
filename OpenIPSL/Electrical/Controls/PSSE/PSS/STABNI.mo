@@ -68,8 +68,8 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,
             40}})),
     Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor
-          ={28,108,200}),Text(
+            false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor=
+           {28,108,200}),Text(
           extent={{-64,20},{56,-20}},
           lineColor={28,108,200},
           textString="STABNI"),Text(

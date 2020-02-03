@@ -10,8 +10,8 @@ model STAB2A
   parameter Real T_5=1;
   parameter Real H_LIM=5;
   input Modelica.Blocks.Interfaces.RealInput PELEC
-    "Machine electrical power (pu)" annotation (Placement(transformation(extent
-          ={{-109,-6},{-98,10}}), iconTransformation(extent={{-107,-10},{-87,10}})));
+    "Machine electrical power (pu)" annotation (Placement(transformation(extent=
+           {{-109,-6},{-98,10}}), iconTransformation(extent={{-107,-10},{-87,10}})));
   output Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal"
     annotation (Placement(transformation(extent={{120,-10},{140,10}}),
         iconTransformation(extent={{120,-10},{140,10}})));

@@ -104,7 +104,6 @@ equation
           -20},{-80,-8},{-62,-8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
         graphics={Text(
           extent={{-100,154},{100,94}},

@@ -46,7 +46,6 @@ equation
           origin={-0.1255,0},
           extent={{-99.8745,-96.8769},{99.8745,96.877}},
           fileName="modelica://OpenIPSL/Resources/Images/WindGenerator.png")}),
-
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,

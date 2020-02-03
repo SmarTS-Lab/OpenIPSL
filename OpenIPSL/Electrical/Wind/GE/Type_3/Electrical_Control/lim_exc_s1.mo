@@ -33,8 +33,7 @@ model lim_exc_s1
         extent={{-140.0,40.0},{-100.0,80.0}})));
 equation
   if typpe == 1 then
-    if Efd >= Vt + xiqmax and Vref >= 0 or Efd <= Vt + xiqmin and Vref <= 0
-         then
+    if Efd >= Vt + xiqmax and Vref >= 0 or Efd <= Vt + xiqmin and Vref <= 0 then
       y = 0;
     else
       y = Vref;

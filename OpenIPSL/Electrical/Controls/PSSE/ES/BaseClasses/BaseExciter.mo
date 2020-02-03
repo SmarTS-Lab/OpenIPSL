@@ -31,8 +31,8 @@ partial model BaseExciter
   Modelica.Blocks.Interfaces.RealInput ECOMP annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
-        origin={-200,0}), iconTransformation(extent={{-10,-10},{10,10}}, origin
-          ={-200,0})));
+        origin={-200,0}), iconTransformation(extent={{-10,-10},{10,10}}, origin=
+           {-200,0})));
   Modelica.Blocks.Sources.Constant VoltageReference(k=V_REF)
     annotation (Placement(transformation(extent={{-170,40},{-150,60}})));
   Modelica.Blocks.Math.Add DiffV(k2=-1)

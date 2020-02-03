@@ -108,13 +108,11 @@ equation
   connect(const.y, lim_exc_s12.Efd) annotation (Line(
       origin={43.2488,91.1761},
       points={{-12.7895,12.7674},{3.2632,12.7674},{3.2632,-12.7674},{6.2631,-12.7674}},
-
       color={0,0,127}));
 
   connect(integrator1.y, lim_exc_s12.Vref) annotation (Line(
       origin={42.3527,72.7755},
       points={{-15.4777,0.1739},{4.1592,0.1739},{4.1592,-0.17397},{7.1592,-0.17397}},
-
       color={0,0,127}));
 
   connect(lim_exc_s11.Efd, lim_exc_s12.y) annotation (Line(
@@ -131,13 +129,11 @@ equation
   connect(lim_exc_s12.y, Efd) annotation (Line(
       origin={164.128,72.1493},
       points={{-91.6161,0.2594},{22.872,0.2594},{22.872,-0.2594},{45.872,-0.2594}},
-
       color={0,0,127}));
 
   connect(gain1.y, lim_exc_s11.Vref) annotation (Line(
       origin={-31.2336,73.4238},
       points={{-9.5491,-0.0964},{2.183,-0.0964},{2.183,0.09643},{5.183,0.09643}},
-
       color={0,0,127}));
 
   connect(lim_exc_s11.y, integrator1.u) annotation (Line(
@@ -157,7 +153,6 @@ equation
   connect(Qord, limiter2.u) annotation (Line(
       origin={-207.6347,47.8557},
       points={{-22.3653,0.5669},{6.4551,0.567},{6.4551,-0.567},{9.4551,-0.567}},
-
       color={0,0,127}));
 
   connect(limiter1.y, Ipcmd) annotation (Line(
@@ -172,25 +167,21 @@ equation
       origin={-162.3359,-38.3305},
       points={{70.3359,105.3642},{64.818,105.3642},{64.818,-15.7201},{-32.3219,
           -15.7201},{-32.3219,-58.8094},{-67.6641,-58.8094},{-67.6641,-61.6695}},
-
       color={0,0,127}));
 
   connect(Pord, division1.u1) annotation (Line(
       origin={-193.0156,-68.3185},
       points={{-36.9844,5.6816},{11.3281,5.6815},{11.3281,-5.6815},{14.3281,-5.6815}},
-
       color={0,0,127}));
 
   connect(add2.y, gain1.u) annotation (Line(
       origin={-65.5871,73.1805},
       points={{-3.4129,-0.1468},{0.8043,-0.1468},{0.8043,0.1469},{1.8044,0.1469}},
-
       color={0,0,127}));
 
   connect(limIntegrator1.y, add2.u1) annotation (Line(
       origin={-96.4784,79.5168},
       points={{-7.4353,0.4832},{1.4784,0.4832},{1.4784,-0.4831},{4.4784,-0.4831}},
-
       color={0,0,127}));
 
   connect(add1.y, limIntegrator1.u) annotation (Line(

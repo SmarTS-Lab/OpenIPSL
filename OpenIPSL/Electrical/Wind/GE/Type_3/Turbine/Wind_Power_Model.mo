@@ -93,13 +93,11 @@ equation
   connect(Wind_Speed, product3.u1) annotation (Line(
       origin={-139.5109,5.7536},
       points={{-10.4891,21.7537},{16.75,21.7537},{16.75,-19.7536},{62.5109,-19.7536}},
-
       color={0,0,127}));
 
   connect(Wind_Speed, product3.u2) annotation (Line(
       origin={-139.2437,-0.0},
       points={{-10.7563,27.5073},{16.75,26.7536},{16.75,-26.7536},{62.2437,-26.0}},
-
       color={0,0,127}));
 
   connect(Theta, cp_function1.Theta) annotation (Line(
@@ -109,7 +107,6 @@ equation
   connect(product4.y, Gain_wndtge_kp.u) annotation (Line(
       origin={94.2128,-0.8018},
       points={{-3.2128,-0.8017},{0.7376,-0.8017},{0.7376,0.8018},{1.7375,0.8018}},
-
       color={0,0,127}));
 
   connect(Gain_wndtge_kp.y, Pm) annotation (Line(
@@ -127,19 +124,16 @@ equation
   connect(limiter2.y, cp_function1.Lambda) annotation (Line(
       origin={8.9265,68.7628},
       points={{-21.2206,4.3664},{6.0735,4.3664},{6.0735,-4.3663},{9.0735,-4.3663}},
-
       color={0,0,127}));
 
   connect(Gain_KI.y, limiter2.u) annotation (Line(
       origin={-38.9706,74.0646},
       points={{-5.0294,0.9354},{0.6765,0.9354},{0.6765,-0.9354},{3.6765,-0.9354}},
-
       color={0,0,127}));
 
   connect(product3.y, product2.u2) annotation (Line(
       origin={-44.554,-16.3018},
       points={{-9.446,-3.6982},{2.1487,-3.6982},{2.1487,3.6983},{5.1487,3.6983}},
-
       color={0,0,127}));
 
   annotation (

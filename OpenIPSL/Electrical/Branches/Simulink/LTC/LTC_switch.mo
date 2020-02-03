@@ -7,8 +7,8 @@ model LTC_switch
         transformation(extent={{-68,46},{-48,66}}), iconTransformation(extent={
             {-80,32},{-48,66}})));
   Modelica.Blocks.Interfaces.RealInput Normalin annotation (Placement(
-        transformation(extent={{-68,-58},{-48,-38}}), iconTransformation(extent
-          ={{-78,-68},{-48,-38}})));
+        transformation(extent={{-68,-58},{-48,-38}}), iconTransformation(extent=
+           {{-78,-68},{-48,-38}})));
   Modelica.Blocks.Interfaces.RealOutput r annotation (Placement(transformation(
           extent={{54,0},{74,20}}), iconTransformation(extent={{56,-8},{86,24}})));
 equation

@@ -107,7 +107,6 @@ equation
   connect(fixedDelay2.y, fixedDelay4.u) annotation (Line(
       origin={-68.1643,-25.8887},
       points={{-27.4929,0.8887},{8.1643,0.8887},{8.1643,-0.8887},{11.1643,-0.8887}},
-
       color={0,0,127}));
 
   connect(Iarray, fixedDelay2.u) annotation (Line(
@@ -122,7 +121,6 @@ equation
   connect(fixedDelay4.y, add2.u2) annotation (Line(
       origin={-20.4777,-28.8887},
       points={{-13.5223,2.1113},{3.5074,2.1113},{3.5074,-2.1113},{6.5074,-2.1113}},
-
       color={0,0,127}));
 
   connect(add3.y, Vdref) annotation (Line(

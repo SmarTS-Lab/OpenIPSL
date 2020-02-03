@@ -391,7 +391,6 @@ equation
       smooth=Smooth.None));
   connect(SPEED, flag10.speed) annotation (Line(
       points={{-328,120},{-258,120},{-258,-230},{128,-230},{128,-164},{128.2,-164}},
-
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -413,7 +412,6 @@ equation
       smooth=Smooth.None));
   connect(product1.u1, add4.u1) annotation (Line(
       points={{62,104},{126,104},{126,-30},{134,-30},{134,-31.2},{146.4,-31.2}},
-
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -496,7 +494,6 @@ equation
       smooth=Smooth.None));
   connect(LoadlimiterPI2.u1, GovernorPID.u3) annotation (Line(
       points={{-5,-114},{0,-114},{0,-104},{-98,-104},{-98,-85.8},{-62.2,-85.8}},
-
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -530,7 +527,6 @@ equation
       smooth=Smooth.None));
   connect(add8.u2, product.u1) annotation (Line(
       points={{40.8,-61.6},{40,-61.6},{40,-90},{120,-90},{120,-56.4},{128.8,-56.4}},
-
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -544,7 +540,6 @@ equation
       smooth=Smooth.None));
   connect(rSELECT.y, r.u) annotation (Line(
       points={{-205.56,-114.5},{-205.72,-114.5},{-205.72,-109.4},{-207,-109.4}},
-
       color={0,0,127},
       smooth=Smooth.None));
 

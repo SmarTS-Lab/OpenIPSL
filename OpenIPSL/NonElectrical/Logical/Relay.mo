@@ -34,8 +34,8 @@ equation
           extent={{-12,36},{12,24}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(points={{-12,30},{-28,30}}, color
-          ={0,0,255}),Line(points={{28,30},{12,30}}, color={0,0,255}),Line(
+          fillPattern=FillPattern.Solid),Line(points={{-12,30},{-28,30}}, color=
+           {0,0,255}),Line(points={{28,30},{12,30}}, color={0,0,255}),Line(
           points={{0,24},{0,-10}},
           color={0,0,255},
           pattern=LinePattern.Dash),Text(
