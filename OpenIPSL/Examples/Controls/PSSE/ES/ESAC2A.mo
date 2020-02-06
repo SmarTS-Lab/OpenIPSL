@@ -44,7 +44,7 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     V_FEMAX=10)
     annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
 equation
-  connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
+  connect(eSAC2A.EFD0, gENROU.EFD0) annotation (Line(
       points={{-74,-61.0556},{-60,-61.0556},{-60,-6.5},{-78.6,-6.5}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -52,7 +52,7 @@ equation
       points={{-46.4,-26},{-63.25,-26},{-63.25,-32.9444},{-74,-32.9444}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.XADIFD, eSAC2A.XADIFD) annotation (Line(
+  connect(gENROU.XADIFD, eSAC2A.XADIFD) annotation (Line(
       points={{-78.88,-12.5},{-56,-12.5},{-56,-53.3889},{-74,-53.3889}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -64,16 +64,16 @@ equation
       points={{-46.5,-61},{-54,-61},{-54,-70},{-86.25,-70}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.ECOMP, generator.ETERM) annotation (Line(points={{-74,-44.4444},
+  connect(eSAC2A.ECOMP, gENROU.ETERM) annotation (Line(points={{-74,-44.4444},
           {-72,-44.4444},{-72,-44},{-68,-44},{-68,-3.5},{-78.6,-3.5}}, color={0,
           0,127}));
-  connect(generator.PMECH0, generator.PMECH) annotation (Line(
+  connect(gENROU.PMECH0, gENROU.PMECH) annotation (Line(
       points={{-78.6,8.5},{-74,8.5},{-74,20},{-110,20},{-110,8.5},{-110.8,8.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-44.4444},
+  connect(eSAC2A.EFD, gENROU.EFD) annotation (Line(points={{-145.75,-44.4444},
           {-150,-44.4444},{-150,-6.5},{-110.8,-6.5}}, color={0,0,127}));
-  connect(generator.p, GEN1.p) annotation (Line(points={{-80,1},{-58.3,1},{-58.3,
+  connect(gENROU.p, GEN1.p) annotation (Line(points={{-80,1},{-58.3,1},{-58.3,
           0},{-40,0}}, color={0,0,255}));
   annotation (
 experiment(StopTime=10));
