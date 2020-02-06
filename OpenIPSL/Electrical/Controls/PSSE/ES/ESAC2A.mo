@@ -202,7 +202,7 @@ equation
           textString="XADIFD"),Text(
           extent={{-100,152},{100,92}},
           lineColor={28,108,200},
-          textString="ESAC1A")}),
+          textString="ESAC2A")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
