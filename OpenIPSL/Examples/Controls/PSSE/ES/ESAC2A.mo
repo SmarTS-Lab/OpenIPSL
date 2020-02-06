@@ -64,15 +64,13 @@ equation
       points={{-46.5,-61},{-54,-61},{-54,-70},{-86.25,-70}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.PELEC, eSAC2A.ECOMP) annotation (Line(
-      points={{-78.6,5.5},{-64,5.5},{-64,-44.4444},{-74,-44.4444}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(eSAC2A.ECOMP, generator.ETERM) annotation (Line(points={{-74,-44.4444},
+          {-72,-44.4444},{-72,-44},{-68,-44},{-68,-3.5},{-78.6,-3.5}}, color={0,
+          0,127}));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-78.6,8.5},{-74,8.5},{-74,20},{-110,20},{-110,8.5},{-110.8,8.5}},
       color={0,0,127},
       smooth=Smooth.None));
-
   connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-44.4444},
           {-150,-44.4444},{-150,-6.5},{-110.8,-6.5}}, color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-80,1},{-58.3,1},{-58.3,
