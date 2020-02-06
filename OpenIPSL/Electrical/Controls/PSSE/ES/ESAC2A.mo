@@ -75,7 +75,7 @@ import OpenIPSL.NonElectrical.Functions.SE;
     annotation (Placement(transformation(extent={{180,70},{160,90}})));
   Modelica.Blocks.Sources.Constant FEMAX(k=V_FEMAX)
     annotation (Placement(transformation(extent={{40,120},{60,140}})));
-  Modelica.Blocks.Math.Add DiffV1(k2=-1)
+  Modelica.Blocks.Math.Add DiffV1(k2=-K_D)
     annotation (Placement(transformation(extent={{80,120},{100,140}})));
   NonElectrical.Functions.ImSE se1(
     SE1=S_EE_1,
