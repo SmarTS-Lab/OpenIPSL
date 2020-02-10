@@ -27,8 +27,6 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
         transformation(
         extent={{-4,-4},{4,4}},
         origin={-98,-52})));
-  Modelica.Blocks.Sources.Constant const2(k=0)
-    annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   Modelica.Blocks.Sources.Constant const5(k=0) annotation (Placement(
         transformation(
         extent={{-5,-5},{5,5}},
@@ -62,7 +60,6 @@ equation
       points={{-90.6,9.5},{-70,9.5},{-70,22},{-102,22},{-102,9.5},{-122.8,9.5}},
       color={0,0,127},
       smooth=Smooth.None));
-
   connect(eSST4B.EFD, generator.EFD) annotation (Line(
       points={{-49.3,-2.88889},{-48,-2.88889},{-48,-24},{-124,-24},{-124,-7.5},
           {-122.8,-7.5}},
@@ -72,11 +69,8 @@ equation
       points={{-90.88,-14.3},{-90.88,-20},{-94,-20},{-94,-6.77778},{-78,-6.77778}},
       color={0,0,127},
       smooth=Smooth.None));
-
-  connect(generator.PELEC, eSST4B.ECOMP) annotation (Line(
-      points={{-90.6,6.1},{-68,6.1},{-68,-2.88889},{-78,-2.88889}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(eSST4B.ECOMP, generator.ETERM) annotation (Line(points={{-78,-2.88889},
+          {-82,-2.88889},{-82,-2},{-90.6,-2},{-90.6,-4.1}}, color={0,0,127}));
   connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-52.1,4.33333},{-47.5818,
           4.33333},{-47.5818,0},{-40,0}}, color={0,0,255}));
   connect(const1.y, eSST4B.VOEL) annotation (Line(points={{-56.8,-40},{-68.9,-40},
