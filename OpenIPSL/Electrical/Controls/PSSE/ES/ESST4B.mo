@@ -104,7 +104,7 @@ initial equation
   VE0 = VE;
   IN0 = K_C*Ifd0/VE0;
   if IN0 <= 0 then
-    VB0 = IN0*1;
+    VB0 = VE0*1;
   elseif IN0 > 0 and IN0 <= 0.433 then
     VB0 = VE0*(1 - 0.577*IN0);
   elseif IN0 > 0.433 and IN0 < 0.75 then

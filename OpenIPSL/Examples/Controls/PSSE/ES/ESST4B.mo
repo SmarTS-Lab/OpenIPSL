@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
   extends OpenIPSL.Examples.SMIBpartial;
-  OpenIPSL.Electrical.Machines.PSSE.GENROU generator(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
     Xppq=0.2,
     Xpp=0.2,
@@ -40,7 +40,7 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
   Modelica.Blocks.Sources.Constant const1(k=Modelica.Constants.inf)
     annotation (Placement(transformation(extent={{-40,-48},{-56,-32}})));
 equation
-  connect(generator.p, eSST4B.Gen_terminal) annotation (Line(
+  connect(gENROU.p, eSST4B.Gen_terminal) annotation (Line(
       points={{-92,1},{-66.7,1},{-66.7,4.33333},{-75.9,4.33333}},
       color={0,0,255},
       smooth=Smooth.None));
@@ -48,7 +48,7 @@ equation
       points={{-93.6,-52},{-86,-52},{-86,2.11111},{-78,2.11111}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.EFD0, eSST4B.EFD0) annotation (Line(
+  connect(geENROU.EFD0, eSST4B.EFD0) annotation (Line(
       points={{-90.6,-7.5},{-90,-7.5},{-90,-10.1111},{-78,-10.1111}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -56,20 +56,20 @@ equation
       points={{-91.5,-37},{-84,-37},{-84,-14},{-73.1,-14}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.PMECH0, generator.PMECH) annotation (Line(
+  connect(gENROU.PMECH0, gENROU.PMECH) annotation (Line(
       points={{-90.6,9.5},{-70,9.5},{-70,22},{-102,22},{-102,9.5},{-122.8,9.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSST4B.EFD, generator.EFD) annotation (Line(
+  connect(eSST4B.EFD, gENROU.EFD) annotation (Line(
       points={{-49.3,-2.88889},{-48,-2.88889},{-48,-24},{-124,-24},{-124,-7.5},
           {-122.8,-7.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.XADIFD, eSST4B.XADIFD) annotation (Line(
+  connect(gENROU.XADIFD, eSST4B.XADIFD) annotation (Line(
       points={{-90.88,-14.3},{-90.88,-20},{-94,-20},{-94,-6.77778},{-78,-6.77778}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSST4B.ECOMP, generator.ETERM) annotation (Line(points={{-78,-2.88889},
+  connect(eSST4B.ECOMP, gENROU.ETERM) annotation (Line(points={{-78,-2.88889},
           {-82,-2.88889},{-82,-2},{-90.6,-2},{-90.6,-4.1}}, color={0,0,127}));
   connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-52.1,4.33333},{-47.5818,
           4.33333},{-47.5818,0},{-40,0}}, color={0,0,255}));
