@@ -59,13 +59,13 @@ model ESST4B " IEEE type ST4B potential or compounded
   Modelica.Blocks.Continuous.LimIntegrator VM1(
     outMax=V_MMAX/K_PM,
     outMin=V_MMIN/K_PM,
-    k=K_IR,
+    k=K_IM,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=VA0)
     annotation (Placement(transformation(extent={{110,-30},{130,-10}})));
   Modelica.Blocks.Math.Gain Gain2(k=K_PM)
     annotation (Placement(transformation(extent={{110,10},{130,30}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN)
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_MMAX, uMin=V_MMIN)
     annotation (Placement(transformation(extent={{170,-10},{190,10}})));
   Modelica.Blocks.Math.Add add2
     annotation (Placement(transformation(extent={{140,-10},{160,10}})));
@@ -106,13 +106,13 @@ initial equation
   if IN0 <= 0 then
     VB0 = IN0*1;
   elseif IN0 > 0 and IN0 <= 0.433 then
-    VB0 = IN0*(1 - 0.577*IN0);
+    VB0 = VE0*(1 - 0.577*IN0);
   elseif IN0 > 0.433 and IN0 < 0.75 then
-    VB0 = IN0*sqrt(0.75 - IN0^2);
+    VB0 = VE0*sqrt(0.75 - IN0^2);
   elseif IN0 >= 0.75 and IN0 <= 1 then
-    VB0 = IN0*1.732*(1 - IN0);
+    VB0 = VE0*1.732*(1 - IN0);
   else
-    VB0 = IN0*0;
+    VB0 = VE0*0;
   end if;
   VA0 = Efd0/VB0;
   VR0 = Efd0*K_G;
