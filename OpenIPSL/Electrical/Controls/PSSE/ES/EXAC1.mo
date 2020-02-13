@@ -143,7 +143,7 @@ equation
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td>EXAC2, PSS/E Manual</td>
+<td>EXAC1, PSS/E Manual</td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
