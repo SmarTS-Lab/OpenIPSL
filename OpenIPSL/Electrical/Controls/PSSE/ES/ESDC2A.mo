@@ -142,7 +142,7 @@ equation
         grid={2,2}), graphics={Text(
           extent={{-120,154},{140,94}},
           lineColor={28,108,200},
-          textString="ESDC1A"),Text(
+          textString="ESDC2A"),Text(
           extent={{-186,-60},{-150,-80}},
           lineColor={28,108,200},
           textString="VT")}),
@@ -150,7 +150,7 @@ equation
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td>ESDC1A, PSS/E Manual</td>
+<td>ESDC2A, PSS/E Manual</td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
