@@ -24,7 +24,7 @@ model IEEEX1 "SMIB system with one load and GENROE model"
     v_0=1) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-20,-52},{-40,-32}})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.IEEEX1 iEEEX1_1(
+  OpenIPSL.Electrical.Controls.PSSE.ES.IEEEX1 iEEEX1(
     T_R=0.04,
     K_A=75,
     T_A=0.05,
@@ -43,22 +43,22 @@ model IEEEX1 "SMIB system with one load and GENROE model"
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
           10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
-  connect(iEEEX1_1.EFD, gENROE.EFD) annotation (Line(points={{-92.6,-47.7778},{-102,-47.7778},{-102,-48},{-110,-48},{-110,-10},{-104,-10}},
+  connect(iEEEX1.EFD, gENROE.EFD) annotation (Line(points={{-92.6,-47.7778},{-102,-47.7778},{-102,-48},{-110,-48},{-110,-10},{-104,-10}},
                                                                        color={0,
           0,127}));
-  connect(iEEEX1_1.VOTHSG, const.y) annotation (Line(points={{-68,-42.2778},{-48.1116,-42.2778},{-48.1116,-42},{-41,-42}},
+  connect(iEEEX1.VOTHSG, const.y) annotation (Line(points={{-68,-42.2778},{-48.1116,-42.2778},{-48.1116,-42},{-41,-42}},
                                                color={0,0,127}));
-  connect(iEEEX1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-68,-55.7222},{-54,-55.7222},{-54,-10},{-58,-10}},
+  connect(iEEEX1.EFD0, gENROE.EFD0) annotation (Line(points={{-68,-55.7222},{-54,-55.7222},{-54,-10},{-58,-10}},
                                               color={0,0,127}));
-  connect(iEEEX1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-68,-47.7778},{-52,-47.7778},{-52,-6},{-58,-6}},
+  connect(iEEEX1.ECOMP, gENROE.ETERM) annotation (Line(points={{-68,-47.7778},{-52,-47.7778},{-52,-6},{-58,-6}},
                                              color={0,0,127}));
-  connect(iEEEX1_1.VOEL, const.y) annotation (Line(points={{-75.8,-60},{-48,-60},
+  connect(iEEEX1.VOEL, const.y) annotation (Line(points={{-75.8,-60},{-48,-60},
           {-48,-42},{-41,-42}}, color={0,0,127}));
-  connect(iEEEX1_1.VUEL, const.y) annotation (Line(points={{-72.2,-60},{-48,-60},
+  connect(iEEEX1.VUEL, const.y) annotation (Line(points={{-72.2,-60},{-48,-60},
           {-48,-42},{-41,-42}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
-  connect(gENROE.XADIFD, iEEEX1_1.XADIFD) annotation (Line(points={{-58.4,-18},{-56,-18},{-56,-66},{-85.4,-66},{-85.4,-59.7556}}, color={0,0,127}));
+  connect(gENROE.XADIFD, iEEEX1.XADIFD) annotation (Line(points={{-58.4,-18},{-56,-18},{-56,-66},{-85.4,-66},{-85.4,-59.7556}}, color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end IEEEX1;
