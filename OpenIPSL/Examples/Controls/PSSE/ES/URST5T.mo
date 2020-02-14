@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model URST5T "SMIB model example of GENROU with Excitation System URST5T"
   extends OpenIPSL.Examples.SMIBpartial;
-  OpenIPSL.Electrical.Machines.PSSE.GENROU generator(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
     Xppq=0.2,
     Xpp=0.2,
@@ -54,29 +54,29 @@ equation
       points={{-67.5,-55},{-62,-55},{-62,-23.8889},{-56,-23.8889}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.XADIFD, uRST5T.XADIFD) annotation (Line(
+  connect(gENROU.XADIFD, uRST5T.XADIFD) annotation (Line(
       points={{-74.88,-14.3},{-74.88,-32.7778},{-56,-32.7778}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.EFD0, uRST5T.EFD0) annotation (Line(
+  connect(gENROU.EFD0, uRST5T.EFD0) annotation (Line(
       points={{-74.6,-7.5},{-64,-7.5},{-64,-36.1111},{-56,-36.1111}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.PMECH0, generator.PMECH) annotation (Line(
+  connect(gENROU.PMECH0, gENROU.PMECH) annotation (Line(
       points={{-74.6,9.5},{-70,9.5},{-70,22},{-104,22},{-104,9.5},{-106.8,9.5}},
       color={0,0,127},
       smooth=Smooth.None));
 
-  connect(generator.PELEC, uRST5T.ECOMP) annotation (Line(
+  connect(gENROU.PELEC, uRST5T.ECOMP) annotation (Line(
       points={{-74.6,6.1},{-66,6.1},{-66,-28.8889},{-56,-28.8889}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(uRST5T.EFD, generator.EFD) annotation (Line(
+  connect(uRST5T.EFD, gENROU.EFD) annotation (Line(
       points={{-33.45,-28.8889},{-14,-28.8889},{-14,-44},{-104,-44},{-104,-7.5},
           {-106.8,-7.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.p, GEN1.p) annotation (Line(points={{-76,1},{-57.3,1},{-57.3,
+  connect(gENROU.p, GEN1.p) annotation (Line(points={{-76,1},{-57.3,1},{-57.3,
           0},{-40,0}}, color={0,0,255}));
   connect(uRST5T.VT, uRST5T.ECOMP) annotation (Line(points={{-56,-26.1111},{-58,
           -26.1111},{-58,-26},{-60,-26},{-60,-28.8889},{-56,-28.8889}}, color={
