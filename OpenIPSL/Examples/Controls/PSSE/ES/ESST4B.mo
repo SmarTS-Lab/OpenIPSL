@@ -48,7 +48,7 @@ equation
       points={{-93.6,-52},{-86,-52},{-86,2.11111},{-78,2.11111}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(geENROU.EFD0, eSST4B.EFD0) annotation (Line(
+  connect(gENROU.EFD0, eSST4B.EFD0) annotation (Line(
       points={{-90.6,-7.5},{-90,-7.5},{-90,-10.1111},{-78,-10.1111}},
       color={0,0,127},
       smooth=Smooth.None));
