@@ -4,21 +4,21 @@ model ESDC1A
   import OpenIPSL.NonElectrical.Functions.SE;
   import
     OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
-  parameter Real T_R=0 "Voltage input time constant (s)";
-  parameter Real K_A=400 "AVR gain";
-  parameter Real T_A=0.02 "AVR time constant (s)";
-  parameter Real T_B=0 "AVR lead-lag time constant (s)";
-  parameter Real T_C=0 "AVR lead-lag time constant (s)";
-  parameter Real V_RMAX=9 "Maximum AVR output (pu)";
-  parameter Real V_RMIN=-5.43 "Minimum AVR output (pu)";
-  parameter Real K_E=1 "Exciter field factor (pu)";
-  parameter Real T_E=0.8 "Exciter time constant (s)";
-  parameter Real K_F=0.03 "Rate feedback gain (pu)";
-  parameter Real T_F1=1 "Rate feedback time constant (s)";
-  parameter Real E_1=5.25 "Exciter saturation point 1 (pu)";
-  parameter Real E_2=7 "Exciter saturation point 2 (pu)";
-  parameter Real S_EE_1=0.03 "Saturation at E_1";
-  parameter Real S_EE_2=0.1 "Saturation at E_2";
+  parameter SI.Time T_R=0 "Regulator input time constant";
+  parameter SI.PerUnit K_A=400 "Regulator output gain";
+  parameter SI.Time T_A=0.02 "Regulator time constant";
+  parameter SI.Time T_B=0 "Regulator denominator (lag) time constant";
+  parameter SI.Time T_C=0 "Regulator numerator (lead) time constant";
+  parameter SI.PerUnit V_RMAX=9 "Maximum controller output";
+  parameter SI.PerUnit V_RMIN=-5.43 "Minimum controller output";
+  parameter SI.PerUnit K_E=1 "Exciter field proportional constant";
+  parameter SI.Time T_E=0.8 "Exciter field time constant";
+  parameter SI.PerUnit K_F=0.03 "Rate feedback gain";
+  parameter SI.Time T_F1=1 "Rate feedback time constant";
+  parameter SI.PerUnit E_1=5.25 "Exciter output voltage for saturation factor S_E(E_1)";
+  parameter SI.PerUnit E_2=7 "Exciter output voltage for saturation factor S_E(E_2)";
+  parameter SI.PerUnit S_EE_1=0.03 "Exciter saturation factor at exciter output voltage E_1";
+  parameter SI.PerUnit S_EE_2=0.1 "Exciter saturation factor at exciter output voltage E_2";
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
     T=T_F1,
