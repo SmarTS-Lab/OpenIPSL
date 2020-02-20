@@ -4,7 +4,7 @@ model ESDC1A
   import OpenIPSL.NonElectrical.Functions.SE;
   import
     OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
-  parameter SI.Time T_R=0 "Regulator input time constant";
+  parameter SI.Time T_R=0 "Regulator input filter time constant";
   parameter SI.PerUnit K_A=400 "Regulator output gain";
   parameter SI.Time T_A=0.02 "Regulator time constant";
   parameter SI.Time T_B=0 "Regulator denominator (lag) time constant";
