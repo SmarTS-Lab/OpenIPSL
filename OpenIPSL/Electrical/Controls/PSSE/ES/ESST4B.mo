@@ -1,26 +1,28 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESST4B " IEEE type ST4B potential or compounded
+model ESST4B "IEEE type ST4B potential or compounded
   source-controlled rectifier exciter "
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import Modelica.ComplexMath.j;
   import Modelica.ComplexMath.'abs';
-  parameter Real T_R=0.3 "Regulator input filter time constant (s)";
-  parameter Real K_PR=2.97 "Voltage regulator proportional gain (pu)";
-  parameter Real K_IR=2.97 "Voltage regulator integral gain (pu/s)";
-  parameter Real V_RMAX=1 "Maximum regulator output (pu)";
-  parameter Real V_RMIN=-0.87 "Minimum regulator output (pu)";
-  parameter Real T_A=0.01 "Thyristor bridge firing control equivalent time constant (s)";
-  parameter Real K_PM=1 "Forward proportional gain of inner loop field regulator (pu)";
-  parameter Real K_IM=0.2 "Forward integral gain of inner loop field regulator (pu/s)";
-  parameter Real V_MMAX=1 "Maximum output of field current regulator (pu)";
-  parameter Real V_MMIN=-0.87 "Minimum output of field current regulator (pu)";
-  parameter Real K_G=0.1 "Feedback gain of field current regulator (pu)";
-  parameter Real K_P=6.73 "Potential circuit (voltage) gain coefficient (pu)";
-  parameter Real K_I=0.1 "Compound ircuit (current) gain coefficient (pu)";
-  parameter Real V_BMAX=8.41 "Maximum available exciter voltage (pu)";
-  parameter Real K_C=0.1 "Rectifier loading factor proportional to commutating reactance (pu)";
-  parameter Real X_L=0 "Reactance associated with potential source (pu)";
-  parameter Real THETAP=0 "Potential circuit phase angle (radians)";
+  parameter SI.Time T_R=0.3 "Regulator input filter time constant";
+  parameter SI.PerUnit K_PR=2.97 "Voltage regulator proportional gain";
+  parameter SI.TimeAging K_IR=2.97 "Voltage regulator integral gain";
+  parameter SI.PerUnit V_RMAX=1 "Maximum regulator output";
+  parameter SI.PerUnit V_RMIN=-0.87 "Minimum regulator output";
+  parameter SI.Time T_A=0.01 "Thyristor bridge firing control equivalent time constant";
+  parameter SI.PerUnit K_PM=1 "Forward proportional gain of inner loop field regulator";
+  parameter SI.TimeAging K_IM=0.2 "Forward integral gain of inner loop field regulator";
+  parameter SI.PerUnit V_MMAX=1 "Maximum output of field current regulator";
+  parameter SI.PerUnit V_MMIN=-0.87 "Minimum output of field current regulator";
+  parameter SI.PerUnit K_G=0.1 "Feedback gain of field current regulator";
+  parameter SI.PerUnit K_P=6.73 "Potential circuit (voltage) gain coefficient";
+  parameter SI.PerUnit K_I=0.1 "Compound ircuit (current) gain coefficient";
+  parameter SI.PerUnit V_BMAX=8.41 "Maximum available exciter voltage";
+  parameter SI.PerUnit K_C=0.1 "Rectifier loading factor proportional to commutating reactance";
+  parameter SI.PerUnit X_L=0 "Reactance associated with potential source";
+  parameter SI.Conversions.NonSIunits.Angle_deg THETAP=0 "Potential circuit phase angle";
+  protected
+    parameter SI.Angle THETAPrad = SI.Conversions.from_deg(THETAP) "Potential circuit phase angle in rad";
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{120,-70},{144,-58}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
@@ -92,7 +94,7 @@ protected
     annotation (Placement(transformation(extent={{10,-120},{30,-100}})));
   Complex V_T;
   Complex I_T;
-  parameter Complex K_P_comp=K_P*cos(THETAP) + j*K_P*sin(THETAP);
+  parameter Complex K_P_comp=K_P*cos(THETAPrad) + j*K_P*sin(THETAPrad);
   parameter Real Ifd0(fixed=false);
   parameter Real IN0(fixed=false);
   parameter Real VB0(fixed=false);
