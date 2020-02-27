@@ -1,40 +1,40 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESST1A "IEEE Type ST1A Excitation System"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_R=0 "Voltage input time constant (s)"
+  parameter SI.Time T_R=0 "Regulator input filter time constant"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real V_IMAX
+  parameter SI.PerUnit V_IMAX=99 "Maximum voltage error (regulator input)"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real V_IMIN
+  parameter SI.PerUnit V_IMIN=-99 "Minimum voltage error (regulator input)"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real T_C=0 "AVR lead-lag time constant (s)"
+  parameter SI.Time T_C=0 "Regulator numerator (lead) time constant. First lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real T_B=0 "AVR lead-lag time constant (s)"
+  parameter SI.Time T_B=0 "Regulator denominator (lag) time constant. First lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real T_C1=0 "AVR lead-lag time constant (s)"
+  parameter SI.Time T_C1=0 "Regulator numerator (lead) time constant. Second lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real T_B1=0 "AVR lead-lag time constant (s)"
+  parameter SI.Time T_B1=0 "Regulator denominator (lag) time constant. Second lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real K_A=400 "AVR gain"
+  parameter SI.PerUnit K_A=400 "Voltage regulator gain"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real T_A=0.02 "AVR time constant (s)"
+  parameter SI.Time T_A=0.02 "Voltage regulator time constant"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real V_AMAX "Maximum AVR output (pu)"
+  parameter SI.PerUnit V_AMAX=9 "Maximum regulator output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real V_AMIN "Minimum AVR output (pu)"
+  parameter SI.PerUnit V_AMIN=-5.43 "Minimum regulator output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real V_RMAX=9
+  parameter SI.PerUnit V_RMAX=9 "Maximum exciter output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real V_RMIN=-5.43
+  parameter SI.PerUnit V_RMIN=-5.43 "Minimum exciter output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real K_C=0.2 "Rectifier load factor (pu)"
+  parameter SI.PerUnit K_C=0.2 "Rectifier loading factor proportional to commutating reactance"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real K_F=0.03 "Rate feedback gain (pu)"
+  parameter SI.PerUnit K_F=0.03 "Rate feedback gain"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real T_F=1 "Rate feedback time constant (s)"
+  parameter SI.Time T_F=1 "Rate feedback time constant"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter Real K_LR annotation (Dialog(group="Excitation system parameters"));
-  parameter Real I_LR annotation (Dialog(group="Excitation system parameters"));
+  parameter SI.PerUnit K_LR=4.54 "Exciter output current limiter gain" annotation (Dialog(group="Excitation system parameters"));
+  parameter SI.PerUnit I_LR=4.4 "Exciter output current limit reference"annotation (Dialog(group="Excitation system parameters"));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     y_start=0,
     k=K_F,
