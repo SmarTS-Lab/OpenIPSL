@@ -3,20 +3,20 @@ model IEEET2 "IEEE Type 2 excitation system"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import
     OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
-  parameter Real T_R=0.02 "Voltage input time constant (s)";
-  parameter Real K_A=200.0 "AVR gain";
-  parameter Real T_A=0.001 "AVR time constant (s)";
-  parameter Real V_RMAX=6.08 "Maximum AVR output (pu)";
-  parameter Real V_RMIN=-6.08 "Minimum AVR output (pu)";
-  parameter Real K_E=1 "Exciter field gain";
-  parameter Real T_E=0.55 "Exciter time constant s";
-  parameter Real K_F=0.06 "Rate feedback gain (pu)";
-  parameter Real T_F1=0.3 "Rate feedback time constant (s)";
-  parameter Real T_F2=0.6 "Rate feedback time constant (s)";
-  parameter Real E_1=2.85 "Exciter saturation point 1 (pu)";
-  parameter Real S_EE_1=0.3 "Saturation at E_1";
-  parameter Real E_2=3.8 "Exciter saturation point 2 (pu)";
-  parameter Real S_EE_2=0.6 "Saturation at E_2";
+  parameter SI.Time T_R=0.02 "Regulator input filter time constant";
+  parameter SI.PerUnit K_A=200.0 "Regulator output gain";
+  parameter SI.Time T_A=0.001 "Regulator output time constant";
+  parameter SI.PerUnit V_RMAX=6.08 "Maximum regulator output";
+  parameter SI.PerUnit V_RMIN=-6.08 "Minimum regulator output";
+  parameter SI.PerUnit K_E=1 "Exciter field proportional constant";
+  parameter SI.Time T_E=0.55 "Exciter field time constant";
+  parameter SI.PerUnit K_F=0.06 "Rate feedback excitation system stabilizer gain";
+  parameter SI.Time T_F1=0.3 "Rate feedback excitation system stabilizer first time constant";
+  parameter SI.Time T_F2=0.6 "Rate feedback excitation system stabilizer second time constant";
+  parameter SI.PerUnit E_1=2.85 "Exciter output voltage for saturation factor S_E(E_1)";
+  parameter SI.PerUnit S_EE_1=0.3 "Exciter saturation factor at exciter output voltage E1";
+  parameter SI.PerUnit E_2=3.8 "Exciter output voltage for saturation factor S_E(E_2)";
+  parameter SI.PerUnit S_EE_2=0.6 "Exciter saturation factor at exciter output voltage E2";
   Modelica.Blocks.Math.Add3 add3_1
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Math.Add add(k2=-1)
@@ -58,12 +58,12 @@ model IEEET2 "IEEE Type 2 excitation system"
         rotation=90,
         origin={-100,-150})));
 protected
-  parameter Real V_RMAX0(fixed=false);
-  parameter Real V_RMIN0(fixed=false);
-  parameter Real K_E0(fixed=false);
-  parameter Real Efd0(fixed=false);
-  parameter Real SE_Efd0(fixed=false);
-  parameter Real VR0(fixed=false);
+  parameter SI.PerUnit V_RMAX0(fixed=false);
+  parameter SI.PerUnit V_RMIN0(fixed=false);
+  parameter SI.PerUnit K_E0(fixed=false);
+  parameter SI.PerUnit Efd0(fixed=false);
+  parameter SI.PerUnit SE_Efd0(fixed=false);
+  parameter SI.PerUnit VR0(fixed=false);
 initial equation
   SE_Efd0 = OpenIPSL.NonElectrical.Functions.SE(
     EFD0,
