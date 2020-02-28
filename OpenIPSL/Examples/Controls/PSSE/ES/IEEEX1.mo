@@ -34,7 +34,7 @@ model IEEEX1 "SMIB system with one load and GENROE model"
     V_RMIN=-3.9,
     T_E=0.5,
     K_F=0.07,
-    T_F1=1,
+    T_F=1,
     E_1=2.47,
     S_EE_1=0.035,
     E_2=4.5,

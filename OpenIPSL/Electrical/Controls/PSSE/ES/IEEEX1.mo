@@ -1,23 +1,23 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model IEEEX1
+model IEEEX1 "1979 IEEE Type 1 Excitation System Model and 1981 IEEE Type DC1 Model"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import
     OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
-  parameter Real T_R "Voltage input time constant (s)";
-  parameter Real K_A "AVR gain";
-  parameter Real T_A "AVR time constant (s)";
-  parameter Real T_B "(s)";
-  parameter Real T_C "(s)";
-  parameter Real V_RMAX "Maximum AVR output (pu)";
-  parameter Real V_RMIN "Minimum AVR output (pu)";
-  parameter Real K_E "Exciter field gain";
-  parameter Real T_E "Exciter time constant (s)";
-  parameter Real K_F "Rate feedback gain (pu)";
-  parameter Real T_F1 "Rate feedback time constant (s)";
-  parameter Real E_1 "Exciter saturation point 1 (pu)";
-  parameter Real S_EE_1 "Saturation at E1";
-  parameter Real E_2 "Exciter saturation point 2 (pu)";
-  parameter Real S_EE_2 "Saturation at E2";
+  parameter Real T_R=0 "Regulator input filter time constant";
+  parameter Real K_A=40 "Regulator output gain";
+  parameter Real T_A=0.04 "Regulator output time constant";
+  parameter Real T_B=0 "Regulator denominator (lag) time constant";
+  parameter Real T_C=0 "Regulator numerator (lead) time constant";
+  parameter Real V_RMAX=7.3 "Maximum regulator output";
+  parameter Real V_RMIN=-7.3 "Minimum regulator output";
+  parameter Real K_E=1  "Exciter field proportional constant";
+  parameter Real T_E=0.8 "Exciter field time constant";
+  parameter Real K_F=0.03 "Rate feedback excitation system stabilizer gain";
+  parameter Real T_F=1 "Rate feedback time constant";
+  parameter Real E_1=2.4  "Exciter output voltage for saturation factor S_E(E_1)";
+  parameter Real S_EE_1=0.03 "Exciter saturation factor at exciter output voltage E1";
+  parameter Real E_2=5.0000 "Exciter output voltage for saturation factor S_E(E_2)";
+  parameter Real S_EE_2=0.50000 "Exciter saturation factor at exciter output voltage E2";
   NonElectrical.Continuous.LeadLag LL(
     T1=T_C,
     T2=T_B,
@@ -29,11 +29,11 @@ model IEEEX1
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
-    T=T_F1,
-    y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
-    x_start=Efd0)
-    annotation (Placement(transformation(extent={{80,-60},{60,-40}})));
+    T=T_F,
+    y_sta=2.4 rt=0,
+    initType=0.03=Modelica.Blocks.Types.Init.InitialOutput,
+    x_sta=5.0000rt=Efd0)
+    annotati=0.50000 n (Placement(transformation(extent={{80,-60},{60,-40}})));
   Modelica.Blocks.Math.Add3 V_Erro2
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
   NonElectrical.Continuous.SimpleLagLim SL(
