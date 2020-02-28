@@ -4,19 +4,19 @@ model IEEET1 "IEEE Type 1 excitation system"
   import OpenIPSL.NonElectrical.Functions.SE;
   import
     OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
-  parameter Real T_R=1 "Voltage input time constant (s)";
-  parameter Real K_A=40 "AVR gain";
-  parameter Real T_A=0.04 "AVR time constant (s)";
-  parameter Real V_RMAX=7.3 "Maximum AVR output (pu)";
-  parameter Real V_RMIN=-7.3 "Minimum AVR output (pu)";
-  parameter Real K_E=1 "Exciter field gain, s";
-  parameter Real T_E=0.8 "Exciter time constant (s)";
-  parameter Real K_F=0.03 "Rate feedback gain (pu)";
-  parameter Real T_F=1 "Rate feedback time constant (s)";
-  parameter Real E_1=2.400 "Exciter saturation point 1 (pu)";
-  parameter Real S_EE_1=0.30000E-01 "Saturation at E1";
-  parameter Real E_2=5.0000 "Exciter saturation point 2 (pu)";
-  parameter Real S_EE_2=0.50000 "Saturation at E2";
+  parameter SI.Time T_R=1 "Regulator input filter time constant";
+  parameter SI.PerUnit K_A=40 "Regulator output gain";
+  parameter SI.Time T_A=0.04 "Regulator output time constant";
+  parameter SI.PerUnit V_RMAX=7.3 "Maximum regulator output";
+  parameter SI.PerUnit V_RMIN=-7.3 "Minimum regulator output";
+  parameter SI.PerUnit K_E=1 "Exciter field proportional constant";
+  parameter SI.Time T_E=0.8 "Exciter field time constant";
+  parameter SI.PerUnit K_F=0.03 "Rate feedback excitation system stabilizer gain";
+  parameter SI.Time T_F=1 "Rate feedback time constant";
+  parameter SI.PerUnit E_1=2.4 "Exciter output voltage for saturation factor S_E(E_1)";
+  parameter SI.PerUnit S_EE_1=0.03 "Exciter saturation factor at exciter output voltage E1";
+  parameter SI.PerUnit E_2=5.0000 "Exciter output voltage for saturation factor S_E(E_2)";
+  parameter SI.PerUnit S_EE_2=0.50000 "Exciter saturation factor at exciter output voltage E2";
   Modelica.Blocks.Math.Add3 sum2
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Math.Add sum3(k2=-1)
@@ -53,11 +53,11 @@ model IEEET1 "IEEE Type 1 excitation system"
         rotation=90,
         origin={-100,-130})));
 protected
-  parameter Real VRMAX0(fixed=false) "Maximum AVR output (pu)";
-  parameter Real VRMIN0(fixed=false) "Minimum AVR output (pu)";
-  parameter Real KE0(fixed=false) "Exciter field gain, s";
-  parameter Real SE_Efd0(fixed=false);
-  parameter Real VR0(fixed=false);
+  parameter SI.PerUnit VRMAX0(fixed=false) "Maximum AVR output";
+  parameter SI.PerUnit VRMIN0(fixed=false) "Minimum AVR output";
+  parameter SI.PerUnit KE0(fixed=false) "Exciter field gain";
+  parameter SI.PerUnit SE_Efd0(fixed=false);
+  parameter SI.PerUnit VR0(fixed=false);
 initial equation
   SE_Efd0 = SE(
     Efd0,
