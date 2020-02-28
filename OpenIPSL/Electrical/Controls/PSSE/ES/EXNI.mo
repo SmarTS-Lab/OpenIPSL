@@ -1,18 +1,16 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_R=0.60000E-01 "Voltage input time constant (s)";
-  //0
-  parameter Real K_A=150.00 "AVR gain";
-  //400
-  parameter Real T_A=0 "AVR time constant (s)";
-  parameter Real V_RMAX=4 "Maximum AVR output (pu)";
-  parameter Real V_RMIN=-4 "Minimum AVR output (pu)";
-  parameter Real K_F=0.110000E-01 "Rate feedback gain (pu)";
-  parameter Real T_F1=0.40000 "Rate feedback time constant (s)";
-  parameter Real T_F2=0.70000 "Rate feedback time constant (s)";
-  parameter Boolean SWITCH=false;
-  parameter Real r_cr_fd=10;
+  parameter SI.Time T_R=0.06 "Regulator input filter time constant";
+  parameter SI.PerUnit K_A=150 "Regulator output gain";
+  parameter SI.Time T_A=0 "Regulator output time constant";
+  parameter SI.PerUnit V_RMAX=4 "Maximum regulator output";
+  parameter SI.PerUnit V_RMIN=-4 "Minimum regulator output";
+  parameter SI.PerUnit K_F=0.011 "Rate feedback excitation system stabilizer gain";
+  parameter SI.Time T_F1=0.4 "Rate feedback excitation system stabilizer first time constant";
+  parameter SI.Time T_F2=0.7 "Rate feedback excitation system stabilizer second time constant";
+  parameter Boolean SWITCH=false "Feeding selection. False for bus fed, and True for solid fed";
+  parameter SI.PerUnit r_cr_fd=10 "Crowbar circuit resistance";
   OpenIPSL.NonElectrical.Logical.NegCurLogic negCurLogic(RC_rfd=r_cr_fd, nstartvalue=Efd0) annotation (Placement(transformation(extent={{140,-14},{182,14}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   Modelica.Blocks.Continuous.Derivative derivativeLag(
