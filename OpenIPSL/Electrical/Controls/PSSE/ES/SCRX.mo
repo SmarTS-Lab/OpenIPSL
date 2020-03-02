@@ -1,14 +1,14 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SCRX "Bus Fed or Solid Fed Static Exciter"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_AT_B;
-  parameter Real T_B;
-  parameter Real K;
-  parameter Real T_E;
-  parameter Real E_MIN;
-  parameter Real E_MAX;
-  parameter Boolean C_SWITCH;
-  parameter Real r_cr_fd;
+  parameter Real T_AT_B=0.1"Ratio between regulator numerator (lead) and denominator (lag) time constants";
+  parameter SI.Time T_B=1 "Regulator denominator (lag) time constant";
+  parameter SI.PerUnit K=100 "Excitation power source output gain";
+  parameter SI.Time T_E=0.005 "Excitation power source output time constant";
+  parameter SI.PerUnit E_MIN=-10 "Minimum exciter output";
+  parameter SI.PerUnit E_MAX=10 "Maximum exciter output";
+  parameter Boolean C_SWITCH=false "Feeding selection. False for bus fed, and True for solid fed";
+  parameter Real r_cr_fd=10 "Ratio between crowbar circuit resistance and field circuit resistance";
   Modelica.Blocks.Math.Add3 V_erro
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
@@ -37,7 +37,7 @@ model SCRX "Bus Fed or Solid Fed Static Exciter"
         rotation=90,
         origin={-100,-150})));
 protected
-  parameter Real VR0(fixed=false);
+  parameter SI.PerUnit VR0(fixed=false);
 initial equation
   if not C_SWITCH then
     VR0 = Efd0/ECOMP0;
