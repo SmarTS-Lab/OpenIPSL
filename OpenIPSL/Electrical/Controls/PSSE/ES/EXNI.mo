@@ -10,7 +10,7 @@ model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
   parameter SI.Time T_F1=0.4 "Rate feedback excitation system stabilizer first time constant";
   parameter SI.Time T_F2=0.7 "Rate feedback excitation system stabilizer second time constant";
   parameter Boolean SWITCH=false "Feeding selection. False for bus fed, and True for solid fed";
-  parameter SI.PerUnit r_cr_fd=10 "Crowbar circuit resistance";
+  parameter Real r_cr_fd=10 "Ratio between crowbar circuit resistance and field circuit resistance";
   OpenIPSL.NonElectrical.Logical.NegCurLogic negCurLogic(RC_rfd=r_cr_fd, nstartvalue=Efd0) annotation (Placement(transformation(extent={{140,-14},{182,14}})));
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   Modelica.Blocks.Continuous.Derivative derivativeLag(
