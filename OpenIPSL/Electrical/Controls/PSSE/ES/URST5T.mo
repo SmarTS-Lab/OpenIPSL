@@ -1,16 +1,16 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model URST5T "IEEE Proposed Type ST5B Excitation System"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_R=0.025;
-  parameter Real T_C1=0.1;
-  parameter Real T_B1=0.2;
-  parameter Real T_C2=1;
-  parameter Real T_B2=1;
-  parameter Real KR=1;
-  parameter Real V_RMAX=10;
-  parameter Real V_RMIN=-10;
-  parameter Real T_1=0.58;
-  parameter Real K_C=0.3;
+  parameter Real T_R=0.025 "Regulator input filter time constant";
+  parameter Real T_C1=0.1 "Voltage regulator numerator (lead) time constant (first block)";
+  parameter Real T_B1=0.2 "Voltage regulator denominator (lag) time constant (first block)";
+  parameter Real T_C2=1 "Voltage regulator numerator (lead) time constant (second block)";
+  parameter Real T_B2=1 "Voltage regulator denominator (lag) time constant (second block)";
+  parameter Real KR=1 "Voltage regulator gain";
+  parameter Real V_RMAX=10 "Maximum regulator output";
+  parameter Real V_RMIN=-10 "Minimum regulator output";
+  parameter Real T_1=0.58 "Thyristor bridge firing control equivalent time constant";
+  parameter Real K_C=0.3 "Rectifier loading factor proportional to commutating reactance";
   Modelica.Blocks.Math.Add VERR1 annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         origin={-10,0})));
