@@ -1,36 +1,24 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ST5B "IEEE 421.5 2005 ST5B Excitation System"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_R=0.025 "Regulator input filter time constant (s)";
-  parameter Real T_C1=0.1
-    "Lead time constant of first lead-lag block (voltage regulator channel) (s)";
-  parameter Real T_B1=0.2
-    "Lag time constant of first lead-lag block (voltage regulator channel) (s)";
-  parameter Real T_C2=1
-    "Lead time constant of second lead-lag block (voltage regulator channel) (s)";
-  parameter Real T_B2=1
-    "Lag time constant of second lead-lag block (voltage regulator channel) (s)";
-  parameter Real K_R=1 "Voltage regulator gain (pu)";
-  parameter Real V_RMAX=10 "Voltage regulator maximum limit (pu)";
-  parameter Real V_RMIN=-10 "Voltage regulator minimum limit (pu)";
-  parameter Real T_1=0.58 "voltage regulator time constant (s)";
-  parameter Real K_C=0.3 "(pu)";
-  parameter Real T_UC1=1
-    "Lead time constant of first lead-lag block (under- excitation channel) (s)";
-  parameter Real T_UB1=1
-    "Lag time constant of first lead-lag block (under- excitation channel) (s)";
-  parameter Real T_UC2=1
-    "Lead time constant of second lead-lag block (under- excitation channel) (s)";
-  parameter Real T_UB2=1
-    "Lag time constant of second lead-lag block (under- excitation channel) (s)";
-  parameter Real T_OC1=1
-    "Lead time constant of first lead-lag block (over- excitation channel) (s)";
-  parameter Real T_OB1=1
-    "Lag time constant of first lead-lag block (over- excitation channel) (s)";
-  parameter Real T_OC2=1
-    "Lead time constant of second lead-lag block (over- excitation channel) (s)";
-  parameter Real T_OB2=1
-    "Lag time constant of second lead-lag block (over- excitation channel) (s)";
+  parameter SI.Time T_R=0.025 "Regulator input filter time constant";
+  parameter SI.Time T_C1=0.1 "Voltage regulator numerator (lead) time constant (first block)";
+  parameter SI.Time T_B1=0.2 "Voltage regulator denominator (lag) time constant (first block)";
+  parameter SI.Time T_C2=1 "Voltage regulator numerator (lead) time constant (second block)";
+  parameter SI.Time T_B2=1 "Voltage regulator denominator (lag) time constant (second block)";
+  parameter SI.PerUnit K_R=1 "Voltage regulator gain";
+  parameter SI.PerUnit V_RMAX=10 "Maximum regulator output";
+  parameter SI.PerUnit V_RMIN=-10 "Minimum regulator output";
+  parameter SI.Time T_1=0.58 "Thyristor bridge firing control equivalent time constant";
+  parameter SI.PerUnit K_C=0.3 "Rectifier loading factor proportional to commutating reactance";
+  parameter SI.Time T_UC1=1 "UEL regulator numerator (lead) time constant (first block)";
+  parameter SI.Time T_UB1=1 "UEL regulator denominator (lag) time constant (first block)";
+  parameter SI.Time T_UC2=1 "UEL regulator numerator (lead) time constant (second block)";
+  parameter SI.Time T_UB2=1 "UEL regulator denominator (lag) time constant (second block)";
+  parameter SI.Time T_OC1=1 "OEL regulator numerator (lead) time constant (first block)";
+  parameter SI.Time T_OB1=1 "OEL regulator denominator (lag) time constant (first block)";
+  parameter SI.Time T_OC2=1 "OEL regulator numerator (lead) time constant (second block)";
+  parameter SI.Time T_OB2=1 "OEL regulator denominator (lag) time constant (second block)";
   Modelica.Blocks.Math.Add VERR1 annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         origin={-10,0})));
@@ -115,7 +103,7 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
     T=T_R,
     y_start=ECOMP0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
 protected
-  parameter Real VR0(fixed=false);
+  parameter SI.PerUnit VR0(fixed=false);
 initial equation
   VR0 = Efd0 + K_C*XADIFD;
   V_REF = VR0/K_R + ECOMP;
