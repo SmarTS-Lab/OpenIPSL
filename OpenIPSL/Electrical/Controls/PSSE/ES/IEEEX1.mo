@@ -30,10 +30,10 @@ model IEEEX1 "1979 IEEE Type 1 Excitation System Model and 1981 IEEE Type DC1 Mo
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
     T=T_F,
-    y_sta=2.4 rt=0,
-    initType=0.03=Modelica.Blocks.Types.Init.InitialOutput,
-    x_sta=5.0000rt=Efd0)
-    annotati=0.50000 n (Placement(transformation(extent={{80,-60},{60,-40}})));
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    x_start=Efd0)
+    annotation (Placement(transformation(extent={{80,-60},{60,-40}})));
   Modelica.Blocks.Math.Add3 V_Erro2
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
   NonElectrical.Continuous.SimpleLagLim SL(
