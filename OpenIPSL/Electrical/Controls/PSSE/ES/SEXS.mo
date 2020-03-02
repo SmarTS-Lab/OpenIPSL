@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SEXS "Simplified excitation system model"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_AT_B;
-  parameter Real T_B;
-  parameter Real K;
-  parameter Real T_E;
-  parameter Real E_MIN;
-  parameter Real E_MAX;
+  parameter Real T_AT_B=0.1 "Ratio between regulator numerator (lead) and denominator (lag) time constants";
+  parameter Real T_B=1 "Regulator denominator (lag) time constant";
+  parameter Real K=100 "Excitation power source output gain";
+  parameter Real T_E=0.1 "Excitation power source output time constant";
+  parameter Real E_MIN=-10 "Minimum exciter output";
+  parameter Real E_MAX=10 "Maximum exciter output";
   Modelica.Blocks.Math.Add3 V_erro(
     k3=1,
     k1=1,
