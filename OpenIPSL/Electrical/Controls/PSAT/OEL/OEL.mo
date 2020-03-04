@@ -1,27 +1,22 @@
 within OpenIPSL.Electrical.Controls.PSAT.OEL;
 model OEL "PSATs Over-Excitation Limiter"
   outer OpenIPSL.Electrical.SystemBase SysData;
-  Modelica.Blocks.Interfaces.RealInput v "Generator terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput v "Generator terminal voltage [pu]"
     annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
-  Modelica.Blocks.Interfaces.RealInput p "Active power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput p "Active power [pu]" annotation (
       Placement(transformation(extent={{-140,-20},{-100,20}})));
-  Modelica.Blocks.Interfaces.RealInput q "Reactive power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput q "Reactive power [pu]" annotation (
       Placement(transformation(extent={{-140,-80},{-100,-40}})));
   FieldCurrent field_current(xd=Z_MBtoSB*xd, xq=Z_MBtoSB*xq)
     annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
   Modelica.Blocks.Interfaces.RealOutput v_ref annotation (Placement(
         transformation(extent={{100,-10},{120,10}})));
-  parameter Modelica.SIunits.Time T0=10 "Integrator time constant (s)";
-  parameter Modelica.SIunits.PerUnit xd
-    "d-axis estimated generator reactance (pu, machine base)";
-  parameter Modelica.SIunits.PerUnit xq
-    "q-axis estimated generator reactance (pu, machine base)";
-  parameter Modelica.SIunits.PerUnit if_lim
-    "Maximum field current (pu, system base)";
-  parameter Modelica.SIunits.PerUnit vOEL_max
-    "Maximum output signal (pu, machine base)";
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b
-    "Power rating (MVA)" annotation (Dialog(group="Machine parameters"));
+  parameter Modelica.SIunits.Time T0=10 "Integrator time constant";
+  parameter Modelica.SIunits.PerUnit xd "d-axis estimated generator reactance (machine base)";
+  parameter Modelica.SIunits.PerUnit xq "q-axis estimated generator reactance (machine base)";
+  parameter Modelica.SIunits.PerUnit if_lim "Maximum field current (system base)";
+  parameter Modelica.SIunits.PerUnit vOEL_max "Maximum output signal (machine base)";
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating" annotation (Dialog(group="Machine parameters"));
   parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Voltage V_b(displayUnit="kV")=400e3 "Base voltage of the bus";
@@ -39,7 +34,7 @@ model OEL "PSATs Over-Excitation Limiter"
     outMin=0,
     strict=true)
     annotation (Placement(transformation(extent={{22,-30},{42,-10}})));
-  Modelica.Blocks.Interfaces.RealInput v_ref0 "Generator terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput v_ref0 "Generator terminal voltage [pu]"
     annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=-90,
