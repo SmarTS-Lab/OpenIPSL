@@ -1,23 +1,16 @@
 within OpenIPSL.Electrical.Controls.CGMES.ES;
 model ExcSEXS "Simplified Excitation System Model from CGMES definition"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_AT_B
-    "Ta/Tb - gain reduction ratio of lag-lead element (TaTb).  Typical Value = 0.1";
-  parameter Real T_B
-    "Denominator time constant of lag-lead block (Tb).  Typical Value = 10";
-  parameter Real K "Gain (K) (>0).  Typical Value = 100";
-  parameter Real T_E "Time constant of gain block (Te).  Typical Value = 0.05";
-  parameter Real K_C "PI controller gain (Kc).  Typical Value = 0.08";
-  parameter Real T_C
-    "PI controller phase lead time constant (Tc).  Typical Value = 0";
-  parameter Real E_MIN
-    "Minimum field voltage output (Emin).  Typical Value = -5";
-  parameter Real E_MAX
-    "Maximum field voltage output (Emax).  Typical Value = 5";
-  parameter Real EFD_MAX
-    "Field voltage clipping maximum limit (Efdmax).  Typical Value = 5";
-  parameter Real EFD_MIN
-    "Field voltage clipping minimum limit (Efdmin).  Typical Value = -5";
+  parameter Real T_AT_B=0.1 "Ta/Tb - gain reduction ratio of lag-lead element";
+  parameter SI.Time T_B=10 "Denominator time constant of lag-lead block";
+  parameter SI.PerUnit K=100 "Gain (K) (>0)";
+  parameter SI.Time T_E=0.05 "Time constant of gain block";
+  parameter SI.PerUnit K_C=0.08 "PI controller gain";
+  parameter SI.Time T_C=0 "PI controller phase lead time constant";
+  parameter SI.PerUnit E_MIN=-5 "Minimum field voltage output";
+  parameter SI.PerUnit E_MAX=5 "Maximum field voltage output";
+  parameter SI.PerUnit EFD_MAX=5 "Field voltage clipping maximum limit";
+  parameter SI.PerUnit EFD_MIN=-5 "Field voltage clipping minimum limit";
   Modelica.Blocks.Math.Add3 V_erro(
     k3=1,
     k1=1,
