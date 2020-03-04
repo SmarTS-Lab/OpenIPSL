@@ -21,8 +21,6 @@ model ESST4B "IEEE type ST4B potential or compounded
   parameter SI.PerUnit K_C=0.1 "Rectifier loading factor proportional to commutating reactance";
   parameter SI.PerUnit X_L=0 "Reactance associated with potential source";
   parameter SI.Conversions.NonSIunits.Angle_deg THETAP=0 "Potential circuit phase angle";
-  protected
-    parameter SI.Angle THETAPrad = SI.Conversions.from_deg(THETAP) "Potential circuit phase angle in rad";
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{120,-70},{144,-58}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
@@ -90,6 +88,7 @@ model ESST4B "IEEE type ST4B potential or compounded
       K_C=K_C)
     annotation (Placement(transformation(extent={{40,-120},{60,-100}})));
 protected
+  parameter SI.Angle THETAPrad = SI.Conversions.from_deg(THETAP) "Potential circuit phase angle in rad";
   Modelica.Blocks.Interfaces.RealOutput VE
     annotation (Placement(transformation(extent={{10,-120},{30,-100}})));
   Complex V_T;
