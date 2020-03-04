@@ -1,34 +1,34 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
 model AVRTypeI "PSAT AVR Type 1"
 
-  Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage [pu]"
     annotation (Placement(transformation(extent={{-140,-80},{-100,-40}}),
         iconTransformation(extent={{-140,-80},{-100,-40}})));
-  Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage [pu]" annotation (
       Placement(transformation(
         extent={{-10,-10},{10,10}},
         origin={110,0}), iconTransformation(extent={{100,-20},{140,20}})));
   Modelica.Blocks.Interfaces.RealInput vref
-    "Reference generator terminal voltage (pu)" annotation (Placement(
+    "Reference generator terminal voltage [pu]" annotation (Placement(
         transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent
           ={{-140,40},{-100,80}})));
-  parameter Real vrmax=7.57 "Maximum regulator voltage (pu)";
-  parameter Real vrmin=0 "Minimum regulator voltage (pu)";
-  parameter Real K0=7.04 "Regulator gain, (pu/pu)";
-  parameter Real T1=6.67 "First pole (s)";
-  parameter Real T2=1 "First zero (s)";
-  parameter Real T3=1 "Second pole (s";
-  parameter Real T4=1 "Second pole (s)";
-  parameter Real Te=0.4 "Field circuit time constant (s)";
-  parameter Real Tr=0.05 "Measurement time constant (s)";
+  parameter SI.PerUnit vrmax=7.57 "Maximum regulator voltage";
+  parameter SI.PerUnit vrmin=0 "Minimum regulator voltage";
+  parameter Real K0=7.04 "Regulator gain, [pu/pu]";
+  parameter SI.Time T1=6.67 "First pole";
+  parameter SI.Time T2=1 "First zero";
+  parameter SI.Time T3=1 "Second pole";
+  parameter SI.Time T4=1 "Second pole";
+  parameter SI.Time Te=0.4 "Field circuit time constant";
+  parameter SI.Time Tr=0.05 "Measurement time constant";
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
-  parameter Real v0=1 "Initialization (pu)";
+  parameter SI.PerUnit v0=1 "Initialization";
 protected
-  parameter Real vf00(fixed=false) "Initialization";
-  parameter Real vr0=vf00 - Ae*Modelica.Math.exp(Be*abs(vf00)) "Initialization";
+  parameter SI.PerUnit vf00(fixed=false) "Initialization";
+  parameter SI.PerUnit vr0=vf00 - Ae*Modelica.Math.exp(Be*abs(vf00)) "Initialization";
 public
-  Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 (pu)"
+  Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 [pu]"
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -37,7 +37,7 @@ public
         rotation=90,
         origin={0,120})));
   Modelica.Blocks.Interfaces.RealInput vf0
-    "Reference generator terminal voltage (pu)" annotation (Placement(
+    "Reference generator terminal voltage [pu]" annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
