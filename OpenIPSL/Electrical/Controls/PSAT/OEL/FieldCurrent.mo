@@ -2,16 +2,16 @@ within OpenIPSL.Electrical.Controls.PSAT.OEL;
 model FieldCurrent
   "Estimates the field current from P,Q,V and the d- and q-axis reactances"
 
-  Modelica.Blocks.Interfaces.RealInput v "generator terminal voltage (pu)"
+  Modelica.Blocks.Interfaces.RealInput v "generator terminal voltage [pu]"
     annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
-  Modelica.Blocks.Interfaces.RealInput p "active power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput p "active power [pu]" annotation (
       Placement(transformation(extent={{-140,-20},{-100,20}})));
-  Modelica.Blocks.Interfaces.RealInput q "reactive power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput q "reactive power [pu]" annotation (
       Placement(transformation(extent={{-140,-80},{-100,-40}})));
-  Modelica.Blocks.Interfaces.RealOutput ifield "estimated field current (pu)"
+  Modelica.Blocks.Interfaces.RealOutput ifield "estimated field current [pu]"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real xd;
-  parameter Real xq;
+  parameter SI.PerUnit xd;
+  parameter SI.PerUnit xq;
 protected
   Real gamma_p;
   Real gamma_q;
