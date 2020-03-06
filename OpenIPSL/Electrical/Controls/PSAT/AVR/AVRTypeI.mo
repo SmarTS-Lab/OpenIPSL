@@ -4,7 +4,7 @@ model AVRTypeI "PSAT AVR Type 1"
   Modelica.Blocks.Interfaces.RealInput v "Generator termminal voltage [pu]"
     annotation (Placement(transformation(extent={{-140,-80},{-100,-40}}),
         iconTransformation(extent={{-140,-80},{-100,-40}})));
-  Modelica.Blocks.Interfaces.RealOutput vf "Filed voltage [pu]" annotation (
+  Modelica.Blocks.Interfaces.RealOutput vf "Field voltage [pu]" annotation (
       Placement(transformation(
         extent={{-10,-10},{10,10}},
         origin={110,0}), iconTransformation(extent={{100,-20},{140,20}})));

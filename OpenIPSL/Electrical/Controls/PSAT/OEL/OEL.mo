@@ -11,11 +11,11 @@ model OEL "PSATs Over-Excitation Limiter"
     annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
   Modelica.Blocks.Interfaces.RealOutput v_ref annotation (Placement(
         transformation(extent={{100,-10},{120,10}})));
-  parameter Modelica.SIunits.Time T0=10 "Integrator time constant";
-  parameter Modelica.SIunits.PerUnit xd "d-axis estimated generator reactance (machine base)";
-  parameter Modelica.SIunits.PerUnit xq "q-axis estimated generator reactance (machine base)";
-  parameter Modelica.SIunits.PerUnit if_lim "Maximum field current (system base)";
-  parameter Modelica.SIunits.PerUnit vOEL_max "Maximum output signal (machine base)";
+  parameter SI.Time T0=10 "Integrator time constant";
+  parameter SI.PerUnit xd "d-axis estimated generator reactance (machine base)";
+  parameter SI.PerUnit xq "q-axis estimated generator reactance (machine base)";
+  parameter SI.PerUnit if_lim "Maximum field current (system base)";
+  parameter SI.PerUnit vOEL_max "Maximum output signal (machine base)";
   parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating" annotation (Dialog(group="Machine parameters"));
   parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
