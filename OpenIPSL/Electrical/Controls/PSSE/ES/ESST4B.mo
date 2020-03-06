@@ -16,7 +16,7 @@ model ESST4B "IEEE type ST4B potential or compounded
   parameter SI.PerUnit V_MMIN=-0.87 "Minimum output of field current regulator";
   parameter SI.PerUnit K_G=0.1 "Feedback gain of field current regulator";
   parameter SI.PerUnit K_P=6.73 "Potential circuit (voltage) gain coefficient";
-  parameter SI.PerUnit K_I=0.1 "Compound ircuit (current) gain coefficient";
+  parameter SI.PerUnit K_I=0.1 "Compound circuit (current) gain coefficient";
   parameter SI.PerUnit V_BMAX=8.41 "Maximum available exciter voltage";
   parameter SI.PerUnit K_C=0.1 "Rectifier loading factor proportional to commutating reactance";
   parameter SI.PerUnit X_L=0 "Reactance associated with potential source";
