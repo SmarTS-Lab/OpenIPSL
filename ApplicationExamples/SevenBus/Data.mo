@@ -72,14 +72,14 @@ package Data
     parameter Real t1_1_4=1.000000;
     parameter Real t2_1_4=1.000000;
     // 2WindingTrafo 7_71
-    parameter Real t1_7_71=1.000000;
-    parameter Real t2_7_71=1.092110;
+    parameter Real t1_7_71=0.91566;
+    parameter Real t2_7_71=1.000000;
     // 2WindingTrafo 6_61
-    parameter Real t1_6_61=1.000000;
-    parameter Real t2_6_61=1.065790;
+    parameter Real t1_6_61=0.93827;
+    parameter Real t2_6_61=1.000000;
     // 2WindingTrafo 2_21
-    parameter Real t1_2_21=1.000000;
-    parameter Real t2_2_21=1.092110;
+    parameter Real t1_2_21=0.91566;
+    parameter Real t2_2_21=1.000000;
     annotation (Documentation);
   end SevenBus_trafos;
 
@@ -101,7 +101,7 @@ package Data
     Loads loads;
     annotation (
       defaultComponentName="PF_results",
-      defaultComponentPrefixes="inner",
+      defaultAttributes="inner",
       missingInnerMessage="
     No 'PF_results' data is defined.",
       Documentation);
