@@ -1,0 +1,14 @@
+language: bash
+python:
+  - "2.7"
+
+services: docker
+
+before_install:
+  - docker pull smartslab/openipsl
+
+before_script:
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl sh -c "python /OpenIPSL/CI/CICheck.py"
+
+script:
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl sh -c "python /OpenIPSL/CI/syntaxCheck.py"
