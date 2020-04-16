@@ -20,7 +20,6 @@ model TwoWindingTransformer_Test
     rT=0.01,
     V_b=13800)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(angle_0=0, v_0=1) annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     X=0.1,
@@ -40,10 +39,6 @@ model TwoWindingTransformer_Test
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
 equation
-  connect(infiniteBus.p, order2_1.p) annotation (Line(
-      points={{-60,-40},{-55,-40},{-55,0},{-60,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
   connect(bus3.p,pwLine2. n) annotation (Line(
       points={{50,0},{40,0},{40,-10},{29,-10}},
       color={0,0,255},
