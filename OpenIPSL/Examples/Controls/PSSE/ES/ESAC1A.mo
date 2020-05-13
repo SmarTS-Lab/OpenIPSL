@@ -49,8 +49,6 @@ model ESAC1A "SMIB system with one load and GENROE model"
     V_RMAX=3,
     V_RMIN=-3)
     annotation (Placement(transformation(extent={{-52,-58},{-106,-38}})));
-  inner OpenIPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
           10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
