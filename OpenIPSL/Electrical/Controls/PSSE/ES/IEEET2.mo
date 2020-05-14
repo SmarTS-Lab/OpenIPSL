@@ -61,7 +61,7 @@ protected
   parameter SI.PerUnit V_RMAX0(fixed=false);
   parameter SI.PerUnit V_RMIN0(fixed=false);
   parameter SI.PerUnit K_E0(fixed=false);
-  parameter SI.PerUnit Efd0(fixed=false);
+  //parameter SI.PerUnit Efd0(fixed=false);
   parameter SI.PerUnit SE_Efd0(fixed=false);
   parameter SI.PerUnit VR0(fixed=false);
 initial equation
