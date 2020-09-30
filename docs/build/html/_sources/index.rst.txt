@@ -40,31 +40,31 @@ In order to perform the verification there were three different tests that are p
 
 - Fault - Three phase fault applied to the bus FAULT.  This test intends to check the dynamic behavior of the Modelica models against the reference models in PSS@E. The main idea is to verify the correspondence of the fast dynamics and non-linearities of the models between the two tools.
 
-.. image:: img/verifications/faultcharacteristics.png
-      :width: 200 px
+.. image:: verification/images/faultcharacteristics.png
+      :width: 300 px
       :align: center
 
-.. image:: img/verifications/faultdiagram.png
-      :width: 200 px
+.. image:: verification/images/faultdiagram.png
+      :width: 300 px
       :align: center
 
 - Load Variation - Variation of the Load in the system at Load Bus. This test intends to verify the similar behavior between the models developed in Modelica and PSS@E focusing on testing the slow dynamics of the systems.
 
-.. image:: img/verifications/loadvariationcharacteristics.png
-      :width: 200 px
+.. image:: verification/images/loadvariationcharacteristics.png
+      :width: 300 px
       :align: center
 
-.. image:: img/verifications/loadvariationdiagram.png
-      :width: 200 px
+.. image:: verification/images/loadvariationdiagram.png
+      :width: 300 px
       :align: center
 
 - Reference Step - Step in the Exciter voltage reference. The implementation of this test in Modelica has been performed by modifying the existing base class of the Exciter model. This test intends to validate the Modelica models against PSS@E checking the dynamic behavior, in particular in the saturation region of the components, that is determined by this type of event.
 
-.. image:: img/verifications/referencestepcharacteristics.png
-      :width: 200 px
+.. image:: verification/images/referencestepcharacteristics.png
+      :width: 300 px
       :align: center
 
-Then the models were verified by comparing selected output signals from both tools and comparing them via linear regression and taking into account a small error. The results of all of the verifications can be found in the verification tab.
+Then the models were verified by comparing selected output signals from both tools and comparing them via linear regression and taking into account a small error. The results of all of the verifications can be found in the verifications tab.
 
 Questions or need help?
 -----------------------
@@ -82,6 +82,7 @@ Check out our :ref:`talk-to-us` page for different ways of getting in touch.
    User Guide <user-guide/get-started>
    Community <community/community-home>
    Technical Documentation <tech-doc/tech-doc-home>
+   Verifications <verification/verifications>
 
 Indices and tables
 ------------------

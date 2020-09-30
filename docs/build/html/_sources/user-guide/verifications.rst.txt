@@ -1,0 +1,15 @@
+Verifications
+=============
+
+
+The models that have been verified in Dymola are:
+
+.. image:: verification/images/DymolaList.png
+      :width: 500 px
+      :align: center
+
+The models that have been verified in OpenModelica are:
+
+.. image:: verification/images/OpenModelicaList.png
+      :width: 500 px
+      :align: center
