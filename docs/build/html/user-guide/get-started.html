@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Guide &mdash; OpenIPSL 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Community" href="../community/community-home.html" />
+    <link rel="prev" title="Publications" href="../publications.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> OpenIPSL
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">OpenIPSL’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-started-with-openipsl">Get Started with OpenIPSL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#package-content">Package Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-flow-solvers-software">Power Flow Solvers / Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-time-domain-simulations">Running Time-Domain Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../community/community-home.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tech-doc/tech-doc-home.html">Technical Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenIPSL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>User Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/user-guide/get-started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-started-with-openipsl">
+<span id="get-started"></span><h2>Get Started with OpenIPSL<a class="headerlink" href="#get-started-with-openipsl" title="Permalink to this headline">¶</a></h2>
+<p>The OpenIPSL was developed to be a familiar alternative to traditional power system analysis tools.
+There are, however, some particularities to the nature of the library, presented in this Section.</p>
+<div class="section" id="package-content">
+<h3>Package Content<a class="headerlink" href="#package-content" title="Permalink to this headline">¶</a></h3>
+<p>The OpenIPSL has been developed as a <a class="reference external" href="https://www.modelica.org">Modelica</a> library for power system simulations.
+The repository contains the following:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>The OpenIPSL package:</dt>
+<dd>A Modelica library for power system component models.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The Application Examples:</dt>
+<dd>A set of power system network models implemented in separate Modelica packages.</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The repository does <strong>not</strong> provide any external software packages.
+The simulation of the models requires separate Modelica-compliant software packages.</p>
+</div>
+</div>
+<div class="section" id="power-flow-solvers-software">
+<h3>Power Flow Solvers / Software<a class="headerlink" href="#power-flow-solvers-software" title="Permalink to this headline">¶</a></h3>
+<p>There is no power flow solver associated to the library.
+When building a use case, initialization of all variables must be performed with a power flow software.
+The users are free to choose their power flow software of choice.</p>
+<p>Please note that during the development of the library, the power flow software used corresponds to that of the reference model, for example, for models coming from <a class="reference external" href="http://faraday1.ucd.ie/psat.html">PSAT</a>, we created the same power system model in <a class="reference external" href="http://faraday1.ucd.ie/psat.html">PSAT</a> and in Modelica using our library.
+The power flow solution from PSAT was then reported into the corresponding “power flow solution parameters” corresponding to each model.</p>
+<p>Within the iTesla Toolbox (i.e. the whole platform), there are different power flow tools implemented and also an “Automatic Translator” that takes a file with the parameters of a model (as defined by a domain specific tool) and populates the power flow parameters of the models.
+Therefore, there was no need to develop a power flow solver.</p>
+</div>
+<div class="section" id="running-time-domain-simulations">
+<h3>Running Time-Domain Simulations<a class="headerlink" href="#running-time-domain-simulations" title="Permalink to this headline">¶</a></h3>
+<p>There is no Modelica-compliant tool provided to run the time domain simulations.
+Users of the OpenIPSL are free to choose their tool of choice.</p>
+<p>Please note that the development of OpenIPSL has been carried out using <a class="reference external" href="https://www.openmodelica.org/">OpenModelica</a>  and <a class="reference external" href="http://www.3ds.com/products-services/catia/products/dymola">Dymola</a>.
+The library is, also, systematically checked with <a class="reference external" href="https://www.openmodelica.org/">OpenModelica</a> in the repository (see <a class="reference internal" href="../tech-doc/continuous-integration.html#ci"><span class="std std-ref">Continuous Integration</span></a>).
+It might be possible to face issues when using other <a class="reference external" href="https://modelica.org/tools">Modelica tools</a> that we have not fully tested.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../community/community-home.html" class="btn btn-neutral float-right" title="Community" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../publications.html" class="btn btn-neutral float-left" title="Publications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, SmarTS Lab, KTH Royal Institute of Technology
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
