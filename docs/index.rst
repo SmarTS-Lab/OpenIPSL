@@ -33,6 +33,39 @@ You can use these tools to create a power flow solution for your network.
 If you do not have access to these tools or do not want to use them, there are several power flow solvers available on Github.
 Future work in the OpenIPSL effort will include to generate Modelica "records" from open source power flow solvers such as `GridCal`_ or `PyPSA`_.
 
+Model Verification
+------------------
+
+In order to perform the verification there were three different tests that are performed on both PSS/E and Modelica. The one-line-diagram and specifications are outlined below:
+
+- Fault - Three phase fault applied to the bus FAULT.  This test intends to check the dynamic behavior of the Modelica models against the reference models in PSS@E. The main idea is to verify the correspondence of the fast dynamics and non-linearities of the models between the two tools.
+
+.. image:: img/verifications/faultcharacteristics.png
+      :width: 200 px
+      :align: center
+
+.. image:: img/verifications/faultdiagram.png
+      :width: 200 px
+      :align: center
+
+- Load Variation - Variation of the Load in the system at Load Bus. This test intends to verify the similar behavior between the models developed in Modelica and PSS@E focusing on testing the slow dynamics of the systems.
+
+.. image:: img/verifications/loadvariationcharacteristics.png
+      :width: 200 px
+      :align: center
+
+.. image:: img/verifications/loadvariationdiagram.png
+      :width: 200 px
+      :align: center
+
+- Reference Step - Step in the Exciter voltage reference. The implementation of this test in Modelica has been performed by modifying the existing base class of the Exciter model. This test intends to validate the Modelica models against PSS@E checking the dynamic behavior, in particular in the saturation region of the components, that is determined by this type of event.
+
+.. image:: img/verifications/referencestepcharacteristics.png
+      :width: 200 px
+      :align: center
+
+Then the models were verified by comparing selected output signals from both tools and comparing them via linear regression and taking into account a small error. The results of all of the verifications can be found in the verification tab.
+
 Questions or need help?
 -----------------------
 
