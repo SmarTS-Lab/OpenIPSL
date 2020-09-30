@@ -1,0 +1,41 @@
+body{
+	background: #EEEEEE;
+	color: #000;
+	text-align: center;
+}
+body, table{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px; 
+}
+#page{ 
+	width: 700px; 
+	margin: auto; 
+	text-align: left; 
+	background-color: #FFF;
+}
+table.info{ 
+	border: 0; 
+	width: 690px; 
+	margin: 5px;
+}
+table.info td{ 
+	background-color: #efefef; 
+	padding: 1em;
+}
+table.info td.header{ 
+	font-weight: bold; 
+	width: 150px; 
+	background-color: #EEE;
+}
+tr.error td, tr.error td.header { 
+	background-color: #F5A9BC; 
+	color: red; 
+}
+tr.warning td, tr.warning td.header { 
+	background-color: #FFCC66; 
+	color: #FF6600; 
+}
+h1{ 
+	font-size: 16px; 
+	padding: 1em; 
+}
