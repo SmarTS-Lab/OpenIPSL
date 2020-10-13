@@ -20,7 +20,7 @@ model AVRTypeII "PSAT AVR Type 2"
   parameter SI.Time Tf=0.1 "Stabilizer time constant";
   parameter Real Ke=0 "Field circuit integral deviation [pu/pu]";
   parameter SI.Time Te=0.2 "Field circuit time constant";
-  parameter SIunits.Time Tr=0.001 "Measurement time constant";
+  parameter SI.Time Tr=0.001 "Measurement time constant";
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
   parameter SI.PerUnit v0=1 "Initial measured voltage";
