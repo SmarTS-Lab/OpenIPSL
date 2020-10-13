@@ -35,8 +35,6 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
         transformation(
         extent={{-14,-10},{14,10}},
         origin={-64,-4})));
-  inner Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
   Modelica.Blocks.Sources.Constant const1(k=Modelica.Constants.inf)
     annotation (Placement(transformation(extent={{-40,-48},{-56,-32}})));
 equation
