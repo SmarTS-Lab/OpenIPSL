@@ -1,3 +1,7 @@
-PFblocks
 Auxiliary
-PFmodelmpptCorrected05MW
+PV_Plant
+Controller
+DCBusBar
+PVArray
+PVModule
+CurrentLimiter
