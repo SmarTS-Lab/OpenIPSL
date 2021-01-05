@@ -30,6 +30,8 @@ model Controller
     Placement(visible = true, transformation(origin = {210, -80}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.Auxiliary.ReactivePowerSupport reactivePowerSupport annotation(
     Placement(visible = true, transformation(origin = {-19, -71}, extent = {{-21, -21}, {21, 21}}, rotation = 0)));
+  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.CurrentLimiter currentLimiter(Deadband = Deadband, maxAbsCur = maxAbsCur, maxIq = maxIq, i_EEG = i_EEG)  annotation(
+    Placement(visible = true, transformation(origin = {140, -1.77636e-15}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
 equation
   connect(vdcref, MPP_delay.u) annotation(
     Line(points = {{-200, 90}, {-162, 90}}, color = {0, 0, 127}));
@@ -49,6 +51,14 @@ equation
     Line(points = {{-60, 30}, {-32, 30}}, color = {0, 0, 127}));
   connect(reactivePowerSupport.duac, feedback.y) annotation(
     Line(points = {{-36, -70}, {-82, -70}, {-82, -70}, {-80, -70}}, color = {0, 0, 127}));
+  connect(currentLimiter.idout, id_ref) annotation(
+    Line(points = {{162, 10}, {180, 10}, {180, 80}, {210, 80}, {210, 80}}, color = {0, 0, 127}));
+  connect(currentLimiter.duac, feedback.y) annotation(
+    Line(points = {{124, 0}, {-60, 0}, {-60, -70}, {-80, -70}, {-80, -70}}, color = {0, 0, 127}));
+  connect(reactivePowerSupport.iq, currentLimiter.iqin) annotation(
+    Line(points = {{4, -70}, {100, -70}, {100, -12}, {124, -12}, {124, -12}}, color = {0, 0, 127}));
+  connect(currentLimiter.iqout, iq_ref) annotation(
+    Line(points = {{162, -10}, {180, -10}, {180, -80}, {210, -80}, {210, -80}}, color = {0, 0, 127}));
   annotation(
     Diagram(coordinateSystem(grid = {2, 2}, extent = {{-200, -160}, {200, 160}}, preserveAspectRatio = true)),
     Icon(coordinateSystem(grid = {2, 2}), graphics = {Text(origin = {-50, 70}, extent = {{-30, 10}, {30, -10}}, textString = "vdcin"), Text(origin = {-50, 30}, extent = {{-30, 10}, {30, -10}}, textString = "vdcref"), Text(origin = {-50, -30}, extent = {{-30, 10}, {30, -10}}, textString = "uac"), Text(origin = {-50, -70}, extent = {{-30, 10}, {30, -10}}, textString = "pred"), Text(origin = {70, 50}, extent = {{-30, 10}, {30, -10}}, textString = "id_ref"), Text(origin = {70, -50}, extent = {{-30, 10}, {30, -10}}, textString = "iq_ref"), Rectangle(fillColor = {255, 255, 255}, extent = {{-100, 100}, {100, -100}}), Text(origin = {-1, 90}, extent = {{-99, 10}, {99, -10}}, textString = "Current Controller")}),
