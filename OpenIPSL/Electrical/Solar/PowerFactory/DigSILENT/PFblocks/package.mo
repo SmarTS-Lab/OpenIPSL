@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.KTH;
+within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
 package PFblocks
   extends Modelica.Icons.Package;
 
