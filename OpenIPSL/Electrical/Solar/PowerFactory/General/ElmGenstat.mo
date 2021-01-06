@@ -50,6 +50,41 @@ equation
   i = sqrt(p.ii ^ 2 + p.ir ^ 2)*S_b/M_b;
   angle_i = atan2(p.ii, p.ir);
   annotation(
-    Icon(graphics = {Rectangle(lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, -160}, {100, 160}}), Text(origin = {-35.7, 100.01}, fillPattern = FillPattern.Solid, extent = {{-20.3, -10.18}, {20.3, 10.18}}, textString = "id_ref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {-32.7, 41.82}, fillPattern = FillPattern.Solid, extent = {{-23.3, -10.18}, {23.3, 10.18}}, textString = "iq_ref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {24.8302, 168.735}, lineColor = {118, 18, 62}, fillPattern = FillPattern.Solid, extent = {{-122.83, -30.7345}, {75.3098, -8.89452}}, textString = "ElmStatgen", fontName = "Arial"), Ellipse(origin = {71.43, -32.67}, lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, lineThickness = 0.5, extent = {{-71.43, 66.67}, {-1.43, -1.33}}, endAngle = 360), Line(origin = {49.9468, -19.7732}, points = {{-38, 19}, {8, 19}}, color = {118, 18, 62}, arrow = {Arrow.None, Arrow.Filled}, arrowSize = 10), Text(origin = {-30.7, -36.18}, fillPattern = FillPattern.Solid, extent = {{-21.3, -10.18}, {21.3, 10.18}}, textString = "sinref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {-27.7, -98.18}, fillPattern = FillPattern.Solid, extent = {{-24.3, -10.18}, {24.3, 10.18}}, textString = "cosref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {24.07, -122.08}, lineColor = {118, 18, 62}, fillPattern = FillPattern.Solid, extent = {{-124.07, -27.92}, {76.07, -8.08}}, textString = "%name", fontName = "Arial"), Text(origin = {74.3, 58.01}, fillPattern = FillPattern.Solid, extent = {{-20.3, -10.18}, {20.3, 10.18}}, textString = "i", fontName = "Arial", horizontalAlignment = TextAlignment.Right), Text(origin = {74.3, -81.99}, fillPattern = FillPattern.Solid, extent = {{-20.3, -10.18}, {20.3, 10.18}}, textString = "v", fontName = "Arial", horizontalAlignment = TextAlignment.Right)}, coordinateSystem(initialScale = 0.1, extent = {{-100, -160}, {100, 160}})),
-    Diagram);
+    Icon(graphics = {Rectangle(lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, -160}, {100, 160}}), Text(origin = {-35.7, 100.01}, fillPattern = FillPattern.Solid, extent = {{-20.3, -10.18}, {20.3, 10.18}}, textString = "id_ref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {-32.7, 41.82}, fillPattern = FillPattern.Solid, extent = {{-23.3, -10.18}, {23.3, 10.18}}, textString = "iq_ref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {24.8302, 168.735}, lineColor = {118, 18, 62}, fillPattern = FillPattern.Solid, extent = {{-122.83, -30.7345}, {75.3098, -8.89452}}, textString = "ElmStatgen", fontName = "Arial"), Ellipse(origin = {71.43, -32.67}, lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, lineThickness = 0.5, extent = {{-71.43, 66.67}, {-1.43, -1.33}}, endAngle = 360), Line(origin = {49.9468, -19.7732}, points = {{-38, 19}, {8, 19}}, color = {118, 18, 62}, arrow = {Arrow.None, Arrow.Filled}, arrowSize = 10), Text(origin = {-30.7, -36.18}, fillPattern = FillPattern.Solid, extent = {{-21.3, -10.18}, {21.3, 10.18}}, textString = "sinref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {-27.7, -98.18}, fillPattern = FillPattern.Solid, extent = {{-24.3, -10.18}, {24.3, 10.18}}, textString = "cosref", fontName = "Arial", horizontalAlignment = TextAlignment.Left), Text(origin = {24.07, -122.08}, lineColor = {118, 18, 62}, fillPattern = FillPattern.Solid, extent = {{-124.07, -27.92}, {76.07, -8.08}}, textString = "%name", fontName = "Arial"), Text(origin = {74.3, 58.01}, fillPattern = FillPattern.Solid, extent = {{-20.3, -10.18}, {20.3, 10.18}}, textString = "i", fontName = "Arial", horizontalAlignment = TextAlignment.Right), Text(origin = {74.3, -81.99}, fillPattern = FillPattern.Solid, extent = {{-20.3, -10.18}, {20.3, 10.18}}, textString = "v", fontName = "Arial", horizontalAlignment = TextAlignment.Right), Line(origin = {80, 0}, points = {{-10, 0}, {10, 0}, {10, 0}}, color = {118, 18, 62}, thickness = 0.5)}, coordinateSystem(initialScale = 0.1, extent = {{-100, -160}, {100, 160}})),
+    Diagram,
+    Documentation(info="<html>
+<p>
+Static generator implemented currently only as a current source.
+</p>
+</html>", revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>ElmGenstat</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PowerFactory Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>January 2021</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Tin Rabuzin, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has not been verified against PowerFactory.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p></p></td>
+</tr>
+</table>
+</html>"));
 end ElmGenstat;
