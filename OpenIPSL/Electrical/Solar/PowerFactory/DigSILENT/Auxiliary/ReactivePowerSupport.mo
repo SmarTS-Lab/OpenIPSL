@@ -19,7 +19,7 @@ model ReactivePowerSupport
     Placement(visible = true, transformation(origin = {182, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.General.Picdro picdro(Tdrop = if i_EEG then 0 else 0.5, Tpick = 0)  annotation(
     Placement(visible = true, transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold = Deadband)  annotation(
+  Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold = 0)  annotation(
     Placement(visible = true, transformation(origin = {-70, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Abs abs1 annotation(
     Placement(visible = true, transformation(origin = {-110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

@@ -14,9 +14,9 @@ model PVModule
   parameter Real theta_STC = 25;
   Modelica.Blocks.Interfaces.RealInput U annotation(
     Placement(visible = true, transformation(origin = {-100, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput E annotation(
+  Modelica.Blocks.Interfaces.RealInput E if use_input_E annotation(
     Placement(visible = true, transformation(origin = {-100, 30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput theta annotation(
+  Modelica.Blocks.Interfaces.RealInput theta if use_input_theta annotation(
     Placement(visible = true, transformation(origin = {-100, -30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput I annotation(
     Placement(visible = true, transformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {106, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -38,12 +38,12 @@ protected
 equation
 // Defining irradiance and temperature in case no input is connected
   if use_input_E then
-    connect(E, local_E);
+    local_E = E;
   else
     local_E = max(0.0, 1000 * (P_init / (Umpp_stc * Impp_stc)) / (tempCorrI * tempCorrU));
   end if;
   if use_input_theta then
-    connect(theta, local_theta);
+    local_theta = theta;
   else
     local_theta = theta_STC;
   end if;
@@ -56,12 +56,12 @@ equation
   U0 = U0_stc * lnEquot * tempCorrU;
 // Open-circuit voltage dependent from E and theta, proportional to log(E)
 // Short-circuit current
-  Isc = if E > 1 then Isc_stc * E / E_STC * tempCorrI else 0;
+  Isc = if local_E > 1 then Isc_stc * local_E / E_STC * tempCorrI else 0;
 //Current generation only if E>1 (limitation of model)
 // Maximum Power Point
   Umpp = Umpp_stc * lnEquot * tempCorrU;
 // MPP voltage dependent on E and theta
-  Impp = if E > 1 then Impp_stc * E / E_STC * tempCorrI else 0;
+  Impp = if local_E > 1 then Impp_stc * local_E / E_STC * tempCorrI else 0;
 
 // Helper Variables
   c1 = if U0 > 0 then Umpp - U0 else 1;

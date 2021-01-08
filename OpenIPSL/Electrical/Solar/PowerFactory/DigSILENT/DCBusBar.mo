@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
 
 model DCBusBar
-  parameter SI.Voltage Udc0 = 700 "Initial DC Voltage";
+  parameter SI.Voltage Udc0 "Initial DC Voltage";
   parameter SI.Capacitance C=1.5e-3 "Capacity of capacitor on DC busbar";
   Modelica.Blocks.Interfaces.RealInput P_conv annotation (
       Placement(
