@@ -19,9 +19,9 @@ model PVArray
     Placement(visible = true, transformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput Uarray annotation(
     Placement(visible = true, transformation(origin = {-100, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput E annotation(
+  Modelica.Blocks.Interfaces.RealInput E if use_input_E annotation(
     Placement(visible = true, transformation(origin = {-100, 30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput theta annotation(
+  Modelica.Blocks.Interfaces.RealInput theta if use_input_theta annotation(
     Placement(visible = true, transformation(origin = {-100, -30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain(k = n_parallel)  annotation(
     Placement(visible = true, transformation(origin = {70, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -29,7 +29,7 @@ model PVArray
     Placement(visible = true, transformation(origin = {70, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.PVModule module(Impp_stc = Impp_stc, Isc_stc = Isc_stc, P_init = P_init / (n_series * n_parallel), U0_stc = U0_stc, Umpp_stc = Umpp_stc, ai = ai, au = au, use_input_E = use_input_E, use_input_theta = use_input_theta)  annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-  Modelica.Blocks.Continuous.FirstOrder module_time(T = Tr)  annotation(
+  Modelica.Blocks.Continuous.FirstOrder module_time(T = Tr, initType = Modelica.Blocks.Types.Init.SteadyState)  annotation(
     Placement(visible = true, transformation(origin = {-60, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain2(k = 1 / n_series) annotation(
     Placement(visible = true, transformation(origin = {-30, 50}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
@@ -38,10 +38,14 @@ equation
     Line(points = {{82, 50}, {104, 50}, {104, 50}, {110, 50}}, color = {0, 0, 127}));
   connect(gain1.y, Vmpp_array) annotation(
     Line(points = {{82, -50}, {104, -50}, {104, -50}, {110, -50}}, color = {0, 0, 127}));
+  if use_input_E then
   connect(module.E, E) annotation(
     Line(points = {{-18, 6}, {-68, 6}, {-68, 30}, {-100, 30}, {-100, 30}}, color = {0, 0, 127}));
+  end if;
+  if use_input_theta then
   connect(module.theta, theta) annotation(
     Line(points = {{-18, -6}, {-60, -6}, {-60, -30}, {-100, -30}, {-100, -30}}, color = {0, 0, 127}));
+  end if;
   connect(module.I, gain.u) annotation(
     Line(points = {{22, 10}, {40, 10}, {40, 50}, {58, 50}, {58, 50}}, color = {0, 0, 127}));
   connect(module.Umpp, gain1.u) annotation(
@@ -54,5 +58,5 @@ equation
     Line(points = {{-30, 40}, {-30, 40}, {-30, 14}, {-18, 14}, {-18, 14}}, color = {0, 0, 127}));
 
 annotation(
-    Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {-50, 70}, extent = {{-20, 8}, {20, -8}}, textString = "Uarray"), Text(origin = {-58, 30}, extent = {{-20, 8}, {20, -8}}, textString = "E"), Text(origin = {-54, -28}, extent = {{-20, 8}, {20, -8}}, textString = "theta"), Text(origin = {-52, -70}, extent = {{-20, 8}, {20, -8}}, textString = "P_conv"), Text(origin = {72, 52}, extent = {{-20, 8}, {20, -8}}, textString = "Iarray"), Text(origin = {59, -48}, extent = {{-37, 8}, {37, -8}}, textString = "Vmpp_array"), Text(origin = {-1, 90}, extent = {{-55, 8}, {55, -8}}, textString = "Photovoltaic Array")}));
+    Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {-50, 70}, extent = {{-20, 8}, {20, -8}}, textString = "Uarray"), Text(origin = {-58, 30}, extent = {{-20, 8}, {20, -8}}, textString = "E"), Text(origin = {-54, -28}, extent = {{-20, 8}, {20, -8}}, textString = "theta"), Text(origin = {72, 52}, extent = {{-20, 8}, {20, -8}}, textString = "Iarray"), Text(origin = {59, -48}, extent = {{-37, 8}, {37, -8}}, textString = "Vmpp_array"), Text(origin = {-1, 90}, extent = {{-55, 8}, {55, -8}}, textString = "Photovoltaic Array")}));
 end PVArray;
