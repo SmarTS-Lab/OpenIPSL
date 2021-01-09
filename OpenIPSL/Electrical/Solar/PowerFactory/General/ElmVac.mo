@@ -21,7 +21,7 @@ model ElmVac
   OpenIPSL.Interfaces.PwPin p annotation (
     Placement(visible = true, transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 initial equation
-  phiu = angle_0rad;
+  phiu = angle_0;
 equation
   der(phiu) = 2*fn*C.pi*(f0-fn/50);
   p.vr = v*cos(phiu);
