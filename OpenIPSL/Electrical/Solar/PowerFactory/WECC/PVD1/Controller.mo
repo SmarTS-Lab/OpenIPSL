@@ -77,9 +77,9 @@ model Controller
     Placement(visible = true, transformation(origin = {150, 90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Product product annotation(
     Placement(visible = true, transformation(origin = {70, 150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  DynEq.Elements.Solar.WECC.GenerationTripping frequency_tripping(Lv0 = Ft0, Lv1 = Ft1, Lv2 = Ft2, Lv3 = Ft3, recov = fr_recov) annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.WECC.PVD1.GenerationTripping frequency_tripping(Lv0 = Ft0, Lv1 = Ft1, Lv2 = Ft2, Lv3 = Ft3, recov = fr_recov) annotation(
     Placement(visible = true, transformation(origin = {30, 150}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  DynEq.Elements.Solar.WECC.GenerationTripping voltage_tripping(Lv0 = Vt0, Lv1 = Vt1, Lv2 = Vt2, Lv3 = Vt3, recov = vr_recov) annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.WECC.PVD1.GenerationTripping voltage_tripping(Lv0 = Vt0, Lv1 = Vt1, Lv2 = Vt2, Lv3 = Vt3, recov = vr_recov) annotation(
     Placement(visible = true, transformation(origin = {30, 110}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Product product2 annotation(
     Placement(visible = true, transformation(origin = {70, 110}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
