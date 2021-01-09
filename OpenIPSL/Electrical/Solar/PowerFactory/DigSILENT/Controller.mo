@@ -16,7 +16,6 @@ model Controller
   parameter SI.PerUnit maxAbsCur = 1 "Max. allowed absolute current";
   parameter SI.PerUnit maxIq = 1 "Max.abs reactive current in normal operation";
   parameter SI.PerUnit uac0 = 1 "Initial voltage magnitude";
-  parameter SI.Voltage udc0 = 659.17;
   parameter SI.PerUnit iq0 = -0.2 "Initial q-axis current";
   parameter SI.PerUnit id0 = 0.6 "Initial d-axis current";
   Modelica.Blocks.Interfaces.RealInput vdcref annotation(
@@ -27,7 +26,7 @@ model Controller
     Placement(visible = true, transformation(origin = {-200, 130}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback feedback annotation(
     Placement(visible = true, transformation(origin = {-90, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.FirstOrder MPP_delay(T = Tmpp, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = udc0) annotation(
+  Modelica.Blocks.Continuous.FirstOrder MPP_delay(T = Tmpp, initType = Modelica.Blocks.Types.Init.SteadyState) annotation(
     Placement(visible = true, transformation(origin = {-150, 90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput vdcin annotation(
     Placement(visible = true, transformation(origin = {-200, 30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -39,7 +38,7 @@ model Controller
     Placement(visible = true, transformation(origin = {-110, 90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback feedback1 annotation(
     Placement(visible = true, transformation(origin = {-70, 30}, extent = {{-10, 10}, {10, -10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.FirstOrder filter(T = Tr, initType = Modelica.Blocks.Types.Init.SteadyState) annotation(
+  Modelica.Blocks.Continuous.FirstOrder filter(T = Tr, initType = Modelica.Blocks.Types.Init.SteadyState, y_start = 0) annotation(
     Placement(visible = true, transformation(origin = {-20, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput id_ref annotation(
     Placement(visible = true, transformation(origin = {210, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
