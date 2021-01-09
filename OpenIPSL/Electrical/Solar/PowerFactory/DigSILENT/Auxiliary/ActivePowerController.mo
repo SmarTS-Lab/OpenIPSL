@@ -75,5 +75,40 @@ equation
     Line(points = {{78, -6}, {56, -6}, {56, -6}, {56, -6}}, color = {0, 0, 127}));
   annotation(
     Diagram(coordinateSystem(extent = {{-160, -160}, {160, 160}}), graphics = {Rectangle(origin = {24, 67}, pattern = LinePattern.Dash, extent = {{-94, 39}, {94, -39}}), Text(origin = {-27, 113}, extent = {{-47, 7}, {47, -7}}, textString = "Tracking yo1", horizontalAlignment = TextAlignment.Left), Line(origin = {-12, 70}, points = {{-6, 0}, {6, 0}, {6, 0}}, color = {255, 0, 0})}),
-    Icon(graphics = {Rectangle( lineColor = {0, 0, 127}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, -100}, {100, 100}}), Line(origin = {50.106, -52.0451}, points = {{-80, -40}, {-80, -20}, {-6, 30}}, color = {0, 0, 127}), Polygon(origin = {50, -84}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 90}}), Line(origin = {50.175, -93.8248}, points = {{-80, 78}, {-80, 0}}, color = {192, 192, 192}), Line(origin = {40.2612, -7.74434}, points = {{-80, -80}, {30, -80}}, color = {192, 192, 192}), Polygon(origin = {2, -8}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{90, -80}, {68, -72}, {68, -88}, {90, -80}}), Text(origin = {18, -50.9032}, lineColor = {192, 192, 192}, extent = {{0, 2.90323}, {34, -27.0968}}, textString = "PI"), Text(origin = {6, 89}, extent = {{-56, 9}, {56, -9}}, textString = "Active Power Control"), Text(origin = {-50, 70}, extent = {{-30, 10}, {30, -10}}, textString = "pred"), Text(origin = {-58, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yi"), Text(origin = {82, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yo")}));
+    Icon(graphics = {Rectangle( lineColor = {0, 0, 127}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, -100}, {100, 100}}), Line(origin = {50.106, -52.0451}, points = {{-80, -40}, {-80, -20}, {-6, 30}}, color = {0, 0, 127}), Polygon(origin = {50, -84}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 90}}), Line(origin = {50.175, -93.8248}, points = {{-80, 78}, {-80, 0}}, color = {192, 192, 192}), Line(origin = {40.2612, -7.74434}, points = {{-80, -80}, {30, -80}}, color = {192, 192, 192}), Polygon(origin = {2, -8}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{90, -80}, {68, -72}, {68, -88}, {90, -80}}), Text(origin = {18, -50.9032}, lineColor = {192, 192, 192}, extent = {{0, 2.90323}, {34, -27.0968}}, textString = "PI"), Text(origin = {6, 89}, extent = {{-56, 9}, {56, -9}}, textString = "Active Power Control"), Text(origin = {-50, 70}, extent = {{-30, 10}, {30, -10}}, textString = "pred"), Text(origin = {-58, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yi"), Text(origin = {82, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yo")}),
+     Documentation(info = "<html>
+<p>
+This is essentially a PI controller whose output is reduced during the activation of FRT. PI from Modelica Standard Library was not used due to the specific implementation in PowerFactory which this model follows.
+</p>
+</html>", revisions = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>Active Power Controller for PV</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PowerFactory Implementation in Templates</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>January 2021</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Tin Rabuzin, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has not been verified against PowerFactory.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p></p></td>
+</tr>
+</table>
+</html>"));
 end ActivePowerController;

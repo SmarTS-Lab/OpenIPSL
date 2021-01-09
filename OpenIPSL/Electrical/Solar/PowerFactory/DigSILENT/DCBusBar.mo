@@ -53,19 +53,38 @@ equation
         extent={{-120, -100},{120, 100}},
         preserveAspectRatio=true,
         grid={2,2})),
-    Documentation(revisions="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+    Documentation(info = "<html>
+<p>
+DC busbar model for DigSILENT's implementation of the PV plant.
+</p>
+</html>", revisions = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>DC Busbar model</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PowerFactory Implementation in Templates</p></td>
+</tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2015</td>
+<td><p>January 2021</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Joan Russinol, KTH Royal Institute of Technology</p></td>
+<td><p>Tin Rabuzin, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has not been verified against PowerFactory.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p></p></td>
 </tr>
 </table>
 </html>"));

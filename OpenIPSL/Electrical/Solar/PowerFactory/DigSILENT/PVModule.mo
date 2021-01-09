@@ -83,12 +83,9 @@ equation
   P = Impp * Umpp;
   annotation(
     Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}})}),
-    Documentation(info = "<html>
+ Documentation(info = "<html>
 <p>
-A model of a PV module for DigSILENT implementation of a PV plant.
-</p>
-<p>
-Standard test conditions (STC): Solar Radiation: E = 1000 W/m^2, Temperature: theta = 25 degC
+Model of a PV Module within a PV array.
 </p>
 </html>", revisions = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
@@ -97,7 +94,7 @@ Standard test conditions (STC): Solar Radiation: E = 1000 W/m^2, Temperature: th
 </tr>
 <tr>
 <td><p>Reference</p></td>
-<td><p>PowerFactory Implementation</p></td>
+<td><p>PowerFactory Implementation in Templates</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>

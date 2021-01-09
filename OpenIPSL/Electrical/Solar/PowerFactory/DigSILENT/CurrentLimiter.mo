@@ -118,5 +118,40 @@ equation
     Line(points = {{40, 162}, {40, 162}, {40, 168}, {66, 168}, {66, 158}, {78, 158}, {78, 158}}, color = {0, 0, 127}));
   annotation(
     Icon(graphics = {Rectangle(origin = {-0.01, 0}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-99.99, 100}, {99.99, -100}}), Text(origin = {-35, 62}, extent = {{-21, 10}, {21, -10}}, textString = "idin"), Text(origin = {-33, -60}, extent = {{-21, 10}, {21, -10}}, textString = "iqin"), Text(origin = {-33, 0}, extent = {{-21, 10}, {21, -10}}, textString = "duac"), Text(origin = {71, 52}, extent = {{-21, 10}, {21, -10}}, textString = "idout"), Text(origin = {71, -48}, extent = {{-21, 10}, {21, -10}}, textString = "iqout"), Text(origin = {0, 90}, extent = {{-100, 10}, {100, -10}}, textString = "Current Limiter")}),
-    Diagram(coordinateSystem(extent = {{-200, -200}, {200, 200}})));
+    Diagram(coordinateSystem(extent = {{-200, -200}, {200, 200}})),
+     Documentation(info = "<html>
+<p>
+
+</p>
+</html>", revisions = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>Current Limiter</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PowerFactory Implementation in Templates</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>January 2021</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Tin Rabuzin, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has not been verified against PowerFactory.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p></p></td>
+</tr>
+</table>
+</html>"));
 end CurrentLimiter;
