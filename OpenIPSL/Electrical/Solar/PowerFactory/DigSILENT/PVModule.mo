@@ -11,7 +11,7 @@ model PVModule
   parameter Boolean use_input_theta = false "If true temperature is used as input";
   parameter SI.ActivePower P_init "Initial active power (needed only if input E is not used)";
   parameter SI.Irradiance E_STC = 1000;
-  parameter Real theta_STC = 25;
+  parameter SI.Temperature theta_STC = 298.15;
   Modelica.Blocks.Interfaces.RealInput U annotation(
     Placement(visible = true, transformation(origin = {-100, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput E if use_input_E annotation(
@@ -27,20 +27,23 @@ model PVModule
   SI.Voltage U0 "Open-circuit voltage";
   SI.Current Isc "Short-circuit current";
   SI.Current Impp "MPP Current";
+  SI.Power P "PV Module Power";
   Real tempCorrU "Voltage Correction Factor";
   Real tempCorrI "Current Correction Factor";
 protected
   Real lnEquot "Logarithm of the irradiance ratio";
   Real c1 "Helper variable";
   Real c2 "Helper variable";
-  //  parameter Real Estc;
-  //  parameter SI.Temperature thetastc;
+initial equation
+if not use_input_E then
+  P = P_init;
+end if;
 equation
 // Defining irradiance and temperature in case no input is connected
   if use_input_E then
     local_E = E;
   else
-    local_E = max(0.0, 1000 * (P_init / (Umpp_stc * Impp_stc)) / (tempCorrI * tempCorrU));
+    der(local_E) = 0;
   end if;
   if use_input_theta then
     local_theta = theta;
@@ -48,8 +51,8 @@ equation
     local_theta = theta_STC;
   end if;
 // Temperature dependency
-  tempCorrU = 1 + au * (local_theta - 25);
-  tempCorrI = 1 + ai * (local_theta - 25);
+  tempCorrU = 1 + au * (SI.Conversions.to_degC(local_theta) - 25);
+  tempCorrI = 1 + ai * (SI.Conversions.to_degC(local_theta) - 25);
 // Open-circuit voltage
   lnEquot = if local_E > 1.0 then log(max(local_E, 1.0)) / log(E_STC) else 0;
 // ln(E)/ln(1000W/m2), if E > 1W/m2
@@ -77,6 +80,7 @@ equation
   end if;
 // Current output, Current generation only if E>1 (limitation of model)
   I = max(Isc * (1 - exp(c2 * (min(U0, U) - U0))), 0.0); // Blocking diode function included by max- and min-function
+  P = Impp * Umpp;
   annotation(
     Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}})}),
     Documentation(info = "<html>
