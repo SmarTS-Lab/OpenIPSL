@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model DCBusBar
   parameter SI.Capacitance C=1.5e-3 "Capacity of capacitor on DC busbar";

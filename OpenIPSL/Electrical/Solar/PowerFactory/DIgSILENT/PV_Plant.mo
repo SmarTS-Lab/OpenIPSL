@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model PV_Plant
   extends OpenIPSL.Electrical.Essentials.pfComponent(
@@ -63,17 +63,17 @@ model PV_Plant
     Dialog(group = "Current Controller Parameters"));
   OpenIPSL.Interfaces.PwPin p annotation(
     Placement(visible = true, transformation(origin = {210, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.Controller controller(Deadband = Deadband, K_FRT = K_FRT, Kp = Kp, Tip = Tip, Tmpp = Tmpp, Tr = Trm, U_min = U_min, i_EEG = i_EEG,id0 = P_0 / M_b / v_0, id_max = id_max, id_min = id_min, iq0 = -Q_0 / M_b / v_0, iq_max = iq_max, iq_min = iq_min, maxAbsCur = maxAbsCur, maxIq = maxIq, uac0 = v_0)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Controller controller(Deadband = Deadband, K_FRT = K_FRT, Kp = Kp, Tip = Tip, Tmpp = Tmpp, Tr = Trm, U_min = U_min, i_EEG = i_EEG,id0 = P_0 / M_b / v_0, id_max = id_max, id_min = id_min, iq0 = -Q_0 / M_b / v_0, iq_max = iq_max, iq_min = iq_min, maxAbsCur = maxAbsCur, maxIq = maxIq, uac0 = v_0)  annotation(
     Placement(visible = true, transformation(origin = {80, -2}, extent = {{-30, -30}, {30, 30}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant not_implemented_FRT(k = 1)  annotation(
     Placement(visible = true, transformation(origin = {-10, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.DCBusBar busbar(C = C)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.DCBusBar busbar(C = C)  annotation(
     Placement(visible = true, transformation(origin = {-30, 15}, extent = {{-30, -15}, {30, 15}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.General.ElmGenstat gen(M_b = M_b,angle_0 = angle_0, v_0 = v_0)  annotation(
     Placement(visible = true, transformation(origin = {160.25, -0.4}, extent = {{-19.75, -31.6}, {19.75, 31.6}}, rotation = 0)));
   Modelica.Blocks.Math.Gain pu_to_W(k = S_b)  annotation(
     Placement(visible = true, transformation(origin = {150, -50}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.PVArray pv_array(Impp_stc = Impp_stc, Isc_stc = Isc_stc,P_init = P_0, Tr = Tr, U0_stc = U0_stc, Umpp_stc = Umpp_stc, ai = ai, au = au, n_parallel = n_parallel, n_series = n_series, use_input_E = false, use_input_theta = false)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.PVArray pv_array(Impp_stc = Impp_stc, Isc_stc = Isc_stc,P_init = P_0, Tr = Tr, U0_stc = U0_stc, Umpp_stc = Umpp_stc, ai = ai, au = au, n_parallel = n_parallel, n_series = n_series, use_input_E = false, use_input_theta = false)  annotation(
     Placement(visible = true, transformation(origin = {-130, 10}, extent = {{-30, -30}, {30, 30}}, rotation = 0)));
 equation
   connect(not_implemented_FRT.y, controller.pred) annotation(
@@ -104,7 +104,7 @@ protected
     Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Line(origin = {0, 60.3123}, points = {{-100, 39.6877}, {0, -40.3123}, {100, 39.6877}, {100, 39.6877}})}),
         Documentation(info = "<html>
 <p>
-A PV Plant implemented according to the DigSILENT template in PowerFactory. 
+A PV Plant implemented according to the DIgSILENT template in PowerFactory. 
 </p>
 <p>NOTE 1: The PLL Dynamics are missing along with the active power reduction models for FRT events.
 </p>
@@ -113,11 +113,11 @@ A PV Plant implemented according to the DigSILENT template in PowerFactory.
 </html>", revisions = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Model Name</p></td>
-<td><p>DigSILENT PV System 3PH</p></td>
+<td><p>DIgSILENT PV System 3PH</p></td>
 </tr>
 <tr>
 <td><p>Reference</p></td>
-<td><p>PowerFactory Implementation in \DigSILENT Library\Templates\Photovoltaic</p></td>
+<td><p>PowerFactory Implementation in \DIgSILENT Library\Templates\Photovoltaic</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>

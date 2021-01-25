@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Solar.PowerFactory;
 
-model DigSILENT_PV
+model DIgSILENT_PV
   extends Modelica.Icons.Example;
 
   Modelica.Blocks.Sources.Constant const1(k = 25) annotation(
@@ -17,7 +17,7 @@ model DigSILENT_PV
     Placement(visible = true, transformation(origin = {70, 30}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
   inner OpenIPSL.Electrical.SystemBase SysData annotation(
     Placement(visible = true, transformation(origin = {-70.5, 90}, extent = {{-29.5, -10}, {29.5, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.PV_Plant pv_plant(M_b(displayUnit = "V.A") = 0.5e6, P_0 = 300000, angle_0 = 0, v_0 = 1)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.PV_Plant pv_plant(M_b(displayUnit = "V.A") = 0.5e6, P_0 = 300000, angle_0 = 0, v_0 = 1)  annotation(
     Placement(visible = true, transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(frequency.y, elmVac.f0) annotation(
@@ -29,4 +29,4 @@ equation
 protected
   annotation(
     __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "rungekutta"));
-end DigSILENT_PV;
+end DIgSILENT_PV;

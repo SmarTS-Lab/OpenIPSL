@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.Auxiliary;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
 model ActivePowerController
   parameter Real K = 0.005 "Gain of the PI-Controller";

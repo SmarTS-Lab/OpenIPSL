@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model PVModule
   parameter SI.Voltage U0_stc = 43.8 "Open-circuit voltage at Standard Test Conditions";

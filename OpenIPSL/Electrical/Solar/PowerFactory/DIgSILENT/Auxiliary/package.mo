@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 package Auxiliary
   extends Modelica.Icons.Package;
 

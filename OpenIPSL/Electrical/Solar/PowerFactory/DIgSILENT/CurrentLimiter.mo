@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model CurrentLimiter
   parameter SI.PerUnit maxAbsCur;

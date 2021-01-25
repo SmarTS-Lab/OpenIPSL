@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model PVArray
   parameter SI.ActivePower P_init "Initial active power of the array";
@@ -36,7 +36,7 @@ model PVArray
     Placement(visible = true, transformation(origin = {70, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain1(k = n_series) annotation(
     Placement(visible = true, transformation(origin = {70, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.PVModule module(Impp_stc = Impp_stc, Isc_stc = Isc_stc, P_init = P_init / (n_parallel * n_series), U0_stc = U0_stc, Umpp_stc = Umpp_stc, ai = ai, au = au, use_input_E = use_input_E, use_input_theta = use_input_theta) annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.PVModule module(Impp_stc = Impp_stc, Isc_stc = Isc_stc, P_init = P_init / (n_parallel * n_series), U0_stc = U0_stc, Umpp_stc = Umpp_stc, ai = ai, au = au, use_input_E = use_input_E, use_input_theta = use_input_theta) annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Continuous.FirstOrder module_time(T = Tr, initType = Modelica.Blocks.Types.Init.SteadyState) annotation(
     Placement(visible = true, transformation(origin = {-60, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.Auxiliary;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
 model ReactivePowerSupport
   parameter SI.PerUnit iq_max "Maximum d-axis current";

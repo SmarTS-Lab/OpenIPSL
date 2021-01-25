@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model Controller
   parameter Real Kp = 0.005 "Gain, Active Power PI-Controller";
@@ -44,11 +44,11 @@ model Controller
     Placement(visible = true, transformation(origin = {210, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput iq_ref annotation(
     Placement(visible = true, transformation(origin = {210, -80}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.Auxiliary.ReactivePowerSupport reactivePowerSupport(Deadband = Deadband, K_FRT = K_FRT, i0 = iq0, i_EEG = i_EEG, iq_max = iq_max, iq_min = iq_min)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary.ReactivePowerSupport reactivePowerSupport(Deadband = Deadband, K_FRT = K_FRT, i0 = iq0, i_EEG = i_EEG, iq_max = iq_max, iq_min = iq_min)  annotation(
     Placement(visible = true, transformation(origin = {-19, -71}, extent = {{-21, -21}, {21, 21}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.CurrentLimiter currentLimiter(Deadband = Deadband, maxAbsCur = maxAbsCur, maxIq = maxIq, i_EEG = i_EEG)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.CurrentLimiter currentLimiter(Deadband = Deadband, maxAbsCur = maxAbsCur, maxIq = maxIq, i_EEG = i_EEG)  annotation(
     Placement(visible = true, transformation(origin = {140, -1.77636e-15}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.Auxiliary.ActivePowerController activePowerController(K = Kp, T = Tip, id0 = id0,yo_max = id_max, yo_min = id_min)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary.ActivePowerController activePowerController(K = Kp, T = Tip, id0 = id0,yo_max = id_max, yo_min = id_min)  annotation(
     Placement(visible = true, transformation(origin = {30, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(vdcref, MPP_delay.u) annotation(
@@ -88,7 +88,7 @@ equation
     Icon(coordinateSystem(grid = {2, 2}), graphics = {Text(origin = {-50, 70}, extent = {{-30, 10}, {30, -10}}, textString = "vdcin"), Text(origin = {-50, 30}, extent = {{-30, 10}, {30, -10}}, textString = "vdcref"), Text(origin = {-50, -30}, extent = {{-30, 10}, {30, -10}}, textString = "uac"), Text(origin = {-50, -70}, extent = {{-30, 10}, {30, -10}}, textString = "pred"), Text(origin = {70, 50}, extent = {{-30, 10}, {30, -10}}, textString = "id_ref"), Text(origin = {70, -50}, extent = {{-30, 10}, {30, -10}}, textString = "iq_ref"), Rectangle(fillColor = {255, 255, 255}, extent = {{-100, 100}, {100, -100}}), Text(origin = {-1, 90}, extent = {{-99, 10}, {99, -10}}, textString = "Current Controller")}),
     Documentation(info = "<html>
 <p>
-Controller for DigSILENT's implementation of the PV plant.
+Controller for DIgSILENT's implementation of the PV plant.
 </p>
 </html>", revisions = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>

@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Solar.PowerFactory.DigSILENT.Auxiliary;
+within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
 model SLDWindV
   parameter SI.PerUnit Deadband "Deadband for dynamic AC voltage support";

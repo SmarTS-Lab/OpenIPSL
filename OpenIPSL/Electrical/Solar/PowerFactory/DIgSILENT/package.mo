@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory;
 
-package DigSILENT
+package DIgSILENT
   extends Modelica.Icons.Package;
 
-end DigSILENT;
+end DIgSILENT;
