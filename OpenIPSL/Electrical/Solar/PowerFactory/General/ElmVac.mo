@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.General;
-model ElmVac
+model ElmVac "Controllable voltage source"
   import SI = Modelica.SIunits;
   import C = Modelica.Constants;
   extends OpenIPSL.Electrical.Essentials.pfComponent(

@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
-model PV_Plant
+model PV_Plant "DIgSILENT model of a solar plant"
   extends OpenIPSL.Electrical.Essentials.pfComponent(
     final enabledisplayPF=false,
     final enablefn=true,

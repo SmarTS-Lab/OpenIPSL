@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
-model Controller
+model Controller "Controller for the solar plant"
   parameter Real Kp = 0.005 "Gain, Active Power PI-Controller";
   parameter SI.Time Tip = 0.03  "Integration Time Constant, Active Power PI-Ctrl.";
   parameter SI.Time Tr = 0.001 "Measurement Delay";

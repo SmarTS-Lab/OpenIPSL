@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
-model ReactivePowerSupport
+model ReactivePowerSupport "Reactive power support for FRT"
   parameter SI.PerUnit iq_max "Maximum d-axis current";
   parameter SI.PerUnit iq_min "Minimum d-axis current";
   parameter Boolean i_EEG "Selection of the FRT Charateristic";

@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
-model PVModule
+model PVModule "Model of a single PV module"
   parameter SI.Voltage U0_stc = 43.8 "Open-circuit voltage at Standard Test Conditions";
   parameter SI.Voltage Umpp_stc = 35 "MPP voltage at Standard Test Conditions";
   parameter SI.Current Impp_stc = 4.58 "MPP current at Standard Test Conditions";

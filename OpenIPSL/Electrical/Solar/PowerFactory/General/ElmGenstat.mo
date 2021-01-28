@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.General;
 
-model ElmGenstat
+model ElmGenstat "Static generator"
   extends OpenIPSL.Electrical.Essentials.pfComponent(
     final enabledisplayPF=false,
     final enablefn=true,

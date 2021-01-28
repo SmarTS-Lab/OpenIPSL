@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
-model SLDWindV
+model SLDWindV "Dynamic support during faults"
   parameter SI.PerUnit Deadband "Deadband for dynamic AC voltage support";
   parameter Real K_FRT "Gain for dynamic AC voltage supports";
   Modelica.Blocks.Math.Add add1(k1 = -1, k2 = 1) annotation(

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.General;
-model ElmPhi_pll
+model ElmPhi_pll "Phase-locked loop (PLL)"
   import SI = Modelica.SIunits;
   parameter Real angle_0rad;
   parameter Real omega_0;

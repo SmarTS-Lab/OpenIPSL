@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
-model CurrentLimiter
+model CurrentLimiter "Limiter of d- and q-axis currents"
   parameter SI.PerUnit maxAbsCur;
   parameter SI.PerUnit maxIq;
   parameter SI.PerUnit Deadband;

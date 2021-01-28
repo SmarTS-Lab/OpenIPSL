@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.General;
 
-model Picdro
+model Picdro "Pick-up drop-off implementation for protection functions"
   parameter SI.Time Tpick "Pick-up time delay";
   parameter SI.Time Tdrop "Drop-off time delay";
   Modelica.Blocks.Interfaces.BooleanInput condition annotation(

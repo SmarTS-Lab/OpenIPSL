@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
-model ActivePowerController
+model ActivePowerController "Controller for the active power of a PV plant"
   parameter Real K = 0.005 "Gain of the PI-Controller";
   parameter SI.Time T=0.03 "Integration Time Constant of the PI controller";
   parameter Real yo_min "Minimum d-axis current";

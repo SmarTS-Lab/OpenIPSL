@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
-model PVArray
+model PVArray "Array of PV modules"
   parameter SI.ActivePower P_init "Initial active power of the array";
   parameter Integer n_series = 20 "Number of modules in series" annotation(
     Dialog(group = "PV Array Dimensions"));
