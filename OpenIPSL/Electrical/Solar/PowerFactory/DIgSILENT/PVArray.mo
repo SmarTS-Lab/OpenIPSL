@@ -69,7 +69,7 @@ equation
     Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {-50, 70}, extent = {{-20, 8}, {20, -8}}, textString = "Uarray"), Text(origin = {-58, 30}, extent = {{-20, 8}, {20, -8}}, textString = "E"), Text(origin = {-54, -28}, extent = {{-20, 8}, {20, -8}}, textString = "theta"), Text(origin = {72, 52}, extent = {{-20, 8}, {20, -8}}, textString = "Iarray"), Text(origin = {59, -48}, extent = {{-37, 8}, {37, -8}}, textString = "Vmpp_array"), Text(origin = {-1, 90}, extent = {{-55, 8}, {55, -8}}, textString = "Photovoltaic Array")}),
         Documentation(info = "<html>
 <p>
-Model of a PV Array used in DigSILENT's implementation of the PV plant. Provides optional inputs of irradiance (E) and temperature (theta). If those inputs are not connected, the model set temperature to 25 Celsius and irradiance so that it matches the specified initial power production. 
+Model of a PV Array used in DIgSILENT's implementation of the PV plant. Provides optional inputs of irradiance (E) and temperature (theta). If those inputs are not connected, the model set temperature to 25 Celsius and irradiance so that it matches the specified initial power production. 
 </p>
 </html>", revisions = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>

@@ -55,7 +55,7 @@ equation
         grid={2,2})),
     Documentation(info = "<html>
 <p>
-DC busbar model for DigSILENT's implementation of the PV plant.
+DC busbar model for DIgSILENT's implementation of the PV plant.
 </p>
 </html>", revisions = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
