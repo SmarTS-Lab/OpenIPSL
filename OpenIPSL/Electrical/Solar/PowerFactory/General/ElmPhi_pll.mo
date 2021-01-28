@@ -11,7 +11,7 @@ model ElmPhi_pll "Phase-locked loop (PLL)"
     Placement(visible = true, transformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput cosphi annotation (
     Placement(visible = true, transformation(origin = {110, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  SI.PerUnit v;
+  Types.PerUnit v;
 equation
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);
   sinphi = p.vi/v;

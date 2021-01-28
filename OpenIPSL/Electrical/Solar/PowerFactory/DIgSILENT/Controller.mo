@@ -2,22 +2,22 @@ within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model Controller "Controller for the solar plant"
   parameter Real Kp = 0.005 "Gain, Active Power PI-Controller";
-  parameter SI.Time Tip = 0.03  "Integration Time Constant, Active Power PI-Ctrl.";
-  parameter SI.Time Tr = 0.001 "Measurement Delay";
-  parameter SI.Time Tmpp = 5 "Time Delay MPP-Tracking";
-  parameter SI.PerUnit  id_min = 0 "Min. Active Current Limit";
-  parameter SI.PerUnit  id_max = 1"Max. Active Current Limit";
-  parameter SI.Voltage U_min = 200 "Minimal allowed DC-voltage";                                                                                                   
+  parameter Types.Time Tip = 0.03  "Integration Time Constant, Active Power PI-Ctrl.";
+  parameter Types.Time Tr = 0.001 "Measurement Delay";
+  parameter Types.Time Tmpp = 5 "Time Delay MPP-Tracking";
+  parameter Types.PerUnit  id_min = 0 "Min. Active Current Limit";
+  parameter Types.PerUnit  id_max = 1"Max. Active Current Limit";
+  parameter Types.Voltage U_min = 200 "Minimal allowed DC-voltage";                                                                                                   
   parameter Real iq_min  = -1 "Min. Reactive Current Limit";
   parameter Real iq_max  = 1"Max. Reactive Current Limit";
   parameter Real Deadband = 0.1 "Deadband for Dynamic AC Voltage Support";
   parameter Real K_FRT = 2 "Gain for Dynamic AC Voltage Support";   
   parameter Boolean i_EEG = false  "false = acc. TC2007; true = acc. SDLWindV";
-  parameter SI.PerUnit maxAbsCur = 1 "Max. allowed absolute current";
-  parameter SI.PerUnit maxIq = 1 "Max.abs reactive current in normal operation";
-  parameter SI.PerUnit uac0 = 1 "Initial voltage magnitude";
-  parameter SI.PerUnit iq0 = -0.2 "Initial q-axis current";
-  parameter SI.PerUnit id0 = 0.6 "Initial d-axis current";
+  parameter Types.PerUnit maxAbsCur = 1 "Max. allowed absolute current";
+  parameter Types.PerUnit maxIq = 1 "Max.abs reactive current in normal operation";
+  parameter Types.PerUnit uac0 = 1 "Initial voltage magnitude";
+  parameter Types.PerUnit iq0 = -0.2 "Initial q-axis current";
+  parameter Types.PerUnit id0 = 0.6 "Initial d-axis current";
   Modelica.Blocks.Interfaces.RealInput vdcref annotation(
     Placement(visible = true, transformation(origin = {-200, 90}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput uac annotation(

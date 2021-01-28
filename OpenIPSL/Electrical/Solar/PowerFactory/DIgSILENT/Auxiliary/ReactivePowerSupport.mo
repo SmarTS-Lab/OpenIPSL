@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
 model ReactivePowerSupport "Reactive power support for FRT"
-  parameter SI.PerUnit iq_max "Maximum d-axis current";
-  parameter SI.PerUnit iq_min "Minimum d-axis current";
+  parameter Types.PerUnit iq_max "Maximum d-axis current";
+  parameter Types.PerUnit iq_min "Minimum d-axis current";
   parameter Boolean i_EEG "Selection of the FRT Charateristic";
-  parameter SI.PerUnit Deadband "Deadband for dynamic AC voltage support";
+  parameter Types.PerUnit Deadband "Deadband for dynamic AC voltage support";
   parameter Real K_FRT "Gain for dynamic AC voltage supports";
-  parameter SI.PerUnit i0 "Initial reactive current";
+  parameter Types.PerUnit i0 "Initial reactive current";
   Modelica.Blocks.Interfaces.RealInput duac annotation(
     Placement(visible = true, transformation(origin = {-200, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-80, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput iq annotation(

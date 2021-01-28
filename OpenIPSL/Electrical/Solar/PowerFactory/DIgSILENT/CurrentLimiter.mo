@@ -1,9 +1,9 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model CurrentLimiter "Limiter of d- and q-axis currents"
-  parameter SI.PerUnit maxAbsCur;
-  parameter SI.PerUnit maxIq;
-  parameter SI.PerUnit Deadband;
+  parameter Types.PerUnit maxAbsCur;
+  parameter Types.PerUnit maxIq;
+  parameter Types.PerUnit Deadband;
   parameter Boolean i_EEG;
   Modelica.Blocks.Interfaces.RealInput idin annotation(
     Placement(visible = true, transformation(origin = {-200, 110}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-80, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));

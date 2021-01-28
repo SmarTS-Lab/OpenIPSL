@@ -1,20 +1,20 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 
 model PVArray "Array of PV modules"
-  parameter SI.ActivePower P_init "Initial active power of the array";
+  parameter Types.ActivePower P_init "Initial active power of the array";
   parameter Integer n_series = 20 "Number of modules in series" annotation(
     Dialog(group = "PV Array Dimensions"));
   parameter Integer n_parallel = 140 "Number of modules in parallel" annotation(
     Dialog(group = "PV Array Dimensions"));
-  parameter SI.Time Tr = 0.01 "Time constant of modules" annotation(
+  parameter Types.Time Tr = 0.01 "Time constant of modules" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Voltage U0_stc = 43.8 "Open-circuit voltage at Standard Test Conditions" annotation(
+  parameter Types.Voltage U0_stc = 43.8 "Open-circuit voltage at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Voltage Umpp_stc = 35 "MPP voltage at Standard Test Conditions" annotation(
+  parameter Types.Voltage Umpp_stc = 35 "MPP voltage at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Current Impp_stc = 4.58 "MPP current at Standard Test Conditions" annotation(
+  parameter Types.Current Impp_stc = 4.58 "MPP current at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Current Isc_stc = 5 "Short-circuit current at Standard Test Conditions" annotation(
+  parameter Types.Current Isc_stc = 5 "Short-circuit current at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
   parameter SI.LinearTemperatureCoefficient au = -0.0039 "Temperature correction factor (voltage)" annotation(
     Dialog(group = "Parameters of PV Modules"));

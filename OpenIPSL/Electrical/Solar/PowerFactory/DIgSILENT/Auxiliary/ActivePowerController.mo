@@ -2,10 +2,10 @@ within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Auxiliary;
 
 model ActivePowerController "Controller for the active power of a PV plant"
   parameter Real K = 0.005 "Gain of the PI-Controller";
-  parameter SI.Time T=0.03 "Integration Time Constant of the PI controller";
+  parameter Types.Time T=0.03 "Integration Time Constant of the PI controller";
   parameter Real yo_min "Minimum d-axis current";
   parameter Real yo_max "Maximum d-axis current";
-  parameter SI.PerUnit id0 "Initial d-axis current";
+  parameter Types.PerUnit id0 "Initial d-axis current";
   Modelica.Blocks.Interfaces.RealInput yi annotation(
     Placement(visible = true, transformation(origin = {-160, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput yo annotation(

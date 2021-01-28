@@ -13,8 +13,8 @@ model ElmGenstat "Static generator"
   parameter Types.ApparentPower M_b "Machine base power"
     annotation (Dialog(group="Generator parameters"));
   parameter Boolean pll_connected = false "Enable/disable use of PLL inputs" annotation (Dialog(group="Generator parameters"));
-  SI.Angle angle_i;
-  SI.Angle angle_v;
+  Types.Angle angle_i;
+  Types.Angle angle_v;
   Modelica.Blocks.Interfaces.RealInput id_ref annotation(
     Placement(visible = true, transformation(origin = {-108, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-80, 100}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput iq_ref annotation(

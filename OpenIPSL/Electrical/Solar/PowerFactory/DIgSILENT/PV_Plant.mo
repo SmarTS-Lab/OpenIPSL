@@ -17,15 +17,15 @@ model PV_Plant "DIgSILENT model of a solar plant"
     Dialog(group = "PV Array Dimensions"));
   parameter Integer n_parallel = 140 "Number of modules in parallel" annotation(
     Dialog(group = "PV Array Dimensions"));
-  parameter SI.Time Tr = 0.01 "Time constant of modules" annotation(
+  parameter Types.Time Tr = 0.01 "Time constant of modules" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Voltage U0_stc = 43.8 "Open-circuit voltage at Standard Test Conditions" annotation(
+  parameter Types.Voltage U0_stc = 43.8 "Open-circuit voltage at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Voltage Umpp_stc = 35 "MPP voltage at Standard Test Conditions" annotation(
+  parameter Types.Voltage Umpp_stc = 35 "MPP voltage at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Current Impp_stc = 4.58 "MPP current at Standard Test Conditions" annotation(
+  parameter Types.Current Impp_stc = 4.58 "MPP current at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
-  parameter SI.Current Isc_stc = 5 "Short-circuit current at Standard Test Conditions" annotation(
+  parameter Types.Current Isc_stc = 5 "Short-circuit current at Standard Test Conditions" annotation(
     Dialog(group = "Parameters of PV Modules"));
   parameter SI.LinearTemperatureCoefficient au = -0.0039 "Temperature correction factor (voltage)" annotation(
     Dialog(group = "Parameters of PV Modules"));
@@ -35,21 +35,21 @@ model PV_Plant "DIgSILENT model of a solar plant"
     Dialog(group = "DC busbar parameters"));
   parameter Real Kp = 0.005 "Gain, Active Power PI-Controller" annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.Time Tip = 0.03  "Integration Time Constant, Active Power PI-Ctrl." annotation(
+  parameter Types.Time Tip = 0.03  "Integration Time Constant, Active Power PI-Ctrl." annotation(
     Dialog(group = "Current Controller Parameters")); 
-  parameter SI.Time Trm = 0.001 "Measurement Delay"annotation(
+  parameter Types.Time Trm = 0.001 "Measurement Delay"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.Time Tmpp = 5 "Time Delay MPP-Tracking"annotation(
+  parameter Types.Time Tmpp = 5 "Time Delay MPP-Tracking"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.PerUnit  id_min = 0 "Min. Active Current Limit"annotation(
+  parameter Types.PerUnit  id_min = 0 "Min. Active Current Limit"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.PerUnit  id_max = 1"Max. Active Current Limit"annotation(
+  parameter Types.PerUnit  id_max = 1"Max. Active Current Limit"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.Voltage U_min = 200 "Minimal allowed DC-voltage"annotation(
+  parameter Types.Voltage U_min = 200 "Minimal allowed DC-voltage"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.PerUnit iq_min  = -1 "Min. Reactive Current Limit"annotation(
+  parameter Types.PerUnit iq_min  = -1 "Min. Reactive Current Limit"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.PerUnit iq_max  = 1"Max. Reactive Current Limit"annotation(
+  parameter Types.PerUnit iq_max  = 1"Max. Reactive Current Limit"annotation(
     Dialog(group = "Current Controller Parameters"));
   parameter Real Deadband = 0.1 "Deadband for Dynamic AC Voltage Support"annotation(
     Dialog(group = "Current Controller Parameters"));
@@ -57,9 +57,9 @@ model PV_Plant "DIgSILENT model of a solar plant"
     Dialog(group = "Current Controller Parameters"));  
   parameter Boolean i_EEG = false  "false = acc. TC2007; true = acc. SDLWindV"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.PerUnit maxAbsCur = 1 "Max. allowed absolute current"annotation(
+  parameter Types.PerUnit maxAbsCur = 1 "Max. allowed absolute current"annotation(
     Dialog(group = "Current Controller Parameters"));
-  parameter SI.PerUnit maxIq = 1 "Max.abs reactive current in normal operation"annotation(
+  parameter Types.PerUnit maxIq = 1 "Max.abs reactive current in normal operation"annotation(
     Dialog(group = "Current Controller Parameters"));
   OpenIPSL.Interfaces.PwPin p annotation(
     Placement(visible = true, transformation(origin = {210, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

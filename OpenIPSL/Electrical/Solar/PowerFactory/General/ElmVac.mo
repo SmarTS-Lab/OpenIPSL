@@ -11,9 +11,9 @@ model ElmVac "Controllable voltage source"
     final enableQ_0=false,
     final enableP_0=false,
     final enableS_b=true);
-  SI.PerUnit P;
-  SI.PerUnit Q;
-  SI.Angle phiu;
+  Types.PerUnit P;
+  Types.PerUnit Q;
+  Types.Angle phiu;
   Modelica.Blocks.Interfaces.RealInput f0 annotation (
     Placement(visible = true, transformation(origin = {-100, 50}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, 50}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput v(start=v_0, fixed=true) annotation (

@@ -3,13 +3,13 @@ within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
 model PVModule "Model of a single PV module"
   parameter SI.Voltage U0_stc = 43.8 "Open-circuit voltage at Standard Test Conditions";
   parameter SI.Voltage Umpp_stc = 35 "MPP voltage at Standard Test Conditions";
-  parameter SI.Current Impp_stc = 4.58 "MPP current at Standard Test Conditions";
-  parameter SI.Current Isc_stc = 5 "Short-circuit current at Standard Test Conditions";
+  parameter Types.Current Impp_stc = 4.58 "MPP current at Standard Test Conditions";
+  parameter Types.Current Isc_stc = 5 "Short-circuit current at Standard Test Conditions";
   parameter SI.LinearTemperatureCoefficient au = -0.0039 "Temperature correction factor (voltage)";
   parameter SI.LinearTemperatureCoefficient ai = 0.0004 "Temperature correction factor (current)";
   parameter Boolean use_input_E = false "If true irradiance is used as input";
   parameter Boolean use_input_theta = false "If true temperature is used as input";
-  parameter SI.ActivePower P_init "Initial active power (needed only if input E is not used)";
+  parameter Types.ActivePower P_init "Initial active power (needed only if input E is not used)";
   parameter SI.Irradiance E_STC = 1000;
   parameter SI.Temperature theta_STC = 298.15;
   Modelica.Blocks.Interfaces.RealInput U annotation(
@@ -24,9 +24,9 @@ model PVModule "Model of a single PV module"
     Placement(visible = true, transformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {106, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SI.Irradiance local_E;
   SI.Temperature local_theta;
-  SI.Voltage U0 "Open-circuit voltage";
-  SI.Current Isc "Short-circuit current";
-  SI.Current Impp "MPP Current";
+  Types.Voltage U0 "Open-circuit voltage";
+  Types.Current Isc "Short-circuit current";
+  Types.Current Impp "MPP Current";
   SI.Power P "PV Module Power";
   Real tempCorrU "Voltage Correction Factor";
   Real tempCorrI "Current Correction Factor";
