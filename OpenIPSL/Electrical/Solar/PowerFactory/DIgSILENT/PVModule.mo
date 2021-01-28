@@ -13,15 +13,15 @@ model PVModule "Model of a single PV module"
   parameter SI.Irradiance E_STC = 1000;
   parameter SI.Temperature theta_STC = 298.15;
   Modelica.Blocks.Interfaces.RealInput U annotation(
-    Placement(visible = true, transformation(origin = {-100, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-100, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput E if use_input_E annotation(
-    Placement(visible = true, transformation(origin = {-100, 30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-100, 30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput theta if use_input_theta annotation(
-    Placement(visible = true, transformation(origin = {-100, -30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-100, -30}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-90, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput I annotation(
-    Placement(visible = true, transformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {106, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Umpp annotation(
-    Placement(visible = true, transformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {106, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   SI.Irradiance local_E;
   SI.Temperature local_theta;
   Types.Voltage U0 "Open-circuit voltage";
@@ -65,7 +65,6 @@ equation
   Umpp = Umpp_stc * lnEquot * tempCorrU;
 // MPP voltage dependent on E and theta
   Impp = if local_E > 1 then Impp_stc * local_E / E_STC * tempCorrI else 0;
-
 // Helper Variables
   c1 = if U0 > 0 then Umpp - U0 else 1;
 // Avoids division by 0 in equation for c2
@@ -79,10 +78,11 @@ equation
     c2 = 0;
   end if;
 // Current output, Current generation only if E>1 (limitation of model)
-  I = max(Isc * (1 - exp(c2 * (min(U0, U) - U0))), 0.0); // Blocking diode function included by max- and min-function
+  I = max(Isc * (1 - exp(c2 * (min(U0, U) - U0))), 0.0);
+// Blocking diode function included by max- and min-function
   P = Impp * Umpp;
   annotation(
-    Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}})}),
+    Icon(graphics = {Rectangle(lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {-54, -40}, extent = {{-20, 8}, {20, -8}}, textString = "theta"), Text(origin = {-58, 38}, extent = {{-20, 8}, {20, -8}}, textString = "E"), Text(origin = {-58, 80}, extent = {{-20, 8}, {20, -8}}, textString = "U"), Text(origin = {76, 42}, extent = {{-20, 8}, {20, -8}}, textString = "I"), Text(origin = {76, -40}, extent = {{-20, 8}, {20, -8}}, textString = "Ummp"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
  Documentation(info = "<html>
 <p>
 Model of a PV Module within a PV array.

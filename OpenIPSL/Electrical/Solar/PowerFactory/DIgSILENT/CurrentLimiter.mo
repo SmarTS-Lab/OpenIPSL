@@ -12,9 +12,9 @@ model CurrentLimiter "Limiter of d- and q-axis currents"
   Modelica.Blocks.Interfaces.RealInput duac annotation(
     Placement(visible = true, transformation(origin = {-200, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-80, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput idout annotation(
-    Placement(visible = true, transformation(origin = {210, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {210, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput iqout annotation(
-    Placement(visible = true, transformation(origin = {210, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {210, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Nonlinear.Limiter dlim_normal_op(limitsAtInit = true, uMax = maxAbsCur, uMin = -maxAbsCur) annotation(
     Placement(visible = true, transformation(origin = {90, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Nonlinear.Limiter qlim_frt_op(limitsAtInit = true, uMax = maxAbsCur, uMin = -maxAbsCur) annotation(
@@ -117,7 +117,7 @@ equation
   connect(gain.y, dlim_frt_op.limit1) annotation(
     Line(points = {{40, 162}, {40, 162}, {40, 168}, {66, 168}, {66, 158}, {78, 158}, {78, 158}}, color = {0, 0, 127}));
   annotation(
-    Icon(graphics = {Rectangle(origin = {-0.01, 0}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-99.99, 100}, {99.99, -100}}), Text(origin = {-35, 62}, extent = {{-21, 10}, {21, -10}}, textString = "idin"), Text(origin = {-33, -60}, extent = {{-21, 10}, {21, -10}}, textString = "iqin"), Text(origin = {-33, 0}, extent = {{-21, 10}, {21, -10}}, textString = "duac"), Text(origin = {71, 52}, extent = {{-21, 10}, {21, -10}}, textString = "idout"), Text(origin = {71, -48}, extent = {{-21, 10}, {21, -10}}, textString = "iqout"), Text(origin = {0, 90}, extent = {{-100, 10}, {100, -10}}, textString = "Current Limiter")}),
+    Icon(graphics = {Rectangle(origin = {-0.01, 0}, lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-99.99, 100}, {99.99, -100}}), Text(origin = {-35, 62}, extent = {{-21, 10}, {21, -10}}, textString = "idin"), Text(origin = {-33, -60}, extent = {{-21, 10}, {21, -10}}, textString = "iqin"), Text(origin = {-33, 0}, extent = {{-21, 10}, {21, -10}}, textString = "duac"), Text(origin = {71, 52}, extent = {{-21, 10}, {21, -10}}, textString = "idout"), Text(origin = {71, -48}, extent = {{-21, 10}, {21, -10}}, textString = "iqout"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
     Diagram(coordinateSystem(extent = {{-200, -200}, {200, 200}})),
      Documentation(info = "<html>
 <p>

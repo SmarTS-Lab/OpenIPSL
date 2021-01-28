@@ -45,5 +45,5 @@ equation
 
 annotation(
     Diagram,
-    Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {73, 2}, extent = {{-83, 12}, {83, -12}}, textString = "diq"), Text(origin = {-33, 2}, extent = {{-83, 12}, {83, -12}}, textString = "duac"), Text(origin = {3, 84}, extent = {{-83, 12}, {83, -12}}, textString = "SLDWindV")}));
+    Icon(graphics = {Rectangle(lineColor = {118, 18, 62},fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {73, 2}, extent = {{-83, 12}, {83, -12}}, textString = "diq"), Text(origin = {-33, 2}, extent = {{-83, 12}, {83, -12}}, textString = "duac"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}));
 end SLDWindV;

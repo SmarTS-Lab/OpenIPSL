@@ -38,7 +38,7 @@ equation
     Line(points = {{-50, -38}, {-50, -38}, {-50, -20}, {40, -20}, {40, 0}, {22, 0}, {22, 0}}, color = {255, 0, 255}));
 
 annotation(
-    Icon(graphics = {Rectangle(origin = {0, 0.04}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 99.96}, {100, -99.96}}), Text(origin = {-10, 70}, extent = {{-110, 10}, {110, -10}}, textString = "picdro")}),
+    Icon(graphics = {Rectangle(origin = {0, 0.04}, lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 99.96}, {100, -99.96}}), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
     Documentation(info="<html>
 <p>
 This function implements a logical pick-up-drop-off function commonly used when designingprotection schemes (e.g. fault detection, signal out-of-range, etc.).</p>

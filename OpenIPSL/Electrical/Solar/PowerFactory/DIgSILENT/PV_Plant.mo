@@ -62,46 +62,46 @@ model PV_Plant "DIgSILENT model of a solar plant"
   parameter Types.PerUnit maxIq = 1 "Max.abs reactive current in normal operation"annotation(
     Dialog(group = "Current Controller Parameters"));
   OpenIPSL.Interfaces.PwPin p annotation(
-    Placement(visible = true, transformation(origin = {210, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.Controller controller(Deadband = Deadband, K_FRT = K_FRT, Kp = Kp, Tip = Tip, Tmpp = Tmpp, Tr = Trm, U_min = U_min, i_EEG = i_EEG,id0 = P_0 / M_b / v_0, id_max = id_max, id_min = id_min, iq0 = -Q_0 / M_b / v_0, iq_max = iq_max, iq_min = iq_min, maxAbsCur = maxAbsCur, maxIq = maxIq, uac0 = v_0)  annotation(
-    Placement(visible = true, transformation(origin = {80, -2}, extent = {{-30, -30}, {30, 30}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {30, 4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant not_implemented_FRT(k = 1)  annotation(
-    Placement(visible = true, transformation(origin = {-10, -70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-10, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.DCBusBar busbar(C = C)  annotation(
-    Placement(visible = true, transformation(origin = {-30, 15}, extent = {{-30, -15}, {30, 15}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.General.ElmGenstat gen(M_b = M_b,angle_0 = angle_0, v_0 = v_0)  annotation(
-    Placement(visible = true, transformation(origin = {160.25, -0.4}, extent = {{-19.75, -31.6}, {19.75, 31.6}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-10, 12}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  OpenIPSL.Electrical.Solar.PowerFactory.General.ElmGenstat generator(M_b = M_b,angle_0 = angle_0, v_0 = v_0)  annotation(
+    Placement(visible = true, transformation(origin = {70, -0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain pu_to_W(k = S_b)  annotation(
-    Placement(visible = true, transformation(origin = {150, -50}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {70, -30}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.PVArray pv_array(Impp_stc = Impp_stc, Isc_stc = Isc_stc,P_init = P_0, Tr = Tr, U0_stc = U0_stc, Umpp_stc = Umpp_stc, ai = ai, au = au, n_parallel = n_parallel, n_series = n_series, use_input_E = false, use_input_theta = false)  annotation(
-    Placement(visible = true, transformation(origin = {-130, 10}, extent = {{-30, -30}, {30, 30}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-50, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
+  connect(generator.p, p) annotation(
+    Line(points = {{82, 0}, {110, 0}}, color = {0, 0, 255}));
+  connect(pu_to_W.u, generator.P) annotation(
+    Line(points = {{82, -30}, {90, -30}, {90, -4}, {82, -4}}, color = {0, 0, 127}));
+  connect(controller.id_ref, generator.id_ref) annotation(
+    Line(points = {{42, 8}, {62, 8}}, color = {0, 0, 127}));
+  connect(controller.iq_ref, generator.iq_ref) annotation(
+    Line(points = {{42, 0}, {50, 0}, {50, 4}, {62, 4}}, color = {0, 0, 127}));
+  connect(controller.uac, generator.v) annotation(
+    Line(points = {{22, 0}, {16, 0}, {16, 20}, {86, 20}, {86, 8}, {82, 8}}, color = {0, 0, 127}));
   connect(not_implemented_FRT.y, controller.pred) annotation(
-    Line(points = {{1, -70}, {46.5, -70}, {46.5, -23}, {53, -23}}, color = {0, 0, 127}));
-  connect(gen.p, p) annotation(
-    Line(points = {{180, 0}, {210, 0}}, color = {0, 0, 255}));
-  connect(gen.P, pu_to_W.u) annotation(
-    Line(points = {{182, -8}, {190, -8}, {190, -50}, {162, -50}}, color = {0, 0, 127}));
+    Line(points = {{1, -50}, {14, -50}, {14, -4}, {22, -4}}, color = {0, 0, 127}));
   connect(busbar.I_pv, pv_array.Iarray) annotation(
-    Line(points = {{-57, 22.5}, {-96, 22.5}, {-96, 26}}, color = {0, 0, 127}));
+    Line(points = {{-19, 16}, {-39, 16}}, color = {0, 0, 127}));
   connect(pu_to_W.y, busbar.P_conv) annotation(
-    Line(points = {{140, -50}, {-80, -50}, {-80, 7}, {-57, 7}}, color = {0, 0, 127}));
-  connect(controller.id_ref, gen.id_ref) annotation(
-    Line(points = {{114, 14}, {120, 14}, {120, 20}, {144, 20}, {144, 20}}, color = {0, 0, 127}));
-  connect(controller.iq_ref, gen.iq_ref) annotation(
-    Line(points = {{114, -16}, {126, -16}, {126, 8}, {144, 8}, {144, 8}}, color = {0, 0, 127}));
-  connect(pv_array.Vmpp_array, controller.vdcref) annotation(
-    Line(points = {{-96, -4}, {40, -4}, {40, 6}, {54, 6}, {54, 8}}, color = {0, 0, 127}));
+    Line(points = {{60, -30}, {-24, -30}, {-24, 8}, {-19, 8}}, color = {0, 0, 127}));
   connect(busbar.Udc, controller.vdcin) annotation(
-    Line(points = {{2, 16}, {40, 16}, {40, 20}, {54, 20}, {54, 20}}, color = {0, 0, 127}));
-  connect(gen.v, controller.uac) annotation(
-    Line(points = {{182, 20}, {188, 20}, {188, 42}, {22, 42}, {22, -12}, {54, -12}, {54, -10}}, color = {0, 0, 127}));
-  connect(pv_array.Uarray, busbar.Udc) annotation(
-    Line(points = {{-156, 32}, {-180, 32}, {-180, 60}, {12, 60}, {12, 14}, {2, 14}, {2, 16}}, color = {0, 0, 127}));
+    Line(points = {{2, 12}, {22, 12}}, color = {0, 0, 127}));
+  connect(busbar.Udc, pv_array.Uarray) annotation(
+    Line(points = {{2, 12}, {6, 12}, {6, 26}, {-64, 26}, {-64, 18}, {-58, 18}}, color = {0, 0, 127}));
+  connect(pv_array.Vmpp_array, controller.vdcref) annotation(
+    Line(points = {{-38, 4}, {-30, 4}, {-30, 0}, {6, 0}, {6, 8}, {22, 8}}, color = {0, 0, 127}));
 protected
   annotation(
-    Diagram(coordinateSystem(extent = {{-200, -100}, {200, 100}})),
-    Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Line(origin = {0, 60.3123}, points = {{-100, 39.6877}, {0, -40.3123}, {100, 39.6877}, {100, 39.6877}})}),
+    Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}})),
+    Icon(graphics = {Rectangle(lineColor = {118, 18, 62},fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Line(origin = {0, 60.31}, points = {{-100, 39.6877}, {0, -40.3123}, {100, 39.6877}, {100, 39.6877}}, color = {118, 18, 62}), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
         Documentation(info = "<html>
 <p>
 A PV Plant implemented according to the DIgSILENT template in PowerFactory. 

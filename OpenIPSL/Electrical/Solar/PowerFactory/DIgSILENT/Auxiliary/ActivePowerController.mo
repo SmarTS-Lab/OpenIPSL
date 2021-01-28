@@ -11,7 +11,7 @@ model ActivePowerController "Controller for the active power of a PV plant"
   Modelica.Blocks.Interfaces.RealOutput yo annotation(
     Placement(visible = true, transformation(origin = {170, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput pred annotation(
-    Placement(visible = true, transformation(origin = {-160, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
+    Placement(visible = true, transformation(origin = {-160, 70}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Continuous.LimIntegrator I(initType = Modelica.Blocks.Types.Init.InitialOutput,k = K / T, limitsAtInit = false,outMax = yo_max, outMin = yo_min, y_start = id0) if with_I  annotation(
     Placement(visible = true, transformation(origin = {-88, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant disable(k = 0) if not with_I annotation(
@@ -30,7 +30,7 @@ model ActivePowerController "Controller for the active power of a PV plant"
     Placement(visible = true, transformation(origin = {60, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Nonlinear.Limiter limiter1(limitsAtInit = true, uMax = yo_max, uMin = yo_min) annotation(
     Placement(visible = true, transformation(origin = {44, -6}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-//protected
+  //protected
   Modelica.Blocks.Interfaces.RealOutput yo1 annotation(
     Placement(visible = true, transformation(origin = {78, -6}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {88, -22}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput yo2 annotation(
@@ -75,7 +75,7 @@ equation
     Line(points = {{78, -6}, {56, -6}, {56, -6}, {56, -6}}, color = {0, 0, 127}));
   annotation(
     Diagram(coordinateSystem(extent = {{-160, -160}, {160, 160}}), graphics = {Rectangle(origin = {24, 67}, pattern = LinePattern.Dash, extent = {{-94, 39}, {94, -39}}), Text(origin = {-27, 113}, extent = {{-47, 7}, {47, -7}}, textString = "Tracking yo1", horizontalAlignment = TextAlignment.Left), Line(origin = {-12, 70}, points = {{-6, 0}, {6, 0}, {6, 0}}, color = {255, 0, 0})}),
-    Icon(graphics = {Rectangle( lineColor = {0, 0, 127}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, -100}, {100, 100}}), Line(origin = {50.106, -52.0451}, points = {{-80, -40}, {-80, -20}, {-6, 30}}, color = {0, 0, 127}), Polygon(origin = {50, -84}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 90}}), Line(origin = {50.175, -93.8248}, points = {{-80, 78}, {-80, 0}}, color = {192, 192, 192}), Line(origin = {40.2612, -7.74434}, points = {{-80, -80}, {30, -80}}, color = {192, 192, 192}), Polygon(origin = {2, -8}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{90, -80}, {68, -72}, {68, -88}, {90, -80}}), Text(origin = {18, -50.9032}, lineColor = {192, 192, 192}, extent = {{0, 2.90323}, {34, -27.0968}}, textString = "PI"), Text(origin = {6, 89}, extent = {{-56, 9}, {56, -9}}, textString = "Active Power Control"), Text(origin = {-50, 70}, extent = {{-30, 10}, {30, -10}}, textString = "pred"), Text(origin = {-58, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yi"), Text(origin = {82, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yo")}),
+    Icon(graphics = {Rectangle(lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, -100}, {100, 100}}), Line(origin = {50.106, -52.0451}, points = {{-80, -40}, {-80, -20}, {-6, 30}}, color = {0, 0, 127}), Polygon(origin = {50, -84}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{-80, 90}, {-88, 68}, {-72, 68}, {-80, 90}}), Line(origin = {50.175, -93.8248}, points = {{-80, 78}, {-80, 0}}, color = {192, 192, 192}), Line(origin = {40.2612, -7.74434}, points = {{-80, -80}, {30, -80}}, color = {192, 192, 192}), Polygon(origin = {2, -8}, lineColor = {192, 192, 192}, fillColor = {192, 192, 192}, fillPattern = FillPattern.Solid, points = {{90, -80}, {68, -72}, {68, -88}, {90, -80}}), Text(origin = {18, -50.9032}, lineColor = {192, 192, 192}, extent = {{0, 2.90323}, {34, -27.0968}}, textString = "PI"), Text(origin = {-50, 60}, extent = {{-30, 10}, {30, -10}}, textString = "pred"), Text(origin = {-58, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yi"), Text(origin = {82, 2}, extent = {{-30, 10}, {30, -10}}, textString = "yo"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
      Documentation(info = "<html>
 <p>
 This is essentially a PI controller whose output is reduced during the activation of FRT. PI from Modelica Standard Library was not used due to the specific implementation in PowerFactory which this model follows.
