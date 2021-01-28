@@ -2,13 +2,6 @@ within OpenIPSL.Examples.Solar.PowerFactory;
 
 model DIgSILENT_PV
   extends Modelica.Icons.Example;
-
-  Modelica.Blocks.Sources.Constant const1(k = 25) annotation(
-    Placement(visible = true, transformation(origin = {-240, -16}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Constant const4(k = -0.2) annotation(
-    Placement(visible = true, transformation(origin = {-328, -64}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Step step(height = -0.2, offset = 1, startTime = 0.5)  annotation(
-    Placement(visible = true, transformation(origin = {-272, -96}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Step voltage(height = -0.05, offset = 1, startTime = 0.5)  annotation(
     Placement(visible = true, transformation(origin = {70, -20}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Solar.PowerFactory.General.ElmVac elmVac(angle_0 = 0, v_0 = 1)  annotation(

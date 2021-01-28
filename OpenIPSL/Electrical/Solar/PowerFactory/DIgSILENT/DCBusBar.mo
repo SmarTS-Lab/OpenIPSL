@@ -25,20 +25,20 @@ model DCBusBar "Model of a DC busbar between the module and inverter"
       iconTransformation(
         origin={210,0},
         extent={{-10, -10},{10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible = true, transformation(origin = {6, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(visible = true, transformation(origin = {6, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Division P_to_I annotation(
     Placement(visible = true, transformation(origin = {-24, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.Integrator integrator(initType = Modelica.Blocks.Types.Init.SteadyState, k = 1 / C)  annotation(
     Placement(visible = true, transformation(origin = {70, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 
 equation
-  connect(I_pv, add1.u1) annotation(
+  connect(I_pv, add.u1) annotation(
     Line(points = {{-120, 51}, {-10, 51}, {-10, 6}, {-6, 6}}, color = {0, 0, 127}));
-  connect(P_to_I.y, add1.u2) annotation(
+  connect(P_to_I.y, add.u2) annotation(
     Line(points = {{-12, -50}, {-10, -50}, {-10, -6}, {-6, -6}, {-6, -6}}, color = {0, 0, 127}));
   connect(P_conv, P_to_I.u1) annotation(
     Line(points = {{-120, -44}, {-36, -44}}, color = {0, 0, 127}));
-  connect(integrator.u, add1.y) annotation(
+  connect(integrator.u, add.y) annotation(
     Line(points = {{58, 0}, {16, 0}, {16, 0}, {18, 0}}, color = {0, 0, 127}));
   connect(integrator.y, Udc) annotation(
     Line(points = {{82, 0}, {122, 0}, {122, 0}, {130, 0}}, color = {0, 0, 127}));

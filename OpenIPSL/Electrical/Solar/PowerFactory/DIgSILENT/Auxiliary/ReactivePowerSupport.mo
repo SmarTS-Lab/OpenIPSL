@@ -21,7 +21,7 @@ model ReactivePowerSupport "Reactive power support for FRT"
     Placement(visible = true, transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold = 0)  annotation(
     Placement(visible = true, transformation(origin = {-70, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Abs abs1 annotation(
+  Modelica.Blocks.Math.Abs abs annotation(
     Placement(visible = true, transformation(origin = {-110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Nonlinear.DeadZone deadZone(deadZoneAtInit = true, uMax = Deadband, uMin = -Deadband)  annotation(
     Placement(visible = true, transformation(origin = {-158, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -44,13 +44,13 @@ equation
     Line(points = {{71, 0}, {86, 0}}, color = {255, 0, 255}));
   connect(limiter.y, iq) annotation(
     Line(points = {{193, 0}, {199, 0}, {199, 0}, {209, 0}}, color = {0, 0, 127}));
-  connect(greaterEqualThreshold.u, abs1.y) annotation(
+  connect(greaterEqualThreshold.u, abs.y) annotation(
     Line(points = {{-82, 0}, {-100, 0}, {-100, 0}, {-98, 0}}, color = {0, 0, 127}));
   connect(greaterEqualThreshold.y, picdro.condition) annotation(
     Line(points = {{-59, 0}, {-41, 0}, {-41, 0}, {-39, 0}}, color = {255, 0, 255}));
   connect(duac, deadZone.u) annotation(
     Line(points = {{-200, 0}, {-172, 0}, {-172, 0}, {-170, 0}}, color = {0, 0, 127}));
-  connect(deadZone.y, abs1.u) annotation(
+  connect(deadZone.y, abs.u) annotation(
     Line(points = {{-146, 0}, {-122, 0}, {-122, 0}, {-122, 0}}, color = {0, 0, 127}));
   connect(FRT_characteristic_selection.y, add.u1) annotation(
     Line(points = {{110, 0}, {120, 0}, {120, 6}, {128, 6}, {128, 6}}, color = {0, 0, 127}));
