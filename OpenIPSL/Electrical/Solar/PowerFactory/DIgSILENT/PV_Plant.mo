@@ -135,10 +135,6 @@ A PV Plant implemented according to the DIgSILENT template in PowerFactory.
 <td><p>Model Verification</p></td>
 <td><p>This model has not been verified against PowerFactory.</p></td>
 </tr>
-<tr>
-<td><p>Description</p></td>
-<td><p></p></td>
-</tr>
 </table>
 </html>"));
 end PV_Plant;

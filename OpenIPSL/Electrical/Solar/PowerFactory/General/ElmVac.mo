@@ -47,7 +47,7 @@ Controllable voltage source with frequency and volage as inputs.
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Tin Rabuzin, KTH Royal Institute of Technology</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
@@ -56,10 +56,6 @@ Controllable voltage source with frequency and volage as inputs.
 <tr>
 <td><p>Model Verification</p></td>
 <td><p>This model has been verified against PowerFactory.</p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p></p></td>
 </tr>
 </table>
 </html>") );

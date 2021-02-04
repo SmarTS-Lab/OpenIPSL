@@ -19,7 +19,4 @@ equation
     Line(points = {{60, -20}, {48, -20}, {48, -4}, {40, -4}}, color = {0, 0, 127}));
   connect(voltage_source.f0, frequency.y) annotation(
     Line(points = {{40, 4}, {50, 4}, {50, 30}, {60, 30}}, color = {0, 0, 127}));
-protected
-  annotation(
-    __OpenModelica_simulationFlags(lv = "LOG_STATS", s = "rungekutta"));
 end DIgSILENT_PV;

@@ -86,7 +86,7 @@ Model of a PV Array used in DIgSILENT's implementation of the PV plant. Provides
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Tin Rabuzin, KTH Royal Institute of Technology</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
@@ -95,11 +95,6 @@ Model of a PV Array used in DIgSILENT's implementation of the PV plant. Provides
 <tr>
 <td><p>Model Verification</p></td>
 <td><p>This model has not been verified against PowerFactory.</p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p></p></td>
-</tr>
 </table>
 </html>"));
 end PVArray;

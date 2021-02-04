@@ -57,7 +57,7 @@ This function implements a logical pick-up-drop-off function commonly used when 
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Tin Rabuzin, KTH Royal Institute of Technology</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

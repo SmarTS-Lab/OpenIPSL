@@ -80,5 +80,36 @@ equation
     Line(points = {{-38, -80}, {-176, -80}, {-176, 0}, {-200, 0}, {-200, 0}}, color = {0, 0, 127}));
   annotation(
     Diagram(coordinateSystem(extent = {{-200, -120}, {200, 120}}), graphics = {Rectangle(origin = {-92.8493, 0.111888}, pattern = LinePattern.Dash, extent = {{-85.0493, 19.7918}, {85.0493, -19.7918}}), Text(origin = {-67, 27}, extent = {{-55, 5}, {55, -5}}, textString = "Voltage deadband with delay"), Rectangle(origin = {-92.8493, 0.111888}, pattern = LinePattern.Dash, extent = {{-85.0493, 19.7918}, {85.0493, -19.7918}}), Rectangle(origin = {-34.5559, 68.6529}, pattern = LinePattern.Dash, extent = {{-42.6785, 15.9659}, {42.6785, -15.9659}}), Rectangle(origin = {-30.0177, -79.8509}, pattern = LinePattern.Dash, extent = {{-29.8565, 19.5166}, {29.8565, -19.5166}}), Text(origin = {-35, 90}, extent = {{-43, 4}, {43, -4}}, textString = "Transmission Code 2007"), Text(origin = {-21, -56}, extent = {{-21, 4}, {21, -4}}, textString = "SDLWindV")}),
-    Icon(graphics = {Rectangle(origin = {-0.01, 0}, lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-99.99, 100}, {99.99, -100}}), Text(origin = {-33, 2}, extent = {{-83, 12}, {83, -12}}, textString = "duac"), Text(origin = {73, 2}, extent = {{-83, 12}, {83, -12}}, textString = "iq"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}));
+    Icon(graphics = {Rectangle(origin = {-0.01, 0}, lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-99.99, 100}, {99.99, -100}}), Text(origin = {-33, 2}, extent = {{-83, 12}, {83, -12}}, textString = "duac"), Text(origin = {73, 2}, extent = {{-83, 12}, {83, -12}}, textString = "iq"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
+             Documentation(info = "<html>
+<p>
+Reactive power support for the DIgSILENT PV model.
+</p>
+</html>", revisions = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PowerFactory Implementation in Templates</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>January 2021</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has not been verified against PowerFactory.</p></td>
+</tr>
+</table>
+</html>"));
 end ReactivePowerSupport;

@@ -45,5 +45,36 @@ equation
 
 annotation(
     Diagram,
-    Icon(graphics = {Rectangle(lineColor = {118, 18, 62},fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {73, 2}, extent = {{-83, 12}, {83, -12}}, textString = "diq"), Text(origin = {-33, 2}, extent = {{-83, 12}, {83, -12}}, textString = "duac"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}));
+    Icon(graphics = {Rectangle(lineColor = {118, 18, 62},fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {73, 2}, extent = {{-83, 12}, {83, -12}}, textString = "diq"), Text(origin = {-33, 2}, extent = {{-83, 12}, {83, -12}}, textString = "duac"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
+         Documentation(info = "<html>
+<p>
+A fault ride through implementation for reactive power support.
+</p>
+</html>", revisions = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>SLDWindV</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PowerFactory Implementation in Templates</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>January 2021</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has not been verified against PowerFactory.</p></td>
+</tr>
+</table>
+</html>"));
 end SLDWindV;
