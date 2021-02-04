@@ -117,7 +117,7 @@ A PV Plant implemented according to the DIgSILENT template in PowerFactory.
 </tr>
 <tr>
 <td><p>Reference</p></td>
-<td><p>PowerFactory Implementation in \DIgSILENT Library\Templates\Photovoltaic</p></td>
+<td><p>PowerFactory Implementation in \\DIgSILENT Library\\Templates\\Photovoltaic</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
