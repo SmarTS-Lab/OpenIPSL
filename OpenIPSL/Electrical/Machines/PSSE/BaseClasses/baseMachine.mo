@@ -58,13 +58,13 @@ partial model baseMachine
   RealOutput SPEED "Machine speed deviation from nominal [pu]"
     annotation (Placement(transformation(extent={{100,60},{120,80}})));
   RealInput PMECH "Turbine mechanical power (machine base)"
-    annotation (Placement(transformation(extent={{-140,30},{-100,70}})));
+    annotation (Placement(transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent={{-140,40},{-100,80}})));
   RealOutput PMECH0 "Initial value of machine electrical power (machine base)"
     annotation (Placement(transformation(extent={{100,40},{120,60}})));
   RealOutput ETERM(start=v_0) "Machine terminal voltage [pu]"
     annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
   RealInput EFD "Generator main field voltage [pu]"
-    annotation (Placement(transformation(extent={{-140,-70},{-100,-30}})));
+    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}}), iconTransformation(extent={{-140,-80},{-100,-40}})));
   RealOutput EFD0 "Initial generator main field voltage [pu]"
     annotation (Placement(transformation(extent={{100,-60},{120,-40}})));
   RealOutput PELEC(start=p0) "Machine electrical power (machine base)"
@@ -157,11 +157,11 @@ equation
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="XADIFD0"),Text(
-          extent={{-90,60},{-50,40}},
+          extent={{-90,70},{-50,50}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="PMECH"), Text(
-          extent={{-90,-40},{-60,-60}},
+          extent={{-90,-50},{-60,-70}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="EFD")}));
