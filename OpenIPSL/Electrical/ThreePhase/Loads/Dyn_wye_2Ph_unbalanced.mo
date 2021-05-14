@@ -77,9 +77,9 @@ equation
 <p>The user needs to input the actives (<b><i>P0_a</i></b> and <b><i>P0_b</i></b>) and reactives (<b><i>Q0_a</i></b> and <b><i>Q0_b</i></b>) powers consumed by each phase of the load.
 Since the values come from independent parameters, the model allows the representation of unbalanced loads.
 The model allows the load to be represented as constant power only.</p>
-<p>In addition to that, the real inputs <b><i>P_in</b></i> and <b><i>Q_in</b></i> multiply the values of active and reactive power, respectively.
+<p>In addition to that, the real inputs <b><i>P_in</i></b> and <b><i>Q_in</i></b> multiply the values of active and reactive power, respectively.
 This allows the load to vary its consumed power over time during the simulation. Note that, since active and reactive powers can vary independently, the load's power factor can also vary.
-In addition, note that, since <b><i>P_in</b></i> and <b><i>Q_in</b></i> have a 2x1 dimension, <b><i>P0_a</i></b>, <b><i>P0_b</i></b>, <b><i>Q0_a</i></b> and <b><i>Q0_b</i></b> can vary idependently.
+In addition, note that, since <b><i>P_in</i></b> and <b><i>Q_in</i></b> have a 2x1 dimension, <b><i>P0_a</i></b>, <b><i>P0_b</i></b>, <b><i>Q0_a</i></b> and <b><i>Q0_b</i></b> can vary idependently.
 This makes the load to be characterized as unbalanced.</p>
 </html>"));
 end Dyn_wye_2Ph_unbalanced;

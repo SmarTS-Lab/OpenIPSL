@@ -4,7 +4,7 @@ model Overview "Overview"
 
   annotation(DocumentationClass=true, Documentation(info="<html>
 <p>
-The <strong><code>OpenIPSL</code></strong> has, basically, six packages: 
+The <strong><code>OpenIPSL</code></strong> has, basically, six packages:
 Examples, Electrical, Nonelectrical, Interfaces, Icons and Types. They are briefly described below:
 </p>
 
@@ -18,14 +18,14 @@ Examples, Electrical, Nonelectrical, Interfaces, Icons and Types. They are brief
 </ul>
 
 <p>
-The <a href=\"modelica://OpenIPSL.Electrical\">Electrical</a> package has many other subpackages that are 
+The <a href=\"modelica://OpenIPSL.Electrical\">Electrical</a> package has many other subpackages that are
 briefly described here.
-It also contains one model, <a href=\"modelica://OpenIPSL.Electrical.SystemBase\">SystemBase</a>, 
+It also contains one model, <a href=\"modelica://OpenIPSL.Electrical.SystemBase\">SystemBase</a>,
 which is going to be explained later in <a href=\"modelica://OpenIPSL.UsersGuide.GettingStarted\">Getting Started</a>.
 Within each subpackage, the user will find models grouped into software tools from which each model design was extracted.
 </p>
 
-<table border=1 cellspacing=0 cellpadding=2>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><td valign=\"top\"><b>Subpackage</b> </td>
    <td valign=\"top\"><b>Description</b></td>
 </tr>
@@ -69,6 +69,6 @@ Within each subpackage, the user will find models grouped into software tools fr
    <td valign=\"top\"> Contains the <code>pfComponent</code> model that is extended for purposes of initialization with power flow results. </td>
 </tr>
 </table>
-</p>
+
 </html>"));
 end Overview;

@@ -14,7 +14,6 @@ These models are called MonoTri and are usually represented as a pi-equivalent m
 <li><i>Computer modelling of electrical power systems</i>, by J. Arrillaga, C.P. Arnold, and B.J. Harker. </li>
 </ul>
 </html>",revisions="<html>
-<p> </p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Last update</p></td>

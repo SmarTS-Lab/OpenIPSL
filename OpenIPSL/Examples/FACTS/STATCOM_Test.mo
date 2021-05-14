@@ -65,8 +65,8 @@ Simulate for 10 seconds.
 </p>
 <p>Variables of interest:</p>
 <ul>
-<li><code>sTATCOM.Q</code></code></li>
-<li><code>sTATCOM.v</code></code></li>
+<li><code>sTATCOM.Q</code></li>
+<li><code>sTATCOM.v</code></li>
 </ul>
 </html>"));
 end STATCOM_Test;

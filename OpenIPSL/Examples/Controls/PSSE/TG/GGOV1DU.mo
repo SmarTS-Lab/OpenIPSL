@@ -73,10 +73,10 @@ Simulate for 10 seconds.
 </p>
 <p>Variables of interest:</p>
 <ul>
-<li><code>gGOV1DU.PMECH</code></code></li>
-<li><code>gENROU.PELEC</code></code></li>
-<li><code>gENROU.SPEED</code></code></li>
-<li><code>gENROU.delta</code></code></li>
+<li><code>gGOV1DU.PMECH</code></li>
+<li><code>gENROU.PELEC</code></li>
+<li><code>gENROU.SPEED</code></li>
+<li><code>gENROU.delta</code></li>
 </ul>
 </html>"));
 end GGOV1DU;

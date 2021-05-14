@@ -518,6 +518,5 @@ equation
 <p>This example is not a dynamic system, and therefore the voltages and angles from all buses are static during the simulation.
 The simulation just calculates the initialization variables, which are the solution for the three-phase power flow.
 The results can be verified against any tool that calculates a three-phase power-flow.</p>
-<p> </p>
 </html>"));
 end IEEE13;

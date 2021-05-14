@@ -58,10 +58,10 @@ equation
 This model is meant as a simple framework to create a electric power plant that consists of:
 </p>
 <ul>
-<li>Generator</i>
-<li>Excitation System</i>
-<li>Turbine Governor</i>
-<li>Power System Stabiliser</i>
+<li>Generator</li>
+<li>Excitation System</li>
+<li>Turbine Governor</li>
+<li>Power System Stabiliser</li>
 </ul>
 <p>
 The type of each can be selected via a drop down list where also

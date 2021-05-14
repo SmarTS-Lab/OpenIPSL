@@ -141,12 +141,10 @@ equation
 </tr>
 </table>
 </html>", info="<html>
-<span style=\"color: #ff0000\">
-<h5>WARNING</h5>
-<p>The PSAT Toolbox  called this model &quot;AVR Type I&quot;
+<h5 style=\"color: #ff0000\">WARNING</h5>
+<p style=\"color: #ff0000\">The PSAT Toolbox  called this model &quot;AVR Type I&quot;
  (see <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013], section 18.3.1</a>)
  when it actually is the &quot;IEEE <b>Type II</b>&quot;
  (see <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 16.2.2</a>).</p>
-</span>
 </html>"));
 end AVRTypeI;

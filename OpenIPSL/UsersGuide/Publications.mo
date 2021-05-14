@@ -55,12 +55,12 @@ model Publications "Publications"
 <li> T. Bogodorova, M. Sabate, G. León, L. Vanfretti, M. Halat, J.B. Heyberger, and P. Panciatici,
     &quot;A Modelica Power System Library for Phasor Time-Domain Simulation,&quot;
     IEEE ISGT Europe 2013, Oct. 6 – 9, 2013, Lyngby, Denmark.
-    <a href=\"http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A695594&dswid=-2413\">Link</a></li>
+    <a href=\"http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A695594&amp;dswid=-2413\">Link</a></li>
 
 <li> L. Vanfretti, W. Li, T. Bogodorova, and P.Panciatici,
     &quot;Unambiguous Power System Modeling and Simulation using Modelica Tools,&quot;
     2013 IEEE Power and Energy Society General Meeting, Jul. 21 – 25, 2013, Vancouver, Canada.
-    <a href=\"http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A695601&dswid=4147\">Link</a></li>
+    <a href=\"http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A695601&amp;dswid=4147\">Link</a></li>
 </ul>
 </table>
 

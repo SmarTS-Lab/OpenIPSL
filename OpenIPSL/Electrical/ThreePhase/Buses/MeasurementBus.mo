@@ -87,10 +87,9 @@ equation
 </ul>
 <p>The device returns, as real outputs, active and reactive powers coming from each of the three phases. All values are calculated in per unit, using the system&apos;s three-phase power base, S_b, provided in model SystemBase. The outputs are explained in the list below:</p>
 <ul>
-<li><i><b>pa</b></i> and <i><b>qa </b></i>returns the active and reactive power, respectively, in phase A. </li>
+<li><i><b>pa</b></i> and <i><b>qa</b></i>returns the active and reactive power, respectively, in phase A. </li>
 <li><i><b>pb</b></i> and <i><b>qb</b></i> returns the active and reactive power, respectively, in phase B. </li>
 <li><i><b>pc</b></i> and <i><b>qc</b></i> returns the active and reactive power, respectively, in phase C. </li>
 </ul>
-<p> </p>
 </html>"));
 end MeasurementBus;
