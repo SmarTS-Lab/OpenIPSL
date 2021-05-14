@@ -66,14 +66,14 @@ equation
 <p>This model was design to represent two-phase power line, modeled as a pi-element.</p>
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since the model allows the representation of unbalanced lines.
 Series conductance (Gser) matrix is considered to have the following structure:</p>
-<p><b>[Gseraa</b>, <b>Gserab</b>; </p>
-<p><b> Gserab</b>, <b>Gserbb</b>] </p>
+<p><strong>[Gseraa</strong>, <strong>Gserab</strong>; </p>
+<p><strong> Gserab</strong>, <strong>Gserbb</strong>] </p>
 <p>Series susceptance (Bser) matrix is considered to have the following structure:</p>
-<p><b>[Bseraa</b>, <b>Bserab</b>; </p>
-<p><b> Bserab</b>, <b>Bserbb</b>] </p>
-<p>The series admittance matrix is <b>Yser = Gser+jBser</b>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
-<p><b>[Bshtaa</b>, <b>Bshtab</b>; </p>
-<p><b> Bshtab</b>, <b>Bshtbb</b>] </p>
+<p><strong>[Bseraa</strong>, <strong>Bserab</strong>; </p>
+<p><strong> Bserab</strong>, <strong>Bserbb</strong>] </p>
+<p>The series admittance matrix is <strong>Yser = Gser+jBser</strong>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
+<p><strong>[Bshtaa</strong>, <strong>Bshtab</strong>; </p>
+<p><strong> Bshtab</strong>, <strong>Bshtbb</strong>] </p>
 <p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
 </html>"));
 end Line_2Ph;

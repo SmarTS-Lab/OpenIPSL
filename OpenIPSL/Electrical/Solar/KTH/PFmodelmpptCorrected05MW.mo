@@ -168,7 +168,8 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Joan Russinol
+<td><p>Joan Russinol</p></td>
+</tr>
 <tr>
 <td><p>Contact</p></td>
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>

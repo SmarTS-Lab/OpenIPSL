@@ -186,7 +186,7 @@ equation
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a three-phase delta load model.</p>
-<p>The user needs to input the active (<b><i>P_ab</i></b>, <b><i>P_bc</i></b> and <b><i>P_ca</i></b>) and reactive (<b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>) powers consumed between phases. Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p>
+<p>The user needs to input the active (<strong><em>P_ab</em></strong>, <strong><em>P_bc</em></strong> and <strong><em>P_ca</em></strong>) and reactive (<strong><em>Q_ab</em></strong>, <strong><em>Q_bc</em></strong> and <strong><em>Q_ca</em></strong>) powers consumed between phases. Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p>
 <p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
 In the first approach, the powers consumed between phases are kept constant throughout simulation.
 The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power.

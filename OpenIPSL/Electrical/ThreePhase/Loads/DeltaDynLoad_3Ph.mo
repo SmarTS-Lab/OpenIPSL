@@ -172,14 +172,14 @@ equation
           textString="PQ/ZIP Load")}),
     Documentation(info="<html>
 <p>This is a three-phase delta load model that allows the user to vary the power consumed during the simulation.</p>
-<p>The user needs to input the active (<b><i>P_ab</i></b>, <b><i>P_bc</i></b> and <b><i>P_ca</i></b>) and reactive (<b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>) powers consumed between phases.
+<p>The user needs to input the active (<strong><em>P_ab</em></strong>, <strong><em>P_bc</em></strong> and <strong><em>P_ca</em></strong>) and reactive (<strong><em>Q_ab</em></strong>, <strong><em>Q_bc</em></strong> and <strong><em>Q_ca</em></strong>) powers consumed between phases.
 Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p>
 <p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
 In the first approach, the load consumes the same value of active and reactive powers between phases throughout the simulation.
 The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
-<p>In addition to that, the real input <b><i>DynFact</i></b> multiplies the power being consumed by the load.
+<p>In addition to that, the real input <strong><em>DynFact</em></strong> multiplies the power being consumed by the load.
 This allows the load to vary over time during the simulation.
-It is also important to note that <b><i>DynFact</i></b> multiplies all variables <b><i>P_ab</i></b>, <b><i>P_bc</i></b>, <b><i>P_ca</i></b>, <b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>.
+It is also important to note that <strong><em>DynFact</em></strong> multiplies all variables <strong><em>P_ab</em></strong>, <strong><em>P_bc</em></strong>, <strong><em>P_ca</em></strong>, <strong><em>Q_ab</em></strong>, <strong><em>Q_bc</em></strong> and <strong><em>Q_ca</em></strong>.
 That means that this model does not allow load variation to be performed only in selected variables. </p>
 </html>"));
 end DeltaDynLoad_3Ph;

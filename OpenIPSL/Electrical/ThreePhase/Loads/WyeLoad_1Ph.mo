@@ -82,7 +82,7 @@ equation
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a single-phase load model.</p>
-<p>The user needs to input the active (<b><i>P_a</i></b>) and reactive (<b><i>Q_a</i></b>) powers consumed by the phase.
+<p>The user needs to input the active (<strong><em>P_a</em></strong>) and reactive (<strong><em>Q_a</em></strong>) powers consumed by the phase.
 Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p>
 <p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
 In the first approach, the load consumes the same value of active and reactive powers throughout the simulation.

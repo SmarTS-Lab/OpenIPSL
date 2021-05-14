@@ -10,8 +10,8 @@ annotation (
 These models are called MonoTri and are usually represented as a pi-equivalent model. Transformers and power lines have their MonoTri representation in this package.</p>
 <p>In addition, multi-phase bus, bank and load models are also available here. The modelling of such devices is based, mainly, on the following works:</p>
 <ul>
-<li><i>A hybrid three-phase single-phase power flow formulation</i>, by J.M.T. Marinho, and G.N. Taranto, and</li>
-<li><i>Computer modelling of electrical power systems</i>, by J. Arrillaga, C.P. Arnold, and B.J. Harker. </li>
+<li><em>A hybrid three-phase single-phase power flow formulation</em>, by J.M.T. Marinho, and G.N. Taranto, and</li>
+<li><em>Computer modelling of electrical power systems</em>, by J. Arrillaga, C.P. Arnold, and B.J. Harker. </li>
 </ul>
 </html>",revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

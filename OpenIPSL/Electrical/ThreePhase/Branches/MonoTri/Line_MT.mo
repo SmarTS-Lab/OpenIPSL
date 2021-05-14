@@ -181,21 +181,21 @@ equation
 <p>This model was design to represent a hybrid positive-sequence/three-phase power line.</p>
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since this model can be used to represent unbalanced lines.
 Series conductance (Gser) matrix is considered to have the following structure:</p>
-<p><b>[Gseraa</b>, <b>Gserab</b>, <b>Gserac</b>; </p>
-<p><b> Gserab</b>, <b>Gserbb</b>, <b>Gserbc</b>; </p>
-<p><b> Gserac</b>, <b>Gserbc</b>, <b>Gsercc</b>] </p>
+<p><strong>[Gseraa</strong>, <strong>Gserab</strong>, <strong>Gserac</strong>; </p>
+<p><strong> Gserab</strong>, <strong>Gserbb</strong>, <strong>Gserbc</strong>; </p>
+<p><strong> Gserac</strong>, <strong>Gserbc</strong>, <strong>Gsercc</strong>] </p>
 <p>Series susceptance (Bser) matrix is considered to have the following structure:</p>
-<p><b>[Bseraa</b>, <b>Bserab</b>, <b>Bserac</b>; </p>
-<p><b> Bserab</b>, <b>Bserbb</b>, <b>Bserbc</b>; </p>
-<p><b> Bserac</b>, <b>Bserbc</b>, <b>Bsercc</b>] </p>
-<p>The series admittance matrix is <b>Yser = Gser+jBser</b>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
-<p><b>[Bshtaa</b>, <b>Bshtab</b>, <b>Bshtac</b>; </p>
-<p><b> Bshtab</b>, <b>Bshtbb</b>, <b>Bshtbc</b>; </p>
-<p><b> Bshtac</b>, <b>Bshtbc</b>, <b>Bshtcc</b>] </p>
+<p><strong>[Bseraa</strong>, <strong>Bserab</strong>, <strong>Bserac</strong>; </p>
+<p><strong> Bserab</strong>, <strong>Bserbb</strong>, <strong>Bserbc</strong>; </p>
+<p><strong> Bserac</strong>, <strong>Bserbc</strong>, <strong>Bsercc</strong>] </p>
+<p>The series admittance matrix is <strong>Yser = Gser+jBser</strong>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
+<p><strong>[Bshtaa</strong>, <strong>Bshtab</strong>, <strong>Bshtac</strong>; </p>
+<p><strong> Bshtab</strong>, <strong>Bshtbb</strong>, <strong>Bshtbc</strong>; </p>
+<p><strong> Bshtac</strong>, <strong>Bshtbc</strong>, <strong>Bshtcc</strong>] </p>
 <p>In addition to that, the user should also state if the hybrid interface should be calculated in an approximate or exact way.
 If the exact way is selected, the user should also input Norton equivalent admittances for positive, negative and zero sequences calculated in the point of interconnection of the hybrid device.
 If approximate model is selected, these admittances are set to be zero.
 Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the line equation is assembled.</p>
-<p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b></p>
+<p>The positive-sequence system is connected using pin <strong><em>p</em></strong>, while three-phase system is connected using pins <strong><em>A</em></strong>, <strong><em>B</em></strong>, and <strong><em>C</em></strong></p>
 </html>"));
 end Line_MT;

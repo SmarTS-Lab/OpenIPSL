@@ -86,12 +86,12 @@ equation
           textString="PQ Load")}),
     Documentation(info="<html>
 <p>This is a three-phase wye load model that allows the user to vary the power consumed during the simulation.</p>
-<p>The user needs to input the entire active (<b><i>P0</i></b>) and reactive (<b><i>Q0</i></b>) powers consumed by the load.
-Since the model represents a balanced load, the active and reactive powers consumed by each phase are <b><i>P0/3</i></b> and <b><i>Q0/3</i></b>.
+<p>The user needs to input the entire active (<strong><em>P0</em></strong>) and reactive (<strong><em>Q0</em></strong>) powers consumed by the load.
+Since the model represents a balanced load, the active and reactive powers consumed by each phase are <strong><em>P0/3</em></strong> and <strong><em>Q0/3</em></strong>.
 The model allows the load to be represented as constant power only.</p>
-<p>In addition to that, the real inputs <b><i>P_in</i></b> and <b><i>Q_in</i></b> multiply the values of active and reactive power, respectively, being consumed by the load.
+<p>In addition to that, the real inputs <strong><em>P_in</em></strong> and <strong><em>Q_in</em></strong> multiply the values of active and reactive power, respectively, being consumed by the load.
 This allows the load to vary its consumed power over time during the simulation. Note that, since active and reactive powers can vary independently, the load's power factor can also vary.
-In addition, note that by changing <b><i>P0</i></b> and <b><i>Q0</i></b>, the values of power consumed by the three phases vary identically.
+In addition, note that by changing <strong><em>P0</em></strong> and <strong><em>Q0</em></strong>, the values of power consumed by the three phases vary identically.
 This makes the load to be characterized as balanced.</p>
 </html>"));
 end Dyn_wye_3Ph_balanced;

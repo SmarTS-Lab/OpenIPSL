@@ -15,9 +15,9 @@ equation
   u4 = u1^4;
   [y] = [1; u1; u2; u3; u4];
   annotation (
-    Documentation(info="<HTML>
+    Documentation(info="<html>
 <p>
-The output connector is the <b>concatenation</b> of the four input connectors.
+The output connector is the <strong>concatenation</strong> of the four input connectors.
 Note, that the dimensions of the input connector signals have to be
 explicitly defined via parameters n1, n2, n3 and n4.
 </p>

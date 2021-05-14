@@ -89,17 +89,17 @@ equation
 <p>This model was design to represent three-phase power line, modeled as a pi-element.</p>
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since the model allows the representation of unbalanced lines.
 Series conductance (Gser) matrix is considered to have the following structure:</p>
-<p><b>[Gseraa</b>, <b>Gserab</b>, <b>Gserac</b>; </p>
-<p><b> Gserab</b>, <b>Gserbb</b>, <b>Gserbc</b>; </p>
-<p><b> Gserac</b>, <b>Gserbc</b>, <b>Gsercc</b>] </p>
+<p><strong>[Gseraa</strong>, <strong>Gserab</strong>, <strong>Gserac</strong>; </p>
+<p><strong> Gserab</strong>, <strong>Gserbb</strong>, <strong>Gserbc</strong>; </p>
+<p><strong> Gserac</strong>, <strong>Gserbc</strong>, <strong>Gsercc</strong>] </p>
 <p>Series susceptance (Bser) matrix is considered to have the following structure:</p>
-<p><b>[Bseraa</b>, <b>Bserab</b>, <b>Bserac</b>; </p>
-<p><b> Bserab</b>, <b>Bserbb</b>, <b>Bserbc</b>; </p>
-<p><b> Bserac</b>, <b>Bserbc</b>, <b>Bsercc</b>] </p>
-<p>The series admittance matrix is <b>Yser = Gser+jBser</b>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
-<p><b>[Bshtaa</b>, <b>Bshtab</b>, <b>Bshtac</b>; </p>
-<p><b> Bshtab</b>, <b>Bshtbb</b>, <b>Bshtbc</b>; </p>
-<p><b> Bshtac</b>, <b>Bshtbc</b>, <b>Bshtcc</b>] </p>
+<p><strong>[Bseraa</strong>, <strong>Bserab</strong>, <strong>Bserac</strong>; </p>
+<p><strong> Bserab</strong>, <strong>Bserbb</strong>, <strong>Bserbc</strong>; </p>
+<p><strong> Bserac</strong>, <strong>Bserbc</strong>, <strong>Bsercc</strong>] </p>
+<p>The series admittance matrix is <strong>Yser = Gser+jBser</strong>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
+<p><strong>[Bshtaa</strong>, <strong>Bshtab</strong>, <strong>Bshtac</strong>; </p>
+<p><strong> Bshtab</strong>, <strong>Bshtbb</strong>, <strong>Bshtbc</strong>; </p>
+<p><strong> Bshtac</strong>, <strong>Bshtbc</strong>, <strong>Bshtcc</strong>] </p>
 <p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
 </html>"));
 end Line_3Ph;

@@ -80,16 +80,16 @@ equation
     Documentation(info="<html>
 <p>This three-phase measurement device should be connected in series, between two other devices. The main features of this device are listed below:</p>
 <ul>
-<li>Pins <i><b>p4</b></i>, <i><b>p5</b></i> and <i><b>p6</b></i> work as input pins for electrical quantities coming from phases A, B and C, respectively. </li>
-<li>In an similar way, pins<i> <b>p1</b></i>, <i><b>p2</b></i> an <i><b>p3</b></i> work as output pins for electrical quantities coming from phases A, B and C, respectively. </li>
-<li>Current flows from pin <i><b>p4</b></i> to pin <i><b>p1</b></i>, from pin <i><b>p5</b></i> to pin <i><b>p2</b></i> and from pin <i><b>p6</b></i> to pin <i><b>p3</b></i>. </li>
+<li>Pins <em><strong>p4</strong></em>, <em><strong>p5</strong></em> and <em><strong>p6</strong></em> work as input pins for electrical quantities coming from phases A, B and C, respectively. </li>
+<li>In an similar way, pins<em> <strong>p1</strong></em>, <em><strong>p2</strong></em> an <em><strong>p3</strong></em> work as output pins for electrical quantities coming from phases A, B and C, respectively. </li>
+<li>Current flows from pin <em><strong>p4</strong></em> to pin <em><strong>p1</strong></em>, from pin <em><strong>p5</strong></em> to pin <em><strong>p2</strong></em> and from pin <em><strong>p6</strong></em> to pin <em><strong>p3</strong></em>. </li>
 <li>There is no voltage drop between the pairs of pins responsible for each phase. </li>
 </ul>
 <p>The device returns, as real outputs, active and reactive powers coming from each of the three phases. All values are calculated in per unit, using the system&apos;s three-phase power base, S_b, provided in model SystemBase. The outputs are explained in the list below:</p>
 <ul>
-<li><i><b>pa</b></i> and <i><b>qa</b></i>returns the active and reactive power, respectively, in phase A. </li>
-<li><i><b>pb</b></i> and <i><b>qb</b></i> returns the active and reactive power, respectively, in phase B. </li>
-<li><i><b>pc</b></i> and <i><b>qc</b></i> returns the active and reactive power, respectively, in phase C. </li>
+<li><em><strong>pa</strong></em> and <em><strong>qa</strong></em>returns the active and reactive power, respectively, in phase A. </li>
+<li><em><strong>pb</strong></em> and <em><strong>qb</strong></em> returns the active and reactive power, respectively, in phase B. </li>
+<li><em><strong>pc</strong></em> and <em><strong>qc</strong></em> returns the active and reactive power, respectively, in phase C. </li>
 </ul>
 </html>"));
 end MeasurementBus;
