@@ -62,7 +62,6 @@ model Publications "Publications"
     2013 IEEE Power and Energy Society General Meeting, Jul. 21 – 25, 2013, Vancouver, Canada.
     <a href=\"http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A695601&amp;dswid=4147\">Link</a></li>
 </ul>
-</table>
 
 <p>In addition, you can also browse a few of the thesis of the students that carried out their MSc and PhD research under Prof. Vanfretti's group in the following links:</p>
 
