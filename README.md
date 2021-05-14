@@ -1,8 +1,11 @@
+<!---
 [![Build Status](https://travis-ci.org/OpenIPSL/OpenIPSL.svg?branch=master)](https://travis-ci.org/OpenIPSL/OpenIPSL)
 [![Documentation Status](https://readthedocs.org/projects/openipsl/badge/?version=latest)](http://openipsl.readthedocs.io/en/latest/?badge=latest)
+-->
+[![Build Status](https://github.com/openipsl/openipsl/actions/workflows/checkCI.yml/badge.svg?branch=master)]
 
 # **OpenIPSL**: Open-Instance Power System Library:
-The OpenIPSL or Open-Instance Power System Library is library of power system component models written in the [Modelica](http://modelica.org) language that can be used for power system dynamic analysis, such as phasor time-domain simulations. 
+The OpenIPSL or Open-Instance Power System Library is library of power system component models written in the [Modelica](http://modelica.org) language that can be used for power system dynamic analysis, such as phasor time-domain simulations.
 
 OpenIPSL is currently developed and maintained by Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group [ALSETLab](https://github.com/ALSETLab) at [Rensselaer Polytechnic Institute](http://rpi.edu), Troy, NY, collaborators and friends, such as [Dietmar Winkler](https://github.com/dietmarw) and [FOSSEE](https://om.fossee.in/fellowship2018) (contributions are welcome!).
 
@@ -20,10 +23,10 @@ iPSL is part of the [iTesla Tool](https://github.com/itesla/ipst), and thus, it 
 Therefore, the SmarTS Lab / ALSETLab team decided to create the OpenIPSL fork in order to develop the library in a direction that is more suitable for researchers and teachers/professors, and in a transparent, open source software approach.
 
 ## Documentation:
-Documentation is provided within the library and can be accessed when loading OpenIPSL in any Modelica-compliant tool. Additional documentation can also be found [**here**](http://openipsl.readthedocs.io/). 
+Documentation is provided within the library and can be accessed when loading OpenIPSL in any Modelica-compliant tool. Additional documentation can also be found [**here**](http://openipsl.readthedocs.io/).
 
 Tutorials on OpenIPSL have been given at many conferences, and are available under [Release](https://github.com/SmarTS-Lab/OpenIPSL/releases).
-We recommend you start from there. 
+We recommend you start from there.
 
 Our documentation assumes that you have working knowledge of the Modelica language, are familiar with a Modelica-compliant modeling and simulation environment, that you have proeficient knowledge on power system steady state analysis (i.e., the so called "power flow"), and knowledge on power system dynamic modeling (i.e., the called "transient" and "small-signal" stability). As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
 
@@ -71,4 +74,3 @@ If a copy of the MPL was not distributed with this file, You can obtain one at h
 
 
 This work was supported in primarily by the New York State Energy Research and Development Authority (NYSERDA) through the Electric Power Transmission and Distribution (EPTD) PON 3770 High Performing Grid Program together with the New York Power Authority (NYPA). This work was also supported in part by the ERC Program of the National Science Foundation and DOE under NSF Award Number EEC-1041877 and the CURENT Industry Partnership Program.
-
