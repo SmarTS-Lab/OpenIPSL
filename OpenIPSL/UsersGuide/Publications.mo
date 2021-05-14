@@ -18,7 +18,7 @@ model Publications "Publications"
 <li> L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad,
     &quot;iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations,&quot;
     SoftwareX, Available online 18 May 2016, ISSN 2352-7110,
-    <a href=\"http://dx.doi.org/10.1016/j.softx.2016.05.001\">DOI: 10.1016/j.softx.2016.05.001.</a></li>
+    <a href=\"https://doi.org/10.1016/j.softx.2016.05.001\">DOI: 10.1016/j.softx.2016.05.001.</a></li>
 
 <li> M. Zhang, M. Baudette, J. Lavenius, S. Løvlund, and L. Vanfretti,
     &quot;Modelica Implementation and Software-to-Software Validation of Power
@@ -30,7 +30,7 @@ model Publications "Publications"
 <li> M. Sabate, G. Leon, M. Halat, J.B. Heyberger, F.J. Gomez and L. Vanfretti,
     &quot;Aspects of Power System Modeling, Initialization and Simulation using the Modelica Language,&quot;
     2015 IEEE Eindhoven PowerTech 2015, June 29 - July 02, 2015, Eindhoven, Netherlands.
-    <a href=\"http://www.itesla-project.eu/system/resources/BAhbBlsHOgZmSSJIMjAxNS8wNy8wOC8wOV81OV81Nl83N18wNGFfUGFwZXJfUG93ZXJfc3lzdGVtX21vZGVsaW5nX01vZGVsaWNhLnBkZgY6BkVU/04a_Paper_Power_system_modeling_Modelica.pdf\">Link</a></li>
+    <a href=\"https://doi.org/10.1109/PTC.2015.7232504\">DOI: 10.1109/PTC.2015.7232504</a></li>
 
 <li> M.A. Adib Murad, F.J. Gomez, and L. Vanfretti,
     &quot;Equation-Based Modeling of FACTS using Modelica,&quot;
@@ -50,7 +50,7 @@ model Publications "Publications"
 <li> L. Vanfretti, T. Bogodorova, and M. Baudette,
     &quot;A Modelica Power System Component Library for Model Validation and Parameter Identification,&quot;
     10th International Modelica Conference, Mar. 10 – 12, 2014, Lund, Sweden.
-    <a href=\"http://www.ep.liu.se/ecp_article/index.en.aspx?issue=96;article=126\">Link</a></li>
+    <a href=\"https://doi.org/10.3384/ecp140961195\">DOI: 10.3384/ecp140961195</a></li>
 
 <li> T. Bogodorova, M. Sabate, G. León, L. Vanfretti, M. Halat, J.B. Heyberger, and P. Panciatici,
     &quot;A Modelica Power System Library for Phasor Time-Domain Simulation,&quot;
