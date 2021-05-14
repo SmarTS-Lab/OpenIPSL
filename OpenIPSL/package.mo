@@ -13,18 +13,19 @@ annotation (preferredView="info",
             "modelica://OpenIPSL/Resources/Images/OpenIPSL_Logo.png")}),
   Documentation(info="<html>
 <p>
-The <strong><code>OpenIPSL</code></strong> or Open-Instance Power System Library is a 
+The <strong><code>OpenIPSL</code></strong> or Open-Instance Power System Library is a
 <a href=\"https://www.modelica.org\">Modelica</a> library, fork of of the
-<a href=\"https://github.com/itesla/ipsl\">iTesla Power System Library</a> 
+<a href=\"https://github.com/itesla/ipsl\">iTesla Power System Library</a>
 developed and maintained by the <a href=\"https://alsetlab.github.io/\">AlsetLab</a> research group,
 collaborators and friends (contributions are welcome!).
-The library contains a set of power system component models and test power system 
+The library contains a set of power system component models and test power system
 networks adopting the phasor modeling approach.
-<a href=\"https://build.openmodelica.org/Documentation/OpenModelica.Scripting.simulate.html\">Time domain simulations</a> 
+<a href=\"https://build.openmodelica.org/Documentation/OpenModelica.Scripting.simulate.html\">Time domain simulations</a>
 can be carried out using a Modelica-compliant tool,
-which may also allow to do other computations on the model, 
+which may also allow to do other computations on the model,
 such as <a href=\"https://build.openmodelica.org/Documentation/OpenModelica.Scripting.linearize.html\">linearization</a>
 for eigen-analysis and other purposes.
+</p>
 <p>
 If you are looking for an introduction to the library, have especially a look at:
 </p>

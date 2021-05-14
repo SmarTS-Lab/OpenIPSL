@@ -161,6 +161,7 @@ of PhST technologies can be found in
 The measured <code>pmes</code> of the real power flow <code>pk</code>
 is compared with the desired power flow <code>pref</code> and a PI controller
 is used for varying the phase angle &phi;.
+</p>
 <p>
 [...]
 </p>

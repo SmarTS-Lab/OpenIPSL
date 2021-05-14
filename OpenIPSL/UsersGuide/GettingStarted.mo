@@ -28,13 +28,13 @@ such as <a href=\"https://github.com/SanPen/GridCal\">GridCal</a> or <a href=\"h
 </p>
 <p>
 From these values, a Modelica tool solves the initialization problem for all algebraic and differential - state variables.
-All models in <strong><code>OpenIPSL</code></strong> are programmed in such way that by introducing a <a href=\"https://github.com/SmarTS-Lab/Raw2Record\">power flow solution</a> (from another tool), the <b>initial guesses</b> are computed as parameters within each model and are provided into the initial equations that are used to solve the overall initialization problem.
+All models in <strong><code>OpenIPSL</code></strong> are programmed in such way that by introducing a <a href=\"https://github.com/SmarTS-Lab/Raw2Record\">power flow solution</a> (from another tool), the <strong>initial guesses</strong> are computed as parameters within each model and are provided into the initial equations that are used to solve the overall initialization problem.
 See <a href=\"http://www.ep.liu.se/ecp/article.asp?issue=119&amp;article=010\">this paper</a> for a more detailed explanation.
 </p>
 <p>
-As we have just mentioned, the full initialization of the components&apos; internal variables and states is achieved by a set of internal <b>initial equations</b> that are to be derived by the developer of the model.
-In a effort to harmonized the presentation of the power flow parameters, a model should extend <b>pfComponent</b> that will provide all the necessary parameters for data coming from power flow solutions to be used in the initialization of the model.
-The <b>pfComponent</b> also provide the support for the common <b>SystemBase</b> component that provides a single instance of the system's common parameters, i.e., frequency and base power.
+As we have just mentioned, the full initialization of the components&apos; internal variables and states is achieved by a set of internal <strong>initial equations</strong> that are to be derived by the developer of the model.
+In a effort to harmonized the presentation of the power flow parameters, a model should extend <strong>pfComponent</strong> that will provide all the necessary parameters for data coming from power flow solutions to be used in the initialization of the model.
+The <strong>pfComponent</strong> also provide the support for the common <strong>SystemBase</strong> component that provides a single instance of the system's common parameters, i.e., frequency and base power.
 </p>
 <h4>Running Time Domain Simulations</h4>
 <p>

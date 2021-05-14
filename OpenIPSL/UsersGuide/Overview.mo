@@ -26,8 +26,8 @@ Within each subpackage, the user will find models grouped into software tools fr
 </p>
 
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
-<tr><td valign=\"top\"><b>Subpackage</b> </td>
-   <td valign=\"top\"><b>Description</b></td>
+<tr><th valign=\"top\">Subpackage</th>
+    <th valign=\"top\">Description</th>
 </tr>
 <tr><td valign=\"top\"> Controls </td>
    <td valign=\"top\"> Models that represent controllers used in machines. Exciters, stabilizers and governors for example. </td>
@@ -39,7 +39,7 @@ Within each subpackage, the user will find models grouped into software tools fr
    <td valign=\"top\"> Models that represent devices that connect two or more buses. Transformers and power lines are perfect examples. </td>
 </tr>
 <tr><td valign=\"top\"> Buses </td>
-   <td valign=\"top\"> Models that represent <b>nodes</b> of a circuit. </td>
+   <td valign=\"top\"> Models that represent <strong>nodes</strong> of a circuit. </td>
 </tr>
 <tr><td valign=\"top\"> Events </td>
    <td valign=\"top\"> Models that can be used for the representation of events in a power system. Examples are faults and breakers. </td>
