@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/OpenIPSL/OpenIPSL.svg?branch=master)](https://travis-ci.org/OpenIPSL/OpenIPSL)
 [![Documentation Status](https://readthedocs.org/projects/openipsl/badge/?version=latest)](http://openipsl.readthedocs.io/en/latest/?badge=latest)
 -->
-[![Build Status](https://github.com/openipsl/openipsl/actions/workflows/checkCI.yml/badge.svg?branch=master)]
+![Build Status](https://github.com/openipsl/openipsl/actions/workflows/checkCI.yml/badge.svg?branch=master)
 
 # **OpenIPSL**: Open-Instance Power System Library:
 The OpenIPSL or Open-Instance Power System Library is library of power system component models written in the [Modelica](http://modelica.org) language that can be used for power system dynamic analysis, such as phasor time-domain simulations.
