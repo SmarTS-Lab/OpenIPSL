@@ -30,7 +30,7 @@ jobs:
       - name: Tidy html
         run: python ./.CI/check_html.py tidyHTML ./OpenIPSL/
       - name: Check tags
-        run: python ./.CI/check_html.py checkTags ./OpenIPS/
+        run: python ./.CI/check_html.py checkTags ./OpenIPSL/
   syntax_checks:
     timeout-minutes: 5
     runs-on: ubuntu-latest
