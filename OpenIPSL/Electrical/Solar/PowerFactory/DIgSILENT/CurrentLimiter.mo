@@ -119,11 +119,7 @@ equation
   annotation(
     Icon(graphics = {Rectangle(origin = {-0.01, 0}, lineColor = {118, 18, 62}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-99.99, 100}, {99.99, -100}}), Text(origin = {-35, 62}, extent = {{-21, 10}, {21, -10}}, textString = "idin"), Text(origin = {-33, -60}, extent = {{-21, 10}, {21, -10}}, textString = "iqin"), Text(origin = {-33, 0}, extent = {{-21, 10}, {21, -10}}, textString = "duac"), Text(origin = {71, 52}, extent = {{-21, 10}, {21, -10}}, textString = "idout"), Text(origin = {71, -48}, extent = {{-21, 10}, {21, -10}}, textString = "iqout"), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}),
     Diagram(coordinateSystem(extent = {{-200, -200}, {200, 200}})),
-     Documentation(info = "<html>
-<p>
-
-</p>
-</html>", revisions = "<html>
+     Documentation(revisions = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Model Name</p></td>
 <td><p>Current Limiter</p></td>

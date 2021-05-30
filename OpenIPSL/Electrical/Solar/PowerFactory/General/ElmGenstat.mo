@@ -79,8 +79,6 @@ Static generator implemented currently only as a current source.
 <td><p>Contact</p></td>
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
-<tr>
-</tr>
 </table>
 </html>"));
 end ElmGenstat;
