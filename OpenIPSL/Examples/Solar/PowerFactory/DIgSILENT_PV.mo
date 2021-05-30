@@ -26,10 +26,10 @@ Simulate for 10 seconds.
 </p>
 <p>Variables of interest:</p>
 <ul>
-<li><code>pv_plant.generator.id_ref</code></code></li>
-<li><code>pv_plant.generator.iq_ref</code></code></li>
-<li><code>voltage_source.v</code></code></li>
-<li><code>voltage_source.f0</code></code></li>
+<li><code>pv_plant.generator.id_ref</code></li>
+<li><code>pv_plant.generator.iq_ref</code></li>
+<li><code>voltage_source.v</code></li>
+<li><code>voltage_source.f0</code></li>
 </ul>
 </html>"));
 end DIgSILENT_PV;
