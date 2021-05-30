@@ -65,7 +65,7 @@ A fault ride through implementation for reactive power support.
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

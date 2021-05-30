@@ -95,6 +95,7 @@ Model of a PV Array used in DIgSILENT's implementation of the PV plant. Provides
 <tr>
 <td><p>Model Verification</p></td>
 <td><p>This model has not been verified against PowerFactory.</p></td>
+</tr>
 </table>
 </html>"));
 end PVArray;

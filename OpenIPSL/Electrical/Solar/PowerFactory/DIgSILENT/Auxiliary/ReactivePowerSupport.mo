@@ -100,7 +100,7 @@ Reactive power support for the DIgSILENT PV model.
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
