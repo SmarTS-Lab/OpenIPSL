@@ -79,7 +79,7 @@ StaVmea model in PowerFactory measures voltage and frequency. Frequency in Power
 </tr>
 <tr>
 <td><p>Description</p></td>
-<td><p></p></td>
+<td></td>
 </tr>
 </table>
 </html>"));
