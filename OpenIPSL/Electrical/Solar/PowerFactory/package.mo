@@ -1,4 +1,3 @@
-end PowerFactory;
 within OpenIPSL.Electrical.Solar;
 
 package PowerFactory
