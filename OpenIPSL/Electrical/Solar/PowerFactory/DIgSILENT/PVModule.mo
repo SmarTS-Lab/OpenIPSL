@@ -21,12 +21,9 @@ model PVModule "Model of a single PV module"
     Placement(visible = true, transformation(origin = {110, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Umpp annotation (
     Placement(visible = true, transformation(origin = {110, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
- // SI.Irradiance local_E;
- // SI.Temperature local_theta;
   Types.Voltage U0 "Open-circuit voltage";
   Types.Current Isc "Short-circuit current";
   Types.Current Impp "MPP Current";
-//  SI.Power P "PV Module Power";
   Real tempCorrU "Voltage Correction Factor";
   Real tempCorrI "Current Correction Factor";
   Modelica.Blocks.Sources.RealExpression not_use_input_theta(y=theta_STC) if
@@ -44,18 +41,6 @@ if not use_input_E then
   der(local_E) = 0;
 end if;
 equation
-// Defining irradiance and temperature in case no input is connected
-//   if use_input_E then
-//     local_E = E;
-//   else
-//     der(local_E) = 0;
-//   end if;
-//   if use_input_theta then
-//     local_theta = theta;
-//   else
-//     local_theta = theta_STC;
-//   end if;
-// Temperature dependency
   tempCorrU = 1 + au * (SI.Conversions.to_degC(local_theta) - 25);
   tempCorrI = 1 + ai * (SI.Conversions.to_degC(local_theta) - 25);
 // Open-circuit voltage
